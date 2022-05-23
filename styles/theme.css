@@ -1,0 +1,20 @@
+/*
+  [THEME STYLES]
+  Base theme styles, avoid modification without development experience/guide if possible.
+  If you'd like to layer customizations on top of the theme, please see the merchant.css file,
+  found in the assets folder.
+*/
+
+/* example - remove once some real stuff is here */
+#app {
+  background: url('./starry-bg_animated.gif');
+  color: #fff;
+  margin: 1em auto;
+  max-width: 20em;
+  padding: 2em;
+
+  & > h1 {
+    color: #fff;
+  }
+}
+/* end example */
