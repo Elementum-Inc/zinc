@@ -1,10 +1,10 @@
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
-import postcssNesting from "postcss-nested";
+import WindiCSS from "vite-plugin-windicss";
 
 export default defineConfig({
   mode: "development", // [TODO] Remove or change mode before submission, want to make sure merchants are using it in prod out of the box 👍
-  plugins: [vue()],
+  plugins: [vue(), WindiCSS()],
   publicDir: false,
   build: {
     rollupOptions: {
@@ -18,11 +18,13 @@ export default defineConfig({
     outDir: "assets",
     assetsDir: "./",
     emptyOutDir: false,
-    watch: {}, // comment this out to remove watch
-  },
-  css: {
-    postcss: {
-      plugins: [postcssNesting]
+    watch: {
+      include: [
+        "./scripts/theme.js",
+        "./scripts/**/*.js",
+        "./styles/theme.css",
+        "./styles/**/*.css",
+      ]
     },
   },
 });
