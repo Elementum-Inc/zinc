@@ -1,6 +1,6 @@
 module.exports = {
   content: [
-    "./**/*.{liquid,vue,css,js}",
+    './**/*.{liquid,vue,css,js}',
   ],
   theme: {
     extend: {},
