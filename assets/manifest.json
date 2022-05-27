@@ -1,0 +1,10 @@
+{
+  "scripts\/theme.js": {
+    "file": "theme.js",
+    "src": "scripts\/theme.js",
+    "isEntry": true,
+    "css": [
+      "theme.css"
+    ]
+  }
+}

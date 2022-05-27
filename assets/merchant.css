@@ -1,0 +1,7 @@
+/*
+  [MERCHANT STYLING]
+  Merchant-specific styling, imported after main styling for the best results.
+
+  If you'd like to override theme styles with your own more easily, please place
+  the @import statement *before* the content of assets/styles.css, instead of EOF.
+*/
