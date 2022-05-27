@@ -11,9 +11,12 @@ module.exports = {
   },
   plugins: ['vue'],
   rules: {
-    indent: ['error', 2],
+    indent: ['error', 2, { 'SwitchCase': 1 }],
     'linebreak-style': ['error', 'unix'],
     quotes: 'off',
-    semi: ['error', 'always'],
+    semi: ['error', 'always', { 'omitLastInOneLineBlock': true }],
+    'no-undef': 'off',
+    'no-unused-vars': 'warn'
   },
+  ignorePatterns: ['assets/theme.js']
 };

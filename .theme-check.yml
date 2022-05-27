@@ -1,0 +1,12 @@
+ValidSchema:
+  enabled: true
+ValidHTMLTranslation:
+  enabled: true
+ConvertIncludeToRender:
+  enabled: true
+DeprecateLazysizes:
+  enabled: true
+RemoteAsset:
+  enabled: false
+TemplateLength:
+  enabled: false
