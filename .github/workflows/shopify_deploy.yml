@@ -18,4 +18,5 @@ jobs:
       - uses: shopify/shopify-cli-action@v1
         with:
           auth-token: ${{ secrets.SHOPIFY_CLI_AUTH_TOKEN }}
+          command: 'login --store ${{ secrets.SHOP_STORE }}'
           command: 'theme serve'
