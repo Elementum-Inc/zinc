@@ -1,0 +1,21 @@
+name: Shopify - Deploy Theme
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  shopify-deploy:
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - uses: actions/checkout@v3
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.5
+      - uses: shopify/shopify-cli-action@v1
+        with:
+          auth-token: ${{ secrets.SHOPIFY_CLI_AUTH_TOKEN }}
+          command: 'theme serve'
