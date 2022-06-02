@@ -21,6 +21,7 @@ jobs:
           THEME_PATH: ./
         with:
           args: --ignores .shopifyignore
+      - run: echo 'https://${{ secrets.SHOP_STORE }}/?preview_theme_id=${{ secrets.CYPRESS_TEST_THEME_ID }}'
       - name: Cypress.io
         uses: cypress-io/github-action@v2.9.7
         with:
