@@ -25,4 +25,5 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v2.9.7
         with:
-          config: baseUrl=https://et-markets-preview.myshopify.com/?preview_theme_id=125586964619
+          # config: baseUrl=https://et-markets-preview.myshopify.com/?preview_theme_id=125586964619
+          config: baseUrl=https://example.cypress.io/
