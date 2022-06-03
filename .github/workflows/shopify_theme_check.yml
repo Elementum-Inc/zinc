@@ -13,6 +13,8 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: shopify/theme-check-action@v1
+        # keeping the below commented out until this issue is resolved:
+        # https://github.com/Shopify/theme-check-action/issues/13
         # with:
           # flags: '-a'
           # token: ${{ github.token }}
