@@ -25,4 +25,4 @@ jobs:
       - name: Cypress.io
         uses: cypress-io/github-action@v2.9.7
         with:
-          config: baseUrl=https://${{ secrets.SHOP_STORE }}/password?preview_theme_id=125586964619
+          config: baseUrl=https://${{ secrets.SHOP_STORE }}/?preview_theme_id=125586964619
