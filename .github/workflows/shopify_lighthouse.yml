@@ -8,11 +8,12 @@ on:
 
 jobs:
   shopify-lighthouse-ci:
-    name: Lighthouse
+    name: Lighthouse CI
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: shopify/lighthouse-ci-action@v1
+      - name: Lighthouse tests
+        uses: shopify/lighthouse-ci-action@v1
         with:
           access_token: ${{ secrets.SHOP_ACCESS_TOKEN }}
           store: ${{ secrets.SHOP_STORE }}

@@ -1,0 +1,18 @@
+name: Linter
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  linting:
+    name: GH Super-Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: JS/CSS linting
+        uses: github/super-linter/slim@v4.9.4
+

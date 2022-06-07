@@ -12,7 +12,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: shopify/theme-check-action@v1
+      - name: Theme Check and Liquid linting
+        uses: shopify/theme-check-action@v1
         # keeping the below commented out until this issue is resolved:
         # https://github.com/Shopify/theme-check-action/issues/13
         with:
