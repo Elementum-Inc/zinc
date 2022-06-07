@@ -22,3 +22,4 @@ jobs:
           JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.js
           VALIDATE_HTML: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEFAULT_BRANCH: main
