@@ -13,10 +13,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Theme Check and Liquid linting
-        uses: shopify/theme-check-action@v1
+        uses: shopify/theme-check-action@v1.2.2
         # keeping the below commented out until this issue is resolved:
         # https://github.com/Shopify/theme-check-action/issues/13
-        # with:
-          # flags: '-a'
-          # token: ${{ github.token }}
-          # base: main
+        with:
+          # flags: ''
+          token: ${{ github.token }}
+          base: main
