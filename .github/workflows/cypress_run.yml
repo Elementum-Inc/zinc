@@ -1,0 +1,27 @@
+name: Cypress - Run Tests
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  cypress-run:
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - uses: actions/checkout@v3
+      - name: Shopify
+        uses: pgrimaud/action-shopify@master
+        env:
+          SHOPIFY_PASSWORD: ${{ secrets.THEME_KIT_ACCESS }}
+          SHOPIFY_STORE_URL: ${{ secrets.SHOP_STORE }}
+          SHOPIFY_THEME_ID: ${{ secrets.CYPRESS_TEST_THEME_ID }}
+          THEME_PATH: ./
+        with:
+          args: --ignores .shopifyignore
+      - name: Cypress.io
+        uses: cypress-io/github-action@v2.9.7
+        with:
+          config: baseUrl=https://${{ secrets.SHOP_STORE }}/?preview_theme_id=${{ secrets.CYPRESS_TEST_THEME_ID }}
