@@ -7,7 +7,7 @@
 
 /* example - remove once some real stuff is here */
 
-#app{
+#app {
   @apply max-w-xl my-4 mx-auto p-8 text-white;
   background: url('./starry-bg_animated.gif');
   & > h1 {
