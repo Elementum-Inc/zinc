@@ -1,0 +1,25 @@
+name: Linter
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  workflow_dispatch:
+
+jobs:
+  linting:
+    name: GH Super-Linter
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: JS/CSS linting
+        uses: github/super-linter/slim@v4.9.4
+        env:
+          LINTER_RULES_PATH: /
+          VALIDATE_CSS: true
+          VALIDATE_JAVASCRIPT_ES: true
+          JAVASCRIPT_ES_CONFIG_FILE: .eslintrc.js
+          VALIDATE_HTML: true
+          GITHUB_TOKEN: ${{ github.token }}
+          DEFAULT_BRANCH: main

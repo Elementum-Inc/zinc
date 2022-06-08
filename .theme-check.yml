@@ -1,12 +1,26 @@
 ValidSchema:
-  enabled: true
+  severity: error
 ValidHTMLTranslation:
-  enabled: true
+  severity: error
 ConvertIncludeToRender:
-  enabled: true
-DeprecateLazysizes:
-  enabled: true
-RemoteAsset:
-  enabled: false
+  severity: error
+DeprecateFilter:
+  severity: error
+MissingTemplate:
+  severity: error
+SchemaJsonFormat:
+  severity: error
+SpaceInsideBraces:
+  severity: error
 TemplateLength:
-  enabled: false
+  max_length: 1200
+UnusedAssign:
+  severity: error
+UnusedSnippet:
+  severity: error
+DefaultLocale:
+  severity: error
+MatchingSchemaTranslations:
+  severity: error
+MatchingTranslations:
+  severity: error
