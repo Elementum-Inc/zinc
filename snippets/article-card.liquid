@@ -16,6 +16,8 @@
     {% render 'article-card' blog: blog, article: article, show_image: section.settings.show_image %}
 {% endcomment %}
 
+{% assign unused = 0 %}
+
 {%- if article and article != empty -%}
   {%- liquid
     assign ratio = 1
