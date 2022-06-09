@@ -1,10 +1,5 @@
 name: Shopify - Theme Check
-on:
-  push: 
-    # branches: [ main ]
-  pull_request:
-    branches: [ main ]
-  # workflow_dispatch:
+on: [ push ]
 
 jobs:
   shopify-theme-check:
@@ -14,8 +9,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Theme Check and Liquid linting
         uses: shopify/theme-check-action@v1.2.2
-        # keeping the below commented out until this issue is resolved:
-        # https://github.com/Shopify/theme-check-action/issues/13
         with:
           # flags: ''
           token: ${{ github.token }}
