@@ -2,7 +2,8 @@ name: Theme Check
 
 on: 
   push:
-    tags-ignore: [ auto-commit ]
+    tags-ignore:
+      - auto-commit
 
 jobs:
   shopify-theme-check:
