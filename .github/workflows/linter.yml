@@ -2,7 +2,8 @@ name: Linter
 
 on: 
   workflow_run:
-    workflows: [ "Theme Check" ]
+    workflows:
+      - Theme Check
     types:
       - completed
 
