@@ -1,9 +1,8 @@
 name: Vite - Build
 
 on:
-  push:
   pull_request:
-    branches: [ main ]
+    branches: [ main, staging ]
   workflow_dispatch:
 
 jobs:
@@ -16,3 +15,10 @@ jobs:
         run: |
           npm i
           npm run build
+      - name: Git Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v4.14.1
+        with:
+          commit_message: 'Compiled theme files.'
+          file_pattern: assets/theme.js assets/theme.css
+          commit_user_name: GitHub Actions Bot
+
