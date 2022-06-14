@@ -2,8 +2,8 @@ name: Linter
 
 on: 
   workflow_run:
-    workflows: [ Theme Check ]
-    types: [ completed ]
+    workflows: [Theme Check]
+    types: [completed]
 
 jobs:
   linting:
