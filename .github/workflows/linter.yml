@@ -1,11 +1,11 @@
 name: Linter
-on:
-  push:
-    # branches: [ main ]
-  # pull_request:
-  #   branches: [ main ]
 
-  # workflow_dispatch:
+on: 
+  workflow_run:
+    workflows: [ Theme Check ]
+    types: [ completed ]
+
+
 
 jobs:
   linting:
@@ -16,7 +16,6 @@ jobs:
       - name: JS/CSS linting
         uses: github/super-linter/slim@v4.9.4
         env:
-          # VALIDATE_ALL_CODEBASE: false
           LINTER_RULES_PATH: /
           VALIDATE_CSS: true
           VALIDATE_JAVASCRIPT_ES: true

@@ -1,9 +1,12 @@
-name: Shopify - Theme Check
-on: [ push ]
+name: Theme Check
+
+on: 
+  push:
+    tags-ignore: [ auto-commit ]
 
 jobs:
   shopify-theme-check:
-    name: Theme Check
+    name: Shopify Theme Check
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2

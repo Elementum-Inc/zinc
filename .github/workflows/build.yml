@@ -1,9 +1,9 @@
-name: Vite - Build
+name: Build
 
 on:
-  pull_request:
-    branches: [ main, staging ]
-  workflow_dispatch:
+  workflow_run:
+    workflows: [ Linter ]
+    types: [ completed ]
 
 jobs:
   build:
@@ -18,7 +18,7 @@ jobs:
       - name: Git Auto Commit
         uses: stefanzweifel/git-auto-commit-action@v4.14.1
         with:
-          commit_message: 'Compiled theme files.'
           file_pattern: assets/theme.js assets/theme.css
+          tagging_message: 'auto-commit'
+          commit_message: 'Compiled theme files.'
           commit_user_name: GitHub Actions Bot
-
