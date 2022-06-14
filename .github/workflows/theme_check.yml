@@ -2,10 +2,9 @@ name: Theme Check
 
 on: 
   push:
-    branches:
-      - *
-    tags-ignore:
-      - auto-commit
+    paths-ignore:
+      - 'assets/theme.js'
+      - 'assets/theme.css'
 
 jobs:
   shopify-theme-check:
