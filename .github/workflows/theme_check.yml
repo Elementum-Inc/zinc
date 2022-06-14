@@ -1,0 +1,20 @@
+name: Theme Check
+
+on: 
+  push:
+    paths-ignore:
+      - 'assets/theme.js'
+      - 'assets/theme.css'
+
+jobs:
+  shopify-theme-check:
+    name: Shopify Theme Check
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Theme Check and Liquid linting
+        uses: shopify/theme-check-action@v1.2.2
+        with:
+          # flags: ''
+          token: ${{ github.token }}
+          base: main

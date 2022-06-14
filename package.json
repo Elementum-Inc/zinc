@@ -3,7 +3,8 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "build": "vite build"
+    "build": "vite build -m production",
+    "dev": "vite build -m development"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^2.3.3",
