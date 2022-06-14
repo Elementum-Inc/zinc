@@ -5,8 +5,6 @@ on:
     workflows: [ Theme Check ]
     types: [ completed ]
 
-
-
 jobs:
   linting:
     name: GH Super-Linter
