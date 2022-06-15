@@ -2,9 +2,9 @@ name: Theme Check
 
 on:
   push:
-    paths-ignore:
-      - 'assets/theme.js'
-      - 'assets/theme.css'
+    # paths-ignore:
+    #   - 'assets/theme.js'
+    #   - 'assets/theme.css'
 
 jobs:
   shopify-theme-check:
