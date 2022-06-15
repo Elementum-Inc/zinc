@@ -1,9 +1,11 @@
 name: Build
 
 on:
-  workflow_run:
-    workflows: [ Linter ]
-    types: [ completed ]
+  pull_request:
+    branches: [ main ]
+  # workflow_run:
+  #   workflows: [ Linter ]
+  #   types: [ completed ]
 
 jobs:
   build:

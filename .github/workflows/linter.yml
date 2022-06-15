@@ -1,9 +1,11 @@
 name: Linter
 
-on: 
-  workflow_run:
-    workflows: [ Theme Check ]
-    types: [ completed ]
+on:
+  pull_request:
+    branches: [ main ]
+  # workflow_run:
+  #   workflows: [ Theme Check ]
+  #   types: [ completed ]
 
 jobs:
   linting:
