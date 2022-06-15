@@ -1,6 +1,6 @@
 name: Theme Check
 
-on: 
+on:
   push:
     paths-ignore:
       - 'assets/theme.js'

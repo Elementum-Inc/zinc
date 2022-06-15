@@ -3,6 +3,10 @@ name: Linter
 on:
   pull_request:
     branches: [ main ]
+  push:
+    paths:
+      - 'assets/theme.js'
+      - 'assets/theme.css'
   # workflow_run:
   #   workflows: [ Theme Check ]
   #   types: [ completed ]
