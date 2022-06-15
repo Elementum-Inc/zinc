@@ -3,6 +3,9 @@ name: Build
 on:
   pull_request:
     branches: [ main ]
+    paths-ignore:
+      - 'assets/theme.js'
+      - 'assets/theme.css'
 
 jobs:
   build:
