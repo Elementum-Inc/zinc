@@ -1,10 +1,12 @@
 name: Theme Check
 
-on: 
+on:
   push:
-    paths-ignore:
-      - 'assets/theme.js'
-      - 'assets/theme.css'
+  check_run:
+    types: [ requested_action, rerequested ]
+    # paths-ignore:
+    #   - 'assets/theme.js'
+    #   - 'assets/theme.css'
 
 jobs:
   shopify-theme-check:

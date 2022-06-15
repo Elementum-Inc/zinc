@@ -1,13 +1,19 @@
 name: Build
 
 on:
-  workflow_run:
-    workflows: [ Linter ]
-    types: [ completed ]
+  pull_request:
+    branches: [ main ]
+  push:
+    paths:
+      - 'assets/theme.js'
+      - 'assets/theme.css'
+  # workflow_run:
+  #   workflows: [ Linter ]
+  #   types: [ completed ]
 
 jobs:
   build:
-    name: Vite
+    name: Vite Build
     runs-on: [ ubuntu-latest ]
     steps:
       - uses: actions/checkout@v3
