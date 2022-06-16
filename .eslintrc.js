@@ -18,5 +18,5 @@ module.exports = {
     'no-undef': 'off',
     'no-unused-vars': 'warn'
   },
-  ignorePatterns: ['assets/theme.js', 'cypress/*', '*.js']
+  ignorePatterns: ['assets/theme.js', 'cypress/*', '/*.js']
 };
