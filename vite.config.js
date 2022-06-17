@@ -20,6 +20,7 @@ export default defineConfig(({ command, mode }) => {
           outDir: 'assets',
           assetsDir: './',
           emptyOutDir: false,
+          minify: false,
           watch: {
             include: [
               './scripts/theme.js',
