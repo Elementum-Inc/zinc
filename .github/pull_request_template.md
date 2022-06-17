@@ -1,7 +1,6 @@
 ## Changes
 ### Summary:
 Include a short paragraph (2-3 sentences) explaining the changes in this PR on a top-level.
-
 ### Modified file(s):
 - file list
     - describe change in file (if applicable)
