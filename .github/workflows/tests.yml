@@ -2,13 +2,6 @@ name: Tests
 on:
   pull_request:
     branches: [ main ]
-  push:
-    paths:
-      - 'assets/theme.js'
-      - 'assets/theme.css'
-  # workflow_run:
-  #   workflows: [ Build ]
-  #   types: [ completed ]
 
 jobs:
   shopify-lighthouse-ci:

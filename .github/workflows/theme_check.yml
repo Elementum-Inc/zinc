@@ -2,8 +2,6 @@ name: Theme Check
 
 on:
   push:
-  check_run:
-    types: [ requested_action, rerequested ]
     # paths-ignore:
     #   - 'assets/theme.js'
     #   - 'assets/theme.css'
