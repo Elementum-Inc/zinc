@@ -6,7 +6,7 @@ module.exports = {
   },
   extends: ['eslint:recommended', 'plugin:vue/essential'],
   parserOptions: {
-    ecmaVersion: 'latest',
+    // ecmaVersion: 'latest',
     sourceType: 'module',
   },
   plugins: ['vue'],
