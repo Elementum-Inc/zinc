@@ -1,6 +1,7 @@
 ## Changes
 ### Summary:
 Include a short paragraph (2-3 sentences) explaining the changes in this PR on a top-level.
+
 ### Modified file(s):
 - file list
     - describe change in file (if applicable)
@@ -31,7 +32,7 @@ Include a short paragraph (2-3 sentences) explaining the changes in this PR on a
 - [ ]  When navigating with the keyboard, focusable elements must feature a visible focus state.
 - [ ]  Keyboard focus order must match the DOM order. Focus is expected to move top-bottom, left-right.
 - [ ]  Images must have the `alt` attribute.
-- [ ]  Themes must output `image.alt` for all product images.
+- [ ]  Themes must output `image.alt` for all product images. Learn more about [image.alt](https://shopify.dev/api/liquid/objects/image#image-alt).
 - [ ]  Form inputs must have labels with `for` attributes, including form labels in the theme settings.
 - [ ]  Text color contrast ratio must be 4.5:1 for main body content. For text larger than 18pt, and non-text elements such as borders and icons, the color contrast ratio must to be 3:1.
 - [ ]  Touch targets must have a minimum space of 44 by 44 CSS pixels in areas that are relative. The minimum space doesn't apply to inline body text.
