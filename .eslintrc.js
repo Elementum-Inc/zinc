@@ -1,12 +1,12 @@
 module.exports = {
   env: {
     browser: true,
-    es2021: true,
+    es6: true,
     node: true,
   },
   extends: ['eslint:recommended', 'plugin:vue/essential'],
+  parser: 'babel-eslint',
   parserOptions: {
-    ecmaVersion: 'latest',
     sourceType: 'module',
   },
   plugins: ['vue'],
@@ -18,5 +18,5 @@ module.exports = {
     'no-undef': 'off',
     'no-unused-vars': 'warn'
   },
-  ignorePatterns: ['assets/theme.js']
+  ignorePatterns: ['assets/theme.js', 'cypress/*', '/*.js']
 };

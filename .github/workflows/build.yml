@@ -1,0 +1,29 @@
+name: Build
+
+on:
+  push:
+    paths-ignore:
+      - 'assets/theme.js'
+      - 'assets/theme.css'
+  # pull_request:
+  #   branches: [ main ]
+
+jobs:
+  build:
+    name: Vite Build
+    runs-on: [ ubuntu-latest ]
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          token: ${{ secrets.AUTOCOMMIT_PAT }}
+      - name: Build
+        run: |
+          npm i
+          npm run build
+      - name: Git Auto Commit
+        uses: stefanzweifel/git-auto-commit-action@v4.14.1
+        with:
+          file_pattern: assets/theme.js assets/theme.css
+          tagging_message: 'auto-commit'
+          commit_message: 'Compiled theme files.'
+          commit_user_name: GitHub Actions Bot
