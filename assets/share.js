@@ -9,7 +9,7 @@ if (!customElements.get('share-button')) {
         closeButton: this.querySelector('.share-button__close'),
         successMessage: this.querySelector('[id^="ShareMessage"]'),
         urlInput: this.querySelector('input')
-      };
+      }
       this.urlToShare = this.elements.urlInput ? this.elements.urlInput.value : document.location.href;
 
       if (navigator.share) {

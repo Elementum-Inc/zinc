@@ -91,9 +91,9 @@ class CartItems extends HTMLElement {
         if (lineItem && lineItem.querySelector(`[name="${name}"]`)) {
           cartDrawerWrapper ? trapFocus(cartDrawerWrapper, lineItem.querySelector(`[name="${name}"]`)) : lineItem.querySelector(`[name="${name}"]`).focus();
         } else if (parsedState.item_count === 0 && cartDrawerWrapper) {
-          trapFocus(cartDrawerWrapper.querySelector('.drawer__inner-empty'), cartDrawerWrapper.querySelector('a'));
+          trapFocus(cartDrawerWrapper.querySelector('.drawer__inner-empty'), cartDrawerWrapper.querySelector('a'))
         } else if (document.querySelector('.cart-item') && cartDrawerWrapper) {
-          trapFocus(cartDrawerWrapper, document.querySelector('.cart-item__name'));
+          trapFocus(cartDrawerWrapper, document.querySelector('.cart-item__name'))
         }
         this.disableLoading();
       }).catch(() => {
@@ -163,7 +163,7 @@ if (!customElements.get('cart-note')) {
       this.addEventListener('change', debounce((event) => {
         const body = JSON.stringify({ note: event.target.value });
         fetch(`${routes.cart_update_url}`, {...fetchConfig(), ...{ body }});
-      }, 300));
+      }, 300))
     }
   });
-}
+};

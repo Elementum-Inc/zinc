@@ -69,15 +69,15 @@ class CustomerAddresses {
 
   _handleAddEditButtonClick = ({ currentTarget }) => {
     this._toggleExpanded(currentTarget);
-  };
+  }
 
   _handleCancelButtonClick = ({ currentTarget }) => {
     this._toggleExpanded(
       currentTarget
         .closest(selectors.addressContainer)
         .querySelector(`[${attributes.expanded}]`)
-    );
-  };
+    )
+  }
 
   _handleDeleteButtonClick = ({ currentTarget }) => {
     // eslint-disable-next-line no-alert
@@ -86,5 +86,5 @@ class CustomerAddresses {
         parameters: { _method: 'delete' },
       });
     }
-  };
+  }
 }

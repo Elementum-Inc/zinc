@@ -56,7 +56,7 @@ class PredictiveSearch extends HTMLElement {
   onFocusOut() {
     setTimeout(() => {
       if (!this.contains(document.activeElement)) this.close();
-    });
+    })
   }
 
   onKeyup(event) {
@@ -65,7 +65,7 @@ class PredictiveSearch extends HTMLElement {
 
     switch (event.code) {
       case 'ArrowUp':
-        this.switchOption('up');
+        this.switchOption('up')
         break;
       case 'ArrowDown':
         this.switchOption('down');
@@ -204,7 +204,7 @@ class PredictiveSearch extends HTMLElement {
     this.input.setAttribute('aria-activedescendant', '');
     this.removeAttribute('open');
     this.input.setAttribute('aria-expanded', false);
-    this.resultsMaxHeight = false;
+    this.resultsMaxHeight = false
     this.predictiveSearchResults.removeAttribute('style');
 
     this.isOpen = false;

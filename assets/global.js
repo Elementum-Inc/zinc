@@ -78,7 +78,7 @@ try {
 }
 
 function focusVisiblePolyfill() {
-  const navKeys = ['ARROWUP', 'ARROWDOWN', 'ARROWLEFT', 'ARROWRIGHT', 'TAB', 'ENTER', 'SPACE', 'ESCAPE', 'HOME', 'END', 'PAGEUP', 'PAGEDOWN'];
+  const navKeys = ['ARROWUP', 'ARROWDOWN', 'ARROWLEFT', 'ARROWRIGHT', 'TAB', 'ENTER', 'SPACE', 'ESCAPE', 'HOME', 'END', 'PAGEUP', 'PAGEDOWN']
   let currentFocusedElement = null;
   let mouseClick = null;
 
@@ -140,7 +140,7 @@ class QuantityInput extends HTMLElement {
   constructor() {
     super();
     this.input = this.querySelector('input');
-    this.changeEvent = new Event('change', { bubbles: true });
+    this.changeEvent = new Event('change', { bubbles: true })
 
     this.querySelectorAll('button').forEach(
       (button) => button.addEventListener('click', this.onButtonClick.bind(this))
@@ -184,7 +184,7 @@ if ((typeof window.Shopify) == 'undefined') {
 Shopify.bind = function(fn, scope) {
   return function() {
     return fn.apply(scope, arguments);
-  };
+  }
 };
 
 Shopify.setSelectorByValue = function(selector, value) {
@@ -257,10 +257,10 @@ Shopify.CountryProvinceSelector.prototype = {
       this.provinceContainer.style.display = 'none';
     } else {
       for (var i = 0; i < provinces.length; i++) {
-        var newOpt = document.createElement('option');
-        newOpt.value = provinces[i][0];
-        newOpt.innerHTML = provinces[i][1];
-        this.provinceEl.appendChild(newOpt);
+        var opt = document.createElement('option');
+        opt.value = provinces[i][0];
+        opt.innerHTML = provinces[i][1];
+        this.provinceEl.appendChild(opt);
       }
 
       this.provinceContainer.style.display = "";
@@ -398,7 +398,7 @@ class MenuDrawer extends HTMLElement {
           trapFocus(detailsElement.closest('details[open]'), detailsElement.querySelector('summary'));
         }
       }
-    };
+    }
 
     window.requestAnimationFrame(handleAnimation);
   }
@@ -837,7 +837,7 @@ class VariantSelects extends HTMLElement {
     fetch(`${this.dataset.url}?variant=${this.currentVariant.id}&section_id=${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`)
       .then((response) => response.text())
       .then((responseText) => {
-        const html = new DOMParser().parseFromString(responseText, 'text/html');
+        const html = new DOMParser().parseFromString(responseText, 'text/html')
         const destination = document.getElementById(`price-${this.dataset.section}`);
         const source = html.getElementById(`price-${this.dataset.originalSection ? this.dataset.originalSection : this.dataset.section}`);
         if (source && destination) destination.innerHTML = source.innerHTML;

@@ -19,7 +19,7 @@ class FacetFiltersForm extends HTMLElement {
       const searchParams = event.state ? event.state.searchParams : FacetFiltersForm.searchParamsInitial;
       if (searchParams === FacetFiltersForm.searchParamsPrev) return;
       FacetFiltersForm.renderPage(searchParams, null, false);
-    };
+    }
     window.addEventListener('popstate', onHistoryChange);
   }
 
@@ -78,7 +78,7 @@ class FacetFiltersForm extends HTMLElement {
   }
 
   static renderProductCount(html) {
-    const count = new DOMParser().parseFromString(html, 'text/html').getElementById('ProductCount').innerHTML;
+    const count = new DOMParser().parseFromString(html, 'text/html').getElementById('ProductCount').innerHTML
     const container = document.getElementById('ProductCount');
     const containerDesktop = document.getElementById('ProductCountDesktop');
     container.innerHTML = count;
@@ -97,7 +97,7 @@ class FacetFiltersForm extends HTMLElement {
     const matchesIndex = (element) => {
       const jsFilter = event ? event.target.closest('.js-filter') : undefined;
       return jsFilter ? element.dataset.index === jsFilter.dataset.index : false;
-    };
+    }
     const facetsToRender = Array.from(facetDetailsElements).filter(element => !matchesIndex(element));
     const countsToRender = Array.from(facetDetailsElements).find(matchesIndex);
 
@@ -118,7 +118,7 @@ class FacetFiltersForm extends HTMLElement {
       const activeFacetsElement = html.querySelector(selector);
       if (!activeFacetsElement) return;
       document.querySelector(selector).innerHTML = activeFacetsElement.innerHTML;
-    });
+    })
 
     FacetFiltersForm.toggleActiveFacets(false);
   }
@@ -159,7 +159,7 @@ class FacetFiltersForm extends HTMLElement {
       {
         section: document.getElementById('product-grid').dataset.id,
       }
-    ];
+    ]
   }
 
   createSearchParams(form) {
@@ -175,8 +175,8 @@ class FacetFiltersForm extends HTMLElement {
     event.preventDefault();
     const sortFilterForms = document.querySelectorAll('facet-filters-form form');
     if (event.srcElement.className == 'mobile-facets__checkbox') {
-      const searchParams = this.createSearchParams(event.target.closest('form'));
-      this.onSubmitForm(searchParams, event);
+      const searchParams = this.createSearchParams(event.target.closest('form'))
+      this.onSubmitForm(searchParams, event)
     } else {
       const forms = [];
       const isMobile = event.target.closest('form').id === 'FacetFiltersFormMobile';
@@ -190,7 +190,7 @@ class FacetFiltersForm extends HTMLElement {
           forms.push(this.createSearchParams(form));
         }
       });
-      this.onSubmitForm(forms.join('&'), event);
+      this.onSubmitForm(forms.join('&'), event)
     }
   }
 

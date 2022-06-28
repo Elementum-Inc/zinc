@@ -6,7 +6,7 @@ if (!customElements.get('media-gallery')) {
         liveRegion: this.querySelector('[id^="GalleryStatus"]'),
         viewer: this.querySelector('[id^="GalleryViewer"]'),
         thumbnails: this.querySelector('[id^="GalleryThumbnails"]')
-      };
+      }
       this.mql = window.matchMedia('(min-width: 750px)');
       if (!this.elements.thumbnails) return;
 
@@ -78,7 +78,7 @@ if (!customElements.get('media-gallery')) {
           this.elements.liveRegion.setAttribute('aria-hidden', true);
         }, 2000);
       };
-      image.src = image.src; // eslint-disable-line no-self-assign
+      image.src = image.src;
     }
 
     playActiveMedia(activeItem) {
