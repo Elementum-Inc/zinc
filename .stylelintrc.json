@@ -7,7 +7,6 @@
     ],
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always",
-    "at-rule-no-unknown": true,
     "at-rule-no-vendor-prefix": true,
     "at-rule-semicolon-newline-after": "always",
     "at-rule-semicolon-space-before": "never",
@@ -97,7 +96,10 @@
     "property-no-vendor-prefix": true,
     "rule-empty-line-before": [
       "always",
-      { "except": "inside-block" }
+      {
+        "except": "inside-block",
+        "ignore": "after-comment"
+      }
     ],
     "selector-attribute-brackets-space-inside": "never",
     "selector-attribute-operator-space-after": "always",

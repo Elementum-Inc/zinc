@@ -4,14 +4,3 @@
   If you'd like to layer customizations on top of the theme, please see the merchant.css file,
   found in the assets folder.
 */
-
-/* example - remove once some real stuff is here */
-
-#app {
-  @apply max-w-xl my-4 mx-auto p-8 text-white;
-  background: url('./starry-bg_animated.gif');
-  & > h1 {
-    @apply text-white text-xl;
-  }
-}
-/* end example */
