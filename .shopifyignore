@@ -3,6 +3,9 @@ package-lock.json
 node_modules/
 cypress.json
 cypress/
+.stylelintrc.json
+vite.config.js
+windi.config.js
 
 scripts/
 vue/

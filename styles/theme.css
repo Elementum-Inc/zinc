@@ -4,3 +4,12 @@
   If you'd like to layer customizations on top of the theme, please see the merchant.css file,
   found in the assets folder.
 */
+
+/*
+  Hello this is for me (Dani) because LastPass is dumb and doesn't have a way
+  to disable their extension by url. 🙃 So this is here until further notice
+  because I cannot deal with their extension pushing the page length down.
+*/
+.newsletter-form {
+  & [data-lastpass] { display: none; }
+}
