@@ -5,8 +5,9 @@ module.exports = {
     node: true,
   },
   extends: ['eslint:recommended', 'plugin:vue/essential'],
-  parser: 'babel-eslint',
+  parser: '@babel/eslint-parser',
   parserOptions: {
+    requireConfigFile: false,
     sourceType: 'module',
   },
   plugins: ['vue'],
@@ -18,5 +19,5 @@ module.exports = {
     'no-undef': 'off',
     'no-unused-vars': 'warn'
   },
-  ignorePatterns: ['assets/theme.js', 'cypress/*', '/*.js']
+  ignorePatterns: ['assets/*', 'cypress/*', '/*.js']
 };
