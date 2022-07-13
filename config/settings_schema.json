@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Dawn",
-    "theme_version": "6.0.2",
-    "theme_author": "Shopify",
-    "theme_documentation_url": "https:\/\/help.shopify.com\/manual\/online-store\/themes",
-    "theme_support_url": "https:\/\/support.shopify.com\/"
+    "theme_name": "???",
+    "theme_version": "1.0.0-alpha",
+    "theme_author": "Elementum Tech",
+    "theme_documentation_url": "https://www.shopify.com",
+    "theme_support_url": "https://www.shopify.com"
   },
   {
     "name": "t:settings_schema.colors.name",
@@ -96,19 +96,18 @@
       {
         "type": "font_picker",
         "id": "type_header_font",
-        "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_header_font.label",
-        "info": "t:settings_schema.typography.settings.type_header_font.info"
+        "default": "playfair_display_n4",
+        "label": "t:settings_schema.typography.settings.type_header_font.label"
       },
       {
         "type": "range",
-        "id": "heading_scale",
-        "min": 100,
-        "max": 150,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.typography.settings.heading_scale.label",
-        "default": 100
+        "id": "heading_size",
+        "min": 36,
+        "max": 72,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.typography.settings.heading_size.label",
+        "default": 48
       },
       {
         "type": "header",
@@ -117,19 +116,18 @@
       {
         "type": "font_picker",
         "id": "type_body_font",
-        "default": "assistant_n4",
-        "label": "t:settings_schema.typography.settings.type_body_font.label",
-        "info": "t:settings_schema.typography.settings.type_body_font.info"
+        "default": "avenir_next_n4",
+        "label": "t:settings_schema.typography.settings.type_body_font.label"
       },
       {
         "type": "range",
-        "id": "body_scale",
-        "min": 100,
-        "max": 130,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.typography.settings.body_scale.label",
-        "default": 100
+        "id": "body_size",
+        "min": 8,
+        "max": 18,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.typography.settings.body_size.label",
+        "default": 16
       }
     ]
   },

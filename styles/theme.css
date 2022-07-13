@@ -5,13 +5,11 @@
   found in the assets folder.
 */
 
-/* example - remove once some real stuff is here */
-
-#app {
-  @apply max-w-xl my-4 mx-auto p-8 text-white;
-  background: url('./starry-bg_animated.gif');
-  & > h1 {
-    @apply text-white text-xl;
-  }
+/*
+  Hello this is for me (Dani) because LastPass is dumb and doesn't have a way
+  to disable their extension by url. 🙃 So this is here until further notice
+  because I cannot deal with their extension pushing the page length down.
+*/
+.newsletter-form {
+  & [data-lastpass] { display: none; }
 }
-/* end example */
