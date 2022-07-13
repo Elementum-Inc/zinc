@@ -4,7 +4,13 @@
   "version": "0.0.0",
   "scripts": {
     "build": "vite build -m production",
-    "dev": "vite build -m development"
+    "dev": "vite build -m development",
+    "lint": "npx stylelint styles && npx eslint ./ && shopify theme check",
+    "lint:styles": "npx stylelint styles",
+    "lint:scripts": "npx eslint ./",
+    "lint:liquid": "shopify theme check",
+    "tests": "npx cypress run",
+    "tests:open": "npx cypress open"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.18.2",
