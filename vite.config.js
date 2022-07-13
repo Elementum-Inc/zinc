@@ -27,6 +27,8 @@ export default defineConfig(({ command, mode }) => {
               './scripts/**/*.js',
               './styles/theme.css',
               './styles/**/*.css',
+              './**/*.liquid',
+              './vue/**/*',
             ]
           },
         },

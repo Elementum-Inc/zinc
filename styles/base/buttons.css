@@ -1,0 +1,11 @@
+/*
+
+  /_      -/--/- _,_ ,__,   ,
+_/_)_(_/__/__/__(_/_/ / (__/_)_
+
+*/
+
+.sgButton {
+  @apply border-3 border-teal text-teal rounded-2xl p-4 font-medium;
+  box-shadow: 6px 6px #074169;
+}
