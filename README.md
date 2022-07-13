@@ -1,3 +1,13 @@
+# Table of Contents
+
+- [Welcome](#welcome)
+  - [Project Summary & Goals](#project-summary--goals)
+  - [Tech Stack](#tech-stack)
+    - [Why WindiCSS?](#why-windicss)
+- [Getting Started](#getting-started)
+  - [Pre-Reqs](#pre-reqs)
+  - [Installation](#installation)
+  - [Scripts](#scripts)
 # Welcome!
 
 Welcome to Elementum’s theme repository! We’re glad you’re here. 😊 Before you get started, please review the rest of this readme so you’re acquainted with our process.
