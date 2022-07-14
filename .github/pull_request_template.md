@@ -3,11 +3,9 @@
 Include a short paragraph (2-3 sentences) explaining the changes in this PR on a top-level.
 
 ### Modified file(s):
-- file list
-    - describe change in file (if applicable)
+- file name: describe change in file (if applicable)
 ### New file(s):
-- file list
-    - describe change in file (if applicable)
+- file name: describe change in file (if applicable)
 
 ## Theme Requirements
 *⚠️ The below comes directly from the [Shopify theme store requirements](https://shopify.dev/themes/store/requirements). All applicable items must be considered during review in order to allow our theme to be uploaded to the store.*
