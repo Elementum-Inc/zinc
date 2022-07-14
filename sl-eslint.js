@@ -1,3 +1,5 @@
+// (hopefully) temporary SuperLinter specific config file for ESLint
+// to handle some differences between recent releases over babel parsing
 module.exports = {
   env: {
     browser: true,
@@ -5,7 +7,7 @@ module.exports = {
     node: true,
   },
   extends: ['eslint:recommended', 'plugin:vue/essential'],
-  parser: '@babel/eslint-parser',
+  parser: 'babel-eslint',
   parserOptions: {
     requireConfigFile: false,
     sourceType: 'module',
