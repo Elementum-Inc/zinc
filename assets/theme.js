@@ -1,3 +1,7 @@
+var windi = "";
+var typography = "";
+var buttons = "";
+var theme = "";
 const p$1 = function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
@@ -40,10 +44,6 @@ const p$1 = function polyfill() {
   }
 };
 p$1();
-var windi = "";
-var typography = "";
-var buttons = "";
-var theme = "";
 function makeMap(str, expectsLowerCase) {
   const map = /* @__PURE__ */ Object.create(null);
   const list = str.split(",");
