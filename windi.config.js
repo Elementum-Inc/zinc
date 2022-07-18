@@ -19,8 +19,13 @@ export default {
         800: '#616161',
         900: '#424242',
       },
-      teal: '#074169',
-      mustard: '#d69940',
+      primary: 'rgb(var(--color-primary))',
+      secondary: 'rgb(var(--color-secondary))',
+      accent1: 'rgb(var(--color-accent-1))',
+      accent2: 'rgb(var(--color-accent-2))',
+      bg1: 'rgb(var(--color-background-1))',
+      bg2: 'rgb(var(--color-background-2))',
+      text: 'rgb(var(--color-text))'
     },
     fontFamily: {
       sans: ['var(--font-body-family)'],
@@ -42,6 +47,20 @@ export default {
       '7xl': '3.5rem', // 56px
       '8xl': '4rem', // 64px 
       '9xl': '4.5rem', // 72px 
+    },
+    letterSpacing: {
+      100: '.01em',
+      200: '.02em',
+      300: '.03em',
+      400: '.04em',
+      500: '.05em',
+    },
+    padding: {
+      'xs': '.375rem', // 6px,
+      'sm': '.5rem', // 8px,
+      'md': '1rem', // 16px
+      'lg': '1.2rem', // 20px
+      'xl': '1.875rem' // 30px
     },
     extend: {
       lineHeight: {
