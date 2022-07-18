@@ -491,7 +491,11 @@
     {%- endif -%}
 
     <div class="header__icons">
-      {{ '✨ Style Guide 🧚' | link_to: '/pages/style-guide', class: 'sgButton' }}
+      {% comment %} TODO: remove link to style guide before attempting publication {% endcomment %}
+      <a href="/pages/style-guide" class="relative bg-primary border border-secondary btn-shadow-reverse text-secondary text-lg rounded-[.625rem] py-xs px-8 mb-4 mr-2">
+        ✨ Style Guide 🧚
+        <span class="btn-shadow bg-secondary border border-secondary"></span>
+      </a>
 
       <details-modal class="header__search">
         <details>
