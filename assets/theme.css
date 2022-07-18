@@ -207,23 +207,20 @@ ul {
   border-top-width: calc(1px * calc(1 - var(--tw-divide-y-reverse)));
   border-bottom-width: calc(1px * var(--tw-divide-y-reverse));
 }
+.bg-primary {
+  background-color: rgb(var(--color-primary));
+}
 .bg-secondary {
   background-color: rgb(var(--color-secondary));
 }
-.bg-primary {
-  background-color: rgb(var(--color-primary));
+.border-secondary {
+  border-color: rgb(var(--color-secondary));
 }
 .border-accent2 {
   border-color: rgb(var(--color-accent-2));
 }
 .border-primary {
   border-color: rgb(var(--color-primary));
-}
-.border-secondary {
-  border-color: rgb(var(--color-secondary));
-}
-.border-accent1 {
-  border-color: rgb(var(--color-accent-1));
 }
 .rounded-\[\.625rem\] {
   border-radius: .625rem;
@@ -250,14 +247,11 @@ ul {
 .hidden {
   display: none;
 }
-.h-full {
-  height: 100%;
+.text-lg {
+  font-size: 1.125rem;
 }
 .text-2xl {
   font-size: 1.5rem;
-}
-.text-lg {
-  font-size: 1.125rem;
 }
 .text-sm {
   font-size: .875rem;
@@ -268,11 +262,11 @@ ul {
 .mb-4 {
   margin-bottom: 1rem;
 }
-.mb-2 {
-  margin-bottom: 0.5rem;
-}
 .mr-2 {
   margin-right: 0.5rem;
+}
+.mb-2 {
+  margin-bottom: 0.5rem;
 }
 .mt-4 {
   margin-top: 1rem;
@@ -291,18 +285,6 @@ ul {
   padding-left: 2rem;
   padding-right: 2rem;
 }
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-.py-xl {
-  padding-top: 1.875rem;
-  padding-bottom: 1.875rem;
-}
-.py-8 {
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-}
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
@@ -315,23 +297,17 @@ ul {
 .static {
   position: static;
 }
-.absolute {
-  position: absolute;
-}
 .relative {
   position: relative;
-}
-.top-\[6px\] {
-  top: 6px;
-}
-.left-\[6px\] {
-  left: 6px;
 }
 .text\/html {
   color: rgb(var(--color-text));
 }
 .text {
   color: rgb(var(--color-text));
+}
+.text-secondary {
+  color: rgb(var(--color-secondary));
 }
 .text\/css {
   color: rgb(var(--color-text));
@@ -341,9 +317,6 @@ ul {
 }
 .text-primary {
   color: rgb(var(--color-primary));
-}
-.text-secondary {
-  color: rgb(var(--color-secondary));
 }
 .italic {
   font-style: italic;
@@ -372,12 +345,6 @@ ul {
 }
 .tracking-400 {
   letter-spacing: .04em;
-}
-.w-full {
-  width: 100%;
-}
-.-z-1 {
-  z-index: -1;
 }
 .isolate {
   isolation: isolate;
