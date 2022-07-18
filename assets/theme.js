@@ -1,5 +1,6 @@
 var windi = "";
 var typography = "";
+var icons = "";
 var buttons = "";
 var theme = "";
 const p$1 = function polyfill() {
