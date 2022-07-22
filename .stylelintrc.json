@@ -3,7 +3,7 @@
     "alpha-value-notation": "number",
     "at-rule-empty-line-before": [
       "always",
-      { "except": ["inside-block"] }
+      { "except": ["inside-block", "after-same-name"] }
     ],
     "at-rule-name-case": "lower",
     "at-rule-name-space-after": "always",
@@ -66,7 +66,7 @@
     "length-zero-no-unit": true,
     "linebreaks": "unix",
     "max-empty-lines": 2,
-    "max-nesting-depth": 3,
+    "max-nesting-depth": 4,
     "media-feature-colon-space-after": "always",
     "media-feature-colon-space-before": "never",
     "media-feature-name-case": "lower",
@@ -95,9 +95,9 @@
     "property-no-unknown": true,
     "property-no-vendor-prefix": true,
     "rule-empty-line-before": [
-      "always",
+      "always-multi-line",
       {
-        "except": "inside-block",
+        "except": "first-nested",
         "ignore": "after-comment"
       }
     ],
@@ -108,7 +108,7 @@
     "selector-combinator-space-after": "always",
     "selector-combinator-space-before": "always",
     "selector-descendant-combinator-no-non-space": true,
-    "selector-list-comma-space-after": "always",
+    "selector-list-comma-space-after": "always-single-line",
     "selector-list-comma-space-before": "never",
     "selector-max-empty-lines": 0,
     "selector-no-vendor-prefix": true,

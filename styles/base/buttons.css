@@ -6,6 +6,6 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
 */
 
 .btn-shadow {
-  @apply absolute top-[6px] left-[6px] -z-1 h-full w-full;
+  @apply absolute top-[6px] left-[6px] -z-10 h-full w-full;
   border-radius: inherit;
 }

@@ -96,6 +96,30 @@
         "unit": "px",
         "label": "t:settings_schema.typography.settings.body_size.label",
         "default": 16
+      },
+      {
+        "type": "header",
+        "content": "Icons"
+      },
+      {
+        "type": "range",
+        "id": "icon_size",
+        "min": 16,
+        "max": 32,
+        "step": 4,
+        "unit": "px",
+        "label": "Size",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "icon_stroke_width",
+        "min": 0.5,
+        "max": 2,
+        "step": 0.5,
+        "unit": "px",
+        "label": "Stroke Width",
+        "default": 1
       }
     ]
   },
@@ -1059,6 +1083,22 @@
         "content": "t:settings_schema.search_input.settings.header.content"
       },
       {
+        "type": "select",
+        "id": "search_open_position",
+        "label": "Position on open",
+        "options": [
+          {
+            "value": "over",
+            "label": "Over menu"
+          },
+          {
+            "value": "below",
+            "label": "Below menu"
+          }
+        ],
+        "default": "below"
+      },
+      {
         "type": "checkbox",
         "id": "predictive_search_enabled",
         "default": true,
@@ -1066,17 +1106,21 @@
       },
       {
         "type": "checkbox",
-        "id": "predictive_search_show_vendor",
-        "default": false,
-        "label": "t:settings_schema.search_input.settings.predictive_search_show_vendor.label",
-        "info": "t:settings_schema.search_input.settings.predictive_search_show_vendor.info"
+        "id": "predictive_search_show_number",
+        "label": "Show # of results",
+        "default": true
       },
       {
         "type": "checkbox",
-        "id": "predictive_search_show_price",
-        "default": false,
-        "label": "t:settings_schema.search_input.settings.predictive_search_show_price.label",
-        "info": "t:settings_schema.search_input.settings.predictive_search_show_price.info"
+        "id": "predictive_search_show_pages",
+        "label": "Show pages in results",
+        "default": true
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_search_show_articles",
+        "label": "Show article in results",
+        "default": true
       }
     ]
   },

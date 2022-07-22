@@ -868,37 +868,63 @@
           "label": "Custom logo width"
         },
         "logo_position": {
-          "label": "Desktop logo position",
+          "label": "Logo position",
           "options__1": {
-            "label": "Middle left"
+            "label": "Left"
           },
           "options__2": {
-            "label": "Top left"
+            "label": "Right"
           },
           "options__3": {
+            "label": "Split menu"
+          },
+          "options__4": {
+            "label": "Top left"
+          },
+          "options__5": {
+            "label": "Top right"
+          },
+          "options__6": {
             "label": "Top center"
           },
-          "info": "Position is automatically optimized for mobile."
+          "info": "Mobile alignment will be automatically optimized and determined by selection."
         },
         "menu": {
-          "label": "Menu"
+          "label": "Top Menu"
         },
-        "menu_type_desktop": {
-          "label": "Desktop menu type",
-          "info": "Menu type is automatically optimized for mobile.",
-          "options__1": {
-            "label": "Dropdown"
-          },
-          "options__2": {
-            "label": "Mega menu"
-          }
-        },
-        "show_line_separator": {
-          "label": "Show separator line"
+        "collapse_menu_desktop": {
+          "label": "Collapse on desktop",
+          "info": "Top menu will be pushed into Mega menu on desktop."
         },
         "enable_sticky_header": {
           "label": "Enable sticky header",
           "info": "Header shows on the screen as customers scroll up."
+        },
+        "user_menu_type": {
+          "label": "User menu type",
+          "info": "User menu type is automatically optimized for mobile.",
+          "options__1": {
+            "label": "Minimal (icons)"
+          },
+          "options__2": {
+            "label": "Compact (text)"
+          },
+          "options__3": {
+            "label": "Expanded (icons with text)"
+          }
+        },
+        "menu_icon_position": {
+          "label": "Menu icon position",
+          "info": "Positions the icons in the user menu.",
+          "options__1": {
+            "label": "Left"
+          },
+          "options__2": {
+            "label": "Right"
+          },
+          "options__3": {
+            "label": "Top"
+          }
         },
         "margin_bottom": {
           "label": "Bottom margin"
