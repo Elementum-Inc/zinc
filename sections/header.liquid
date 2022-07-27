@@ -1,18 +1,3 @@
-{% liquid
-  assign color_scheme_array = 'background title text icon-stroke icon-fill cart-indicator'
-
-  case section.settings.color_scheme
-    when 'primary'
-      assign color_scheme_array = 'bg-primary text-secondary text-secondary stroke-secondary fill-none bg-secondary' | split: ' '
-    when 'secondary'
-      assign color_scheme_array = 'bg-secondary text-primary text-primary stroke-primary fill-none bg-primary' | split: ' '
-    when 'accent1'
-      assign color_scheme_array = 'bg-primary text-accent1 text-secondary stroke-secondary fill-accent1 bg-accent1' | split: ' '
-    when 'accent2'
-      assign color_scheme_array = 'bg-primary text-accent2 text-secondary stroke-secondary fill-accent2 bg-accent2' | split: ' '
-  endcase
-%}
-
 {% style %}
 .header {
   padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -20,7 +5,7 @@
 }
 {% endstyle %}
 
-<header class="header {{ color_scheme_array[0] }} {{ color_scheme_array[2] }} logo-{{ section.settings.logo_position }}">
+<header class="header {{ section.settings.color_scheme }} logo-{{ section.settings.logo_position }}">
   {% comment %} logo {% endcomment %}
   <h1 class="header__logo order-none">
     <a href="{{ routes.root_url }}">
@@ -35,15 +20,16 @@
           alt: logo_alt
         }}
       {%- else -%}
-        <span class="logo__fallback {{ color_scheme_array[1] }}">{{ shop.name }}</span>
+        <span class="logo__fallback">{{ shop.name }}</span>
       {%- endif -%}
     </a>
   </h1>
   {% comment %} menu {% endcomment %}
   {% if section.settings.menu %}
     <div class="header__menu order-1">
-      {% if section.settings.collapse_menu_desktop %}
-      {% endif %}
+      <div class="header__menu-trigger{% unless section.settings.collapse_menu_desktop %} lg:hidden{% endunless %}">
+        {% render 'icon-hamburger' %}
+      </div>
       {% unless section.settings.collapse_menu_desktop %}
         <nav class="header__menu-top">
           {% for link in section.settings.menu.links %}
@@ -56,15 +42,15 @@
   {% comment %} user menu {% endcomment %}
   <div class="header__user-menu order-2 {{ section.settings.user_menu_type }} icons-{{ section.settings.menu_icon_position }}">
     {% comment %} search {% endcomment %}
-    <div id="searchMenu"></div>
+    <div id="searchMenuTop"></div>
     {% comment %} user {% endcomment %}
-    <a class="header__icon-link" href="{{ routes.account_url }}">
-      {% render 'icon-user', stroke: color_scheme_array[3] , fill: color_scheme_array[4] %}
+    <a class="header__icon-link account" href="{{ routes.account_url }}">
+      {% render 'icon-user' %}
      <span class="label">Account</span>
     </a>
     {% comment %} cart {% endcomment %}
-    <a class="header__icon-link" href="{{ routes.cart_url }}">
-     {% render 'icon-shopping-bag', stroke: color_scheme_array[3] , fill: color_scheme_array[4] %}
+    <a class="header__icon-link cart" href="{{ routes.cart_url }}">
+     {% render 'icon-shopping-bag' %}
      <span class="label">Cart</span>
     </a>
   </div>

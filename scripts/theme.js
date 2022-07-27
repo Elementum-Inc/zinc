@@ -25,4 +25,4 @@ const searchProps = {
   iconStrokeWidth: window.themeSettings.icon_stroke_width,
 };
 
-createApp(SearchMenu, searchProps).mount('#searchMenu');
+createApp(SearchMenu, searchProps).mount('#searchMenuTop');

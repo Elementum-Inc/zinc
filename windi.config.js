@@ -64,6 +64,14 @@ export default {
       'lg': '1.2rem', // 20px
       'xl': '1.875rem' // 30px
     },
+    screens: {
+      'xs': '480px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px'
+    },
     extend: {
       lineHeight: {
         '110': 1.1,
@@ -74,7 +82,7 @@ export default {
         '170': 1.7,
         '180': 1.8,
         '190': 1.9,
-      }
+      },
     },
   },
   plugins: [],

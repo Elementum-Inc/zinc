@@ -1,3 +1,4 @@
 .icon {
-  @apply inline;
+  @apply inline align-baseline;
+  fill-opacity: .25;
 }
