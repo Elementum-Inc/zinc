@@ -499,6 +499,28 @@ function normalizeClass(value) {
   }
   return res.trim();
 }
+const toDisplayString = (val) => {
+  return isString(val) ? val : val == null ? "" : isArray(val) || isObject(val) && (val.toString === objectToString || !isFunction(val.toString)) ? JSON.stringify(val, replacer, 2) : String(val);
+};
+const replacer = (_key, val) => {
+  if (val && val.__v_isRef) {
+    return replacer(_key, val.value);
+  } else if (isMap(val)) {
+    return {
+      [`Map(${val.size})`]: [...val.entries()].reduce((entries, [key, val2]) => {
+        entries[`${key} =>`] = val2;
+        return entries;
+      }, {})
+    };
+  } else if (isSet(val)) {
+    return {
+      [`Set(${val.size})`]: [...val.values()]
+    };
+  } else if (isObject(val) && !isArray(val) && !isPlainObject(val)) {
+    return String(val);
+  }
+  return val;
+};
 const EMPTY_OBJ = {};
 const EMPTY_ARR = [];
 const NOOP = () => {
@@ -2397,6 +2419,35 @@ const onRenderTracked = createHook("rtc");
 function onErrorCaptured(hook, target = currentInstance) {
   injectHook("ec", hook, target);
 }
+function withDirectives(vnode, directives) {
+  const internalInstance = currentRenderingInstance;
+  if (internalInstance === null) {
+    return vnode;
+  }
+  const instance = getExposeProxy(internalInstance) || internalInstance.proxy;
+  const bindings = vnode.dirs || (vnode.dirs = []);
+  for (let i = 0; i < directives.length; i++) {
+    let [dir, value, arg, modifiers = EMPTY_OBJ] = directives[i];
+    if (isFunction(dir)) {
+      dir = {
+        mounted: dir,
+        updated: dir
+      };
+    }
+    if (dir.deep) {
+      traverse(value);
+    }
+    bindings.push({
+      dir,
+      instance,
+      value,
+      oldValue: void 0,
+      arg,
+      modifiers
+    });
+  }
+  return vnode;
+}
 function invokeDirectiveHook(vnode, prevVNode, instance, name) {
   const bindings = vnode.dirs;
   const oldBindings = prevVNode && prevVNode.dirs;
@@ -2418,7 +2469,67 @@ function invokeDirectiveHook(vnode, prevVNode, instance, name) {
     }
   }
 }
+const COMPONENTS = "components";
+const DIRECTIVES = "directives";
+function resolveComponent(name, maybeSelfReference) {
+  return resolveAsset(COMPONENTS, name, true, maybeSelfReference) || name;
+}
 const NULL_DYNAMIC_COMPONENT = Symbol();
+function resolveDirective(name) {
+  return resolveAsset(DIRECTIVES, name);
+}
+function resolveAsset(type, name, warnMissing = true, maybeSelfReference = false) {
+  const instance = currentRenderingInstance || currentInstance;
+  if (instance) {
+    const Component = instance.type;
+    if (type === COMPONENTS) {
+      const selfName = getComponentName(Component, false);
+      if (selfName && (selfName === name || selfName === camelize(name) || selfName === capitalize(camelize(name)))) {
+        return Component;
+      }
+    }
+    const res = resolve(instance[type] || Component[type], name) || resolve(instance.appContext[type], name);
+    if (!res && maybeSelfReference) {
+      return Component;
+    }
+    return res;
+  }
+}
+function resolve(registry, name) {
+  return registry && (registry[name] || registry[camelize(name)] || registry[capitalize(camelize(name))]);
+}
+function renderList(source, renderItem, cache, index) {
+  let ret;
+  const cached = cache && cache[index];
+  if (isArray(source) || isString(source)) {
+    ret = new Array(source.length);
+    for (let i = 0, l2 = source.length; i < l2; i++) {
+      ret[i] = renderItem(source[i], i, void 0, cached && cached[i]);
+    }
+  } else if (typeof source === "number") {
+    ret = new Array(source);
+    for (let i = 0; i < source; i++) {
+      ret[i] = renderItem(i + 1, i, void 0, cached && cached[i]);
+    }
+  } else if (isObject(source)) {
+    if (source[Symbol.iterator]) {
+      ret = Array.from(source, (item, i) => renderItem(item, i, void 0, cached && cached[i]));
+    } else {
+      const keys = Object.keys(source);
+      ret = new Array(keys.length);
+      for (let i = 0, l2 = keys.length; i < l2; i++) {
+        const key = keys[i];
+        ret[i] = renderItem(source[key], key, i, cached && cached[i]);
+      }
+    }
+  } else {
+    ret = [];
+  }
+  if (cache) {
+    cache[index] = ret;
+  }
+  return ret;
+}
 const getPublicInstance = (i) => {
   if (!i)
     return null;
@@ -2534,7 +2645,7 @@ function applyOptions(instance) {
   const ctx = instance.ctx;
   shouldCacheAccess = false;
   if (options.beforeCreate) {
-    callHook(options.beforeCreate, instance, "bc");
+    callHook$1(options.beforeCreate, instance, "bc");
   }
   const {
     data: dataOptions,
@@ -2617,7 +2728,7 @@ function applyOptions(instance) {
     });
   }
   if (created) {
-    callHook(created, instance, "c");
+    callHook$1(created, instance, "c");
   }
   function registerLifecycleHook(register, hook) {
     if (isArray(hook)) {
@@ -2694,7 +2805,7 @@ function resolveInjections(injectOptions, ctx, checkDuplicateProperties = NOOP, 
     }
   }
 }
-function callHook(hook, instance, type) {
+function callHook$1(hook, instance, type) {
   callWithAsyncErrorHandling(isArray(hook) ? hook.map((h2) => h2.bind(instance.proxy)) : hook.bind(instance.proxy), instance, type);
 }
 function createWatcher(raw, ctx, publicThis, key) {
@@ -4325,6 +4436,9 @@ function cloneVNode(vnode, extraProps, mergeRef = false) {
 function createTextVNode(text = " ", flag = 0) {
   return createVNode(Text, null, text, flag);
 }
+function createCommentVNode(text = "", asBlock = false) {
+  return asBlock ? (openBlock(), createBlock(Comment, null, text)) : createVNode(Comment, null, text);
+}
 function normalizeVNode(child) {
   if (child == null || typeof child === "boolean") {
     return createVNode(Comment);
@@ -4616,6 +4730,9 @@ function getExposeProxy(instance) {
       }
     }));
   }
+}
+function getComponentName(Component, includeInferred = true) {
+  return isFunction(Component) ? Component.displayName || Component.name : Component.name || includeInferred && Component.__name;
 }
 function isClassComponent(value) {
   return isFunction(value) && "__vccOpts" in value;
@@ -4970,6 +5087,10 @@ function shouldSetAsProp(el, key, value, isSVG) {
   }
   return key in el;
 }
+const TRANSITION = "transition";
+const ANIMATION = "animation";
+const Transition = (props, { slots }) => h$1(BaseTransition, resolveTransitionProps(props), slots);
+Transition.displayName = "Transition";
 const DOMTransitionPropsValidators = {
   name: String,
   type: String,
@@ -4988,7 +5109,283 @@ const DOMTransitionPropsValidators = {
   leaveActiveClass: String,
   leaveToClass: String
 };
-/* @__PURE__ */ extend({}, BaseTransition.props, DOMTransitionPropsValidators);
+Transition.props = /* @__PURE__ */ extend({}, BaseTransition.props, DOMTransitionPropsValidators);
+const callHook = (hook, args = []) => {
+  if (isArray(hook)) {
+    hook.forEach((h2) => h2(...args));
+  } else if (hook) {
+    hook(...args);
+  }
+};
+const hasExplicitCallback = (hook) => {
+  return hook ? isArray(hook) ? hook.some((h2) => h2.length > 1) : hook.length > 1 : false;
+};
+function resolveTransitionProps(rawProps) {
+  const baseProps = {};
+  for (const key in rawProps) {
+    if (!(key in DOMTransitionPropsValidators)) {
+      baseProps[key] = rawProps[key];
+    }
+  }
+  if (rawProps.css === false) {
+    return baseProps;
+  }
+  const { name = "v", type, duration, enterFromClass = `${name}-enter-from`, enterActiveClass = `${name}-enter-active`, enterToClass = `${name}-enter-to`, appearFromClass = enterFromClass, appearActiveClass = enterActiveClass, appearToClass = enterToClass, leaveFromClass = `${name}-leave-from`, leaveActiveClass = `${name}-leave-active`, leaveToClass = `${name}-leave-to` } = rawProps;
+  const durations = normalizeDuration(duration);
+  const enterDuration = durations && durations[0];
+  const leaveDuration = durations && durations[1];
+  const { onBeforeEnter, onEnter, onEnterCancelled, onLeave, onLeaveCancelled, onBeforeAppear = onBeforeEnter, onAppear = onEnter, onAppearCancelled = onEnterCancelled } = baseProps;
+  const finishEnter = (el, isAppear, done) => {
+    removeTransitionClass(el, isAppear ? appearToClass : enterToClass);
+    removeTransitionClass(el, isAppear ? appearActiveClass : enterActiveClass);
+    done && done();
+  };
+  const finishLeave = (el, done) => {
+    el._isLeaving = false;
+    removeTransitionClass(el, leaveFromClass);
+    removeTransitionClass(el, leaveToClass);
+    removeTransitionClass(el, leaveActiveClass);
+    done && done();
+  };
+  const makeEnterHook = (isAppear) => {
+    return (el, done) => {
+      const hook = isAppear ? onAppear : onEnter;
+      const resolve2 = () => finishEnter(el, isAppear, done);
+      callHook(hook, [el, resolve2]);
+      nextFrame(() => {
+        removeTransitionClass(el, isAppear ? appearFromClass : enterFromClass);
+        addTransitionClass(el, isAppear ? appearToClass : enterToClass);
+        if (!hasExplicitCallback(hook)) {
+          whenTransitionEnds(el, type, enterDuration, resolve2);
+        }
+      });
+    };
+  };
+  return extend(baseProps, {
+    onBeforeEnter(el) {
+      callHook(onBeforeEnter, [el]);
+      addTransitionClass(el, enterFromClass);
+      addTransitionClass(el, enterActiveClass);
+    },
+    onBeforeAppear(el) {
+      callHook(onBeforeAppear, [el]);
+      addTransitionClass(el, appearFromClass);
+      addTransitionClass(el, appearActiveClass);
+    },
+    onEnter: makeEnterHook(false),
+    onAppear: makeEnterHook(true),
+    onLeave(el, done) {
+      el._isLeaving = true;
+      const resolve2 = () => finishLeave(el, done);
+      addTransitionClass(el, leaveFromClass);
+      forceReflow();
+      addTransitionClass(el, leaveActiveClass);
+      nextFrame(() => {
+        if (!el._isLeaving) {
+          return;
+        }
+        removeTransitionClass(el, leaveFromClass);
+        addTransitionClass(el, leaveToClass);
+        if (!hasExplicitCallback(onLeave)) {
+          whenTransitionEnds(el, type, leaveDuration, resolve2);
+        }
+      });
+      callHook(onLeave, [el, resolve2]);
+    },
+    onEnterCancelled(el) {
+      finishEnter(el, false);
+      callHook(onEnterCancelled, [el]);
+    },
+    onAppearCancelled(el) {
+      finishEnter(el, true);
+      callHook(onAppearCancelled, [el]);
+    },
+    onLeaveCancelled(el) {
+      finishLeave(el);
+      callHook(onLeaveCancelled, [el]);
+    }
+  });
+}
+function normalizeDuration(duration) {
+  if (duration == null) {
+    return null;
+  } else if (isObject(duration)) {
+    return [NumberOf(duration.enter), NumberOf(duration.leave)];
+  } else {
+    const n2 = NumberOf(duration);
+    return [n2, n2];
+  }
+}
+function NumberOf(val) {
+  const res = toNumber(val);
+  return res;
+}
+function addTransitionClass(el, cls) {
+  cls.split(/\s+/).forEach((c2) => c2 && el.classList.add(c2));
+  (el._vtc || (el._vtc = /* @__PURE__ */ new Set())).add(cls);
+}
+function removeTransitionClass(el, cls) {
+  cls.split(/\s+/).forEach((c2) => c2 && el.classList.remove(c2));
+  const { _vtc } = el;
+  if (_vtc) {
+    _vtc.delete(cls);
+    if (!_vtc.size) {
+      el._vtc = void 0;
+    }
+  }
+}
+function nextFrame(cb) {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(cb);
+  });
+}
+let endId = 0;
+function whenTransitionEnds(el, expectedType, explicitTimeout, resolve2) {
+  const id = el._endId = ++endId;
+  const resolveIfNotStale = () => {
+    if (id === el._endId) {
+      resolve2();
+    }
+  };
+  if (explicitTimeout) {
+    return setTimeout(resolveIfNotStale, explicitTimeout);
+  }
+  const { type, timeout, propCount } = getTransitionInfo(el, expectedType);
+  if (!type) {
+    return resolve2();
+  }
+  const endEvent = type + "end";
+  let ended = 0;
+  const end = () => {
+    el.removeEventListener(endEvent, onEnd);
+    resolveIfNotStale();
+  };
+  const onEnd = (e2) => {
+    if (e2.target === el && ++ended >= propCount) {
+      end();
+    }
+  };
+  setTimeout(() => {
+    if (ended < propCount) {
+      end();
+    }
+  }, timeout + 1);
+  el.addEventListener(endEvent, onEnd);
+}
+function getTransitionInfo(el, expectedType) {
+  const styles = window.getComputedStyle(el);
+  const getStyleProperties = (key) => (styles[key] || "").split(", ");
+  const transitionDelays = getStyleProperties(TRANSITION + "Delay");
+  const transitionDurations = getStyleProperties(TRANSITION + "Duration");
+  const transitionTimeout = getTimeout(transitionDelays, transitionDurations);
+  const animationDelays = getStyleProperties(ANIMATION + "Delay");
+  const animationDurations = getStyleProperties(ANIMATION + "Duration");
+  const animationTimeout = getTimeout(animationDelays, animationDurations);
+  let type = null;
+  let timeout = 0;
+  let propCount = 0;
+  if (expectedType === TRANSITION) {
+    if (transitionTimeout > 0) {
+      type = TRANSITION;
+      timeout = transitionTimeout;
+      propCount = transitionDurations.length;
+    }
+  } else if (expectedType === ANIMATION) {
+    if (animationTimeout > 0) {
+      type = ANIMATION;
+      timeout = animationTimeout;
+      propCount = animationDurations.length;
+    }
+  } else {
+    timeout = Math.max(transitionTimeout, animationTimeout);
+    type = timeout > 0 ? transitionTimeout > animationTimeout ? TRANSITION : ANIMATION : null;
+    propCount = type ? type === TRANSITION ? transitionDurations.length : animationDurations.length : 0;
+  }
+  const hasTransform = type === TRANSITION && /\b(transform|all)(,|$)/.test(styles[TRANSITION + "Property"]);
+  return {
+    type,
+    timeout,
+    propCount,
+    hasTransform
+  };
+}
+function getTimeout(delays, durations) {
+  while (delays.length < durations.length) {
+    delays = delays.concat(delays);
+  }
+  return Math.max(...durations.map((d2, i) => toMs(d2) + toMs(delays[i])));
+}
+function toMs(s) {
+  return Number(s.slice(0, -1).replace(",", ".")) * 1e3;
+}
+function forceReflow() {
+  return document.body.offsetHeight;
+}
+const getModelAssigner = (vnode) => {
+  const fn = vnode.props["onUpdate:modelValue"] || false;
+  return isArray(fn) ? (value) => invokeArrayFns(fn, value) : fn;
+};
+function onCompositionStart(e2) {
+  e2.target.composing = true;
+}
+function onCompositionEnd(e2) {
+  const target = e2.target;
+  if (target.composing) {
+    target.composing = false;
+    target.dispatchEvent(new Event("input"));
+  }
+}
+const vModelText = {
+  created(el, { modifiers: { lazy, trim, number } }, vnode) {
+    el._assign = getModelAssigner(vnode);
+    const castToNumber = number || vnode.props && vnode.props.type === "number";
+    addEventListener(el, lazy ? "change" : "input", (e2) => {
+      if (e2.target.composing)
+        return;
+      let domValue = el.value;
+      if (trim) {
+        domValue = domValue.trim();
+      }
+      if (castToNumber) {
+        domValue = toNumber(domValue);
+      }
+      el._assign(domValue);
+    });
+    if (trim) {
+      addEventListener(el, "change", () => {
+        el.value = el.value.trim();
+      });
+    }
+    if (!lazy) {
+      addEventListener(el, "compositionstart", onCompositionStart);
+      addEventListener(el, "compositionend", onCompositionEnd);
+      addEventListener(el, "change", onCompositionEnd);
+    }
+  },
+  mounted(el, { value }) {
+    el.value = value == null ? "" : value;
+  },
+  beforeUpdate(el, { value, modifiers: { lazy, trim, number } }, vnode) {
+    el._assign = getModelAssigner(vnode);
+    if (el.composing)
+      return;
+    if (document.activeElement === el && el.type !== "range") {
+      if (lazy) {
+        return;
+      }
+      if (trim && el.value.trim() === value) {
+        return;
+      }
+      if ((number || el.type === "number") && toNumber(el.value) === value) {
+        return;
+      }
+    }
+    const newValue = value == null ? "" : value;
+    if (el.value !== newValue) {
+      el.value = newValue;
+    }
+  }
+};
 const rendererOptions = /* @__PURE__ */ extend({ patchProp }, nodeOps);
 let renderer;
 function ensureRenderer() {
@@ -5247,7 +5644,7 @@ let m = defineComponent({ name: "Hidden", props: { as: { type: [Object, String],
     return P$1({ ourProps: n2, theirProps: d2, slot: {}, attrs: o2, slots: t2, name: "Hidden" });
   };
 } });
-var d = ((r2) => (r2[r2.Forwards = 0] = "Forwards", r2[r2.Backwards = 1] = "Backwards", r2))(d || {});
+var d$1 = ((r2) => (r2[r2.Forwards = 0] = "Forwards", r2[r2.Backwards = 1] = "Backwards", r2))(d$1 || {});
 function n() {
   let o2 = ref(0);
   return w("keydown", (e2) => {
@@ -5260,18 +5657,18 @@ function r(n2, e2, d2, o2) {
   });
 }
 var pe = ((f) => (f[f.Open = 0] = "Open", f[f.Closed = 1] = "Closed", f))(pe || {});
-let Z = Symbol("PopoverContext");
+let Z$1 = Symbol("PopoverContext");
 function W(P2) {
-  let S = inject(Z, null);
+  let S = inject(Z$1, null);
   if (S === null) {
     let f = new Error(`<${P2} /> is missing a parent <${ve.name} /> component.`);
     throw Error.captureStackTrace && Error.captureStackTrace(f, W), f;
   }
   return S;
 }
-let ee = Symbol("PopoverGroupContext");
-function te() {
-  return inject(ee, null);
+let ee$1 = Symbol("PopoverGroupContext");
+function te$1() {
+  return inject(ee$1, null);
 }
 let oe = Symbol("PopoverPanelContext");
 function fe() {
@@ -5297,10 +5694,10 @@ let ve = defineComponent({ name: "Popover", props: { as: { type: [Object, String
     let i = (() => n2 ? n2 instanceof HTMLElement ? n2 : n2.value instanceof HTMLElement ? o(n2) : o(d2.button) : o(d2.button))();
     i == null || i.focus();
   } };
-  provide(Z, d2), c$1(computed(() => u$1(a.value, { [0]: l.Open, [1]: l.Closed })));
+  provide(Z$1, d2), c$1(computed(() => u$1(a.value, { [0]: l.Open, [1]: l.Closed })));
   let D = { buttonId: t$1, panelId: e$12, close() {
     d2.closePopover();
-  } }, l$1 = te(), o$12 = l$1 == null ? void 0 : l$1.registerPopover;
+  } }, l$1 = te$1(), o$12 = l$1 == null ? void 0 : l$1.registerPopover;
   function u2() {
     var n2, i, v2, k2;
     return (k2 = l$1 == null ? void 0 : l$1.isFocusWithinPopoverGroup()) != null ? k2 : ((n2 = c2.value) == null ? void 0 : n2.activeElement) && (((i = o(b2)) == null ? void 0 : i.contains(c2.value.activeElement)) || ((v2 = o(s)) == null ? void 0 : v2.contains(c2.value.activeElement)));
@@ -5318,7 +5715,7 @@ let ve = defineComponent({ name: "Popover", props: { as: { type: [Object, String
 } }), ke = defineComponent({ name: "PopoverButton", props: { as: { type: [Object, String], default: "button" }, disabled: { type: [Boolean], default: false } }, inheritAttrs: false, setup(P$2, { attrs: S, slots: f, expose: E }) {
   let t$1 = W("PopoverButton"), e$12 = computed(() => e(t$1.button));
   E({ el: t$1.button, $el: t$1.button });
-  let m$1 = te(), a = m$1 == null ? void 0 : m$1.closeOthers, b2 = fe(), g = b2 === null ? false : b2 === t$1.panelId, y2 = ref(null), s = `headlessui-focus-sentinel-${t()}`;
+  let m$1 = te$1(), a = m$1 == null ? void 0 : m$1.closeOthers, b2 = fe(), g = b2 === null ? false : b2 === t$1.panelId, y2 = ref(null), s = `headlessui-focus-sentinel-${t()}`;
   g || watchEffect(() => {
     t$1.button.value = y2.value;
   });
@@ -5349,7 +5746,7 @@ let ve = defineComponent({ name: "Popover", props: { as: { type: [Object, String
           break;
       }
   }
-  function d$1(o2) {
+  function d2(o2) {
     g || o2.key === o$1.Space && o2.preventDefault();
   }
   function D(o$12) {
@@ -5360,13 +5757,13 @@ let ve = defineComponent({ name: "Popover", props: { as: { type: [Object, String
     o2.preventDefault(), o2.stopPropagation();
   }
   return () => {
-    let o$12 = t$1.popoverState.value === 0, u2 = { open: o$12 }, p$12 = g ? { ref: y2, type: c2.value, onKeydown: O2, onClick: D } : { ref: y2, id: t$1.buttonId, type: c2.value, "aria-expanded": P$2.disabled ? void 0 : t$1.popoverState.value === 0, "aria-controls": o(t$1.panel) ? t$1.panelId : void 0, disabled: P$2.disabled ? true : void 0, onKeydown: O2, onKeyup: d$1, onClick: D, onMousedown: l2 }, n$12 = n();
+    let o$12 = t$1.popoverState.value === 0, u2 = { open: o$12 }, p$12 = g ? { ref: y2, type: c2.value, onKeydown: O2, onClick: D } : { ref: y2, id: t$1.buttonId, type: c2.value, "aria-expanded": P$2.disabled ? void 0 : t$1.popoverState.value === 0, "aria-controls": o(t$1.panel) ? t$1.panelId : void 0, disabled: P$2.disabled ? true : void 0, onKeydown: O2, onKeyup: d2, onClick: D, onMousedown: l2 }, n$12 = n();
     function i() {
       let v2 = o(t$1.panel);
       if (!v2)
         return;
       function k2() {
-        u$1(n$12.value, { [d.Forwards]: () => P(v2, L.First), [d.Backwards]: () => P(v2, L.Last) });
+        u$1(n$12.value, { [d$1.Forwards]: () => P(v2, L.First), [d$1.Backwards]: () => P(v2, L.Last) });
       }
       k2();
     }
@@ -5409,14 +5806,14 @@ let Le = defineComponent({ name: "PopoverPanel", props: { as: { type: [Object, S
     !o$12 || !o(e$12.panel) || (u2 = o(e$12.panel)) != null && u2.contains(o$12) || (e$12.closePopover(), (((n2 = (p2 = o(e$12.beforePanelSentinel)) == null ? void 0 : p2.contains) == null ? void 0 : n2.call(p2, o$12)) || ((v2 = (i = o(e$12.afterPanelSentinel)) == null ? void 0 : i.contains) == null ? void 0 : v2.call(i, o$12))) && o$12.focus({ preventScroll: true }));
   }
   let O2 = n();
-  function d$1() {
+  function d2() {
     let l2 = o(e$12.panel);
     if (!l2)
       return;
     function o$12() {
-      u$1(O2.value, { [d.Forwards]: () => {
+      u$1(O2.value, { [d$1.Forwards]: () => {
         P(l2, L.Next);
-      }, [d.Backwards]: () => {
+      }, [d$1.Backwards]: () => {
         var u2;
         (u2 = o(e$12.button)) == null || u2.focus({ preventScroll: true });
       } });
@@ -5428,7 +5825,7 @@ let Le = defineComponent({ name: "PopoverPanel", props: { as: { type: [Object, S
     if (!l2)
       return;
     function o$12() {
-      u$1(O2.value, { [d.Forwards]: () => {
+      u$1(O2.value, { [d$1.Forwards]: () => {
         var $, z;
         let u2 = o(e$12.button), p2 = o(e$12.panel);
         if (!u2)
@@ -5440,7 +5837,7 @@ let Le = defineComponent({ name: "PopoverPanel", props: { as: { type: [Object, S
             J !== -1 && K.splice(J, 1);
           }
         P(K, L.First, false);
-      }, [d.Backwards]: () => P(l2, L.Previous) });
+      }, [d$1.Backwards]: () => P(l2, L.Previous) });
     }
     o$12();
   }
@@ -5448,7 +5845,7 @@ let Le = defineComponent({ name: "PopoverPanel", props: { as: { type: [Object, S
     let l2 = { open: e$12.popoverState.value === 0, close: e$12.close }, o2 = { ref: e$12.panel, id: e$12.panelId, onKeydown: s, onFocusout: t$1 && e$12.popoverState.value === 0 ? c2 : void 0, tabIndex: -1 };
     return P$1({ ourProps: o2, theirProps: { ...S, ...P$2 }, attrs: S, slot: l2, slots: { ...f, default: (...u2) => {
       var p$12;
-      return [h$1(Fragment, [y2.value && e$12.isPortalled.value && h$1(m, { id: a, ref: e$12.beforePanelSentinel, features: p.Focusable, as: "button", type: "button", onFocus: d$1 }), (p$12 = f.default) == null ? void 0 : p$12.call(f, ...u2), y2.value && e$12.isPortalled.value && h$1(m, { id: b$12, ref: e$12.afterPanelSentinel, features: p.Focusable, as: "button", type: "button", onFocus: D })])];
+      return [h$1(Fragment, [y2.value && e$12.isPortalled.value && h$1(m, { id: a, ref: e$12.beforePanelSentinel, features: p.Focusable, as: "button", type: "button", onFocus: d2 }), (p$12 = f.default) == null ? void 0 : p$12.call(f, ...u2), y2.value && e$12.isPortalled.value && h$1(m, { id: b$12, ref: e$12.afterPanelSentinel, features: p.Focusable, as: "button", type: "button", onFocus: D })])];
     } }, features: R.RenderStrategy | R.Static, visible: y2.value, name: "PopoverPanel" });
   };
 } });
@@ -5479,7 +5876,146 @@ defineComponent({ name: "PopoverGroup", props: { as: { type: [Object, String], d
     for (let c2 of e$12.value)
       c2.buttonId !== s && c2.close();
   }
-  return provide(ee, { registerPopover: b2, unregisterPopover: a, isFocusWithinPopoverGroup: g, closeOthers: y2 }), () => P$1({ ourProps: { ref: t2 }, theirProps: P2, slot: {}, attrs: S, slots: f, name: "PopoverGroup" });
+  return provide(ee$1, { registerPopover: b2, unregisterPopover: a, isFocusWithinPopoverGroup: g, closeOthers: y2 }), () => P$1({ ourProps: { ref: t2 }, theirProps: P2, slot: {}, attrs: S, slots: f, name: "PopoverGroup" });
+} });
+let d = defineComponent({ props: { onFocus: { type: Function, required: true } }, setup(t2) {
+  let n2 = ref(true);
+  return () => n2.value ? h$1(m, { as: "button", type: "button", features: p.Focusable, onFocus(o2) {
+    o2.preventDefault();
+    let e2, a = 50;
+    function r2() {
+      var u2;
+      if (a-- <= 0) {
+        e2 && cancelAnimationFrame(e2);
+        return;
+      }
+      if ((u2 = t2.onFocus) != null && u2.call(t2)) {
+        n2.value = false, cancelAnimationFrame(e2);
+        return;
+      }
+      e2 = requestAnimationFrame(r2);
+    }
+    e2 = requestAnimationFrame(r2);
+  } }) : null;
+} });
+let H = Symbol("TabsContext");
+function I(n2) {
+  let u2 = inject(H, null);
+  if (u2 === null) {
+    let i = new Error(`<${n2} /> is missing a parent <TabGroup /> component.`);
+    throw Error.captureStackTrace && Error.captureStackTrace(i, I), i;
+  }
+  return u2;
+}
+let Y = defineComponent({ name: "TabGroup", emits: { change: (n2) => true }, props: { as: { type: [Object, String], default: "template" }, selectedIndex: { type: [Number], default: null }, defaultIndex: { type: [Number], default: 0 }, vertical: { type: [Boolean], default: false }, manual: { type: [Boolean], default: false } }, inheritAttrs: false, setup(n2, { slots: u2, attrs: i, emit: f }) {
+  let t2 = ref(null), o$12 = ref([]), l2 = ref([]), d$12 = { selectedIndex: t2, orientation: computed(() => n2.vertical ? "vertical" : "horizontal"), activation: computed(() => n2.manual ? "manual" : "auto"), tabs: o$12, panels: l2, setSelectedIndex(e2) {
+    t2.value !== e2 && (t2.value = e2, f("change", e2));
+  }, registerTab(e2) {
+    o$12.value.includes(e2) || o$12.value.push(e2);
+  }, unregisterTab(e2) {
+    let r2 = o$12.value.indexOf(e2);
+    r2 !== -1 && o$12.value.splice(r2, 1);
+  }, registerPanel(e2) {
+    l2.value.includes(e2) || l2.value.push(e2);
+  }, unregisterPanel(e2) {
+    let r2 = l2.value.indexOf(e2);
+    r2 !== -1 && l2.value.splice(r2, 1);
+  } };
+  return provide(H, d$12), watchEffect(() => {
+    var v2;
+    if (d$12.tabs.value.length <= 0 || n2.selectedIndex === null && t2.value !== null)
+      return;
+    let e2 = d$12.tabs.value.map((p2) => o(p2)).filter(Boolean), r2 = e2.filter((p2) => !p2.hasAttribute("disabled")), s = (v2 = n2.selectedIndex) != null ? v2 : n2.defaultIndex;
+    if (s < 0)
+      t2.value = e2.indexOf(r2[0]);
+    else if (s > d$12.tabs.value.length)
+      t2.value = e2.indexOf(r2[r2.length - 1]);
+    else {
+      let p2 = e2.slice(0, s), a = [...e2.slice(s), ...p2].find((c2) => r2.includes(c2));
+      if (!a)
+        return;
+      t2.value = e2.indexOf(a);
+    }
+  }), () => {
+    let e2 = { selectedIndex: t2.value };
+    return h$1(Fragment, [o$12.value.length <= 0 && h$1(d, { onFocus: () => {
+      for (let r2 of o$12.value) {
+        let s = o(r2);
+        if ((s == null ? void 0 : s.tabIndex) === 0)
+          return s.focus(), true;
+      }
+      return false;
+    } }), P$1({ theirProps: { ...i, ...N$1(n2, ["selectedIndex", "defaultIndex", "manual", "vertical", "onChange"]) }, ourProps: {}, slot: e2, slots: u2, attrs: i, name: "TabGroup" })]);
+  };
+} }), Z = defineComponent({ name: "TabList", props: { as: { type: [Object, String], default: "div" } }, setup(n2, { attrs: u2, slots: i }) {
+  let f = I("TabList");
+  return () => {
+    let t2 = { selectedIndex: f.selectedIndex.value }, o2 = { role: "tablist", "aria-orientation": f.orientation.value };
+    return P$1({ ourProps: o2, theirProps: n2, slot: t2, attrs: u2, slots: i, name: "TabList" });
+  };
+} }), ee = defineComponent({ name: "Tab", props: { as: { type: [Object, String], default: "button" }, disabled: { type: [Boolean], default: false } }, setup(n2, { attrs: u2, slots: i, expose: f }) {
+  let t$1 = I("Tab"), o$2 = `headlessui-tabs-tab-${t()}`, l2 = ref(null);
+  f({ el: l2, $el: l2 }), onMounted(() => t$1.registerTab(l2)), onUnmounted(() => t$1.unregisterTab(l2));
+  let d2 = computed(() => t$1.tabs.value.indexOf(l2)), e2 = computed(() => d2.value === t$1.selectedIndex.value);
+  function r2(a) {
+    let c2 = t$1.tabs.value.map((S) => o(S)).filter(Boolean);
+    if (a.key === o$1.Space || a.key === o$1.Enter) {
+      a.preventDefault(), a.stopPropagation(), t$1.setSelectedIndex(d2.value);
+      return;
+    }
+    switch (a.key) {
+      case o$1.Home:
+      case o$1.PageUp:
+        return a.preventDefault(), a.stopPropagation(), P(c2, L.First);
+      case o$1.End:
+      case o$1.PageDown:
+        return a.preventDefault(), a.stopPropagation(), P(c2, L.Last);
+    }
+    if (u$1(t$1.orientation.value, { vertical() {
+      if (a.key === o$1.ArrowUp)
+        return P(c2, L.Previous | L.WrapAround);
+      if (a.key === o$1.ArrowDown)
+        return P(c2, L.Next | L.WrapAround);
+    }, horizontal() {
+      if (a.key === o$1.ArrowLeft)
+        return P(c2, L.Previous | L.WrapAround);
+      if (a.key === o$1.ArrowRight)
+        return P(c2, L.Next | L.WrapAround);
+    } }))
+      return a.preventDefault();
+  }
+  function s() {
+    var a;
+    (a = o(l2)) == null || a.focus();
+  }
+  function v2() {
+    var a;
+    n2.disabled || ((a = o(l2)) == null || a.focus(), t$1.setSelectedIndex(d2.value));
+  }
+  function p2(a) {
+    a.preventDefault();
+  }
+  let E = b$1(computed(() => ({ as: n2.as, type: u2.type })), l2);
+  return () => {
+    var S, R2;
+    let a = { selected: e2.value }, c2 = { ref: l2, onKeydown: r2, onFocus: t$1.activation.value === "manual" ? s : v2, onMousedown: p2, onClick: v2, id: o$2, role: "tab", type: E.value, "aria-controls": (R2 = (S = t$1.panels.value[d2.value]) == null ? void 0 : S.value) == null ? void 0 : R2.id, "aria-selected": e2.value, tabIndex: e2.value ? 0 : -1, disabled: n2.disabled ? true : void 0 };
+    return P$1({ ourProps: c2, theirProps: n2, slot: a, attrs: u2, slots: i, name: "Tab" });
+  };
+} }), te = defineComponent({ name: "TabPanels", props: { as: { type: [Object, String], default: "div" } }, setup(n2, { slots: u2, attrs: i }) {
+  let f = I("TabPanels");
+  return () => {
+    let t2 = { selectedIndex: f.selectedIndex.value };
+    return P$1({ theirProps: n2, ourProps: {}, slot: t2, attrs: i, slots: u2, name: "TabPanels" });
+  };
+} }), ae = defineComponent({ name: "TabPanel", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true } }, setup(n2, { attrs: u2, slots: i, expose: f }) {
+  let t$1 = I("TabPanel"), o2 = `headlessui-tabs-panel-${t()}`, l2 = ref(null);
+  f({ el: l2, $el: l2 }), onMounted(() => t$1.registerPanel(l2)), onUnmounted(() => t$1.unregisterPanel(l2));
+  let d2 = computed(() => t$1.panels.value.indexOf(l2)), e2 = computed(() => d2.value === t$1.selectedIndex.value);
+  return () => {
+    var v2, p2;
+    let r2 = { selected: e2.value }, s = { ref: l2, id: o2, role: "tabpanel", "aria-labelledby": (p2 = (v2 = t$1.tabs.value[d2.value]) == null ? void 0 : v2.value) == null ? void 0 : p2.id, tabIndex: e2.value ? 0 : -1 };
+    return P$1({ ourProps: s, theirProps: n2, slot: r2, attrs: u2, slots: i, features: R.Static | R.RenderStrategy, visible: e2.value, name: "TabPanel" });
+  };
 } });
 var SearchMenu_vue_vue_type_style_index_0_scoped_true_lang = "";
 var _export_sfc = (sfc, props) => {
@@ -5489,117 +6025,272 @@ var _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _withScopeId = (n2) => (pushScopeId("data-v-06b8d56e"), n2 = n2(), popScopeId(), n2);
+const _sfc_main = {
+  name: "SearchMenu",
+  components: { Popover: ve, PopoverButton: ke, PopoverPanel: Le, TabGroup: Y, TabList: Z, Tab: ee, TabPanels: te, TabPanel: ae },
+  directives: { debounce },
+  data() {
+    return {
+      query: "",
+      results: null
+    };
+  },
+  props: {
+    iconSize: Number,
+    iconStrokeWidth: Number,
+    headerColorScheme: String,
+    searchPosition: String,
+    predictiveSearchEnabled: Boolean,
+    predictiveShowNumber: Boolean,
+    predictiveShowPages: Boolean,
+    predictiveShowArticles: Boolean
+  },
+  computed: {
+    resultsLength() {
+      if (this.results) {
+        return this.results.products.length + this.results.pages.length + this.results.articles.length;
+      } else {
+        return 0;
+      }
+    }
+  },
+  methods: {
+    async getPredictiveResults() {
+      if (this.query && this.query.length > 0) {
+        var resourceTypes = ["product", "collection"];
+        if (this.predictiveShowArticles) {
+          resourceTypes.push("article");
+        }
+        if (this.predictiveShowPages) {
+          resourceTypes.push("page");
+        }
+        var searchUrl = `${window.routes.predictive_search_url}.json?q=${encodeURIComponent(this.query)}&resources[type]=${encodeURIComponent(resourceTypes.concat(","))}`;
+        var search = await fetch(searchUrl).then((response) => response.json()).then((data) => {
+          return data;
+        });
+        if (search.resources && search.resources.results) {
+          this.results = search.resources.results;
+        } else {
+          this.results = null;
+        }
+      } else {
+        this.results = null;
+      }
+    }
+  },
+  mounted() {
+    const header2 = document.querySelector("header");
+    const searchButton = document.querySelector("#searchMenuTop .header__icon-link");
+    var observer = new MutationObserver(function(mutations) {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName == "aria-expanded") {
+          if (searchButton.getAttribute("aria-expanded") == "true") {
+            document.body.classList.add("search--opened");
+            header2.classList.add("search--opened");
+          } else if (searchButton.getAttribute("aria-expanded") == "false") {
+            document.body.classList.remove("search--opened");
+            header2.classList.remove("search--opened");
+          }
+        }
+      });
+    });
+    observer.observe(searchButton, {
+      attributes: true
+    });
+  }
+};
+const _withScopeId = (n2) => (pushScopeId("data-v-60cdf6c6"), n2 = n2(), popScopeId(), n2);
 const _hoisted_1 = ["width", "height", "stroke-width"];
 const _hoisted_2 = /* @__PURE__ */ createTextVNode(" <!--! Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons --> ");
 const _hoisted_3 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("circle", {
   cx: "11",
   cy: "11",
+  r: "9",
+  fill: "#000",
+  opacity: ".25",
+  stroke: "none"
+}, null, -1));
+const _hoisted_4 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("circle", {
+  cx: "11",
+  cy: "11",
   r: "9"
 }, null, -1));
-const _hoisted_4 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("path", { d: "M17.5 17.5 22 22" }, null, -1));
-const _hoisted_5 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("span", { class: "label" }, "Search", -1));
-const _hoisted_6 = ["value"];
-const __default__ = {
-  name: "SearchMenu",
-  data() {
-    return {
-      bgColor: "",
-      textColor: "",
-      strokeColor: "",
-      fillColor: ""
-    };
-  },
-  props: {
-    searchPosition: String,
-    predictiveSearchEnabled: Boolean,
-    predictiveShowNumber: Boolean,
-    predictiveShowPages: Boolean,
-    predictiveShowArticles: Boolean,
-    iconSize: Number,
-    iconStrokeWidth: Number,
-    terms: String
-  },
-  mounted() {
-    switch (this.$attrs.headerColorScheme) {
-      case "primary":
-        this.bgColor = "bg-primary";
-        this.textColor = "text-secondary";
-        this.strokeColor = "stroke-secondary";
-        this.fillColor = "fill-none";
-      case "secondary":
-        this.bgColor = "bg-secondary";
-        this.textColor = "text-primary";
-        this.strokeColor = "stroke-primary";
-        this.fillColor = "fill-none";
-      case "accent1":
-        this.bgColor = "bg-primary";
-        this.textColor = "text-secondary";
-        this.strokeColor = "stroke-secondary";
-        this.fillColor = "fill-accent1";
-      case "accent2":
-        this.bgColor = "bg-primary";
-        this.textColor = "text-secondary";
-        this.strokeColor = "stroke-secondary";
-        this.fillColor = "fill-accent2";
-    }
-  }
+const _hoisted_5 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("path", { d: "M17.5 17.5 22 22" }, null, -1));
+const _hoisted_6 = [
+  _hoisted_2,
+  _hoisted_3,
+  _hoisted_4,
+  _hoisted_5
+];
+const _hoisted_7 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createBaseVNode("span", { class: "label" }, "Search", -1));
+const _hoisted_8 = {
+  action: "/search",
+  method: "get",
+  role: "search",
+  class: "search__input"
 };
-const _sfc_main = /* @__PURE__ */ Object.assign(__default__, {
-  setup(__props) {
-    return (_ctx, _cache) => {
-      return openBlock(), createBlock(unref(ve), { class: "header__search" }, {
+const _hoisted_10 = {
+  key: 0,
+  class: "search__results"
+};
+const _hoisted_11 = { class: "search__results--inner" };
+const _hoisted_12 = { key: 0 };
+const _hoisted_13 = ["href"];
+const _hoisted_14 = ["src", "alt"];
+const _hoisted_15 = ["href"];
+const _hoisted_16 = ["href"];
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_PopoverButton = resolveComponent("PopoverButton");
+  const _component_Tab = resolveComponent("Tab");
+  const _component_TabList = resolveComponent("TabList");
+  const _component_TabPanel = resolveComponent("TabPanel");
+  const _component_TabPanels = resolveComponent("TabPanels");
+  const _component_TabGroup = resolveComponent("TabGroup");
+  const _component_PopoverPanel = resolveComponent("PopoverPanel");
+  const _component_Popover = resolveComponent("Popover");
+  const _directive_debounce = resolveDirective("debounce");
+  return openBlock(), createBlock(_component_Popover, { class: "header__search search" }, {
+    default: withCtx(() => [
+      createVNode(_component_PopoverButton, { class: "header__icon-link" }, {
         default: withCtx(() => [
-          createVNode(unref(ke), { class: "header__icon-link" }, {
-            default: withCtx(() => [
-              (openBlock(), createElementBlock("svg", {
-                class: normalizeClass(["icon align-bottom", _ctx.strokeColor]),
-                xmlns: "http://www.w3.org/2000/svg",
-                viewBox: "0 0 24 24",
-                width: __props.iconSize,
-                height: __props.iconSize,
-                fill: "none",
-                stroke: "#000",
-                "stroke-width": __props.iconStrokeWidth,
-                "stroke-linecap": "round",
-                "stroke-linejoin": "round"
-              }, [
-                _hoisted_2,
-                createBaseVNode("circle", {
-                  class: normalizeClass(_ctx.fillColor),
-                  cx: "11",
-                  cy: "11",
-                  r: "9",
-                  fill: "#000",
-                  opacity: ".25",
-                  stroke: "none"
-                }, null, 2),
-                _hoisted_3,
-                _hoisted_4
-              ], 10, _hoisted_1)),
-              _hoisted_5
-            ]),
-            _: 1
-          }),
-          createVNode(unref(Le), {
-            class: normalizeClass(["header__search-popover", [__props.searchPosition, _ctx.bgColor, _ctx.textColor]])
+          (openBlock(), createElementBlock("svg", {
+            class: "icon align-bottom",
+            xmlns: "http://www.w3.org/2000/svg",
+            viewBox: "0 0 24 24",
+            width: $props.iconSize,
+            height: $props.iconSize,
+            fill: "none",
+            stroke: "#000",
+            "stroke-width": $props.iconStrokeWidth,
+            "stroke-linecap": "round",
+            "stroke-linejoin": "round"
+          }, _hoisted_6, 8, _hoisted_1)),
+          _hoisted_7
+        ]),
+        _: 1
+      }),
+      createVNode(Transition, { name: $props.searchPosition }, {
+        default: withCtx(() => [
+          createVNode(_component_PopoverPanel, {
+            class: normalizeClass(["search__popover", [$props.searchPosition, $props.headerColorScheme]])
           }, {
             default: withCtx(() => [
-              createBaseVNode("input", {
-                type: "text",
-                value: __props.terms,
-                placeholder: "Search"
-              }, null, 8, _hoisted_6)
+              createBaseVNode("form", _hoisted_8, [
+                withDirectives(createBaseVNode("input", {
+                  "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.query = $event),
+                  placeholder: "Search"
+                }, null, 512), [
+                  [vModelText, $data.query],
+                  [_directive_debounce, $props.predictiveSearchEnabled ? $options.getPredictiveResults() : null, "200"]
+                ])
+              ]),
+              createCommentVNode("", true),
+              createVNode(Transition, { name: "results" }, {
+                default: withCtx(() => [
+                  $data.query != "" && $props.predictiveSearchEnabled && $options.resultsLength > 0 ? (openBlock(), createElementBlock("div", _hoisted_10, [
+                    createBaseVNode("div", _hoisted_11, [
+                      $props.predictiveShowNumber ? (openBlock(), createElementBlock("div", _hoisted_12, toDisplayString($options.resultsLength) + " Results ", 1)) : createCommentVNode("", true),
+                      createVNode(_component_TabGroup, null, {
+                        default: withCtx(() => [
+                          createVNode(_component_TabList, { class: "tabs" }, {
+                            default: withCtx(() => [
+                              $data.results.products.length ? (openBlock(), createBlock(_component_Tab, { key: 0 }, {
+                                default: withCtx(() => [
+                                  createTextVNode("Products ( " + toDisplayString($data.results.products.length) + " )", 1)
+                                ]),
+                                _: 1
+                              })) : createCommentVNode("", true),
+                              $props.predictiveShowPages && $data.results.pages.length ? (openBlock(), createBlock(_component_Tab, { key: 1 }, {
+                                default: withCtx(() => [
+                                  createTextVNode("Pages ( " + toDisplayString($data.results.pages.length) + " )", 1)
+                                ]),
+                                _: 1
+                              })) : createCommentVNode("", true),
+                              $props.predictiveShowArticles && $data.results.articles.length ? (openBlock(), createBlock(_component_Tab, { key: 2 }, {
+                                default: withCtx(() => [
+                                  createTextVNode("Articles ( " + toDisplayString($data.results.articles.length) + " )", 1)
+                                ]),
+                                _: 1
+                              })) : createCommentVNode("", true)
+                            ]),
+                            _: 1
+                          }),
+                          createVNode(_component_TabPanels, null, {
+                            default: withCtx(() => [
+                              $data.results.products.length ? (openBlock(), createBlock(_component_TabPanel, { key: 0 }, {
+                                default: withCtx(() => [
+                                  (openBlock(true), createElementBlock(Fragment, null, renderList($data.results.products, (product) => {
+                                    return openBlock(), createElementBlock("div", {
+                                      key: product.id
+                                    }, [
+                                      createBaseVNode("a", {
+                                        href: product.url
+                                      }, [
+                                        createBaseVNode("img", {
+                                          src: product.featured_image.url,
+                                          alt: product.featured_image.alt
+                                        }, null, 8, _hoisted_14),
+                                        createBaseVNode("span", null, toDisplayString(product.title), 1)
+                                      ], 8, _hoisted_13)
+                                    ]);
+                                  }), 128))
+                                ]),
+                                _: 1
+                              })) : createCommentVNode("", true),
+                              $props.predictiveShowPages && $data.results.pages.length ? (openBlock(), createBlock(_component_TabPanel, { key: 1 }, {
+                                default: withCtx(() => [
+                                  (openBlock(true), createElementBlock(Fragment, null, renderList($data.results.pages, (page) => {
+                                    return openBlock(), createElementBlock("div", {
+                                      key: page.id
+                                    }, [
+                                      createBaseVNode("a", {
+                                        href: page.url
+                                      }, [
+                                        createBaseVNode("h3", null, toDisplayString(page.title), 1)
+                                      ], 8, _hoisted_15)
+                                    ]);
+                                  }), 128))
+                                ]),
+                                _: 1
+                              })) : createCommentVNode("", true),
+                              $props.predictiveShowArticles && $data.results.articles.length ? (openBlock(), createBlock(_component_TabPanel, { key: 2 }, {
+                                default: withCtx(() => [
+                                  (openBlock(true), createElementBlock(Fragment, null, renderList($data.results.articles, (article) => {
+                                    return openBlock(), createElementBlock("div", {
+                                      key: article.id
+                                    }, [
+                                      createBaseVNode("a", {
+                                        href: article.url
+                                      }, [
+                                        createBaseVNode("h3", null, toDisplayString(article.title), 1)
+                                      ], 8, _hoisted_16)
+                                    ]);
+                                  }), 128))
+                                ]),
+                                _: 1
+                              })) : createCommentVNode("", true)
+                            ]),
+                            _: 1
+                          })
+                        ]),
+                        _: 1
+                      })
+                    ])
+                  ])) : createCommentVNode("", true)
+                ]),
+                _: 1
+              })
             ]),
             _: 1
           }, 8, ["class"])
         ]),
         _: 1
-      });
-    };
-  }
-});
-var SearchMenu = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-06b8d56e"]]);
+      }, 8, ["name"])
+    ]),
+    _: 1
+  });
+}
+var SearchMenu = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__scopeId", "data-v-60cdf6c6"]]);
 const sections = settingsFile.current.sections;
 const searchProps = {
   searchPosition: window.themeSettings.search_open_position,
@@ -5611,4 +6302,4 @@ const searchProps = {
   iconSize: window.themeSettings.icon_size,
   iconStrokeWidth: window.themeSettings.icon_stroke_width
 };
-createApp(SearchMenu, searchProps).mount("#searchMenu");
+createApp(SearchMenu, searchProps).mount("#searchMenuTop");
