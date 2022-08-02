@@ -36,7 +36,14 @@
   }
 {%- endstyle -%}
 
-<footer class="footer color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+<footer class="footer color-{{ section.settings.color_scheme }} gradient">
+
+        {%- if section.settings.show_social and section.settings.social_location == "above" -%}
+        <div id="subfooter-upper">
+          {%- render 'social-subfooter' -%}
+        </div>
+        {%- endif -%}
+
   {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social -%}
     <div class="footer__content-top page-width">
       {%- if section.blocks.size > 0 -%}
@@ -49,7 +56,7 @@
             assign footer_grid_class = 'grid--3-col-tablet'
           endif
         -%}
-        <div class="footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}">
+        <div class="flex footer__blocks-wrapper grid grid--1-col grid--2-col grid--4-col-tablet {{ footer_grid_class }}">
           {%- for block in section.blocks -%}
             <div class="footer-block grid__item{% if block.type == 'link_list' %} footer-block--menu{% endif %}" {{ block.shopify_attributes }}>
               {%- if block.settings.heading != blank -%}
@@ -144,89 +151,6 @@
           </div>
         {%- endif -%}
 
-        {%- if section.settings.show_social -%}
-          <ul class="footer__list-social list-unstyled list-social" role="list">
-            {%- if settings.social_twitter_link != blank -%}
-              <li class="list-social__item">
-                <a href="{{ settings.social_twitter_link }}" class="link list-social__link" >
-                  {%- render 'icon-twitter' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.twitter' | t }}</span>
-                </a>
-              </li>
-            {%- endif -%}
-            {%- if settings.social_facebook_link != blank -%}
-              <li class="list-social__item">
-                <a href="{{ settings.social_facebook_link }}" class="link list-social__link" >
-                  {%- render 'icon-facebook' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.facebook' | t }}</span>
-                </a>
-              </li>
-            {%- endif -%}
-            {%- if settings.social_pinterest_link != blank -%}
-              <li class="list-social__item">
-                <a href="{{ settings.social_pinterest_link }}" class="link list-social__link" >
-                  {%- render 'icon-pinterest' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.pinterest' | t }}</span>
-                </a>
-              </li>
-            {%- endif -%}
-            {%- if settings.social_instagram_link != blank -%}
-              <li class="list-social__item">
-                <a href="{{ settings.social_instagram_link }}" class="link list-social__link" >
-                  {%- render 'icon-instagram' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.instagram' | t }}</span>
-                </a>
-              </li>
-            {%- endif -%}
-            {%- if settings.social_tiktok_link != blank -%}
-              <li class="list-social__item">
-                <a href="{{ settings.social_tiktok_link }}" class="link list-social__link" >
-                  {%- render 'icon-tiktok' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.tiktok' | t }}</span>
-                </a>
-              </li>
-            {%- endif -%}
-            {%- if settings.social_tumblr_link != blank -%}
-              <li class="list-social__item">
-                <a href="{{ settings.social_tumblr_link }}" class="link list-social__link" >
-                  {%- render 'icon-tumblr' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.tumblr' | t }}</span>
-                </a>
-              </li>
-            {%- endif -%}
-            {%- if settings.social_snapchat_link != blank -%}
-              <li class="list-social__item">
-                <a href="{{ settings.social_snapchat_link }}" class="link list-social__link" >
-                  {%- render 'icon-snapchat' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.snapchat' | t }}</span>
-                </a>
-              </li>
-            {%- endif -%}
-            {%- if settings.social_youtube_link != blank -%}
-              <li class="list-social__item">
-                <a href="{{ settings.social_youtube_link }}" class="link list-social__link" >
-                  {%- render 'icon-youtube' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.youtube' | t }}</span>
-                </a>
-              </li>
-            {%- endif -%}
-            {%- if settings.social_vimeo_link != blank -%}
-              <li class="list-social__item">
-                <a href="{{ settings.social_vimeo_link }}" class="link list-social__link" >
-                  {%- render 'icon-vimeo' -%}
-                  <span class="visually-hidden">{{ 'general.social.links.vimeo' | t }}</span>
-                </a>
-              </li>
-            {%- endif -%}
-          </ul>
-        {%- endif -%}
-      </div>
-    </div>
-  {%- endif -%}
-
-  <div class="footer__content-bottom">
-    <div class="footer__content-bottom-wrapper page-width">
-      <div class="footer__column footer__localization isolate">
         {%- if section.settings.enable_country_selector and localization.available_countries.size > 1 -%}
           <noscript>
             {%- form 'localization', id: 'FooterCountryFormNoScript', class: 'localization-form' -%}
@@ -247,7 +171,7 @@
           <localization-form>
             {%- form 'localization', id: 'FooterCountryForm', class: 'localization-form' -%}
               <div class="no-js-hidden">
-                <h2 class="caption-large text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
+                <h2 class="footer-block__heading text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
                 <div class="disclosure">
                   <button type="button" class="disclosure__button localization-form__select localization-selector link link--text caption-large" aria-expanded="false" aria-controls="FooterCountryList" aria-describedby="FooterCountryLabel">
                     {{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})
@@ -270,6 +194,11 @@
             {%- endform -%}
           </localization-form>
         {%- endif -%}
+      </div>
+    </div>
+  {%- endif -%}
+
+        <div class="footer__column footer__localization isolate">
 
         {%- if section.settings.enable_language_selector and localization.available_languages.size > 1 -%}
           <noscript>
@@ -316,27 +245,52 @@
           </localization-form>
         {%- endif -%}
       </div>
-      <div class="footer__column footer__column--info">
-        {%- if section.settings.payment_enable -%}
-          <div class="footer__payment">
-            <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
-            <ul class="list list-payment" role="list">
-              {%- for type in shop.enabled_payment_types -%}
-                <li class="list-payment__item">
-                  {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
-                </li>
-              {%- endfor -%}
-            </ul>
-          </div>
-        {%- endif -%}
+
+      {%- if section.settings.payment_enable -%}
+        <div class="footer__payment">
+          <span class="visually-hidden">{{ 'sections.footer.payment' | t }}</span>
+          <ul class="list list-payment" role="list">
+            {%- for type in shop.enabled_payment_types -%}
+              <li class="list-payment__item">
+                {{ type | payment_type_svg_tag: class: 'icon icon--full-color' }}
+              </li>
+            {%- endfor -%}
+          </ul>
+        </div>
+      {%- endif -%}
+
+  <div id="large-footer-logo">
+    <h1 id="big-bold-logo">  </h1>
+      <img
+        src="{{ section.settings.large_logo | image_url: width: 1920 }}"
+        alt="{{ section.settings.large_logo.alt | escape }}"
+        width="{{ section.settings.large_logo_width }}"
+        loading="lazy"
+      >
+  </div>
+
+  {%- if section.settings.show_poweredbyshopify or section.settings.social_location == "below" -%}
+    <div class="footer__content-bottom">
+      <div class="footer__content-bottom-wrapper page-width">
+        {%- if section.settings.show_poweredbyshopify -%}
         <div class="footer__copyright caption">
           <small class="copyright__content">&copy; {{ 'now' | date: "%Y" }}, {{ shop.name | link_to: routes.root_url }}</small>
           <small class="copyright__content">{{ powered_by_link }}</small>
         </div>
-      </div>
+        {%- endif -%}
+
+        {%- if section.settings.show_social and section.settings.social_location == "below" -%}
+          <div class="lower-social">
+          {%- render 'social-subfooter' -%}
+          </div>
+        {%- endif -%}
+  {%- endif -%}
+
+
     </div>
   </div>
 </footer>
+
 
 {% javascript %}
   class LocalizationForm extends HTMLElement {
@@ -405,11 +359,26 @@
           "label": "t:sections.footer.blocks.link_list.settings.heading.label"
         },
         {
+        "type": "checkbox",
+        "id": "display_logo",
+        "default": false,
+        "label": "Display Logo"
+        },
+        {
           "type": "link_list",
           "id": "menu",
           "default": "footer",
           "label": "t:sections.footer.blocks.link_list.settings.menu.label",
           "info": "t:sections.footer.blocks.link_list.settings.menu.info"
+        },
+        {
+          "type": "range",
+          "id": "menu_column_span",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "label": "Column Span",
+          "default": 1
         }
       ]
     },
@@ -428,6 +397,15 @@
           "id": "subtext",
           "default": "<p>Share contact information, store details, and brand content with your customers.</p>",
           "label": "t:sections.footer.blocks.text.settings.subtext.label"
+        },
+        {
+          "type": "range",
+          "id": "text_column_span",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "label": "Column Span",
+          "default": 1
         }
       ]
     },
@@ -469,6 +447,15 @@
             }
           ],
           "default": "center"
+        },
+        {
+          "type": "range",
+          "id": "image_column_span",
+          "min": 1,
+          "max": 6,
+          "step": 1,
+          "label": "Column Span",
+          "default": 1
         }
       ]
     }
@@ -479,20 +466,16 @@
       "id": "color_scheme",
       "options": [
         {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
           "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
+          "label": "Basic Light"
         },
         {
           "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
+          "label": "Basic Dark"
+        },
+        {
+          "value": "accent-1",
+          "label": "Big & Bold"
         },
         {
           "value": "inverse",
@@ -501,6 +484,53 @@
       ],
       "default": "background-1",
       "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "large_logo",
+      "label": "Large logo image for bold theme"
+    },
+    {
+      "type": "range",
+      "id": "large_logo_width",
+      "min": 50,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "Large logo width",
+      "default": 300 
+    },
+    {
+      "type": "select",
+      "id": "column_count",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        },
+        {
+          "value": "4",
+          "label": "4"
+        },
+        {
+          "value": "5",
+          "label": "5"
+        },
+        {
+          "value": "6",
+          "label": "6"
+        }
+      ],
+      "default": "4",
+      "label": "Number of footer columns"
     },
     {
       "type": "header",
@@ -528,7 +558,35 @@
       "type": "checkbox",
       "id": "show_social",
       "default": false,
-      "label": "t:sections.footer.settings.show_social.label"
+      "label": "Display social media links"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_icon",
+      "default": false,
+      "label": "Show social media icons"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_social_text",
+      "default": false,
+      "label": "Show social media text"
+    },
+    {
+      "type": "radio",
+      "id": "social_location",
+      "options": [
+        {
+          "value": "above",
+          "label": "At top of footer"
+        },
+        {
+          "value": "below",
+          "label": "At bottom of footer"
+        }
+      ],
+      "default": "below",
+      "label": "Social links placement"
     },
     {
       "type": "header",
@@ -561,6 +619,12 @@
       "id": "payment_enable",
       "default": true,
       "label": "t:sections.footer.settings.payment_enable.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_poweredbyshopify",
+      "default": true,
+      "label": "Display Powered by Shopify"
     },
     {
       "type": "header",
@@ -613,3 +677,4 @@
   }
 }
 {% endschema %}
+

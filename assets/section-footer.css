@@ -1,3 +1,57 @@
+/* // ADDED STYLES //  */
+
+.footer__blocks-wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.footer {
+  background: black;
+  color: white;
+  font-family: var(--font-heading-family);
+}
+
+/* // unlcear why this is necessary but started having weird //
+// white padding at top of footer section //  */
+#shopify-section-footer {
+  background: black;
+}
+
+#large-footer-logo {
+  width: 100vw;
+  height: auto;
+  display: flex;
+  justify-content: center;
+}
+
+.list-social {
+  justify-content: center !important;
+}
+
+.list-social__link {
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.social-text {
+  padding-left: 5px;
+}
+
+#subfooter-upper {
+  padding-bottom: 5rem;
+}
+
+#big-bold-logo {
+  font-size: 9rem;
+  /* font-size: 213px; */
+  font-weight: 600;
+  line-height: 288px;
+  letter-spacing: 5.78000020980835px;
+  text-align: center;
+}
+
+/* // SHOPIFY STYLES //  */
+
 .footer {
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
@@ -7,7 +61,6 @@
 }
 
 .footer__content-top {
-  padding-bottom: 5rem;
   display: block;
 }
 
@@ -52,6 +105,8 @@
 .footer__content-bottom-wrapper {
   display: flex;
   width: 100%;
+  justify-content: space-around;
+  border-top: solid 1px white;
 }
 
 @media screen and (max-width: 749px) {
@@ -169,6 +224,7 @@
 
 .footer-block__newsletter {
   text-align: center;
+  padding-bottom: 1.55rem;
 }
 
 .newsletter-form__field-wrapper {
@@ -185,7 +241,8 @@
     margin: 0;
   }
 
-  .footer-block__newsletter:not(:only-child) .newsletter-form__message--success {
+  .footer-block__newsletter:not(:only-child)
+    .newsletter-form__message--success {
     left: auto;
   }
 }
@@ -323,7 +380,7 @@ noscript .localization-form__select {
 
 .localization-form__select .icon-caret {
   position: absolute;
-  content: '';
+  content: "";
   height: 0.6rem;
   right: calc(var(--inputs-border-width) + 1.5rem);
   top: calc(50% - 0.2rem);
@@ -358,7 +415,6 @@ noscript .localization-selector.link {
   opacity: 1;
   animation: animateLocalization var(--duration-default) ease;
 }
-
 
 @media screen and (min-width: 750px) {
   .footer__payment {
@@ -444,7 +500,7 @@ noscript .localization-selector.link {
 @media screen and (min-width: 750px) {
   .footer-block__details-content .list-menu__item--link {
     display: inline-block;
-    font-size: 1.4rem;
+    font-size: 1.1rem;
   }
 
   .footer-block__details-content > :first-child .list-menu__item--link {

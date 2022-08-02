@@ -109,11 +109,8 @@
             }
           }
         },
-        "block_order": [
-          "announcement-bar-0"
-        ],
-        "settings": {
-        }
+        "block_order": ["announcement-bar-0"],
+        "settings": {}
       },
       "header": {
         "type": "header",
@@ -151,15 +148,18 @@
             "type": "text",
             "settings": {
               "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+            }
+          },
+          "footer-3": {
+            "type": "text",
+            "settings": {
+              "heading": "Money stuff",
+              "subtext": "<p> there should be a currency selector here </p>"
             }
           }
         },
-        "block_order": [
-          "footer-0",
-          "footer-1",
-          "footer-2"
-        ],
+        "block_order": ["footer-0", "footer-1", "footer-2", "footer-3"],
         "settings": {
           "color_scheme": "background-1",
           "newsletter_enable": true,
@@ -187,9 +187,7 @@
         }
       }
     },
-    "content_for_index": [
-
-    ]
+    "content_for_index": []
   },
   "presets": {
     "Default": {
@@ -305,11 +303,8 @@
               }
             }
           },
-          "block_order": [
-            "announcement-bar-0"
-          ],
-          "settings": {
-          }
+          "block_order": ["announcement-bar-0"],
+          "settings": {}
         },
         "header": {
           "type": "header",
@@ -347,15 +342,11 @@
               "type": "text",
               "settings": {
                 "heading": "Our mission",
-                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
               }
             }
           },
-          "block_order": [
-            "footer-0",
-            "footer-1",
-            "footer-2"
-          ],
+          "block_order": ["footer-0", "footer-1", "footer-2"],
           "settings": {
             "color_scheme": "background-1",
             "newsletter_enable": true,

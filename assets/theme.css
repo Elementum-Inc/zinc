@@ -237,6 +237,12 @@ ul {
 .block {
   display: block;
 }
+.flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
 .table {
   display: table;
 }
