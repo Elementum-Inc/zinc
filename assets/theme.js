@@ -1,9 +1,12 @@
 var windi = "";
+var theme = "";
 var typography = "";
 var icons = "";
 var buttons = "";
-var theme = "";
-const p$1 = function polyfill() {
+var animations = "";
+var header = "";
+var cards = "";
+const p$3 = function polyfill() {
   const relList = document.createElement("link").relList;
   if (relList && relList.supports && relList.supports("modulepreload")) {
     return;
@@ -44,7 +47,7 @@ const p$1 = function polyfill() {
     fetch(link.href, fetchOpts);
   }
 };
-p$1();
+p$3();
 function makeMap(str, expectsLowerCase) {
   const map = /* @__PURE__ */ Object.create(null);
   const list = str.split(",");
@@ -109,6 +112,28 @@ function normalizeClass(value) {
   }
   return res.trim();
 }
+const toDisplayString = (val) => {
+  return isString(val) ? val : val == null ? "" : isArray(val) || isObject(val) && (val.toString === objectToString || !isFunction(val.toString)) ? JSON.stringify(val, replacer, 2) : String(val);
+};
+const replacer = (_key, val) => {
+  if (val && val.__v_isRef) {
+    return replacer(_key, val.value);
+  } else if (isMap(val)) {
+    return {
+      [`Map(${val.size})`]: [...val.entries()].reduce((entries, [key, val2]) => {
+        entries[`${key} =>`] = val2;
+        return entries;
+      }, {})
+    };
+  } else if (isSet(val)) {
+    return {
+      [`Set(${val.size})`]: [...val.values()]
+    };
+  } else if (isObject(val) && !isArray(val) && !isPlainObject(val)) {
+    return String(val);
+  }
+  return val;
+};
 const EMPTY_OBJ = {};
 const EMPTY_ARR = [];
 const NOOP = () => {
@@ -143,7 +168,9 @@ const toRawType = (value) => {
 };
 const isPlainObject = (val) => toTypeString(val) === "[object Object]";
 const isIntegerKey = (key) => isString(key) && key !== "NaN" && key[0] !== "-" && "" + parseInt(key, 10) === key;
-const isReservedProp = /* @__PURE__ */ makeMap(",key,ref,ref_for,ref_key,onVnodeBeforeMount,onVnodeMounted,onVnodeBeforeUpdate,onVnodeUpdated,onVnodeBeforeUnmount,onVnodeUnmounted");
+const isReservedProp = /* @__PURE__ */ makeMap(
+  ",key,ref,ref_for,ref_key,onVnodeBeforeMount,onVnodeMounted,onVnodeBeforeUpdate,onVnodeUpdated,onVnodeBeforeUnmount,onVnodeUnmounted"
+);
 const cacheStringFunction = (fn) => {
   const cache = /* @__PURE__ */ Object.create(null);
   return (str) => {
@@ -153,7 +180,7 @@ const cacheStringFunction = (fn) => {
 };
 const camelizeRE = /-(\w)/g;
 const camelize = cacheStringFunction((str) => {
-  return str.replace(camelizeRE, (_, c) => c ? c.toUpperCase() : "");
+  return str.replace(camelizeRE, (_, c2) => c2 ? c2.toUpperCase() : "");
 });
 const hyphenateRE = /\B([A-Z])/g;
 const hyphenate = cacheStringFunction((str) => str.replace(hyphenateRE, "-$1").toLowerCase());
@@ -173,8 +200,8 @@ const def = (obj, key, value) => {
   });
 };
 const toNumber = (val) => {
-  const n = parseFloat(val);
-  return isNaN(n) ? val : n;
+  const n2 = parseFloat(val);
+  return isNaN(n2) ? val : n2;
 };
 let _globalThis;
 const getGlobalThis = () => {
@@ -210,15 +237,15 @@ class EffectScope {
   }
   stop(fromParent) {
     if (this.active) {
-      let i, l;
-      for (i = 0, l = this.effects.length; i < l; i++) {
+      let i, l2;
+      for (i = 0, l2 = this.effects.length; i < l2; i++) {
         this.effects[i].stop();
       }
-      for (i = 0, l = this.cleanups.length; i < l; i++) {
+      for (i = 0, l2 = this.cleanups.length; i < l2; i++) {
         this.cleanups[i]();
       }
       if (this.scopes) {
-        for (i = 0, l = this.scopes.length; i < l; i++) {
+        for (i = 0, l2 = this.scopes.length; i < l2; i++) {
           this.scopes[i].stop(true);
         }
       }
@@ -466,7 +493,9 @@ function triggerEffect(effect, debuggerEventExtraInfo) {
   }
 }
 const isNonTrackableKeys = /* @__PURE__ */ makeMap(`__proto__,__v_isRef,__isVue`);
-const builtInSymbols = new Set(/* @__PURE__ */ Object.getOwnPropertyNames(Symbol).filter((key) => key !== "arguments" && key !== "caller").map((key) => Symbol[key]).filter(isSymbol));
+const builtInSymbols = new Set(
+  /* @__PURE__ */ Object.getOwnPropertyNames(Symbol).filter((key) => key !== "arguments" && key !== "caller").map((key) => Symbol[key]).filter(isSymbol)
+);
 const get = /* @__PURE__ */ createGetter();
 const shallowGet = /* @__PURE__ */ createGetter(false, true);
 const readonlyGet = /* @__PURE__ */ createGetter(true);
@@ -476,7 +505,7 @@ function createArrayInstrumentations() {
   ["includes", "indexOf", "lastIndexOf"].forEach((key) => {
     instrumentations[key] = function(...args) {
       const arr = toRaw(this);
-      for (let i = 0, l = this.length; i < l; i++) {
+      for (let i = 0, l2 = this.length; i < l2; i++) {
         track(arr, "get", i + "");
       }
       const res = arr[key](...args);
@@ -602,7 +631,7 @@ const shallowReactiveHandlers = /* @__PURE__ */ extend({}, mutableHandlers, {
   set: shallowSet
 });
 const toShallow = (value) => value;
-const getProto = (v) => Reflect.getPrototypeOf(v);
+const getProto = (v2) => Reflect.getPrototypeOf(v2);
 function get$1(target, key, isReadonly2 = false, isShallow2 = false) {
   target = target["__v_raw"];
   const rawTarget = toRaw(target);
@@ -925,8 +954,8 @@ function triggerRefValue(ref2, newVal) {
     }
   }
 }
-function isRef(r) {
-  return !!(r && r.__v_isRef === true);
+function isRef(r2) {
+  return !!(r2 && r2.__v_isRef === true);
 }
 function ref(value) {
   return createRef(value, false);
@@ -1163,7 +1192,7 @@ function flushPostFlushCbs(seen) {
       return;
     }
     activePostFlushCbs = deduped;
-    activePostFlushCbs.sort((a, b) => getId(a) - getId(b));
+    activePostFlushCbs.sort((a, b2) => getId(a) - getId(b2));
     for (postFlushIndex = 0; postFlushIndex < activePostFlushCbs.length; postFlushIndex++) {
       activePostFlushCbs[postFlushIndex]();
     }
@@ -1176,7 +1205,7 @@ function flushJobs(seen) {
   isFlushPending = false;
   isFlushing = true;
   flushPreFlushCbs(seen);
-  queue.sort((a, b) => getId(a) - getId(b));
+  queue.sort((a, b2) => getId(a) - getId(b2));
   const check = NOOP;
   try {
     for (flushIndex = 0; flushIndex < queue.length; flushIndex++) {
@@ -1485,6 +1514,9 @@ function inject(key, defaultValue, treatDefaultAsFactory = false) {
       ;
   }
 }
+function watchEffect(effect, options) {
+  return doWatch(effect, null, options);
+}
 const INITIAL_WATCHER_VALUE = {};
 function watch(source, cb, options) {
   return doWatch(source, cb, options);
@@ -1560,7 +1592,7 @@ function doWatch(source, cb, { immediate, deep, flush, onTrack, onTrigger } = EM
     }
     if (cb) {
       const newValue = effect.run();
-      if (deep || forceTrigger || (isMultiSource ? newValue.some((v, i) => hasChanged(v, oldValue[i])) : hasChanged(newValue, oldValue)) || false) {
+      if (deep || forceTrigger || (isMultiSource ? newValue.some((v2, i) => hasChanged(v2, oldValue[i])) : hasChanged(newValue, oldValue)) || false) {
         if (cleanup) {
           cleanup();
         }
@@ -1649,8 +1681,8 @@ function traverse(value, seen) {
       traverse(value[i], seen);
     }
   } else if (isSet(value) || isMap(value)) {
-    value.forEach((v) => {
-      traverse(v, seen);
+    value.forEach((v2) => {
+      traverse(v2, seen);
     });
   } else if (isPlainObject(value)) {
     for (const key in value) {
@@ -1705,9 +1737,9 @@ const BaseTransitionImpl = {
       }
       let child = children[0];
       if (children.length > 1) {
-        for (const c of children) {
-          if (c.type !== Comment) {
-            child = c;
+        for (const c2 of children) {
+          if (c2.type !== Comment) {
+            child = c2;
             break;
           }
         }
@@ -1924,6 +1956,9 @@ function getTransitionRawChildren(children, keepComment = false, parentKey) {
   }
   return ret;
 }
+function defineComponent(options) {
+  return isFunction(options) ? { setup: options, name: options.name } : options;
+}
 const isAsyncWrapper = (i) => !!i.type.__asyncLoader;
 const isKeepAlive = (vnode) => vnode.type.__isKeepAlive;
 function onActivated(hook, target) {
@@ -1995,6 +2030,35 @@ const onRenderTracked = createHook("rtc");
 function onErrorCaptured(hook, target = currentInstance) {
   injectHook("ec", hook, target);
 }
+function withDirectives(vnode, directives) {
+  const internalInstance = currentRenderingInstance;
+  if (internalInstance === null) {
+    return vnode;
+  }
+  const instance = getExposeProxy(internalInstance) || internalInstance.proxy;
+  const bindings = vnode.dirs || (vnode.dirs = []);
+  for (let i = 0; i < directives.length; i++) {
+    let [dir, value, arg, modifiers = EMPTY_OBJ] = directives[i];
+    if (isFunction(dir)) {
+      dir = {
+        mounted: dir,
+        updated: dir
+      };
+    }
+    if (dir.deep) {
+      traverse(value);
+    }
+    bindings.push({
+      dir,
+      instance,
+      value,
+      oldValue: void 0,
+      arg,
+      modifiers
+    });
+  }
+  return vnode;
+}
 function invokeDirectiveHook(vnode, prevVNode, instance, name) {
   const bindings = vnode.dirs;
   const oldBindings = prevVNode && prevVNode.dirs;
@@ -2016,7 +2080,67 @@ function invokeDirectiveHook(vnode, prevVNode, instance, name) {
     }
   }
 }
+const COMPONENTS = "components";
+const DIRECTIVES = "directives";
+function resolveComponent(name, maybeSelfReference) {
+  return resolveAsset(COMPONENTS, name, true, maybeSelfReference) || name;
+}
 const NULL_DYNAMIC_COMPONENT = Symbol();
+function resolveDirective(name) {
+  return resolveAsset(DIRECTIVES, name);
+}
+function resolveAsset(type, name, warnMissing = true, maybeSelfReference = false) {
+  const instance = currentRenderingInstance || currentInstance;
+  if (instance) {
+    const Component = instance.type;
+    if (type === COMPONENTS) {
+      const selfName = getComponentName(Component, false);
+      if (selfName && (selfName === name || selfName === camelize(name) || selfName === capitalize(camelize(name)))) {
+        return Component;
+      }
+    }
+    const res = resolve(instance[type] || Component[type], name) || resolve(instance.appContext[type], name);
+    if (!res && maybeSelfReference) {
+      return Component;
+    }
+    return res;
+  }
+}
+function resolve(registry, name) {
+  return registry && (registry[name] || registry[camelize(name)] || registry[capitalize(camelize(name))]);
+}
+function renderList(source, renderItem, cache, index) {
+  let ret;
+  const cached = cache && cache[index];
+  if (isArray(source) || isString(source)) {
+    ret = new Array(source.length);
+    for (let i = 0, l2 = source.length; i < l2; i++) {
+      ret[i] = renderItem(source[i], i, void 0, cached && cached[i]);
+    }
+  } else if (typeof source === "number") {
+    ret = new Array(source);
+    for (let i = 0; i < source; i++) {
+      ret[i] = renderItem(i + 1, i, void 0, cached && cached[i]);
+    }
+  } else if (isObject(source)) {
+    if (source[Symbol.iterator]) {
+      ret = Array.from(source, (item, i) => renderItem(item, i, void 0, cached && cached[i]));
+    } else {
+      const keys = Object.keys(source);
+      ret = new Array(keys.length);
+      for (let i = 0, l2 = keys.length; i < l2; i++) {
+        const key = keys[i];
+        ret[i] = renderItem(source[key], key, i, cached && cached[i]);
+      }
+    }
+  } else {
+    ret = [];
+  }
+  if (cache) {
+    cache[index] = ret;
+  }
+  return ret;
+}
 const getPublicInstance = (i) => {
   if (!i)
     return null;
@@ -2045,9 +2169,9 @@ const PublicInstanceProxyHandlers = {
     const { ctx, setupState, data, props, accessCache, type, appContext } = instance;
     let normalizedProps;
     if (key[0] !== "$") {
-      const n = accessCache[key];
-      if (n !== void 0) {
-        switch (n) {
+      const n2 = accessCache[key];
+      if (n2 !== void 0) {
+        switch (n2) {
           case 1:
             return setupState[key];
           case 2:
@@ -2132,7 +2256,7 @@ function applyOptions(instance) {
   const ctx = instance.ctx;
   shouldCacheAccess = false;
   if (options.beforeCreate) {
-    callHook(options.beforeCreate, instance, "bc");
+    callHook$1(options.beforeCreate, instance, "bc");
   }
   const {
     data: dataOptions,
@@ -2191,15 +2315,15 @@ function applyOptions(instance) {
       const opt = computedOptions[key];
       const get2 = isFunction(opt) ? opt.bind(publicThis, publicThis) : isFunction(opt.get) ? opt.get.bind(publicThis, publicThis) : NOOP;
       const set2 = !isFunction(opt) && isFunction(opt.set) ? opt.set.bind(publicThis) : NOOP;
-      const c = computed({
+      const c2 = computed({
         get: get2,
         set: set2
       });
       Object.defineProperty(ctx, key, {
         enumerable: true,
         configurable: true,
-        get: () => c.value,
-        set: (v) => c.value = v
+        get: () => c2.value,
+        set: (v2) => c2.value = v2
       });
     }
   }
@@ -2215,7 +2339,7 @@ function applyOptions(instance) {
     });
   }
   if (created) {
-    callHook(created, instance, "c");
+    callHook$1(created, instance, "c");
   }
   function registerLifecycleHook(register, hook) {
     if (isArray(hook)) {
@@ -2282,7 +2406,7 @@ function resolveInjections(injectOptions, ctx, checkDuplicateProperties = NOOP, 
           enumerable: true,
           configurable: true,
           get: () => injected.value,
-          set: (v) => injected.value = v
+          set: (v2) => injected.value = v2
         });
       } else {
         ctx[key] = injected;
@@ -2292,8 +2416,8 @@ function resolveInjections(injectOptions, ctx, checkDuplicateProperties = NOOP, 
     }
   }
 }
-function callHook(hook, instance, type) {
-  callWithAsyncErrorHandling(isArray(hook) ? hook.map((h) => h.bind(instance.proxy)) : hook.bind(instance.proxy), instance, type);
+function callHook$1(hook, instance, type) {
+  callWithAsyncErrorHandling(isArray(hook) ? hook.map((h2) => h2.bind(instance.proxy)) : hook.bind(instance.proxy), instance, type);
 }
 function createWatcher(raw, ctx, publicThis, key) {
   const getter = key.includes(".") ? createPathGetter(publicThis, key) : () => publicThis[key];
@@ -2306,7 +2430,7 @@ function createWatcher(raw, ctx, publicThis, key) {
     watch(getter, raw.bind(publicThis));
   } else if (isObject(raw)) {
     if (isArray(raw)) {
-      raw.forEach((r) => createWatcher(r, ctx, publicThis, key));
+      raw.forEach((r2) => createWatcher(r2, ctx, publicThis, key));
     } else {
       const handler = isFunction(raw.handler) ? raw.handler.bind(publicThis) : ctx[raw.handler];
       if (isFunction(handler)) {
@@ -2331,7 +2455,7 @@ function resolveMergedOptions(instance) {
   } else {
     resolved = {};
     if (globalMixins.length) {
-      globalMixins.forEach((m) => mergeOptions(resolved, m, optionMergeStrategies, true));
+      globalMixins.forEach((m2) => mergeOptions(resolved, m2, optionMergeStrategies, true));
     }
     mergeOptions(resolved, base, optionMergeStrategies);
   }
@@ -2344,7 +2468,7 @@ function mergeOptions(to, from, strats, asMixin = false) {
     mergeOptions(to, extendsOptions, strats, true);
   }
   if (mixins) {
-    mixins.forEach((m) => mergeOptions(to, m, strats, true));
+    mixins.forEach((m2) => mergeOptions(to, m2, strats, true));
   }
   for (const key in from) {
     if (asMixin && key === "expose")
@@ -2641,12 +2765,12 @@ function getType(ctor) {
   const match = ctor && ctor.toString().match(/^\s*function (\w+)/);
   return match ? match[1] : ctor === null ? "null" : "";
 }
-function isSameType(a, b) {
-  return getType(a) === getType(b);
+function isSameType(a, b2) {
+  return getType(a) === getType(b2);
 }
 function getTypeIndex(type, expectedTypes) {
   if (isArray(expectedTypes)) {
-    return expectedTypes.findIndex((t) => isSameType(t, type));
+    return expectedTypes.findIndex((t2) => isSameType(t2, type));
   } else if (isFunction(expectedTypes)) {
     return isSameType(expectedTypes, type) ? 0 : -1;
   }
@@ -2775,7 +2899,7 @@ function createAppAPI(render, hydrate) {
       get config() {
         return context.config;
       },
-      set config(v) {
+      set config(v2) {
       },
       use(plugin, ...options) {
         if (installedPlugins.has(plugin))
@@ -2843,7 +2967,7 @@ function createAppAPI(render, hydrate) {
 }
 function setRef(rawRef, oldRawRef, parentSuspense, vnode, isUnmount = false) {
   if (isArray(rawRef)) {
-    rawRef.forEach((r, i) => setRef(r, oldRawRef && (isArray(oldRawRef) ? oldRawRef[i] : oldRawRef), parentSuspense, vnode, isUnmount));
+    rawRef.forEach((r2, i) => setRef(r2, oldRawRef && (isArray(oldRawRef) ? oldRawRef[i] : oldRawRef), parentSuspense, vnode, isUnmount));
     return;
   }
   if (isAsyncWrapper(vnode) && !isUnmount) {
@@ -3246,7 +3370,7 @@ function baseCreateRenderer(options, createHydrationFns) {
       if (!instance.isMounted) {
         let vnodeHook;
         const { el, props } = initialVNode;
-        const { bm, m, parent } = instance;
+        const { bm, m: m2, parent } = instance;
         const isAsyncWrapperVNode = isAsyncWrapper(initialVNode);
         toggleRecurse(instance, false);
         if (bm) {
@@ -3262,7 +3386,9 @@ function baseCreateRenderer(options, createHydrationFns) {
             hydrateNode(el, instance.subTree, instance, parentSuspense, null);
           };
           if (isAsyncWrapperVNode) {
-            initialVNode.type.__asyncLoader().then(() => !instance.isUnmounted && hydrateSubTree());
+            initialVNode.type.__asyncLoader().then(
+              () => !instance.isUnmounted && hydrateSubTree()
+            );
           } else {
             hydrateSubTree();
           }
@@ -3271,8 +3397,8 @@ function baseCreateRenderer(options, createHydrationFns) {
           patch(null, subTree, container, anchor, instance, parentSuspense, isSVG);
           initialVNode.el = subTree.el;
         }
-        if (m) {
-          queuePostRenderEffect(m, parentSuspense);
+        if (m2) {
+          queuePostRenderEffect(m2, parentSuspense);
         }
         if (!isAsyncWrapperVNode && (vnodeHook = props && props.onVnodeMounted)) {
           const scopedInitialVNode = initialVNode;
@@ -3284,7 +3410,7 @@ function baseCreateRenderer(options, createHydrationFns) {
         instance.isMounted = true;
         initialVNode = container = anchor = null;
       } else {
-        let { next, bu, u, parent, vnode } = instance;
+        let { next, bu, u: u2, parent, vnode } = instance;
         let originNext = next;
         let vnodeHook;
         toggleRecurse(instance, false);
@@ -3304,20 +3430,32 @@ function baseCreateRenderer(options, createHydrationFns) {
         const nextTree = renderComponentRoot(instance);
         const prevTree = instance.subTree;
         instance.subTree = nextTree;
-        patch(prevTree, nextTree, hostParentNode(prevTree.el), getNextHostNode(prevTree), instance, parentSuspense, isSVG);
+        patch(
+          prevTree,
+          nextTree,
+          hostParentNode(prevTree.el),
+          getNextHostNode(prevTree),
+          instance,
+          parentSuspense,
+          isSVG
+        );
         next.el = nextTree.el;
         if (originNext === null) {
           updateHOCHostEl(instance, nextTree.el);
         }
-        if (u) {
-          queuePostRenderEffect(u, parentSuspense);
+        if (u2) {
+          queuePostRenderEffect(u2, parentSuspense);
         }
         if (vnodeHook = next.props && next.props.onVnodeUpdated) {
           queuePostRenderEffect(() => invokeVNodeHook(vnodeHook, parent, next, vnode), parentSuspense);
         }
       }
     };
-    const effect = instance.effect = new ReactiveEffect(componentUpdateFn, () => queueJob(update), instance.scope);
+    const effect = instance.effect = new ReactiveEffect(
+      componentUpdateFn,
+      () => queueJob(update),
+      instance.scope
+    );
     const update = instance.update = () => effect.run();
     update.id = instance.uid;
     toggleRecurse(instance, true);
@@ -3723,7 +3861,7 @@ function traverseStaticChildren(n1, n2, shallow = false) {
 function getSequence(arr) {
   const p2 = arr.slice();
   const result = [0];
-  let i, j, u, v, c;
+  let i, j, u2, v2, c2;
   const len = arr.length;
   for (i = 0; i < len; i++) {
     const arrI = arr[i];
@@ -3734,29 +3872,29 @@ function getSequence(arr) {
         result.push(i);
         continue;
       }
-      u = 0;
-      v = result.length - 1;
-      while (u < v) {
-        c = u + v >> 1;
-        if (arr[result[c]] < arrI) {
-          u = c + 1;
+      u2 = 0;
+      v2 = result.length - 1;
+      while (u2 < v2) {
+        c2 = u2 + v2 >> 1;
+        if (arr[result[c2]] < arrI) {
+          u2 = c2 + 1;
         } else {
-          v = c;
+          v2 = c2;
         }
       }
-      if (arrI < arr[result[u]]) {
-        if (u > 0) {
-          p2[i] = result[u - 1];
+      if (arrI < arr[result[u2]]) {
+        if (u2 > 0) {
+          p2[i] = result[u2 - 1];
         }
-        result[u] = i;
+        result[u2] = i;
       }
     }
   }
-  u = result.length;
-  v = result[u - 1];
-  while (u-- > 0) {
-    result[u] = v;
-    v = p2[v];
+  u2 = result.length;
+  v2 = result[u2 - 1];
+  while (u2-- > 0) {
+    result[u2] = v2;
+    v2 = p2[v2];
   }
   return result;
 }
@@ -3923,11 +4061,18 @@ function cloneVNode(vnode, extraProps, mergeRef = false) {
 function createTextVNode(text = " ", flag = 0) {
   return createVNode(Text, null, text, flag);
 }
+function createCommentVNode(text = "", asBlock = false) {
+  return asBlock ? (openBlock(), createBlock(Comment, null, text)) : createVNode(Comment, null, text);
+}
 function normalizeVNode(child) {
   if (child == null || typeof child === "boolean") {
     return createVNode(Comment);
   } else if (isArray(child)) {
-    return createVNode(Fragment, null, child.slice());
+    return createVNode(
+      Fragment,
+      null,
+      child.slice()
+    );
   } else if (typeof child === "object") {
     return cloneIfMounted(child);
   } else {
@@ -4126,8 +4271,8 @@ function setupStatefulComponent(instance, isSSR) {
       if (isSSR) {
         return setupResult.then((resolvedResult) => {
           handleSetupResult(instance, resolvedResult, isSSR);
-        }).catch((e) => {
-          handleError(e, instance, 0);
+        }).catch((e2) => {
+          handleError(e2, instance, 0);
         });
       } else {
         instance.asyncDep = setupResult;
@@ -4215,12 +4360,35 @@ function getExposeProxy(instance) {
     }));
   }
 }
+function getComponentName(Component, includeInferred = true) {
+  return isFunction(Component) ? Component.displayName || Component.name : Component.name || includeInferred && Component.__name;
+}
 function isClassComponent(value) {
   return isFunction(value) && "__vccOpts" in value;
 }
 const computed = (getterOrOptions, debugOptions) => {
   return computed$1(getterOrOptions, debugOptions, isInSSRComponentSetup);
 };
+function h$1(type, propsOrChildren, children) {
+  const l2 = arguments.length;
+  if (l2 === 2) {
+    if (isObject(propsOrChildren) && !isArray(propsOrChildren)) {
+      if (isVNode(propsOrChildren)) {
+        return createVNode(type, null, [propsOrChildren]);
+      }
+      return createVNode(type, propsOrChildren);
+    } else {
+      return createVNode(type, null, propsOrChildren);
+    }
+  } else {
+    if (l2 > 3) {
+      children = Array.prototype.slice.call(arguments, 2);
+    } else if (l2 === 3 && isVNode(children)) {
+      children = [children];
+    }
+    return createVNode(type, propsOrChildren, children);
+  }
+}
 const version = "3.2.37";
 const svgNS = "http://www.w3.org/2000/svg";
 const doc = typeof document !== "undefined" ? document : null;
@@ -4333,7 +4501,7 @@ function patchStyle(el, prev, next) {
 const importantRE = /\s*!important$/;
 function setStyle(style, name, val) {
   if (isArray(val)) {
-    val.forEach((v) => setStyle(style, name, v));
+    val.forEach((v2) => setStyle(style, name, v2));
   } else {
     if (val == null)
       val = "";
@@ -4420,7 +4588,7 @@ function patchDOMProp(el, key, value, prevChildren, parentComponent, parentSuspe
   }
   try {
     el[key] = value;
-  } catch (e) {
+  } catch (e2) {
   }
   needRemove && el.removeAttribute(key);
 }
@@ -4437,11 +4605,11 @@ const [_getNow, skipTimestampCheck] = /* @__PURE__ */ (() => {
   return [_getNow2, skipTimestampCheck2];
 })();
 let cachedNow = 0;
-const p = /* @__PURE__ */ Promise.resolve();
+const p$2 = /* @__PURE__ */ Promise.resolve();
 const reset = () => {
   cachedNow = 0;
 };
-const getNow = () => cachedNow || (p.then(reset), cachedNow = _getNow());
+const getNow = () => cachedNow || (p$2.then(reset), cachedNow = _getNow());
 function addEventListener(el, event, handler, options) {
   el.addEventListener(event, handler, options);
 }
@@ -4469,33 +4637,33 @@ function parseName(name) {
   let options;
   if (optionsModifierRE.test(name)) {
     options = {};
-    let m;
-    while (m = name.match(optionsModifierRE)) {
-      name = name.slice(0, name.length - m[0].length);
-      options[m[0].toLowerCase()] = true;
+    let m2;
+    while (m2 = name.match(optionsModifierRE)) {
+      name = name.slice(0, name.length - m2[0].length);
+      options[m2[0].toLowerCase()] = true;
     }
   }
   return [hyphenate(name.slice(2)), options];
 }
 function createInvoker(initialValue, instance) {
-  const invoker = (e) => {
-    const timeStamp = e.timeStamp || _getNow();
+  const invoker = (e2) => {
+    const timeStamp = e2.timeStamp || _getNow();
     if (skipTimestampCheck || timeStamp >= invoker.attached - 1) {
-      callWithAsyncErrorHandling(patchStopImmediatePropagation(e, invoker.value), instance, 5, [e]);
+      callWithAsyncErrorHandling(patchStopImmediatePropagation(e2, invoker.value), instance, 5, [e2]);
     }
   };
   invoker.value = initialValue;
   invoker.attached = getNow();
   return invoker;
 }
-function patchStopImmediatePropagation(e, value) {
+function patchStopImmediatePropagation(e2, value) {
   if (isArray(value)) {
-    const originalStop = e.stopImmediatePropagation;
-    e.stopImmediatePropagation = () => {
-      originalStop.call(e);
-      e._stopped = true;
+    const originalStop = e2.stopImmediatePropagation;
+    e2.stopImmediatePropagation = () => {
+      originalStop.call(e2);
+      e2._stopped = true;
     };
-    return value.map((fn) => (e2) => !e2._stopped && fn && fn(e2));
+    return value.map((fn) => (e3) => !e3._stopped && fn && fn(e3));
   } else {
     return value;
   }
@@ -4548,6 +4716,10 @@ function shouldSetAsProp(el, key, value, isSVG) {
   }
   return key in el;
 }
+const TRANSITION = "transition";
+const ANIMATION = "animation";
+const Transition = (props, { slots }) => h$1(BaseTransition, resolveTransitionProps(props), slots);
+Transition.displayName = "Transition";
 const DOMTransitionPropsValidators = {
   name: String,
   type: String,
@@ -4566,7 +4738,283 @@ const DOMTransitionPropsValidators = {
   leaveActiveClass: String,
   leaveToClass: String
 };
-/* @__PURE__ */ extend({}, BaseTransition.props, DOMTransitionPropsValidators);
+Transition.props = /* @__PURE__ */ extend({}, BaseTransition.props, DOMTransitionPropsValidators);
+const callHook = (hook, args = []) => {
+  if (isArray(hook)) {
+    hook.forEach((h2) => h2(...args));
+  } else if (hook) {
+    hook(...args);
+  }
+};
+const hasExplicitCallback = (hook) => {
+  return hook ? isArray(hook) ? hook.some((h2) => h2.length > 1) : hook.length > 1 : false;
+};
+function resolveTransitionProps(rawProps) {
+  const baseProps = {};
+  for (const key in rawProps) {
+    if (!(key in DOMTransitionPropsValidators)) {
+      baseProps[key] = rawProps[key];
+    }
+  }
+  if (rawProps.css === false) {
+    return baseProps;
+  }
+  const { name = "v", type, duration, enterFromClass = `${name}-enter-from`, enterActiveClass = `${name}-enter-active`, enterToClass = `${name}-enter-to`, appearFromClass = enterFromClass, appearActiveClass = enterActiveClass, appearToClass = enterToClass, leaveFromClass = `${name}-leave-from`, leaveActiveClass = `${name}-leave-active`, leaveToClass = `${name}-leave-to` } = rawProps;
+  const durations = normalizeDuration(duration);
+  const enterDuration = durations && durations[0];
+  const leaveDuration = durations && durations[1];
+  const { onBeforeEnter, onEnter, onEnterCancelled, onLeave, onLeaveCancelled, onBeforeAppear = onBeforeEnter, onAppear = onEnter, onAppearCancelled = onEnterCancelled } = baseProps;
+  const finishEnter = (el, isAppear, done) => {
+    removeTransitionClass(el, isAppear ? appearToClass : enterToClass);
+    removeTransitionClass(el, isAppear ? appearActiveClass : enterActiveClass);
+    done && done();
+  };
+  const finishLeave = (el, done) => {
+    el._isLeaving = false;
+    removeTransitionClass(el, leaveFromClass);
+    removeTransitionClass(el, leaveToClass);
+    removeTransitionClass(el, leaveActiveClass);
+    done && done();
+  };
+  const makeEnterHook = (isAppear) => {
+    return (el, done) => {
+      const hook = isAppear ? onAppear : onEnter;
+      const resolve2 = () => finishEnter(el, isAppear, done);
+      callHook(hook, [el, resolve2]);
+      nextFrame(() => {
+        removeTransitionClass(el, isAppear ? appearFromClass : enterFromClass);
+        addTransitionClass(el, isAppear ? appearToClass : enterToClass);
+        if (!hasExplicitCallback(hook)) {
+          whenTransitionEnds(el, type, enterDuration, resolve2);
+        }
+      });
+    };
+  };
+  return extend(baseProps, {
+    onBeforeEnter(el) {
+      callHook(onBeforeEnter, [el]);
+      addTransitionClass(el, enterFromClass);
+      addTransitionClass(el, enterActiveClass);
+    },
+    onBeforeAppear(el) {
+      callHook(onBeforeAppear, [el]);
+      addTransitionClass(el, appearFromClass);
+      addTransitionClass(el, appearActiveClass);
+    },
+    onEnter: makeEnterHook(false),
+    onAppear: makeEnterHook(true),
+    onLeave(el, done) {
+      el._isLeaving = true;
+      const resolve2 = () => finishLeave(el, done);
+      addTransitionClass(el, leaveFromClass);
+      forceReflow();
+      addTransitionClass(el, leaveActiveClass);
+      nextFrame(() => {
+        if (!el._isLeaving) {
+          return;
+        }
+        removeTransitionClass(el, leaveFromClass);
+        addTransitionClass(el, leaveToClass);
+        if (!hasExplicitCallback(onLeave)) {
+          whenTransitionEnds(el, type, leaveDuration, resolve2);
+        }
+      });
+      callHook(onLeave, [el, resolve2]);
+    },
+    onEnterCancelled(el) {
+      finishEnter(el, false);
+      callHook(onEnterCancelled, [el]);
+    },
+    onAppearCancelled(el) {
+      finishEnter(el, true);
+      callHook(onAppearCancelled, [el]);
+    },
+    onLeaveCancelled(el) {
+      finishLeave(el);
+      callHook(onLeaveCancelled, [el]);
+    }
+  });
+}
+function normalizeDuration(duration) {
+  if (duration == null) {
+    return null;
+  } else if (isObject(duration)) {
+    return [NumberOf(duration.enter), NumberOf(duration.leave)];
+  } else {
+    const n2 = NumberOf(duration);
+    return [n2, n2];
+  }
+}
+function NumberOf(val) {
+  const res = toNumber(val);
+  return res;
+}
+function addTransitionClass(el, cls) {
+  cls.split(/\s+/).forEach((c2) => c2 && el.classList.add(c2));
+  (el._vtc || (el._vtc = /* @__PURE__ */ new Set())).add(cls);
+}
+function removeTransitionClass(el, cls) {
+  cls.split(/\s+/).forEach((c2) => c2 && el.classList.remove(c2));
+  const { _vtc } = el;
+  if (_vtc) {
+    _vtc.delete(cls);
+    if (!_vtc.size) {
+      el._vtc = void 0;
+    }
+  }
+}
+function nextFrame(cb) {
+  requestAnimationFrame(() => {
+    requestAnimationFrame(cb);
+  });
+}
+let endId = 0;
+function whenTransitionEnds(el, expectedType, explicitTimeout, resolve2) {
+  const id = el._endId = ++endId;
+  const resolveIfNotStale = () => {
+    if (id === el._endId) {
+      resolve2();
+    }
+  };
+  if (explicitTimeout) {
+    return setTimeout(resolveIfNotStale, explicitTimeout);
+  }
+  const { type, timeout, propCount } = getTransitionInfo(el, expectedType);
+  if (!type) {
+    return resolve2();
+  }
+  const endEvent = type + "end";
+  let ended = 0;
+  const end = () => {
+    el.removeEventListener(endEvent, onEnd);
+    resolveIfNotStale();
+  };
+  const onEnd = (e2) => {
+    if (e2.target === el && ++ended >= propCount) {
+      end();
+    }
+  };
+  setTimeout(() => {
+    if (ended < propCount) {
+      end();
+    }
+  }, timeout + 1);
+  el.addEventListener(endEvent, onEnd);
+}
+function getTransitionInfo(el, expectedType) {
+  const styles = window.getComputedStyle(el);
+  const getStyleProperties = (key) => (styles[key] || "").split(", ");
+  const transitionDelays = getStyleProperties(TRANSITION + "Delay");
+  const transitionDurations = getStyleProperties(TRANSITION + "Duration");
+  const transitionTimeout = getTimeout(transitionDelays, transitionDurations);
+  const animationDelays = getStyleProperties(ANIMATION + "Delay");
+  const animationDurations = getStyleProperties(ANIMATION + "Duration");
+  const animationTimeout = getTimeout(animationDelays, animationDurations);
+  let type = null;
+  let timeout = 0;
+  let propCount = 0;
+  if (expectedType === TRANSITION) {
+    if (transitionTimeout > 0) {
+      type = TRANSITION;
+      timeout = transitionTimeout;
+      propCount = transitionDurations.length;
+    }
+  } else if (expectedType === ANIMATION) {
+    if (animationTimeout > 0) {
+      type = ANIMATION;
+      timeout = animationTimeout;
+      propCount = animationDurations.length;
+    }
+  } else {
+    timeout = Math.max(transitionTimeout, animationTimeout);
+    type = timeout > 0 ? transitionTimeout > animationTimeout ? TRANSITION : ANIMATION : null;
+    propCount = type ? type === TRANSITION ? transitionDurations.length : animationDurations.length : 0;
+  }
+  const hasTransform = type === TRANSITION && /\b(transform|all)(,|$)/.test(styles[TRANSITION + "Property"]);
+  return {
+    type,
+    timeout,
+    propCount,
+    hasTransform
+  };
+}
+function getTimeout(delays, durations) {
+  while (delays.length < durations.length) {
+    delays = delays.concat(delays);
+  }
+  return Math.max(...durations.map((d2, i) => toMs(d2) + toMs(delays[i])));
+}
+function toMs(s) {
+  return Number(s.slice(0, -1).replace(",", ".")) * 1e3;
+}
+function forceReflow() {
+  return document.body.offsetHeight;
+}
+const getModelAssigner = (vnode) => {
+  const fn = vnode.props["onUpdate:modelValue"] || false;
+  return isArray(fn) ? (value) => invokeArrayFns(fn, value) : fn;
+};
+function onCompositionStart(e2) {
+  e2.target.composing = true;
+}
+function onCompositionEnd(e2) {
+  const target = e2.target;
+  if (target.composing) {
+    target.composing = false;
+    target.dispatchEvent(new Event("input"));
+  }
+}
+const vModelText = {
+  created(el, { modifiers: { lazy, trim, number } }, vnode) {
+    el._assign = getModelAssigner(vnode);
+    const castToNumber = number || vnode.props && vnode.props.type === "number";
+    addEventListener(el, lazy ? "change" : "input", (e2) => {
+      if (e2.target.composing)
+        return;
+      let domValue = el.value;
+      if (trim) {
+        domValue = domValue.trim();
+      }
+      if (castToNumber) {
+        domValue = toNumber(domValue);
+      }
+      el._assign(domValue);
+    });
+    if (trim) {
+      addEventListener(el, "change", () => {
+        el.value = el.value.trim();
+      });
+    }
+    if (!lazy) {
+      addEventListener(el, "compositionstart", onCompositionStart);
+      addEventListener(el, "compositionend", onCompositionEnd);
+      addEventListener(el, "change", onCompositionEnd);
+    }
+  },
+  mounted(el, { value }) {
+    el.value = value == null ? "" : value;
+  },
+  beforeUpdate(el, { value, modifiers: { lazy, trim, number } }, vnode) {
+    el._assign = getModelAssigner(vnode);
+    if (el.composing)
+      return;
+    if (document.activeElement === el && el.type !== "range") {
+      if (lazy) {
+        return;
+      }
+      if (trim && el.value.trim() === value) {
+        return;
+      }
+      if ((number || el.type === "number") && toNumber(el.value) === value) {
+        return;
+      }
+    }
+    const newValue = value == null ? "" : value;
+    if (el.value !== newValue) {
+      el.value = newValue;
+    }
+  }
+};
 const rendererOptions = /* @__PURE__ */ extend({ patchProp }, nodeOps);
 let renderer;
 function ensureRenderer() {
@@ -4600,28 +5048,1150 @@ function normalizeContainer(container) {
   }
   return container;
 }
-const _hoisted_1 = /* @__PURE__ */ createBaseVNode("h1", null, "Hello world!", -1);
-const _hoisted_2 = [
-  _hoisted_1
-];
+function u$1(r2, n2, ...a) {
+  if (r2 in n2) {
+    let e2 = n2[r2];
+    return typeof e2 == "function" ? e2(...a) : e2;
+  }
+  let t2 = new Error(`Tried to handle "${r2}" but there is no handler defined. Only defined handlers are: ${Object.keys(n2).map((e2) => `"${e2}"`).join(", ")}.`);
+  throw Error.captureStackTrace && Error.captureStackTrace(t2, u$1), t2;
+}
+var R = ((o2) => (o2[o2.None = 0] = "None", o2[o2.RenderStrategy = 1] = "RenderStrategy", o2[o2.Static = 2] = "Static", o2))(R || {}), O = ((e2) => (e2[e2.Unmount = 0] = "Unmount", e2[e2.Hidden = 1] = "Hidden", e2))(O || {});
+function P$1({ visible: r2 = true, features: t2 = 0, ourProps: e2, theirProps: o2, ...i }) {
+  var a;
+  let n2 = w$2(o2, e2), s = Object.assign(i, { props: n2 });
+  if (r2 || t2 & 2 && n2.static)
+    return u(s);
+  if (t2 & 1) {
+    let l2 = (a = n2.unmount) == null || a ? 0 : 1;
+    return u$1(l2, { [0]() {
+      return null;
+    }, [1]() {
+      return u({ ...i, props: { ...n2, hidden: true, style: { display: "none" } } });
+    } });
+  }
+  return u(s);
+}
+function u({ props: r2, attrs: t2, slots: e2, slot: o2, name: i }) {
+  var f;
+  let { as: n2, ...s } = N$1(r2, ["unmount", "static"]), a = (f = e2.default) == null ? void 0 : f.call(e2, o2), l2 = {};
+  if (n2 === "template") {
+    if (a = y(a), Object.keys(s).length > 0 || Object.keys(t2).length > 0) {
+      let [c2, ...p2] = a != null ? a : [];
+      if (!k(c2) || p2.length > 0)
+        throw new Error(['Passing props on "template"!', "", `The current component <${i} /> is rendering a "template".`, "However we need to passthrough the following props:", Object.keys(s).concat(Object.keys(t2)).sort((d2, g) => d2.localeCompare(g)).map((d2) => `  - ${d2}`).join(`
+`), "", "You can apply a few solutions:", ['Add an `as="..."` prop, to ensure that we render an actual element instead of a "template".', "Render a single element as the child so that we can forward the props onto that element."].map((d2) => `  - ${d2}`).join(`
+`)].join(`
+`));
+      return cloneVNode(c2, Object.assign({}, s, l2));
+    }
+    return Array.isArray(a) && a.length === 1 ? a[0] : a;
+  }
+  return h$1(n2, Object.assign({}, s, l2), a);
+}
+function y(r2) {
+  return r2.flatMap((t2) => t2.type === Fragment ? y(t2.children) : [t2]);
+}
+function w$2(...r2) {
+  if (r2.length === 0)
+    return {};
+  if (r2.length === 1)
+    return r2[0];
+  let t2 = {}, e2 = {};
+  for (let i of r2)
+    for (let n2 in i)
+      n2.startsWith("on") && typeof i[n2] == "function" ? (e2[n2] != null || (e2[n2] = []), e2[n2].push(i[n2])) : t2[n2] = i[n2];
+  if (t2.disabled || t2["aria-disabled"])
+    return Object.assign(t2, Object.fromEntries(Object.keys(e2).map((i) => [i, void 0])));
+  for (let i in e2)
+    Object.assign(t2, { [i](n2, ...s) {
+      let a = e2[i];
+      for (let l2 of a) {
+        if (n2 != null && n2.defaultPrevented)
+          return;
+        l2(n2, ...s);
+      }
+    } });
+  return t2;
+}
+function N$1(r2, t2 = []) {
+  let e2 = Object.assign({}, r2);
+  for (let o2 of t2)
+    o2 in e2 && delete e2[o2];
+  return e2;
+}
+function k(r2) {
+  return r2 == null ? false : typeof r2.type == "string" || typeof r2.type == "object" || typeof r2.type == "function";
+}
+let e$1 = 0;
+function n$2() {
+  return ++e$1;
+}
+function t() {
+  return n$2();
+}
+var o$1 = ((r2) => (r2.Space = " ", r2.Enter = "Enter", r2.Escape = "Escape", r2.Backspace = "Backspace", r2.Delete = "Delete", r2.ArrowLeft = "ArrowLeft", r2.ArrowUp = "ArrowUp", r2.ArrowRight = "ArrowRight", r2.ArrowDown = "ArrowDown", r2.Home = "Home", r2.End = "End", r2.PageUp = "PageUp", r2.PageDown = "PageDown", r2.Tab = "Tab", r2))(o$1 || {});
+function o(n2) {
+  var l2;
+  return n2 == null || n2.value == null ? null : (l2 = n2.value.$el) != null ? l2 : n2.value;
+}
+let n$1 = Symbol("Context");
+var l = ((e2) => (e2[e2.Open = 0] = "Open", e2[e2.Closed = 1] = "Closed", e2))(l || {});
+function p$1() {
+  return inject(n$1, null);
+}
+function c$1(o2) {
+  provide(n$1, o2);
+}
+function r$1(t2, e2) {
+  if (t2)
+    return t2;
+  let n2 = e2 != null ? e2 : "button";
+  if (typeof n2 == "string" && n2.toLowerCase() === "button")
+    return "button";
+}
+function b$1(t2, e2) {
+  let n2 = ref(r$1(t2.value.type, t2.value.as));
+  return onMounted(() => {
+    n2.value = r$1(t2.value.type, t2.value.as);
+  }), watchEffect(() => {
+    var o$12;
+    n2.value || !o(e2) || o(e2) instanceof HTMLButtonElement && !((o$12 = o(e2)) != null && o$12.hasAttribute("type")) && (n2.value = "button");
+  }), n2;
+}
+function e(n2) {
+  if (typeof window == "undefined")
+    return null;
+  if (n2 instanceof Node)
+    return n2.ownerDocument;
+  if (n2 != null && n2.hasOwnProperty("value")) {
+    let o$12 = o(n2);
+    if (o$12)
+      return o$12.ownerDocument;
+  }
+  return document;
+}
+let c = ["[contentEditable=true]", "[tabindex]", "a[href]", "area[href]", "button:not([disabled])", "iframe", "input:not([disabled])", "select:not([disabled])", "textarea:not([disabled])"].map((e2) => `${e2}:not([tabindex='-1'])`).join(",");
+var L = ((o2) => (o2[o2.First = 1] = "First", o2[o2.Previous = 2] = "Previous", o2[o2.Next = 4] = "Next", o2[o2.Last = 8] = "Last", o2[o2.WrapAround = 16] = "WrapAround", o2[o2.NoScroll = 32] = "NoScroll", o2))(L || {}), N = ((n2) => (n2[n2.Error = 0] = "Error", n2[n2.Overflow = 1] = "Overflow", n2[n2.Success = 2] = "Success", n2[n2.Underflow = 3] = "Underflow", n2))(N || {}), T$1 = ((t2) => (t2[t2.Previous = -1] = "Previous", t2[t2.Next = 1] = "Next", t2))(T$1 || {});
+function b(e2 = document.body) {
+  return e2 == null ? [] : Array.from(e2.querySelectorAll(c));
+}
+var M = ((t2) => (t2[t2.Strict = 0] = "Strict", t2[t2.Loose = 1] = "Loose", t2))(M || {});
+function F(e$12, r2 = 0) {
+  var t2;
+  return e$12 === ((t2 = e(e$12)) == null ? void 0 : t2.body) ? false : u$1(r2, { [0]() {
+    return e$12.matches(c);
+  }, [1]() {
+    let l2 = e$12;
+    for (; l2 !== null; ) {
+      if (l2.matches(c))
+        return true;
+      l2 = l2.parentElement;
+    }
+    return false;
+  } });
+}
+let h = ["textarea", "input"].join(",");
+function v(e2) {
+  var r2, t2;
+  return (t2 = (r2 = e2 == null ? void 0 : e2.matches) == null ? void 0 : r2.call(e2, h)) != null ? t2 : false;
+}
+function w$1(e2, r2 = (t2) => t2) {
+  return e2.slice().sort((t2, l2) => {
+    let n2 = r2(t2), i = r2(l2);
+    if (n2 === null || i === null)
+      return 0;
+    let o2 = n2.compareDocumentPosition(i);
+    return o2 & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : o2 & Node.DOCUMENT_POSITION_PRECEDING ? 1 : 0;
+  });
+}
+function P(e2, r2, t2 = true) {
+  var d2;
+  let l2 = (d2 = Array.isArray(e2) ? e2.length > 0 ? e2[0].ownerDocument : document : e2 == null ? void 0 : e2.ownerDocument) != null ? d2 : document, n2 = Array.isArray(e2) ? t2 ? w$1(e2) : e2 : b(e2), i = l2.activeElement, o2 = (() => {
+    if (r2 & 5)
+      return 1;
+    if (r2 & 10)
+      return -1;
+    throw new Error("Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last");
+  })(), m2 = (() => {
+    if (r2 & 1)
+      return 0;
+    if (r2 & 2)
+      return Math.max(0, n2.indexOf(i)) - 1;
+    if (r2 & 4)
+      return Math.max(0, n2.indexOf(i)) + 1;
+    if (r2 & 8)
+      return n2.length - 1;
+    throw new Error("Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last");
+  })(), x = r2 & 32 ? { preventScroll: true } : {}, f = 0, s = n2.length, u2;
+  do {
+    if (f >= s || f + s <= 0)
+      return 0;
+    let a = m2 + f;
+    if (r2 & 16)
+      a = (a + s) % s;
+    else {
+      if (a < 0)
+        return 3;
+      if (a >= s)
+        return 1;
+    }
+    u2 = n2[a], u2 == null || u2.focus(x), f += o2;
+  } while (u2 !== l2.activeElement);
+  return u2.hasAttribute("tabindex") || u2.setAttribute("tabindex", "0"), r2 & 6 && v(u2) && u2.select(), 2;
+}
+function w(e2, n2, t2) {
+  typeof window != "undefined" && watchEffect((o2) => {
+    window.addEventListener(e2, n2, t2), o2(() => window.removeEventListener(e2, n2, t2));
+  });
+}
+function T(l2, f, a = computed(() => true)) {
+  function i(t2, r2) {
+    if (!a.value || t2.defaultPrevented)
+      return;
+    let n2 = r2(t2);
+    if (n2 === null || !n2.ownerDocument.documentElement.contains(n2))
+      return;
+    let m2 = function o2(e2) {
+      return typeof e2 == "function" ? o2(e2()) : Array.isArray(e2) || e2 instanceof Set ? e2 : [e2];
+    }(l2);
+    for (let o$12 of m2) {
+      if (o$12 === null)
+        continue;
+      let e2 = o$12 instanceof HTMLElement ? o$12 : o(o$12);
+      if (e2 != null && e2.contains(n2))
+        return;
+    }
+    return !F(n2, M.Loose) && n2.tabIndex !== -1 && t2.preventDefault(), f(t2, n2);
+  }
+  w("click", (t2) => i(t2, (r2) => r2.target), true), w("blur", (t2) => i(t2, () => window.document.activeElement instanceof HTMLIFrameElement ? window.document.activeElement : null), true);
+}
+var p = ((e2) => (e2[e2.None = 1] = "None", e2[e2.Focusable = 2] = "Focusable", e2[e2.Hidden = 4] = "Hidden", e2))(p || {});
+let m = defineComponent({ name: "Hidden", props: { as: { type: [Object, String], default: "div" }, features: { type: Number, default: 1 } }, setup(r2, { slots: t2, attrs: o2 }) {
+  return () => {
+    let { features: e2, ...d2 } = r2, n2 = { "aria-hidden": (e2 & 2) === 2 ? true : void 0, style: { position: "absolute", width: 1, height: 1, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0, 0, 0, 0)", whiteSpace: "nowrap", borderWidth: "0", ...(e2 & 4) === 4 && (e2 & 2) !== 2 && { display: "none" } } };
+    return P$1({ ourProps: n2, theirProps: d2, slot: {}, attrs: o2, slots: t2, name: "Hidden" });
+  };
+} });
+var d$1 = ((r2) => (r2[r2.Forwards = 0] = "Forwards", r2[r2.Backwards = 1] = "Backwards", r2))(d$1 || {});
+function n() {
+  let o2 = ref(0);
+  return w("keydown", (e2) => {
+    e2.key === "Tab" && (o2.value = e2.shiftKey ? 1 : 0);
+  }), o2;
+}
+function r(n2, e2, d2, o2) {
+  typeof window != "undefined" && watchEffect((t2) => {
+    n2 = n2 != null ? n2 : window, n2.addEventListener(e2, d2, o2), t2(() => n2.removeEventListener(e2, d2, o2));
+  });
+}
+var pe = ((f) => (f[f.Open = 0] = "Open", f[f.Closed = 1] = "Closed", f))(pe || {});
+let Z$1 = Symbol("PopoverContext");
+function W(P2) {
+  let S = inject(Z$1, null);
+  if (S === null) {
+    let f = new Error(`<${P2} /> is missing a parent <${ve.name} /> component.`);
+    throw Error.captureStackTrace && Error.captureStackTrace(f, W), f;
+  }
+  return S;
+}
+let ee$1 = Symbol("PopoverGroupContext");
+function te$1() {
+  return inject(ee$1, null);
+}
+let oe = Symbol("PopoverPanelContext");
+function fe() {
+  return inject(oe, null);
+}
+let ve = defineComponent({ name: "Popover", props: { as: { type: [Object, String], default: "div" } }, setup(P2, { slots: S, attrs: f, expose: E }) {
+  var p2;
+  let t$1 = `headlessui-popover-button-${t()}`, e$12 = `headlessui-popover-panel-${t()}`, m2 = ref(null);
+  E({ el: m2, $el: m2 });
+  let a = ref(1), b2 = ref(null), g = ref(null), y2 = ref(null), s = ref(null), c2 = computed(() => e(m2)), O2 = computed(() => {
+    if (!o(b2) || !o(s))
+      return false;
+    for (let n2 of document.querySelectorAll("body > *"))
+      if (Number(n2 == null ? void 0 : n2.contains(o(b2))) ^ Number(n2 == null ? void 0 : n2.contains(o(s))))
+        return true;
+    return false;
+  }), d2 = { popoverState: a, buttonId: t$1, panelId: e$12, panel: s, button: b2, isPortalled: O2, beforePanelSentinel: g, afterPanelSentinel: y2, togglePopover() {
+    a.value = u$1(a.value, { [0]: 1, [1]: 0 });
+  }, closePopover() {
+    a.value !== 1 && (a.value = 1);
+  }, close(n2) {
+    d2.closePopover();
+    let i = (() => n2 ? n2 instanceof HTMLElement ? n2 : n2.value instanceof HTMLElement ? o(n2) : o(d2.button) : o(d2.button))();
+    i == null || i.focus();
+  } };
+  provide(Z$1, d2), c$1(computed(() => u$1(a.value, { [0]: l.Open, [1]: l.Closed })));
+  let D = { buttonId: t$1, panelId: e$12, close() {
+    d2.closePopover();
+  } }, l$1 = te$1(), o$12 = l$1 == null ? void 0 : l$1.registerPopover;
+  function u2() {
+    var n2, i, v2, k2;
+    return (k2 = l$1 == null ? void 0 : l$1.isFocusWithinPopoverGroup()) != null ? k2 : ((n2 = c2.value) == null ? void 0 : n2.activeElement) && (((i = o(b2)) == null ? void 0 : i.contains(c2.value.activeElement)) || ((v2 = o(s)) == null ? void 0 : v2.contains(c2.value.activeElement)));
+  }
+  return watchEffect(() => o$12 == null ? void 0 : o$12(D)), r((p2 = c2.value) == null ? void 0 : p2.defaultView, "focus", (n2) => {
+    var i, v2;
+    a.value === 0 && (u2() || !b2 || !s || (i = o(d2.beforePanelSentinel)) != null && i.contains(n2.target) || (v2 = o(d2.afterPanelSentinel)) != null && v2.contains(n2.target) || d2.closePopover());
+  }, true), T([b2, s], (n2, i) => {
+    var v2;
+    d2.closePopover(), F(i, M.Loose) || (n2.preventDefault(), (v2 = o(b2)) == null || v2.focus());
+  }, computed(() => a.value === 0)), () => {
+    let n2 = { open: a.value === 0, close: d2.close };
+    return P$1({ theirProps: P2, ourProps: { ref: m2 }, slot: n2, slots: S, attrs: f, name: "Popover" });
+  };
+} }), ke = defineComponent({ name: "PopoverButton", props: { as: { type: [Object, String], default: "button" }, disabled: { type: [Boolean], default: false } }, inheritAttrs: false, setup(P$2, { attrs: S, slots: f, expose: E }) {
+  let t$1 = W("PopoverButton"), e$12 = computed(() => e(t$1.button));
+  E({ el: t$1.button, $el: t$1.button });
+  let m$1 = te$1(), a = m$1 == null ? void 0 : m$1.closeOthers, b2 = fe(), g = b2 === null ? false : b2 === t$1.panelId, y2 = ref(null), s = `headlessui-focus-sentinel-${t()}`;
+  g || watchEffect(() => {
+    t$1.button.value = y2.value;
+  });
+  let c2 = b$1(computed(() => ({ as: P$2.as, type: S.type })), y2);
+  function O2(o$2) {
+    var u2, p2, n2, i, v2;
+    if (g) {
+      if (t$1.popoverState.value === 1)
+        return;
+      switch (o$2.key) {
+        case o$1.Space:
+        case o$1.Enter:
+          o$2.preventDefault(), (p2 = (u2 = o$2.target).click) == null || p2.call(u2), t$1.closePopover(), (n2 = o(t$1.button)) == null || n2.focus();
+          break;
+      }
+    } else
+      switch (o$2.key) {
+        case o$1.Space:
+        case o$1.Enter:
+          o$2.preventDefault(), o$2.stopPropagation(), t$1.popoverState.value === 1 && (a == null || a(t$1.buttonId)), t$1.togglePopover();
+          break;
+        case o$1.Escape:
+          if (t$1.popoverState.value !== 0)
+            return a == null ? void 0 : a(t$1.buttonId);
+          if (!o(t$1.button) || ((i = e$12.value) == null ? void 0 : i.activeElement) && !((v2 = o(t$1.button)) != null && v2.contains(e$12.value.activeElement)))
+            return;
+          o$2.preventDefault(), o$2.stopPropagation(), t$1.closePopover();
+          break;
+      }
+  }
+  function d2(o2) {
+    g || o2.key === o$1.Space && o2.preventDefault();
+  }
+  function D(o$12) {
+    var u2, p2;
+    P$2.disabled || (g ? (t$1.closePopover(), (u2 = o(t$1.button)) == null || u2.focus()) : (o$12.preventDefault(), o$12.stopPropagation(), t$1.popoverState.value === 1 && (a == null || a(t$1.buttonId)), t$1.togglePopover(), (p2 = o(t$1.button)) == null || p2.focus()));
+  }
+  function l2(o2) {
+    o2.preventDefault(), o2.stopPropagation();
+  }
+  return () => {
+    let o$12 = t$1.popoverState.value === 0, u2 = { open: o$12 }, p$12 = g ? { ref: y2, type: c2.value, onKeydown: O2, onClick: D } : { ref: y2, id: t$1.buttonId, type: c2.value, "aria-expanded": P$2.disabled ? void 0 : t$1.popoverState.value === 0, "aria-controls": o(t$1.panel) ? t$1.panelId : void 0, disabled: P$2.disabled ? true : void 0, onKeydown: O2, onKeyup: d2, onClick: D, onMousedown: l2 }, n$12 = n();
+    function i() {
+      let v2 = o(t$1.panel);
+      if (!v2)
+        return;
+      function k2() {
+        u$1(n$12.value, { [d$1.Forwards]: () => P(v2, L.First), [d$1.Backwards]: () => P(v2, L.Last) });
+      }
+      k2();
+    }
+    return h$1(Fragment, [P$1({ ourProps: p$12, theirProps: { ...S, ...P$2 }, slot: u2, attrs: S, slots: f, name: "PopoverButton" }), o$12 && !g && t$1.isPortalled.value && h$1(m, { id: s, features: p.Focusable, as: "button", type: "button", onFocus: i })]);
+  };
+} });
+defineComponent({ name: "PopoverOverlay", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true } }, setup(P2, { attrs: S, slots: f }) {
+  let E = W("PopoverOverlay"), t$1 = `headlessui-popover-overlay-${t()}`, e2 = p$1(), m2 = computed(() => e2 !== null ? e2.value === l.Open : E.popoverState.value === 0);
+  function a() {
+    E.closePopover();
+  }
+  return () => {
+    let b2 = { open: E.popoverState.value === 0 };
+    return P$1({ ourProps: { id: t$1, "aria-hidden": true, onClick: a }, theirProps: P2, slot: b2, attrs: S, slots: f, features: R.RenderStrategy | R.Static, visible: m2.value, name: "PopoverOverlay" });
+  };
+} });
+let Le = defineComponent({ name: "PopoverPanel", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true }, focus: { type: Boolean, default: false } }, inheritAttrs: false, setup(P$2, { attrs: S, slots: f, expose: E }) {
+  let { focus: t$1 } = P$2, e$12 = W("PopoverPanel"), m$1 = computed(() => e(e$12.panel)), a = `headlessui-focus-sentinel-before-${t()}`, b$12 = `headlessui-focus-sentinel-after-${t()}`;
+  E({ el: e$12.panel, $el: e$12.panel }), provide(oe, e$12.panelId), watchEffect(() => {
+    var o$12, u2;
+    if (!t$1 || e$12.popoverState.value !== 0 || !e$12.panel)
+      return;
+    let l2 = (o$12 = m$1.value) == null ? void 0 : o$12.activeElement;
+    (u2 = o(e$12.panel)) != null && u2.contains(l2) || P(o(e$12.panel), L.First);
+  });
+  let g = p$1(), y2 = computed(() => g !== null ? g.value === l.Open : e$12.popoverState.value === 0);
+  function s(l2) {
+    var o$2, u2;
+    switch (l2.key) {
+      case o$1.Escape:
+        if (e$12.popoverState.value !== 0 || !o(e$12.panel) || m$1.value && !((o$2 = o(e$12.panel)) != null && o$2.contains(m$1.value.activeElement)))
+          return;
+        l2.preventDefault(), l2.stopPropagation(), e$12.closePopover(), (u2 = o(e$12.button)) == null || u2.focus();
+        break;
+    }
+  }
+  function c2(l2) {
+    var u2, p2, n2, i, v2;
+    let o$12 = l2.relatedTarget;
+    !o$12 || !o(e$12.panel) || (u2 = o(e$12.panel)) != null && u2.contains(o$12) || (e$12.closePopover(), (((n2 = (p2 = o(e$12.beforePanelSentinel)) == null ? void 0 : p2.contains) == null ? void 0 : n2.call(p2, o$12)) || ((v2 = (i = o(e$12.afterPanelSentinel)) == null ? void 0 : i.contains) == null ? void 0 : v2.call(i, o$12))) && o$12.focus({ preventScroll: true }));
+  }
+  let O2 = n();
+  function d2() {
+    let l2 = o(e$12.panel);
+    if (!l2)
+      return;
+    function o$12() {
+      u$1(O2.value, { [d$1.Forwards]: () => {
+        P(l2, L.Next);
+      }, [d$1.Backwards]: () => {
+        var u2;
+        (u2 = o(e$12.button)) == null || u2.focus({ preventScroll: true });
+      } });
+    }
+    o$12();
+  }
+  function D() {
+    let l2 = o(e$12.panel);
+    if (!l2)
+      return;
+    function o$12() {
+      u$1(O2.value, { [d$1.Forwards]: () => {
+        var $, z;
+        let u2 = o(e$12.button), p2 = o(e$12.panel);
+        if (!u2)
+          return;
+        let n2 = b(), i = n2.indexOf(u2), v2 = n2.slice(0, i + 1), K = [...n2.slice(i + 1), ...v2];
+        for (let B of K.slice())
+          if (((z = ($ = B == null ? void 0 : B.id) == null ? void 0 : $.startsWith) == null ? void 0 : z.call($, "headlessui-focus-sentinel-")) || (p2 == null ? void 0 : p2.contains(B))) {
+            let J = K.indexOf(B);
+            J !== -1 && K.splice(J, 1);
+          }
+        P(K, L.First, false);
+      }, [d$1.Backwards]: () => P(l2, L.Previous) });
+    }
+    o$12();
+  }
+  return () => {
+    let l2 = { open: e$12.popoverState.value === 0, close: e$12.close }, o2 = { ref: e$12.panel, id: e$12.panelId, onKeydown: s, onFocusout: t$1 && e$12.popoverState.value === 0 ? c2 : void 0, tabIndex: -1 };
+    return P$1({ ourProps: o2, theirProps: { ...S, ...P$2 }, attrs: S, slot: l2, slots: { ...f, default: (...u2) => {
+      var p$12;
+      return [h$1(Fragment, [y2.value && e$12.isPortalled.value && h$1(m, { id: a, ref: e$12.beforePanelSentinel, features: p.Focusable, as: "button", type: "button", onFocus: d2 }), (p$12 = f.default) == null ? void 0 : p$12.call(f, ...u2), y2.value && e$12.isPortalled.value && h$1(m, { id: b$12, ref: e$12.afterPanelSentinel, features: p.Focusable, as: "button", type: "button", onFocus: D })])];
+    } }, features: R.RenderStrategy | R.Static, visible: y2.value, name: "PopoverPanel" });
+  };
+} });
+defineComponent({ name: "PopoverGroup", props: { as: { type: [Object, String], default: "div" } }, setup(P2, { attrs: S, slots: f, expose: E }) {
+  let t2 = ref(null), e$12 = ref([]), m2 = computed(() => e(t2));
+  E({ el: t2, $el: t2 });
+  function a(s) {
+    let c2 = e$12.value.indexOf(s);
+    c2 !== -1 && e$12.value.splice(c2, 1);
+  }
+  function b2(s) {
+    return e$12.value.push(s), () => {
+      a(s);
+    };
+  }
+  function g() {
+    var O2;
+    let s = m2.value;
+    if (!s)
+      return false;
+    let c2 = s.activeElement;
+    return (O2 = o(t2)) != null && O2.contains(c2) ? true : e$12.value.some((d2) => {
+      var D, l2;
+      return ((D = s.getElementById(d2.buttonId)) == null ? void 0 : D.contains(c2)) || ((l2 = s.getElementById(d2.panelId)) == null ? void 0 : l2.contains(c2));
+    });
+  }
+  function y2(s) {
+    for (let c2 of e$12.value)
+      c2.buttonId !== s && c2.close();
+  }
+  return provide(ee$1, { registerPopover: b2, unregisterPopover: a, isFocusWithinPopoverGroup: g, closeOthers: y2 }), () => P$1({ ourProps: { ref: t2 }, theirProps: P2, slot: {}, attrs: S, slots: f, name: "PopoverGroup" });
+} });
+let d = defineComponent({ props: { onFocus: { type: Function, required: true } }, setup(t2) {
+  let n2 = ref(true);
+  return () => n2.value ? h$1(m, { as: "button", type: "button", features: p.Focusable, onFocus(o2) {
+    o2.preventDefault();
+    let e2, a = 50;
+    function r2() {
+      var u2;
+      if (a-- <= 0) {
+        e2 && cancelAnimationFrame(e2);
+        return;
+      }
+      if ((u2 = t2.onFocus) != null && u2.call(t2)) {
+        n2.value = false, cancelAnimationFrame(e2);
+        return;
+      }
+      e2 = requestAnimationFrame(r2);
+    }
+    e2 = requestAnimationFrame(r2);
+  } }) : null;
+} });
+let H = Symbol("TabsContext");
+function I(n2) {
+  let u2 = inject(H, null);
+  if (u2 === null) {
+    let i = new Error(`<${n2} /> is missing a parent <TabGroup /> component.`);
+    throw Error.captureStackTrace && Error.captureStackTrace(i, I), i;
+  }
+  return u2;
+}
+let Y = defineComponent({ name: "TabGroup", emits: { change: (n2) => true }, props: { as: { type: [Object, String], default: "template" }, selectedIndex: { type: [Number], default: null }, defaultIndex: { type: [Number], default: 0 }, vertical: { type: [Boolean], default: false }, manual: { type: [Boolean], default: false } }, inheritAttrs: false, setup(n2, { slots: u2, attrs: i, emit: f }) {
+  let t2 = ref(null), o$12 = ref([]), l2 = ref([]), d$12 = { selectedIndex: t2, orientation: computed(() => n2.vertical ? "vertical" : "horizontal"), activation: computed(() => n2.manual ? "manual" : "auto"), tabs: o$12, panels: l2, setSelectedIndex(e2) {
+    t2.value !== e2 && (t2.value = e2, f("change", e2));
+  }, registerTab(e2) {
+    o$12.value.includes(e2) || o$12.value.push(e2);
+  }, unregisterTab(e2) {
+    let r2 = o$12.value.indexOf(e2);
+    r2 !== -1 && o$12.value.splice(r2, 1);
+  }, registerPanel(e2) {
+    l2.value.includes(e2) || l2.value.push(e2);
+  }, unregisterPanel(e2) {
+    let r2 = l2.value.indexOf(e2);
+    r2 !== -1 && l2.value.splice(r2, 1);
+  } };
+  return provide(H, d$12), watchEffect(() => {
+    var v2;
+    if (d$12.tabs.value.length <= 0 || n2.selectedIndex === null && t2.value !== null)
+      return;
+    let e2 = d$12.tabs.value.map((p2) => o(p2)).filter(Boolean), r2 = e2.filter((p2) => !p2.hasAttribute("disabled")), s = (v2 = n2.selectedIndex) != null ? v2 : n2.defaultIndex;
+    if (s < 0)
+      t2.value = e2.indexOf(r2[0]);
+    else if (s > d$12.tabs.value.length)
+      t2.value = e2.indexOf(r2[r2.length - 1]);
+    else {
+      let p2 = e2.slice(0, s), a = [...e2.slice(s), ...p2].find((c2) => r2.includes(c2));
+      if (!a)
+        return;
+      t2.value = e2.indexOf(a);
+    }
+  }), () => {
+    let e2 = { selectedIndex: t2.value };
+    return h$1(Fragment, [o$12.value.length <= 0 && h$1(d, { onFocus: () => {
+      for (let r2 of o$12.value) {
+        let s = o(r2);
+        if ((s == null ? void 0 : s.tabIndex) === 0)
+          return s.focus(), true;
+      }
+      return false;
+    } }), P$1({ theirProps: { ...i, ...N$1(n2, ["selectedIndex", "defaultIndex", "manual", "vertical", "onChange"]) }, ourProps: {}, slot: e2, slots: u2, attrs: i, name: "TabGroup" })]);
+  };
+} }), Z = defineComponent({ name: "TabList", props: { as: { type: [Object, String], default: "div" } }, setup(n2, { attrs: u2, slots: i }) {
+  let f = I("TabList");
+  return () => {
+    let t2 = { selectedIndex: f.selectedIndex.value }, o2 = { role: "tablist", "aria-orientation": f.orientation.value };
+    return P$1({ ourProps: o2, theirProps: n2, slot: t2, attrs: u2, slots: i, name: "TabList" });
+  };
+} }), ee = defineComponent({ name: "Tab", props: { as: { type: [Object, String], default: "button" }, disabled: { type: [Boolean], default: false } }, setup(n2, { attrs: u2, slots: i, expose: f }) {
+  let t$1 = I("Tab"), o$2 = `headlessui-tabs-tab-${t()}`, l2 = ref(null);
+  f({ el: l2, $el: l2 }), onMounted(() => t$1.registerTab(l2)), onUnmounted(() => t$1.unregisterTab(l2));
+  let d2 = computed(() => t$1.tabs.value.indexOf(l2)), e2 = computed(() => d2.value === t$1.selectedIndex.value);
+  function r2(a) {
+    let c2 = t$1.tabs.value.map((S) => o(S)).filter(Boolean);
+    if (a.key === o$1.Space || a.key === o$1.Enter) {
+      a.preventDefault(), a.stopPropagation(), t$1.setSelectedIndex(d2.value);
+      return;
+    }
+    switch (a.key) {
+      case o$1.Home:
+      case o$1.PageUp:
+        return a.preventDefault(), a.stopPropagation(), P(c2, L.First);
+      case o$1.End:
+      case o$1.PageDown:
+        return a.preventDefault(), a.stopPropagation(), P(c2, L.Last);
+    }
+    if (u$1(t$1.orientation.value, { vertical() {
+      if (a.key === o$1.ArrowUp)
+        return P(c2, L.Previous | L.WrapAround);
+      if (a.key === o$1.ArrowDown)
+        return P(c2, L.Next | L.WrapAround);
+    }, horizontal() {
+      if (a.key === o$1.ArrowLeft)
+        return P(c2, L.Previous | L.WrapAround);
+      if (a.key === o$1.ArrowRight)
+        return P(c2, L.Next | L.WrapAround);
+    } }))
+      return a.preventDefault();
+  }
+  function s() {
+    var a;
+    (a = o(l2)) == null || a.focus();
+  }
+  function v2() {
+    var a;
+    n2.disabled || ((a = o(l2)) == null || a.focus(), t$1.setSelectedIndex(d2.value));
+  }
+  function p2(a) {
+    a.preventDefault();
+  }
+  let E = b$1(computed(() => ({ as: n2.as, type: u2.type })), l2);
+  return () => {
+    var S, R2;
+    let a = { selected: e2.value }, c2 = { ref: l2, onKeydown: r2, onFocus: t$1.activation.value === "manual" ? s : v2, onMousedown: p2, onClick: v2, id: o$2, role: "tab", type: E.value, "aria-controls": (R2 = (S = t$1.panels.value[d2.value]) == null ? void 0 : S.value) == null ? void 0 : R2.id, "aria-selected": e2.value, tabIndex: e2.value ? 0 : -1, disabled: n2.disabled ? true : void 0 };
+    return P$1({ ourProps: c2, theirProps: n2, slot: a, attrs: u2, slots: i, name: "Tab" });
+  };
+} }), te = defineComponent({ name: "TabPanels", props: { as: { type: [Object, String], default: "div" } }, setup(n2, { slots: u2, attrs: i }) {
+  let f = I("TabPanels");
+  return () => {
+    let t2 = { selectedIndex: f.selectedIndex.value };
+    return P$1({ theirProps: n2, ourProps: {}, slot: t2, attrs: i, slots: u2, name: "TabPanels" });
+  };
+} }), ae = defineComponent({ name: "TabPanel", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true } }, setup(n2, { attrs: u2, slots: i, expose: f }) {
+  let t$1 = I("TabPanel"), o2 = `headlessui-tabs-panel-${t()}`, l2 = ref(null);
+  f({ el: l2, $el: l2 }), onMounted(() => t$1.registerPanel(l2)), onUnmounted(() => t$1.unregisterPanel(l2));
+  let d2 = computed(() => t$1.panels.value.indexOf(l2)), e2 = computed(() => d2.value === t$1.selectedIndex.value);
+  return () => {
+    var v2, p2;
+    let r2 = { selected: e2.value }, s = { ref: l2, id: o2, role: "tabpanel", "aria-labelledby": (p2 = (v2 = t$1.tabs.value[d2.value]) == null ? void 0 : v2.value) == null ? void 0 : p2.id, tabIndex: e2.value ? 0 : -1 };
+    return P$1({ ourProps: s, theirProps: n2, slot: r2, attrs: u2, slots: i, features: R.Static | R.RenderStrategy, visible: e2.value, name: "TabPanel" });
+  };
+} });
+var _export_sfc = (sfc, props) => {
+  const target = sfc.__vccOpts || sfc;
+  for (const [key, val] of props) {
+    target[key] = val;
+  }
+  return target;
+};
 const _sfc_main$1 = {
-  __name: "HelloWorld",
+  name: "ImageTag",
   props: {
-    msg: String
+    src: {
+      type: Object,
+      required: true
+    },
+    height: String,
+    width: {
+      type: String,
+      default(rawProps) {
+        return rawProps.src.width;
+      }
+    },
+    sizes: String,
+    srcsetWidths: {
+      type: Array,
+      default(rawProps) {
+        return [rawProps.width];
+      }
+    },
+    srcset: String,
+    preload: {
+      type: Boolean,
+      default: false
+    },
+    alt: {
+      type: String,
+      default(rawProps) {
+        return rawProps.src.alt;
+      }
+    },
+    classes: String
   },
-  setup(__props) {
-    ref(0);
-    return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", null, _hoisted_2);
-    };
+  computed: {
+    formattedSrc() {
+      return `${this.src.url}&width=${this.width}`;
+    },
+    formattedSrcSet() {
+      var srcset = "";
+      this.srcsetWidths.forEach((w2) => {
+        srcset += `${this.src.url}&width=${w2} ${w2}w,`;
+      });
+      return srcset;
+    }
   }
 };
+const _hoisted_1$1 = ["srcset", "src", "sizes", "alt", "preload", "width", "height"];
+function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  return openBlock(), createElementBlock("img", {
+    srcset: $options.formattedSrcSet,
+    src: $options.formattedSrc,
+    sizes: $props.sizes,
+    alt: $props.alt,
+    preload: $props.preload,
+    width: $props.width,
+    height: $props.height,
+    class: normalizeClass($props.classes)
+  }, null, 10, _hoisted_1$1);
+}
+var ImageTag = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
 const _sfc_main = {
-  __name: "App",
-  setup(__props) {
-    return (_ctx, _cache) => {
-      return openBlock(), createBlock(_sfc_main$1, { msg: "Hello Vue 3 + Vite" });
+  name: "SearchMenu",
+  components: { Popover: ve, PopoverButton: ke, PopoverPanel: Le, TabGroup: Y, TabList: Z, Tab: ee, TabPanels: te, TabPanel: ae, ImageTag },
+  directives: { debounce },
+  data() {
+    return {
+      query: "",
+      trends: null,
+      results: null,
+      resultsHeight: 0
     };
+  },
+  props: {
+    iconSize: Number,
+    iconStrokeWidth: Number,
+    searchPosition: String,
+    predictiveSearchEnabled: Boolean,
+    predictiveShowNumber: Boolean,
+    predictiveShowPages: Boolean,
+    predictiveShowArticles: Boolean,
+    trendingSearches: String,
+    cardStyle: String,
+    cardAlignment: String,
+    cardColorScheme: String,
+    cardBorder: Boolean,
+    cardRadius: Number,
+    cardImageAspect: String,
+    cardImageFit: String,
+    cardAnimate: Boolean,
+    cardAnimation: String,
+    cardShowInfoOnHover: Boolean
+  },
+  computed: {
+    resultsLength() {
+      if (this.results) {
+        return this.results.products.length + this.results.pages.length + this.results.articles.length;
+      } else {
+        return 0;
+      }
+    }
+  },
+  methods: {
+    tryClose(close) {
+      if (this.query != "") {
+        document.querySelector('[name="q"]').value = "";
+        this.query = "";
+      } else {
+        close();
+      }
+    },
+    calculateResultsOffset() {
+      var header2 = document.querySelector("header");
+      var searchForm = document.querySelector(".search__form");
+      var total = header2.offsetHeight + searchForm.offsetHeight;
+      return total;
+    },
+    async getPredictiveResults() {
+      if (this.query && this.query.length > 0) {
+        var resourceTypes = ["product", "collection"];
+        if (this.predictiveShowArticles) {
+          resourceTypes.push("article");
+        }
+        if (this.predictiveShowPages) {
+          resourceTypes.push("page");
+        }
+        var searchUrl = `${window.routes.predictive_search_url}.json?q=${encodeURIComponent(this.query)}&resources[type]=${encodeURIComponent(resourceTypes.concat(","))}&resources[limit]=4`;
+        var search = await fetch(searchUrl).then((response) => response.json()).then((data) => {
+          return data;
+        });
+        if (search.resources && search.resources.results) {
+          this.results = search.resources.results;
+        } else {
+          this.results = null;
+        }
+      } else {
+        this.results = null;
+      }
+    },
+    async getTrends(handle) {
+      try {
+        const GET_MENU = {
+          query: `
+              query {
+                menu(handle: "${handle}") {
+                  title
+                  items {
+                    id
+                    title
+                    url
+                  }
+                }
+              }
+            `
+        };
+        let res = await fetch("/api/2022-07/graphql.json", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Shopify-Storefront-Access-Token": "1c34b11ba2613f92ad45fe82bace6f83"
+          },
+          body: JSON.stringify(GET_MENU)
+        });
+        let json = await res.json();
+        this.trends = json.data.menu;
+      } catch (error) {
+        console.error("Error occurred fetch search trends, please investigate.", error);
+      }
+    }
+  },
+  mounted() {
+    const header2 = document.querySelector("header");
+    const searchButton = document.querySelector("#searchMenuTop .header__icon-link");
+    var observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName == "aria-expanded") {
+          if (searchButton.getAttribute("aria-expanded") == "true") {
+            document.body.classList.add("search--opened");
+            header2.classList.add("search--opened");
+            if (this.searchPosition == "below") {
+              this.resultsHeight = window.innerHeight - this.calculateResultsOffset();
+            }
+          } else if (searchButton.getAttribute("aria-expanded") == "false") {
+            document.body.classList.remove("search--opened");
+            header2.classList.remove("search--opened");
+          }
+        }
+      });
+    });
+    observer.observe(searchButton, {
+      attributes: true
+    });
+    if (this.trendingSearches) {
+      this.getTrends(this.trendingSearches);
+    }
   }
 };
-createApp(_sfc_main).mount("#app");
+const _hoisted_1 = { class: "icon target align-bottom" };
+const _hoisted_2 = ["width", "height", "stroke-width"];
+const _hoisted_3 = /* @__PURE__ */ createBaseVNode("circle", {
+  cx: "11",
+  cy: "11",
+  r: "9",
+  fill: "#000",
+  opacity: ".25",
+  stroke: "none"
+}, null, -1);
+const _hoisted_4 = /* @__PURE__ */ createBaseVNode("circle", {
+  cx: "11",
+  cy: "11",
+  r: "9"
+}, null, -1);
+const _hoisted_5 = /* @__PURE__ */ createBaseVNode("path", { d: "M17.5 17.5 22 22" }, null, -1);
+const _hoisted_6 = [
+  _hoisted_3,
+  _hoisted_4,
+  _hoisted_5
+];
+const _hoisted_7 = /* @__PURE__ */ createBaseVNode("span", { class: "label" }, "Search", -1);
+const _hoisted_8 = {
+  action: "/search",
+  method: "get",
+  role: "search",
+  class: "search__form"
+};
+const _hoisted_9 = /* @__PURE__ */ createBaseVNode("label", {
+  for: "q",
+  class: "sr-only"
+}, "Search: ", -1);
+const _hoisted_10 = { class: "icon target" };
+const _hoisted_11 = ["onClick", "width", "height"];
+const _hoisted_12 = ["stroke-width"];
+const _hoisted_13 = ["stroke-width"];
+const _hoisted_14 = { class: "search__results--inner" };
+const _hoisted_15 = /* @__PURE__ */ createBaseVNode("h1", { class: "sr-only" }, "Search Results", -1);
+const _hoisted_16 = {
+  key: 0,
+  class: "search__trends"
+};
+const _hoisted_17 = { class: "search__trends-tags" };
+const _hoisted_18 = ["href"];
+const _hoisted_19 = {
+  key: 1,
+  class: "search__results--loaded"
+};
+const _hoisted_20 = /* @__PURE__ */ createTextVNode("Products");
+const _hoisted_21 = /* @__PURE__ */ createTextVNode("Articles");
+const _hoisted_22 = /* @__PURE__ */ createTextVNode("Pages");
+const _hoisted_23 = { class: "search__products" };
+const _hoisted_24 = ["href"];
+const _hoisted_25 = { class: "product-title" };
+const _hoisted_26 = { class: "search__articles" };
+const _hoisted_27 = ["href"];
+const _hoisted_28 = { class: "search__pages" };
+const _hoisted_29 = ["href"];
+const _hoisted_30 = { class: "search__more" };
+const _hoisted_31 = {
+  action: "/search",
+  method: "get",
+  role: "search"
+};
+const _hoisted_32 = /* @__PURE__ */ createBaseVNode("button", { type: "submit" }, "View More", -1);
+const _hoisted_33 = {
+  key: 2,
+  class: "search__no-results"
+};
+function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_PopoverButton = resolveComponent("PopoverButton");
+  const _component_Tab = resolveComponent("Tab");
+  const _component_TabList = resolveComponent("TabList");
+  const _component_image_tag = resolveComponent("image-tag");
+  const _component_TabPanel = resolveComponent("TabPanel");
+  const _component_TabPanels = resolveComponent("TabPanels");
+  const _component_TabGroup = resolveComponent("TabGroup");
+  const _component_PopoverPanel = resolveComponent("PopoverPanel");
+  const _component_Popover = resolveComponent("Popover");
+  const _directive_debounce = resolveDirective("debounce");
+  return openBlock(), createBlock(_component_Popover, { class: "header__search search" }, {
+    default: withCtx(() => [
+      createVNode(_component_PopoverButton, { class: "header__icon-link" }, {
+        default: withCtx(() => [
+          createBaseVNode("span", _hoisted_1, [
+            (openBlock(), createElementBlock("svg", {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 24 24",
+              width: $props.iconSize,
+              height: $props.iconSize,
+              fill: "none",
+              stroke: "#000",
+              "stroke-width": $props.iconStrokeWidth,
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }, _hoisted_6, 8, _hoisted_2))
+          ]),
+          _hoisted_7
+        ]),
+        _: 1
+      }),
+      createVNode(Transition, { name: $props.searchPosition }, {
+        default: withCtx(() => [
+          createVNode(_component_PopoverPanel, {
+            class: normalizeClass(["search__popover", [$props.searchPosition]])
+          }, {
+            default: withCtx(({ close }) => [
+              createBaseVNode("form", _hoisted_8, [
+                _hoisted_9,
+                withDirectives(createBaseVNode("input", {
+                  name: "q",
+                  "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.query = $event),
+                  placeholder: "Search",
+                  class: "search__input"
+                }, null, 512), [
+                  [vModelText, $data.query],
+                  [_directive_debounce, $props.predictiveSearchEnabled ? $options.getPredictiveResults() : null, "200"]
+                ]),
+                createBaseVNode("span", _hoisted_10, [
+                  (openBlock(), createElementBlock("svg", {
+                    onClick: ($event) => $options.tryClose(close),
+                    width: $props.iconSize * 0.75,
+                    height: $props.iconSize * 0.75,
+                    viewBox: "0 0 23 23",
+                    fill: "none",
+                    xmlns: "http://www.w3.org/2000/svg"
+                  }, [
+                    createBaseVNode("path", {
+                      d: "M21.4878 1L1.51221 22",
+                      "stroke-width": $props.iconStrokeWidth
+                    }, null, 8, _hoisted_12),
+                    createBaseVNode("path", {
+                      d: "M22 21.4878L1 1.51221",
+                      "stroke-width": $props.iconStrokeWidth
+                    }, null, 8, _hoisted_13)
+                  ], 8, _hoisted_11))
+                ])
+              ]),
+              createVNode(Transition, { name: "results" }, {
+                default: withCtx(() => [
+                  $data.query != "" && $props.predictiveSearchEnabled ? (openBlock(), createElementBlock("div", {
+                    key: 0,
+                    style: normalizeStyle([$props.searchPosition == "below" ? { height: $data.resultsHeight + "px" } : {}]),
+                    class: "search__results"
+                  }, [
+                    createBaseVNode("div", _hoisted_14, [
+                      _hoisted_15,
+                      $props.trendingSearches ? (openBlock(), createElementBlock("div", _hoisted_16, [
+                        createBaseVNode("h2", null, toDisplayString($data.trends.title), 1),
+                        createBaseVNode("div", _hoisted_17, [
+                          (openBlock(true), createElementBlock(Fragment, null, renderList($data.trends.items, (trend) => {
+                            return openBlock(), createElementBlock("a", {
+                              key: trend.id,
+                              href: trend.url,
+                              class: "search__trends-tag"
+                            }, toDisplayString(trend.title), 9, _hoisted_18);
+                          }), 128))
+                        ])
+                      ])) : createCommentVNode("", true),
+                      $options.resultsLength > 0 ? (openBlock(), createElementBlock("div", _hoisted_19, [
+                        createVNode(_component_TabGroup, null, {
+                          default: withCtx(() => [
+                            createVNode(_component_TabList, { class: "search__tabs" }, {
+                              default: withCtx(() => [
+                                $data.results.products.length ? (openBlock(), createBlock(_component_Tab, { key: 0 }, {
+                                  default: withCtx(() => [
+                                    _hoisted_20
+                                  ]),
+                                  _: 1
+                                })) : createCommentVNode("", true),
+                                $props.predictiveShowArticles && $data.results.articles.length ? (openBlock(), createBlock(_component_Tab, { key: 1 }, {
+                                  default: withCtx(() => [
+                                    _hoisted_21
+                                  ]),
+                                  _: 1
+                                })) : createCommentVNode("", true),
+                                $props.predictiveShowPages && $data.results.pages.length ? (openBlock(), createBlock(_component_Tab, { key: 2 }, {
+                                  default: withCtx(() => [
+                                    _hoisted_22
+                                  ]),
+                                  _: 1
+                                })) : createCommentVNode("", true)
+                              ]),
+                              _: 1
+                            }),
+                            createVNode(_component_TabPanels, null, {
+                              default: withCtx(() => [
+                                createVNode(Transition, { name: "fade" }, {
+                                  default: withCtx(() => [
+                                    $data.results.products.length ? (openBlock(), createBlock(_component_TabPanel, { key: 0 }, {
+                                      default: withCtx(() => [
+                                        createBaseVNode("div", _hoisted_23, [
+                                          (openBlock(true), createElementBlock(Fragment, null, renderList($data.results.products, (product) => {
+                                            return openBlock(), createElementBlock("div", {
+                                              key: product.id,
+                                              class: normalizeClass(["search__product-card card", [
+                                                $props.cardStyle,
+                                                $props.cardAlignment,
+                                                $props.cardColorScheme,
+                                                $props.cardAnimate ? $props.cardAnimation : ""
+                                              ]])
+                                            }, [
+                                              createBaseVNode("a", {
+                                                href: product.url
+                                              }, [
+                                                createVNode(_component_image_tag, {
+                                                  src: product.featured_image,
+                                                  width: "300",
+                                                  sizes: "(min-width: 1280px) 300px, (min-width: 768px) 225px, 150px",
+                                                  srcsetWidths: [150, 225, 300],
+                                                  class: normalizeClass(["card__image", [
+                                                    $props.cardImageAspect,
+                                                    $props.cardImageFit,
+                                                    $props.cardBorder ? "" : "",
+                                                    $props.cardRadius ? "" : ""
+                                                  ]])
+                                                }, null, 8, ["src", "class"]),
+                                                createBaseVNode("h3", _hoisted_25, toDisplayString(product.title), 1)
+                                              ], 8, _hoisted_24)
+                                            ], 2);
+                                          }), 128))
+                                        ])
+                                      ]),
+                                      _: 1
+                                    })) : createCommentVNode("", true)
+                                  ]),
+                                  _: 1
+                                }),
+                                createVNode(Transition, { name: "fade" }, {
+                                  default: withCtx(() => [
+                                    $props.predictiveShowArticles && $data.results.articles.length ? (openBlock(), createBlock(_component_TabPanel, { key: 0 }, {
+                                      default: withCtx(() => [
+                                        createBaseVNode("div", _hoisted_26, [
+                                          (openBlock(true), createElementBlock(Fragment, null, renderList($data.results.articles, (article) => {
+                                            return openBlock(), createElementBlock("div", {
+                                              key: article.id
+                                            }, [
+                                              createBaseVNode("a", {
+                                                href: article.url
+                                              }, [
+                                                article.featured_image ? (openBlock(), createBlock(_component_image_tag, {
+                                                  key: 0,
+                                                  src: article.featured_image,
+                                                  width: "300",
+                                                  sizes: "(min-width: 1280px) 300px, (min-width: 768px) 225px, 150px",
+                                                  srcsetWidths: [150, 225, 300]
+                                                }, null, 8, ["src"])) : createCommentVNode("", true),
+                                                createBaseVNode("h3", null, toDisplayString(article.title), 1)
+                                              ], 8, _hoisted_27)
+                                            ]);
+                                          }), 128))
+                                        ])
+                                      ]),
+                                      _: 1
+                                    })) : createCommentVNode("", true)
+                                  ]),
+                                  _: 1
+                                }),
+                                createVNode(Transition, { name: "fade" }, {
+                                  default: withCtx(() => [
+                                    $props.predictiveShowPages && $data.results.pages.length ? (openBlock(), createBlock(_component_TabPanel, { key: 0 }, {
+                                      default: withCtx(() => [
+                                        createBaseVNode("div", _hoisted_28, [
+                                          (openBlock(true), createElementBlock(Fragment, null, renderList($data.results.pages, (page) => {
+                                            return openBlock(), createElementBlock("div", {
+                                              key: page.id
+                                            }, [
+                                              createBaseVNode("a", {
+                                                href: page.url
+                                              }, [
+                                                page.featured_image ? (openBlock(), createBlock(_component_image_tag, {
+                                                  key: 0,
+                                                  src: page.featured_image,
+                                                  width: "300",
+                                                  sizes: "(min-width: 1280px) 300px, (min-width: 768px) 225px, 150px",
+                                                  srcsetWidths: [150, 225, 300]
+                                                }, null, 8, ["src"])) : createCommentVNode("", true),
+                                                createBaseVNode("h3", null, toDisplayString(page.title), 1)
+                                              ], 8, _hoisted_29)
+                                            ]);
+                                          }), 128))
+                                        ])
+                                      ]),
+                                      _: 1
+                                    })) : createCommentVNode("", true)
+                                  ]),
+                                  _: 1
+                                })
+                              ]),
+                              _: 1
+                            })
+                          ]),
+                          _: 1
+                        }),
+                        createBaseVNode("div", _hoisted_30, [
+                          createBaseVNode("form", _hoisted_31, [
+                            withDirectives(createBaseVNode("input", {
+                              name: "q",
+                              "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $data.query = $event),
+                              type: "hidden"
+                            }, null, 512), [
+                              [vModelText, $data.query]
+                            ]),
+                            _hoisted_32
+                          ])
+                        ])
+                      ])) : (openBlock(), createElementBlock("div", _hoisted_33, " No results found. "))
+                    ])
+                  ], 4)) : createCommentVNode("", true)
+                ]),
+                _: 1
+              })
+            ]),
+            _: 1
+          }, 8, ["class"])
+        ]),
+        _: 1
+      }, 8, ["name"])
+    ]),
+    _: 1
+  });
+}
+var SearchMenu = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+const searchProps = {
+  searchPosition: window.themeSettings.search_open_position,
+  trendingSearches: window.themeSettings.search_trends,
+  predictiveSearchEnabled: window.themeSettings.predictive_search_enabled,
+  predictiveShowNumber: window.themeSettings.predictive_search_show_number,
+  predictiveShowPages: window.themeSettings.predictive_search_show_pages,
+  predictiveShowArticles: window.themeSettings.predictive_search_show_articles,
+  iconSize: window.themeSettings.icon_size,
+  iconStrokeWidth: window.themeSettings.icon_stroke_width,
+  cardStyle: window.themeSettings.card_style,
+  cardAlignment: window.themeSettings.card_text_alignment,
+  cardColorScheme: window.themeSettings.card_color_scheme,
+  cardBorder: window.themeSettings.card_border,
+  cardRadius: window.themeSettings.card_corner_radius,
+  cardImageAspect: window.themeSettings.card_image_aspect,
+  cardImageFit: window.themeSettings.card_image_fit,
+  cardAnimate: window.themeSettings.card_hover_animate,
+  cardAnimation: window.themeSettings.card_hover_animation,
+  cardShowInfoOnHover: window.themeSettings.card_hover_show_info
+};
+createApp(SearchMenu, searchProps).mount("#searchMenuTop");

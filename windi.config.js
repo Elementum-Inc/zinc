@@ -13,6 +13,7 @@ export default {
         200: '#f5f5f5',
         300: '#ededed',
         400: '#e0e0e0',
+        450: '#cccccc',
         500: '#c2c2c2',
         600: '#9e9e9e',
         700: '#757575',
@@ -40,9 +41,11 @@ export default {
       'lg': '1.125rem', // 18px
       'xl': '1.25rem', // 20px
       '2xl': '1.5rem', // 24px
+      '1.75': '1.75rem', // 28px
       '3xl': '2rem', // 32px 
       '4xl': '2.25rem', // 36px
       '5xl': '2.5rem', // 40px
+      '2.75': '2.75rem', // 44px
       '6xl': '3rem', // 48px
       '7xl': '3.5rem', // 56px
       '8xl': '4rem', // 64px 
@@ -62,6 +65,14 @@ export default {
       'lg': '1.2rem', // 20px
       'xl': '1.875rem' // 30px
     },
+    screens: {
+      'xs': '480px',
+      'sm': '640px',
+      'md': '768px',
+      'lg': '1024px',
+      'xl': '1280px',
+      '2xl': '1536px'
+    },
     extend: {
       lineHeight: {
         '110': 1.1,
@@ -72,8 +83,10 @@ export default {
         '170': 1.7,
         '180': 1.8,
         '190': 1.9,
-      }
+      },
     },
   },
-  plugins: [],
+  plugins: [
+    require('windicss/plugin/aspect-ratio'),
+  ],
 }
