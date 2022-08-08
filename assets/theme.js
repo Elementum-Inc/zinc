@@ -5851,8 +5851,9 @@ const _sfc_main = {
     }
   }
 };
-const _hoisted_1 = ["width", "height", "stroke-width"];
-const _hoisted_2 = /* @__PURE__ */ createBaseVNode("circle", {
+const _hoisted_1 = { class: "icon target align-bottom" };
+const _hoisted_2 = ["width", "height", "stroke-width"];
+const _hoisted_3 = /* @__PURE__ */ createBaseVNode("circle", {
   cx: "11",
   cy: "11",
   r: "9",
@@ -5860,57 +5861,62 @@ const _hoisted_2 = /* @__PURE__ */ createBaseVNode("circle", {
   opacity: ".25",
   stroke: "none"
 }, null, -1);
-const _hoisted_3 = /* @__PURE__ */ createBaseVNode("circle", {
+const _hoisted_4 = /* @__PURE__ */ createBaseVNode("circle", {
   cx: "11",
   cy: "11",
   r: "9"
 }, null, -1);
-const _hoisted_4 = /* @__PURE__ */ createBaseVNode("path", { d: "M17.5 17.5 22 22" }, null, -1);
-const _hoisted_5 = [
-  _hoisted_2,
+const _hoisted_5 = /* @__PURE__ */ createBaseVNode("path", { d: "M17.5 17.5 22 22" }, null, -1);
+const _hoisted_6 = [
   _hoisted_3,
-  _hoisted_4
+  _hoisted_4,
+  _hoisted_5
 ];
-const _hoisted_6 = /* @__PURE__ */ createBaseVNode("span", { class: "label" }, "Search", -1);
-const _hoisted_7 = {
+const _hoisted_7 = /* @__PURE__ */ createBaseVNode("span", { class: "label" }, "Search", -1);
+const _hoisted_8 = {
   action: "/search",
   method: "get",
   role: "search",
   class: "search__form"
 };
-const _hoisted_8 = ["onClick", "width", "height"];
-const _hoisted_9 = ["stroke-width"];
-const _hoisted_10 = ["stroke-width"];
-const _hoisted_11 = { class: "search__results--inner" };
-const _hoisted_12 = /* @__PURE__ */ createBaseVNode("h1", { class: "sr-only" }, "Search Results", -1);
-const _hoisted_13 = {
+const _hoisted_9 = /* @__PURE__ */ createBaseVNode("label", {
+  for: "q",
+  class: "sr-only"
+}, "Search: ", -1);
+const _hoisted_10 = { class: "icon target" };
+const _hoisted_11 = ["onClick", "width", "height"];
+const _hoisted_12 = ["stroke-width"];
+const _hoisted_13 = ["stroke-width"];
+const _hoisted_14 = { class: "search__results--inner" };
+const _hoisted_15 = /* @__PURE__ */ createBaseVNode("h1", { class: "sr-only" }, "Search Results", -1);
+const _hoisted_16 = {
   key: 0,
   class: "search__trends"
 };
-const _hoisted_14 = { class: "search__trends-tags" };
-const _hoisted_15 = ["href"];
-const _hoisted_16 = {
+const _hoisted_17 = { class: "search__trends-tags" };
+const _hoisted_18 = ["href"];
+const _hoisted_19 = {
   key: 1,
   class: "search__results--loaded"
 };
-const _hoisted_17 = /* @__PURE__ */ createTextVNode("Products");
-const _hoisted_18 = /* @__PURE__ */ createTextVNode("Articles");
-const _hoisted_19 = /* @__PURE__ */ createTextVNode("Pages");
-const _hoisted_20 = { class: "search__products" };
-const _hoisted_21 = ["href"];
-const _hoisted_22 = { class: "product-title" };
-const _hoisted_23 = { class: "search__articles" };
+const _hoisted_20 = /* @__PURE__ */ createTextVNode("Products");
+const _hoisted_21 = /* @__PURE__ */ createTextVNode("Articles");
+const _hoisted_22 = /* @__PURE__ */ createTextVNode("Pages");
+const _hoisted_23 = { class: "search__products" };
 const _hoisted_24 = ["href"];
-const _hoisted_25 = { class: "search__pages" };
-const _hoisted_26 = ["href"];
-const _hoisted_27 = { class: "search__more" };
-const _hoisted_28 = {
+const _hoisted_25 = { class: "product-title" };
+const _hoisted_26 = { class: "search__articles" };
+const _hoisted_27 = ["href"];
+const _hoisted_28 = { class: "search__pages" };
+const _hoisted_29 = ["href"];
+const _hoisted_30 = { class: "search__more" };
+const _hoisted_31 = {
   action: "/search",
   method: "get",
   role: "search"
 };
-const _hoisted_29 = /* @__PURE__ */ createBaseVNode("button", { type: "submit" }, "View More", -1);
-const _hoisted_30 = {
+const _hoisted_32 = /* @__PURE__ */ createBaseVNode("button", { type: "submit" }, "View More", -1);
+const _hoisted_33 = {
   key: 2,
   class: "search__no-results"
 };
@@ -5929,19 +5935,20 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     default: withCtx(() => [
       createVNode(_component_PopoverButton, { class: "header__icon-link" }, {
         default: withCtx(() => [
-          (openBlock(), createElementBlock("svg", {
-            class: "icon align-bottom",
-            xmlns: "http://www.w3.org/2000/svg",
-            viewBox: "0 0 24 24",
-            width: $props.iconSize,
-            height: $props.iconSize,
-            fill: "none",
-            stroke: "#000",
-            "stroke-width": $props.iconStrokeWidth,
-            "stroke-linecap": "round",
-            "stroke-linejoin": "round"
-          }, _hoisted_5, 8, _hoisted_1)),
-          _hoisted_6
+          createBaseVNode("span", _hoisted_1, [
+            (openBlock(), createElementBlock("svg", {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 24 24",
+              width: $props.iconSize,
+              height: $props.iconSize,
+              fill: "none",
+              stroke: "#000",
+              "stroke-width": $props.iconStrokeWidth,
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }, _hoisted_6, 8, _hoisted_2))
+          ]),
+          _hoisted_7
         ]),
         _: 1
       }),
@@ -5951,7 +5958,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             class: normalizeClass(["search__popover", [$props.searchPosition]])
           }, {
             default: withCtx(({ close }) => [
-              createBaseVNode("form", _hoisted_7, [
+              createBaseVNode("form", _hoisted_8, [
+                _hoisted_9,
                 withDirectives(createBaseVNode("input", {
                   name: "q",
                   "onUpdate:modelValue": _cache[0] || (_cache[0] = ($event) => $data.query = $event),
@@ -5961,24 +5969,25 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                   [vModelText, $data.query],
                   [_directive_debounce, $props.predictiveSearchEnabled ? $options.getPredictiveResults() : null, "200"]
                 ]),
-                (openBlock(), createElementBlock("svg", {
-                  onClick: ($event) => $options.tryClose(close),
-                  class: "icon",
-                  width: $props.iconSize * 0.75,
-                  height: $props.iconSize * 0.75,
-                  viewBox: "0 0 23 23",
-                  fill: "none",
-                  xmlns: "http://www.w3.org/2000/svg"
-                }, [
-                  createBaseVNode("path", {
-                    d: "M21.4878 1L1.51221 22",
-                    "stroke-width": $props.iconStrokeWidth
-                  }, null, 8, _hoisted_9),
-                  createBaseVNode("path", {
-                    d: "M22 21.4878L1 1.51221",
-                    "stroke-width": $props.iconStrokeWidth
-                  }, null, 8, _hoisted_10)
-                ], 8, _hoisted_8))
+                createBaseVNode("span", _hoisted_10, [
+                  (openBlock(), createElementBlock("svg", {
+                    onClick: ($event) => $options.tryClose(close),
+                    width: $props.iconSize * 0.75,
+                    height: $props.iconSize * 0.75,
+                    viewBox: "0 0 23 23",
+                    fill: "none",
+                    xmlns: "http://www.w3.org/2000/svg"
+                  }, [
+                    createBaseVNode("path", {
+                      d: "M21.4878 1L1.51221 22",
+                      "stroke-width": $props.iconStrokeWidth
+                    }, null, 8, _hoisted_12),
+                    createBaseVNode("path", {
+                      d: "M22 21.4878L1 1.51221",
+                      "stroke-width": $props.iconStrokeWidth
+                    }, null, 8, _hoisted_13)
+                  ], 8, _hoisted_11))
+                ])
               ]),
               createVNode(Transition, { name: "results" }, {
                 default: withCtx(() => [
@@ -5987,40 +5996,40 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                     style: normalizeStyle([$props.searchPosition == "below" ? { height: $data.resultsHeight + "px" } : {}]),
                     class: "search__results"
                   }, [
-                    createBaseVNode("div", _hoisted_11, [
-                      _hoisted_12,
-                      $props.trendingSearches ? (openBlock(), createElementBlock("div", _hoisted_13, [
+                    createBaseVNode("div", _hoisted_14, [
+                      _hoisted_15,
+                      $props.trendingSearches ? (openBlock(), createElementBlock("div", _hoisted_16, [
                         createBaseVNode("h2", null, toDisplayString($data.trends.title), 1),
-                        createBaseVNode("div", _hoisted_14, [
+                        createBaseVNode("div", _hoisted_17, [
                           (openBlock(true), createElementBlock(Fragment, null, renderList($data.trends.items, (trend) => {
                             return openBlock(), createElementBlock("a", {
                               key: trend.id,
                               href: trend.url,
                               class: "search__trends-tag"
-                            }, toDisplayString(trend.title), 9, _hoisted_15);
+                            }, toDisplayString(trend.title), 9, _hoisted_18);
                           }), 128))
                         ])
                       ])) : createCommentVNode("", true),
-                      $options.resultsLength > 0 ? (openBlock(), createElementBlock("div", _hoisted_16, [
+                      $options.resultsLength > 0 ? (openBlock(), createElementBlock("div", _hoisted_19, [
                         createVNode(_component_TabGroup, null, {
                           default: withCtx(() => [
                             createVNode(_component_TabList, { class: "search__tabs" }, {
                               default: withCtx(() => [
                                 $data.results.products.length ? (openBlock(), createBlock(_component_Tab, { key: 0 }, {
                                   default: withCtx(() => [
-                                    _hoisted_17
+                                    _hoisted_20
                                   ]),
                                   _: 1
                                 })) : createCommentVNode("", true),
                                 $props.predictiveShowArticles && $data.results.articles.length ? (openBlock(), createBlock(_component_Tab, { key: 1 }, {
                                   default: withCtx(() => [
-                                    _hoisted_18
+                                    _hoisted_21
                                   ]),
                                   _: 1
                                 })) : createCommentVNode("", true),
                                 $props.predictiveShowPages && $data.results.pages.length ? (openBlock(), createBlock(_component_Tab, { key: 2 }, {
                                   default: withCtx(() => [
-                                    _hoisted_19
+                                    _hoisted_22
                                   ]),
                                   _: 1
                                 })) : createCommentVNode("", true)
@@ -6033,7 +6042,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                                   default: withCtx(() => [
                                     $data.results.products.length ? (openBlock(), createBlock(_component_TabPanel, { key: 0 }, {
                                       default: withCtx(() => [
-                                        createBaseVNode("div", _hoisted_20, [
+                                        createBaseVNode("div", _hoisted_23, [
                                           (openBlock(true), createElementBlock(Fragment, null, renderList($data.results.products, (product) => {
                                             return openBlock(), createElementBlock("div", {
                                               key: product.id,
@@ -6059,8 +6068,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                     $props.cardRadius ? "" : ""
                                                   ]])
                                                 }, null, 8, ["src", "class"]),
-                                                createBaseVNode("h3", _hoisted_22, toDisplayString(product.title), 1)
-                                              ], 8, _hoisted_21)
+                                                createBaseVNode("h3", _hoisted_25, toDisplayString(product.title), 1)
+                                              ], 8, _hoisted_24)
                                             ], 2);
                                           }), 128))
                                         ])
@@ -6074,7 +6083,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                                   default: withCtx(() => [
                                     $props.predictiveShowArticles && $data.results.articles.length ? (openBlock(), createBlock(_component_TabPanel, { key: 0 }, {
                                       default: withCtx(() => [
-                                        createBaseVNode("div", _hoisted_23, [
+                                        createBaseVNode("div", _hoisted_26, [
                                           (openBlock(true), createElementBlock(Fragment, null, renderList($data.results.articles, (article) => {
                                             return openBlock(), createElementBlock("div", {
                                               key: article.id
@@ -6090,7 +6099,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                   srcsetWidths: [150, 225, 300]
                                                 }, null, 8, ["src"])) : createCommentVNode("", true),
                                                 createBaseVNode("h3", null, toDisplayString(article.title), 1)
-                                              ], 8, _hoisted_24)
+                                              ], 8, _hoisted_27)
                                             ]);
                                           }), 128))
                                         ])
@@ -6104,7 +6113,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                                   default: withCtx(() => [
                                     $props.predictiveShowPages && $data.results.pages.length ? (openBlock(), createBlock(_component_TabPanel, { key: 0 }, {
                                       default: withCtx(() => [
-                                        createBaseVNode("div", _hoisted_25, [
+                                        createBaseVNode("div", _hoisted_28, [
                                           (openBlock(true), createElementBlock(Fragment, null, renderList($data.results.pages, (page) => {
                                             return openBlock(), createElementBlock("div", {
                                               key: page.id
@@ -6120,7 +6129,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                                                   srcsetWidths: [150, 225, 300]
                                                 }, null, 8, ["src"])) : createCommentVNode("", true),
                                                 createBaseVNode("h3", null, toDisplayString(page.title), 1)
-                                              ], 8, _hoisted_26)
+                                              ], 8, _hoisted_29)
                                             ]);
                                           }), 128))
                                         ])
@@ -6136,8 +6145,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                           ]),
                           _: 1
                         }),
-                        createBaseVNode("div", _hoisted_27, [
-                          createBaseVNode("form", _hoisted_28, [
+                        createBaseVNode("div", _hoisted_30, [
+                          createBaseVNode("form", _hoisted_31, [
                             withDirectives(createBaseVNode("input", {
                               name: "q",
                               "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $data.query = $event),
@@ -6145,10 +6154,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                             }, null, 512), [
                               [vModelText, $data.query]
                             ]),
-                            _hoisted_29
+                            _hoisted_32
                           ])
                         ])
-                      ])) : (openBlock(), createElementBlock("div", _hoisted_30, " No results found. "))
+                      ])) : (openBlock(), createElementBlock("div", _hoisted_33, " No results found. "))
                     ])
                   ], 4)) : createCommentVNode("", true)
                 ]),
