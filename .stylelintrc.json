@@ -12,7 +12,6 @@
     "at-rule-semicolon-space-before": "never",
     "block-closing-brace-empty-line-before": "never",
     "block-closing-brace-newline-after": "always",
-    "block-closing-brace-space-after": "always-single-line",
     "block-closing-brace-space-before": "always-single-line",
     "block-opening-brace-newline-after": "always-multi-line",
     "block-opening-brace-space-after": "always-single-line",
@@ -102,7 +101,7 @@
       }
     ],
     "selector-attribute-brackets-space-inside": "never",
-    "selector-attribute-operator-space-after": "always",
+    "selector-attribute-operator-space-after": "never",
     "selector-attribute-operator-space-before": "never",
     "selector-attribute-quotes": "always",
     "selector-combinator-space-after": "always",

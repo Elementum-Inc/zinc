@@ -13,6 +13,7 @@ export default {
         200: '#f5f5f5',
         300: '#ededed',
         400: '#e0e0e0',
+        450: '#cccccc',
         500: '#c2c2c2',
         600: '#9e9e9e',
         700: '#757575',
@@ -85,5 +86,7 @@ export default {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('windicss/plugin/aspect-ratio'),
+  ],
 }
