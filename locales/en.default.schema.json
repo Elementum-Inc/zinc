@@ -160,20 +160,6 @@
     "drawers": {
       "name": "Drawers"
     },
-    "styles": {
-      "name": "Icons",
-      "settings": {
-        "accent_icons": {
-          "options__3": {
-            "label": "Outline button"
-          },
-          "options__4": {
-            "label": "Text"
-          },
-          "label": "Color"
-        }
-      }
-    },
     "social-media": {
       "name": "Social media",
       "settings": {

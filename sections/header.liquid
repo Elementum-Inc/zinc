@@ -28,7 +28,9 @@
   {% if section.settings.menu %}
     <div class="header__menu order-1">
       <div class="header__menu-trigger{% unless section.settings.collapse_menu_desktop %} lg:hidden{% endunless %}">
-        {% render 'icon-hamburger' %}
+        <span class="icon target">
+          {% render 'icon-hamburger' %}
+        </span>
       </div>
       {% unless section.settings.collapse_menu_desktop %}
         <nav class="header__menu-top">
@@ -45,12 +47,16 @@
     <div id="searchMenuTop"></div>
     {% comment %} user {% endcomment %}
     <a class="header__icon-link account" href="{{ routes.account_url }}">
-      {% render 'icon-user' %}
+      <span class="icon target">
+        {% render 'icon-user' %}
+      </span>
      <span class="label">Account</span>
     </a>
     {% comment %} cart {% endcomment %}
     <a class="header__icon-link cart" href="{{ routes.cart_url }}">
-     {% render 'icon-shopping-bag' %}
+      <span class="icon target">
+        {% render 'icon-shopping-bag' %}
+      </span>
      <span class="label">Cart</span>
     </a>
   </div>

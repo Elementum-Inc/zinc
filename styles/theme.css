@@ -9,6 +9,56 @@ body.search--opened {
   @apply max-h-[100vh] overflow-hidden;
 }
 
+*:focus {
+  @apply ring-1 ring-accent1;
+}
+
+*:focus-visible {
+  @apply ring-1 ring-accent1;
+}
+
+/* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
+.focused,
+.no-js *:focus {
+  @apply ring-1 ring-accent1;
+}
+
+/* Negate the fallback side-effect for browsers that support :focus-visible */
+.no-js *:focus:not(:focus-visible) {
+  @apply outline-none shadow-none;
+}
+
+.focus-inset:focus-visible {
+  @apply ring-1 ring-accent1;
+}
+
+.focused.focus-inset,
+.no-js .focus-inset:focus {
+  @apply ring-1 ring-accent1;
+}
+
+.no-js .focus-inset:focus:not(:focus-visible) {
+  @apply outline-none shadow-none;
+}
+
+/* Dangerous for a11y - Use with care */
+.focus-none {
+  @apply outline-none shadow-none;
+}
+
+.focus-offset:focus-visible {
+  @apply ring-1 ring-accent1;
+}
+
+.focus-offset.focused,
+.no-js .focus-offset:focus {
+  @apply ring-1 ring-accent1;
+}
+
+.no-js .focus-offset:focus:not(:focus-visible) {
+  @apply outline-none shadow-none;
+}
+
 /*
   Hello this is for me (Dani) because LastPass is dumb and doesn't have a way
   to disable their extension by url. 🙃 So this is here until further notice

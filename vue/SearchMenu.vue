@@ -1,22 +1,27 @@
 <template>
   <Popover class="header__search search">
     <PopoverButton class="header__icon-link">
-      <svg class="icon align-bottom" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize" fill="none" stroke="#000" :stroke-width="iconStrokeWidth" stroke-linecap="round" stroke-linejoin="round">
-        <!--  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons -->
-        <circle cx="11" cy="11" r="9" fill="#000" opacity=".25" stroke="none"/>
-        <circle cx="11" cy="11" r="9"/>
-        <path d="M17.5 17.5 22 22"/>
-      </svg>
+      <span class="icon target align-bottom">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize" fill="none" stroke="#000" :stroke-width="iconStrokeWidth" stroke-linecap="round" stroke-linejoin="round">
+          <!--  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons -->
+          <circle cx="11" cy="11" r="9" fill="#000" opacity=".25" stroke="none"/>
+          <circle cx="11" cy="11" r="9"/>
+          <path d="M17.5 17.5 22 22"/>
+        </svg>
+      </span>
       <span class="label">Search</span>
     </PopoverButton>
     <transition :name="searchPosition">
       <PopoverPanel class="search__popover" :class="[searchPosition]" v-slot="{ close }">
         <form action="/search" method="get" role="search" class="search__form">
+          <label for="q" class="sr-only">Search: </label>
           <input name="q" v-model="query" v-debounce:200="predictiveSearchEnabled ? getPredictiveResults() : null" placeholder="Search" class="search__input" />
-          <svg @click="tryClose(close)" class="icon" :width="iconSize * .75" :height="iconSize * .75" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21.4878 1L1.51221 22" :stroke-width="iconStrokeWidth"/>
-            <path d="M22 21.4878L1 1.51221" :stroke-width="iconStrokeWidth"/>
-          </svg>
+          <span class="icon target">
+            <svg @click="tryClose(close)" :width="iconSize * .75" :height="iconSize * .75" viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M21.4878 1L1.51221 22" :stroke-width="iconStrokeWidth"/>
+              <path d="M22 21.4878L1 1.51221" :stroke-width="iconStrokeWidth"/>
+            </svg>
+          </span>
         </form>
         <transition name="results">
           <div v-if="query != '' && predictiveSearchEnabled" :style="[searchPosition == 'below' ? { height: resultsHeight + 'px' } : {  }]" class="search__results">

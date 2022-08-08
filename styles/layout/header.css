@@ -146,7 +146,7 @@
         @apply flex-wrap justify-center;
 
         & .label {
-          @apply basis-full text-center mt-1;
+          @apply basis-full text-center;
         }
       }
     }
@@ -172,7 +172,7 @@
     @apply inline-block inline-flex;
 
     &:not(:first-child) {
-      @apply ml-2 md:ml-4;
+      @apply md:ml-4;
     }
 
     & svg {
@@ -191,7 +191,7 @@
   &.secondary {
     @apply bg-secondary text-primary;
 
-    & svg.icon {
+    & .icon > svg {
       @apply stroke-primary;
     }
   }
@@ -201,7 +201,7 @@
       @apply text-accent1;
     }
 
-    & svg.icon {
+    & .icon > svg {
       @apply fill-accent1;
     }
   }
@@ -211,7 +211,7 @@
       @apply text-accent2;
     }
 
-    & svg.icon {
+    & .icon > svg {
       @apply fill-accent2;
     }
   }
@@ -222,7 +222,7 @@
   &__form {
     @apply flex justify-center items-center;
 
-    svg.icon {
+    .icon > svg {
       @apply ml-4;
     }
   }

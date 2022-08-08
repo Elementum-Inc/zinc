@@ -1,4 +1,13 @@
 .icon {
-  @apply inline align-baseline;
-  fill-opacity: .25;
+  @apply inline-block align-baseline;
+
+  &.target {
+    @apply inline-flex items-center justify-center;
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  svg {
+    fill-opacity: .25;
+  }
 }
