@@ -340,17 +340,8 @@ ul {
 .fill-none {
   fill: none;
 }
-.fill-accent1 {
-  fill: rgb(var(--color-accent-1));
-}
-.fill-accent2 {
-  fill: rgb(var(--color-accent-2));
-}
 .stroke-secondary {
   stroke: rgb(var(--color-secondary));
-}
-.stroke-primary {
-  stroke: rgb(var(--color-primary));
 }
 .text\/html {
   color: rgb(var(--color-text));
