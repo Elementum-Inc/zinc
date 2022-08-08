@@ -5,6 +5,10 @@
   found in the assets folder.
 */
 
+body.search--opened {
+  @apply max-h-[100vh] overflow-hidden;
+}
+
 /*
   Hello this is for me (Dani) because LastPass is dumb and doesn't have a way
   to disable their extension by url. 🙃 So this is here until further notice

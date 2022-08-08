@@ -188,20 +188,12 @@
     }
   }
 
-  /* & .search__popover {
-    @apply bg-primary text-secondary;
-  } */
-
   &.secondary {
     @apply bg-secondary text-primary;
 
-    & .header__icon-link svg {
+    & svg.icon {
       @apply stroke-primary;
     }
-
-    /* & .search__popover {
-      @apply bg-secondary text-primary;
-    } */
   }
 
   &.accent1 {
@@ -209,7 +201,7 @@
       @apply text-accent1;
     }
 
-    & .header__icon-link svg {
+    & svg.icon {
       @apply fill-accent1;
     }
   }
@@ -219,8 +211,278 @@
       @apply text-accent2;
     }
 
-    & .header__icon-link svg {
+    & svg.icon {
       @apply fill-accent2;
     }
+  }
+}
+
+/* SEARCH */
+.search {
+  &__form {
+    @apply flex justify-center items-center;
+
+    svg.icon {
+      @apply ml-4;
+    }
+  }
+
+  &__input {
+    @apply p-sm;
+  }
+
+  &__popover {
+    @apply absolute left-0 w-full bg-primary text-secondary;
+
+    .secondary & {
+      @apply bg-secondary text-primary;
+    }
+
+    &.over {
+      @apply top-0 h-full;
+
+      & .search__form {
+        @apply h-full w-full;
+      }
+
+      & .search__input {
+        @apply bg-bg2 border-b border-secondary basis-3/4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4;
+
+        .secondary & {
+          @apply bg-secondary border-primary;
+        }
+      }
+
+      & .search__results {
+        @apply w-full border-t border-gray-450;
+
+        .secondary & {
+          @apply border-gray-900;
+        }
+      }
+
+      &-enter-active,
+      &-leave-active {
+        @apply transition transform;
+      }
+
+      &-enter-active {
+        @apply ease-in duration-300;
+      }
+
+      &-leave-active {
+        @apply ease-out duration-220;
+      }
+
+      &-enter-to,
+      &-leave-from {
+        @apply opacity-100 translate-y-0;
+      }
+
+      &-enter-from,
+      &-leave-to {
+        @apply opacity-0 -translate-y-full;
+      }
+    }
+
+
+    &.below {
+      @apply left-0 top-full border-t border-gray-450;
+
+      .secondary & {
+        @apply border-gray-900;
+      }
+
+      & .search__form {
+        @apply w-full container lg:container-md xl:container-lg m-auto py-4;
+      }
+
+      & .search__input {
+        @apply bg-primary flex-1;
+
+        .secondary & {
+          @apply bg-secondary;
+        }
+      }
+
+      & .search__results {
+        @apply border-t border-gray-450;
+
+        .secondary & {
+          @apply border-gray-900;
+        }
+      }
+
+      &-enter-active,
+      &-leave-active {
+        @apply transition transform;
+      }
+
+      &-enter-active {
+        @apply ease-in duration-300;
+      }
+
+      &-leave-active {
+        @apply ease-out duration-220;
+      }
+
+      &-enter-to,
+      &-leave-from {
+        @apply translate-y-0;
+      }
+
+      &-enter-from,
+      &-leave-to {
+        @apply -translate-y-full;
+      }
+    }
+  }
+
+  &__results {
+    @apply relative px-6 pt-8 overflow-auto overscroll-contain;
+    background-color: inherit;
+    color: inherit;
+    height: calc(-100% + 100vh);
+
+    & h2 {
+      @apply font-serif text-lg;
+    }
+
+    &--inner {
+      @apply container lg:container-md xl:container-lg mx-auto;
+    }
+
+    &.results-enter-active,
+    &.results-leave-active {
+      @apply transition transform relative -z-1;
+    }
+
+    &.results-enter-active {
+      @apply ease-in duration-200;
+    }
+
+    &.results-leave-active {
+      @apply ease-out duration-300;
+    }
+
+    &.results-enter-to,
+    &.results-leave-from {
+      @apply translate-y-0;
+    }
+
+    &.results-enter-from,
+    &.results-leave-to {
+      @apply -translate-y-full;
+    }
+  }
+
+  &__trends {
+    @apply md:max-w-1/2 lg:max-w-1/3 2xl:max-w-1/4 m-auto text-center;
+
+    & h2 {
+      @apply mb-4 md:mb-6;
+    }
+
+    &-tags {
+      @apply flex flex-wrap justify-center;
+    }
+
+    &-tag {
+      @apply bg-secondary text-primary text-xs py-xs px-4 mb-4 mr-2;
+
+      .secondary & {
+        @apply bg-primary text-secondary;
+      }
+    }
+  }
+
+  &__tabs {
+    @apply text-center py-6 lg:py-10;
+
+    & > button {
+      @apply md:text-lg mx-4;
+
+      &::after {
+        @apply block h-[.125rem] bg-secondary w-0 transition-all duration-500 linear mt-2 md:mt-4;
+        content: '';
+
+        .secondary & {
+          @apply bg-primary;
+        }
+      }
+
+      &[aria-selected='true'] {
+        &::after {
+          @apply w-full;
+        }
+      }
+    }
+  }
+
+  &__products {
+    @apply flex flex-wrap justify-center;
+  }
+
+  &__product-card {
+    @apply basis-1/2 md:basis-1/4 text-center px-2 md:px-xs;
+
+    & .product-title {
+      @apply text-lg mt-2;
+    }
+  }
+
+  &__more {
+    @apply sticky bottom-0 w-full container lg:container-md xl:container-lg py-4 md:py-8 mx-auto mt-12 lg:mt-16 text-center bg-primary text-secondary;
+
+    .secondary & {
+      @apply bg-secondary text-primary;
+    }
+
+    &::before {
+      @apply absolute -top-24 block h-24 w-full md:(border-b border-gray-450);
+      /* stylelint-disable indentation, function-comma-space-after */
+      background-image: linear-gradient(to top, rgb(var(--color-primary)),
+                                              rgb(var(--color-primary) / .9),
+                                              rgb(var(--color-primary) / .8),
+                                              rgb(var(--color-primary) / .7),
+                                              rgb(var(--color-primary) / .6),
+                                              rgb(var(--color-primary) / .5),
+                                              rgb(var(--color-primary) / .4),
+                                              rgb(var(--color-primary) / .3),
+                                              rgb(var(--color-primary) / .2),
+                                              rgb(var(--color-primary) / .1),
+                                              transparent);
+      /* stylelint-enable indentation, function-comma-space-after */
+      content: '';
+
+      .secondary & {
+        @apply from-secondary;
+        /* stylelint-disable indentation, function-comma-space-after */
+        background-image: linear-gradient(to top, rgb(var(--color-secondary)),
+                                                  rgb(var(--color-secondary) / .9),
+                                                  rgb(var(--color-secondary) / .8),
+                                                  rgb(var(--color-secondary) / .7),
+                                                  rgb(var(--color-secondary) / .6),
+                                                  rgb(var(--color-secondary) / .5),
+                                                  rgb(var(--color-secondary) / .4),
+                                                  rgb(var(--color-secondary) / .3),
+                                                  rgb(var(--color-secondary) / .2),
+                                                  rgb(var(--color-secondary) / .1),
+                                                  transparent);
+        /* stylelint-enable indentation, function-comma-space-after */
+      }
+    }
+
+    & button {
+      @apply bg-secondary text-primary text-lg py-xs px-8;
+
+      .secondary & {
+        @apply bg-primary text-secondary;
+      }
+    }
+  }
+
+  &__no-results {
+    @apply text-center;
   }
 }
