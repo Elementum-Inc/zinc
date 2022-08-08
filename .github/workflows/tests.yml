@@ -31,6 +31,6 @@ jobs:
         with:
           args: --ignores .shopifyignore
       - name: Cypress.io
-        uses: cypress-io/github-action@v2.9.7
+        uses: cypress-io/github-action@v4.2.0
         with:
           config: baseUrl=https://${{ secrets.SHOP_STORE }}/?preview_theme_id=${{ secrets.CYPRESS_TEST_THEME_ID }}
