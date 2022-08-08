@@ -2,6 +2,9 @@
   "settings_schema": {
     "global": {
       "settings": {
+        "header__image": {
+          "content": "Image"
+        },
         "header__border": {
           "content": "Border"
         },
@@ -316,6 +319,12 @@
       },
       "spacing": "Spacing",
       "colors": {
+        "primary": {
+          "label": "Primary"
+        },
+        "secondary": {
+          "label": "Secondary"
+        },
         "accent_1": {
           "label": "Accent 1"
         },
@@ -327,9 +336,6 @@
         },
         "background_2": {
           "label": "Background 2"
-        },
-        "inverse": {
-          "label": "Inverse"
         },
         "label": "Color scheme",
         "has_cards_info": "To change the card color scheme, update your theme settings."

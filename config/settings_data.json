@@ -34,16 +34,11 @@
     "inputs_shadow_vertical_offset": 4,
     "inputs_shadow_blur": 5,
     "card_style": "standard",
-    "card_image_padding": 0,
-    "card_text_alignment": "left",
-    "card_color_scheme": "background-2",
-    "card_border_thickness": 0,
-    "card_border_opacity": 10,
+    "card_text_alignment": "center",
+    "card_color_scheme": "primary",
     "card_corner_radius": 0,
-    "card_shadow_opacity": 0,
-    "card_shadow_horizontal_offset": 0,
-    "card_shadow_vertical_offset": 4,
-    "card_shadow_blur": 5,
+    "card_image_aspect": "sportrait",
+    "card_image_fit": "cover",
     "text_boxes_border_thickness": 0,
     "text_boxes_border_opacity": 10,
     "text_boxes_radius": 0,
@@ -85,9 +80,17 @@
     "social_snapchat_link": "",
     "social_youtube_link": "",
     "social_vimeo_link": "",
-    "search_open_position": "over",
+    "search_open_position": "below",
+    "search_trends": "trending-searches",
     "predictive_search_enabled": true,
     "currency_code_enabled": true,
+    "card_image_padding": 0,
+    "card_border_thickness": 0,
+    "card_border_opacity": 10,
+    "card_shadow_opacity": 0,
+    "card_shadow_horizontal_offset": 0,
+    "card_shadow_vertical_offset": 4,
+    "card_shadow_blur": 5,
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
     "colors_solid_button_labels": "#ffffff",
@@ -101,28 +104,15 @@
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
-        "blocks": {
-          "announcement-bar-0": {
-            "type": "announcement",
-            "settings": {
-              "text": "Welcome to our store",
-              "color_scheme": "background-1",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "announcement-bar-0"
-        ],
         "settings": {
         }
       },
       "header": {
         "type": "header",
         "settings": {
-          "color_scheme": "accent2",
+          "color_scheme": "secondary",
           "logo_width": 64,
-          "logo_position": "split-menu",
+          "logo_position": "top-center",
           "menu": "main-menu",
           "collapse_menu_desktop": false,
           "enable_sticky_header": true,
