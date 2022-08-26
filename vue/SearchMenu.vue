@@ -155,6 +155,7 @@
       cardAnimate: Boolean,
       cardAnimation: String,
       cardShowInfoOnHover: Boolean,
+      settings: Object
     },
     computed: {
       resultsLength() {
@@ -233,7 +234,7 @@
           let json = await res.json();
           this.trends = json.data.menu;
         } catch (error) {
-          console.error('Error occurred fetch search trends, please investigate.', error);
+          console.error('Error occurred fetching search trends, please investigate.', error);
         }
       }
     },

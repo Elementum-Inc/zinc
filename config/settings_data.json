@@ -70,7 +70,6 @@
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "inverse",
-    "accent_icons": "text",
     "social_twitter_link": "",
     "social_facebook_link": "",
     "social_pinterest_link": "",
@@ -84,6 +83,7 @@
     "search_trends": "trending-searches",
     "predictive_search_enabled": true,
     "currency_code_enabled": true,
+    "accent_icons": "text",
     "card_image_padding": 0,
     "card_border_thickness": 0,
     "card_border_opacity": 10,
@@ -109,6 +109,46 @@
       },
       "header": {
         "type": "header",
+        "blocks": {
+          "f8603bea-8bd3-4ec1-8e2a-1f58d60c8291": {
+            "type": "menu",
+            "settings": {
+              "title": "shop",
+              "submenu_title": "",
+              "submenu": "shop-submenu",
+              "submenu_item_image": "none"
+            }
+          },
+          "06f0cdba-8e0d-4722-84ee-b51b50fe3a4e": {
+            "type": "image_content",
+            "settings": {
+              "title": "shop",
+              "image": "shopify:\/\/shop_images\/fall-vegetable-box.jpg",
+              "content_title": "Newest Arrivals",
+              "content_subtitle": "Check out our latest fall fashion.",
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.<\/p>",
+              "primary_button_text": "Shop Now",
+              "primary_button_url": "shopify:\/\/collections",
+              "secondary_button_text": "Read our trend blog",
+              "secondary_button_url": "shopify:\/\/blogs\/news"
+            }
+          },
+          "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
+            "type": "menu",
+            "disabled": true,
+            "settings": {
+              "title": "shop",
+              "submenu_title": "",
+              "submenu": "trending-searches",
+              "submenu_item_image": "none"
+            }
+          }
+        },
+        "block_order": [
+          "f8603bea-8bd3-4ec1-8e2a-1f58d60c8291",
+          "06f0cdba-8e0d-4722-84ee-b51b50fe3a4e",
+          "5771ba81-313e-4f85-9ea9-d675f4eb17fc"
+        ],
         "settings": {
           "color_scheme": "secondary",
           "logo_width": 64,
@@ -116,6 +156,9 @@
           "menu": "main-menu",
           "collapse_menu_desktop": false,
           "enable_sticky_header": true,
+          "mm_color_scheme": "primary",
+          "mm_type": "bold",
+          "mm_mobile_links": "mobile-links-example",
           "user_menu_type": "expanded",
           "menu_icon_position": "top",
           "enable_country_selector": false,

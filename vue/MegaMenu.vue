@@ -1,0 +1,321 @@
+<template>
+  <Popover>
+    <PopoverButton class="header__menu-trigger" :class="{ 'hide-desktop' : !settings.collapse_menu_desktop }">
+      <span class="icon target">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+          <!--  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons -->
+          <path d="M21 18H3M21 12H3M21 6H3"/>
+        </svg>
+      </span>
+    </PopoverButton>
+    <!-- mobile -->
+    <transition name="slideRight" v-if="screen < 1024">
+      <PopoverPanel as="nav"  class="header__menu-collapsed" :class="[settings.mm_color_scheme]" v-slot="{ close }">
+        <div class="mobile-header">
+          <button @click="close()">
+            <span class="icon target">
+              <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" fill="none" viewBox="0 0 10 10" :width="iconSize" :height="iconSize">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor" />
+              </svg>
+            </span>
+          </button>
+          <!-- logo -->
+        </div>
+        <Disclosure v-slot="{ open }" v-for="link in topMenu" :key="link.id">
+          <div class="submenu" :class="open ? 'opened' : ''">
+            <DisclosureButton as="a" :href="link.url" class="submenu__top-link">
+              {{ link.title }}
+              <span v-if="link.links.length" class="icon target expand">
+                <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" fill="none" viewBox="0 0 10 10" :width="iconSize" :height="iconSize">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor" />
+                </svg>
+              </span>
+            </DisclosureButton>
+            <transition name="slideDown" v-if="link.links.length">
+              <DisclosurePanel class="submenu__links">
+                <Disclosure as="div" v-for="(child, index) in link.links" :key="index + 1">
+                  <DisclosureButton as="a" :href="child.url" class="submenu__level1">
+                    {{ child.title }}
+                    <span v-if="child.links.length" class="icon target expand">
+                      <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" fill="none" viewBox="0 0 10 10" :width="iconSize" :height="iconSize">
+                        <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor" />
+                      </svg>
+                    </span>
+                  </DisclosureButton>
+                  <transition name="slideDown" v-if="child.links.length">
+                    <DisclosurePanel>
+                      <ul>
+                        <li v-for="grandchild in child.links" :key="grandchild.id" class="submenu__level2">
+                          {{ grandchild.title }}
+                        </li>
+                      </ul>
+                    </DisclosurePanel>
+                  </transition>
+                </Disclosure>
+              </DisclosurePanel>
+            </transition>
+          </div>
+        </Disclosure>
+        <div v-if="mobileLinks.length" class="mobile-links">
+          <a v-for="link in mobileLinks" :key="link.id" :href="link.url">
+            {{ link.title }}
+          </a>
+        </div>
+        <div class="mobile-footer">
+          <a href="/account">
+            Account
+            <span class="icon target">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize" fill="none" stroke="#000" :stroke-width="iconStrokeWidth" stroke-linecap="round" stroke-linejoin="round">
+                <!--  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons -->
+                <circle cx="12" cy="6" r="4" fill="#000" opacity=".25" stroke="none"/>
+                <circle cx="12" cy="6" r="4"/>
+                <path d="M17.67 22a2 2 0 0 0 1.92-2.56A7.8 7.8 0 0 0 12 14a7.8 7.8 0 0 0-7.59 5.44A2 2 0 0 0 6.34 22Z" fill="#000" opacity=".25" stroke="none"/>
+                <path d="M17.67 22a2 2 0 0 0 1.92-2.56A7.8 7.8 0 0 0 12 14a7.8 7.8 0 0 0-7.59 5.44A2 2 0 0 0 6.34 22Z"/>
+              </svg>
+            </span>
+          </a>
+          <!-- payment/language selector -->
+        </div>
+      </PopoverPanel>
+    </transition>
+    <!-- desktop -->
+    <transition name="slideRight" v-else>
+      <PopoverPanel :static="!settings.collapse_menu_desktop">
+        <PopoverGroup as="nav" class="header__menu-top" :class="[settings.mm_color_scheme, settings.collapse_menu_desktop ? 'collapsed' : '']">
+          <Popover v-for="link in topMenu" :key="link.id" class="top-link">
+            <PopoverButton as="a" :href="link.url">
+              {{ link.title }}
+            </PopoverButton>
+            <transition name="slideDown">
+              <PopoverPanel v-if="link.blocks.length" class="header__menu-content" :class="[settings.mm_type]">
+                <div v-for="block in link.blocks" :key="block.id" class="submenu-block" :class="[block.type, block.type == 'menu' ? `images-${block.settings.submenu_item_image}` : '']">
+                  <div v-if="block.type == 'menu'" :class="[`images-${block.settings.submenu_item_image}__inner`, `${block.type}__inner`, settings.mm_color_scheme]">
+                    <h4 v-if="block.settings.submenu_title != ''">{{ block.settings.submenu_title }}</h4>
+                    <h4 v-else>{{ block.settings.submenu.title }}</h4>
+                    <ul class="menu__level0">
+                      <Disclosure as="li" v-for="link in block.settings.submenu" :key="link.id" class="menu__top-link">
+                        <DisclosureButton v-if="link.links.length">
+                          <transition name="fade" appear>
+                            <image-tag v-if="link.object && link.object.image && block.settings.submenu_item_image != 'none'" :src="link.object.image"
+                                        width="320"
+                                        sizes="320px"
+                                        :srcsetWidths="[320]"
+                                        class="menu__image"></image-tag>
+  
+                          </transition>
+                          <a :href="link.url">
+                            <span>
+                              {{ link.title }}
+                            </span>
+                          </a>
+                        </DisclosureButton>
+                        <a v-else :href="link.url">
+                          <transition name="fade" appear>
+                            <image-tag v-if="link.object && link.object.image && block.settings.submenu_item_image != 'none'" :src="link.object.image"
+                                        width="320"
+                                        sizes="320px"
+                                        :srcsetWidths="[320]"
+                                        class="menu__image"></image-tag>
+  
+                          </transition>
+                          <span>
+                            {{ link.title }}
+                          </span>
+                        </a>
+                        <transition name="slideDown" v-if="link.links.length">
+                          <DisclosurePanel as="ul" class="menu__level1">
+                            <Disclosure as="li" v-for="child in link.links" :key="child.id">
+                              <DisclosureButton v-if="child.links.length">
+                                <a :href="child.url">
+                                  {{ child.title }}
+                                </a>
+                              </DisclosureButton>
+                              <a v-else :href="child.url">
+                                {{ child.title }}
+                              </a>
+                              <transition name="slideDown" v-if="child.links.length">
+                                <DisclosurePanel as="ul" class="menu__level2">
+                                  <li v-for="grandchild in child.links" :key="grandchild.id">
+                                    <a :href="grandchild.url">
+                                      {{ grandchild.title }}
+                                    </a>
+                                  </li>
+                                </DisclosurePanel>
+                              </transition>
+                            </Disclosure>
+                          </DisclosurePanel>
+                        </transition>
+                      </Disclosure>
+                    </ul>
+                  </div>
+                  <div v-else-if="block.type == 'image_content'" :class="[`${block.type}__inner`]">
+                    <image-tag v-if="block.settings.image" :src="block.settings.image"
+                                width="960"
+                                sizes="(min-width: 1440px) 960px, (min-width: 1280px) 640px, 320px"
+                                :srcsetWidths="[960, 640, 320]"
+                                class="image_content__image"></image-tag>
+                    <div class="image_content__content">
+                      <h1 v-if="block.settings.content_title">{{ block.settings.content_title }}</h1>
+                      <h3 v-if="block.settings.content_subtitle">{{ block.settings.content_subtitle }}</h3>
+                      <p v-if="block.settings.content" :html="block.settings.content"></p>
+                      <div class="buttons" :class="[settings.mm_color_scheme]">
+                        <a v-if="block.settings.primary_button_text && block.settings.primary_button_url" :href="block.settings.primary_button_url" class="btn round primary outline">
+                          {{ block.settings.primary_button_text }}
+                        </a>
+                        <a v-if="block.settings.secondary_button_text && block.settings.secondary_button_url" :href="block.settings.secondary_button_url" class="btn round secondary outline">
+                          {{ block.settings.secondary_button_text }}
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </PopoverPanel>
+              <PopoverPanel v-else-if="link.links.length" class="header__menu-dropdown" :class="[settings.mm_color_scheme]">
+                <ul class="dropdown">
+                  <Disclosure as="li" v-for="child in link.links" :key="child.id" class="dropdown__level1">
+                    <DisclosureButton v-if="child.links.length">
+                      <a :href="child.url">
+                        {{ child.title }}
+                      </a>
+                      <span v-if="child.links.length" class="icon target expand">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
+                          <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor" />
+                        </svg>
+                      </span>
+                    </DisclosureButton>
+                    <a v-else :href="child.url">
+                      {{ child.title }}
+                    </a>
+                    <transition name="slideDown" v-if="child.links.length">
+                      <DisclosurePanel as="ul">
+                        <li v-for="grandchild in child.links" :key="grandchild.id" class="dropdown__level2">
+                          <a :href="grandchild.url">
+                            {{ grandchild.title }}
+                          </a>
+                        </li>
+                      </DisclosurePanel>
+                    </transition>
+                  </Disclosure>
+                </ul>
+              </PopoverPanel>
+            </transition>
+          </Popover>
+        </PopoverGroup>
+      </PopoverPanel>
+    </transition>
+  </Popover>
+</template>
+
+<script>
+  import { PopoverGroup, Popover, PopoverButton, PopoverPanel } from '@headlessui/vue';
+  import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue';
+  import { Disclosure, DisclosureButton, DisclosurePanel } from '@headlessui/vue';
+  import ImageTag from './components/ImageTag.vue';
+
+  export default {
+    name: "Mega Menu",
+    components: { PopoverGroup, Popover, PopoverButton, PopoverPanel, TabGroup, TabList, Tab, TabPanels, TabPanel, Disclosure, DisclosureButton, DisclosurePanel, ImageTag },
+    data() {
+      return {
+        screen: window.innerWidth
+      }
+    },
+    props: {
+      iconSize: Number,
+      iconStrokeWidth: Number,
+      settings: Object,
+      blocks: Array,
+      topMenu: Object,
+      mobileLinks: Object
+    },
+    computed: {
+    },
+    watch: {
+    },
+    methods: {
+      blocksByParent(parentHandle) {
+        return this.blocks.filter((b) => b.title == parentHandle);
+      },
+      async getMenuByHandle(handle) {
+        try {
+          const GET_MENU = {
+            query: `
+              query {
+                menu(handle: "${handle}") {
+                  title
+                  items {
+                    id
+                    title
+                    url
+                  }
+                }
+              }
+            `
+          };
+          let res = await fetch('/api/2022-07/graphql.json', {
+            method: 'POST',
+            credentials: 'include',
+            headers: {
+              'Content-Type': 'application/json',
+              'X-Shopify-Storefront-Access-Token': '1c34b11ba2613f92ad45fe82bace6f83' // TO-DO: create token on app installation for vue components
+            },
+            body: JSON.stringify(GET_MENU)
+          });
+          let json = await res.json();
+          console.log(json);
+          return json.data.menu;
+        } catch (error) {
+          console.error('Error occurred fetching menu, please investigate.', error);
+        }
+      }
+    },
+    mounted() {
+      window.addEventListener('resize', () => { this.screen = window.innerWidth; });
+      window.addEventListener('deviceorientation', () => { this.screen = window.innerWidth; });
+
+      this.blocks.forEach((block) => {
+        var match = this.topMenu.find((item) => item.title.toLowerCase() == block.settings.title.toLowerCase());
+
+        if (match != undefined) {
+          var pos = this.topMenu.indexOf(match);
+          this.topMenu[pos].blocks.push(block);
+        }
+      });
+
+      const header = document.querySelector('header');
+      const menuTrigger = document.querySelector('.header__menu-trigger');
+      const topLinks = Array.from(document.querySelectorAll('.header__menu-top .top-link > a'));
+
+      var observer = new MutationObserver((mutations) => {
+        mutations.forEach((mutation) => {
+          if (mutation.attributeName == 'aria-expanded') {
+            var activeTopLink = topLinks.find((t) => t.getAttribute('aria-expanded') == 'true') || false;
+            var triggerVisible = window.getComputedStyle(menuTrigger).display == 'none' ? false : true;
+            if (activeTopLink) {
+              var isDropdown = activeTopLink.nextElementSibling.classList.contains('header__menu-dropdown');
+            }
+            if ((menuTrigger.getAttribute('aria-expanded') == 'true' && window.innerWidth < 1024) ||
+                activeTopLink && !isDropdown && activeTopLink.getAttribute('aria-expanded') == 'true') { // not actually a true boolean so have to compare text values
+              document.body.classList.add('menu--opened');
+              header.classList.add('menu--opened');
+            } else if (menuTrigger.getAttribute('aria-expanded') == 'false' ||
+                      (!triggerVisible && !activeTopLink)) {
+              document.body.classList.remove('menu--opened');
+              header.classList.remove('menu--opened');
+            }
+          }
+        });
+      });
+
+      observer.observe(menuTrigger, {
+        attributes: true
+      });
+
+      topLinks.forEach((topLink) => {
+        observer.observe(topLink, {
+          attributes: true
+        });
+      });
+    }
+  }
+</script>
