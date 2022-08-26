@@ -5059,7 +5059,7 @@ function u$1(r2, n2, ...a) {
 var R = ((o2) => (o2[o2.None = 0] = "None", o2[o2.RenderStrategy = 1] = "RenderStrategy", o2[o2.Static = 2] = "Static", o2))(R || {}), O = ((e2) => (e2[e2.Unmount = 0] = "Unmount", e2[e2.Hidden = 1] = "Hidden", e2))(O || {});
 function P$1({ visible: r2 = true, features: t2 = 0, ourProps: e2, theirProps: o2, ...i }) {
   var a;
-  let n2 = w$2(o2, e2), s = Object.assign(i, { props: n2 });
+  let n2 = w$3(o2, e2), s = Object.assign(i, { props: n2 });
   if (r2 || t2 & 2 && n2.static)
     return u(s);
   if (t2 & 1) {
@@ -5092,7 +5092,7 @@ function u({ props: r2, attrs: t2, slots: e2, slot: o2, name: i }) {
 function y(r2) {
   return r2.flatMap((t2) => t2.type === Fragment ? y(t2.children) : [t2]);
 }
-function w$2(...r2) {
+function w$3(...r2) {
   if (r2.length === 0)
     return {};
   if (r2.length === 1)
@@ -5196,7 +5196,7 @@ function v(e2) {
   var r2, t2;
   return (t2 = (r2 = e2 == null ? void 0 : e2.matches) == null ? void 0 : r2.call(e2, h)) != null ? t2 : false;
 }
-function w$1(e2, r2 = (t2) => t2) {
+function w$2(e2, r2 = (t2) => t2) {
   return e2.slice().sort((t2, l2) => {
     let n2 = r2(t2), i = r2(l2);
     if (n2 === null || i === null)
@@ -5207,7 +5207,7 @@ function w$1(e2, r2 = (t2) => t2) {
 }
 function P(e2, r2, t2 = true) {
   var d2;
-  let l2 = (d2 = Array.isArray(e2) ? e2.length > 0 ? e2[0].ownerDocument : document : e2 == null ? void 0 : e2.ownerDocument) != null ? d2 : document, n2 = Array.isArray(e2) ? t2 ? w$1(e2) : e2 : b(e2), i = l2.activeElement, o2 = (() => {
+  let l2 = (d2 = Array.isArray(e2) ? e2.length > 0 ? e2[0].ownerDocument : document : e2 == null ? void 0 : e2.ownerDocument) != null ? d2 : document, n2 = Array.isArray(e2) ? t2 ? w$2(e2) : e2 : b(e2), i = l2.activeElement, o2 = (() => {
     if (r2 & 5)
       return 1;
     if (r2 & 10)
@@ -5223,7 +5223,7 @@ function P(e2, r2, t2 = true) {
     if (r2 & 8)
       return n2.length - 1;
     throw new Error("Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last");
-  })(), x = r2 & 32 ? { preventScroll: true } : {}, f = 0, s = n2.length, u2;
+  })(), x2 = r2 & 32 ? { preventScroll: true } : {}, f = 0, s = n2.length, u2;
   do {
     if (f >= s || f + s <= 0)
       return 0;
@@ -5236,11 +5236,11 @@ function P(e2, r2, t2 = true) {
       if (a >= s)
         return 1;
     }
-    u2 = n2[a], u2 == null || u2.focus(x), f += o2;
+    u2 = n2[a], u2 == null || u2.focus(x2), f += o2;
   } while (u2 !== l2.activeElement);
   return u2.hasAttribute("tabindex") || u2.setAttribute("tabindex", "0"), r2 & 6 && v(u2) && u2.select(), 2;
 }
-function w(e2, n2, t2) {
+function w$1(e2, n2, t2) {
   typeof window != "undefined" && watchEffect((o2) => {
     window.addEventListener(e2, n2, t2), o2(() => window.removeEventListener(e2, n2, t2));
   });
@@ -5264,7 +5264,7 @@ function T(l2, f, a = computed(() => true)) {
     }
     return !F(n2, M.Loose) && n2.tabIndex !== -1 && t2.preventDefault(), f(t2, n2);
   }
-  w("click", (t2) => i(t2, (r2) => r2.target), true), w("blur", (t2) => i(t2, () => window.document.activeElement instanceof HTMLIFrameElement ? window.document.activeElement : null), true);
+  w$1("click", (t2) => i(t2, (r2) => r2.target), true), w$1("blur", (t2) => i(t2, () => window.document.activeElement instanceof HTMLIFrameElement ? window.document.activeElement : null), true);
 }
 var p = ((e2) => (e2[e2.None = 1] = "None", e2[e2.Focusable = 2] = "Focusable", e2[e2.Hidden = 4] = "Hidden", e2))(p || {});
 let m = defineComponent({ name: "Hidden", props: { as: { type: [Object, String], default: "div" }, features: { type: Number, default: 1 } }, setup(r2, { slots: t2, attrs: o2 }) {
@@ -5276,7 +5276,7 @@ let m = defineComponent({ name: "Hidden", props: { as: { type: [Object, String],
 var d$1 = ((r2) => (r2[r2.Forwards = 0] = "Forwards", r2[r2.Backwards = 1] = "Backwards", r2))(d$1 || {});
 function n() {
   let o2 = ref(0);
-  return w("keydown", (e2) => {
+  return w$1("keydown", (e2) => {
     e2.key === "Tab" && (o2.value = e2.shiftKey ? 1 : 0);
   }), o2;
 }
@@ -5285,6 +5285,82 @@ function r(n2, e2, d2, o2) {
     n2 = n2 != null ? n2 : window, n2.addEventListener(e2, d2, o2), t2(() => n2.removeEventListener(e2, d2, o2));
   });
 }
+var w = ((n2) => (n2[n2.Open = 0] = "Open", n2[n2.Closed = 1] = "Closed", n2))(w || {});
+let x = Symbol("DisclosureContext");
+function C(l2) {
+  let r2 = inject(x, null);
+  if (r2 === null) {
+    let n2 = new Error(`<${l2} /> is missing a parent <Disclosure /> component.`);
+    throw Error.captureStackTrace && Error.captureStackTrace(n2, C), n2;
+  }
+  return r2;
+}
+let B = Symbol("DisclosurePanelContext");
+function H$1() {
+  return inject(B, null);
+}
+let A = defineComponent({ name: "Disclosure", props: { as: { type: [Object, String], default: "template" }, defaultOpen: { type: [Boolean], default: false } }, setup(l$1, { slots: r2, attrs: n2 }) {
+  let d2 = `headlessui-disclosure-button-${t()}`, e2 = `headlessui-disclosure-panel-${t()}`, o$12 = ref(l$1.defaultOpen ? 0 : 1), i = ref(null), s = ref(null), u2 = { buttonId: d2, panelId: e2, disclosureState: o$12, panel: i, button: s, toggleDisclosure() {
+    o$12.value = u$1(o$12.value, { [0]: 1, [1]: 0 });
+  }, closeDisclosure() {
+    o$12.value !== 1 && (o$12.value = 1);
+  }, close(a) {
+    u2.closeDisclosure();
+    let c2 = (() => a ? a instanceof HTMLElement ? a : a.value instanceof HTMLElement ? o(a) : o(u2.button) : o(u2.button))();
+    c2 == null || c2.focus();
+  } };
+  return provide(x, u2), c$1(computed(() => u$1(o$12.value, { [0]: l.Open, [1]: l.Closed }))), () => {
+    let { defaultOpen: a, ...c2 } = l$1, m2 = { open: o$12.value === 0, close: u2.close };
+    return P$1({ theirProps: c2, ourProps: {}, slot: m2, slots: r2, attrs: n2, name: "Disclosure" });
+  };
+} }), G = defineComponent({ name: "DisclosureButton", props: { as: { type: [Object, String], default: "button" }, disabled: { type: [Boolean], default: false } }, setup(l2, { attrs: r2, slots: n2, expose: d2 }) {
+  let e2 = C("DisclosureButton"), o$2 = H$1(), i = o$2 === null ? false : o$2 === e2.panelId, s = ref(null);
+  d2({ el: s, $el: s }), i || watchEffect(() => {
+    e2.button.value = s.value;
+  });
+  let u2 = b$1(computed(() => ({ as: l2.as, type: r2.type })), s);
+  function a() {
+    var t2;
+    l2.disabled || (i ? (e2.toggleDisclosure(), (t2 = o(e2.button)) == null || t2.focus()) : e2.toggleDisclosure());
+  }
+  function c2(t2) {
+    var D;
+    if (!l2.disabled)
+      if (i)
+        switch (t2.key) {
+          case o$1.Space:
+          case o$1.Enter:
+            t2.preventDefault(), t2.stopPropagation(), e2.toggleDisclosure(), (D = o(e2.button)) == null || D.focus();
+            break;
+        }
+      else
+        switch (t2.key) {
+          case o$1.Space:
+          case o$1.Enter:
+            t2.preventDefault(), t2.stopPropagation(), e2.toggleDisclosure();
+            break;
+        }
+  }
+  function m2(t2) {
+    switch (t2.key) {
+      case o$1.Space:
+        t2.preventDefault();
+        break;
+    }
+  }
+  return () => {
+    let t2 = { open: e2.disclosureState.value === 0 }, D = i ? { ref: s, type: u2.value, onClick: a, onKeydown: c2 } : { id: e2.buttonId, ref: s, type: u2.value, "aria-expanded": l2.disabled ? void 0 : e2.disclosureState.value === 0, "aria-controls": o(e2.panel) ? e2.panelId : void 0, disabled: l2.disabled ? true : void 0, onClick: a, onKeydown: c2, onKeyup: m2 };
+    return P$1({ ourProps: D, theirProps: l2, slot: t2, attrs: r2, slots: n2, name: "DisclosureButton" });
+  };
+} }), J = defineComponent({ name: "DisclosurePanel", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true } }, setup(l$1, { attrs: r2, slots: n2, expose: d2 }) {
+  let e2 = C("DisclosurePanel");
+  d2({ el: e2.panel, $el: e2.panel }), provide(B, e2.panelId);
+  let o2 = p$1(), i = computed(() => o2 !== null ? o2.value === l.Open : e2.disclosureState.value === 0);
+  return () => {
+    let s = { open: e2.disclosureState.value === 0, close: e2.close }, u2 = { id: e2.panelId, ref: e2.panel };
+    return P$1({ ourProps: u2, theirProps: l$1, slot: s, attrs: r2, slots: n2, features: R.RenderStrategy | R.Static, visible: i.value, name: "DisclosurePanel" });
+  };
+} });
 var pe = ((f) => (f[f.Open = 0] = "Open", f[f.Closed = 1] = "Closed", f))(pe || {});
 let Z$1 = Symbol("PopoverContext");
 function W(P2) {
@@ -5460,10 +5536,10 @@ let Le = defineComponent({ name: "PopoverPanel", props: { as: { type: [Object, S
         if (!u2)
           return;
         let n2 = b(), i = n2.indexOf(u2), v2 = n2.slice(0, i + 1), K = [...n2.slice(i + 1), ...v2];
-        for (let B of K.slice())
-          if (((z = ($ = B == null ? void 0 : B.id) == null ? void 0 : $.startsWith) == null ? void 0 : z.call($, "headlessui-focus-sentinel-")) || (p2 == null ? void 0 : p2.contains(B))) {
-            let J = K.indexOf(B);
-            J !== -1 && K.splice(J, 1);
+        for (let B2 of K.slice())
+          if (((z = ($ = B2 == null ? void 0 : B2.id) == null ? void 0 : $.startsWith) == null ? void 0 : z.call($, "headlessui-focus-sentinel-")) || (p2 == null ? void 0 : p2.contains(B2))) {
+            let J2 = K.indexOf(B2);
+            J2 !== -1 && K.splice(J2, 1);
           }
         P(K, L.First, false);
       }, [d$1.Backwards]: () => P(l2, L.Previous) });
@@ -5477,8 +5553,7 @@ let Le = defineComponent({ name: "PopoverPanel", props: { as: { type: [Object, S
       return [h$1(Fragment, [y2.value && e$12.isPortalled.value && h$1(m, { id: a, ref: e$12.beforePanelSentinel, features: p.Focusable, as: "button", type: "button", onFocus: d2 }), (p$12 = f.default) == null ? void 0 : p$12.call(f, ...u2), y2.value && e$12.isPortalled.value && h$1(m, { id: b$12, ref: e$12.afterPanelSentinel, features: p.Focusable, as: "button", type: "button", onFocus: D })])];
     } }, features: R.RenderStrategy | R.Static, visible: y2.value, name: "PopoverPanel" });
   };
-} });
-defineComponent({ name: "PopoverGroup", props: { as: { type: [Object, String], default: "div" } }, setup(P2, { attrs: S, slots: f, expose: E }) {
+} }), He = defineComponent({ name: "PopoverGroup", props: { as: { type: [Object, String], default: "div" } }, setup(P2, { attrs: S, slots: f, expose: E }) {
   let t2 = ref(null), e$12 = ref([]), m2 = computed(() => e(t2));
   E({ el: t2, $el: t2 });
   function a(s) {
@@ -5653,7 +5728,7 @@ var _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _sfc_main$1 = {
+const _sfc_main$2 = {
   name: "ImageTag",
   props: {
     src: {
@@ -5689,19 +5764,19 @@ const _sfc_main$1 = {
   },
   computed: {
     formattedSrc() {
-      return `${this.src.url}&width=${this.width}`;
+      return `${this.src.url ? this.src.url : this.src.src}&width=${this.width}`;
     },
     formattedSrcSet() {
       var srcset = "";
       this.srcsetWidths.forEach((w2) => {
-        srcset += `${this.src.url}&width=${w2} ${w2}w,`;
+        srcset += `${this.src.url ? this.src.url : this.src.src}&width=${w2} ${w2}w,`;
       });
       return srcset;
     }
   }
 };
-const _hoisted_1$1 = ["srcset", "src", "sizes", "alt", "preload", "width", "height"];
-function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+const _hoisted_1$2 = ["srcset", "src", "sizes", "alt", "preload", "width", "height"];
+function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createElementBlock("img", {
     srcset: $options.formattedSrcSet,
     src: $options.formattedSrc,
@@ -5711,9 +5786,705 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     width: $props.width,
     height: $props.height,
     class: normalizeClass($props.classes)
-  }, null, 10, _hoisted_1$1);
+  }, null, 10, _hoisted_1$2);
 }
-var ImageTag = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
+var ImageTag = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2]]);
+const _sfc_main$1 = {
+  name: "Mega Menu",
+  components: { PopoverGroup: He, Popover: ve, PopoverButton: ke, PopoverPanel: Le, TabGroup: Y, TabList: Z, Tab: ee, TabPanels: te, TabPanel: ae, Disclosure: A, DisclosureButton: G, DisclosurePanel: J, ImageTag },
+  data() {
+    return {
+      screen: window.innerWidth
+    };
+  },
+  props: {
+    iconSize: Number,
+    iconStrokeWidth: Number,
+    settings: Object,
+    blocks: Array,
+    topMenu: Object,
+    mobileLinks: Object
+  },
+  computed: {},
+  watch: {},
+  methods: {
+    blocksByParent(parentHandle) {
+      return this.blocks.filter((b2) => b2.title == parentHandle);
+    },
+    async getMenuByHandle(handle) {
+      try {
+        const GET_MENU = {
+          query: `
+              query {
+                menu(handle: "${handle}") {
+                  title
+                  items {
+                    id
+                    title
+                    url
+                  }
+                }
+              }
+            `
+        };
+        let res = await fetch("/api/2022-07/graphql.json", {
+          method: "POST",
+          credentials: "include",
+          headers: {
+            "Content-Type": "application/json",
+            "X-Shopify-Storefront-Access-Token": "1c34b11ba2613f92ad45fe82bace6f83"
+          },
+          body: JSON.stringify(GET_MENU)
+        });
+        let json = await res.json();
+        console.log(json);
+        return json.data.menu;
+      } catch (error) {
+        console.error("Error occurred fetching menu, please investigate.", error);
+      }
+    }
+  },
+  mounted() {
+    window.addEventListener("resize", () => {
+      this.screen = window.innerWidth;
+    });
+    window.addEventListener("deviceorientation", () => {
+      this.screen = window.innerWidth;
+    });
+    this.blocks.forEach((block) => {
+      var match = this.topMenu.find((item) => item.title.toLowerCase() == block.settings.title.toLowerCase());
+      if (match != void 0) {
+        var pos = this.topMenu.indexOf(match);
+        this.topMenu[pos].blocks.push(block);
+      }
+    });
+    const header2 = document.querySelector("header");
+    const menuTrigger = document.querySelector(".header__menu-trigger");
+    const topLinks = Array.from(document.querySelectorAll(".header__menu-top .top-link > a"));
+    var observer = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        if (mutation.attributeName == "aria-expanded") {
+          var activeTopLink = topLinks.find((t2) => t2.getAttribute("aria-expanded") == "true") || false;
+          var triggerVisible = window.getComputedStyle(menuTrigger).display == "none" ? false : true;
+          if (activeTopLink) {
+            var isDropdown = activeTopLink.nextElementSibling.classList.contains("header__menu-dropdown");
+          }
+          if (menuTrigger.getAttribute("aria-expanded") == "true" && window.innerWidth < 1024 || activeTopLink && !isDropdown && activeTopLink.getAttribute("aria-expanded") == "true") {
+            document.body.classList.add("menu--opened");
+            header2.classList.add("menu--opened");
+          } else if (menuTrigger.getAttribute("aria-expanded") == "false" || !triggerVisible && !activeTopLink) {
+            document.body.classList.remove("menu--opened");
+            header2.classList.remove("menu--opened");
+          }
+        }
+      });
+    });
+    observer.observe(menuTrigger, {
+      attributes: true
+    });
+    topLinks.forEach((topLink) => {
+      observer.observe(topLink, {
+        attributes: true
+      });
+    });
+  }
+};
+const _hoisted_1$1 = { class: "icon target" };
+const _hoisted_2$1 = ["width", "height"];
+const _hoisted_3$1 = /* @__PURE__ */ createBaseVNode("path", { d: "M21 18H3M21 12H3M21 6H3" }, null, -1);
+const _hoisted_4$1 = [
+  _hoisted_3$1
+];
+const _hoisted_5$1 = { class: "mobile-header" };
+const _hoisted_6$1 = ["onClick"];
+const _hoisted_7$1 = { class: "icon target" };
+const _hoisted_8$1 = ["width", "height"];
+const _hoisted_9$1 = /* @__PURE__ */ createBaseVNode("path", {
+  "fill-rule": "evenodd",
+  "clip-rule": "evenodd",
+  d: "M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z",
+  fill: "currentColor"
+}, null, -1);
+const _hoisted_10$1 = [
+  _hoisted_9$1
+];
+const _hoisted_11$1 = {
+  key: 0,
+  class: "icon target expand"
+};
+const _hoisted_12$1 = ["width", "height"];
+const _hoisted_13$1 = /* @__PURE__ */ createBaseVNode("path", {
+  "fill-rule": "evenodd",
+  "clip-rule": "evenodd",
+  d: "M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z",
+  fill: "currentColor"
+}, null, -1);
+const _hoisted_14$1 = [
+  _hoisted_13$1
+];
+const _hoisted_15$1 = {
+  key: 0,
+  class: "icon target expand"
+};
+const _hoisted_16$1 = ["width", "height"];
+const _hoisted_17$1 = /* @__PURE__ */ createBaseVNode("path", {
+  "fill-rule": "evenodd",
+  "clip-rule": "evenodd",
+  d: "M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z",
+  fill: "currentColor"
+}, null, -1);
+const _hoisted_18$1 = [
+  _hoisted_17$1
+];
+const _hoisted_19$1 = {
+  key: 0,
+  class: "mobile-links"
+};
+const _hoisted_20$1 = ["href"];
+const _hoisted_21$1 = { class: "mobile-footer" };
+const _hoisted_22$1 = { href: "/account" };
+const _hoisted_23$1 = /* @__PURE__ */ createTextVNode(" Account ");
+const _hoisted_24$1 = { class: "icon target" };
+const _hoisted_25$1 = ["width", "height", "stroke-width"];
+const _hoisted_26$1 = /* @__PURE__ */ createBaseVNode("circle", {
+  cx: "12",
+  cy: "6",
+  r: "4",
+  fill: "#000",
+  opacity: ".25",
+  stroke: "none"
+}, null, -1);
+const _hoisted_27$1 = /* @__PURE__ */ createBaseVNode("circle", {
+  cx: "12",
+  cy: "6",
+  r: "4"
+}, null, -1);
+const _hoisted_28$1 = /* @__PURE__ */ createBaseVNode("path", {
+  d: "M17.67 22a2 2 0 0 0 1.92-2.56A7.8 7.8 0 0 0 12 14a7.8 7.8 0 0 0-7.59 5.44A2 2 0 0 0 6.34 22Z",
+  fill: "#000",
+  opacity: ".25",
+  stroke: "none"
+}, null, -1);
+const _hoisted_29$1 = /* @__PURE__ */ createBaseVNode("path", { d: "M17.67 22a2 2 0 0 0 1.92-2.56A7.8 7.8 0 0 0 12 14a7.8 7.8 0 0 0-7.59 5.44A2 2 0 0 0 6.34 22Z" }, null, -1);
+const _hoisted_30$1 = [
+  _hoisted_26$1,
+  _hoisted_27$1,
+  _hoisted_28$1,
+  _hoisted_29$1
+];
+const _hoisted_31$1 = { key: 0 };
+const _hoisted_32$1 = { key: 1 };
+const _hoisted_33$1 = { class: "menu__level0" };
+const _hoisted_34 = ["href"];
+const _hoisted_35 = ["href"];
+const _hoisted_36 = ["href"];
+const _hoisted_37 = ["href"];
+const _hoisted_38 = ["href"];
+const _hoisted_39 = { class: "image_content__content" };
+const _hoisted_40 = { key: 0 };
+const _hoisted_41 = { key: 1 };
+const _hoisted_42 = ["html"];
+const _hoisted_43 = ["href"];
+const _hoisted_44 = ["href"];
+const _hoisted_45 = { class: "dropdown" };
+const _hoisted_46 = ["href"];
+const _hoisted_47 = {
+  key: 0,
+  class: "icon target expand"
+};
+const _hoisted_48 = /* @__PURE__ */ createBaseVNode("svg", {
+  "aria-hidden": "true",
+  focusable: "false",
+  role: "presentation",
+  class: "icon icon-caret",
+  viewBox: "0 0 10 6"
+}, [
+  /* @__PURE__ */ createBaseVNode("path", {
+    "fill-rule": "evenodd",
+    "clip-rule": "evenodd",
+    d: "M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z",
+    fill: "currentColor"
+  })
+], -1);
+const _hoisted_49 = [
+  _hoisted_48
+];
+const _hoisted_50 = ["href"];
+const _hoisted_51 = ["href"];
+function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
+  const _component_PopoverButton = resolveComponent("PopoverButton");
+  const _component_DisclosureButton = resolveComponent("DisclosureButton");
+  const _component_DisclosurePanel = resolveComponent("DisclosurePanel");
+  const _component_Disclosure = resolveComponent("Disclosure");
+  const _component_PopoverPanel = resolveComponent("PopoverPanel");
+  const _component_image_tag = resolveComponent("image-tag");
+  const _component_Popover = resolveComponent("Popover");
+  const _component_PopoverGroup = resolveComponent("PopoverGroup");
+  return openBlock(), createBlock(_component_Popover, null, {
+    default: withCtx(() => [
+      createVNode(_component_PopoverButton, {
+        class: normalizeClass(["header__menu-trigger", { "hide-desktop": !$props.settings.collapse_menu_desktop }])
+      }, {
+        default: withCtx(() => [
+          createBaseVNode("span", _hoisted_1$1, [
+            (openBlock(), createElementBlock("svg", {
+              xmlns: "http://www.w3.org/2000/svg",
+              viewBox: "0 0 24 24",
+              width: $props.iconSize,
+              height: $props.iconSize,
+              fill: "none",
+              stroke: "#000",
+              "stroke-linecap": "round",
+              "stroke-linejoin": "round"
+            }, _hoisted_4$1, 8, _hoisted_2$1))
+          ])
+        ]),
+        _: 1
+      }, 8, ["class"]),
+      $data.screen < 1024 ? (openBlock(), createBlock(Transition, {
+        key: 0,
+        name: "slideRight"
+      }, {
+        default: withCtx(() => [
+          createVNode(_component_PopoverPanel, {
+            as: "nav",
+            class: normalizeClass(["header__menu-collapsed", [$props.settings.mm_color_scheme]])
+          }, {
+            default: withCtx(({ close }) => [
+              createBaseVNode("div", _hoisted_5$1, [
+                createBaseVNode("button", {
+                  onClick: ($event) => close()
+                }, [
+                  createBaseVNode("span", _hoisted_7$1, [
+                    (openBlock(), createElementBlock("svg", {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      "aria-hidden": "true",
+                      focusable: "false",
+                      role: "presentation",
+                      fill: "none",
+                      viewBox: "0 0 10 10",
+                      width: $props.iconSize,
+                      height: $props.iconSize
+                    }, _hoisted_10$1, 8, _hoisted_8$1))
+                  ])
+                ], 8, _hoisted_6$1)
+              ]),
+              (openBlock(true), createElementBlock(Fragment, null, renderList($props.topMenu, (link) => {
+                return openBlock(), createBlock(_component_Disclosure, {
+                  key: link.id
+                }, {
+                  default: withCtx(({ open }) => [
+                    createBaseVNode("div", {
+                      class: normalizeClass(["submenu", open ? "opened" : ""])
+                    }, [
+                      createVNode(_component_DisclosureButton, {
+                        as: "a",
+                        href: link.url,
+                        class: "submenu__top-link"
+                      }, {
+                        default: withCtx(() => [
+                          createTextVNode(toDisplayString(link.title) + " ", 1),
+                          link.links.length ? (openBlock(), createElementBlock("span", _hoisted_11$1, [
+                            (openBlock(), createElementBlock("svg", {
+                              xmlns: "http://www.w3.org/2000/svg",
+                              "aria-hidden": "true",
+                              focusable: "false",
+                              role: "presentation",
+                              fill: "none",
+                              viewBox: "0 0 10 10",
+                              width: $props.iconSize,
+                              height: $props.iconSize
+                            }, _hoisted_14$1, 8, _hoisted_12$1))
+                          ])) : createCommentVNode("", true)
+                        ]),
+                        _: 2
+                      }, 1032, ["href"]),
+                      link.links.length ? (openBlock(), createBlock(Transition, {
+                        key: 0,
+                        name: "slideDown"
+                      }, {
+                        default: withCtx(() => [
+                          createVNode(_component_DisclosurePanel, { class: "submenu__links" }, {
+                            default: withCtx(() => [
+                              (openBlock(true), createElementBlock(Fragment, null, renderList(link.links, (child, index) => {
+                                return openBlock(), createBlock(_component_Disclosure, {
+                                  as: "div",
+                                  key: index + 1
+                                }, {
+                                  default: withCtx(() => [
+                                    createVNode(_component_DisclosureButton, {
+                                      as: "a",
+                                      href: child.url,
+                                      class: "submenu__level1"
+                                    }, {
+                                      default: withCtx(() => [
+                                        createTextVNode(toDisplayString(child.title) + " ", 1),
+                                        child.links.length ? (openBlock(), createElementBlock("span", _hoisted_15$1, [
+                                          (openBlock(), createElementBlock("svg", {
+                                            xmlns: "http://www.w3.org/2000/svg",
+                                            "aria-hidden": "true",
+                                            focusable: "false",
+                                            role: "presentation",
+                                            fill: "none",
+                                            viewBox: "0 0 10 10",
+                                            width: $props.iconSize,
+                                            height: $props.iconSize
+                                          }, _hoisted_18$1, 8, _hoisted_16$1))
+                                        ])) : createCommentVNode("", true)
+                                      ]),
+                                      _: 2
+                                    }, 1032, ["href"]),
+                                    child.links.length ? (openBlock(), createBlock(Transition, {
+                                      key: 0,
+                                      name: "slideDown"
+                                    }, {
+                                      default: withCtx(() => [
+                                        createVNode(_component_DisclosurePanel, null, {
+                                          default: withCtx(() => [
+                                            createBaseVNode("ul", null, [
+                                              (openBlock(true), createElementBlock(Fragment, null, renderList(child.links, (grandchild) => {
+                                                return openBlock(), createElementBlock("li", {
+                                                  key: grandchild.id,
+                                                  class: "submenu__level2"
+                                                }, toDisplayString(grandchild.title), 1);
+                                              }), 128))
+                                            ])
+                                          ]),
+                                          _: 2
+                                        }, 1024)
+                                      ]),
+                                      _: 2
+                                    }, 1024)) : createCommentVNode("", true)
+                                  ]),
+                                  _: 2
+                                }, 1024);
+                              }), 128))
+                            ]),
+                            _: 2
+                          }, 1024)
+                        ]),
+                        _: 2
+                      }, 1024)) : createCommentVNode("", true)
+                    ], 2)
+                  ]),
+                  _: 2
+                }, 1024);
+              }), 128)),
+              $props.mobileLinks.length ? (openBlock(), createElementBlock("div", _hoisted_19$1, [
+                (openBlock(true), createElementBlock(Fragment, null, renderList($props.mobileLinks, (link) => {
+                  return openBlock(), createElementBlock("a", {
+                    key: link.id,
+                    href: link.url
+                  }, toDisplayString(link.title), 9, _hoisted_20$1);
+                }), 128))
+              ])) : createCommentVNode("", true),
+              createBaseVNode("div", _hoisted_21$1, [
+                createBaseVNode("a", _hoisted_22$1, [
+                  _hoisted_23$1,
+                  createBaseVNode("span", _hoisted_24$1, [
+                    (openBlock(), createElementBlock("svg", {
+                      xmlns: "http://www.w3.org/2000/svg",
+                      viewBox: "0 0 24 24",
+                      width: $props.iconSize,
+                      height: $props.iconSize,
+                      fill: "none",
+                      stroke: "#000",
+                      "stroke-width": $props.iconStrokeWidth,
+                      "stroke-linecap": "round",
+                      "stroke-linejoin": "round"
+                    }, _hoisted_30$1, 8, _hoisted_25$1))
+                  ])
+                ])
+              ])
+            ]),
+            _: 1
+          }, 8, ["class"])
+        ]),
+        _: 1
+      })) : (openBlock(), createBlock(Transition, {
+        key: 1,
+        name: "slideRight"
+      }, {
+        default: withCtx(() => [
+          createVNode(_component_PopoverPanel, {
+            static: !$props.settings.collapse_menu_desktop
+          }, {
+            default: withCtx(() => [
+              createVNode(_component_PopoverGroup, {
+                as: "nav",
+                class: normalizeClass(["header__menu-top", [$props.settings.mm_color_scheme, $props.settings.collapse_menu_desktop ? "collapsed" : ""]])
+              }, {
+                default: withCtx(() => [
+                  (openBlock(true), createElementBlock(Fragment, null, renderList($props.topMenu, (link) => {
+                    return openBlock(), createBlock(_component_Popover, {
+                      key: link.id,
+                      class: "top-link"
+                    }, {
+                      default: withCtx(() => [
+                        createVNode(_component_PopoverButton, {
+                          as: "a",
+                          href: link.url
+                        }, {
+                          default: withCtx(() => [
+                            createTextVNode(toDisplayString(link.title), 1)
+                          ]),
+                          _: 2
+                        }, 1032, ["href"]),
+                        createVNode(Transition, { name: "slideDown" }, {
+                          default: withCtx(() => [
+                            link.blocks.length ? (openBlock(), createBlock(_component_PopoverPanel, {
+                              key: 0,
+                              class: normalizeClass(["header__menu-content", [$props.settings.mm_type]])
+                            }, {
+                              default: withCtx(() => [
+                                (openBlock(true), createElementBlock(Fragment, null, renderList(link.blocks, (block) => {
+                                  return openBlock(), createElementBlock("div", {
+                                    key: block.id,
+                                    class: normalizeClass(["submenu-block", [block.type, block.type == "menu" ? `images-${block.settings.submenu_item_image}` : ""]])
+                                  }, [
+                                    block.type == "menu" ? (openBlock(), createElementBlock("div", {
+                                      key: 0,
+                                      class: normalizeClass([`images-${block.settings.submenu_item_image}__inner`, `${block.type}__inner`, $props.settings.mm_color_scheme])
+                                    }, [
+                                      block.settings.submenu_title != "" ? (openBlock(), createElementBlock("h4", _hoisted_31$1, toDisplayString(block.settings.submenu_title), 1)) : (openBlock(), createElementBlock("h4", _hoisted_32$1, toDisplayString(block.settings.submenu.title), 1)),
+                                      createBaseVNode("ul", _hoisted_33$1, [
+                                        (openBlock(true), createElementBlock(Fragment, null, renderList(block.settings.submenu, (link2) => {
+                                          return openBlock(), createBlock(_component_Disclosure, {
+                                            as: "li",
+                                            key: link2.id,
+                                            class: "menu__top-link"
+                                          }, {
+                                            default: withCtx(() => [
+                                              link2.links.length ? (openBlock(), createBlock(_component_DisclosureButton, { key: 0 }, {
+                                                default: withCtx(() => [
+                                                  createVNode(Transition, {
+                                                    name: "fade",
+                                                    appear: ""
+                                                  }, {
+                                                    default: withCtx(() => [
+                                                      link2.object && link2.object.image && block.settings.submenu_item_image != "none" ? (openBlock(), createBlock(_component_image_tag, {
+                                                        key: 0,
+                                                        src: link2.object.image,
+                                                        width: "320",
+                                                        sizes: "320px",
+                                                        srcsetWidths: [320],
+                                                        class: "menu__image"
+                                                      }, null, 8, ["src"])) : createCommentVNode("", true)
+                                                    ]),
+                                                    _: 2
+                                                  }, 1024),
+                                                  createBaseVNode("a", {
+                                                    href: link2.url
+                                                  }, [
+                                                    createBaseVNode("span", null, toDisplayString(link2.title), 1)
+                                                  ], 8, _hoisted_34)
+                                                ]),
+                                                _: 2
+                                              }, 1024)) : (openBlock(), createElementBlock("a", {
+                                                key: 1,
+                                                href: link2.url
+                                              }, [
+                                                createVNode(Transition, {
+                                                  name: "fade",
+                                                  appear: ""
+                                                }, {
+                                                  default: withCtx(() => [
+                                                    link2.object && link2.object.image && block.settings.submenu_item_image != "none" ? (openBlock(), createBlock(_component_image_tag, {
+                                                      key: 0,
+                                                      src: link2.object.image,
+                                                      width: "320",
+                                                      sizes: "320px",
+                                                      srcsetWidths: [320],
+                                                      class: "menu__image"
+                                                    }, null, 8, ["src"])) : createCommentVNode("", true)
+                                                  ]),
+                                                  _: 2
+                                                }, 1024),
+                                                createBaseVNode("span", null, toDisplayString(link2.title), 1)
+                                              ], 8, _hoisted_35)),
+                                              link2.links.length ? (openBlock(), createBlock(Transition, {
+                                                key: 2,
+                                                name: "slideDown"
+                                              }, {
+                                                default: withCtx(() => [
+                                                  createVNode(_component_DisclosurePanel, {
+                                                    as: "ul",
+                                                    class: "menu__level1"
+                                                  }, {
+                                                    default: withCtx(() => [
+                                                      (openBlock(true), createElementBlock(Fragment, null, renderList(link2.links, (child) => {
+                                                        return openBlock(), createBlock(_component_Disclosure, {
+                                                          as: "li",
+                                                          key: child.id
+                                                        }, {
+                                                          default: withCtx(() => [
+                                                            child.links.length ? (openBlock(), createBlock(_component_DisclosureButton, { key: 0 }, {
+                                                              default: withCtx(() => [
+                                                                createBaseVNode("a", {
+                                                                  href: child.url
+                                                                }, toDisplayString(child.title), 9, _hoisted_36)
+                                                              ]),
+                                                              _: 2
+                                                            }, 1024)) : (openBlock(), createElementBlock("a", {
+                                                              key: 1,
+                                                              href: child.url
+                                                            }, toDisplayString(child.title), 9, _hoisted_37)),
+                                                            child.links.length ? (openBlock(), createBlock(Transition, {
+                                                              key: 2,
+                                                              name: "slideDown"
+                                                            }, {
+                                                              default: withCtx(() => [
+                                                                createVNode(_component_DisclosurePanel, {
+                                                                  as: "ul",
+                                                                  class: "menu__level2"
+                                                                }, {
+                                                                  default: withCtx(() => [
+                                                                    (openBlock(true), createElementBlock(Fragment, null, renderList(child.links, (grandchild) => {
+                                                                      return openBlock(), createElementBlock("li", {
+                                                                        key: grandchild.id
+                                                                      }, [
+                                                                        createBaseVNode("a", {
+                                                                          href: grandchild.url
+                                                                        }, toDisplayString(grandchild.title), 9, _hoisted_38)
+                                                                      ]);
+                                                                    }), 128))
+                                                                  ]),
+                                                                  _: 2
+                                                                }, 1024)
+                                                              ]),
+                                                              _: 2
+                                                            }, 1024)) : createCommentVNode("", true)
+                                                          ]),
+                                                          _: 2
+                                                        }, 1024);
+                                                      }), 128))
+                                                    ]),
+                                                    _: 2
+                                                  }, 1024)
+                                                ]),
+                                                _: 2
+                                              }, 1024)) : createCommentVNode("", true)
+                                            ]),
+                                            _: 2
+                                          }, 1024);
+                                        }), 128))
+                                      ])
+                                    ], 2)) : block.type == "image_content" ? (openBlock(), createElementBlock("div", {
+                                      key: 1,
+                                      class: normalizeClass([`${block.type}__inner`])
+                                    }, [
+                                      block.settings.image ? (openBlock(), createBlock(_component_image_tag, {
+                                        key: 0,
+                                        src: block.settings.image,
+                                        width: "960",
+                                        sizes: "(min-width: 1440px) 960px, (min-width: 1280px) 640px, 320px",
+                                        srcsetWidths: [960, 640, 320],
+                                        class: "image_content__image"
+                                      }, null, 8, ["src"])) : createCommentVNode("", true),
+                                      createBaseVNode("div", _hoisted_39, [
+                                        block.settings.content_title ? (openBlock(), createElementBlock("h1", _hoisted_40, toDisplayString(block.settings.content_title), 1)) : createCommentVNode("", true),
+                                        block.settings.content_subtitle ? (openBlock(), createElementBlock("h3", _hoisted_41, toDisplayString(block.settings.content_subtitle), 1)) : createCommentVNode("", true),
+                                        block.settings.content ? (openBlock(), createElementBlock("p", {
+                                          key: 2,
+                                          html: block.settings.content
+                                        }, null, 8, _hoisted_42)) : createCommentVNode("", true),
+                                        createBaseVNode("div", {
+                                          class: normalizeClass(["buttons", [$props.settings.mm_color_scheme]])
+                                        }, [
+                                          block.settings.primary_button_text && block.settings.primary_button_url ? (openBlock(), createElementBlock("a", {
+                                            key: 0,
+                                            href: block.settings.primary_button_url,
+                                            class: "btn round primary outline"
+                                          }, toDisplayString(block.settings.primary_button_text), 9, _hoisted_43)) : createCommentVNode("", true),
+                                          block.settings.secondary_button_text && block.settings.secondary_button_url ? (openBlock(), createElementBlock("a", {
+                                            key: 1,
+                                            href: block.settings.secondary_button_url,
+                                            class: "btn round secondary outline"
+                                          }, toDisplayString(block.settings.secondary_button_text), 9, _hoisted_44)) : createCommentVNode("", true)
+                                        ], 2)
+                                      ])
+                                    ], 2)) : createCommentVNode("", true)
+                                  ], 2);
+                                }), 128))
+                              ]),
+                              _: 2
+                            }, 1032, ["class"])) : link.links.length ? (openBlock(), createBlock(_component_PopoverPanel, {
+                              key: 1,
+                              class: normalizeClass(["header__menu-dropdown", [$props.settings.mm_color_scheme]])
+                            }, {
+                              default: withCtx(() => [
+                                createBaseVNode("ul", _hoisted_45, [
+                                  (openBlock(true), createElementBlock(Fragment, null, renderList(link.links, (child) => {
+                                    return openBlock(), createBlock(_component_Disclosure, {
+                                      as: "li",
+                                      key: child.id,
+                                      class: "dropdown__level1"
+                                    }, {
+                                      default: withCtx(() => [
+                                        child.links.length ? (openBlock(), createBlock(_component_DisclosureButton, { key: 0 }, {
+                                          default: withCtx(() => [
+                                            createBaseVNode("a", {
+                                              href: child.url
+                                            }, toDisplayString(child.title), 9, _hoisted_46),
+                                            child.links.length ? (openBlock(), createElementBlock("span", _hoisted_47, _hoisted_49)) : createCommentVNode("", true)
+                                          ]),
+                                          _: 2
+                                        }, 1024)) : (openBlock(), createElementBlock("a", {
+                                          key: 1,
+                                          href: child.url
+                                        }, toDisplayString(child.title), 9, _hoisted_50)),
+                                        child.links.length ? (openBlock(), createBlock(Transition, {
+                                          key: 2,
+                                          name: "slideDown"
+                                        }, {
+                                          default: withCtx(() => [
+                                            createVNode(_component_DisclosurePanel, { as: "ul" }, {
+                                              default: withCtx(() => [
+                                                (openBlock(true), createElementBlock(Fragment, null, renderList(child.links, (grandchild) => {
+                                                  return openBlock(), createElementBlock("li", {
+                                                    key: grandchild.id,
+                                                    class: "dropdown__level2"
+                                                  }, [
+                                                    createBaseVNode("a", {
+                                                      href: grandchild.url
+                                                    }, toDisplayString(grandchild.title), 9, _hoisted_51)
+                                                  ]);
+                                                }), 128))
+                                              ]),
+                                              _: 2
+                                            }, 1024)
+                                          ]),
+                                          _: 2
+                                        }, 1024)) : createCommentVNode("", true)
+                                      ]),
+                                      _: 2
+                                    }, 1024);
+                                  }), 128))
+                                ])
+                              ]),
+                              _: 2
+                            }, 1032, ["class"])) : createCommentVNode("", true)
+                          ]),
+                          _: 2
+                        }, 1024)
+                      ]),
+                      _: 2
+                    }, 1024);
+                  }), 128))
+                ]),
+                _: 1
+              }, 8, ["class"])
+            ]),
+            _: 1
+          }, 8, ["static"])
+        ]),
+        _: 1
+      }))
+    ]),
+    _: 1
+  });
+}
+var MegaMenu = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1]]);
 const _sfc_main = {
   name: "SearchMenu",
   components: { Popover: ve, PopoverButton: ke, PopoverPanel: Le, TabGroup: Y, TabList: Z, Tab: ee, TabPanels: te, TabPanel: ae, ImageTag },
@@ -5744,7 +6515,8 @@ const _sfc_main = {
     cardImageFit: String,
     cardAnimate: Boolean,
     cardAnimation: String,
-    cardShowInfoOnHover: Boolean
+    cardShowInfoOnHover: Boolean,
+    settings: Object
   },
   computed: {
     resultsLength() {
@@ -5820,7 +6592,7 @@ const _sfc_main = {
         let json = await res.json();
         this.trends = json.data.menu;
       } catch (error) {
-        console.error("Error occurred fetch search trends, please investigate.", error);
+        console.error("Error occurred fetching search trends, please investigate.", error);
       }
     }
   },
@@ -6174,6 +6946,22 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   });
 }
 var SearchMenu = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+const searchMount = document.querySelector("#searchMenuTop");
+const megamenuMount = document.querySelector("#megamenu");
+var megamenuSettings = JSON.parse(megamenuMount.dataset.settings);
+var megamenuBlocks = JSON.parse(megamenuMount.dataset.blocks);
+var topMenu = JSON.parse(megamenuMount.dataset.topmenu);
+var mobileLinks = JSON.parse(megamenuMount.dataset.mobilelinks);
+topMenu.forEach((m2) => m2.blocks = []);
+const menuProps = {
+  iconSize: window.themeSettings.icon_size,
+  iconStrokeWidth: window.themeSettings.icon_stroke_width,
+  settings: megamenuSettings,
+  blocks: megamenuBlocks,
+  topMenu,
+  mobileLinks
+};
+var searchSettings = JSON.parse(searchMount.dataset.settings);
 const searchProps = {
   searchPosition: window.themeSettings.search_open_position,
   trendingSearches: window.themeSettings.search_trends,
@@ -6192,6 +6980,26 @@ const searchProps = {
   cardImageFit: window.themeSettings.card_image_fit,
   cardAnimate: window.themeSettings.card_hover_animate,
   cardAnimation: window.themeSettings.card_hover_animation,
-  cardShowInfoOnHover: window.themeSettings.card_hover_show_info
+  cardShowInfoOnHover: window.themeSettings.card_hover_show_info,
+  settings: searchSettings
 };
-createApp(SearchMenu, searchProps).mount("#searchMenuTop");
+createApp(MegaMenu, menuProps).mount(megamenuMount);
+createApp(SearchMenu, searchProps).mount(searchMount);
+document.addEventListener("DOMContentLoaded", () => {
+  const header2 = document.querySelector("#shopify-section-header");
+  var ticking = false;
+  document.addEventListener("scroll", () => {
+    var yPos = window.scrollY;
+    if (!ticking) {
+      window.requestAnimationFrame(() => {
+        if (yPos < window.innerHeight) {
+          header2.classList.remove("sticky");
+        } else {
+          header2.classList.add("sticky");
+        }
+        ticking = false;
+      });
+      ticking = true;
+    }
+  });
+});
