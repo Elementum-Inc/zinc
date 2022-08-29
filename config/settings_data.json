@@ -154,7 +154,7 @@
           "logo_width": 64,
           "logo_position": "top-center",
           "menu": "main-menu",
-          "collapse_menu_desktop": false,
+          "collapse_menu_desktop": true,
           "enable_sticky_header": true,
           "mm_color_scheme": "primary",
           "mm_type": "bold",

@@ -235,38 +235,6 @@
     methods: {
       blocksByParent(parentHandle) {
         return this.blocks.filter((b) => b.title == parentHandle);
-      },
-      async getMenuByHandle(handle) {
-        try {
-          const GET_MENU = {
-            query: `
-              query {
-                menu(handle: "${handle}") {
-                  title
-                  items {
-                    id
-                    title
-                    url
-                  }
-                }
-              }
-            `
-          };
-          let res = await fetch('/api/2022-07/graphql.json', {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-Shopify-Storefront-Access-Token': '1c34b11ba2613f92ad45fe82bace6f83' // TO-DO: create token on app installation for vue components
-            },
-            body: JSON.stringify(GET_MENU)
-          });
-          let json = await res.json();
-          console.log(json);
-          return json.data.menu;
-        } catch (error) {
-          console.error('Error occurred fetching menu, please investigate.', error);
-        }
       }
     },
     mounted() {
