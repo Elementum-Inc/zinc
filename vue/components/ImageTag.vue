@@ -1,13 +1,13 @@
 <template>
   <img
-       :srcset="formattedSrcSet"
-       :src="formattedSrc"
-       :sizes="sizes"
-       :alt="alt"
-       :preload="preload"
-       :width="width"
-       :height="height"
-       :class="classes" />
+    :srcset="formattedSrcSet"
+    :src="formattedSrc"
+    :sizes="sizes"
+    :alt="alt"
+    :preload="preload"
+    :width="width"
+    :height="height"
+    :class="classes" />
 </template>
 
 <style>
@@ -51,13 +51,13 @@ export default {
   },
   computed: {
     formattedSrc() {
-      return `${this.src.url}&width=${this.width}`;
+      return `${this.src.url ? this.src.url : this.src.src}&width=${this.width}`;
     },
     formattedSrcSet() {
       var srcset = '';
 
       this.srcsetWidths.forEach(w => {
-        srcset += `${this.src.url}&width=${w} ${w}w,`;
+        srcset += `${this.src.url ? this.src.url : this.src.src}&width=${w} ${w}w,`;
       });
 
       return srcset;

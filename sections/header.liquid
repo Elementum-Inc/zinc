@@ -1,7 +1,12 @@
 {% style %}
 .header {
-  padding-bottom: {{ section.settings.padding_bottom }}px;
   padding-top: {{ section.settings.padding_top }}px;
+}
+
+.top-link > a,
+.header__menu-trigger,
+.header__icon-link {
+  padding-bottom: {{ section.settings.padding_bottom }}px;
 }
 {% endstyle %}
 
@@ -24,27 +29,68 @@
       {%- endif -%}
     </a>
   </h1>
+  {% capture topmenuJson %}
+    {% render 'menu-json', menu: section.settings.menu %}
+  {% endcapture %}
+
+  {% capture mobileLinksJson %}
+    {% render 'menu-json', menu: section.settings.mm_mobile_links %}
+  {% endcapture %}
+
+  {% capture blocks %}
+    [
+      {% for block in section.blocks %}
+        {
+          "id": "{{ block.id }}",
+          "settings": {% if block.type == 'menu' %}
+            {
+              "submenu": {% render 'menu-json', menu: block.settings.submenu %},
+              "submenu_title": "{{ block.settings.submenu_title }}",
+              "submenu_item_image": "{{ block.settings.submenu_item_image }}",
+              "title": "{{ block.settings.title }}" 
+            }
+          {% else %}
+            {
+              "content": "{{ block.settings.content }}",
+              "content_title": "{{ block.settings.content_title }}",
+              "content_subtitle": "{{ block.settings.content_subtitle }}",
+              "image": {
+                "alt": "{{ block.settings.image.alt }}",
+                "aspect_ratio": {{ block.settings.image.aspect_ratio }},
+                "height": "{{ block.settings.image.height }}",
+                "id": {{ block.settings.image.id }},
+                "url": "{{ block.settings.image | image_url }}",
+                "width": "{{ block.settings.image.width }}"
+              },
+              "primary_button_text": "{{ block.settings.primary_button_text }}",
+              "primary_button_url": "{{ block.settings.primary_button_url }}",
+              "secondary_button_text": "{{ block.settings.secondary_button_text }}",
+              "secondary_button_url": "{{ block.settings.secondary_button_url }}",
+              "title": "{{ block.settings.title }}"
+            }
+          {% endif %},
+          "shopify_attributes": {{ block.shopify_attributes | json }},
+          "type": "{{ block.type }}"
+        }{% unless forloop.last %},{% endunless %}
+      {% endfor %}
+    ]
+  {% endcapture %}
   {% comment %} menu {% endcomment %}
   {% if section.settings.menu %}
-    <div class="header__menu order-1">
-      <div class="header__menu-trigger{% unless section.settings.collapse_menu_desktop %} lg:hidden{% endunless %}">
-        <span class="icon target">
-          {% render 'icon-hamburger' %}
-        </span>
-      </div>
-      {% unless section.settings.collapse_menu_desktop %}
-        <nav class="header__menu-top">
-          {% for link in section.settings.menu.links %}
-            {{ link.title | link_to: link.url, class: 'top-link' }}
-          {% endfor %}
-        </nav>
-      {% endunless %}
-    </div>
+    <div id="megamenu"
+      class="header__menu order-1"
+      data-settings="{{ section.settings | json | escape }}"
+      data-blocks="{{ blocks | strip_newlines | escape }}"
+      data-topmenu="{{ topmenuJson | strip_newlines | escape }}"
+      data-mobilelinks="{{ mobileLinksJson | strip_newlines | escape }}"
+    ></div>
   {% endif %}
   {% comment %} user menu {% endcomment %}
   <div class="header__user-menu order-2 {{ section.settings.user_menu_type }} icons-{{ section.settings.menu_icon_position }}">
     {% comment %} search {% endcomment %}
-    <div id="searchMenuTop"></div>
+    <div id="searchMenuTop"
+      data-settings="{{ section.settings | json | escape }}"
+    ></div>
     {% comment %} user {% endcomment %}
     <a class="header__icon-link account" href="{{ routes.account_url }}">
       <span class="icon target">
@@ -170,6 +216,57 @@
     },
     {
       "type": "header",
+      "content": "Mega Menu"
+    },
+    {
+      "type": "select",
+      "id": "mm_color_scheme",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "accent1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent2",
+          "label": "Accent 2"
+        }
+      ],
+      "default": "primary",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "select",
+      "id": "mm_type",
+      "options": [
+        {
+          "value": "basic",
+          "label": "Basic"
+        },
+        {
+          "value": "bold",
+          "label": "Bold"
+        }
+      ],
+      "default": "basic",
+      "label": "Menu Type",
+      "info": "TODO: A note on the difference between basic and bold."
+    },
+    {
+      "type": "link_list",
+      "id": "mm_mobile_links",
+      "label": "Mobile Bottom Links",
+      "info": "Use this setting to provide some additional links in the mobile menu."
+    },
+    {
+      "type": "header",
       "content": "User Menu"
     },
     {
@@ -253,6 +350,112 @@
       "unit": "px",
       "label": "t:sections.all.padding.padding_bottom",
       "default": 20
+    }
+  ],
+  "max_blocks": 6,
+  "blocks": [
+    {
+      "name": "Menu",
+      "type": "menu",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Top menu parent",
+          "info": "Your megamenu is built according to block order and this setting, which attaches the submenu to it's parent in the top menu. For more details on how to use this megamenu, please [eventually click here](https://google.com)."
+        },
+        {
+          "type": "text",
+          "id": "submenu_title",
+          "label": "Submenu heading",
+          "info": "If left blank, the navigation's default title will populate."
+        },
+        {
+          "type": "link_list",
+          "id": "submenu",
+          "label": "Submenu"
+        },
+        {
+          "type": "select",
+          "id": "submenu_item_image",
+          "label": "Thumbnail positions",
+          "options": [
+            {
+              "value": "top",
+              "label": "Top"
+            },
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            },
+            {
+              "value": "none",
+              "label": "None"
+            }
+          ],
+          "default": "none"
+        }        
+      ]
+    },
+    {
+      "name": "Image/Content",
+      "type": "image_content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Top menu parent",
+          "info": "Your megamenu is built according to block order and this setting, which attaches the submenu to it's parent in the top menu. For more details on how to use this megamenu, please [eventually click here](https://google.com)."
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "content_title",
+          "label": "Heading"
+        },
+        {
+          "type": "text",
+          "id": "content_subtitle",
+          "label": "Subheading"
+        },
+        {
+          "type": "richtext",
+          "id": "content",
+          "label": "Content"
+        },
+        {
+          "type": "header",
+          "content": "Buttons"
+        },
+        {
+          "type": "text",
+          "id": "primary_button_text",
+          "label": "Primary Button text"
+        },
+        {
+          "type": "url",
+          "id": "primary_button_url",
+          "label": "Primary Button link"
+        },        
+        {
+          "type": "text",
+          "id": "secondary_button_text",
+          "label": "Secondary Button text"
+        },
+        {
+          "type": "url",
+          "id": "secondary_button_url",
+          "label": "Primary Button link"
+        }
+      ]
     }
   ]
 }

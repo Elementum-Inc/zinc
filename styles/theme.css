@@ -5,7 +5,8 @@
   found in the assets folder.
 */
 
-body.search--opened {
+body.search--opened,
+body.menu--opened {
   @apply max-h-[100vh] overflow-hidden;
 }
 
