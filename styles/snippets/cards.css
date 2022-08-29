@@ -1,0 +1,9 @@
+.card {
+  &__image {
+    &.square { @apply aspect-square; }
+    &.lportrait { aspect-ratio: 9/16; }
+    &.sportrait { aspect-ratio: 2/3; }
+    &.cover { @apply object-cover; }
+    &.contain { @apply object-contain; }
+  }
+}
