@@ -29,6 +29,7 @@
       {%- endif -%}
     </a>
   </h1>
+  {% comment %} theme-check-disable LiquidTag {% endcomment %}
   {% capture topmenuJson %}
     {% render 'menu-json', menu: section.settings.menu %}
   {% endcapture %}
@@ -36,6 +37,7 @@
   {% capture mobileLinksJson %}
     {% render 'menu-json', menu: section.settings.mm_mobile_links %}
   {% endcapture %}
+  {% comment %} theme-check-enable LiquidTag {% endcomment %}
 
   {% capture blocks %}
     [
