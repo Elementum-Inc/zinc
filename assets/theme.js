@@ -5997,7 +5997,8 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
   return openBlock(), createBlock(_component_Popover, null, {
     default: withCtx(() => [
       createVNode(_component_PopoverButton, {
-        class: normalizeClass(["header__menu-trigger", { "hide-desktop": !$props.settings.collapse_menu_desktop }])
+        class: normalizeClass(["header__menu-trigger", { "hide-desktop": !$props.settings.collapse_menu_desktop }]),
+        name: "menu-open__trigger"
       }, {
         default: withCtx(() => [
           createBaseVNode("span", _hoisted_1$1, [
