@@ -77,7 +77,7 @@
     "media-query-list-comma-space-after": "always",
     "media-query-list-comma-space-before": "never",
     "no-duplicate-at-import-rules": true,
-    "no-duplicate-selectors": true,
+    "no-duplicate-selectors": null,
     "no-empty-first-line": true,
     "no-empty-source": true,
     "no-eol-whitespace": true,

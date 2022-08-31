@@ -5,7 +5,52 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
 
 */
 
-.btn-shadow {
-  @apply absolute top-[6px] left-[6px] -z-1 h-full w-full;
-  border-radius: inherit;
+
+.btn {
+  @apply inline-block py-xs px-8;
+
+  &.primary {
+    @apply bg-primary text-secondary;
+  }
+
+  &.secondary {
+    @apply bg-secondary text-primary;
+  }
+
+  &.round {
+    @apply rounded-[.625rem];
+  }
+
+  &.outline {
+    @apply border;
+
+    &.primary {
+      @apply border-primary;
+    }
+
+    &.secondary {
+      @apply border-secondary;
+    }
+  }
+
+  &.shadow {
+    @apply relative;
+
+    & .btn-shadow {
+      @apply absolute top-[6px] left-[6px] -z-1 h-full w-full;
+      border-radius: inherit;
+    }
+
+    &.primary {
+      & .btn-shadow {
+        @apply bg-primary border-secondary;
+      }
+    }
+
+    &.secondary {
+      & .btn-shadow {
+        @apply bg-secondary border-secondary;
+      }
+    }
+  }
 }
