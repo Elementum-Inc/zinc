@@ -5998,7 +5998,8 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     default: withCtx(() => [
       createVNode(_component_PopoverButton, {
         class: normalizeClass(["header__menu-trigger", { "hide-desktop": !$props.settings.collapse_menu_desktop }]),
-        name: "menu-open__trigger"
+        name: "menu-open__trigger",
+        "aria-label": "Open  Menu"
       }, {
         default: withCtx(() => [
           createBaseVNode("span", _hoisted_1$1, [
@@ -6029,6 +6030,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
               createBaseVNode("div", _hoisted_5$1, [
                 createBaseVNode("button", {
                   name: "menu-close_trigger",
+                  "aria-label": "Close Menu",
                   onClick: ($event) => close()
                 }, [
                   createBaseVNode("span", _hoisted_7$1, [
