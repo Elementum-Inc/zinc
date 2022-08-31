@@ -1,6 +1,6 @@
 <template>
   <Popover>
-    <PopoverButton class="header__menu-trigger" name="menu-open__trigger" :class="{ 'hide-desktop' : !settings.collapse_menu_desktop }">
+    <PopoverButton class="header__menu-trigger" name="menu-open__trigger" aria-label="Open  Menu" :class="{ 'hide-desktop' : !settings.collapse_menu_desktop }">
       <span class="icon target">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
           <!--  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons -->
@@ -12,7 +12,7 @@
     <transition name="slideRight" v-if="screen < 1024">
       <PopoverPanel as="nav"  class="header__menu-collapsed" :class="[settings.mm_color_scheme]" v-slot="{ close }">
         <div class="mobile-header">
-          <button name="menu-close_trigger" @click="close()">
+          <button name="menu-close_trigger" aria-label="Close Menu" @click="close()">
             <span class="icon target">
               <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" fill="none" viewBox="0 0 10 10" :width="iconSize" :height="iconSize">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor" />
