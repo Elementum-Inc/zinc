@@ -6027,6 +6027,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
             default: withCtx(({ close }) => [
               createBaseVNode("div", _hoisted_5$1, [
                 createBaseVNode("button", {
+                  name: "menu-close_trigger",
                   onClick: ($event) => close()
                 }, [
                   createBaseVNode("span", _hoisted_7$1, [
@@ -6043,7 +6044,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                   ])
                 ], 8, _hoisted_6$1)
               ]),
-              (openBlock(true), createElementBlock(Fragment, null, renderList($props.topMenu, (link) => {
+              (openBlock(true), createElementBlock(Fragment, null, renderList($props.topMenu, (link, index) => {
                 return openBlock(), createBlock(_component_Disclosure, {
                   key: link.id
                 }, {
@@ -6051,7 +6052,10 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                     createBaseVNode("div", {
                       class: normalizeClass(["submenu", open ? "opened" : ""])
                     }, [
-                      createVNode(_component_DisclosureButton, { class: "submenu__top-link" }, {
+                      createVNode(_component_DisclosureButton, {
+                        name: [`top-link_trigger_${index}`],
+                        class: "submenu__top-link"
+                      }, {
                         default: withCtx(() => [
                           createBaseVNode("a", {
                             href: link.url
@@ -6070,7 +6074,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                           ])) : createCommentVNode("", true)
                         ]),
                         _: 2
-                      }, 1024),
+                      }, 1032, ["name"]),
                       link.links.length ? (openBlock(), createBlock(Transition, {
                         key: 0,
                         name: "slideDown"
@@ -6078,13 +6082,16 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                         default: withCtx(() => [
                           createVNode(_component_DisclosurePanel, { class: "submenu__links" }, {
                             default: withCtx(() => [
-                              (openBlock(true), createElementBlock(Fragment, null, renderList(link.links, (child, index) => {
+                              (openBlock(true), createElementBlock(Fragment, null, renderList(link.links, (child, index2) => {
                                 return openBlock(), createBlock(_component_Disclosure, {
                                   as: "div",
-                                  key: index + 1
+                                  key: index2 + 1
                                 }, {
                                   default: withCtx(() => [
-                                    createVNode(_component_DisclosureButton, { class: "submenu__level1" }, {
+                                    createVNode(_component_DisclosureButton, {
+                                      name: [`level1-link_trigger_${index2}`],
+                                      class: "submenu__level1"
+                                    }, {
                                       default: withCtx(() => [
                                         createBaseVNode("a", {
                                           href: child.url
@@ -6103,7 +6110,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                                         ])) : createCommentVNode("", true)
                                       ]),
                                       _: 2
-                                    }, 1024),
+                                    }, 1032, ["name"]),
                                     child.links.length ? (openBlock(), createBlock(Transition, {
                                       key: 0,
                                       name: "slideDown"
