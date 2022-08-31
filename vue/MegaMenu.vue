@@ -23,8 +23,10 @@
         </div>
         <Disclosure v-slot="{ open }" v-for="link in topMenu" :key="link.id">
           <div class="submenu" :class="open ? 'opened' : ''">
-            <DisclosureButton as="a" :href="link.url" class="submenu__top-link">
-              {{ link.title }}
+            <DisclosureButton class="submenu__top-link">
+              <a :href="link.url">
+                {{ link.title }}
+              </a>
               <span v-if="link.links.length" class="icon target expand">
                 <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" fill="none" viewBox="0 0 10 10" :width="iconSize" :height="iconSize">
                   <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor" />
@@ -34,8 +36,10 @@
             <transition name="slideDown" v-if="link.links.length">
               <DisclosurePanel class="submenu__links">
                 <Disclosure as="div" v-for="(child, index) in link.links" :key="index + 1">
-                  <DisclosureButton as="a" :href="child.url" class="submenu__level1">
-                    {{ child.title }}
+                  <DisclosureButton class="submenu__level1">
+                    <a :href="child.url">
+                      {{ child.title }}
+                    </a>
                     <span v-if="child.links.length" class="icon target expand">
                       <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" fill="none" viewBox="0 0 10 10" :width="iconSize" :height="iconSize">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor" />
@@ -262,9 +266,14 @@
             if (activeTopLink) {
               var isDropdown = activeTopLink.nextElementSibling.classList.contains('header__menu-dropdown');
             }
+
+            console.log('top links', topLinks);
+            console.log('top link', activeTopLink);
+            console.log('dropdown?', isDropdown);
             if ((menuTrigger.getAttribute('aria-expanded') == 'true' && window.innerWidth < 1024) ||
-                activeTopLink && !isDropdown && activeTopLink.getAttribute('aria-expanded') == 'true') { // not actually a true boolean so have to compare text values
-              document.body.classList.add('menu--opened');
+                (activeTopLink && !isDropdown && activeTopLink.getAttribute('aria-expanded') == 'true')) { // not actually a true boolean so have to compare text values
+              console.log('hello??????????')
+                  document.body.classList.add('menu--opened');
               header.classList.add('menu--opened');
             } else if (menuTrigger.getAttribute('aria-expanded') == 'false' ||
                       (!triggerVisible && !activeTopLink)) {

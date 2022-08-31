@@ -253,6 +253,10 @@
       &.secondary {
         @apply bg-secondary text-primary;
       }
+
+      & .header__menu-content {
+        max-height: calc(-100% + 100vh - 10rem);
+      }
     }
   }
 
@@ -561,7 +565,7 @@
       }
 
       & .menu__level2 {
-        @apply absolute top-full left-0 min-w-full z-10;
+        @apply min-w-full z-10;
 
         & li {
           @apply text-base xl:text-lg;
