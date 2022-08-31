@@ -96,6 +96,30 @@
         "unit": "px",
         "label": "t:settings_schema.typography.settings.body_size.label",
         "default": 16
+      },
+      {
+        "type": "header",
+        "content": "Icons"
+      },
+      {
+        "type": "range",
+        "id": "icon_size",
+        "min": 16,
+        "max": 32,
+        "step": 4,
+        "unit": "px",
+        "label": "Size",
+        "default": 20
+      },
+      {
+        "type": "range",
+        "id": "icon_stroke_width",
+        "min": 0.5,
+        "max": 2,
+        "step": 0.5,
+        "unit": "px",
+        "label": "Stroke Width",
+        "default": 1
       }
     ]
   },
@@ -421,16 +445,6 @@
         "label": "t:settings_schema.cards.settings.style.label"
       },
       {
-        "type": "range",
-        "id": "card_image_padding",
-        "min": 0,
-        "max": 20,
-        "step": 2,
-        "unit": "px",
-        "label": "t:settings_schema.global.settings.image_padding.label",
-        "default": 0
-      },
-      {
         "type": "select",
         "id": "card_text_alignment",
         "options": [
@@ -455,6 +469,14 @@
         "id": "card_color_scheme",
         "options": [
           {
+            "value": "primary",
+            "label": "t:sections.all.colors.primary.label"
+          },
+          {
+            "value": "secondary",
+            "label": "t:sections.all.colors.secondary.label"
+          },
+          {
             "value": "accent-1",
             "label": "t:sections.all.colors.accent_1.label"
           },
@@ -469,44 +491,22 @@
           {
             "value": "background-2",
             "label": "t:sections.all.colors.background_2.label"
-          },
-          {
-            "value": "inverse",
-            "label": "t:sections.all.colors.inverse.label"
           }
         ],
         "default": "background-2",
         "label": "t:sections.all.colors.label"
       },
       {
-        "type": "header",
-        "content": "t:settings_schema.global.settings.header__border.content"
-      },
-      {
-        "type": "range",
-        "id": "card_border_thickness",
-        "min": 0,
-        "max": 24,
-        "step": 1,
-        "unit": "px",
-        "label": "t:settings_schema.global.settings.thickness.label",
-        "default": 0
-      },
-      {
-        "type": "range",
-        "id": "card_border_opacity",
-        "min": 0,
-        "max": 100,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.global.settings.opacity.label",
-        "default": 0
+        "type": "checkbox",
+        "id": "card_border",
+        "default": true,
+        "label": "Show Border"
       },
       {
         "type": "range",
         "id": "card_corner_radius",
         "min": 0,
-        "max": 40,
+        "max": 32,
         "step": 2,
         "unit": "px",
         "label": "t:settings_schema.global.settings.corner_radius.label",
@@ -514,47 +514,84 @@
       },
       {
         "type": "header",
-        "content": "t:settings_schema.global.settings.header__shadow.content"
+        "content": "t:settings_schema.global.settings.header__image.content"
       },
       {
-        "type": "range",
-        "id": "card_shadow_opacity",
-        "min": 0,
-        "max": 100,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.global.settings.opacity.label",
-        "default": 10
+        "type": "select",
+        "id": "card_image_aspect",
+        "options": [
+          {
+            "value": "auto",
+            "label": "Auto"
+          },
+          {
+            "value": "square",
+            "label": "Square"
+          },
+          {
+            "value": "lportrait",
+            "label": "Long Portrait (9:16)"
+          },
+          {
+            "value": "sportrait",
+            "label": "Short Portrait (2:3)"
+          }
+        ],
+        "default": "square",
+        "label": "Aspect Ratio"
       },
       {
-        "type": "range",
-        "id": "card_shadow_horizontal_offset",
-        "min": -40,
-        "max": 40,
-        "step": 2,
-        "unit": "px",
-        "label": "t:settings_schema.global.settings.horizontal_offset.label",
-        "default": 0
+        "type": "select",
+        "id": "card_image_fit",
+        "options": [
+          {
+            "value": "cover",
+            "label": "Cover"
+          },
+          {
+            "value": "contain",
+            "label": "Contain"
+          }
+        ],
+        "default": "cover",
+        "label": "Image Fit"
       },
       {
-        "type": "range",
-        "id": "card_shadow_vertical_offset",
-        "min": -40,
-        "max": 40,
-        "step": 2,
-        "unit": "px",
-        "label": "t:settings_schema.global.settings.vertical_offset.label",
-        "default": 0
+        "type": "header",
+        "content": "Hover"
       },
       {
-        "type": "range",
-        "id": "card_shadow_blur",
-        "min": 0,
-        "max": 40,
-        "step": 5,
-        "unit": "px",
-        "label": "t:settings_schema.global.settings.blur.label",
-        "default": 0
+        "type": "checkbox",
+        "id": "card_hover_animate",
+        "default": true,
+        "label": "Enable hover animation"
+      },
+      {
+        "type": "select",
+        "id": "card_hover_animation",
+        "options": [
+          {
+            "value": "blur",
+            "label": "Blur"
+          },
+          {
+            "value": "round",
+            "label": "Round"
+          },
+          {
+            "value": "zoom",
+            "label": "Zoom"
+          }
+        ],
+        "default": "blur",
+        "label": "Image Fit"
+      },
+      {
+        "type": "checkbox",
+        "id": "card_hover_show_info",
+        "default": false,
+        "label": "Show card info on hover",
+        "info": "When enabled, things like product info or titles will only show on hover."
       }
     ]
   },
@@ -960,35 +997,6 @@
     ]
   },
   {
-    "name": "t:settings_schema.styles.name",
-    "settings": [
-      {
-        "type": "select",
-        "id": "accent_icons",
-        "options": [
-          {
-            "value": "accent-1",
-            "label": "t:sections.all.colors.accent_1.label"
-          },
-          {
-            "value": "accent-2",
-            "label": "t:sections.all.colors.accent_2.label"
-          },
-          {
-            "value": "outline-button",
-            "label": "t:settings_schema.styles.settings.accent_icons.options__3.label"
-          },
-          {
-            "value": "text",
-            "label": "t:settings_schema.styles.settings.accent_icons.options__4.label"
-          }
-        ],
-        "default": "text",
-        "label": "t:settings_schema.styles.settings.accent_icons.label"
-      }
-    ]
-  },
-  {
     "name": "t:settings_schema.social-media.name",
     "settings": [
       {
@@ -1059,6 +1067,28 @@
         "content": "t:settings_schema.search_input.settings.header.content"
       },
       {
+        "type": "select",
+        "id": "search_open_position",
+        "label": "Position on open",
+        "options": [
+          {
+            "value": "over",
+            "label": "Over menu"
+          },
+          {
+            "value": "below",
+            "label": "Below menu"
+          }
+        ],
+        "default": "below"
+      },
+      {
+        "type": "link_list",
+        "id": "search_trends",
+        "label": "Suggested/Trending Searches",
+        "info": "Use this setting to attach a link list of common search terms to point consumers towards."
+      },      
+      {
         "type": "checkbox",
         "id": "predictive_search_enabled",
         "default": true,
@@ -1066,17 +1096,15 @@
       },
       {
         "type": "checkbox",
-        "id": "predictive_search_show_vendor",
-        "default": false,
-        "label": "t:settings_schema.search_input.settings.predictive_search_show_vendor.label",
-        "info": "t:settings_schema.search_input.settings.predictive_search_show_vendor.info"
+        "id": "predictive_search_show_pages",
+        "label": "Show pages in results",
+        "default": true
       },
       {
         "type": "checkbox",
-        "id": "predictive_search_show_price",
-        "default": false,
-        "label": "t:settings_schema.search_input.settings.predictive_search_show_price.label",
-        "info": "t:settings_schema.search_input.settings.predictive_search_show_price.info"
+        "id": "predictive_search_show_articles",
+        "label": "Show article in results",
+        "default": true
       }
     ]
   },
