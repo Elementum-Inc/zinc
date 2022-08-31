@@ -1198,6 +1198,9 @@ p.small {
   background-color: rgb(var(--color-secondary));
   color: rgb(var(--color-primary));
 }
+.header__menu-top.collapsed .header__menu-content {
+  max-height: calc(-100% + 100vh - 10rem);
+}
 .header__menu-dropdown {
   background-color: rgb(var(--color-primary));
   padding-left: 1.5rem;
@@ -1665,9 +1668,6 @@ p.small {
 }
 .header .bold .menu .menu__level2 {
   min-width: 100%;
-  position: absolute;
-  top: 100%;
-  left: 0px;
   z-index: 10;
 }
 .header .bold .menu .menu__level2 li {
