@@ -1,0 +1,50 @@
+[
+  {% for link in menu.links %}
+    {
+      "active": {{ link.active }},
+      "child_active": {{ link.child_active }},
+      "child_current": {{ link.child_current }},
+      "current": {{ link.current }},
+      "handle": "{{ link.handle }}",
+      "levels": {{ link.levels }},
+      "links": [
+        {% for child in link.links %}
+          {
+            "active": {{ child.active }},
+            "child_active": {{ child.child_active }},
+            "child_current": {{ child.child_current }},
+            "current": {{ child.current }},
+            "handle": "{{ child.handle }}",
+            "levels": {{ child.levels }},
+            "links": [
+              {% for grandchild in child.links %}
+                {
+
+                  "active": {{ grandchild.active }},
+                  "child_active": {{ grandchild.child_active }},
+                  "child_current": {{ grandchild.child_current }},
+                  "current": {{ grandchild.current }},
+                  "handle": "{{ grandchild.handle }}",
+                  "levels": {{ grandchild.levels }},
+                  "object": {{ grandchild.object | json }},
+                  "title": "{{ grandchild.title }}",
+                  "type": "{{ grandchild.type }}",
+                  "url": "{{ grandchild.url }}"
+                }{% unless forloop.last %},{% endunless %}
+              {% endfor %}
+            ],
+            "object": {{ child.object | json }},
+            "title": "{{ child.title }}",
+            "type": "{{ child.type }}",
+            "url": "{{ child.url }}"
+          }{% unless forloop.last %},{% endunless %}
+        {% endfor %}
+      ],
+      "object": {{ link.object | json }},
+      "title": "{{ link.title }}",
+      "type": "{{ link.type }}",
+      "url": "{{ link.url }}"
+    
+    }{% unless forloop.last %},{% endunless %}
+  {% endfor %}
+]
