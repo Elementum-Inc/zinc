@@ -15,9 +15,9 @@ SpaceInsideBraces:
 TemplateLength:
   max_length: 1200
 UnusedAssign:
-  severity: error
+  severity: warning
 UnusedSnippet:
-  severity: error
+  severity: warning
 DefaultLocale:
   severity: error
 MatchingSchemaTranslations:
