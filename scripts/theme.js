@@ -7,6 +7,10 @@ import '../styles/base/animations.css';
 import '../styles/layout/header.css';
 import '../styles/snippets/cards.css';
 
+if (window.location.href.includes('/collection/')) {
+  import('../styles/sections/collection-hero.css');
+}
+
 import 'vite/modulepreload-polyfill';
 
 import { createApp } from 'vue';

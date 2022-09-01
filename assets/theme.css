@@ -93,7 +93,7 @@ hr {
   color: inherit;
   border-top-width: 1px;
 }
-h3, h2, h1, h4, h5, h6 {
+h3, h2, h1, h6, h4, h5 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -125,7 +125,7 @@ input::-ms-input-placeholder {
 legend {
   padding: 0;
 }
-p, h3, dl, dd, h2, h1, hr, h4, h5, h6 {
+p, h3, dl, dd, h2, h1, h6, hr, h4, h5 {
   margin: 0;
 }
 strong {
@@ -344,6 +344,12 @@ ul {
 .resize {
   resize: both;
 }
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0/0.1),0 1px 2px -1px rgb(0 0 0/0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
+  -webkit-box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
 .fill-none {
   fill: none;
 }
@@ -431,6 +437,11 @@ ul {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
+.duration {
   -webkit-transition-duration: 150ms;
   -o-transition-duration: 150ms;
   transition-duration: 150ms;
@@ -608,7 +619,12 @@ p.small {
 }
 .icon svg {
   fill-opacity: .25;
-}.btn {
+}.buttons > .btn:not(:last-child) {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-right: 0.5rem;
+}
+.btn {
   display: inline-block;
   padding-top: .375rem;
   padding-bottom: .375rem;
@@ -626,19 +642,20 @@ p.small {
 .btn.round {
   border-radius: .625rem;
 }
-.btn.outline {
+.btn-outline {
   border-width: 1px;
 }
-.btn.outline.primary {
-  border-color: rgb(var(--color-primary));
-}
-.btn.outline.secondary {
+.btn-outline.primary {
   border-color: rgb(var(--color-secondary));
 }
-.btn.shadow {
+.btn-outline.secondary {
+  border-color: rgb(var(--color-primary));
+}
+.btn-shadow {
   position: relative;
 }
-.btn.shadow .btn-shadow {
+.btn-shadow::after {
+  display: block;
   height: 100%;
   position: absolute;
   top: 6px;
@@ -646,14 +663,15 @@ p.small {
   width: 100%;
   z-index: -1;
   border-radius: inherit;
+  content: '';
 }
-.btn.shadow.primary .btn-shadow {
-  background-color: rgb(var(--color-primary));
-  border-color: rgb(var(--color-secondary));
+.btn-shadow.primary::after {
+  border-color: rgb(var(--color-primary));
+  border-width: 1px;
 }
-.btn.shadow.secondary .btn-shadow {
-  background-color: rgb(var(--color-secondary));
+.btn-shadow.secondary::after {
   border-color: rgb(var(--color-secondary));
+  border-width: 1px;
 }.fade-enter-active, .fade-leave-active {
   -webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, filter, backdrop-filter;
   -o-transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;

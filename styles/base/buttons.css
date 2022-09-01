@@ -5,6 +5,11 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
 
 */
 
+.buttons {
+  > .btn:not(:last-child) {
+    @apply my-4 mr-2;
+  }
+}
 
 .btn {
   @apply inline-block py-xs px-8;
@@ -20,37 +25,38 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
   &.round {
     @apply rounded-[.625rem];
   }
+}
 
-  &.outline {
-    @apply border;
+.btn-outline {
+  @apply border;
 
-    &.primary {
-      @apply border-primary;
-    }
+  &.primary {
+    @apply border-secondary;
+  }
 
-    &.secondary {
-      @apply border-secondary;
+  &.secondary {
+    @apply border-primary;
+  }
+}
+
+.btn-shadow {
+  @apply relative;
+
+  &::after {
+    @apply block absolute top-[6px] left-[6px] -z-1 h-full w-full;
+    border-radius: inherit;
+    content: '';
+  }
+
+  &.primary {
+    &::after {
+      @apply border border-primary;
     }
   }
 
-  &.shadow {
-    @apply relative;
-
-    & .btn-shadow {
-      @apply absolute top-[6px] left-[6px] -z-1 h-full w-full;
-      border-radius: inherit;
-    }
-
-    &.primary {
-      & .btn-shadow {
-        @apply bg-primary border-secondary;
-      }
-    }
-
-    &.secondary {
-      & .btn-shadow {
-        @apply bg-secondary border-secondary;
-      }
+  &.secondary {
+    &::after {
+      @apply border border-secondary;
     }
   }
 }

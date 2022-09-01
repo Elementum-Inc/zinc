@@ -1,0 +1,16 @@
+.collection-hero {
+  @apply relative;
+
+  &__image {
+    @apply max-h-[20rem] object-cover;
+  }
+
+  &__text-wrapper {
+    @apply container <sm:(px-8) pt-4 mx-auto;
+  }
+
+  &__title,
+  &__subtitle {
+    @apply my-2;
+  }
+}

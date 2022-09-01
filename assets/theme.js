@@ -1,3 +1,36 @@
+const scriptRel = "modulepreload";
+const seen = {};
+const base = "/";
+const __vitePreload = function preload(baseModule, deps) {
+  if (!deps || deps.length === 0) {
+    return baseModule();
+  }
+  return Promise.all(deps.map((dep) => {
+    dep = `${base}${dep}`;
+    if (dep in seen)
+      return;
+    seen[dep] = true;
+    const isCss = dep.endsWith(".css");
+    const cssSelector = isCss ? '[rel="stylesheet"]' : "";
+    if (document.querySelector(`link[href="${dep}"]${cssSelector}`)) {
+      return;
+    }
+    const link = document.createElement("link");
+    link.rel = isCss ? "stylesheet" : scriptRel;
+    if (!isCss) {
+      link.as = "script";
+      link.crossOrigin = "";
+    }
+    link.href = dep;
+    document.head.appendChild(link);
+    if (isCss) {
+      return new Promise((res, rej) => {
+        link.addEventListener("load", res);
+        link.addEventListener("error", () => rej(new Error(`Unable to preload CSS for ${dep}`)));
+      });
+    }
+  })).then(() => baseModule());
+};
 var windi = "";
 var theme = "";
 var typography = "";
@@ -1168,7 +1201,7 @@ function queuePreFlushCb(cb) {
 function queuePostFlushCb(cb) {
   queueCb(cb, activePostFlushCbs, pendingPostFlushCbs, postFlushIndex);
 }
-function flushPreFlushCbs(seen, parentJob = null) {
+function flushPreFlushCbs(seen2, parentJob = null) {
   if (pendingPreFlushCbs.length) {
     currentPreFlushParentJob = parentJob;
     activePreFlushCbs = [...new Set(pendingPreFlushCbs)];
@@ -1179,10 +1212,10 @@ function flushPreFlushCbs(seen, parentJob = null) {
     activePreFlushCbs = null;
     preFlushIndex = 0;
     currentPreFlushParentJob = null;
-    flushPreFlushCbs(seen, parentJob);
+    flushPreFlushCbs(seen2, parentJob);
   }
 }
-function flushPostFlushCbs(seen) {
+function flushPostFlushCbs(seen2) {
   flushPreFlushCbs();
   if (pendingPostFlushCbs.length) {
     const deduped = [...new Set(pendingPostFlushCbs)];
@@ -1201,10 +1234,10 @@ function flushPostFlushCbs(seen) {
   }
 }
 const getId = (job) => job.id == null ? Infinity : job.id;
-function flushJobs(seen) {
+function flushJobs(seen2) {
   isFlushPending = false;
   isFlushing = true;
-  flushPreFlushCbs(seen);
+  flushPreFlushCbs(seen2);
   queue.sort((a, b2) => getId(a) - getId(b2));
   const check = NOOP;
   try {
@@ -1223,7 +1256,7 @@ function flushJobs(seen) {
     isFlushing = false;
     currentFlushPromise = null;
     if (queue.length || pendingPreFlushCbs.length || pendingPostFlushCbs.length) {
-      flushJobs(seen);
+      flushJobs(seen2);
     }
   }
 }
@@ -1665,28 +1698,28 @@ function createPathGetter(ctx, path) {
     return cur;
   };
 }
-function traverse(value, seen) {
+function traverse(value, seen2) {
   if (!isObject(value) || value["__v_skip"]) {
     return value;
   }
-  seen = seen || /* @__PURE__ */ new Set();
-  if (seen.has(value)) {
+  seen2 = seen2 || /* @__PURE__ */ new Set();
+  if (seen2.has(value)) {
     return value;
   }
-  seen.add(value);
+  seen2.add(value);
   if (isRef(value)) {
-    traverse(value.value, seen);
+    traverse(value.value, seen2);
   } else if (isArray(value)) {
     for (let i = 0; i < value.length; i++) {
-      traverse(value[i], seen);
+      traverse(value[i], seen2);
     }
   } else if (isSet(value) || isMap(value)) {
     value.forEach((v2) => {
-      traverse(v2, seen);
+      traverse(v2, seen2);
     });
   } else if (isPlainObject(value)) {
     for (const key in value) {
-      traverse(value[key], seen);
+      traverse(value[key], seen2);
     }
   }
   return value;
@@ -2441,25 +2474,25 @@ function createWatcher(raw, ctx, publicThis, key) {
     ;
 }
 function resolveMergedOptions(instance) {
-  const base = instance.type;
-  const { mixins, extends: extendsOptions } = base;
+  const base2 = instance.type;
+  const { mixins, extends: extendsOptions } = base2;
   const { mixins: globalMixins, optionsCache: cache, config: { optionMergeStrategies } } = instance.appContext;
-  const cached = cache.get(base);
+  const cached = cache.get(base2);
   let resolved;
   if (cached) {
     resolved = cached;
   } else if (!globalMixins.length && !mixins && !extendsOptions) {
     {
-      resolved = base;
+      resolved = base2;
     }
   } else {
     resolved = {};
     if (globalMixins.length) {
       globalMixins.forEach((m2) => mergeOptions(resolved, m2, optionMergeStrategies, true));
     }
-    mergeOptions(resolved, base, optionMergeStrategies);
+    mergeOptions(resolved, base2, optionMergeStrategies);
   }
-  cache.set(base, resolved);
+  cache.set(base2, resolved);
   return resolved;
 }
 function mergeOptions(to, from, strats, asMixin = false) {
@@ -6926,6 +6959,9 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   });
 }
 var SearchMenu = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+if (window.location.href.includes("/collection/")) {
+  __vitePreload(() => Promise.resolve({}), true ? ["collection-hero.css"] : void 0);
+}
 const searchMount = document.querySelector("#searchMenuTop");
 const megamenuMount = document.querySelector("#megamenu");
 var megamenuSettings = JSON.parse(megamenuMount.dataset.settings);
