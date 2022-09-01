@@ -1238,7 +1238,7 @@
     "main-cart-items": {
       "name": "商品"
     },
-    "main-collection-banner": {
+    "main-collection-hero": {
       "name": "产品系列横幅",
       "settings": {
         "paragraph": {
