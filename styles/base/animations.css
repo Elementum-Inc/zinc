@@ -1,0 +1,68 @@
+.fade-enter-active,
+.fade-leave-active {
+  @apply transition;
+}
+
+.fade-enter-active {
+  @apply ease-in duration-300 delay-220;
+}
+
+.fade-leave-active {
+  @apply ease-out duration-220;
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  @apply opacity-100;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  @apply opacity-0;
+}
+
+.slideDown-enter-active,
+.slideDown-leave-active {
+  @apply transition transform -z-1;
+}
+
+.slideDown-enter-active {
+  @apply ease-in duration-400;
+}
+
+.slideDown-leave-active {
+  @apply ease-out duration-300;
+}
+
+.slideDown-enter-to,
+.slideDown-leave-from {
+  @apply translate-y-0 opacity-full;
+}
+
+.slideDown-enter-from,
+.slideDown-leave-to {
+  @apply -translate-y-full opacity-0;
+}
+
+.slideRight-enter-active,
+.slideRight-leave-active {
+  @apply transition transform;
+}
+
+.slideRight-enter-active {
+  @apply ease-in duration-300;
+}
+
+.slideRight-leave-active {
+  @apply ease-out duration-220;
+}
+
+.slideRight-enter-to,
+.slideRight-leave-from {
+  @apply translate-x-0;
+}
+
+.slideRight-enter-from,
+.slideRight-leave-to {
+  @apply -translate-x-full;
+}
