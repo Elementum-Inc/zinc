@@ -216,6 +216,42 @@
         "padding_top": 40,
         "padding_bottom": 52
       }
+    },
+    "1662097433e6dab5aa": {
+      "type": "modal",
+      "blocks": {
+        "1662097433ade1de34-0": {
+          "type": "email_form",
+          "settings": {
+            "email_form_code": "",
+            "email_form_success_title": "Success!",
+            "email_form_success_message": "<p>You've been subscribed to our newsletter and will receive updates from us shortly!<\/p>"
+          }
+        },
+        "1662097433ade1de34-1": {
+          "type": "modal_content",
+          "settings": {
+            "modal_content_title": "Modal Title",
+            "modal_content_subtitle": "Modal Subtitle",
+            "modal_content_body": "<p>Modal Content<\/p>",
+            "modal_content_primary_cta_text": "Primary CTA",
+            "modal_content_primary_cta_url": "",
+            "modal_content_secondary_cta_text": "Secondary CTA",
+            "modal_content_secondary_cta_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "1662097433ade1de34-0",
+        "1662097433ade1de34-1"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "modal_delay": 2000,
+        "animation_type": "animation-1",
+        "float_modal_content": false,
+        "modal_content_overlay": false
+      }
     }
   },
   "order": [
@@ -225,6 +261,7 @@
     "collage",
     "video",
     "multicolumn",
-    "16565128829058127c"
+    "16565128829058127c",
+    "1662097433e6dab5aa"
   ]
 }
