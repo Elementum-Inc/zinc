@@ -12,14 +12,18 @@ import 'vite/modulepreload-polyfill';
 import { createApp } from 'vue';
 import MegaMenu from '../vue/MegaMenu.vue';
 import SearchMenu from '../vue/SearchMenu.vue';
+import Modal from '../vue/Modal.vue';
 
 const searchMount = document.querySelector('#searchMenuTop');
 const megamenuMount = document.querySelector('#megamenu');
+const modalMount = document.querySelector('#modal');
 
 var megamenuSettings = JSON.parse(megamenuMount.dataset.settings);
 var megamenuBlocks = JSON.parse(megamenuMount.dataset.blocks);
 var topMenu = JSON.parse(megamenuMount.dataset.topmenu);
 var mobileLinks = JSON.parse(megamenuMount.dataset.mobilelinks);
+var modalSettings = JSON.parse(modalMount.dataset.settings);
+var modalBlocks = JSON.parse(modalMount.dataset.blocks);
 
 topMenu.forEach((m) => m.blocks = []);
 
@@ -56,8 +60,14 @@ const searchProps = {
   settings: searchSettings
 };
 
+const modalProps = {
+  settings: modalSettings,
+  blocks: modalBlocks,
+};
+
 createApp(MegaMenu, menuProps).mount(megamenuMount);
 createApp(SearchMenu, searchProps).mount(searchMount);
+createApp(Modal, modalProps).mount(modalMount);
 
 document.addEventListener('DOMContentLoaded', () => {
   const header = document.querySelector('#shopify-section-header');
