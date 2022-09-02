@@ -709,6 +709,11 @@ ul {
   -o-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
+.duration {
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
 .duration-300 {
   -webkit-transition-duration: 300ms;
   -o-transition-duration: 300ms;
