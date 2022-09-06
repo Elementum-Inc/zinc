@@ -5,6 +5,107 @@
   z-index: 1;
 }
 
+.quick-add-modal__content-info h2 {
+  font-size: 20px !important;
+}
+
+.quick-add-modal__content-info .product__title {
+  margin-bottom: 0 !important;
+}
+
+.quick-add-modal__content-info .price__regular {
+  font-size: 18px;
+}
+
+.quick-add-modal__content-info .product__view-details {
+  border-top: 1px solid;
+  border-bottom: 1px solid;
+  text-align: center;
+  font-size: 16px;
+  padding: 0.7rem;
+}
+
+.quick-add-modal__content-info .product__description {
+  margin: 0 0 2rem 0 !important;
+  font-size: 12px;
+}
+
+.quick-add-modal__content-info .product-price {
+  margin: 0 !important;
+  font-size: 20px !important;
+}
+
+.quick-add-modal__content-info .form__label {
+  font-size: 14px !important;
+  padding: 0;
+  margin: 2rem 0 0 0;
+}
+
+.quick-add-modal__content-info .icon-caret {
+  height: 0.5rem !important;
+}
+
+.quick-add-modal__content-info .select__select {
+  font-size: 16px;
+  height: 40px;
+}
+
+.quick-add-modal__content-info .button {
+  font-size: 14px !important;
+  min-height: 40px !important;
+}
+
+.quick-add-modal__content-info .shopify-payment-button {
+  height: 40px !important;
+}
+
+.quick-add-modal__content-info .shopify-payment-button__button {
+  font-size: 14px !important;
+  min-height: 35px !important;
+  padding: 0px !important;
+}
+
+.quick-add-modal__content-info .quantity__input {
+  width: 100px !important;
+}
+
+.quick-add-modal__content-info .quantity {
+  width: 100px;
+  min-height: 40px;
+}
+
+.quick-add-modal__content-info .quantity__button {
+  background-color: #d9d9d94d !important;
+  width: 30px;
+  height: 30px;
+}
+
+.quick-add__submit {
+  padding: 0.6rem;
+  width: 168px;
+  min-height: 35px !important;
+  /* put important tag on this to overwrite main button styles
+  until those are hopefully handled globally  */
+  margin: auto;
+  box-sizing: border-box;
+  background: black;
+  color: white;
+  font-size: 15px;
+}
+
+@media only screen and (max-width: 750px) {
+  .quick-add__submit {
+    padding: 0.2rem;
+    min-width: auto;
+    background: none;
+    color: black;
+  }
+}
+
+.form__label {
+  padding-top: 20px;
+}
+
 .card--card .quick-add {
   margin: 0 1.3rem 1rem;
 }
@@ -21,6 +122,10 @@
   width: 100%;
   background: rgba(var(--color-foreground), 0.2);
   height: 100%;
+}
+
+.quick-add-modal__toggle {
+  display: none !important;
 }
 
 .quick-add-modal[open] {
@@ -40,7 +145,48 @@
   overflow: hidden;
   max-width: var(--page-width);
   width: calc(100% - 3rem);
+  background: white;
 }
+
+/* ADDED FOR DEMO  */
+
+.quick-add-modal__content .grid {
+  display: flex !important;
+}
+
+.quick-add-modal__content .product-form__submit {
+  background-color: black;
+  color: white;
+  border: 3px solid black;
+}
+
+.quick-add-modal__content .shopify-payment-button {
+  border: 3px solid black;
+}
+
+.quick-add-modal__content .caption-with-letter-spacing {
+  display: none;
+}
+
+.card__information .price {
+  display: none;
+}
+
+.card__information .card__heading {
+  text-align: center;
+}
+
+.product-form__input input[type="radio"] + label {
+  margin: 0;
+  border: 1px solid !important;
+  border-radius: 5% !important;
+}
+
+.full-unstyled-link {
+  font-size: 20px;
+}
+
+/* END DEMO STYLES */
 
 @media screen and (min-width: 750px) {
   .quick-add-modal__content {
@@ -90,7 +236,7 @@
   .quick-add-modal__content {
     bottom: 3.2rem;
   }
-  
+
   .quick-add-modal__content-info > * {
     max-height: 100%;
   }
@@ -162,7 +308,7 @@ quick-add-modal .product--stacked .product__info-container--sticky {
   quick-add-modal .product:not(.product--no-media) .product__info-wrapper {
     padding-left: 4rem;
     max-width: 54%;
-    width: calc(54% - var(--grid-desktop-horizontal-spacing) / 2)
+    width: calc(54% - var(--grid-desktop-horizontal-spacing) / 2);
   }
 
   quick-add-modal .thumbnail-slider .thumbnail-list.slider--tablet-up {
@@ -192,10 +338,4 @@ quick-add-modal .product__title > a:hover {
 
 quick-add-modal .product-form__buttons {
   max-width: initial;
-}
-
-.quick-add__submit {
-  padding: 0.8rem;
-  min-width: 100%;
-  box-sizing: border-box;
 }

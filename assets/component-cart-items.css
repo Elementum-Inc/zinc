@@ -1,3 +1,64 @@
+/* ADDED STYLES */
+
+.cart-item__name {
+  font-size: 18px;
+}
+
+#cart-items {
+  padding: 0 180px;
+}
+
+.cart-item__image-container {
+  height: 200px;
+  width: 200px;
+}
+.cart-item__image-container img {
+  height: auto;
+  width: auto;
+}
+
+.cart__ctas button {
+  background: black;
+  color: white;
+  margin-left: 7rem;
+}
+
+.price {
+  font-family: Nunito;
+  font-size: 18px !important;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-align: left;
+  padding-top: 10px !important;
+}
+
+.product-option {
+  font-family: Nunito;
+  font-size: 14px !important;
+  font-weight: 400;
+  line-height: 21px;
+  letter-spacing: 0.02em;
+  text-align: left;
+}
+
+.totals__subtotal {
+  font-size: 18px !important;
+}
+
+.totals__subtotal-value {
+  font-size: 18px !important;
+}
+
+.underlined-link {
+  text-decoration: underline;
+}
+
+.tax-note {
+  font-size: 14px;
+}
+
+/* EXISTING STYLES  */
+
 .cart-items td,
 .cart-items th {
   padding: 0;
@@ -131,7 +192,7 @@ cart-remove-button .button {
 }
 
 cart-remove-button .button:before,
-cart-remove-button .button:after  {
+cart-remove-button .button:after {
   content: none;
 }
 
