@@ -39,7 +39,7 @@
 <footer class="footer color-{{ section.settings.color_scheme }} gradient">
   {%- if section.settings.show_social and section.settings.social_location == "above" -%}
     <div id="subfooter-upper">
-      {%- render 'social-subfooter' -%}
+      {% comment %} {%- render 'social-subfooter' -%} {% endcomment %}
     </div>
   {%- endif -%}
 
@@ -258,6 +258,7 @@
         alt="{{ section.settings.large_logo.alt | escape }}"
         width="{{ section.settings.large_logo_width }}"
         loading="lazy"
+        height="100%"
       >
   </div>
 
@@ -267,7 +268,7 @@
 
       {%- if section.settings.show_social and section.settings.social_location == "below" -%}
           <div class="lower-social">
-          {%- render 'social-subfooter' -%}
+          {% comment %} {%- render 'social-subfooter' -%} {% endcomment %}
           </div>
         {%- endif -%}
 

@@ -1,26 +1,6 @@
 /* ADDED STYLES  */
 
-/* .image-gradient {
-  display: inline-block;
-  background: linear-gradient(
-    180deg,
-    #4b6cad 1.89%,
-    rgba(112, 111, 111, 0) 135.56%
-  );
-}
-
-img {
-  position: relative;
-  z-index: -1;
-  display: block;
-  height: auto;
-  width: auto;
-} */
-
-.section-avada-video {
-  width: 100%;
-}
-.hurabg-video {
+.slideshow-video {
   right: 0;
   bottom: 0;
   width: 100%;
@@ -28,7 +8,6 @@ img {
 }
 
 .h0 {
-  font-family: "Melodrama";
   font-style: normal;
   font-weight: 700;
   font-size: 92px;
@@ -36,7 +15,6 @@ img {
 }
 
 .h1 {
-  font-family: "Melodrama";
   font-size: 52px;
   font-weight: 700;
   line-height: 54px;
@@ -76,11 +54,6 @@ img {
   .slideshow__controls {
     visibility: hidden;
   }
-  /* .slideshow--placeholder.banner--mobile-bottom.banner--adapt_image
-    .slideshow__media,
-  .slideshow--placeholder.banner--adapt_image:not(.banner--mobile-bottom) {
-    height: 28rem;
-  } */
 }
 
 .slideshow__controls .slider-button {
@@ -92,19 +65,6 @@ img {
 .slider-button .hidden {
   visibility: hidden;
 }
-
-/* .slideshow__controls {
-  position: absolute;
-  z-index: 100;
-  bottom: 20px;
-  color: magenta;
-  background: white;
-  margin-left: auto;
-  margin-right: auto;
-  left: 0;
-  right: 0;
-  text-align: center;
-} */
 
 /* SHOPIFY STYLES  */
 
