@@ -12,9 +12,9 @@
           "id": "{{ block.id }}",
           "settings": {% if block.type == 'email_form' %}
             {
-              "email_form_code": {{ block.settings.email_form_code }},
+              {% if block.settings.email_form_code != "" %}"email_form_code": {{ block.settings.email_form_code }},{% endif %}
               "email_form_success_title": "{{ block.settings.email_form_success_title }}",
-              "email_form_success_message": "{{ block.settings.email_form_success_message }}"
+              "email_form_success_message": "{{ block.settings.email_form_success_message }}",
               "email_form_button_text": "{{ block.settings.email_form_button_text }}"
             }
           {% else %}
@@ -25,7 +25,7 @@
               "modal_content_primary_cta_text": "{{ block.settings.modal_content_primary_cta_text }}",
               "modal_content_primary_cta_url": "{{ block.settings.modal_content_primary_cta_url }}",
               "modal_content_secondary_cta_text": "{{ block.settings.modal_content_secondary_cta_text }}",
-              "modal_content_secondary_cta_url": "{{ block.settings.modal_content_secondary_cta_url }}",
+              "modal_content_secondary_cta_url": "{{ block.settings.modal_content_secondary_cta_url }}"
             }
           {% endif %},
           "shopify_attributes": {{ block.shopify_attributes | json }},

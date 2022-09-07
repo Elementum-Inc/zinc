@@ -18,6 +18,8 @@ const searchMount = document.querySelector('#searchMenuTop');
 const megamenuMount = document.querySelector('#megamenu');
 const modalMount = document.querySelector('#modal');
 
+console.log(modalMount.dataset.blocks);
+
 var megamenuSettings = JSON.parse(megamenuMount.dataset.settings);
 var megamenuBlocks = JSON.parse(megamenuMount.dataset.blocks);
 var topMenu = JSON.parse(megamenuMount.dataset.topmenu);
