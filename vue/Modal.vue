@@ -36,29 +36,29 @@
             leave-from="opacity-100 translate-y-0 sm:scale-100"
             leave-to="opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
           >
+          <div class="modal-container modal-image flex items-center justify-center">
             <DialogPanel
               class="
                 relative
                 transform
                 overflow-hidden
-                rounded-lg
                 bg-white
                 px-4
-                pt-5
-                pb-4
-                text-left
-                shadow-xl
+                py-15
+                content-center
                 transition-all
-                sm:my-8 sm:w-full sm:max-w-lg sm:p-6
+                w-full
+                mx-15
+                border-2
+                border-black
+                shadow-md
+                flex
               "
             >
               <div class="absolute top-0 right-0 hidden pt-4 pr-4 sm:block">
                 <button
                   type="button"
                   class="
-                    rounded-md
-                    bg-white
-                    text-gray-400
                     hover:text-gray-500
                     focus:outline-none
                     focus:ring-2
@@ -69,10 +69,9 @@
                 >
                   <span class="sr-only">Close</span>
                   <XMarkIcon class="h-6 w-6" aria-hidden="true" />
-                  x
                 </button>
               </div>
-              <div class="sm:flex sm:items-start">
+              <div>
                 <div
                   class="
                     mx-auto
@@ -82,8 +81,6 @@
                     flex-shrink-0
                     items-center
                     justify-center
-                    rounded-full
-                    bg-red-100
                     sm:mx-0 sm:h-10 sm:w-10
                   "
                 ></div>
@@ -93,9 +90,9 @@
                   :key="block"
                 >
                   <div class="modal-content" v-if="block.type == 'email_form'">
-                    <DialogTitle
+                    <!-- <DialogTitle
                       as="h3"
-                      class="text-lg font-medium leading-6 text-gray-900"
+                      class="header-font leading-6 font-black text-5xl"
                       >{{ modal_content_title }}</DialogTitle
                     >
                     <div class="mt-2">
@@ -115,14 +112,13 @@
                           justify-center
                           rounded-md
                           border border-transparent
-                          bg-red-600
+                          bg-white
                           px-4
                           py-2
                           text-base
                           font-medium
-                          text-white
+                          text-black
                           shadow-sm
-                          hover:bg-red-700
                           focus:outline-none
                           focus:ring-2
                           focus:ring-red-500
@@ -140,9 +136,9 @@
                           inline-flex
                           w-full
                           justify-center
-                          rounded-md
                           border border-gray-300
-                          bg-white
+                          bg-black
+                          text-white
                           px-4
                           py-2
                           text-base
@@ -160,7 +156,7 @@
                       >
                         Cancel
                       </button>
-                    </div>
+                    </div> -->
                   </div>
 
                   <div
@@ -169,16 +165,15 @@
                   >
                     <DialogTitle
                       as="h3"
-                      class="text-lg font-medium leading-6 text-gray-900"
+                      class="header-font leading-6 font-black text-5xl pb-4"
                       v-if="block.settings.modal_content_title"
                       >{{ block.settings.modal_content_title }}</DialogTitle
                     >
-                    <h4 v-if="block.settings.modal_content_subtitle">
+                    <h4 v-if="block.settings.modal_content_subtitle" class="body-font">
                       {{ block.settings.modal_content_subtitle }}
                     </h4>
                     <div class="mt-2" :html="block.settings.modal_content_body">
                       <p
-                        class="text-sm text-gray-500"
                         :html="block.settings.modal_content_body"
                       >
                         Test Body
@@ -195,25 +190,23 @@
                       <a
                         v-if="block.settings.modal_content_primary_cta_url"
                         :href="block.settings.modal_content_primary_cta_url"
-                        target="_blank"
                         class="
                           inline-flex
                           w-full
                           justify-center
-                          rounded-md
                           border border-transparent
-                          bg-red-600
+                          bg-black
+                          text-white
                           px-4
                           py-2
                           text-base
                           font-medium
                           shadow-sm
-                          hover:bg-red-700
                           focus:outline-none
                           focus:ring-2
                           focus:ring-red-500
                           focus:ring-offset-2
-                          sm:ml-3 sm:w-auto sm:text-sm
+                          sm:w-auto sm:text-sm
                         "
                       >
                         {{ block.settings.modal_content_primary_cta_text }}
@@ -221,34 +214,34 @@
                       <a
                         v-if="block.settings.modal_content_secondary_cta_url"
                         :href="block.settings.modal_content_secondary_cta_url"
-                        target="_blank"
                         class="
                           inline-flex
                           w-full
                           justify-center
-                          rounded-md
-                          border border-transparent
-                          bg-red-600
+                          bg-white
+                          text-black
+                          border border-black
                           px-4
                           py-2
                           text-base
                           font-medium
                           shadow-sm
-                          hover:bg-red-700
                           focus:outline-none
                           focus:ring-2
                           focus:ring-red-500
                           focus:ring-offset-2
-                          sm:ml-3 sm:w-auto sm:text-sm
+                          sm:w-auto sm:text-sm
                         "
                       >
                         {{ block.settings.modal_content_secondary_cta_text }}
                       </a>
                     </div>
                   </div>
+                No thanks
                 </div>
               </div>
             </DialogPanel>
+            </div>
           </TransitionChild>
         </div>
       </div>

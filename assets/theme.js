@@ -8005,15 +8005,15 @@ const _hoisted_16$2 = {
   key: 0,
   class: "icon target expand"
 };
-const _hoisted_17$2 = ["width", "height"];
-const _hoisted_18$2 = /* @__PURE__ */ createBaseVNode("path", {
+const _hoisted_17$1 = ["width", "height"];
+const _hoisted_18$1 = /* @__PURE__ */ createBaseVNode("path", {
   "fill-rule": "evenodd",
   "clip-rule": "evenodd",
   d: "M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z",
   fill: "currentColor"
 }, null, -1);
 const _hoisted_19$1 = [
-  _hoisted_18$2
+  _hoisted_18$1
 ];
 const _hoisted_20$1 = {
   key: 0,
@@ -8213,7 +8213,7 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
                                             viewBox: "0 0 10 10",
                                             width: $props.iconSize,
                                             height: $props.iconSize
-                                          }, _hoisted_19$1, 8, _hoisted_17$2))
+                                          }, _hoisted_19$1, 8, _hoisted_17$1))
                                         ])) : createCommentVNode("v-if", true)
                                       ]),
                                       _: 2
@@ -8752,8 +8752,8 @@ const _hoisted_15$1 = {
   class: "search__trends"
 };
 const _hoisted_16$1 = { class: "search__trends-tags" };
-const _hoisted_17$1 = ["href"];
-const _hoisted_18$1 = {
+const _hoisted_17 = ["href"];
+const _hoisted_18 = {
   key: 1,
   class: "search__results--loaded"
 };
@@ -8869,11 +8869,11 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                               key: trend.id,
                               href: trend.url,
                               class: "search__trends-tag"
-                            }, toDisplayString(trend.title), 9, _hoisted_17$1);
+                            }, toDisplayString(trend.title), 9, _hoisted_17);
                           }), 128))
                         ])
                       ])) : createCommentVNode("v-if", true),
-                      $options.resultsLength > 0 ? (openBlock(), createElementBlock("div", _hoisted_18$1, [
+                      $options.resultsLength > 0 ? (openBlock(), createElementBlock("div", _hoisted_18, [
                         createVNode(_component_TabGroup, null, {
                           default: withCtx(() => [
                             createVNode(_component_TabList, { class: "search__tabs" }, {
@@ -9094,32 +9094,31 @@ const _sfc_main = {
 const _hoisted_1 = /* @__PURE__ */ createBaseVNode("div", { class: "fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" }, null, -1);
 const _hoisted_2 = { class: "fixed inset-0 z-10 overflow-y-auto" };
 const _hoisted_3 = { class: "flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0" };
-const _hoisted_4 = { class: "absolute top-0 right-0 hidden pt-4 pr-4 sm:block" };
-const _hoisted_5 = /* @__PURE__ */ createBaseVNode("span", { class: "sr-only" }, "Close", -1);
-const _hoisted_6 = /* @__PURE__ */ createTextVNode(" x ");
-const _hoisted_7 = { class: "sm:flex sm:items-start" };
-const _hoisted_8 = /* @__PURE__ */ createBaseVNode("div", { class: "mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10" }, null, -1);
-const _hoisted_9 = {
+const _hoisted_4 = { class: "modal-container modal-image flex items-center justify-center" };
+const _hoisted_5 = { class: "absolute top-0 right-0 hidden pt-4 pr-4 sm:block" };
+const _hoisted_6 = /* @__PURE__ */ createBaseVNode("span", { class: "sr-only" }, "Close", -1);
+const _hoisted_7 = /* @__PURE__ */ createBaseVNode("div", { class: "mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center sm:mx-0 sm:h-10 sm:w-10" }, null, -1);
+const _hoisted_8 = {
   key: 0,
   class: "modal-content"
 };
-const _hoisted_10 = /* @__PURE__ */ createBaseVNode("div", { class: "mt-2" }, [
-  /* @__PURE__ */ createBaseVNode("p", { class: "text-sm text-gray-500" }, " Are you sure you want to deactivate your account? All of your data will be permanently removed from our servers forever. This action cannot be undone. ")
-], -1);
-const _hoisted_11 = { class: "mt-5 sm:mt-4 sm:flex sm:flex-row-reverse" };
-const _hoisted_12 = {
+const _hoisted_9 = {
   key: 1,
   class: "modal-content"
 };
-const _hoisted_13 = { key: 1 };
-const _hoisted_14 = ["html"];
-const _hoisted_15 = ["html"];
-const _hoisted_16 = {
+const _hoisted_10 = {
+  key: 1,
+  class: "body-font"
+};
+const _hoisted_11 = ["html"];
+const _hoisted_12 = ["html"];
+const _hoisted_13 = {
   key: 2,
   class: "mt-5 sm:mt-4 sm:flex"
 };
-const _hoisted_17 = ["href"];
-const _hoisted_18 = ["href"];
+const _hoisted_14 = ["href"];
+const _hoisted_15 = ["href"];
+const _hoisted_16 = /* @__PURE__ */ createTextVNode(" No thanks ");
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_TransitionChild = resolveComponent("TransitionChild");
   const _component_XMarkIcon = resolveComponent("XMarkIcon");
@@ -9136,7 +9135,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       createVNode(_component_Dialog, {
         as: "div",
         class: "relative z-10",
-        onClose: _cache[3] || (_cache[3] = ($event) => $data.isOpen = false)
+        onClose: _cache[1] || (_cache[1] = ($event) => $data.isOpen = false)
       }, {
         default: withCtx(() => [
           createVNode(_component_TransitionChild, {
@@ -9165,94 +9164,72 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                 "leave-to": "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               }, {
                 default: withCtx(() => [
-                  createVNode(_component_DialogPanel, { class: "relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6" }, {
-                    default: withCtx(() => [
-                      createBaseVNode("div", _hoisted_4, [
-                        createBaseVNode("button", {
-                          type: "button",
-                          class: "rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
-                          onClick: _cache[0] || (_cache[0] = ($event) => $data.isOpen = false)
-                        }, [
-                          _hoisted_5,
-                          createVNode(_component_XMarkIcon, {
-                            class: "h-6 w-6",
-                            "aria-hidden": "true"
-                          }),
-                          _hoisted_6
+                  createBaseVNode("div", _hoisted_4, [
+                    createVNode(_component_DialogPanel, { class: "relative transform overflow-hidden bg-white px-4 py-15 content-center transition-all w-full mx-15 border-2 border-black shadow-md flex" }, {
+                      default: withCtx(() => [
+                        createBaseVNode("div", _hoisted_5, [
+                          createBaseVNode("button", {
+                            type: "button",
+                            class: "hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
+                            onClick: _cache[0] || (_cache[0] = ($event) => $data.isOpen = false)
+                          }, [
+                            _hoisted_6,
+                            createVNode(_component_XMarkIcon, {
+                              class: "h-6 w-6",
+                              "aria-hidden": "true"
+                            })
+                          ])
+                        ]),
+                        createBaseVNode("div", null, [
+                          _hoisted_7,
+                          (openBlock(true), createElementBlock(Fragment, null, renderList($props.blocks, (block) => {
+                            return openBlock(), createElementBlock("div", {
+                              class: "mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left",
+                              key: block
+                            }, [
+                              block.type == "email_form" ? (openBlock(), createElementBlock("div", _hoisted_8, [
+                                createCommentVNode(' <DialogTitle\r\n                      as="h3"\r\n                      class="header-font leading-6 font-black text-5xl"\r\n                      >{{ modal_content_title }}</DialogTitle\r\n                    >\r\n                    <div class="mt-2">\r\n                      <p class="text-sm text-gray-500">\r\n                        Are you sure you want to deactivate your account? All of\r\n                        your data will be permanently removed from our servers\r\n                        forever. This action cannot be undone.\r\n                      </p>\r\n                    </div>\r\n\r\n                    <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">\r\n                      <button\r\n                        type="button"\r\n                        class="\r\n                          inline-flex\r\n                          w-full\r\n                          justify-center\r\n                          rounded-md\r\n                          border border-transparent\r\n                          bg-white\r\n                          px-4\r\n                          py-2\r\n                          text-base\r\n                          font-medium\r\n                          text-black\r\n                          shadow-sm\r\n                          focus:outline-none\r\n                          focus:ring-2\r\n                          focus:ring-red-500\r\n                          focus:ring-offset-2\r\n                          sm:ml-3 sm:w-auto sm:text-sm\r\n                        "\r\n                        @click="isOpen = false"\r\n                      >\r\n                        Deactivate\r\n                      </button>\r\n                      <button\r\n                        type="button"\r\n                        class="\r\n                          mt-3\r\n                          inline-flex\r\n                          w-full\r\n                          justify-center\r\n                          border border-gray-300\r\n                          bg-black\r\n                          text-white\r\n                          px-4\r\n                          py-2\r\n                          text-base\r\n                          font-medium\r\n                          text-gray-700\r\n                          shadow-sm\r\n                          hover:text-gray-500\r\n                          focus:outline-none\r\n                          focus:ring-2\r\n                          focus:ring-indigo-500\r\n                          focus:ring-offset-2\r\n                          sm:mt-0 sm:w-auto sm:text-sm\r\n                        "\r\n                        @click="isOpen = false"\r\n                      >\r\n                        Cancel\r\n                      </button>\r\n                    </div> ')
+                              ])) : block.type == "modal_content" ? (openBlock(), createElementBlock("div", _hoisted_9, [
+                                block.settings.modal_content_title ? (openBlock(), createBlock(_component_DialogTitle, {
+                                  key: 0,
+                                  as: "h3",
+                                  class: "header-font leading-6 font-black text-5xl pb-4"
+                                }, {
+                                  default: withCtx(() => [
+                                    createTextVNode(toDisplayString(block.settings.modal_content_title), 1)
+                                  ]),
+                                  _: 2
+                                }, 1024)) : createCommentVNode("v-if", true),
+                                block.settings.modal_content_subtitle ? (openBlock(), createElementBlock("h4", _hoisted_10, toDisplayString(block.settings.modal_content_subtitle), 1)) : createCommentVNode("v-if", true),
+                                createBaseVNode("div", {
+                                  class: "mt-2",
+                                  html: block.settings.modal_content_body
+                                }, [
+                                  createBaseVNode("p", {
+                                    html: block.settings.modal_content_body
+                                  }, " Test Body ", 8, _hoisted_12)
+                                ], 8, _hoisted_11),
+                                block.settings.modal_content_primary_cta_url || block.settings.modal_content_secondary_cta_url ? (openBlock(), createElementBlock("div", _hoisted_13, [
+                                  block.settings.modal_content_primary_cta_url ? (openBlock(), createElementBlock("a", {
+                                    key: 0,
+                                    href: block.settings.modal_content_primary_cta_url,
+                                    class: "inline-flex w-full justify-center border border-transparent bg-black text-white px-4 py-2 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:w-auto sm:text-sm"
+                                  }, toDisplayString(block.settings.modal_content_primary_cta_text), 9, _hoisted_14)) : createCommentVNode("v-if", true),
+                                  block.settings.modal_content_secondary_cta_url ? (openBlock(), createElementBlock("a", {
+                                    key: 1,
+                                    href: block.settings.modal_content_secondary_cta_url,
+                                    class: "inline-flex w-full justify-center bg-white text-black border border-black px-4 py-2 text-base font-medium shadow-sm focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:w-auto sm:text-sm"
+                                  }, toDisplayString(block.settings.modal_content_secondary_cta_text), 9, _hoisted_15)) : createCommentVNode("v-if", true)
+                                ])) : createCommentVNode("v-if", true)
+                              ])) : createCommentVNode("v-if", true),
+                              _hoisted_16
+                            ]);
+                          }), 128))
                         ])
                       ]),
-                      createBaseVNode("div", _hoisted_7, [
-                        _hoisted_8,
-                        (openBlock(true), createElementBlock(Fragment, null, renderList($props.blocks, (block) => {
-                          return openBlock(), createElementBlock("div", {
-                            class: "mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left",
-                            key: block
-                          }, [
-                            block.type == "email_form" ? (openBlock(), createElementBlock("div", _hoisted_9, [
-                              createVNode(_component_DialogTitle, {
-                                as: "h3",
-                                class: "text-lg font-medium leading-6 text-gray-900"
-                              }, {
-                                default: withCtx(() => [
-                                  createTextVNode(toDisplayString(_ctx.modal_content_title), 1)
-                                ]),
-                                _: 1
-                              }),
-                              _hoisted_10,
-                              createBaseVNode("div", _hoisted_11, [
-                                createBaseVNode("button", {
-                                  type: "button",
-                                  class: "inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm",
-                                  onClick: _cache[1] || (_cache[1] = ($event) => $data.isOpen = false)
-                                }, " Deactivate "),
-                                createBaseVNode("button", {
-                                  type: "button",
-                                  class: "mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:w-auto sm:text-sm",
-                                  onClick: _cache[2] || (_cache[2] = ($event) => $data.isOpen = false)
-                                }, " Cancel ")
-                              ])
-                            ])) : block.type == "modal_content" ? (openBlock(), createElementBlock("div", _hoisted_12, [
-                              block.settings.modal_content_title ? (openBlock(), createBlock(_component_DialogTitle, {
-                                key: 0,
-                                as: "h3",
-                                class: "text-lg font-medium leading-6 text-gray-900"
-                              }, {
-                                default: withCtx(() => [
-                                  createTextVNode(toDisplayString(block.settings.modal_content_title), 1)
-                                ]),
-                                _: 2
-                              }, 1024)) : createCommentVNode("v-if", true),
-                              block.settings.modal_content_subtitle ? (openBlock(), createElementBlock("h4", _hoisted_13, toDisplayString(block.settings.modal_content_subtitle), 1)) : createCommentVNode("v-if", true),
-                              createBaseVNode("div", {
-                                class: "mt-2",
-                                html: block.settings.modal_content_body
-                              }, [
-                                createBaseVNode("p", {
-                                  class: "text-sm text-gray-500",
-                                  html: block.settings.modal_content_body
-                                }, " Test Body ", 8, _hoisted_15)
-                              ], 8, _hoisted_14),
-                              block.settings.modal_content_primary_cta_url || block.settings.modal_content_secondary_cta_url ? (openBlock(), createElementBlock("div", _hoisted_16, [
-                                block.settings.modal_content_primary_cta_url ? (openBlock(), createElementBlock("a", {
-                                  key: 0,
-                                  href: block.settings.modal_content_primary_cta_url,
-                                  target: "_blank",
-                                  class: "inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
-                                }, toDisplayString(block.settings.modal_content_primary_cta_text), 9, _hoisted_17)) : createCommentVNode("v-if", true),
-                                block.settings.modal_content_secondary_cta_url ? (openBlock(), createElementBlock("a", {
-                                  key: 1,
-                                  href: block.settings.modal_content_secondary_cta_url,
-                                  target: "_blank",
-                                  class: "inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm"
-                                }, toDisplayString(block.settings.modal_content_secondary_cta_text), 9, _hoisted_18)) : createCommentVNode("v-if", true)
-                              ])) : createCommentVNode("v-if", true)
-                            ])) : createCommentVNode("v-if", true)
-                          ]);
-                        }), 128))
-                      ])
-                    ]),
-                    _: 1
-                  })
+                      _: 1
+                    })
+                  ])
                 ]),
                 _: 1
               })

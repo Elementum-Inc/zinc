@@ -1,6 +1,23 @@
 {{ 'section-modal.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
+.modal-image {
+    background: url({{section.settings.modal_background_image | img_url: 'master' }});
+    background-size: cover;
+}
+
+.modal-container {
+    width: 80vw;
+    height: 80vh;
+}
+
+.header-font {
+    font-family: {{settings.type_header_font}}
+}
+
+.body-font {
+    font-family: {{setings.type.body_font}}
+}
 
 {%- endstyle -%}
 

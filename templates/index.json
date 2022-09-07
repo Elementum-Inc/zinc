@@ -220,21 +220,21 @@
     "16625339384a459290": {
       "type": "modal",
       "blocks": {
-        "cc24f655-7a56-4c89-8a6f-833934db6521": {
+        "ac7ca39c-8885-4c75-9156-faafe1343508": {
           "type": "modal_content",
           "settings": {
             "modal_content_title": "Modal Title",
             "modal_content_subtitle": "Modal Subtitle",
             "modal_content_body": "<p>Modal Content<\/p>",
             "modal_content_primary_cta_text": "Primary CTA",
-            "modal_content_primary_cta_url": "https:\/\/google.com",
+            "modal_content_primary_cta_url": "",
             "modal_content_secondary_cta_text": "Secondary CTA",
-            "modal_content_secondary_cta_url": "https:\/\/yahoo.com"
+            "modal_content_secondary_cta_url": "https:\/\/google.com"
           }
         }
       },
       "block_order": [
-        "cc24f655-7a56-4c89-8a6f-833934db6521"
+        "ac7ca39c-8885-4c75-9156-faafe1343508"
       ],
       "settings": {
         "color_scheme": "background-1",
