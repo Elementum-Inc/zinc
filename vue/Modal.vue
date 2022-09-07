@@ -86,81 +86,167 @@
                     bg-red-100
                     sm:mx-0 sm:h-10 sm:w-10
                   "
+                ></div>
+                <div
+                  class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left"
+                  v-for="block in blocks"
+                  :key="block"
                 >
-                  <ExclamationTriangleIcon
-                    class="h-6 w-6 text-red-600"
-                    aria-hidden="true"
-                  />
-                </div>
-                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                  <DialogTitle
-                    as="h3"
-                    class="text-lg font-medium leading-6 text-gray-900"
-                    >{{ modal_content_title }}</DialogTitle
+                  <div class="modal-content" v-if="block.type == 'email_form'">
+                    <DialogTitle
+                      as="h3"
+                      class="text-lg font-medium leading-6 text-gray-900"
+                      >{{ modal_content_title }}</DialogTitle
+                    >
+                    <div class="mt-2">
+                      <p class="text-sm text-gray-500">
+                        Are you sure you want to deactivate your account? All of
+                        your data will be permanently removed from our servers
+                        forever. This action cannot be undone.
+                      </p>
+                    </div>
+
+                    <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
+                      <button
+                        type="button"
+                        class="
+                          inline-flex
+                          w-full
+                          justify-center
+                          rounded-md
+                          border border-transparent
+                          bg-red-600
+                          px-4
+                          py-2
+                          text-base
+                          font-medium
+                          text-white
+                          shadow-sm
+                          hover:bg-red-700
+                          focus:outline-none
+                          focus:ring-2
+                          focus:ring-red-500
+                          focus:ring-offset-2
+                          sm:ml-3 sm:w-auto sm:text-sm
+                        "
+                        @click="isOpen = false"
+                      >
+                        Deactivate
+                      </button>
+                      <button
+                        type="button"
+                        class="
+                          mt-3
+                          inline-flex
+                          w-full
+                          justify-center
+                          rounded-md
+                          border border-gray-300
+                          bg-white
+                          px-4
+                          py-2
+                          text-base
+                          font-medium
+                          text-gray-700
+                          shadow-sm
+                          hover:text-gray-500
+                          focus:outline-none
+                          focus:ring-2
+                          focus:ring-indigo-500
+                          focus:ring-offset-2
+                          sm:mt-0 sm:w-auto sm:text-sm
+                        "
+                        @click="isOpen = false"
+                      >
+                        Cancel
+                      </button>
+                    </div>
+                  </div>
+
+                  <div
+                    class="modal-content"
+                    v-else-if="block.type == 'modal_content'"
                   >
-                  <div class="mt-2">
-                    <p class="text-sm text-gray-500">
-                      Are you sure you want to deactivate your account? All of
-                      your data will be permanently removed from our servers
-                      forever. This action cannot be undone.
-                    </p>
+                    <DialogTitle
+                      as="h3"
+                      class="text-lg font-medium leading-6 text-gray-900"
+                      v-if="block.settings.modal_content_title"
+                      >{{ block.settings.modal_content_title }}</DialogTitle
+                    >
+                    <h4 v-if="block.settings.modal_content_subtitle">
+                      {{ block.settings.modal_content_subtitle }}
+                    </h4>
+                    <div class="mt-2" :html="block.settings.modal_content_body">
+                      <p
+                        class="text-sm text-gray-500"
+                        :html="block.settings.modal_content_body"
+                      >
+                        Test Body
+                      </p>
+                    </div>
+
+                    <div
+                      v-if="
+                        block.settings.modal_content_primary_cta_url ||
+                        block.settings.modal_content_secondary_cta_url
+                      "
+                      class="mt-5 sm:mt-4 sm:flex"
+                    >
+                      <a
+                        v-if="block.settings.modal_content_primary_cta_url"
+                        :href="block.settings.modal_content_primary_cta_url"
+                        target="_blank"
+                        class="
+                          inline-flex
+                          w-full
+                          justify-center
+                          rounded-md
+                          border border-transparent
+                          bg-red-600
+                          px-4
+                          py-2
+                          text-base
+                          font-medium
+                          shadow-sm
+                          hover:bg-red-700
+                          focus:outline-none
+                          focus:ring-2
+                          focus:ring-red-500
+                          focus:ring-offset-2
+                          sm:ml-3 sm:w-auto sm:text-sm
+                        "
+                      >
+                        {{ block.settings.modal_content_primary_cta_text }}
+                      </a>
+                      <a
+                        v-if="block.settings.modal_content_secondary_cta_url"
+                        :href="block.settings.modal_content_secondary_cta_url"
+                        target="_blank"
+                        class="
+                          inline-flex
+                          w-full
+                          justify-center
+                          rounded-md
+                          border border-transparent
+                          bg-red-600
+                          px-4
+                          py-2
+                          text-base
+                          font-medium
+                          shadow-sm
+                          hover:bg-red-700
+                          focus:outline-none
+                          focus:ring-2
+                          focus:ring-red-500
+                          focus:ring-offset-2
+                          sm:ml-3 sm:w-auto sm:text-sm
+                        "
+                      >
+                        {{ block.settings.modal_content_secondary_cta_text }}
+                      </a>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="mt-5 sm:mt-4 sm:flex sm:flex-row-reverse">
-                <button
-                  type="button"
-                  class="
-                    inline-flex
-                    w-full
-                    justify-center
-                    rounded-md
-                    border border-transparent
-                    bg-red-600
-                    px-4
-                    py-2
-                    text-base
-                    font-medium
-                    text-white
-                    shadow-sm
-                    hover:bg-red-700
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-red-500
-                    focus:ring-offset-2
-                    sm:ml-3 sm:w-auto sm:text-sm
-                  "
-                  @click="isOpen = false"
-                >
-                  Deactivate
-                </button>
-                <button
-                  type="button"
-                  class="
-                    mt-3
-                    inline-flex
-                    w-full
-                    justify-center
-                    rounded-md
-                    border border-gray-300
-                    bg-white
-                    px-4
-                    py-2
-                    text-base
-                    font-medium
-                    text-gray-700
-                    shadow-sm
-                    hover:text-gray-500
-                    focus:outline-none
-                    focus:ring-2
-                    focus:ring-indigo-500
-                    focus:ring-offset-2
-                    sm:mt-0 sm:w-auto sm:text-sm
-                  "
-                  @click="isOpen = false"
-                >
-                  Cancel
-                </button>
               </div>
             </DialogPanel>
           </TransitionChild>
@@ -179,23 +265,24 @@ import {
   DialogPanel,
   DialogTitle,
 } from "@headlessui/vue";
-import { ExclamationTriangleIcon, XMarkIcon } from '@heroicons/vue/24/outline'
+import { XMarkIcon } from "@heroicons/vue/24/outline";
 
 export default {
   name: "Modal",
   components: {
-  TransitionRoot,
-  TransitionChild,
-  Dialog,
-  DialogPanel,
-  DialogTitle,
-  ExclamationTriangleIcon,
-  XMarkIcon
+    TransitionRoot,
+    TransitionChild,
+    Dialog,
+    DialogPanel,
+    DialogTitle,
+    XMarkIcon,
   },
   data() {
     return {
       screen: window.innerWidth,
       isOpen: true,
+      blocks: this.blocks,
+      settings: this.settings,
     };
   },
   props: {
@@ -206,7 +293,7 @@ export default {
   watch: {},
   methods: {
     blocksByParent(parentHandle) {
-              console.log(blocks)
+      console.log(blocks);
       return this.blocks.filter((b) => b.title == parentHandle);
     },
   },
@@ -214,6 +301,8 @@ export default {
     window.addEventListener("deviceorientation", () => {
       this.screen = window.innerWidth;
     });
+    console.log(this.blocks);
+    console.log(this.settings);
   },
 };
 </script>

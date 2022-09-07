@@ -217,33 +217,24 @@
         "padding_bottom": 52
       }
     },
-    "1662097433e6dab5aa": {
+    "16625339384a459290": {
       "type": "modal",
       "blocks": {
-        "1662097433ade1de34-0": {
-          "type": "email_form",
-          "settings": {
-            "email_form_code": "",
-            "email_form_success_title": "Success!",
-            "email_form_success_message": "<p>You've been subscribed to our newsletter and will receive updates from us shortly!<\/p>"
-          }
-        },
-        "1662097433ade1de34-1": {
+        "cc24f655-7a56-4c89-8a6f-833934db6521": {
           "type": "modal_content",
           "settings": {
             "modal_content_title": "Modal Title",
             "modal_content_subtitle": "Modal Subtitle",
             "modal_content_body": "<p>Modal Content<\/p>",
             "modal_content_primary_cta_text": "Primary CTA",
-            "modal_content_primary_cta_url": "",
+            "modal_content_primary_cta_url": "https:\/\/google.com",
             "modal_content_secondary_cta_text": "Secondary CTA",
-            "modal_content_secondary_cta_url": ""
+            "modal_content_secondary_cta_url": "https:\/\/yahoo.com"
           }
         }
       },
       "block_order": [
-        "1662097433ade1de34-0",
-        "1662097433ade1de34-1"
+        "cc24f655-7a56-4c89-8a6f-833934db6521"
       ],
       "settings": {
         "color_scheme": "background-1",
@@ -262,6 +253,6 @@
     "video",
     "multicolumn",
     "16565128829058127c",
-    "1662097433e6dab5aa"
+    "16625339384a459290"
   ]
 }
