@@ -5792,25 +5792,25 @@ function initCustomFormatter() {
     }
   };
   function formatInstance(instance) {
-    const blocks = [];
+    const blocks2 = [];
     if (instance.type.props && instance.props) {
-      blocks.push(createInstanceBlock("props", toRaw(instance.props)));
+      blocks2.push(createInstanceBlock("props", toRaw(instance.props)));
     }
     if (instance.setupState !== EMPTY_OBJ) {
-      blocks.push(createInstanceBlock("setup", instance.setupState));
+      blocks2.push(createInstanceBlock("setup", instance.setupState));
     }
     if (instance.data !== EMPTY_OBJ) {
-      blocks.push(createInstanceBlock("data", toRaw(instance.data)));
+      blocks2.push(createInstanceBlock("data", toRaw(instance.data)));
     }
     const computed2 = extractKeys(instance, "computed");
     if (computed2) {
-      blocks.push(createInstanceBlock("computed", computed2));
+      blocks2.push(createInstanceBlock("computed", computed2));
     }
     const injected = extractKeys(instance, "inject");
     if (injected) {
-      blocks.push(createInstanceBlock("injected", injected));
+      blocks2.push(createInstanceBlock("injected", injected));
     }
-    blocks.push([
+    blocks2.push([
       "div",
       {},
       [
@@ -5822,7 +5822,7 @@ function initCustomFormatter() {
       ],
       ["object", { object: instance }]
     ]);
-    return blocks;
+    return blocks2;
   }
   function createInstanceBlock(type, target) {
     target = extend({}, target);
@@ -7990,7 +7990,7 @@ const _hoisted_11$2 = {
   key: 0,
   class: "icon target expand"
 };
-const _hoisted_12$2 = ["width", "height"];
+const _hoisted_12$1 = ["width", "height"];
 const _hoisted_13$1 = /* @__PURE__ */ createBaseVNode("path", {
   "fill-rule": "evenodd",
   "clip-rule": "evenodd",
@@ -8177,7 +8177,7 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
                               viewBox: "0 0 10 10",
                               width: $props.iconSize,
                               height: $props.iconSize
-                            }, _hoisted_14$1, 8, _hoisted_12$2))
+                            }, _hoisted_14$1, 8, _hoisted_12$1))
                           ])) : createCommentVNode("v-if", true)
                         ]),
                         _: 2
@@ -8744,7 +8744,7 @@ const _hoisted_8$1 = /* @__PURE__ */ createBaseVNode("label", {
 const _hoisted_9$1 = { class: "icon target" };
 const _hoisted_10$1 = ["onClick", "width", "height"];
 const _hoisted_11$1 = ["stroke-width"];
-const _hoisted_12$1 = ["stroke-width"];
+const _hoisted_12 = ["stroke-width"];
 const _hoisted_13 = { class: "search__results--inner" };
 const _hoisted_14 = /* @__PURE__ */ createBaseVNode("h1", { class: "sr-only" }, "Search Results", -1);
 const _hoisted_15 = {
@@ -8848,7 +8848,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                     createBaseVNode("path", {
                       d: "M22 21.4878L1 1.51221",
                       "stroke-width": $props.iconStrokeWidth
-                    }, null, 8, _hoisted_12$1)
+                    }, null, 8, _hoisted_12)
                   ], 8, _hoisted_10$1))
                 ])
               ]),
@@ -9069,13 +9069,21 @@ function render(_ctx, _cache) {
     })
   ]);
 }
-ref(true);
 const _sfc_main = {
   name: "Modal",
-  components: { Dialog: Ne, DialogPanel: _e, DialogTitle: Ue, TransitionChild: oe, TransitionRoot: fe, ExclamationTriangleIcon: render$1, XMarkIcon: render },
+  components: {
+    TransitionRoot: fe,
+    TransitionChild: oe,
+    Dialog: Ne,
+    DialogPanel: _e,
+    DialogTitle: Ue,
+    ExclamationTriangleIcon: render$1,
+    XMarkIcon: render
+  },
   data() {
     return {
-      screen: window.innerWidth
+      screen: window.innerWidth,
+      isOpen: true
     };
   },
   props: {
@@ -9086,24 +9094,29 @@ const _sfc_main = {
   watch: {},
   methods: {
     blocksByParent(parentHandle) {
+      console.log(blocks);
       return this.blocks.filter((b2) => b2.title == parentHandle);
     }
+  },
+  mounted() {
+    window.addEventListener("deviceorientation", () => {
+      this.screen = window.innerWidth;
+    });
   }
 };
 const _hoisted_1 = /* @__PURE__ */ createBaseVNode("div", { class: "fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" }, null, -1);
 const _hoisted_2 = { class: "fixed inset-0 z-10 overflow-y-auto" };
-const _hoisted_3 = /* @__PURE__ */ createTextVNode(" Hello Modal ");
-const _hoisted_4 = { class: "flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0" };
-const _hoisted_5 = { class: "absolute top-0 right-0 hidden pt-4 pr-4 sm:block" };
-const _hoisted_6 = /* @__PURE__ */ createBaseVNode("span", { class: "sr-only" }, "Close", -1);
+const _hoisted_3 = { class: "flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0" };
+const _hoisted_4 = { class: "absolute top-0 right-0 hidden pt-4 pr-4 sm:block" };
+const _hoisted_5 = /* @__PURE__ */ createBaseVNode("span", { class: "sr-only" }, "Close", -1);
+const _hoisted_6 = /* @__PURE__ */ createTextVNode(" x ");
 const _hoisted_7 = { class: "sm:flex sm:items-start" };
 const _hoisted_8 = { class: "mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10" };
 const _hoisted_9 = { class: "mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left" };
-const _hoisted_10 = /* @__PURE__ */ createTextVNode("Deactivate account");
-const _hoisted_11 = /* @__PURE__ */ createBaseVNode("div", { class: "mt-2" }, [
-  /* @__PURE__ */ createBaseVNode("p", { class: "text-sm text-gray-500" }, "Are you sure you want to deactivate your account? All of your data will be permanently removed from our servers forever. This action cannot be undone.")
+const _hoisted_10 = /* @__PURE__ */ createBaseVNode("div", { class: "mt-2" }, [
+  /* @__PURE__ */ createBaseVNode("p", { class: "text-sm text-gray-500" }, " Are you sure you want to deactivate your account? All of your data will be permanently removed from our servers forever. This action cannot be undone. ")
 ], -1);
-const _hoisted_12 = { class: "mt-5 sm:mt-4 sm:flex sm:flex-row-reverse" };
+const _hoisted_11 = { class: "mt-5 sm:mt-4 sm:flex sm:flex-row-reverse" };
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_TransitionChild = resolveComponent("TransitionChild");
   const _component_XMarkIcon = resolveComponent("XMarkIcon");
@@ -9114,13 +9127,14 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_TransitionRoot = resolveComponent("TransitionRoot");
   return openBlock(), createBlock(_component_TransitionRoot, {
     as: "template",
-    show: true
+    show: $data.isOpen,
+    open: true
   }, {
     default: withCtx(() => [
       createVNode(_component_Dialog, {
         as: "div",
         class: "relative z-10",
-        onClose: _cache[3] || (_cache[3] = ($event) => _ctx.open = false)
+        onClose: _cache[3] || (_cache[3] = ($event) => $data.isOpen = false)
       }, {
         default: withCtx(() => [
           createVNode(_component_TransitionChild, {
@@ -9138,8 +9152,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             _: 1
           }),
           createBaseVNode("div", _hoisted_2, [
-            _hoisted_3,
-            createBaseVNode("div", _hoisted_4, [
+            createBaseVNode("div", _hoisted_3, [
               createVNode(_component_TransitionChild, {
                 as: "template",
                 enter: "ease-out duration-300",
@@ -9152,17 +9165,18 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                 default: withCtx(() => [
                   createVNode(_component_DialogPanel, { class: "relative transform overflow-hidden rounded-lg bg-white px-4 pt-5 pb-4 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:p-6" }, {
                     default: withCtx(() => [
-                      createBaseVNode("div", _hoisted_5, [
+                      createBaseVNode("div", _hoisted_4, [
                         createBaseVNode("button", {
                           type: "button",
                           class: "rounded-md bg-white text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2",
-                          onClick: _cache[0] || (_cache[0] = ($event) => _ctx.open = false)
+                          onClick: _cache[0] || (_cache[0] = ($event) => $data.isOpen = false)
                         }, [
-                          _hoisted_6,
+                          _hoisted_5,
                           createVNode(_component_XMarkIcon, {
                             class: "h-6 w-6",
                             "aria-hidden": "true"
-                          })
+                          }),
+                          _hoisted_6
                         ])
                       ]),
                       createBaseVNode("div", _hoisted_7, [
@@ -9178,24 +9192,24 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                             class: "text-lg font-medium leading-6 text-gray-900"
                           }, {
                             default: withCtx(() => [
-                              _hoisted_10
+                              createTextVNode(toDisplayString(_ctx.modal_content_title), 1)
                             ]),
                             _: 1
                           }),
-                          _hoisted_11
+                          _hoisted_10
                         ])
                       ]),
-                      createBaseVNode("div", _hoisted_12, [
+                      createBaseVNode("div", _hoisted_11, [
                         createBaseVNode("button", {
                           type: "button",
                           class: "inline-flex w-full justify-center rounded-md border border-transparent bg-red-600 px-4 py-2 text-base font-medium text-white shadow-sm hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-offset-2 sm:ml-3 sm:w-auto sm:text-sm",
-                          onClick: _cache[1] || (_cache[1] = ($event) => _ctx.open = false)
-                        }, "Deactivate"),
+                          onClick: _cache[1] || (_cache[1] = ($event) => $data.isOpen = false)
+                        }, " Deactivate "),
                         createBaseVNode("button", {
                           type: "button",
                           class: "mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:w-auto sm:text-sm",
-                          onClick: _cache[2] || (_cache[2] = ($event) => _ctx.open = false)
-                        }, "Cancel")
+                          onClick: _cache[2] || (_cache[2] = ($event) => $data.isOpen = false)
+                        }, " Cancel ")
                       ])
                     ]),
                     _: 1
@@ -9210,7 +9224,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       })
     ]),
     _: 1
-  });
+  }, 8, ["show"]);
 }
 var Modal = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "C:/dev/Elementum/starter-theme/vue/Modal.vue"]]);
 const searchMount = document.querySelector("#searchMenuTop");
