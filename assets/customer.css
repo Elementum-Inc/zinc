@@ -1,3 +1,52 @@
+/* ELEMENTUM STYLES */
+
+.customer .field {
+  margin: 2rem auto 0 auto;
+  background: #f8f8f8;
+  border-radius: 10px;
+  width: 324px;
+  height: 58px;
+}
+
+.customer .field label {
+  font-size: 1rem !important;
+  display: flex;
+}
+
+.customer .field svg {
+  margin: 0 25px 0 0;
+}
+
+.login .field + a {
+  margin-top: 2rem;
+  font-size: 0.7rem;
+}
+
+.customer .field input {
+  font-size: 0.7rem;
+  width: 324px;
+  height: 58px;
+  border-radius: 10px;
+}
+
+.customer button {
+  margin: 1rem 0 1.5rem;
+  background: black;
+  color: white;
+  border-radius: 10px;
+  width: 130px;
+  height: 38px !important;
+}
+
+.login a {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+  text-decoration: none;
+  font-size: 0.8rem;
+}
+
+/* SHOPIFY STYLES */
 .customer:not(.account):not(.order) {
   margin: 6rem auto 9rem;
   max-width: 33.4rem;
@@ -13,10 +62,6 @@
 
 .customer form {
   margin-top: 4rem;
-}
-
-.customer button {
-  margin: 4rem 0 1.5rem;
 }
 
 .customer ul {
@@ -43,10 +88,6 @@
   .customer h2.form__message {
     font-size: calc(var(--font-heading-scale) * 2.2rem);
   }
-}
-
-.customer .field {
-  margin: 2rem 0 0 0;
 }
 
 .customer .field:first-of-type {
@@ -204,7 +245,7 @@
 /* works around colspan phantom border issues */
 .customer thead::after,
 .customer tfoot::before {
-  content: ' ';
+  content: " ";
   height: 0.1rem;
   width: 100%;
   display: block;
@@ -311,7 +352,7 @@
 }
 
 .customer .pagination li [aria-current]::after {
-  content: '';
+  content: "";
   display: block;
   width: 2rem;
   height: 0.01rem;
@@ -323,20 +364,11 @@
 }
 
 /* Login */
-.login a {
-  display: block;
-  margin: 0 auto;
-  width: fit-content;
-}
 
-.login a[href='#recover'] {
+/* .login a[href="#recover"] {
   margin-left: 0;
   margin-right: 0;
-}
-
-.login .field + a {
-  margin-top: 1rem;
-}
+} */
 
 .login p {
   margin: 1.5rem 0;
@@ -379,15 +411,18 @@
   margin-bottom: 0;
 }
 
-.activate button[name='decline'],
+.activate button[name="decline"],
 .addresses li > button,
 .addresses form button[type] {
-  background-color: rgba(var(--color-background), var(--alpha-button-background));
+  background-color: rgba(
+    var(--color-background),
+    var(--alpha-button-background)
+  );
   color: rgb(var(--color-link));
 }
 
 @media only screen and (min-width: 750px) {
-  .activate button[name='decline'] {
+  .activate button[name="decline"] {
     margin-top: inherit;
     margin-left: 1rem;
   }
@@ -665,8 +700,8 @@
   margin-right: 1rem;
 }
 
-label[for='AddressCountryNew'],
-label[for='AddressProvinceNew'] {
+label[for="AddressCountryNew"],
+label[for="AddressProvinceNew"] {
   display: block;
   font-size: 1.4rem;
   margin-bottom: 0.6rem;
@@ -692,11 +727,11 @@ li[data-address] {
   margin-top: 5rem;
 }
 
-.addresses [aria-expanded='false'] ~ div[id] {
+.addresses [aria-expanded="false"] ~ div[id] {
   display: none;
 }
 
-.addresses [aria-expanded='true'] ~ div[id] {
+.addresses [aria-expanded="true"] ~ div[id] {
   display: block;
 }
 
@@ -720,7 +755,7 @@ li[data-address] > h2 {
   margin-bottom: 0;
 }
 
-.addresses input[type='checkbox'] {
+.addresses input[type="checkbox"] {
   margin-top: 2rem;
   margin-left: 0;
 }
