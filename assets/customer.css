@@ -1,5 +1,31 @@
 /* ELEMENTUM STYLES */
 
+#add-address__btn {
+  font-size: 16px;
+}
+
+.account-content-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.account-top-text {
+  text-align: center;
+  border-bottom: 1px solid;
+  padding-bottom: 3rem;
+  margin-bottom: 3rem;
+  font-size: 40px !important;
+}
+
+.account-top-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.account h1 {
+  font-size: 30px !important;
+}
+
 .customer .field {
   margin: 2rem auto 0 auto;
   background: #f8f8f8;
@@ -34,8 +60,9 @@
   background: black;
   color: white;
   border-radius: 10px;
-  width: 130px;
-  height: 38px !important;
+  min-width: 130px;
+  min-height: 38px !important;
+  font-size: 18px;
 }
 
 .login a {
@@ -44,6 +71,10 @@
   width: fit-content;
   text-decoration: none;
   font-size: 0.8rem;
+}
+
+.manage-address__btn {
+  margin: 0.2rem !important;
 }
 
 /* SHOPIFY STYLES */
