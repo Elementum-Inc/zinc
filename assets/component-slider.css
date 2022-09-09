@@ -12,10 +12,6 @@ slider-component {
   display: block;
 }
 
-/* .slider-counter {
-  visibility: hidden;
-} */
-
 slider-component.slider-component-full-width {
   --desktop-margin-left-first-item: 1.5rem;
 }

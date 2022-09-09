@@ -53,8 +53,7 @@
   </div>
 
   <h1 id="login" tabindex="-1">
-    LOGIN
-    {% comment %} {{ 'customer.login_page.title' | t }} {% endcomment %}
+    {{ 'customer.login_page.title' | t }}
   </h1>
   <div>
     {%- if recover_success == true -%}
@@ -96,7 +95,6 @@
           placeholder="{{ 'customer.login_page.email' | t }}"
         >
         <label for="CustomerEmail">
-          {% render 'icon-user' %}
           {{ 'customer.login_page.email' | t }}
         </label>
       </div>
@@ -120,8 +118,7 @@
         </div>
 
         <a href="#recover">
-          Forgot password?
-          {% comment %} {{ 'customer.login_page.forgot_password' | t }} {% endcomment %}
+          {{ 'customer.login_page.forgot_password' | t }}
         </a>
       {%- endif -%}
 

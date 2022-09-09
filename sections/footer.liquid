@@ -39,7 +39,7 @@
 <footer class="footer color-{{ section.settings.color_scheme }} gradient">
   {%- if section.settings.show_social and section.settings.social_location == "above" -%}
     <div id="subfooter-upper">
-      {% comment %} {%- render 'social-subfooter' -%} {% endcomment %}
+      {%- render 'social-subfooter' -%}
     </div>
   {%- endif -%}
 
@@ -258,7 +258,6 @@
         alt="{{ section.settings.large_logo.alt | escape }}"
         width="{{ section.settings.large_logo_width }}"
         loading="lazy"
-        height="100"
       >
   </div>
 
@@ -268,7 +267,7 @@
 
       {%- if section.settings.show_social and section.settings.social_location == "below" -%}
           <div class="lower-social">
-          {% comment %} {%- render 'social-subfooter' -%} {% endcomment %}
+          {%- render 'social-subfooter' -%}
           </div>
         {%- endif -%}
 
@@ -364,10 +363,10 @@
           "label": "t:sections.footer.blocks.link_list.settings.heading.label"
         },
         {
-          "type": "checkbox",
-          "id": "display_logo",
-          "default": false,
-          "label": "Display Logo"
+        "type": "checkbox",
+        "id": "display_logo",
+        "default": false,
+        "label": "Display Logo"
         },
         {
           "type": "link_list",
@@ -507,7 +506,7 @@
       "default": "basic-dark",
       "label": "t:sections.all.colors.label"
     },
-    {
+        {
       "type": "select",
       "id": "column_count",
       "options": [
@@ -552,7 +551,7 @@
       "step": 25,
       "unit": "px",
       "label": "Large logo width",
-      "default": 500
+      "default": 500 
     },
     {
       "type": "header",
