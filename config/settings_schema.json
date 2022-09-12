@@ -1087,7 +1087,7 @@
         "id": "search_trends",
         "label": "Suggested/Trending Searches",
         "info": "Use this setting to attach a link list of common search terms to point consumers towards."
-      },      
+      },
       {
         "type": "checkbox",
         "id": "predictive_search_enabled",
