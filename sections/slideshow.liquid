@@ -147,7 +147,7 @@
       {%- when 'video' -%}
         <div>
           <video autoplay muted loop playsinline class="slideshow-video">
-            <source src="{{ block.settings.video_url }}" type="video/mp4">
+            <source src="{{ block.settings.video_src }}" type="video/mp4">
           </video>
         <div>
 
@@ -519,8 +519,8 @@
       "limit": 1,
       "settings": [
         {
-          "type": "url",
-          "id": "video_url",
+          "type": "text",
+          "id": "video_src",
           "label": "Shopify CDN Video Link",
           "info": "Please use mp4 videos uploaded to your Shopify Admin > Settings > Files, and copy link from uploaded file to here."
         },

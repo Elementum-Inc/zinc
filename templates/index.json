@@ -1,12 +1,12 @@
 {
   "sections": {
-    "1661866908d2a14ae1": {
+    "1662998975e02c9045": {
       "type": "slideshow",
       "blocks": {
-        "1661866906a21c8bfc-0": {
+        "16629989750553a9d2-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/fall-vegetable-box.jpg",
+            "image": "shopify:\/\/shop_images\/fall-vegetable-box.jpg",
             "heading": "Fall is coming",
             "heading_size": "h1",
             "subheading": "We cannot wait!",
@@ -25,10 +25,10 @@
             "text_alignment_mobile": "center"
           }
         },
-        "1661866906a21c8bfc-1": {
+        "16629989750553a9d2-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/woman-infront-of-tree-with-berries.jpeg",
+            "image": "shopify:\/\/shop_images\/woman-infront-of-tree-with-berries.jpeg",
             "heading": "Are you ready for it?",
             "heading_size": "h1",
             "subheading": "It's going to be spicy and delicious.",
@@ -47,10 +47,9 @@
             "text_alignment_mobile": "center"
           }
         },
-        "25d0ca5e-fb80-402b-90fb-9a285b66395a": {
+        "92a7dd88-44be-4caf-a9f7-1b2bff547122": {
           "type": "video",
           "settings": {
-            "video_url": "https://cdn.shopify.com/videos/c/o/v/2c63748001054a23bc291ee82a7f23cb.mp4",
             "heading": "Video",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through video",
@@ -70,9 +69,9 @@
         }
       },
       "block_order": [
-        "1661866906a21c8bfc-0",
-        "1661866906a21c8bfc-1",
-        "25d0ca5e-fb80-402b-90fb-9a285b66395a"
+        "16629989750553a9d2-0",
+        "16629989750553a9d2-1",
+        "92a7dd88-44be-4caf-a9f7-1b2bff547122"
       ],
       "settings": {
         "slide_height": "small",
@@ -105,7 +104,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -138,14 +137,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Talk about your brand</p>",
+            "heading": "<p>Talk about your brand<\/p>",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         }
       },
@@ -170,9 +169,10 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
+        "collection-title1": "Featured Collection 1",
         "collection": "demo-collection",
+        "collection-title2": "Featured Collection 2",
         "collection2": "collection3",
-        "collection3": "",
         "products_to_show": 4,
         "columns_desktop": 4,
         "full_width": false,
@@ -243,7 +243,7 @@
         "second_button_label": "Secondary button label",
         "second_link": "",
         "second_button_style_secondary": false,
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
         "color_scheme": "background-1",
@@ -257,16 +257,18 @@
         "column2": {
           "type": "column",
           "settings": {
+            "border-radius": 0,
             "title": "FEATURED COLLECTION",
-            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli</p>",
+            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
             "link_label": "Shop it now what if it gets longer okay cool",
-            "link": "shopify://collections/demo-collection"
+            "link": "shopify:\/\/collections\/demo-collection"
           }
         },
         "column1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/sliced-pumpkin-pie.jpg",
+            "image": "shopify:\/\/shop_images\/sliced-pumpkin-pie.jpg",
+            "border-radius": 0,
             "title": "",
             "text": "",
             "link_label": "",
@@ -285,7 +287,6 @@
         "image_ratio": "adapt",
         "columns_desktop": 2,
         "column_alignment": "left",
-        "background_style": "none",
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
@@ -301,7 +302,8 @@
         "16620107657f4c8cb8-0": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/fall-leaf-cookies-in-the-kitchen.jpg",
+            "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
+            "border-radius": 0,
             "title": "",
             "text": "",
             "link_label": "",
@@ -311,8 +313,9 @@
         "16620107657f4c8cb8-1": {
           "type": "column",
           "settings": {
+            "border-radius": 0,
             "title": "THE BEST FALL FLAVORS",
-            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli</p>",
+            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
             "link_label": "Taste them all",
             "link": ""
           }
@@ -329,7 +332,6 @@
         "image_ratio": "adapt",
         "columns_desktop": 2,
         "column_alignment": "left",
-        "background_style": "primary",
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
@@ -342,7 +344,7 @@
     "16565128829058127c": {
       "type": "custom-liquid",
       "settings": {
-        "custom_liquid": "<div id=\"app\"></div>",
+        "custom_liquid": "<div id=\"app\"><\/div>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 52
@@ -350,7 +352,7 @@
     }
   },
   "order": [
-    "1661866908d2a14ae1",
+    "1662998975e02c9045",
     "image_banner",
     "rich_text",
     "featured_collection",
