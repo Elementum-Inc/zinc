@@ -58,8 +58,8 @@
                   <thead role="rowgroup">
                     <tr role="row">
                       <th id="CartDrawer-ColumnProductImage" role="columnheader"><span class="visually-hidden">{{ 'sections.cart.headings.image' | t }}</span></th>
-                      <th id="CartDrawer-ColumnProduct" class="caption-with-letter-spacing" scope="col" role="columnheader">{{ 'sections.cart.headings.product' | t }}</th>
-                      <th id="CartDrawer-ColumnTotal" class="right caption-with-letter-spacing" scope="col" role="columnheader">{{ 'sections.cart.headings.total' | t }}</th>
+                      <th id="CartDrawer-ColumnProduct" class="caption-spaced" scope="col" role="columnheader">{{ 'sections.cart.headings.product' | t }}</th>
+                      <th id="CartDrawer-ColumnTotal" class="right caption-spaced" scope="col" role="columnheader">{{ 'sections.cart.headings.total' | t }}</th>
                       <th id="CartDrawer-ColumnQuantity" role="columnheader"><span class="visually-hidden">{{ 'sections.cart.headings.quantity' | t }}</span></th>
                     </tr>
                   </thead>
@@ -83,7 +83,7 @@
 
                         <td class="cart-item__details" role="cell" headers="CartDrawer-ColumnProduct">
                           {%- if settings.show_vendor -%}
-                            <p class="caption-with-letter-spacing light">{{ item.product.vendor }}</p>
+                            <p class="caption-spaced light">{{ item.product.vendor }}</p>
                           {%- endif -%}
 
                           <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
