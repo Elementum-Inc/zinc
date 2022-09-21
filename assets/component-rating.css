@@ -9,8 +9,8 @@
 }
 
 .card-wrapper .rating-star {
-  --letter-spacing: 0.7;
-  --font-size: 1.4;
+  --letter-spacing: 0.25;
+  --font-size: 1.5;
 }
 
 .rating-star {
@@ -34,7 +34,7 @@
   background: linear-gradient(
     90deg,
     var(--color-icon) var(--percent),
-    rgba(var(--color-foreground), 0.15) var(--percent)
+    rgb(var(--color-foreground) / 0.15) var(--percent)
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

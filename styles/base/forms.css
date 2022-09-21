@@ -1,0 +1,30 @@
+.field {
+  &__input {
+    @apply h-12 border border-bg2 cursor-pointer py-2 px-4 text-sm;
+
+    &:focus,
+    &:not(:placeholder-shown) {
+      @apply py-2 px-4;
+
+      ~ .field__label {
+        @apply text-xs -top-4 left-4;
+      }
+    }
+  }
+
+  &__label {
+    @apply text-base leading-4 left-4;
+  }
+}
+
+.select {
+  @apply relative flex;
+
+  &__select {
+    @apply h-10 border border-bg2 cursor-pointer leading-4 py-2 px-4;
+  }
+
+  & .icon-caret {
+    @apply right-4;
+  }
+}

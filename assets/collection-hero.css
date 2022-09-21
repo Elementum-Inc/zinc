@@ -10,6 +10,8 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: 1rem;
 }
 @media (min-width: 480px) {
@@ -40,12 +42,6 @@
 @media (min-width: 1536px) {
   .collection-hero__text-wrapper {
     max-width: 1536px;
-  }
-}
-@media (max-width: 639.9px) {
-  .collection-hero__text-wrapper {
-    padding-left: 2rem;
-    padding-right: 2rem;
   }
 }
 .collection-hero__title, .collection-hero__subtitle {

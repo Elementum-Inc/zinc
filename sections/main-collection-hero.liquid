@@ -15,7 +15,7 @@
   assign blocksLength = section.blocks | size
 %}
 
-<div class="collection-hero{% if collectionImageAvailable %} has-image{% endif %} {{ section.settings.color_scheme }}">
+<div class="collection-hero{% if collectionImageAvailable %} has-image{% endif %} {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }}">
   <div class="collection-hero__inner">
     {%- if collectionImageAvailable -%}
       <div class="collection-hero__image-wrapper">
@@ -178,7 +178,7 @@
           "type": "text",
           "id": "title",
           "label": "Alternate title",
-          "info": "If an alternate title is used and \"Show Collection Title\" is enabled, the collection title will minimize as a subtitle."
+          "info": "If an alternate title is used and \"Show Collection Title\" is enabled, the collection title will minimize as a subtitle. For best results, keep under 255 characters."
         }
       ],
       "limit": 1
@@ -190,7 +190,8 @@
         {
           "type": "text",
           "id": "title",
-          "label": "Subtitle"
+          "label": "Subtitle",
+          "info": "For best results, keep under 255 characters."
         }
       ],
       "limit": 1

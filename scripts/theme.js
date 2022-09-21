@@ -1,14 +1,24 @@
+// Windi import
 import 'virtual:windi.css';
+
+// Globals
 import '../styles/theme.css';
 import '../styles/base/typography.css';
+import '../styles/base/colors.css';
 import '../styles/base/icons.css';
 import '../styles/base/buttons.css';
+import '../styles/base/forms.css';
 import '../styles/base/animations.css';
 import '../styles/layout/header.css';
-import '../styles/snippets/cards.css';
 
+// Snippets
+import('../styles/snippets/cards.css');
+import('../styles/snippets/price.css');
+
+// By page
 if (window.location.href.includes('/collection/')) {
   import('../styles/sections/collection-hero.css');
+  import('../styles/snippets/facets.css');
 }
 
 import 'vite/modulepreload-polyfill';
@@ -47,7 +57,6 @@ const searchProps = {
   predictiveShowArticles: window.themeSettings.predictive_search_show_articles,
   iconSize: window.themeSettings.icon_size,
   iconStrokeWidth: window.themeSettings.icon_stroke_width,
-  cardStyle: window.themeSettings.card_style,
   cardAlignment: window.themeSettings.card_text_alignment,
   cardColorScheme: window.themeSettings.card_color_scheme,
   cardBorder: window.themeSettings.card_border,
@@ -64,24 +73,26 @@ createApp(MegaMenu, menuProps).mount(megamenuMount);
 createApp(SearchMenu, searchProps).mount(searchMount);
 
 document.addEventListener('DOMContentLoaded', () => {
-  const header = document.querySelector('#shopify-section-header');
-  var ticking = false;
-
-  document.addEventListener('scroll', () => {
-    var yPos = window.scrollY;
+  if (megamenuSettings.enable_sticky_header) {
+    const header = document.querySelector('#shopify-section-header');
+    var ticking = false;
   
-    if (!ticking) {
-      window.requestAnimationFrame(() => {
-        if (yPos < window.innerHeight) {
-          header.classList.remove('sticky');
-        } else {
-          header.classList.add('sticky');
-        }
-
-        ticking = false;
-      });
+    document.addEventListener('scroll', () => {
+      var yPos = window.scrollY;
+    
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          if (yPos < window.innerHeight) {
+            header.classList.remove('sticky');
+          } else {
+            header.classList.add('sticky');
+          }
   
-      ticking = true;
-    }
-  });
+          ticking = false;
+        });
+    
+        ticking = true;
+      }
+    });
+  }
 });

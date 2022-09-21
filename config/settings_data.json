@@ -1,8 +1,8 @@
 {
   "current": {
     "colors_text": "#121212",
-    "colors_primary": "#ffffff",
-    "colors_secondary": "#121212",
+    "colors_background_1": "#ffffff",
+    "colors_background_2": "#121212",
     "colors_accent_1": "#074169",
     "colors_accent_2": "#d69940",
     "type_header_font": "playfair_display_n4",
@@ -10,8 +10,8 @@
     "icon_size": 24,
     "page_width": 1200,
     "spacing_sections": 0,
-    "spacing_grid_horizontal": 8,
-    "spacing_grid_vertical": 8,
+    "spacing_grid_horizontal": 20,
+    "spacing_grid_vertical": 40,
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
     "buttons_radius": 0,
@@ -35,10 +35,12 @@
     "inputs_shadow_blur": 5,
     "card_style": "standard",
     "card_text_alignment": "center",
-    "card_color_scheme": "primary",
+    "card_color_scheme": "secondary",
     "card_corner_radius": 0,
-    "card_image_aspect": "sportrait",
+    "card_image_aspect": "square",
     "card_image_fit": "cover",
+    "card_hover_animation": "zoom",
+    "card_hover_show_info": false,
     "text_boxes_border_thickness": 0,
     "text_boxes_border_opacity": 10,
     "text_boxes_radius": 0,
@@ -62,14 +64,14 @@
     "popup_shadow_blur": 5,
     "drawer_border_thickness": 1,
     "drawer_border_opacity": 10,
-    "drawer_shadow_opacity": 0,
+    "drawer_shadow_opacity": 100,
     "drawer_shadow_horizontal_offset": 0,
-    "drawer_shadow_vertical_offset": 4,
+    "drawer_shadow_vertical_offset": 2,
     "drawer_shadow_blur": 5,
-    "badge_position": "bottom left",
-    "badge_corner_radius": 40,
-    "sale_badge_color_scheme": "accent-2",
-    "sold_out_badge_color_scheme": "inverse",
+    "badge_position": "top left",
+    "badge_corner_radius": 0,
+    "sale_badge_color_scheme": "background-1",
+    "sold_out_badge_color_scheme": "warning",
     "social_twitter_link": "",
     "social_facebook_link": "",
     "social_pinterest_link": "",
@@ -123,14 +125,14 @@
             "type": "image_content",
             "settings": {
               "title": "shop",
-              "image": "shopify://shop_images/fall-vegetable-box.jpg",
+              "image": "shopify:\/\/shop_images\/fall-vegetable-box.jpg",
               "content_title": "Newest Arrivals",
               "content_subtitle": "Check out our latest fall fashion.",
-              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.</p>",
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.<\/p>",
               "primary_button_text": "Shop Now",
-              "primary_button_url": "shopify://collections",
+              "primary_button_url": "shopify:\/\/collections",
               "secondary_button_text": "Read our trend blog",
-              "secondary_button_url": "shopify://blogs/news"
+              "secondary_button_url": "shopify:\/\/blogs\/news"
             }
           },
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
@@ -155,7 +157,7 @@
           "logo_position": "top-center",
           "menu": "main-menu",
           "collapse_menu_desktop": true,
-          "enable_sticky_header": true,
+          "enable_sticky_header": false,
           "mm_color_scheme": "primary",
           "mm_type": "bold",
           "mm_mobile_links": "mobile-links-example",
@@ -174,28 +176,34 @@
             "type": "link_list",
             "settings": {
               "heading": "Quick links",
-              "menu": "footer"
+              "display_logo": false,
+              "menu": "footer",
+              "menu_column_span": 1
             }
           },
           "footer-1": {
             "type": "link_list",
             "settings": {
               "heading": "Info",
-              "menu": "footer"
+              "display_logo": false,
+              "menu": "footer",
+              "menu_column_span": 1
             }
           },
           "footer-2": {
             "type": "text",
             "settings": {
               "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>",
+              "text_column_span": 1
             }
           },
           "footer-3": {
             "type": "text",
             "settings": {
               "heading": "Money stuff",
-              "subtext": "<p> there should be a currency selector here </p>"
+              "subtext": "<p> there should be a currency selector here <\/p>",
+              "text_column_span": 1
             }
           }
         },
@@ -207,13 +215,19 @@
         ],
         "settings": {
           "color_scheme": "background-1",
+          "column_count": "4",
+          "large_logo_width": 500,
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
           "show_social": true,
+          "show_social_icon": false,
+          "show_social_text": false,
+          "social_location": "below",
           "enable_language_selector": false,
           "margin_top": 48,
           "padding_top": 36,
           "padding_bottom": 36,
+          "show_poweredbyshopify": true,
           "payment_enable": true
         }
       },
@@ -236,18 +250,13 @@
     ]
   },
   "presets": {
-    "Default": {
-      "colors_solid_button_labels": "#ffffff",
-      "colors_accent_1": "#121212",
-      "gradient_accent_1": "",
-      "colors_accent_2": "#334fb4",
-      "gradient_accent_2": "",
+    "Classic": {
       "colors_text": "#121212",
-      "colors_outline_button_labels": "#121212",
       "colors_background_1": "#ffffff",
-      "gradient_background_1": "",
-      "colors_background_2": "#f3f3f3",
-      "gradient_background_2": "",
+      "colors_background_2": "#121212",
+      "colors_foreground": "#f3f3f3",
+      "colors_accent_1": "#074169",
+      "colors_accent_2": "#d69940",
       "type_header_font": "assistant_n4",
       "heading_scale": 100,
       "type_body_font": "assistant_n4",
@@ -389,7 +398,7 @@
               "type": "text",
               "settings": {
                 "heading": "Our mission",
-                "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
               }
             }
           },
@@ -425,6 +434,22 @@
           }
         }
       }
+    },
+    "Muted": {
+      "colors_text": "#121212",
+      "colors_background_1": "#ffffff",
+      "colors_background_2": "#121212",
+      "colors_foreground": "#f3f3f3",
+      "colors_accent_1": "#074169",
+      "colors_accent_2": "#d69940"
+    },
+    "Vibrant": {
+      "colors_text": "#121212",
+      "colors_background_1": "#ffffff",
+      "colors_background_2": "#121212",
+      "colors_foreground": "#f3f3f3",
+      "colors_accent_1": "#074169",
+      "colors_accent_2": "#d69940"
     }
   }
 }

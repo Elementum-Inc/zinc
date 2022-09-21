@@ -6,7 +6,7 @@
   }
 
   &__text-wrapper {
-    @apply container <sm:(px-8) pt-4 mx-auto;
+    @apply container px-4 pt-4 mx-auto;
   }
 
   &__title,

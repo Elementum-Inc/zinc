@@ -18,15 +18,21 @@
       },
       {
         "type": "color",
-        "id": "colors_primary",
+        "id": "colors_background_1",
         "default": "#FFFFFF",
-        "label": "t:settings_schema.colors.settings.colors_primary.label"
+        "label": "t:settings_schema.colors.settings.colors_background_1.label"
       },
       {
         "type": "color",
-        "id": "colors_secondary",
+        "id": "colors_background_2",
         "default": "#121212",
-        "label": "t:settings_schema.colors.settings.colors_secondary.label"
+        "label": "t:settings_schema.colors.settings.colors_background_2.label"
+      },
+      {
+        "type": "color",
+        "id": "colors_foreground",
+        "default": "#F3F3F3",
+        "label": "t:settings_schema.colors.settings.colors_foreground.label"
       },
       {
         "type": "color",
@@ -42,15 +48,21 @@
       },
       {
         "type": "color",
-        "id": "colors_background_1",
-        "default": "#FFFFFF",
-        "label": "t:settings_schema.colors.settings.colors_background_1.label"
+        "id": "colors_success",
+        "default": "#029A9A",
+        "label": "t:settings_schema.colors.settings.colors_success.label"
       },
       {
         "type": "color",
-        "id": "colors_background_2",
-        "default": "#F3F3F3",
-        "label": "t:settings_schema.colors.settings.colors_background_2.label"
+        "id": "colors_warning",
+        "default": "#E9D66B",
+        "label": "t:settings_schema.colors.settings.colors_warning.label"
+      },
+      {
+        "type": "color",
+        "id": "colors_error",
+        "default": "#FD6565",
+        "label": "t:settings_schema.colors.settings.colors_error.label"
       }
     ]
   },
@@ -469,12 +481,12 @@
         "id": "card_color_scheme",
         "options": [
           {
-            "value": "primary",
-            "label": "t:sections.all.colors.primary.label"
+            "value": "background-1",
+            "label": "t:sections.all.colors.background_1.label"
           },
           {
-            "value": "secondary",
-            "label": "t:sections.all.colors.secondary.label"
+            "value": "background-2",
+            "label": "t:sections.all.colors.background_2.label"
           },
           {
             "value": "accent-1",
@@ -483,14 +495,6 @@
           {
             "value": "accent-2",
             "label": "t:sections.all.colors.accent_2.label"
-          },
-          {
-            "value": "background-1",
-            "label": "t:sections.all.colors.background_1.label"
-          },
-          {
-            "value": "background-2",
-            "label": "t:sections.all.colors.background_2.label"
           }
         ],
         "default": "background-2",
@@ -571,20 +575,16 @@
         "id": "card_hover_animation",
         "options": [
           {
-            "value": "blur",
-            "label": "Blur"
-          },
-          {
-            "value": "round",
-            "label": "Round"
+            "value": "lift",
+            "label": "Lift"
           },
           {
             "value": "zoom",
             "label": "Zoom"
           }
         ],
-        "default": "blur",
-        "label": "Image Fit"
+        "default": "zoom",
+        "label": "Animation style"
       },
       {
         "type": "checkbox",
@@ -952,16 +952,24 @@
         "type": "range",
         "id": "badge_corner_radius",
         "min": 0,
-        "max": 40,
+        "max": 36,
         "step": 2,
         "unit": "px",
         "label": "t:settings_schema.global.settings.corner_radius.label",
-        "default": 40
+        "default": 0
       },
       {
         "type": "select",
         "id": "sale_badge_color_scheme",
         "options": [
+          {
+            "value": "background-1",
+            "label": "t:sections.all.colors.background_1.label"
+          },
+          {
+            "value": "background-2",
+            "label": "t:sections.all.colors.background_2.label"
+          },
           {
             "value": "accent-1",
             "label": "t:sections.all.colors.accent_1.label"
@@ -971,8 +979,8 @@
             "label": "t:sections.all.colors.accent_2.label"
           },
           {
-            "value": "background-2",
-            "label": "t:sections.all.colors.background_2.label"
+            "value": "success",
+            "label": "t:sections.all.colors.success.label"
           }
         ],
         "default": "accent-2",
@@ -983,15 +991,15 @@
         "id": "sold_out_badge_color_scheme",
         "options": [
           {
-            "value": "background-1",
-            "label": "t:sections.all.colors.background_1.label"
+            "value": "warning",
+            "label": "t:sections.all.colors.warning.label"
           },
           {
-            "value": "inverse",
-            "label": "t:sections.all.colors.inverse.label"
+            "value": "error",
+            "label": "t:sections.all.colors.error.label"
           }
         ],
-        "default": "inverse",
+        "default": "error",
         "label": "t:settings_schema.badges.settings.sold_out_badge_color_scheme.label"
       }
     ]

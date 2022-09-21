@@ -548,19 +548,19 @@ table:not([class]) th {
   display: none !important;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 767px) {
   .small-hide {
     display: none !important;
   }
 }
 
-@media screen and (min-width: 750px) and (max-width: 989px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .medium-hide {
     display: none !important;
   }
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .large-up-hide {
     display: none !important;
   }
@@ -984,7 +984,7 @@ summary::-webkit-details-marker {
 }
 
 /* component-grid */
-.grid {
+.shopify-grid {
   display: flex;
   flex-wrap: wrap;
   margin-bottom: 2rem;
@@ -995,7 +995,7 @@ summary::-webkit-details-marker {
 }
 
 @media screen and (min-width: 750px) {
-  .grid {
+  .shopify-grid {
     column-gap: var(--grid-desktop-horizontal-spacing);
     row-gap: var(--grid-desktop-vertical-spacing);
   }
@@ -1019,7 +1019,7 @@ summary::-webkit-details-marker {
   }
 }
 
-.grid--gapless.grid {
+.grid--gapless.shopify-grid {
   column-gap: 0;
   row-gap: 0;
 }
@@ -1657,7 +1657,7 @@ details[open] > .share-button__fallback {
   min-height: calc(var(--inputs-border-width) * 2);
   min-width: calc(7rem + (var(--inputs-border-width) * 2));
   position: relative;
-  border: 0;
+  /* border: 0; */
 }
 
 .field:before,
@@ -1816,7 +1816,7 @@ details[open] > .share-button__fallback {
 .customer .field input:-webkit-autofill ~ label {
   font-size: 1rem;
   top: calc(var(--inputs-border-width) + 0.5rem);
-  left: calc(var(--inputs-border-width) + 2rem);
+  left: calc(var(--inputs-border-width) + 0.5rem);
   letter-spacing: 0.04rem;
 }
 
@@ -2841,7 +2841,7 @@ details-disclosure > details {
 
 /* check for flexbox gap in older Safari versions */
 @supports not (inset: 10px) {
-  .grid {
+  .shopify-grid {
     margin-left: calc(-1 * var(--grid-mobile-horizontal-spacing));
   }
 
@@ -2851,7 +2851,7 @@ details-disclosure > details {
   }
 
   @media screen and (min-width: 750px) {
-    .grid {
+    .shopify-grid {
       margin-left: calc(-1 * var(--grid-desktop-horizontal-spacing));
     }
 

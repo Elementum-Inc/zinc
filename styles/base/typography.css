@@ -47,3 +47,26 @@ p {
 p.small {
   @apply text-sm leading-160;
 }
+
+.caption {
+  @apply text-xs md:text-base leading-normal;
+
+  &-spaced {
+    @apply text-xs leading-tight uppercase;
+    letter-spacing: .075rem;
+
+    &--medium {
+      @apply text-sm;
+      letter-spacing: .1rem;
+    }
+
+    &--large {
+      @apply text-lg;
+      letter-spacing: .125rem;
+    }
+  }
+
+  &-large {
+    @apply text-base leading-normal;
+  }
+}

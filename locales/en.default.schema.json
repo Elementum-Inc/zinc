@@ -95,11 +95,14 @@
         "colors_text": {
           "label": "Text"
         },
-        "colors_primary": {
-          "label": "Primary"
+        "colors_background_1": {
+          "label": "Background 1"
         },
-        "colors_secondary": {
-          "label": "Secondary"
+        "colors_background_2": {
+          "label": "Background 2"
+        },
+        "colors_foreground": {
+          "label": "Foreground"
         },
         "colors_accent_1": {
           "label": "Accent 1"
@@ -107,11 +110,14 @@
         "colors_accent_2": {
           "label": "Accent 2"
         },
-        "colors_background_1": {
-          "label": "Background 1"
+        "colors_success": {
+          "label": "Success"
         },
-        "colors_background_2": {
-          "label": "Background 2"
+        "colors_warning": {
+          "label": "Warning"
+        },
+        "colors_error": {
+          "label": "Error"
         }
       }
     },
@@ -305,11 +311,14 @@
       },
       "spacing": "Spacing",
       "colors": {
-        "primary": {
-          "label": "Primary"
+        "background_1": {
+          "label": "Background 1"
         },
-        "secondary": {
-          "label": "Secondary"
+        "background_2": {
+          "label": "Background 2"
+        },
+        "foreground": {
+          "label": "Foreground"
         },
         "accent_1": {
           "label": "Accent 1"
@@ -317,11 +326,14 @@
         "accent_2": {
           "label": "Accent 2"
         },
-        "background_1": {
-          "label": "Background 1"
+        "success": {
+          "label": "Success"
         },
-        "background_2": {
-          "label": "Background 2"
+        "warning": {
+          "label": "Warning"
+        },
+        "error": {
+          "label": "Error"
         },
         "label": "Color scheme",
         "has_cards_info": "To change the card color scheme, update your theme settings."
@@ -1385,15 +1397,18 @@
         "filter_type": {
           "label": "Desktop filter layout",
           "options__1": {
-            "label": "Horizontal"
+            "label": "Top"
           },
           "options__2": {
-            "label": "Vertical"
+            "label": "Left"
           },
           "options__3": {
-            "label": "Drawer"
+            "label": "Right"
           },
-          "info": "Drawer is the default mobile layout."
+          "options__4": {
+            "label": "Collapsed"
+          },
+          "info": "Mobile will collapse by default."
         },
         "enable_sorting": {
           "label": "Enable sorting"
@@ -1412,6 +1427,9 @@
         },
         "show_secondary_image": {
           "label": "Show second image on hover"
+        },
+        "show_price": {
+          "label": "Show price"
         },
         "show_vendor": {
           "label": "Show vendor"

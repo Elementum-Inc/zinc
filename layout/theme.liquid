@@ -61,12 +61,14 @@
         --font-heading-size: {{ settings.heading_size }};
 
         --color-text: {{ settings.colors_text.red }} {{ settings.colors_text.green }} {{ settings.colors_text.blue }};
-        --color-primary: {{ settings.colors_primary.red }} {{ settings.colors_primary.green }} {{ settings.colors_primary.blue }};
-        --color-secondary: {{ settings.colors_secondary.red }} {{ settings.colors_secondary.green }} {{ settings.colors_secondary.blue }};
-        --color-accent-1: {{ settings.colors_accent_1.red }} {{ settings.colors_accent_1.green }} {{ settings.colors_accent_1.blue }};
-        --color-accent-2: {{ settings.colors_accent_2.red }} {{ settings.colors_accent_2.green }} {{ settings.colors_accent_2.blue }};
         --color-background-1: {{ settings.colors_background_1.red }} {{ settings.colors_background_1.green }} {{ settings.colors_background_1.blue }};
         --color-background-2: {{ settings.colors_background_2.red }} {{ settings.colors_background_2.green }} {{ settings.colors_background_2.blue }};
+        --theme-foreground: {{ settings.colors_foreground.red }} {{ settings.colors_foreground.green }} {{ settings.colors_foreground.blue }};
+        --color-accent-1: {{ settings.colors_accent_1.red }} {{ settings.colors_accent_1.green }} {{ settings.colors_accent_1.blue }};
+        --color-accent-2: {{ settings.colors_accent_2.red }} {{ settings.colors_accent_2.green }} {{ settings.colors_accent_2.blue }};
+        --color-success: {{ settings.colors_success.red }} {{ settings.colors_success.green }} {{ settings.colors_success.blue }};
+        --color-warning: {{ settings.colors_warning.red }} {{ settings.colors_warning.green }} {{ settings.colors_warning.blue }};
+        --color-error: {{ settings.colors_error.red }} {{ settings.colors_error.green }} {{ settings.colors_error.blue }};
 
         --media-padding: {{ settings.media_padding }}px;
         --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
@@ -92,7 +94,7 @@
         --card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
         --card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
 
-        --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
+        --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 16.0 }}rem;
 
         --popup-border-width: {{ settings.popup_border_thickness }}px;
         --popup-border-opacity: {{ settings.popup_border_opacity | divided_by: 100.0 }};

@@ -12,51 +12,67 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
 }
 
 .btn {
-  @apply inline-block py-xs px-8;
-
   &.primary {
-    @apply bg-primary text-secondary;
+    --button-bg: theme('colors.scheme-bg');
+    --button-fg: theme('colors.scheme-accent');
   }
-
+  
   &.secondary {
-    @apply bg-secondary text-primary;
+    --button-bg: theme('colors.scheme-accent');
+    --button-fg: theme('colors.scheme-bg');
   }
-
+  
+  &-background-1 {
+    --button-bg: theme('colors.bg1');
+    --button-fg: theme('colors.text');
+  }
+  
+  &-background-2 {
+    --button-bg: theme('colors.bg2');
+    --button-fg: theme('colors.bg1');
+  }
+  
+  &-accent-1 {
+    --button-bg: theme('colors.accent1');
+    --button-fg: theme('colors.bg1');
+  }
+  
+  &-accent-2 {
+    --button-bg: theme('colors.accent2');
+    --button-fg: theme('colors.bg1');
+  }
+  
+  &-success {
+    --button-bg: theme('colors.success');
+    --button-fg: theme('colors.bg1');
+  }
+  
+  &-warning {
+    --button-bg: theme('colors.warning');
+    --button-fg: theme('colors.bg1');
+  }
+  
+  &-error {
+    --button-bg: theme('colors.error');
+    --button-fg: theme('colors.bg1');
+  }
+  
   &.round {
     @apply rounded-[.625rem];
   }
+  @apply inline-block py-xs px-8 bg-button-bg text-button-fg;
 }
 
 .btn-outline {
-  @apply border;
-
-  &.primary {
-    @apply border-secondary;
-  }
-
-  &.secondary {
-    @apply border-primary;
-  }
+  @apply border border-button-fg;
 }
 
 .btn-shadow {
   @apply relative;
 
   &::after {
-    @apply block absolute top-[6px] left-[6px] -z-1 h-full w-full;
+    @apply block absolute top-[6px] left-[6px] -z-1 h-full w-full border border-button-fg;
     border-radius: inherit;
     content: '';
-  }
-
-  &.primary {
-    &::after {
-      @apply border border-primary;
-    }
-  }
-
-  &.secondary {
-    &::after {
-      @apply border border-secondary;
-    }
   }
 }

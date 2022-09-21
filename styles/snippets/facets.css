@@ -1,0 +1,278 @@
+.facets-container {
+  @apply <md:(px-4 container m-auto);
+
+  &-drawer {
+    @apply px-4 container m-auto;
+
+    & .mobile-facets__wrapper {
+      @apply flex-grow;
+    }
+
+    & .facet-filters__label,
+    & .product-count__text {
+      @apply font-serif;
+    }
+
+    & .facets-pill {
+      @apply mt-2;
+    }
+  }
+}
+
+.mobile-facets {
+  @apply fixed top-0 bottom-0 left-0 right-0 z-100;
+
+  &__wrapper {
+    @apply block;
+  }
+
+  &__open {
+    @apply flex items-center w-full py-2 pr-2 text-left;
+
+    &-label {
+      @apply font-serif text-lg ml-2;
+    }
+  }
+
+  &__inner {
+    @apply bg-bg1 flex flex-col w-full max-w-xl h-full filter drop-shadow-drawer;
+  }
+
+  &__header {
+    @apply sticky top-0 z-2 flex py-4 px-8 text-center;
+  }
+
+  &__heading {
+    @apply font-serif text-1.375rem md:text-3xl;
+  }
+
+  &__count {
+    @apply text-xs md:text-base mt-2;
+  }
+
+  &__main {
+    @apply relative flex flex-col flex-1 z-1 overflow-y-auto py-4 divide-y divide-bg2;
+  }
+
+  &__summary {
+    @apply font-serif text-lg py-4 px-8;
+  }
+
+  &__info {
+    @apply px-8;
+  }
+
+  &__close-button {
+    @apply flex items-center w-full font-serif text-lg mt-4 mb-2 py-2 px-8;
+  }
+
+  &__label {
+    @apply py-2 px-8;
+
+    .icon-checkmark {
+      @apply top-1/2 transform -translate-y-1/2 left-8 ml-[.3rem];
+    }
+  }
+
+  &__sort {
+    & .select {
+      @apply flex-1 ml-4;
+
+      &__select {
+        @apply pr-8;
+      }
+    }
+  }
+
+  &__clear {
+    @apply w-full text-center;
+  }
+}
+
+.facets {
+  &.top {
+    @apply border-t border-b border-bg2;
+
+    & .facets__heading,
+    & .facet-filters__label {
+      @apply sr-only;
+    }
+
+    & .facets__summary,
+    & .active-facets__button-wrapper *,
+    & span.active-facets__button-inner,
+    & .product-count__text {
+      @apply font-serif;
+    }
+
+    & .facets__form {
+      @apply container px-4 m-auto flex justify-center;
+    }
+
+    & .facets__disclosure {
+      @apply p-4 border-r border-bg2;
+
+      &:first-of-type {
+        @apply border-l;
+      }
+    }
+
+    & .facets__summary {
+      @apply pr-8 text-lg;
+    }
+
+    & .facets__display {
+      @apply bg-bg1 top-full -left-px;
+    }
+
+    & .facets__header {
+      @apply font-serif pb-2;
+
+      &-price {
+        @apply justify-end;
+      }
+
+      & .link {
+        @apply text-lg;
+      }
+    }
+
+    & .facets__list {
+      @apply px-8 py-4;
+    }
+
+    & .facets__price {
+      @apply pb-2;
+
+      & ~ .facets__info {
+        @apply px-8 pb-4;
+      }
+    }
+
+    & .facet-filters {
+      @apply pl-0 border-r border-bg2;
+
+      &__field {
+        @apply h-full;
+      }
+
+      & .select__select {
+        @apply border-0 font-serif text-lg pr-10;
+      }
+    }
+
+    & ~ .facets-pill {
+      @apply container px-4 m-auto mt-2 flex items-top justify-between;
+
+      & .product-count {
+        @apply mt-2;
+      }
+    }
+  }
+
+  &-vertical {
+    @apply container px-4 pt-8 m-auto;
+
+    &.facets-right {
+      @apply flex-row-reverse;
+
+      & .facets-wrapper {
+        @apply md:(pr-0 pl-8) lg:pl-10;
+      }
+    }
+
+    &-sort {
+      @apply container px-4 m-auto;
+    }
+
+    & .facets-wrapper {
+      @apply md:(min-w-1/2 w-1/2 pr-8) lg:(min-w-1/3 w-1/3) xl:(min-w-1/4 w-1/4 pr-10);
+    }
+
+    & .facets__heading {
+      @apply text-lg font-semibold uppercase mb-4;
+    }
+
+    & .facets__summary {
+      @apply text-lg uppercase border-b-2 border-bg2 py-1;
+    }
+
+    & .facets__display-vertical {
+      @apply pt-2 pb-4;
+    }
+
+    & .facets__price {
+      @apply pt-8 pb-2;
+    }
+
+    &-form.facets-right {
+      @apply justify-start;
+
+      .facet-filters {
+        @apply pl-0;
+      }
+    }
+  }
+
+  &-container,
+  &-wrapper {
+    & .product-count {
+      @apply text-right ml-8;
+
+      &__text {
+        @apply text-base lg:text-lg;
+      }
+    }
+  }
+
+  &__header {
+    @apply text-lg;
+
+    &-vertical {
+      @apply text-base py-2;
+    }
+  }
+
+  &__price {
+    @apply pt-8 pb-2 px-8;
+
+    & ~ .mobile-facets__info,
+    & ~ .facets__info {
+      @apply text-xs text-right mb-2;
+    }
+  }
+}
+
+.facet-filters {
+  &__label {
+    @apply text-lg mr-4;
+  }
+}
+
+.facet-checkbox {
+  @apply text-base py-2;
+
+  & input[type='checkbox'] {
+    @apply w-[1.75rem] h-[1.75rem] left-0 top-1/2 transform -translate-y-1/2;
+  }
+
+  & .icon-checkmark {
+    @apply top-1/2 transform -translate-y-1/2 left-0 ml-[.3rem];
+  }
+}
+
+.active-facets {
+  @apply flex flex-wrap items-center;
+
+  > * {
+    @apply my-1;
+
+    &:not(:last-child) {
+      @apply mr-2;
+    }
+  }
+
+  > .active-facets__button-wrapper {
+    @apply ml-4;
+  }
+}

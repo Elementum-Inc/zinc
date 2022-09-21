@@ -1,0 +1,38 @@
+.color-scheme {
+  &--background-1 {
+    --color-scheme-fg: theme('colors.bg2');
+    --color-scheme-fgRGB: theme('colors.bg2RGB');
+    --color-scheme-bg: theme('colors.bg1');
+    --color-scheme-bgRGB: theme('colors.bg1RGB');
+    --color-scheme-text: theme('colors.text');
+    --color-scheme-accent: theme('colors.bg2');
+    --color-scheme-accentRGB: theme('colors.bg2RGB');
+  }
+  &--background-2 {
+    --color-scheme-fg: theme('colors.bg1');
+    --color-scheme-fgRGB: theme('colors.bg1RGB');
+    --color-scheme-bg: theme('colors.bg2');
+    --color-scheme-bgRGB: theme('colors.bg2RGB');
+    --color-scheme-text: theme('colors.bg1');
+    --color-scheme-accent: theme('colors.bg1');
+    --color-scheme-accentRGB: theme('colors.bg1RGB');
+  }
+  &--accent-1 {
+    --color-scheme-fg: theme('colors.bg2');
+    --color-scheme-fgRGB: theme('colors.bg2RGB');
+    --color-scheme-bg: theme('colors.accent1');
+    --color-scheme-bgRGB: theme('colors.accent1RGB');
+    --color-scheme-text: theme('colors.bg1');
+    --color-scheme-accent: theme('colors.bg1');
+    --color-scheme-accentRGB: theme('colors.bg1RGB');
+  }
+  &--accent-2 {
+    --color-scheme-fg: theme('colors.bg2');
+    --color-scheme-fgRGB: theme('colors.bg2RGB');
+    --color-scheme-bg: theme('colors.accent2');
+    --color-scheme-bgRGB: theme('colors.accent2RGB');
+    --color-scheme-text: theme('colors.bg1');
+    --color-scheme-accent: theme('colors.bg1');
+    --color-scheme-accentRGB: theme('colors.bg1RGB');
+  }
+}
