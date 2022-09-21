@@ -101,34 +101,34 @@
 
 {% schema %}
 {
-  "name":"Cart Footer",
-  "class":"cart__footer-wrapper",
-  "settings":[
+  "name": "Cart Footer",
+  "class": "cart__footer-wrapper",
+  "settings": [
     {
-      "type":"text",
-      "id":"note_label",
-      "label":"Cart note label",
-      "default":"Leave a note with your order"
+      "type": "text",
+      "id": "note_label",
+      "label": "Cart note label",
+      "default": "Leave a note with your order"
     },
     {
-      "type":"checkbox",
-      "id":"enable_note",
-      "label":"Enable cart note"
+      "type": "checkbox",
+      "id": "enable_note",
+      "label": "Enable cart note"
     }
   ],
-  "blocks":[
+  "blocks": [
     {
-      "type":"subtotal",
-      "name":"t:sections.main-cart-footer.blocks.subtotal.name",
-      "limit":1
+      "type": "subtotal",
+      "name": "t:sections.main-cart-footer.blocks.subtotal.name",
+      "limit": 1
     },
     {
-      "type":"buttons",
-      "name":"t:sections.main-cart-footer.blocks.buttons.name",
-      "limit":1
+      "type": "buttons",
+      "name": "t:sections.main-cart-footer.blocks.buttons.name",
+      "limit": 1
     },
     {
-      "type":"@app"
+      "type": "@app"
     }
   ]
 }
