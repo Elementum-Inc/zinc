@@ -11,13 +11,17 @@
 }
 
 .header {
-  @apply relative flex flex-wrap justify-between bg-primary text-secondary px-4 md:px-8;
+  @apply relative flex flex-wrap justify-between bg-bg1 text-bg2 px-4 md:px-8;
 
   &.secondary {
-    @apply bg-secondary text-primary;
+    @apply bg-bg2 text-bg1;
+
+    & .logo__fallback {
+      @apply text-bg1;
+    }
 
     & .icon > svg {
-      @apply stroke-primary;
+      @apply stroke-bg1;
     }
   }
 
@@ -153,30 +157,30 @@
 
     &-collapsed {
       &.primary {
-        @apply bg-primary text-secondary;
+        @apply bg-bg1 text-bg2;
 
         & .submenu__top-link,
         & .submenu__level1,
         & .submenu__level2 {
-          @apply bg-primary;
+          @apply bg-bg1;
         }
 
         & .icon > svg {
-          @apply stroke-secondary;
+          @apply stroke-bg2;
         }
       }
 
       &.secondary {
-        @apply bg-secondary text-primary;
+        @apply bg-bg2 text-bg1;
 
         & .submenu__top-link,
         & .submenu__level1,
         & .submenu__level2 {
-          @apply bg-secondary;
+          @apply bg-bg2;
         }
 
         & .icon > svg {
-          @apply stroke-primary;
+          @apply stroke-bg1;
         }
       }
     }
@@ -211,7 +215,7 @@
 
     & .submenu {
       &__top-link {
-        @apply relative z-3 text-2.75 font-serif uppercase text-left w-full bg-primary pr-12;
+        @apply relative z-3 text-2.75 font-serif uppercase text-left w-full bg-bg1 pr-12;
       }
 
       &__links {
@@ -248,10 +252,10 @@
     @apply hidden lg:flex;
 
     &.collapsed {
-      @apply absolute top-full left-0 w-full bg-primary text-secondary;
+      @apply absolute top-full left-0 w-full bg-bg1 text-bg2;
 
       &.secondary {
-        @apply bg-secondary text-primary;
+        @apply bg-bg2 text-bg1;
       }
 
       & .header__menu-content {
@@ -261,7 +265,7 @@
   }
 
   &__menu-dropdown {
-    @apply absolute top-full bg-primary text-secondary w-1/4 px-6 py-4;
+    @apply absolute top-full bg-bg1 text-bg2 w-1/4 px-6 py-4;
 
     & .icon {
       svg {
@@ -274,14 +278,14 @@
     }
 
     &.primary .icon > svg {
-      @apply stroke-secondary;
+      @apply stroke-bg2;
     }
 
     &.secondary {
-      @apply bg-secondary text-primary;
+      @apply bg-bg2 text-bg1;
 
       & .icon > svg {
-        @apply stroke-primary;
+        @apply stroke-bg1;
       }
     }
 
@@ -292,7 +296,7 @@
         @apply relative flex items-center justify-between w-full px-2;
 
         & a::after {
-          @apply block h-[1px] w-0 bg-secondary transition-all duration-200 ease-in origin-left;
+          @apply block h-[1px] w-0 bg-bg2 transition-all duration-200 ease-in origin-left;
           content: '';
         }
       }
@@ -324,35 +328,35 @@
   }
 
   &__menu-content {
-    @apply absolute left-0 top-full min-h-[40vh] w-full flex bg-primary text-secondary;
+    @apply absolute left-0 top-full min-h-[40vh] w-full flex bg-bg1 text-bg2;
     max-height: calc(-100% + 100vh);
 
     & .icon > svg {
-      @apply stroke-secondary;
+      @apply stroke-bg2;
     }
 
     &.secondary {
-      @apply bg-secondary text-primary;
+      @apply bg-bg2 text-bg1;
 
       & .submenu-block.menu__toplink > button::after {
-        @apply bg-primary;
+        @apply bg-bg1;
       }
 
       & .icon > svg {
-        @apply stroke-primary;
+        @apply stroke-bg1;
       }
     }
   }
 
   & .submenu-block {
     &.menu {
-      @apply flex-grow min-w-1/3 px-4 bg-primary text-secondary;
+      @apply flex-grow min-w-1/3 px-4 bg-bg1 text-bg2;
 
       &.secondary {
-        @apply bg-secondary text-primary;
+        @apply bg-bg2 text-bg1;
 
         & .menu__level2 {
-          @apply border-primary;
+          @apply border-bg1;
         }
       }
 
@@ -373,7 +377,7 @@
         }
 
         & > button a::after {
-          @apply block bg-secondary h-[1px] w-0 transform-all duration-500 origin-left;
+          @apply block bg-bg2 h-[1px] w-0 transform-all duration-500 origin-left;
           content: '';
         }
 
@@ -525,14 +529,14 @@
     & .images-right,
     & .images-none {
       & .menu__level2 {
-        @apply border-l border-secondary;
+        @apply border-l border-bg2;
       }
     }
   }
 
   .bold {
     & .menu {
-      @apply bg-bg2 px-6 py-4 xl:(px-12 py-16);
+      @apply bg-fg px-6 py-4 xl:(px-12 py-16);
 
       &__inner {
         @apply min-w-full max-h-full overflow-auto;
@@ -590,7 +594,7 @@
         }
 
         & .menu__level2 {
-          @apply border border-secondary px-2 py-4;
+          @apply border border-bg2 px-2 py-4;
           border-radius: 0 0 2rem 2rem;
         }
       }
@@ -617,7 +621,7 @@
         @apply absolute bottom-12 right-12 w-full max-w-3/4 p-4;
 
         &::before {
-          @apply absolute top-0 left-0 h-full w-full bg-primary opacity-25 z-0;
+          @apply absolute top-0 left-0 h-full w-full bg-bg1 opacity-25 z-0;
           content: '';
         }
 
@@ -687,7 +691,7 @@
     }
 
     & svg {
-      @apply stroke-secondary fill-none;
+      @apply stroke-bg2 fill-none;
     }
 
     & .label {
@@ -715,10 +719,10 @@
   }
 
   &__popover {
-    @apply absolute left-0 w-full bg-primary text-secondary;
+    @apply absolute left-0 w-full bg-bg1 text-bg2;
 
     .secondary & {
-      @apply bg-secondary text-primary;
+      @apply bg-bg2 text-bg1;
     }
 
     &.over {
@@ -729,10 +733,10 @@
       }
 
       & .search__input {
-        @apply bg-bg2 border-b border-secondary basis-3/4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4;
+        @apply bg-bg2 border-b border-bg2 basis-3/4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4;
 
         .secondary & {
-          @apply bg-secondary border-primary;
+          @apply bg-bg2 border-bg1;
         }
       }
 
@@ -781,10 +785,10 @@
       }
 
       & .search__input {
-        @apply bg-primary flex-1;
+        @apply bg-bg1 flex-1;
 
         .secondary & {
-          @apply bg-secondary;
+          @apply bg-bg2;
         }
       }
 
@@ -871,10 +875,10 @@
     }
 
     &-tag {
-      @apply bg-secondary text-primary text-xs py-xs px-4 mb-4 mr-2;
+      @apply bg-bg2 text-bg1 text-xs py-xs px-4 mb-4 mr-2;
 
       .secondary & {
-        @apply bg-primary text-secondary;
+        @apply bg-bg1 text-bg2;
       }
     }
   }
@@ -886,11 +890,11 @@
       @apply md:text-lg mx-4;
 
       &::after {
-        @apply block h-[.125rem] bg-secondary w-0 transition-all duration-500 linear mt-2 md:mt-4;
+        @apply block h-[.125rem] bg-bg2 w-0 transition-all duration-500 linear mt-2 md:mt-4;
         content: '';
 
         .secondary & {
-          @apply bg-primary;
+          @apply bg-bg1;
         }
       }
 
@@ -915,10 +919,10 @@
   }
 
   &__more {
-    @apply sticky bottom-0 w-full container lg:container-md xl:container-lg py-4 md:py-8 mx-auto mt-12 lg:mt-16 text-center bg-primary text-secondary;
+    @apply sticky bottom-0 w-full container lg:container-md xl:container-lg py-4 md:py-8 mx-auto mt-12 lg:mt-16 text-center bg-bg1 text-bg2;
 
     .secondary & {
-      @apply bg-secondary text-primary;
+      @apply bg-bg2 text-bg1;
     }
 
     &::before {
@@ -957,10 +961,10 @@
     }
 
     & button {
-      @apply bg-secondary text-primary text-lg py-xs px-8;
+      @apply bg-bg2 text-bg1 text-lg py-xs px-8;
 
       .secondary & {
-        @apply bg-primary text-secondary;
+        @apply bg-bg1 text-bg2;
       }
     }
   }
