@@ -8,6 +8,7 @@
     --color-scheme-accent: theme('colors.bg2');
     --color-scheme-accentRGB: theme('colors.bg2RGB');
   }
+
   &--background-2 {
     --color-scheme-fg: theme('colors.bg1');
     --color-scheme-fgRGB: theme('colors.bg1RGB');
@@ -17,6 +18,7 @@
     --color-scheme-accent: theme('colors.bg1');
     --color-scheme-accentRGB: theme('colors.bg1RGB');
   }
+
   &--accent-1 {
     --color-scheme-fg: theme('colors.bg2');
     --color-scheme-fgRGB: theme('colors.bg2RGB');
@@ -26,6 +28,7 @@
     --color-scheme-accent: theme('colors.bg1');
     --color-scheme-accentRGB: theme('colors.bg1RGB');
   }
+
   &--accent-2 {
     --color-scheme-fg: theme('colors.bg2');
     --color-scheme-fgRGB: theme('colors.bg2RGB');
