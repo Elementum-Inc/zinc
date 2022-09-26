@@ -1,7 +1,51 @@
 .card {
+  border-radius: var(--card-corner-radius);
+  overflow: hidden;
   color: var(--color-scheme-text);
 }
-.card.lift:hover .card__inner, .card.lift:focus-within .card__inner {
+.card.lift:not(.card--info-hover):hover, .card.lift:not(.card--info-hover):focus-within {
+  overflow: visible;
+}
+.card.lift:not(.card--info-hover):hover .card__inner, .card.lift:not(.card--info-hover):focus-within .card__inner {
+  z-index: 1;
+  --tw-scale-x: 1.1;
+  --tw-scale-y: 1.1;
+  --tw-scale-z: 1.1;
+  --tw-rotate: -3deg;
+  --tw-blur: var(--tw-empty,/*!*/ /*!*/);
+  --tw-brightness: var(--tw-empty,/*!*/ /*!*/);
+  --tw-contrast: var(--tw-empty,/*!*/ /*!*/);
+  --tw-grayscale: var(--tw-empty,/*!*/ /*!*/);
+  --tw-hue-rotate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-invert: var(--tw-empty,/*!*/ /*!*/);
+  --tw-saturate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-sepia: var(--tw-empty,/*!*/ /*!*/);
+  --tw-drop-shadow: var(--tw-empty,/*!*/ /*!*/);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  --tw-drop-shadow: drop-shadow(0px 2px 8px #00000020);
+}
+.card.lift.card--info-hover {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-translate-z: 0;
+  --tw-rotate: 0;
+  --tw-rotate-x: 0;
+  --tw-rotate-y: 0;
+  --tw-rotate-z: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-scale-z: 1;
+  -webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
+  -ms-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
+  -webkit-transition-duration: 375ms;
+  -o-transition-duration: 375ms;
+  transition-duration: 375ms;
+}
+.card.lift.card--info-hover:hover, .card.lift.card--info-hover:focus-within {
   z-index: 1;
   --tw-scale-x: 1.1;
   --tw-scale-y: 1.1;
@@ -60,6 +104,7 @@
 }
 .card--info-hover.card--media .card__heading {
   opacity: 0;
+  --tw-translate-y: 100%;
 }
 .card--info-hover .card__heading {
   --tw-translate-x: 0;
@@ -77,7 +122,7 @@
   -webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
   -ms-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
   transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
-  --tw-translate-y: 100%;
+  --tw-translate-y: 50%;
   -webkit-transition-duration: 375ms;
   -o-transition-duration: 375ms;
   transition-duration: 375ms;
@@ -132,6 +177,9 @@
 }
 .card--info-hover:hover .card-information, .card--info-hover:focus-within .card-information {
   opacity: 1;
+}
+.card--info-hover .quick-add {
+  padding-top: 0.5rem;
 }
 .card--text .card__inner + .card__content {
   border-color: var(--color-scheme-accent);
@@ -217,8 +265,8 @@
 }
 .card-information {
   margin-bottom: 1rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 .card-information > * + * {
   margin-top: 0.25rem;
@@ -228,6 +276,7 @@
 }
 .card-information .caption-spaced {
   color: var(--color-scheme-text);
+  word-break: break-all;
 }
 .card-information .rating-star::before {
   background-image: linear-gradient(90deg, var(--color-scheme-accent) var(--percent), rgb(var(--color-scheme-accentRGB) / 0.15) var(--percent));
@@ -260,6 +309,6 @@
   padding-right: 1rem;
 }
 .card .quick-add {
-  margin: 0.5rem;
-  margin-bottom: 1rem;
+  margin: 1rem;
+  margin-top: 0px;
 }

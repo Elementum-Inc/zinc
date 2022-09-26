@@ -104,9 +104,9 @@
   padding-top: 20px;
 }
 
-.card--card .quick-add {
+/* .card--card .quick-add {
   margin: 0 1.3rem 1rem;
-}
+} */
 
 .quick-add-modal {
   box-sizing: border-box;
@@ -164,14 +164,6 @@
 
 .quick-add-modal__content .caption-spaced {
   display: none;
-}
-
-.card__information .price {
-  display: none;
-}
-
-.card__information .card__heading {
-  text-align: center;
 }
 
 .product-form__input input[type="radio"] + label {

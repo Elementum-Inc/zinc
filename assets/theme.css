@@ -231,6 +231,9 @@ ul {
 .bg-bg1 {
   background-color: rgb(var(--color-background-1));
 }
+.border-scheme-fg {
+  border-color: var(--color-scheme-fg);
+}
 .border-accent2 {
   border-color: rgb(var(--color-accent-2));
 }
@@ -352,6 +355,12 @@ ul {
 .resize {
   resize: both;
 }
+.shadow {
+  --tw-shadow: 0 1px 3px 0 rgb(0 0 0/0.1),0 1px 2px -1px rgb(0 0 0/0.1);
+  --tw-shadow-colored: 0 1px 3px 0 var(--tw-shadow-color),0 1px 2px -1px var(--tw-shadow-color);
+  -webkit-box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+  box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
+}
 .fill-none {
   fill: none;
 }
@@ -439,6 +448,11 @@ ul {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
+.duration {
   -webkit-transition-duration: 150ms;
   -o-transition-duration: 150ms;
   transition-duration: 150ms;
@@ -549,6 +563,22 @@ ul {
   -webkit-box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
   box-shadow: var(--tw-ring-offset-shadow,0 0 #0000),var(--tw-ring-shadow,0 0 #0000),var(--tw-shadow);
 }
+.media--auto {
+  aspect-ratio: auto;
+  height: 100%;
+}
+.media--auto > img {
+  aspect-ratio: auto;
+}
+.media--square, .media--circle {
+  aspect-ratio: 1 / 1;
+}
+.media--sportrait {
+  aspect-ratio: 2/3;
+}
+.media--lportrait {
+  aspect-ratio: 9/16;
+}
 .newsletter-form [data-lastpass] {
   display: none;
 }.page-title {
@@ -556,34 +586,34 @@ ul {
   font-size: 3.5rem;
   line-height: 1.2;
 }
-h1 {
+h1, .h1 {
   font-family: var(--font-heading-family);
   font-size: 3rem;
   line-height: 1.2;
 }
-h1.big {
+h1.big, .h1.big {
   font-size: 3.5rem;
 }
 h2, h3, h4, h5, h6 {
   font-family: var(--font-body-family);
 }
-h2 {
+h2, .h2 {
   font-size: 2.5rem;
   line-height: 1.2;
 }
-h3 {
+h3, .h3 {
   font-size: 1.5rem;
   line-height: 1.3;
 }
-h4 {
+h4, .h4 {
   font-size: 1.25rem;
   line-height: 1.3;
 }
-h5 {
+h5, .h5 {
   font-size: 1rem;
   line-height: 1.4;
 }
-h6 {
+h6, .h6 {
   font-size: .75rem;
   line-height: 1.4;
 }
@@ -751,8 +781,7 @@ p.small {
   border-radius: inherit;
   content: '';
 }.field__input {
-  border-color: rgb(var(--color-background-2));
-  border-width: 1px;
+  background-color: rgb(var(--theme-foreground));
   cursor: pointer;
   height: 3rem;
   font-size: .875rem;
