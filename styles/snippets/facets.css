@@ -1,5 +1,5 @@
 .facets-container {
-  @apply <md:(px-4 container m-auto);
+  @apply <md:(px-4 container m-auto flex flex-wrap justify-between items-center);
 
   &-drawer {
     @apply px-4 container m-auto;
@@ -217,11 +217,17 @@
   &-container,
   &-wrapper {
     & .product-count {
-      @apply text-right ml-8;
+      @apply <md:(flex-grow) text-right ml-8;
 
       &__text {
         @apply text-base lg:text-lg;
       }
+    }
+  }
+
+  &-wrapper {
+    & + .product-grid-container {
+      @apply <md:(mt-4);
     }
   }
 

@@ -8,7 +8,8 @@ export default {
   },
   theme: {
     borderRadius: {
-      badge: 'var(--badge-corner-radius)'
+      badge: 'var(--badge-corner-radius)',
+      card: 'var(--card-corner-radius)'
     },
     colors: {
       black: '#0a0a0a',

@@ -1,6 +1,6 @@
 .field {
   &__input {
-    @apply h-12 border border-bg2 cursor-pointer py-2 px-4 text-sm;
+    @apply h-12 bg-fg cursor-pointer py-2 px-4 text-sm;
 
     &:focus,
     &:not(:placeholder-shown) {

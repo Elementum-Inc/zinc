@@ -121,8 +121,9 @@
                     show_price: section.settings.show_price,
                     show_vendor: section.settings.show_vendor,
                     show_rating: section.settings.show_rating,
-                    lazy_load: lazy_load,
+                    hover_info: section.settings.card_hover_show_info,
                     show_quick_add: section.settings.enable_quick_add,
+                    lazy_load: lazy_load,
                     section_id: section.id
                   %}
                 </li>
@@ -173,19 +174,19 @@
       "options": [
         {
           "value": "auto",
-          "label": "Auto"
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
         },
         {
           "value": "square",
-          "label": "Square"
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
         },
         {
           "value": "lportrait",
-          "label": "Long Portrait (9:16)"
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
         },
         {
           "value": "sportrait",
-          "label": "Short Portrait (2:3)"
+          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__4.label"
         }
       ],
       "default": "square",
@@ -231,6 +232,13 @@
       "default": false,
       "label": "t:sections.main-collection-product-grid.settings.show_rating.label",
       "info": "t:sections.main-collection-product-grid.settings.show_rating.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_hover_show_info",
+      "default": false,
+      "label": "Show card info on hover",
+      "info": "When enabled, things like product info or titles will only show on hover."
     },
     {
       "type": "checkbox",

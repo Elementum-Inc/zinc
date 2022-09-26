@@ -1,10 +1,18 @@
 <link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-price.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'component-rating.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'section-product-recommendations.css' | asset_url }}" media="print" onload="this.media='all'">
+
+<link rel="stylesheet" href="{{ 'cards.css' | asset_url }}" media="print" onload="this.media='all'">
+<link rel="stylesheet" href="{{ 'price.css' | asset_url }}" media="print" onload="this.media='all'">
 
 <noscript>{{ 'component-card.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-price.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'component-rating.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'section-product-recommendations.css' | asset_url | stylesheet_tag }}</noscript>
+
+<noscript>{{ 'cards.css' | asset_url | stylesheet_tag }}</noscript>
+<noscript>{{ 'price.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -31,8 +39,10 @@
               card_product: recommendation,
               media_aspect_ratio: section.settings.image_ratio,
               show_secondary_image: section.settings.show_secondary_image,
+              show_price: section.settings.show_price,
               show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating
+              show_rating: section.settings.show_rating,
+              hover_info: section.settings.card_hover_show_info
             %}
           </li>
         {% endfor %}
@@ -169,19 +179,23 @@
       "id": "image_ratio",
       "options": [
         {
-          "value": "adapt",
-          "label": "t:sections.product-recommendations.settings.image_ratio.options__1.label"
-        },
-        {
-          "value": "portrait",
-          "label": "t:sections.product-recommendations.settings.image_ratio.options__2.label"
+          "value": "auto",
+          "label": "t:sections.main-search.settings.image_ratio.options__1.label"
         },
         {
           "value": "square",
-          "label": "t:sections.product-recommendations.settings.image_ratio.options__3.label"
+          "label": "t:sections.main-search.settings.image_ratio.options__2.label"
+        },
+        {
+          "value": "lportrait",
+          "label": "t:sections.main-search.settings.image_ratio.options__3.label"
+        },
+        {
+          "value": "sportrait",
+          "label": "t:sections.main-search.settings.image_ratio.options__4.label"
         }
       ],
-      "default": "adapt",
+      "default": "auto",
       "label": "t:sections.product-recommendations.settings.image_ratio.label"
     },
     {
@@ -189,6 +203,12 @@
       "id": "show_secondary_image",
       "default": false,
       "label": "t:sections.product-recommendations.settings.show_secondary_image.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_price",
+      "default": false,
+      "label": "t:sections.product-recommendations.settings.show_price.label"
     },
     {
       "type": "checkbox",
@@ -202,6 +222,13 @@
       "default": false,
       "label": "t:sections.product-recommendations.settings.show_rating.label",
       "info": "t:sections.product-recommendations.settings.show_rating.info"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_hover_show_info",
+      "default": false,
+      "label": "Show card info on hover",
+      "info": "When enabled, things like product info or titles will only show on hover."
     },
     {
       "type": "header",

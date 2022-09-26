@@ -56,7 +56,7 @@
         "show_price": true,
         "show_vendor": true,
         "show_rating": true,
-        "enable_quick_add": false,
+        "enable_quick_add": true,
         "enable_filtering": true,
         "filter_type": "left",
         "enable_sorting": true,
