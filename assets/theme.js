@@ -6629,13 +6629,9 @@ const _sfc_main = {
         }
       });
     });
-    try {
-      observer.observe(searchButton, {
-        attributes: true
-      });
-    } catch (e2) {
-      console.error("Error during observer creation.");
-    }
+    observer.observe(searchButton, {
+      attributes: true
+    });
     if (this.trendingSearches) {
       this.getTrends(this.trendingSearches);
     }
