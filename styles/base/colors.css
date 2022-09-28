@@ -1,5 +1,6 @@
 .color-scheme {
-  &--background-1 {
+  &--background-1,
+  &--primary {
     --color-scheme-fg: theme('colors.bg2');
     --color-scheme-fgRGB: theme('colors.bg2RGB');
     --color-scheme-bg: theme('colors.bg1');
@@ -9,7 +10,8 @@
     --color-scheme-accentRGB: theme('colors.bg2RGB');
   }
 
-  &--background-2 {
+  &--background-2,
+  &--secondary {
     --color-scheme-fg: theme('colors.bg1');
     --color-scheme-fgRGB: theme('colors.bg1RGB');
     --color-scheme-bg: theme('colors.bg2');

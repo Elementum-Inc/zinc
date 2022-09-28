@@ -80,33 +80,9 @@
   height: 30px;
 }
 
-/* .quick-add__submit {
-  padding: 0.6rem;
-  width: 168px;
-  min-height: 35px !important;
-  margin: auto;
-  box-sizing: border-box;
-  background: black;
-  color: white;
-  font-size: 15px;
-} */
-
-/* @media only screen and (max-width: 750px) {
-  .quick-add__submit {
-    padding: 0.2rem;
-    min-width: auto;
-    background: none;
-    color: black;
-  }
-} */
-
 .form__label {
   padding-top: 20px;
 }
-
-/* .card--card .quick-add {
-  margin: 0 1.3rem 1rem;
-} */
 
 .quick-add-modal {
   box-sizing: border-box;

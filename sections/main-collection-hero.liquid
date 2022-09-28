@@ -77,26 +77,14 @@
                 {% endif %}
               {% when 'buttons' %}
                 {% if block.settings.primary_button_url or block.settings.secondary_button_url %}
-                  {% liquid
-                    case section.settings.color_scheme
-                      when 'primary'
-                        assign btnColorScheme = 'primary secondary' | split: ' '
-                      when 'secondary'
-                        assign btnColorScheme = 'secondary primary' | split: ' '
-                      when 'accent1'
-                        assign btnColorScheme = 'primary accent1' | split: ' '
-                      when 'accent2'
-                        assign btnColorScheme = 'primary accent2' | split: ' '
-                      endcase
-                  %}
                   <div class="buttons">
                     {% if block.settings.primary_button_url and block.settings.primary_button_text %}
-                      <a class="btn btn-outline {{ btnColorScheme[0] }}" href="{{ block.settings.primary_button_url }}">
+                      <a class="btn btn-outline primary" href="{{ block.settings.primary_button_url }}">
                         <span>{{ block.settings.primary_button_text }}</span>
                       </a>
                     {% endif %}
                     {% if block.settings.secondary_button_url and block.settings.secondary_button_text %}
-                      <a class="btn btn-outline {{ btnColorScheme[1] }}" href="{{ block.settings.secondary_button_url }}">
+                      <a class="btn btn-outline secondary" href="{{ block.settings.secondary_button_url }}">
                         <span>{{ block.settings.secondary_button_text }}</span>
                       </a>
                     {% endif %}
@@ -151,11 +139,11 @@
           "label": "Secondary"
         },
         {
-          "value": "accent1",
+          "value": "accent-1",
           "label": "Accent 1"
         },
         {
-          "value": "accent2",
+          "value": "accent-2",
           "label": "Accent 2"
         }
       ],
