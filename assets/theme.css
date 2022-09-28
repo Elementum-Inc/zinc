@@ -1002,16 +1002,16 @@ p.small {
 .header.secondary .icon > svg {
   stroke: rgb(var(--color-background-1));
 }
-.header.accent1 .logo__fallback {
+.header.accent-1 .logo__fallback {
   color: rgb(var(--color-accent-1));
 }
-.header.accent1 .icon > svg {
+.header.accent-1 .icon > svg {
   fill: rgb(var(--color-accent-1));
 }
-.header.accent2 .logo__fallback {
+.header.accent-2 .logo__fallback {
   color: rgb(var(--color-accent-2));
 }
-.header.accent2 .icon > svg {
+.header.accent-2 .icon > svg {
   fill: rgb(var(--color-accent-2));
 }
 .header__logo {

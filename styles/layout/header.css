@@ -25,7 +25,7 @@
     }
   }
 
-  &.accent1 {
+  &.accent-1 {
     & .logo__fallback {
       @apply text-accent1;
     }
@@ -35,7 +35,7 @@
     }
   }
 
-  &.accent2 {
+  &.accent-2 {
     & .logo__fallback {
       @apply text-accent2;
     }
