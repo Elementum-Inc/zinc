@@ -646,7 +646,7 @@ p.small {
 .caption-large {
   font-size: 1rem;
   line-height: 1.5;
-}.color-scheme--background-1 {
+}.color-scheme--background-1, .color-scheme--primary {
   --color-scheme-fg: rgb(var(--color-background-2));
   --color-scheme-fgRGB: var(--color-background-2);
   --color-scheme-bg: rgb(var(--color-background-1));
@@ -655,7 +655,7 @@ p.small {
   --color-scheme-accent: rgb(var(--color-background-2));
   --color-scheme-accentRGB: var(--color-background-2);
 }
-.color-scheme--background-2 {
+.color-scheme--background-2, .color-scheme--secondary {
   --color-scheme-fg: rgb(var(--color-background-1));
   --color-scheme-fgRGB: var(--color-background-1);
   --color-scheme-bg: rgb(var(--color-background-2));
