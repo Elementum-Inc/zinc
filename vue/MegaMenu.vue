@@ -10,7 +10,7 @@
     </PopoverButton>
     <!-- mobile -->
     <transition name="slideRight" v-if="screen < 1024">
-      <PopoverPanel as="nav"  class="header__menu-collapsed" :class="[settings.mm_color_scheme]" v-slot="{ close }">
+      <PopoverPanel as="nav"  class="header__menu-collapsed" :class="[`color-scheme--${settings.mm_color_scheme}`]" v-slot="{ close }">
         <div class="mobile-header">
           <button name="menu-close_trigger" aria-label="Close Menu" @click="close()">
             <span class="icon target">
@@ -85,7 +85,7 @@
     <!-- desktop -->
     <transition name="slideRight" v-else>
       <PopoverPanel :static="!settings.collapse_menu_desktop">
-        <PopoverGroup as="nav" class="header__menu-top" :class="[settings.mm_color_scheme, settings.collapse_menu_desktop ? 'collapsed' : '']">
+        <PopoverGroup as="nav" class="header__menu-top" :class="[`color-scheme--${settings.mm_color_scheme}`, settings.collapse_menu_desktop ? 'collapsed' : '']">
           <Popover v-for="link in topMenu" :key="link.id" class="top-link">
             <PopoverButton as="a" :href="link.url">
               {{ link.title }}
@@ -93,7 +93,7 @@
             <transition name="slideDown">
               <PopoverPanel v-if="link.blocks.length" class="header__menu-content" :class="[settings.mm_type]">
                 <div v-for="block in link.blocks" :key="block.id" class="submenu-block" :class="[block.type, block.type == 'menu' ? `images-${block.settings.submenu_item_image}` : '']">
-                  <div v-if="block.type == 'menu'" :class="[`images-${block.settings.submenu_item_image}__inner`, `${block.type}__inner`, settings.mm_color_scheme]">
+                  <div v-if="block.type == 'menu'" :class="[`images-${block.settings.submenu_item_image}__inner`, `${block.type}__inner`, `color-scheme--${settings.mm_color_scheme}`]">
                     <h4 v-if="block.settings.submenu_title != ''">{{ block.settings.submenu_title }}</h4>
                     <h4 v-else>{{ block.settings.submenu.title }}</h4>
                     <ul class="menu__level0">
@@ -162,11 +162,11 @@
                       <h1 v-if="block.settings.content_title">{{ block.settings.content_title }}</h1>
                       <h3 v-if="block.settings.content_subtitle">{{ block.settings.content_subtitle }}</h3>
                       <p v-if="block.settings.content" :html="block.settings.content"></p>
-                      <div class="buttons" :class="[settings.mm_color_scheme]">
-                        <a v-if="block.settings.primary_button_text && block.settings.primary_button_url" :href="block.settings.primary_button_url" class="btn round primary outline">
+                      <div class="buttons" :class="[`color-scheme--${settings.mm_color_scheme}`]">
+                        <a v-if="block.settings.primary_button_text && block.settings.primary_button_url" :href="block.settings.primary_button_url" class="btn round primary btn-outline">
                           {{ block.settings.primary_button_text }}
                         </a>
-                        <a v-if="block.settings.secondary_button_text && block.settings.secondary_button_url" :href="block.settings.secondary_button_url" class="btn round secondary outline">
+                        <a v-if="block.settings.secondary_button_text && block.settings.secondary_button_url" :href="block.settings.secondary_button_url" class="btn round secondary btn-outline">
                           {{ block.settings.secondary_button_text }}
                         </a>
                       </div>
@@ -174,7 +174,7 @@
                   </div>
                 </div>
               </PopoverPanel>
-              <PopoverPanel v-else-if="link.links.length" class="header__menu-dropdown" :class="[settings.mm_color_scheme]">
+              <PopoverPanel v-else-if="link.links.length" class="header__menu-dropdown" :class="[`color-scheme--${settings.mm_color_scheme}`]">
                 <ul class="dropdown">
                   <Disclosure as="li" v-for="child in link.links" :key="child.id" class="dropdown__level1">
                     <DisclosureButton v-if="child.links.length">
