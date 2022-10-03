@@ -1,11 +1,48 @@
 {
   "sections": {
     "banner": {
-      "type": "main-collection-banner",
+      "type": "main-collection-hero",
+      "blocks": {
+        "title": {
+          "type": "title",
+          "settings": {
+            "show_collection_title": true,
+            "title": ""
+          }
+        },
+        "6d245bd2-3254-4224-9d65-1b0c7bef4671": {
+          "type": "subtitle",
+          "settings": {
+            "title": "Very stylish and incredibly affordable"
+          }
+        },
+        "description": {
+          "type": "description",
+          "settings": {
+            "show_collection_description": true,
+            "description": "<p>Oooooh a different description! :O<\/p>"
+          }
+        },
+        "59c6c0a0-fc6e-472b-897f-d49810451172": {
+          "type": "buttons",
+          "settings": {
+            "primary_button_text": "Primary",
+            "primary_button_url": "shopify:\/\/pages\/test-page",
+            "secondary_button_text": "Secondary",
+            "secondary_button_url": "shopify:\/\/pages\/test-page"
+          }
+        }
+      },
+      "block_order": [
+        "title",
+        "6d245bd2-3254-4224-9d65-1b0c7bef4671",
+        "description",
+        "59c6c0a0-fc6e-472b-897f-d49810451172"
+      ],
       "settings": {
-        "show_collection_description": true,
-        "show_collection_image": false,
-        "color_scheme": "background-1"
+        "show_collection_image": true,
+        "overlay": 0,
+        "color_scheme": "accent-2"
       }
     },
     "product-grid": {
@@ -13,11 +50,16 @@
       "settings": {
         "products_per_page": 16,
         "columns_desktop": 4,
-        "image_ratio": "adapt",
-        "show_secondary_image": false,
-        "show_vendor": false,
-        "show_rating": false,
+        "image_ratio": "sportrait",
+        "card_image_fit": "cover",
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": true,
+        "show_rating": true,
+        "card_hover_show_info": false,
+        "enable_quick_add": true,
         "enable_filtering": true,
+        "filter_type": "left",
         "enable_sorting": true,
         "columns_mobile": "2",
         "padding_top": 36,

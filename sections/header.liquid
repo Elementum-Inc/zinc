@@ -10,7 +10,23 @@
 }
 {% endstyle %}
 
-<header class="header {{ section.settings.color_scheme }} logo-{{ section.settings.logo_position }}">
+{%- if settings.cart_type == "drawer" -%}
+  {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
+  {{ 'component-cart.css' | asset_url | stylesheet_tag }}
+  {{ 'component-totals.css' | asset_url | stylesheet_tag }}
+  {{ 'component-price.css' | asset_url | stylesheet_tag }}
+  {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+  {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+
+  {{ 'price.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+<script src="{{ 'cart-notification.js' | asset_url }}" defer="defer"></script>
+{%- if settings.cart_type == "drawer" -%}
+  <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
+{%- endif -%}
+
+<header class="header {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }} logo-{{ section.settings.logo_position }}">
   {% comment %} logo {% endcomment %}
   <h1 class="header__logo order-none">
     <a href="{{ routes.root_url }}">
@@ -85,6 +101,8 @@
       data-blocks="{{ blocks | strip_newlines | escape }}"
       data-topmenu="{{ topmenuJson | strip_newlines | escape }}"
       data-mobilelinks="{{ mobileLinksJson | strip_newlines | escape }}"
+      data-app-type="mega-menu"
+      data-app
     ></div>
   {% endif %}
   {% comment %} user menu {% endcomment %}
@@ -92,6 +110,8 @@
     {% comment %} search {% endcomment %}
     <div id="searchMenuTop"
       data-settings="{{ section.settings | json | escape }}"
+      data-app-type="search-menu"
+      data-app
     ></div>
     {% comment %} user {% endcomment %}
     <a class="header__icon-link account" href="{{ routes.account_url }}">
@@ -101,14 +121,26 @@
      <span class="label">Account</span>
     </a>
     {% comment %} cart {% endcomment %}
-    <a class="header__icon-link cart" href="{{ routes.cart_url }}">
+    <a class="header__icon-link cart" href="{{ routes.cart_url }}" id="cart-icon-bubble">
       <span class="icon target">
         {% render 'icon-shopping-bag' %}
       </span>
      <span class="label">Cart</span>
+     {%- if cart != empty -%}
+        <div class="cart-count-bubble">
+          {%- if cart.item_count < 100 -%}
+            <span aria-hidden="true">{{ cart.item_count }}</span>
+          {%- endif -%}
+          <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+        </div>
+      {%- endif -%}
     </a>
   </div>
 </header>
+
+{%- if settings.cart_type == "notification" -%}
+  {%- render 'cart-notification', color_scheme: section.settings.color_scheme -%}
+{%- endif -%}
 
 {% schema %}
 {
@@ -128,11 +160,11 @@
           "label": "Secondary"
         },
         {
-          "value": "accent1",
+          "value": "accent-1",
           "label": "Accent 1"
         },
         {
-          "value": "accent2",
+          "value": "accent-2",
           "label": "Accent 2"
         }
       ],
@@ -233,11 +265,11 @@
           "label": "Secondary"
         },
         {
-          "value": "accent1",
+          "value": "accent-1",
           "label": "Accent 1"
         },
         {
-          "value": "accent2",
+          "value": "accent-2",
           "label": "Accent 2"
         }
       ],

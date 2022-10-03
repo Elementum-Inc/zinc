@@ -39,7 +39,7 @@
     {%- endunless -%}
   
     <slider-component class="slider-mobile-gutter">
-      <ul class="collection-list contains-card{% if settings.card_style == 'standard' %} contains-card--standard{% endif %} grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
+      <ul class="collection-list contains-card shopify-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
         id="Slider-{{ section.id }}"
         role="list"
       >
@@ -115,16 +115,20 @@
       "id": "image_ratio",
       "options": [
         {
-          "value": "adapt",
+          "value": "auto",
           "label": "t:sections.collection-list.settings.image_ratio.options__1.label"
         },
         {
-          "value": "portrait",
+          "value": "square",
           "label": "t:sections.collection-list.settings.image_ratio.options__2.label"
         },
         {
-          "value": "square",
+          "value": "lportrait",
           "label": "t:sections.collection-list.settings.image_ratio.options__3.label"
+        },
+        {
+          "value": "sportrait",
+          "label": "t:sections.collection-list.settings.image_ratio.options__4.label"
         }
       ],
       "default": "square",

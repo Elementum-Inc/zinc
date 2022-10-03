@@ -325,7 +325,7 @@ a.product__text {
   color: rgba(var(--color-foreground), 0.75);
 }
 
-.product__text.caption-with-letter-spacing {
+.product__text.caption-spaced {
   text-transform: uppercase;
 }
 
@@ -342,11 +342,11 @@ a.product__text {
   display: none;
 }
 
-.product__title + .product__text.caption-with-letter-spacing {
+.product__title + .product__text.caption-spaced {
   margin-top: -1.5rem;
 }
 
-.product__text.caption-with-letter-spacing + .product__title {
+.product__text.caption-spaced + .product__title {
   margin-top: 0;
 }
 

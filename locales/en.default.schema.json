@@ -49,17 +49,20 @@
     "cards": {
       "name": "Cards",
       "settings": {
-        "header__badge": {
-          "content": "Badge"
-        },
-        "style": {
+        "image_ratio": {
+          "label": "Image aspect ratio",
           "options__1": {
-            "label": "Standard"
+            "label": "Auto"
           },
           "options__2": {
-            "label": "Card"
+            "label": "Square"
           },
-          "label": "Style"
+          "options__3": {
+            "label": "Long Portrait (9:16)"
+          },
+          "options__4": {
+            "label": "Short Portrait (2:3)"
+          }
         }
       }
     },
@@ -95,11 +98,14 @@
         "colors_text": {
           "label": "Text"
         },
-        "colors_primary": {
-          "label": "Primary"
+        "colors_background_1": {
+          "label": "Background 1"
         },
-        "colors_secondary": {
-          "label": "Secondary"
+        "colors_background_2": {
+          "label": "Background 2"
+        },
+        "colors_foreground": {
+          "label": "Foreground"
         },
         "colors_accent_1": {
           "label": "Accent 1"
@@ -107,11 +113,14 @@
         "colors_accent_2": {
           "label": "Accent 2"
         },
-        "colors_background_1": {
-          "label": "Background 1"
+        "colors_success": {
+          "label": "Success"
         },
-        "colors_background_2": {
-          "label": "Background 2"
+        "colors_warning": {
+          "label": "Warning"
+        },
+        "colors_error": {
+          "label": "Error"
         }
       }
     },
@@ -207,7 +216,7 @@
     "search_input": {
       "name": "Search behavior",
       "settings": {
-        "header": {
+        "header__1": {
           "content": "Product suggestions"
         },
         "predictive_search_enabled": {
@@ -305,11 +314,14 @@
       },
       "spacing": "Spacing",
       "colors": {
-        "primary": {
-          "label": "Primary"
+        "background_1": {
+          "label": "Background 1"
         },
-        "secondary": {
-          "label": "Secondary"
+        "background_2": {
+          "label": "Background 2"
+        },
+        "foreground": {
+          "label": "Foreground"
         },
         "accent_1": {
           "label": "Accent 1"
@@ -317,11 +329,14 @@
         "accent_2": {
           "label": "Accent 2"
         },
-        "background_1": {
-          "label": "Background 1"
+        "success": {
+          "label": "Success"
         },
-        "background_2": {
-          "label": "Background 2"
+        "warning": {
+          "label": "Warning"
+        },
+        "error": {
+          "label": "Error"
         },
         "label": "Color scheme",
         "has_cards_info": "To change the card color scheme, update your theme settings."
@@ -462,15 +477,18 @@
           "label": "Heading"
         },
         "image_ratio": {
-          "label": "Image ratio",
+          "label": "Image aspect ratio",
           "options__1": {
-            "label": "Adapt to image"
+            "label": "Auto"
           },
           "options__2": {
-            "label": "Portrait"
+            "label": "Square"
           },
           "options__3": {
-            "label": "Square"
+            "label": "Long Portrait (9:16)"
+          },
+          "options__4": {
+            "label": "Short Portrait (2:3)"
           },
           "info": "Add images by editing your collections. [Learn more](https://help.shopify.com/manual/products/collections)"
         },
@@ -619,19 +637,25 @@
           "content": "Product card"
         },
         "image_ratio": {
-          "label": "Image ratio",
+          "label": "Image aspect ratio",
           "options__1": {
-            "label": "Adapt to image"
+            "label": "Auto"
           },
           "options__2": {
-            "label": "Portrait"
+            "label": "Square"
           },
           "options__3": {
-            "label": "Square"
+            "label": "Long Portrait (9:16)"
+          },
+          "options__4": {
+            "label": "Short Portrait (2:3)"
           }
         },
         "show_secondary_image": {
           "label": "Show second image on hover"
+        },
+        "show_price": {
+          "label": "Show price"
         },
         "show_vendor": {
           "label": "Show vendor"
@@ -1354,8 +1378,8 @@
     "main-cart-items": {
       "name": "Items"
     },
-    "main-collection-banner": {
-      "name": "Collection banner",
+    "main-collection-hero": {
+      "name": "Collection hero",
       "settings": {
         "paragraph": {
           "content": "Add a description or image by editing your collection. [Learn more](https://help.shopify.com/manual/products/collections/collection-layout)"
@@ -1385,33 +1409,42 @@
         "filter_type": {
           "label": "Desktop filter layout",
           "options__1": {
-            "label": "Horizontal"
+            "label": "Top"
           },
           "options__2": {
-            "label": "Vertical"
+            "label": "Left"
           },
           "options__3": {
-            "label": "Drawer"
+            "label": "Right"
           },
-          "info": "Drawer is the default mobile layout."
+          "options__4": {
+            "label": "Collapsed"
+          },
+          "info": "Mobile will collapse by default."
         },
         "enable_sorting": {
           "label": "Enable sorting"
         },
         "image_ratio": {
-          "label": "Image ratio",
+          "label": "Image aspect ratio",
           "options__1": {
-            "label": "Adapt to image"
+            "label": "Auto"
           },
           "options__2": {
-            "label": "Portrait"
+            "label": "Square"
           },
           "options__3": {
-            "label": "Square"
+            "label": "Long Portrait (9:16)"
+          },
+          "options__4": {
+            "label": "Short Portrait (2:3)"
           }
         },
         "show_secondary_image": {
           "label": "Show second image on hover"
+        },
+        "show_price": {
+          "label": "Show price"
         },
         "show_vendor": {
           "label": "Show vendor"
@@ -1476,15 +1509,18 @@
           }
         },
         "image_ratio": {
-          "label": "Image ratio",
+          "label": "Image aspect ratio",
           "options__1": {
-            "label": "Adapt to image"
+            "label": "Auto"
           },
           "options__2": {
-            "label": "Portrait"
+            "label": "Square"
           },
           "options__3": {
-            "label": "Square"
+            "label": "Long Portrait (9:16)"
+          },
+          "options__4": {
+            "label": "Short Portrait (2:3)"
           },
           "info": "Add images by editing your collections. [Learn more](https://help.shopify.com/manual/products/collections)"
         },
@@ -1834,19 +1870,25 @@
           "label": "Number of columns on desktop"
         },
         "image_ratio": {
-          "label": "Image ratio",
+          "label": "Image aspect ratio",
           "options__1": {
-            "label": "Adapt to image"
+            "label": "Auto"
           },
           "options__2": {
-            "label": "Portrait"
+            "label": "Square"
           },
           "options__3": {
-            "label": "Square"
+            "label": "Long Portrait (9:16)"
+          },
+          "options__4": {
+            "label": "Short Portrait (2:3)"
           }
         },
         "show_secondary_image": {
           "label": "Show second image on hover"
+        },
+        "show_price": {
+          "label": "Show price"
         },
         "show_vendor": {
           "label": "Show vendor"
@@ -1900,17 +1942,20 @@
           }
         },
         "image_ratio": {
-          "label": "Image ratio",
+          "label": "Image aspect ratio",
           "options__1": {
-            "label": "Adapt to image"
+            "label": "Auto"
           },
           "options__2": {
-            "label": "Portrait"
-          },
-          "options__3": {
             "label": "Square"
           },
+          "options__3": {
+            "label": "Long Portrait (9:16)"
+          },
           "options__4": {
+            "label": "Short Portrait (2:3)"
+          },
+          "options__5": {
             "label": "Circle"
           }
         },
@@ -2181,19 +2226,25 @@
           "content": "Product card"
         },
         "image_ratio": {
-          "label": "Image ratio",
+          "label": "Image aspect ratio",
           "options__1": {
-            "label": "Adapt to image"
+            "label": "Auto"
           },
           "options__2": {
-            "label": "Portrait"
+            "label": "Square"
           },
           "options__3": {
-            "label": "Square"
+            "label": "Long Portrait (9:16)"
+          },
+          "options__4": {
+            "label": "Short Portrait (2:3)"
           }
         },
         "show_secondary_image": {
           "label": "Show second image on hover"
+        },
+        "show_price": {
+          "label": "Show price"
         },
         "show_vendor": {
           "label": "Show vendor"
@@ -2552,9 +2603,9 @@
           "label": "Image"
         },
         "image_ratio": {
-          "label": "Image ratio",
+          "label": "Image aspect ratio",
           "options__1": {
-            "label": "Adapt to image"
+            "label": "Auto"
           },
           "options__2": {
             "label": "Small"

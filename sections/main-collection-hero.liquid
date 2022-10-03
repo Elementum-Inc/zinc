@@ -1,0 +1,235 @@
+{% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
+{{ 'collection-hero.css' | asset_url | stylesheet_tag }}
+
+{% liquid 
+  assign collectionImageAvailable = false
+
+  if section.settings.show_collection_image and collection.image
+    assign collectionImageAvailable = true
+  else
+    if section.settings.alternate_collection_image
+      assign collectionImageAvailable = true
+    endif
+  endif
+
+  assign blocksLength = section.blocks | size
+%}
+
+<div class="collection-hero{% if collectionImageAvailable %} has-image{% endif %} {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }}">
+  <div class="collection-hero__inner">
+    {%- if collectionImageAvailable -%}
+      <div class="collection-hero__image-wrapper">
+        <img
+          srcset="{{ collection.image | image_url: width: 480 }} 480w,
+          {{ collection.image | image_url: width: 640 }} 640w,
+          {{ collection.image | image_url: width: 768 }} 768w,
+          {{ collection.image | image_url: width: 1024 }} 1024w,
+          {{ collection.image | image_url: width: 1280 }} 1280w,
+          {{ collection.image | image_url: width: 1536 }} 1536w,
+          {{ collection.image | image_url }} {{ collection.image.width }}w"
+          src="{{ collection.image | image_url: width: 1024 }}"
+          alt="{{ collection.image.alt }}"
+          width="{{ collection.image.width }}"
+          height="{{ collection.image.height }}"
+          class="collection-hero__image"
+        >
+        </div>
+      {%- endif -%}
+
+      {% if blocksLength > 0 %}
+        <div class="collection-hero__text-wrapper">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'title' %}
+                {% if block.settings.title != '' %}
+                  {% if block.settings.show_collection_title %}
+                    <h6 class="collection-hero__collection-title">
+                      <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+                      {{- collection.title | escape -}}
+                    </h6>
+                  {% endif %}
+                  <h1 class="collection-hero__title">
+                    {{- block.settings.title | escape -}}
+                  </h1>
+                {% else %}
+                  {% if block.settings.show_collection_title %}
+                    <h1 class="collection-hero__title">
+                      <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+                      {{- collection.title | escape -}}
+                    </h1>
+                  {% endif %}
+                {% endif %}
+              {% when 'subtitle' %}
+                {% if block.settings.title != '' %}
+                  <h2 class="collection-hero__subtitle">
+                    {{- block.settings.title | escape -}}
+                  </h2>
+                {% endif %}
+              {% when 'description' %}
+                {% if block.settings.show_collection_description or block.settings.description != '' %}
+                  <div class="collection-hero__description rte">
+                    {%- if block.settings.show_collection_description -%}
+                      {{ collection.description }}
+                    {%- else -%}
+                      {{ block.settings.description }}
+                    {%- endif -%}
+                  </div>
+                {% endif %}
+              {% when 'buttons' %}
+                {% if block.settings.primary_button_url or block.settings.secondary_button_url %}
+                  <div class="buttons">
+                    {% if block.settings.primary_button_url and block.settings.primary_button_text %}
+                      <a class="btn btn-outline primary" href="{{ block.settings.primary_button_url }}">
+                        <span>{{ block.settings.primary_button_text }}</span>
+                      </a>
+                    {% endif %}
+                    {% if block.settings.secondary_button_url and block.settings.secondary_button_text %}
+                      <a class="btn btn-outline secondary" href="{{ block.settings.secondary_button_url }}">
+                        <span>{{ block.settings.secondary_button_text }}</span>
+                      </a>
+                    {% endif %}
+                  </div>
+                {% endif %}
+            {% endcase %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+</div>
+
+{% schema %}
+{
+  "name": "t:sections.main-collection-hero.name",
+  "class": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "show_collection_image",
+      "default": false,
+      "label": "t:sections.main-collection-hero.settings.show_collection_image.label",
+      "info": "t:sections.main-collection-hero.settings.show_collection_image.info"
+    },
+    {
+      "type": "image_picker",
+      "id": "alternate_collection_image",
+      "label": "Alternate image",
+      "info": "If an alternate image is used and \"Show Collection Image\" is enabled, the default image will take priority."
+    },
+    {
+      "type": "range",
+      "id": "overlay",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "info": "To leave overlay disabled, keep set to 0%.",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        }
+      ],
+      "default": "primary",
+      "label": "t:sections.all.colors.label"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Title",
+      "type": "title",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_collection_title",
+          "default": true,
+          "label": "t:sections.main-collection-hero.settings.show_collection_title.label"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Alternate title",
+          "info": "If an alternate title is used and \"Show Collection Title\" is enabled, the collection title will minimize as a subtitle. For best results, keep under 255 characters."
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "name": "Subtitle",
+      "type": "subtitle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Subtitle",
+          "info": "For best results, keep under 255 characters."
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "name": "Description",
+      "type": "description",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_collection_description",
+          "default": true,
+          "label": "t:sections.main-collection-hero.settings.show_collection_description.label"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Alternate description",
+          "info": "If an alternate description is used and \"Show Collection Description\" is enabled, the default description will take priority."
+        }
+      ],
+      "limit": 1
+    },
+    {
+      "name": "Buttons",
+      "type": "buttons",
+      "settings": [
+        {
+          "type": "text",
+          "id": "primary_button_text",
+          "label": "Primary Button text"
+        },
+        {
+          "type": "url",
+          "id": "primary_button_url",
+          "label": "Primary Button link"
+        },
+        {
+          "type": "text",
+          "id": "secondary_button_text",
+          "label": "Secondary Button text"
+        },
+        {
+          "type": "url",
+          "id": "secondary_button_url",
+          "label": "Primary Button link"
+        }
+      ],
+      "limit": 1
+    }
+  ]
+}
+{% endschema %}

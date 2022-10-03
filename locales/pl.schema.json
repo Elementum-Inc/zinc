@@ -1238,7 +1238,7 @@
     "main-cart-items": {
       "name": "Pozycje"
     },
-    "main-collection-banner": {
+    "main-collection-hero": {
       "name": "Baner kolekcji",
       "settings": {
         "paragraph": {
