@@ -1238,7 +1238,7 @@
     "main-cart-items": {
       "name": "Tuotteet"
     },
-    "main-collection-banner": {
+    "main-collection-hero": {
       "name": "Kokoelmabanneri",
       "settings": {
         "paragraph": {

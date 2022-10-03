@@ -60,6 +60,32 @@ body.menu--opened {
   @apply outline-none shadow-none;
 }
 
+.media {
+  &--auto {
+    @apply aspect-auto h-full;
+
+    & > img {
+      @apply aspect-auto;
+    }
+  }
+
+  &--square, &--circle {
+    @apply aspect-square;
+  }
+
+  &--circle {
+    @apply rounded-full;
+  }
+
+  &--sportrait {
+    aspect-ratio: 2/3;
+  }
+
+  &--lportrait {
+    aspect-ratio: 9/16;
+  }
+}
+
 /*
   Hello this is for me (Dani) because LastPass is dumb and doesn't have a way
   to disable their extension by url. 🙃 So this is here until further notice

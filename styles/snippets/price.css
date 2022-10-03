@@ -1,0 +1,19 @@
+.price {
+  @apply text-base leading-normal;
+  letter-spacing: .015rem;
+
+  & .price-item {
+    @apply mr-2;
+  }
+
+  &--on-sale {
+    & .price-item--regular {
+      @apply text-xs;
+      letter-spacing: .02rem;
+    }
+  }
+
+  &--large {
+    @apply text-lg md:text-xl;
+  }
+}

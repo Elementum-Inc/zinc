@@ -36,10 +36,10 @@
           <header class="page-width page-width--narrow" {{ block.shopify_attributes }}>
             <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
             {%- if block.settings.blog_show_date -%}
-              <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'date' }}</span>
+              <span class="circle-divider caption-spaced" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'date' }}</span>
             {%- endif -%}
             {%- if block.settings.blog_show_author -%}
-              <span class="caption-with-letter-spacing" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span class="caption-spaced" itemprop="author" itemscope itemtype="http://schema.org/Person">
                 <span itemprop="name">{{ article.author }}</span>
               </span>
             {%- endif -%}
@@ -111,7 +111,7 @@
                 <article id="{{ comment.id }}" class="article-template__comments-comment">
                   {{ comment.content }}
                   <footer class="right">
-                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span>
+                    <span class="circle-divider caption-spaced">{{ comment.author }}</span>
                   </footer>
                 </article>
               {%- endif -%}
@@ -120,7 +120,7 @@
                 <article id="{{ comment.id }}" class="article-template__comments-comment">
                   {{ comment.content }}
                   <footer class="right">
-                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span><span class="caption-with-letter-spacing">{{ comment.created_at | time_tag: format: 'date' }}</span>
+                    <span class="circle-divider caption-spaced">{{ comment.author }}</span><span class="caption-spaced">{{ comment.created_at | time_tag: format: 'date' }}</span>
                   </footer>
                 </article>
               {%- endfor -%}

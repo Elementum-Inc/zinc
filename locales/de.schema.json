@@ -1238,7 +1238,7 @@
     "main-cart-items": {
       "name": "Artikel"
     },
-    "main-collection-banner": {
+    "main-collection-hero": {
       "name": "Kategoriebanner",
       "settings": {
         "paragraph": {

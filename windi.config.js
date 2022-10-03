@@ -1,3 +1,5 @@
+import plugin from 'windicss/plugin';
+
 export default {
   extract: {
     include: [
@@ -5,6 +7,10 @@ export default {
     ],
   },
   theme: {
+    borderRadius: {
+      badge: 'var(--badge-corner-radius)',
+      card: 'var(--card-corner-radius)'
+    },
     colors: {
       black: '#0a0a0a',
       white: '#ffffff',
@@ -20,13 +26,36 @@ export default {
         800: '#616161',
         900: '#424242',
       },
-      primary: 'rgb(var(--color-primary))',
-      secondary: 'rgb(var(--color-secondary))',
-      accent1: 'rgb(var(--color-accent-1))',
-      accent2: 'rgb(var(--color-accent-2))',
       bg1: 'rgb(var(--color-background-1))',
+      'bg1RGB': 'var(--color-background-1)',
       bg2: 'rgb(var(--color-background-2))',
-      text: 'rgb(var(--color-text))'
+      'bg2RGB': 'var(--color-background-2)',
+      fg: 'rgb(var(--theme-foreground))',
+      'fgRGB': 'var(--theme-foreground)',
+      accent1: 'rgb(var(--color-accent-1))',
+      'accent1RGB': 'var(--color-accent-1)',
+      accent2: 'rgb(var(--color-accent-2))',
+      'accent2RGB': 'var(--color-accent-2)',
+      text: 'rgb(var(--color-text))',
+      success: 'rgb(var(--color-success))',
+      warning: 'rgb(var(--color-warning))',
+      error: 'rgb(var(--color-error))',
+      'scheme-bg': 'var(--color-scheme-bg)',
+      'scheme-bgRGB': 'var(--color-scheme-bgRGB)',
+      'scheme-fg': 'var(--color-scheme-fg)',
+      'scheme-fgRGB': 'var(--color-scheme-fgRGB)',
+      'scheme-accent': 'var(--color-scheme-accent)',
+      'scheme-accentRGB': 'var(--color-scheme-accentRGB)',
+      'scheme-text': 'var(--color-scheme-text)',
+      'button-bg': 'var(--button-bg)',
+      'button-fg': 'var(--button-fg)',
+    },
+    dropShadow: {
+      'drawer': 'var(--drawer-shadow-horizontal-offset) \
+                var(--drawer-shadow-vertical-offset) \
+                var(--drawer-shadow-blur-radius) \
+                rgba(var(--color-secondary), var(--drawer-shadow-opacity))',
+      'card': '0px 2px 8px #00000020'
     },
     fontFamily: {
       sans: ['var(--font-body-family)'],
@@ -40,6 +69,7 @@ export default {
       'base': '1rem', // 16px
       'lg': '1.125rem', // 18px
       'xl': '1.25rem', // 20px
+      '1.375': '1.375rem', // 22px
       '2xl': '1.5rem', // 24px
       '1.75': '1.75rem', // 28px
       '3xl': '2rem', // 32px 
@@ -74,6 +104,9 @@ export default {
       '2xl': '1536px'
     },
     extend: {
+      backgroundImage: theme => ({
+        'stars': 'linear-gradient(90deg, var(--color-scheme-accent) var(--percent), rgb(var(--color-scheme-accentRGB) / 0.15) var(--percent))'
+      }),
       lineHeight: {
         '110': 1.1,
         '120': 1.2,
@@ -87,6 +120,6 @@ export default {
     },
   },
   plugins: [
-    require('windicss/plugin/aspect-ratio'),
+    require('windicss/plugin/aspect-ratio')
   ],
 }
