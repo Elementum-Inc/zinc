@@ -197,6 +197,13 @@
               "heading": "Money stuff",
               "subtext": "<p> there should be a currency selector here </p>"
             }
+          },
+          "footer-3": {
+            "type": "text",
+            "settings": {
+              "heading": "Money stuff",
+              "subtext": "<p> there should be a currency selector here <\/p>"
+            }
           }
         },
         "block_order": [
