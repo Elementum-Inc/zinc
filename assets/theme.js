@@ -7025,8 +7025,6 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   });
 }
 var SearchMenu = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
-__vitePreload(() => Promise.resolve({}), true ? ["cards.css"] : void 0);
-__vitePreload(() => Promise.resolve({}), true ? ["price.css"] : void 0);
 if (window.location.href.includes("/collection/")) {
   __vitePreload(() => Promise.resolve({}), true ? ["collection-hero.css"] : void 0);
   __vitePreload(() => Promise.resolve({}), true ? ["facets.css"] : void 0);
@@ -7059,15 +7057,12 @@ function fetchProps() {
   searchProps.predictiveShowArticles = window.themeSettings.predictive_search_show_articles;
   searchProps.iconSize = window.themeSettings.icon_size;
   searchProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
-  searchProps.cardAlignment = window.themeSettings.card_text_alignment;
   searchProps.cardColorScheme = window.themeSettings.card_color_scheme;
   searchProps.cardBorder = window.themeSettings.card_border;
-  searchProps.cardRadius = window.themeSettings.card_corner_radius;
   searchProps.cardImageAspect = window.themeSettings.card_image_aspect;
   searchProps.cardImageFit = window.themeSettings.card_image_fit;
   searchProps.cardAnimate = window.themeSettings.card_hover_animate;
   searchProps.cardAnimation = window.themeSettings.card_hover_animation;
-  searchProps.cardShowInfoOnHover = window.themeSettings.card_hover_show_info;
   searchProps.settings = searchSettings;
 }
 fetchProps();
