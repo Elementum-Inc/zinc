@@ -490,9 +490,6 @@
           "options__4": {
             "label": "Short Portrait (2:3)"
           },
-          "options__4": {
-            "label": "Short Portrait (2:3)"
-          },
           "info": "Add images by editing your collections. [Learn more](https:\/\/help.shopify.com\/manual\/products\/collections)"
         },
         "columns_desktop": {
@@ -1521,9 +1518,6 @@
           },
           "options__3": {
             "label": "Long Portrait (9:16)"
-          },
-          "options__4": {
-            "label": "Short Portrait (2:3)"
           },
           "options__4": {
             "label": "Short Portrait (2:3)"
