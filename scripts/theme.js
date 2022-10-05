@@ -12,8 +12,8 @@ import '../styles/base/animations.css';
 import '../styles/layout/header.css';
 
 // Snippets
-import('../styles/snippets/cards.css');
-import('../styles/snippets/price.css');
+import '../styles/snippets/cards.css?inline';
+import '../styles/snippets/price.css?inline';
 
 // By page
 if (window.location.href.includes('/collection/')) {
@@ -62,15 +62,12 @@ function fetchProps() {
   searchProps.predictiveShowArticles = window.themeSettings.predictive_search_show_articles;
   searchProps.iconSize = window.themeSettings.icon_size;
   searchProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
-  searchProps.cardAlignment = window.themeSettings.card_text_alignment;
   searchProps.cardColorScheme = window.themeSettings.card_color_scheme;
   searchProps.cardBorder = window.themeSettings.card_border;
-  searchProps.cardRadius = window.themeSettings.card_corner_radius;
   searchProps.cardImageAspect = window.themeSettings.card_image_aspect;
   searchProps.cardImageFit = window.themeSettings.card_image_fit;
   searchProps.cardAnimate = window.themeSettings.card_hover_animate;
   searchProps.cardAnimation = window.themeSettings.card_hover_animation;
-  searchProps.cardShowInfoOnHover = window.themeSettings.card_hover_show_info;
   searchProps.settings = searchSettings;
 }
 

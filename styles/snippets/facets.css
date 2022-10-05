@@ -165,7 +165,7 @@
       @apply container px-4 m-auto mt-2 flex items-top justify-between;
 
       & .product-count {
-        @apply mt-2;
+        @apply mt-2 mb-8;
       }
     }
   }

@@ -50,13 +50,6 @@ export default {
       'button-bg': 'var(--button-bg)',
       'button-fg': 'var(--button-fg)',
     },
-    dropShadow: {
-      'drawer': 'var(--drawer-shadow-horizontal-offset) \
-                var(--drawer-shadow-vertical-offset) \
-                var(--drawer-shadow-blur-radius) \
-                rgba(var(--color-secondary), var(--drawer-shadow-opacity))',
-      'card': '0px 2px 8px #00000020'
-    },
     fontFamily: {
       sans: ['var(--font-body-family)'],
       serif: ['var(--font-heading-family)']
@@ -107,6 +100,13 @@ export default {
       backgroundImage: theme => ({
         'stars': 'linear-gradient(90deg, var(--color-scheme-accent) var(--percent), rgb(var(--color-scheme-accentRGB) / 0.15) var(--percent))'
       }),
+      dropShadow: {
+        'drawer': 'var(--drawer-shadow-horizontal-offset) \
+                  var(--drawer-shadow-vertical-offset) \
+                  var(--drawer-shadow-blur-radius) \
+                  rgba(var(--color-secondary), var(--drawer-shadow-opacity))',
+        'card': '0px 2px 8px #00000020'
+      },
       lineHeight: {
         '110': 1.1,
         '120': 1.2,

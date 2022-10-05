@@ -1,8 +1,8 @@
 .color-scheme {
   &--background-1,
   &--primary {
-    --color-scheme-fg: theme('colors.bg2');
-    --color-scheme-fgRGB: theme('colors.bg2RGB');
+    --color-scheme-fg: theme('colors.fg');
+    --color-scheme-fgRGB: theme('colors.fgRGB');
     --color-scheme-bg: theme('colors.bg1');
     --color-scheme-bgRGB: theme('colors.bg1RGB');
     --color-scheme-text: theme('colors.text');
@@ -12,8 +12,8 @@
 
   &--background-2,
   &--secondary {
-    --color-scheme-fg: theme('colors.bg1');
-    --color-scheme-fgRGB: theme('colors.bg1RGB');
+    --color-scheme-fg: theme('colors.fg');
+    --color-scheme-fgRGB: theme('colors.fgRGB');
     --color-scheme-bg: theme('colors.bg2');
     --color-scheme-bgRGB: theme('colors.bg2RGB');
     --color-scheme-text: theme('colors.bg1');
@@ -22,8 +22,8 @@
   }
 
   &--accent-1 {
-    --color-scheme-fg: theme('colors.bg2');
-    --color-scheme-fgRGB: theme('colors.bg2RGB');
+    --color-scheme-fg: theme('colors.fg');
+    --color-scheme-fgRGB: theme('colors.fgRGB');
     --color-scheme-bg: theme('colors.accent1');
     --color-scheme-bgRGB: theme('colors.accent1RGB');
     --color-scheme-text: theme('colors.bg1');
@@ -32,8 +32,8 @@
   }
 
   &--accent-2 {
-    --color-scheme-fg: theme('colors.bg2');
-    --color-scheme-fgRGB: theme('colors.bg2RGB');
+    --color-scheme-fg: theme('colors.fg');
+    --color-scheme-fgRGB: theme('colors.fgRGB');
     --color-scheme-bg: theme('colors.accent2');
     --color-scheme-bgRGB: theme('colors.accent2RGB');
     --color-scheme-text: theme('colors.bg1');

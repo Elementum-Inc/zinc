@@ -4,16 +4,16 @@
 
     &:focus,
     &:not(:placeholder-shown) {
-      @apply py-2 px-4;
+      @apply pt-4 pb-0 px-4;
 
       ~ .field__label {
-        @apply text-xs -top-4 left-4;
+        @apply text-xs -top-[.75rem] left-4;
       }
     }
   }
 
   &__label {
-    @apply text-base leading-4 left-4;
+    @apply text-base leading-12 left-4;
   }
 }
 

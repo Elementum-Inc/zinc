@@ -1,3 +1,41 @@
 .predictive-search {
-  @apply bg-scheme-bg text-scheme-text;
+  @apply bg-bg1 drop-shadow-md filter;
+
+  &__heading > span {
+    @apply leading-relaxed border-b border-bg2;
+  }
+
+  &__results-list {
+    @apply border-b border-fg;
+
+    &:not(.pages) {
+      @apply flex flex-wrap;
+
+      & .predictive-search__list-item {
+        @apply basis-1/2 lg:basis-1/4;
+      }
+
+      & .predictive-search__item {
+        @apply flex-col pt-2;
+
+        &-heading {
+          @apply mt-2;
+        }
+      }
+    }
+
+    &.pages {
+      & .predictive-search__item {
+        @apply pt-0;
+      }
+    }
+  }
+
+  &__item {
+    @apply text-center;
+  }
+
+  &__image {
+    @apply aspect-square object-cover object-center;
+  }
 }

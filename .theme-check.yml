@@ -21,6 +21,6 @@ UnusedSnippet:
 DefaultLocale:
   severity: error
 MatchingSchemaTranslations:
-  severity: error
+  severity: suggestion
 MatchingTranslations:
-  severity: error
+  severity: suggestion
