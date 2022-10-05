@@ -1,7 +1,23 @@
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 
-<div class="page-width">
+{{ 'cards.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="container m-auto section-{{ section.id }}-padding">
   <h1 class="title title--primary">{{ section.settings.title | escape }}</h1>
   {%- liquid
     case section.settings.sort
@@ -18,7 +34,11 @@
   <ul class="collection-list shopify-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
     {%- for collection in collections -%}
       <li class="collection-list__item grid__item">
-        {% render 'card-collection', card_collection: collection, media_aspect_ratio: section.settings.image_ratio, columns: 3 %}
+        {% render 'card-collection',
+          card_collection: collection,
+          media_aspect_ratio: section.settings.image_ratio,
+          hover_info: section.settings.card_hover_show_info,
+          columns: 3 %}
       </li>
     {%- endfor -%}
   </ul>
@@ -71,27 +91,37 @@
       "id": "image_ratio",
       "options": [
         {
-          "value": "adapt",
+          "value": "auto",
           "label": "t:sections.main-list-collections.settings.image_ratio.options__1.label"
         },
         {
-          "value": "portrait",
+          "value": "square",
           "label": "t:sections.main-list-collections.settings.image_ratio.options__2.label"
         },
         {
-          "value": "square",
+          "value": "lportrait",
           "label": "t:sections.main-list-collections.settings.image_ratio.options__3.label"
+        },
+        {
+          "value": "sportrait",
+          "label": "t:sections.main-list-collections.settings.image_ratio.options__4.label"
         }
       ],
-      "default": "adapt",
-      "label": "t:sections.main-list-collections.settings.image_ratio.label",
-      "info": "t:sections.main-list-collections.settings.image_ratio.info"
+      "default": "auto",
+      "label": "t:sections.main-list-collections.settings.image_ratio.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "card_hover_show_info",
+      "default": false,
+      "label": "Show card info on hover",
+      "info": "When enabled, things like product info or titles will only show on hover."
     },
     {
       "type": "range",
       "id": "columns_desktop",
       "min": 1,
-      "max": 5,
+      "max": 6,
       "step": 1,
       "default": 3,
       "label": "t:sections.main-list-collections.settings.columns_desktop.label"
@@ -115,6 +145,30 @@
       ],
       "default": "2",
       "label": "t:sections.main-list-collections.settings.columns_mobile.label"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
     }
   ]
 }

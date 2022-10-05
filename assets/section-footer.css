@@ -384,12 +384,9 @@
   margin-bottom: 1.5rem;
   padding-left: 1rem;
   text-align: left;
-  min-height: calc(4rem + var(--inputs-border-width) * 2);
-  min-width: calc(7rem + var(--inputs-border-width) * 2);
 }
 
 .disclosure__button.localization-form__select {
-  padding: calc(2rem + var(--inputs-border-width));
   background: rgb(var(--color-background));
 }
 
@@ -407,7 +404,6 @@ noscript .localization-form__select {
   position: absolute;
   content: "";
   height: 0.6rem;
-  right: calc(var(--inputs-border-width) + 1.5rem);
   top: calc(50% - 0.2rem);
 }
 

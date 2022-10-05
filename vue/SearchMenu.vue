@@ -30,7 +30,7 @@
               <div v-if="trendingSearches" class="search__trends">
                 <h2>{{ trends.title }}</h2>
                 <div class="search__trends-tags">
-                  <a v-for="trend in trends.items" :key="trend.id" :href="trend.url" class="search__trends-tag">
+                  <a v-for="trend in trends.items" :key="trend.id" :href="trend.url" class="search__trends-tag btn secondary">
                     {{ trend.title }}
                   </a>
                 </div>
@@ -45,29 +45,17 @@
                   <TabPanels>
                     <transition name="fade">
                       <TabPanel v-if="results.products.length">
-                        <div class="search__products">
-                          <div v-for="product in results.products"
-                               :key="product.id"
-                               class="search__product-card card"
-                               :class="[cardStyle,
-                                        cardAlignment,
-                                        cardColorScheme,
-                                        cardAnimate ? cardAnimation : '']">
-                            <a :href="product.url">
-                              <image-tag :src="product.featured_image"
-                                         width="300"
-                                         sizes="(min-width: 1280px) 300px, (min-width: 768px) 225px, 150px"
-                                         :srcsetWidths="[150, 225, 300]"
-                                         class="card__image"
-                                         :class="[cardImageAspect,
-                                                  cardImageFit,
-                                                  cardBorder ? '' : '',
-                                                  cardRadius ? '' : '']"></image-tag>
-                              <h3 class="product-title">
-                                {{ product.title }}
-                              </h3>
-                            </a>
-                          </div>
+                        <div class="search__products shopify-grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
+                          <card v-for="product in results.products"
+                                :key="product.id"
+                                class="grid__item"
+                                :cardProduct="product"
+                                :cardColorScheme="cardColorScheme"
+                                :cardAspectRatio="cardImageAspect"
+                                :cardImageFit="cardImageFit"
+                                :cardAnimate="cardAnimate"
+                                :cardAnimation="cardAnimation"
+                                :cardBorder="cardBorder"></card>
                         </div>
                       </TabPanel>
                     </transition>
@@ -104,7 +92,7 @@
                 <div class="search__more">
                   <form action="/search" method="get" role="search">
                     <input name="q" v-model="query" type="hidden" />
-                    <button type="submit">View More</button>
+                    <button class="btn" type="submit">View More</button>
                   </form>
                 </div>
               </div>
@@ -123,10 +111,11 @@
   import { Popover, PopoverButton, PopoverPanel } from '@headlessui/vue';
   import { TabGroup, TabList, Tab, TabPanels, TabPanel } from '@headlessui/vue';
   import ImageTag from './components/ImageTag.vue';
+  import Card from './components/Card.vue';
 
   export default {
     name: 'SearchMenu',
-    components: { Popover, PopoverButton, PopoverPanel, TabGroup, TabList, Tab, TabPanels, TabPanel, ImageTag },
+    components: { Popover, PopoverButton, PopoverPanel, TabGroup, TabList, Tab, TabPanels, TabPanel, ImageTag, Card },
     directives: { debounce },
     data() {
       return {
@@ -260,9 +249,13 @@
         });
       });
 
-      observer.observe(searchButton, {
-        attributes: true
-      });
+      try {
+        observer.observe(searchButton, {
+          attributes: true
+        });
+      } catch (e) {
+        console.error('Error during observer creation.')
+      }
 
       if (this.trendingSearches) {
         this.getTrends(this.trendingSearches);

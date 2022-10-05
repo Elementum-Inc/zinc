@@ -162,6 +162,10 @@
     .card--text .card__inner + .card__content & {
       @apply hidden;
     }
+
+    .card--collection & {
+      @apply my-4;
+    }
   }
 
   &__badge {

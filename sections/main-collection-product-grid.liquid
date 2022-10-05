@@ -7,7 +7,9 @@
 {{ 'cards.css' | asset_url | stylesheet_tag }}
 {{ 'price.css' | asset_url | stylesheet_tag }}
 
+{% comment %} theme-check-disable AssetPreload {% endcomment %}
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
+{% comment %} theme-check-enable AssetPreload {% endcomment %}
 
 {%- if section.settings.enable_quick_add -%}
   <link rel="stylesheet" href="{{ 'quick-add.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -89,7 +91,7 @@
       </aside>
     {%- endif -%}
 
-    <div class="product-grid-container" id="ProductGridContainer">
+    <div class="product-grid-container{% if section.settings.filter_type == 'collapsed' %} mt-4{% endif %}" id="ProductGridContainer">
       {%- paginate collection.products by section.settings.products_per_page -%}
         {%- if collection.products.size == 0 -%}
           <div class="collection collection--empty page-width" id="product-grid" data-id="{{ section.id }}">

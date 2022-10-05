@@ -1,4 +1,65 @@
 .predictive-search {
-  background-color: var(--color-scheme-bg);
-  color: var(--color-scheme-text);
+  background-color: rgb(var(--color-background-1));
+  --tw-blur: var(--tw-empty,/*!*/ /*!*/);
+  --tw-brightness: var(--tw-empty,/*!*/ /*!*/);
+  --tw-contrast: var(--tw-empty,/*!*/ /*!*/);
+  --tw-grayscale: var(--tw-empty,/*!*/ /*!*/);
+  --tw-hue-rotate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-invert: var(--tw-empty,/*!*/ /*!*/);
+  --tw-saturate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-sepia: var(--tw-empty,/*!*/ /*!*/);
+  --tw-drop-shadow: var(--tw-empty,/*!*/ /*!*/);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  --tw-drop-shadow: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
+}
+.predictive-search__heading > span {
+  border-color: rgb(var(--color-background-2));
+  border-bottom-width: 1px;
+  line-height: 1.625;
+}
+.predictive-search__results-list {
+  border-color: rgb(var(--theme-foreground));
+  border-bottom-width: 1px;
+}
+.predictive-search__results-list:not(.pages) {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.predictive-search__results-list:not(.pages) .predictive-search__list-item {
+  flex-basis: 50%;
+}
+@media (min-width: 1024px) {
+  .predictive-search__results-list:not(.pages) .predictive-search__list-item {
+    flex-basis: 25%;
+  }
+}
+.predictive-search__results-list:not(.pages) .predictive-search__item {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  padding-top: 0.5rem;
+}
+.predictive-search__results-list:not(.pages) .predictive-search__item-heading {
+  margin-top: 0.5rem;
+}
+.predictive-search__results-list.pages .predictive-search__item {
+  padding-top: 0px;
+}
+.predictive-search__item {
+  text-align: center;
+}
+.predictive-search__image {
+  aspect-ratio: 1 / 1;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center;
+  object-position: center;
 }

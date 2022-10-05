@@ -300,6 +300,10 @@
 .card--text .card__inner + .card__content .card__heading {
   display: none;
 }
+.card--collection .card__heading {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
 .card__badge {
   padding: 0.5rem;
 }
