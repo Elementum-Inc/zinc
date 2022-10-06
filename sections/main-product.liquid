@@ -337,6 +337,13 @@
             </share-button>
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
           {%- when 'variant_picker' -%}
+            {%- style -%}
+              .product-form__input input[type="radio"] + label {
+                border: {{ block.settings.variant_pill_border_width }}px solid gray !important;
+                border-radius: {{ block.settings.variant_pill_radius }}px !important;
+              }
+            {%- endstyle -%}
+
             {%- unless product.has_only_default_variant -%}
               {%- if block.settings.picker_type == 'button' -%}
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
@@ -712,6 +719,32 @@
           ],
           "default": "button",
           "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
+        },
+        {
+          "type": "range",
+          "label": "Variant pill border radius",
+          "id": "variant_pill_radius",
+          "min": 0,
+          "max": 50,
+          "step": 5,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "label": "Variant pill border width",
+          "id": "variant_pill_border_width",
+          "min": 0,
+          "max": 6,
+          "step": 0.5,
+          "unit": "px",
+          "default": 1
+        },
+        {
+          "type": "checkbox",
+          "id": "show_variant_labels",
+          "default": true,
+          "label": "Show variant labels"
         }
       ]
     },

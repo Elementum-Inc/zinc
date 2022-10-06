@@ -9,6 +9,11 @@
   border-top: 1px solid gray !important;
 }
 
+#Cart-note {
+  font-size: 1.1rem;
+  font-style: italic;
+}
+
 /* EXISTING STYLES  */
 
 .cart__empty-text,
