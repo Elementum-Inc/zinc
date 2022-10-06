@@ -39,7 +39,7 @@
 <footer class="footer color-{{ section.settings.color_scheme }} gradient">
   {%- if section.settings.show_social and section.settings.social_location == "above" -%}
     <div id="subfooter-upper">
-      {% comment %} {%- render 'social-subfooter' -%} {% endcomment %}
+      {%- render 'social-subfooter' -%}
     </div>
   {%- endif -%}
 
@@ -268,7 +268,7 @@
 
       {%- if section.settings.show_social and section.settings.social_location == "below" -%}
           <div class="lower-social">
-          {% comment %} {%- render 'social-subfooter' -%} {% endcomment %}
+          {%- render 'social-subfooter' -%}
           </div>
         {%- endif -%}
 
