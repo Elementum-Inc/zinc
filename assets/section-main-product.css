@@ -1,11 +1,30 @@
 /* ADDED STYLES  */
 
+.hide-label {
+  display: none;
+}
+
+.divider {
+  border-bottom: 2px solid black;
+  margin-bottom: 3rem;
+  width: 33%;
+}
+
 .accordion .summary__title + .icon-caret {
   height: 0.5rem !important;
 }
 
 .product {
   display: flex;
+}
+
+quantity-input {
+  width: 50% !important;
+}
+
+.quantity__button {
+  height: 2rem;
+  width: 2rem;
 }
 
 .product-form__input input[type="radio"] + label {
@@ -19,6 +38,11 @@
   text-align: center !important;
 }
 
+.product-form__input input[type="radio"]:checked + label {
+  background: black !important;
+  color: white !important;
+}
+
 .product .select__select {
   height: 3rem;
 }
@@ -27,6 +51,17 @@
   font-size: 1.2rem;
   margin-bottom: 0;
   margin-top: 1rem;
+}
+
+.product-form__submit {
+  background: black !important;
+  color: white !important;
+}
+
+.shopify-payment-button__button {
+  border: 2px solid black;
+  height: 4.5rem !important;
+  padding: 0;
 }
 
 /* EXISTING STYLES  */
@@ -265,6 +300,7 @@ fieldset.product-form__input .form__label {
 @media screen and (forced-colors: active) {
   .product-form__input input[type="radio"]:checked + label {
     text-decoration: underline;
+    background: magenta !important;
   }
 }
 
