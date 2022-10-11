@@ -351,7 +351,7 @@
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
                       <fieldset class="js product-form__input">
-                        <legend class="form__label {% if block.settings.show_variant_label %} hide-label {% endif %}">{{ option.name }}</legend>
+                        <legend class="form__label {% if block.settings.show_variant_labels %} hide-label {% endif %}">{{ option.name }}</legend>
                         {%- for value in option.values -%}
                           <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                 name="{{ option.name }}"
@@ -764,7 +764,7 @@
           "type": "checkbox",
           "id": "show_variant_labels",
           "default": true,
-          "label": "Show variant labels"
+          "label": "Hide variant labels"
         }
       ]
     },
