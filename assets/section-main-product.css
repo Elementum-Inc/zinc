@@ -64,6 +64,10 @@ quantity-input {
   padding: 0;
 }
 
+.slider__slide {
+  width: calc(33% - 0.6rem);
+}
+
 /* EXISTING STYLES  */
 
 .product {
