@@ -1,0 +1,15 @@
+.blog__title-wrapper {
+  padding-bottom: 1rem;
+}
+.blog__title, .blog__subtitle {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  color: var(--color-scheme-text);
+}
+.blog__button {
+  font-size: 1.25rem;
+}
+.blog__tag-links {
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
