@@ -1,6 +1,8 @@
 .color-scheme {
   &--background-1,
-  &--primary {
+  &--primary,
+  &--background-2.inverse,
+  &--secondary.inverse {
     --color-scheme-fg: theme('colors.fg');
     --color-scheme-fgRGB: theme('colors.fgRGB');
     --color-scheme-bg: theme('colors.bg1');
@@ -8,10 +10,13 @@
     --color-scheme-text: theme('colors.text');
     --color-scheme-accent: theme('colors.bg2');
     --color-scheme-accentRGB: theme('colors.bg2RGB');
+    --color-scheme-border: theme('colors.fg');
   }
 
   &--background-2,
-  &--secondary {
+  &--secondary,
+  &--background-1.inverse,
+  &--primary.inverse {
     --color-scheme-fg: theme('colors.fg');
     --color-scheme-fgRGB: theme('colors.fgRGB');
     --color-scheme-bg: theme('colors.bg2');
@@ -19,6 +24,7 @@
     --color-scheme-text: theme('colors.bg1');
     --color-scheme-accent: theme('colors.bg1');
     --color-scheme-accentRGB: theme('colors.bg1RGB');
+    --color-scheme-border: theme('colors.bg1');
   }
 
   &--accent-1 {
@@ -29,6 +35,16 @@
     --color-scheme-text: theme('colors.bg1');
     --color-scheme-accent: theme('colors.bg1');
     --color-scheme-accentRGB: theme('colors.bg1RGB');
+    --color-scheme-border: theme('colors.bg1');
+
+    &.inverse {
+      --color-scheme-bg: theme('colors.bg1');
+      --color-scheme-bgRGB: theme('colors.bg1RGB');
+      --color-scheme-text: theme('colors.accent1');
+      --color-scheme-accent: theme('colors.accent1');
+      --color-scheme-accentRGB: theme('colors.accent1RGB');
+      --color-scheme-border: theme('colors.accent1');
+    }
   }
 
   &--accent-2 {
@@ -36,8 +52,30 @@
     --color-scheme-fgRGB: theme('colors.fgRGB');
     --color-scheme-bg: theme('colors.accent2');
     --color-scheme-bgRGB: theme('colors.accent2RGB');
-    --color-scheme-text: theme('colors.bg1');
-    --color-scheme-accent: theme('colors.bg1');
-    --color-scheme-accentRGB: theme('colors.bg1RGB');
+    --color-scheme-text: theme('colors.bg2');
+    --color-scheme-accent: theme('colors.bg2');
+    --color-scheme-accentRGB: theme('colors.bg2RGB');
+    --color-scheme-border: theme('colors.bg2');
+
+    &.inverse {
+      --color-scheme-bg: theme('colors.bg2');
+      --color-scheme-bgRGB: theme('colors.bg2RGB');
+      --color-scheme-text: theme('colors.accent2');
+      --color-scheme-accent: theme('colors.accent2RGB');
+      --color-scheme-accentRGB: theme('colors.accent2RGB');
+      --color-scheme-border: theme('colors.accent2');
+    }
+  }
+}
+
+.section {
+  @apply bg-scheme-bg text-scheme-text;
+
+  &--foreground {
+    @apply bg-scheme-fg;
+
+    & .card__inner + .card__content {
+      @apply bg-[transparent];
+    }
   }
 }
