@@ -68,6 +68,16 @@ quantity-input {
   width: calc(33% - 0.6rem);
 }
 
+/* @media screen and (min-width: 750px) {
+  .product--stacked_single_column .grid--2-col-tablet .grid__item {
+    width: 100% !important;
+  }
+} */
+
+.media-item__stacked_single {
+  width: 100% !important;
+}
+
 /* EXISTING STYLES  */
 
 .product {

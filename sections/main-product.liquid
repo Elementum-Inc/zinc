@@ -64,7 +64,7 @@
             {%- endif -%}
             {%- for media in product.media -%}
               {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
-                <li id="Slide-{{ section.id }}-{{ media.id }}" class="product__media-item grid__item slider__slide{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+                <li id="Slide-{{ section.id }}-{{ media.id }}" class="product__media-item grid__item {% if section.settings.gallery_layout == 'stacked_single_column' %} media-item__stacked_single {% endif %} slider__slide{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
                   {%- liquid
                     assign media_position = media_position | default: 0 | plus: 1
                     assign lazy_load = false
@@ -1162,7 +1162,11 @@
       "options": [
         {
           "value": "stacked",
-          "label": "t:sections.main-product.settings.gallery_layout.options__1.label"
+          "label": "Stacked double column"
+        },
+        {
+          "value": "stacked_single_column",
+          "label": "Stacked single column"
         },
         {
           "value": "thumbnail",
