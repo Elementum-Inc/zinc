@@ -185,7 +185,7 @@
     }
     </script>
 
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'et_theme.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body class="gradient">
@@ -245,7 +245,7 @@
       }
     </script>
 
-    <script type="module" src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
+    <script type="module" src="{{ 'et_theme.js' | asset_url }}" defer="defer"></script>
 
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>
