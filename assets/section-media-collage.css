@@ -3,9 +3,15 @@
   column-gap: 0 !important ;
 }
 
+.multicolumn-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
 .text-above {
   display: flex;
-  flex-direction: column-reverse;
+  flex-direction: column-reverse !important;
 }
 
 /* MULTICOLUMN STYLES  */
@@ -100,12 +106,6 @@
 .multicolumn-list h3,
 .multicolumn-list p {
   margin: 0;
-}
-
-.multicolumn-card-spacing {
-  padding-top: 2.5rem;
-  margin-left: 2.5rem;
-  margin-right: 2.5rem;
 }
 
 .multicolumn-card__info > :nth-child(2) {
