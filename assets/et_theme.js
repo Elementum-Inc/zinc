@@ -6521,7 +6521,7 @@ const _hoisted_2$1 = {
   key: 0,
   class: "card__media"
 };
-const _hoisted_3$1 = { class: "media media--transparent" };
+const _hoisted_3$1 = { class: "media media--transparent media--hover-effect" };
 const _hoisted_4$1 = { class: "card__content" };
 const _hoisted_5$1 = { class: "card__information" };
 const _hoisted_6$1 = { class: "card__heading" };
