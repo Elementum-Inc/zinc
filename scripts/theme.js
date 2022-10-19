@@ -12,8 +12,8 @@ import '../styles/base/animations.css';
 import '../styles/layout/header.css';
 
 // Snippets
-import '../styles/snippets/cards.css?inline';
-import '../styles/snippets/price.css?inline';
+import('../styles/snippets/cards.css');
+import('../styles/snippets/price.css');
 
 // By page
 if (window.location.href.includes('/collection/')) {

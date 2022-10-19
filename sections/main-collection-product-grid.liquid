@@ -4,8 +4,8 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
-{{ 'cards.css' | asset_url | stylesheet_tag }}
-{{ 'price.css' | asset_url | stylesheet_tag }}
+{{ 'et_cards.css' | asset_url | stylesheet_tag }}
+{{ 'et_price.css' | asset_url | stylesheet_tag }}
 
 {% comment %} theme-check-disable AssetPreload {% endcomment %}
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -83,7 +83,7 @@
 
   <div class="{% if section.settings.filter_type == 'left' or section.settings.filter_type == 'right' %}facets-vertical facets-{{ section.settings.filter_type }} page-width{% endif %}">
     {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-    {{ 'facets.css' | asset_url | stylesheet_tag }}
+    {{ 'et_facets.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
     {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
       <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}" id="main-collection-filters" data-id="{{ section.id }}">
