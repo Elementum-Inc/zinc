@@ -212,7 +212,7 @@
             {% render block %}
           {%- when 'title' -%}
             <div class="product__title" {{ block.shopify_attributes }}>
-              <h1>{{ product.title | escape }}</h1>
+              <h1 class="{% if block.settings.title_text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.title_text_style == 'subtitle' %} subtitle{% endif %}">{{ product.title | escape }}</h1>
               <a href="{{ product.url }}" class="product__title">
                 <h2 class="h1">
                   {{ product.title | escape }}
@@ -729,7 +729,7 @@
           "options": [
             {
               "value": "body",
-              "label": "t:sections.main-product.blocks.text.settings.text_style.options__1.label"
+              "label": "Large title"
             },
             {
               "value": "subtitle",
@@ -756,7 +756,7 @@
           "options": [
             {
               "value": "body",
-              "label": "t:sections.main-product.blocks.text.settings.text_style.options__1.label"
+              "label": "Large"
             },
             {
               "value": "subtitle",
