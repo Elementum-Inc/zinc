@@ -12,9 +12,9 @@ export default defineConfig(({ command, mode }) => {
           rollupOptions: {
             input: './scripts/theme.js',
             output: {
-              entryFileNames: 'assets/[name].js',
-              chunkFileNames: 'assets/[name].js',
-              assetFileNames: 'assets/[name].[ext]'
+              entryFileNames: 'assets/et_[name].js',
+              chunkFileNames: 'assets/et_[name].js',
+              assetFileNames: 'assets/et_[name].[ext]'
             }
           },
           outDir: './',
@@ -41,13 +41,13 @@ export default defineConfig(({ command, mode }) => {
           rollupOptions: {
             input: './scripts/theme.js',
             output: {
-              entryFileNames: 'assets/[name].js',
-              chunkFileNames: 'assets/[name].js',
-              assetFileNames: 'assets/[name].[ext]'
+              entryFileNames: 'assets/et_[name].js',
+              chunkFileNames: 'assets/et_[name].js',
+              assetFileNames: 'assets/et_[name].[ext]'
             }
           },
           outDir: './',
-          assetsDir: './assets',
+          assetsDir: './assets/',
           emptyOutDir: false,
           minify: false,
           watch: null
