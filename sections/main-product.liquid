@@ -14,6 +14,10 @@
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
+    .slider__slide {
+      width: {{ section.settings.thumbnail_width }}px !important; 
+    }
+
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}px;
@@ -1188,7 +1192,7 @@
       "step": 10,
       "unit": "px",
       "label": "Thumbnail width",
-      "default": 100
+      "default": 120
     },
     {
       "type": "select",
