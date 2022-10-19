@@ -97,6 +97,7 @@ quantity-input {
   flex-direction: column;
   height: 100vh;
   margin-right: auto;
+  width: inherit;
 }
 
 /* vertical thumbnails right  */
