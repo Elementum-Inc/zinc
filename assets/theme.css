@@ -238,6 +238,9 @@ ul {
 .border-scheme-fg {
   border-color: var(--color-scheme-fg);
 }
+.border-scheme-accent {
+  border-color: var(--color-scheme-accent);
+}
 .border-accent2 {
   border-color: rgb(var(--color-accent-2));
 }
@@ -250,11 +253,20 @@ ul {
 .rounded-\[\.625rem\] {
   border-radius: .625rem;
 }
+.border-solid {
+  border-style: solid;
+}
 .border {
   border-width: 1px;
 }
+.border-0 {
+  border-width: 0px;
+}
 .border-3 {
   border-width: 3px;
+}
+.border-t-2 {
+  border-top-width: 2px;
 }
 .border-b-2 {
   border-bottom-width: 2px;

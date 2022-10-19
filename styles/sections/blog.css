@@ -13,6 +13,6 @@
   }
 
   &__tag-links {
-    @apply mt-4 mb-8;
+    @apply mb-8;
   }
 }

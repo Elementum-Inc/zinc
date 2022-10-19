@@ -60,6 +60,10 @@
         {%- if section.settings.subheading != blank -%}
           <h3 class="blog__subtitle">{{ section.settings.subheading }}</h3>
         {%- endif -%}
+
+        {% if section.settings.subheading != blank and section.settings.tag_links %}
+          <hr class="border-0 border-t-2 border-solid border-scheme-accent" />
+        {% endif %}
       </div>
     {%- endunless -%}
     {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
