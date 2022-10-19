@@ -15,17 +15,17 @@
 {% liquid 
   assign card_hover_info = false
 
-  if hover_info or settings.card_hover_show_info
+  if hover_info or settings.product_card_hover_show_info
     assign card_hover_info = true
   endif
 %}
 
 <div class="card-wrapper animate-arrow">
-  <div class="card card--collection color-scheme--{{ settings.card_color_scheme }} gradient
+  <div class="card card--collection color-scheme--{{ color_scheme }} gradient
     {% if card_collection.featured_image %} card--media{% else %} card--text{% endif %}
-    {% if settings.card_hover_animate %} {{ settings.card_hover_animation }}{% endif %}
+    {% if settings.product_card_hover_animate %} {{ settings.product_card_hover_animation }}{% endif %}
     {% if extend_height %} card--extend-height{% endif %}
-    {% if settings.card_border %} border border-scheme-fg{% endif %}
+    {% if settings.product_card_border %} border border-scheme-fg{% endif %}
     {% if card_hover_info %} card--info-hover{% endif %}"
   >
     <div class="card__inner {{ media_aspect_ratio }} gradient">
@@ -50,7 +50,7 @@
               height="{{ card_collection.featured_image.height }}"
               width="{{ card_collection.featured_image.width }}"
               loading="lazy"
-              class="card__image motion-reduce {{ media_aspect_ratio }} {{ settings.card_image_fit }}"
+              class="card__image motion-reduce {{ media_aspect_ratio }} {{ settings.product_card_image_fit }}"
             >
           </div>
         </div>

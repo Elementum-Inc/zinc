@@ -7025,12 +7025,15 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   });
 }
 var SearchMenu = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+__vitePreload(() => Promise.resolve({}), true ? ["assets/blog.css"] : void 0);
+__vitePreload(() => Promise.resolve({}), true ? ["assets/cards.css"] : void 0);
+__vitePreload(() => Promise.resolve({}), true ? ["assets/price.css"] : void 0);
 if (window.location.href.includes("/collection/")) {
-  __vitePreload(() => Promise.resolve({}), true ? ["collection-hero.css"] : void 0);
-  __vitePreload(() => Promise.resolve({}), true ? ["facets.css"] : void 0);
+  __vitePreload(() => Promise.resolve({}), true ? ["assets/collection-hero.css"] : void 0);
+  __vitePreload(() => Promise.resolve({}), true ? ["assets/facets.css"] : void 0);
 }
 if (window.location.href.includes("/search?")) {
-  __vitePreload(() => Promise.resolve({}), true ? ["search.css"] : void 0);
+  __vitePreload(() => Promise.resolve({}), true ? ["assets/search.css"] : void 0);
 }
 const searchMount = document.querySelector("#searchMenuTop");
 const megamenuMount = document.querySelector("#megamenu");
