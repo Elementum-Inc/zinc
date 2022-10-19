@@ -3,6 +3,11 @@
   column-gap: 0 !important ;
 }
 
+.text-above {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 /* MULTICOLUMN STYLES  */
 .multicolumn-btn {
   height: 35px;

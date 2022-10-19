@@ -58,11 +58,11 @@
         {%- for block in section.blocks -%}
           {%- assign empty_column = '' -%}
           {%- if block.settings.image == blank and block.settings.title == blank and block.settings.text == blank and block.settings.link_label == blank -%}
-            {%- assign empty_column = ' multicolumn-list__item--empty' -%}
+            {%- assign empty_column = ' multicolumn-list__item--empty' -%} 
           {%- endif -%}
 
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
-            <div class="multicolumn-card content-container">
+            <div class="multicolumn-card content-container {% if block.settings.column_orientation == 'text-above' %} text-above {% endif %}" style="background-color: {{ block.settings.column_background_color }}; color: {{ block.settings.column_font_color }};">
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
@@ -379,15 +379,15 @@
           "id":"column_orientation",
           "options":[
             {
-              "value":"image-top",
+              "value":"text-below",
               "label":"Image above text"
             },
             {
-              "value":"image-bottom",
+              "value":"text-above",
               "label":"Image below text"
             }
           ],
-          "default":"image-top",
+          "default":"text-below",
           "label":"Column content orientation"
         },
         {
