@@ -78,6 +78,30 @@ quantity-input {
   width: 100% !important;
 }
 
+.product--vertical_thumbnail_left .product__media-gallery {
+  display: flex !important;
+  flex-direction: row-reverse;
+}
+
+.product--vertical_thumbnail_left .thumbnail-list {
+  flex-wrap: nowrap;
+  flex-direction: column;
+}
+
+.product--vertical_thumbnail_left .slider-mobile-gutter {
+  width: 100%;
+}
+
+.product--vertical_thumbnail_left .thumbnail-slider {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  margin-right: auto;
+}
+
+/* vertical thumbnails right  */
+/* .product--vertical_thumbnail_right 
+
 /* EXISTING STYLES  */
 
 .product {
