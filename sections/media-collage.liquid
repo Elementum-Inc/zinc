@@ -67,7 +67,7 @@
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
                 {% endif %}
-                <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
+                <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}" style="padding: {{ block.settings.image-padding}}px;">
                   <div class="media media--transparent media--{{ section.settings.image_ratio }}"
                     {% if section.settings.image_ratio == 'adapt' %}
                       style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
@@ -92,7 +92,7 @@
                   </div>
                 </div>
               {%- endif -%}
-              <div class="multicolumn-card__info">
+              <div class="multicolumn-card__info" style="padding: {{ block.settings.text-padding}}px;">
                 {%- if block.settings.title != blank -%}
                   <h3>{{ block.settings.title | escape }}</h3>
                 {%- endif -%}
@@ -341,6 +341,26 @@
           "unit":"%",
           "label":"Image Border Radius",
           "default":0
+        },
+        {
+          "type":"range",
+          "id":"image-padding",
+          "min":0,
+          "max":100,
+          "step":1,
+          "unit":"px",
+          "label":"Image padding",
+          "default":0
+        },
+        {
+          "type":"range",
+          "id":"text-padding",
+          "min":0,
+          "max":100,
+          "step":1,
+          "unit":"px",
+          "label":"Text padding",
+          "default":35
         },
         {
           "type":"color",

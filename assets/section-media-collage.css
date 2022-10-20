@@ -1,6 +1,7 @@
 /* MEDIA COLLAGE STYLES  */
 .media-collage .multicolumn-list {
   column-gap: 0 !important ;
+  row-gap: 0 !important;
 }
 
 .multicolumn-card {
