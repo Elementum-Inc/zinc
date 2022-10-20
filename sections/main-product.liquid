@@ -18,6 +18,10 @@
       width: {{ section.settings.thumbnail_width }}px !important; 
     }
 
+    .divider {
+
+    }
+
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}px;
@@ -220,7 +224,8 @@
               </a>
             </div>
             {%- when 'divider' -%}
-              <div class="divider">
+              <div class="divider" style="width: {{ block.settings.product_info_divider_length }}px; border-bottom: {{ block.settings.product_info_divider_width }}px solid black" {{ block.shopify_attributes }}>
+              {% comment %} TODO: make color of divider link to theme settings {% endcomment %}
               </div>
             {%- when 'text' -%}
             <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
@@ -669,7 +674,7 @@
           "id": "product_info_divider_length",
           "label": "Divider length",
           "min": 0,
-          "max": 300,
+          "max": 500,
           "step": 10,
           "unit": "px",
           "default": 150
