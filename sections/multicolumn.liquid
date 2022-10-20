@@ -56,7 +56,7 @@
           {%- endif -%}
 
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
-            <div class="multicolumn-card content-container">
+            <div class="multicolumn-card content-container {% if block.settings.image_position == 'left' %} image-left {% endif %} {% if block.settings.image_position == 'right' %} image-right {% endif %} {% if block.settings.image_position == 'below' %} image-below {% endif %}">
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
@@ -325,6 +325,30 @@
           "type": "image_picker",
           "id": "image",
           "label": "t:sections.multicolumn.blocks.column.settings.image.label"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "options": [
+            {
+              "value": "above",
+              "label": "Above content"
+            },
+            {
+              "value": "below",
+              "label": "Below content"
+            },
+            {
+              "value": "left",
+              "label": "Left of content"
+            },
+            {
+              "value": "right",
+              "label": "Right of content"
+            }
+          ],
+          "default": "above",
+          "label": "Image position"
         },
         {
           "type": "range",

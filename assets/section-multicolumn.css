@@ -1,3 +1,28 @@
+.image-left {
+  display: flex;
+  flex-direction: row;
+}
+
+.image-left .multicolumn-card__image-wrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.image-right {
+  display: flex;
+  flex-direction: row-reverse;
+}
+
+.image-right .multicolumn-card__image-wrapper {
+  width: 100%;
+  margin: 0;
+}
+
+.image-below {
+  display: flex;
+  flex-direction: column-reverse;
+}
+
 .multicolumn-btn {
   height: 35px;
   min-width: 168px;
