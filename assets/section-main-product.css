@@ -1,4 +1,27 @@
 /* ADDED STYLES  */
+.price-item {
+  font-size: 1.5rem;
+  font-weight: 500;
+}
+
+/* // FOR REVIEWS - SHOPIFY APP SPECIFIC ?? //  */
+.spr-stars span {
+  display: flex;
+}
+
+.spr-starrating {
+  margin: 1rem 0;
+}
+
+.spr-starrating a {
+  font-size: 1rem;
+}
+
+.spr-review-header {
+  border-bottom: 0.2rem solid black;
+  width: 33%;
+  margin-bottom: 1rem;
+}
 
 .hide-label {
   display: none;
@@ -509,10 +532,6 @@ a.product__text {
 
 .product__title > a {
   display: none;
-}
-
-.product__title + .product__text.caption-with-letter-spacing {
-  margin-top: -1.5rem;
 }
 
 .product__text.caption-with-letter-spacing + .product__title {
