@@ -36,12 +36,17 @@
   margin: 0;
 }
 
+.multicolumn .title {
+  margin: auto;
+}
+
 .multicolumn.no-heading .title {
   display: none;
 }
 
 .multicolumn .title-wrapper-with-link {
   margin-top: 0;
+  margin-bottom: 1rem;
 }
 
 @media screen and (max-width: 749px) {

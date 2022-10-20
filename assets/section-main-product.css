@@ -4,6 +4,10 @@
   font-weight: 500;
 }
 
+.card-information .price-item {
+  font-size: 1rem;
+}
+
 /* // FOR REVIEWS - SHOPIFY APP SPECIFIC ?? //  */
 .spr-stars span {
   display: flex;
@@ -21,6 +25,14 @@
   border-bottom: 0.2rem solid black;
   width: 33%;
   margin-bottom: 1rem;
+}
+
+.spr-header-title {
+  font-family: var(--font-heading-family);
+}
+
+.share-button__button {
+  font-size: 1.1rem;
 }
 
 .hide-label {

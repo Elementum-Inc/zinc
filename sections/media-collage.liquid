@@ -87,7 +87,6 @@
                       height="{{ block.settings.image.height }}"
                       width="{{ block.settings.image.width }}"
                       loading="lazy"
-                      style="border-radius: {{ block.settings.border-radius }}%"
                     >
                   </div>
                 </div>
@@ -331,16 +330,6 @@
           "type":"image_picker",
           "id":"image",
           "label":"t:sections.multicolumn.blocks.column.settings.image.label"
-        },
-        {
-          "type":"range",
-          "id":"border-radius",
-          "min":0,
-          "max":50,
-          "step":5,
-          "unit":"%",
-          "label":"Image Border Radius",
-          "default":0
         },
         {
           "type":"range",
