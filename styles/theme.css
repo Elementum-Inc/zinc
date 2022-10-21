@@ -60,6 +60,16 @@ body.menu--opened {
   @apply outline-none shadow-none;
 }
 
+.container {
+  &--expanded {
+    @apply max-w-screen-2xl;
+  }
+
+  &--no-pad {
+    @apply p-0;
+  }
+}
+
 .media {
   &--auto {
     @apply aspect-auto h-full;
@@ -83,6 +93,14 @@ body.menu--opened {
 
   &--lportrait {
     aspect-ratio: 9/16;
+  }
+
+  &--widescreen {
+    aspect-ratio: 16/9;
+  }
+
+  &--landscape {
+    aspect-ratio: 3/2;
   }
 }
 

@@ -14,5 +14,9 @@
 
   &__tag-links {
     @apply mb-8;
+
+    > a {
+      @apply mb-2;
+    }
   }
 }

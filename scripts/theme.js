@@ -13,6 +13,7 @@ import '../styles/layout/header.css';
 
 // Sections
 import('../styles/sections/blog.css');
+import('../styles/sections/image-with-text.css');
 
 // Snippets
 import('../styles/snippets/cards.css');
