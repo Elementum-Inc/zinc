@@ -23,6 +23,10 @@
   flex-direction: column-reverse;
 }
 
+.media {
+  min-width: 100%;
+}
+
 .multicolumn-btn {
   height: 35px;
   min-width: 168px;
@@ -30,6 +34,22 @@
   padding: 0.25rem 2rem;
   background-color: black;
   color: white;
+}
+
+.multicolumn-card__info {
+  margin: auto;
+}
+
+.multicolumn-card__image-wrapper {
+  margin: auto;
+}
+
+.image-left .multicolumn-card__image-wrapper {
+  margin: auto;
+}
+
+.image-right .multicolumn-card__image-wrapper {
+  margin: auto;
 }
 
 .multicolumn .title {
@@ -121,11 +141,11 @@
   margin: 0;
 }
 
-.multicolumn-card-spacing {
+/* .multicolumn-card-spacing {
   padding-top: 2.5rem;
   margin-left: 2.5rem;
   margin-right: 2.5rem;
-}
+} */
 
 .multicolumn-card__info > :nth-child(2) {
   margin-top: 1rem;
