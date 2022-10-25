@@ -370,8 +370,8 @@ ul {
 .static {
   position: static;
 }
-.absolute {
-  position: absolute;
+.fixed {
+  position: fixed;
 }
 .relative {
   position: relative;
@@ -476,11 +476,6 @@ ul {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  -webkit-transition-duration: 150ms;
-  -o-transition-duration: 150ms;
-  transition-duration: 150ms;
-}
-.duration {
   -webkit-transition-duration: 150ms;
   -o-transition-duration: 150ms;
   transition-duration: 150ms;

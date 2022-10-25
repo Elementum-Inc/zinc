@@ -239,9 +239,11 @@
       }
 
       window.themeSettings = {{ settings | json }}
+      
+      window.assetUrl = '{{ 'et_theme.css' | asset_url | split: 'assets/' | first }}'
 
-      window.vue = {
-        loaded: []
+      window.__toCdnUrl = function(filename) {
+        return window.assetUrl + filename;
       }
     </script>
 

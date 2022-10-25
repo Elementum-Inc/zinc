@@ -1,3 +1,5 @@
+import 'vite/modulepreload-polyfill';
+
 // Windi import
 import 'virtual:windi.css';
 
@@ -25,11 +27,9 @@ if (window.location.href.includes('/collection/')) {
   import('../styles/snippets/facets.css');
 }
 
-if (window.location.href.includes('/search?')) {
+if (window.location.href.includes('/search')) {
   import('../styles/sections/search.css');
 }
-
-import 'vite/modulepreload-polyfill';
 
 import { createApp } from 'vue';
 import MegaMenu from '../vue/MegaMenu.vue';

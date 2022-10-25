@@ -6,6 +6,11 @@ export default defineConfig(({ command, mode }) => {
   switch (mode) {
     case 'development':
       return {
+        // experimental: {
+        //   renderBuiltUrl(filename) {
+        //     return { runtime: `window.__toCdnUrl(${JSON.stringify(filename)})` }
+        //   }
+        // },
         plugins: [vue(), WindiCSS()],
         publicDir: false,
         build: {
@@ -50,8 +55,23 @@ export default defineConfig(({ command, mode }) => {
           assetsDir: './assets/',
           emptyOutDir: false,
           minify: false,
-          watch: null
+          watch: null,
+          // modulePreload: {
+          //   resolveDependencies(filename, { type }) {
+          //     if (type === 'asset') {
+          //       return 'test/' + filename;
+          //       // return { runtime: `window.__toCdnUrl(${JSON.stringify(filename)})` }
+          //     }
+          //   }
+          // }
         },
+        // experimental: {
+        //   renderBuiltUrl(filename, { type }) {
+        //     if (type === 'asset') {
+        //       return { runtime: `window.__toCdnUrl(${JSON.stringify(filename)})` }
+        //     }
+        //   }
+        // },
       };
   }
 });
