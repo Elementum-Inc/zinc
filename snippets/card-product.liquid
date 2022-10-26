@@ -21,24 +21,41 @@
 {% liquid 
   assign card_hover_info = false
 
-  if hover_info or settings.card_hover_show_info
+  if hover_info or settings.product_card_hover_show_info
     assign card_hover_info = true
   endif
+    
+  case media_aspect_ratio
+    when 'lportrait'
+      assign ratio = 0.5625
+    when 'sportrait'
+      assign ratio = 0.67
+    when 'widescreen'
+      assign ratio = 1.77
+    when 'landscape'
+      assign ratio = 1.5
+    when 'square'
+      assign ratio = 1
+    when 'auto'
+      assign ratio = card_product.featured_media.aspect_ratio
+    else
+      assign ratio = 1
+  endcase
 %}
 
 {%- if card_product and card_product != empty -%}
   <div class="card-wrapper underline-links-hover">
-    <div class="card color-scheme--{{ settings.card_color_scheme }} gradient
+    <div class="card color-scheme--{{ settings.product_card_color_scheme }} gradient
       {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
-      {% if settings.card_hover_animate %} {{ settings.card_hover_animation }}{% endif %}
+      {% if settings.product_card_hover_animate %} {{ settings.product_card_hover_animation }}{% endif %}
       {% if extend_height %} card--extend-height{% endif %}
-      {% if settings.card_border %} border border-scheme-fg{% endif %}
+      {% if settings.product_card_border %} border border-scheme-fg{% endif %}
       {% if card_hover_info %} card--info-hover{% endif %}"
     >
-      <div class="card__inner {{ media_aspect_ratio }} gradient">
+      <div class="card__inner {{ media_aspect_ratio }} gradient ratio" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%">
         {%- if card_product.featured_media -%}
           <div class="card__media">
-            <div class="media media--transparent media--hover-effect">
+            <div class="media media--transparent">
               {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
               <img
                 srcset="{%- if card_product.featured_media.width >= 165 -%}{{ card_product.featured_media | image_url: width: 165 }} 165w,{%- endif -%}
@@ -51,7 +68,7 @@
                 src="{{ card_product.featured_media | image_url: width: 533 }}"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                 alt="{{ card_product.featured_media.alt | escape }}"
-                class="card__image {{ media_aspect_ratio }} {{ settings.card_image_fit }}"
+                class="card__image {{ media_aspect_ratio }} {{ settings.product_card_image_fit }}"
                 {% unless lazy_load == false %}loading="lazy"{% endunless %}
                 width="{{ card_product.featured_media.width }}"
                 height="{{ card_product.featured_media.height }}"
@@ -70,7 +87,7 @@
                   src="{{ card_product.media[1] | image_url: width: 533 }}"
                   sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                   alt=""
-                  class="card__image {{ media_aspect_ratio }} {{ settings.card_image_fit }}"
+                  class="card__image {{ media_aspect_ratio }} {{ settings.product_card_image_fit }}"
                   loading="lazy"
                   width="{{ card_product.media[1].width }}"
                   height="{{ card_product.media[1].height }}"
@@ -223,7 +240,7 @@
     <div class="card
       card--text
       {% if extend_height %} card--extend-height{% endif %}
-      color-scheme--{{ settings.card_color_scheme }} gradient"
+      color-scheme--{{ settings.product_card_color_scheme }} gradient"
     >
       <div class="card__inner gradient">
         <div class="card__content">

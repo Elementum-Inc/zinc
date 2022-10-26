@@ -7025,6 +7025,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   });
 }
 var SearchMenu = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
+__vitePreload(() => Promise.resolve({}), true ? ["assets/et_blog.css"] : void 0);
 __vitePreload(() => Promise.resolve({}), true ? ["assets/et_cards.css"] : void 0);
 __vitePreload(() => Promise.resolve({}), true ? ["assets/et_price.css"] : void 0);
 if (window.location.href.includes("/collection/")) {
