@@ -38,11 +38,17 @@
             "text": "<p>Whether it's friends or fashion, our community is here for you!<\/p>",
             "text_style": "body"
           }
+        },
+        "6e3ec468-dbaa-4459-82c2-9e2ed69f8987": {
+          "type": "button",
+          "settings": {
+          }
         }
       },
       "block_order": [
         "ea091e7b-1b34-4795-8d95-35fbafa23b90",
-        "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-1"
+        "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-1",
+        "6e3ec468-dbaa-4459-82c2-9e2ed69f8987"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
@@ -85,11 +91,17 @@
             "text": "<p>See the latest in fall colors, styles and accessories. <\/p>",
             "text_style": "subtitle"
           }
+        },
+        "e80808f9-ece3-4f42-873e-22c991b8541a": {
+          "type": "button",
+          "settings": {
+          }
         }
       },
       "block_order": [
         "cd74d7e5-356a-4631-8874-535dc996cbb4",
-        "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-1"
+        "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-1",
+        "e80808f9-ece3-4f42-873e-22c991b8541a"
       ],
       "settings": {
         "image": "shopify:\/\/shop_images\/winding-road-covered-in-autumn-trees.jpg",
