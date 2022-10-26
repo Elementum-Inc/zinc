@@ -70,3 +70,17 @@ p.small {
     @apply text-base leading-normal;
   }
 }
+
+.rte {
+  &.subtitle {
+    @apply text-1.375 leading-130;
+  }
+
+  &.body {
+    @apply text-sm leading-normal;
+  }
+
+  > p {
+    font-size: inherit;
+  }
+}

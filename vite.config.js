@@ -32,6 +32,13 @@ export default defineConfig(({ command, mode }) => {
             ]
           },
         },
+        experimental: {
+          renderBuiltUrl(filename, { type }) {
+            if (type === 'asset') {
+              return { runtime: `window.__toCdnUrl(${JSON.stringify(filename)})` }
+            }
+          }
+        },
       };
     case 'production':
       return {
@@ -50,7 +57,14 @@ export default defineConfig(({ command, mode }) => {
           assetsDir: './assets/',
           emptyOutDir: false,
           minify: false,
-          watch: null
+          watch: null,
+        },
+        experimental: {
+          renderBuiltUrl(filename, { type }) {
+            if (type === 'asset') {
+              return { runtime: `window.__toCdnUrl(${JSON.stringify(filename)})` }
+            }
+          }
         },
       };
   }
