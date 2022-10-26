@@ -6,7 +6,8 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
 */
 
 .buttons {
-  > .btn:not(:last-child) {
+  > .btn:not(:last-child),
+  > .btn:only-child {
     @apply my-4 mr-2;
   }
 }

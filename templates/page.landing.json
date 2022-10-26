@@ -2,6 +2,7 @@
   "sections": {
     "main": {
       "type": "main-page",
+      "disabled": true,
       "settings": {
         "padding_top": 28,
         "padding_bottom": 28
@@ -35,44 +36,47 @@
         "padding_bottom": 36
       }
     },
-    "2fa32e7e-36ca-4829-9aa8-fb81c981169d": {
+    "58185308-2137-43c1-8e73-eb5d3a045ebf": {
       "type": "image-with-text",
       "blocks": {
-        "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-0": {
+        "ea091e7b-1b34-4795-8d95-35fbafa23b90": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "heading": "Get Involved",
+            "all_caps": true
           }
         },
-        "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-1": {
+        "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
+            "text": "<p>Whether it's friends or fashion, our community is here for you!<\/p>",
             "text_style": "body"
           }
         },
-        "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-2": {
-          "type": "button",
+        "6e3ec468-dbaa-4459-82c2-9e2ed69f8987": {
+          "type": "buttons",
           "settings": {
-            "button_label": "Button label",
-            "button_link": ""
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "secondary_button_label": "Learn More",
+            "secondary_button_link": "shopify:\/\/blogs\/community"
           }
         }
       },
       "block_order": [
-        "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-0",
-        "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-1",
-        "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-2"
+        "ea091e7b-1b34-4795-8d95-35fbafa23b90",
+        "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-1",
+        "6e3ec468-dbaa-4459-82c2-9e2ed69f8987"
       ],
       "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
+        "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
+        "height": "h-md",
+        "desktop_image_columns": 4,
+        "desktop_image_side": "right",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
+        "break_container": false,
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
@@ -106,44 +110,47 @@
         "padding_bottom": 36
       }
     },
-    "58185308-2137-43c1-8e73-eb5d3a045ebf": {
+    "2fa32e7e-36ca-4829-9aa8-fb81c981169d": {
       "type": "image-with-text",
       "blocks": {
-        "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-0": {
+        "cd74d7e5-356a-4631-8874-535dc996cbb4": {
           "type": "heading",
           "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
+            "heading": "Fall into new trends",
+            "all_caps": true
           }
         },
-        "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-1": {
+        "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>",
-            "text_style": "body"
+            "text": "<p>See the latest in fall colors, styles and accessories. <\/p>",
+            "text_style": "subtitle"
           }
         },
-        "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-2": {
-          "type": "button",
+        "e80808f9-ece3-4f42-873e-22c991b8541a": {
+          "type": "buttons",
           "settings": {
-            "button_label": "Button label",
-            "button_link": ""
+            "primary_button_label": "Read the latest",
+            "primary_button_link": "shopify:\/\/blogs\/news",
+            "secondary_button_label": "Search our archive",
+            "secondary_button_link": "shopify:\/\/blogs\/trends"
           }
         }
       },
       "block_order": [
-        "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-0",
-        "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-1",
-        "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-2"
+        "cd74d7e5-356a-4631-8874-535dc996cbb4",
+        "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-1",
+        "e80808f9-ece3-4f42-873e-22c991b8541a"
       ],
       "settings": {
-        "height": "adapt",
-        "desktop_image_width": "medium",
-        "layout": "image_first",
-        "desktop_content_position": "top",
+        "image": "shopify:\/\/shop_images\/winding-road-covered-in-autumn-trees.jpg",
+        "height": "h-lg",
+        "desktop_image_columns": 3,
+        "desktop_image_side": "left",
+        "desktop_content_position": "middle",
         "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-1",
+        "color_scheme": "background-2",
+        "break_container": true,
         "mobile_content_alignment": "left",
         "padding_top": 36,
         "padding_bottom": 36
@@ -204,58 +211,15 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "b93f4b56-8b7c-4a8f-9145-c53a5b6bde1f": {
-      "type": "collection-list",
-      "blocks": {
-        "template--15412995391627__b93f4b56-8b7c-4a8f-9145-c53a5b6bde1f-1666034698d145205b-0": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "template--15412995391627__b93f4b56-8b7c-4a8f-9145-c53a5b6bde1f-1666034698d145205b-1": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "template--15412995391627__b93f4b56-8b7c-4a8f-9145-c53a5b6bde1f-1666034698d145205b-2": {
-          "type": "featured_collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15412995391627__b93f4b56-8b7c-4a8f-9145-c53a5b6bde1f-1666034698d145205b-0",
-        "template--15412995391627__b93f4b56-8b7c-4a8f-9145-c53a5b6bde1f-1666034698d145205b-1",
-        "template--15412995391627__b93f4b56-8b7c-4a8f-9145-c53a5b6bde1f-1666034698d145205b-2"
-      ],
-      "settings": {
-        "title": "Collections",
-        "heading_size": "h1",
-        "image_ratio": "square",
-        "columns_desktop": 3,
-        "color_scheme": "background-1",
-        "use_foreground": false,
-        "match_color_scheme": false,
-        "show_view_all": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "main",
     "330d53b0-f94a-4966-8b75-7c146e03a880",
-    "2fa32e7e-36ca-4829-9aa8-fb81c981169d",
-    "e04b9fa4-4504-448d-a3d0-4a452cbbb228",
     "58185308-2137-43c1-8e73-eb5d3a045ebf",
+    "e04b9fa4-4504-448d-a3d0-4a452cbbb228",
+    "2fa32e7e-36ca-4829-9aa8-fb81c981169d",
     "b70e395a-714d-42ae-8882-d6cfc5640353",
-    "aa4f3d87-1afe-4905-8037-9603e25e77ae",
-    "b93f4b56-8b7c-4a8f-9145-c53a5b6bde1f"
+    "aa4f3d87-1afe-4905-8037-9603e25e77ae"
   ]
 }

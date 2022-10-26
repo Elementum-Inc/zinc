@@ -12,3 +12,6 @@
 .blog__tag-links {
   margin-bottom: 2rem;
 }
+.blog__tag-links > a {
+  margin-bottom: 0.5rem;
+}

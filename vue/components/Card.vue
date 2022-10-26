@@ -7,7 +7,7 @@
     >
       <div class="card__inner gradient" :class="cardAspectRatio">
         <div v-if="cardProduct.featured_image" class="card__media">
-          <div class="media media--transparent media--hover-effect">
+          <div class="media media--transparent">
             <image-tag :src="cardProduct.featured_image"
                         width="300"
                         sizes="(min-width: 1280px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
