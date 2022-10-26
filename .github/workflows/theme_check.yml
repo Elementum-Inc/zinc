@@ -3,8 +3,8 @@ name: Theme Check
 on:
   push:
     # paths-ignore:
-    #   - 'assets/theme.js'
-    #   - 'assets/theme.css'
+    #   - 'assets/et_theme.js'
+    #   - 'assets/et_theme.css'
 
 jobs:
   shopify-theme-check:

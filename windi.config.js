@@ -9,7 +9,8 @@ export default {
   theme: {
     borderRadius: {
       badge: 'var(--badge-corner-radius)',
-      card: 'var(--card-corner-radius)'
+      'product-card': 'var(--product-card-corner-radius)',
+      'content-card': 'var(--content-card-corner-radius)'
     },
     colors: {
       black: '#0a0a0a',
@@ -47,8 +48,13 @@ export default {
       'scheme-accent': 'var(--color-scheme-accent)',
       'scheme-accentRGB': 'var(--color-scheme-accentRGB)',
       'scheme-text': 'var(--color-scheme-text)',
+      'scheme-border': 'var(--color-scheme-border)',
       'button-bg': 'var(--button-bg)',
       'button-fg': 'var(--button-fg)',
+    },
+    container: {
+      center: true,
+      padding: '1rem'
     },
     fontFamily: {
       sans: ['var(--font-body-family)'],

@@ -1,0 +1,18 @@
+.blog {
+  &__title-wrapper {
+    @apply pb-4;
+  }
+
+  &__title,
+  &__subtitle {
+    @apply text-scheme-text my-4;
+  }
+
+  &__button {
+    @apply text-xl;
+  }
+
+  &__tag-links {
+    @apply mb-8;
+  }
+}

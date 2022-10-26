@@ -1,6 +1,10 @@
 @media (max-width: 767.9px) {
   .facets-container {
     width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin-left: auto;
+    margin-right: auto;
     display: -webkit-box;
     display: -ms-flexbox;
     display: -webkit-flex;
@@ -53,6 +57,10 @@
 }
 .facets-container-drawer {
   width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   margin: auto;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -310,6 +318,10 @@
 }
 .facets.top .facets__form {
   width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -412,6 +424,10 @@
 }
 .facets.top ~ .facets-pill {
   width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -461,6 +477,10 @@
 }
 .facets-vertical {
   width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   margin: auto;
   padding-left: 1rem;
   padding-right: 1rem;
@@ -516,6 +536,10 @@
 }
 .facets-vertical-sort {
   width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
   margin: auto;
   padding-left: 1rem;
   padding-right: 1rem;

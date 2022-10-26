@@ -374,11 +374,11 @@
     ]
   },
   {
-    "name": "t:settings_schema.cards.name",
+    "name": "Product and Collection Cards",
     "settings": [
       {
         "type": "select",
-        "id": "card_text_alignment",
+        "id": "product_card_text_alignment",
         "options": [
           {
             "value": "left",
@@ -398,7 +398,201 @@
       },
       {
         "type": "select",
-        "id": "card_color_scheme",
+        "id": "product_card_vertical_alignment",
+        "options": [
+          {
+            "value": "start",
+            "label": "t:settings_schema.cards.settings.vertical_alignment.options__1.label"
+          },
+          {
+            "value": "center",
+            "label": "t:settings_schema.cards.settings.vertical_alignment.options__2.label"
+          },
+          {
+            "value": "end",
+            "label": "t:settings_schema.cards.settings.vertical_alignment.options__3.label"
+          }
+        ],
+        "default": "center",
+        "label": "t:settings_schema.cards.settings.vertical_alignment.label"
+      },
+      {
+        "type": "select",
+        "id": "product_card_color_scheme",
+        "options": [
+          {
+            "value": "background-1",
+            "label": "t:sections.all.colors.background_1.label"
+          },
+          {
+            "value": "background-2",
+            "label": "t:sections.all.colors.background_2.label"
+          },
+          {
+            "value": "accent-1",
+            "label": "t:sections.all.colors.accent_1.label"
+          },
+          {
+            "value": "accent-2",
+            "label": "t:sections.all.colors.accent_2.label"
+          }
+        ],
+        "default": "background-1",
+        "label": "t:sections.all.colors.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_card_border",
+        "default": true,
+        "label": "Show Border"
+      },
+      {
+        "type": "range",
+        "id": "product_card_corner_radius",
+        "min": 0,
+        "max": 32,
+        "step": 2,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
+        "default": 0
+      },
+      {
+        "type": "header",
+        "content": "t:settings_schema.global.settings.header__image.content"
+      },
+      {
+        "type": "select",
+        "id": "product_card_image_aspect",
+        "options": [
+          {
+            "value": "auto",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
+          },
+          {
+            "value": "square",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
+          },
+          {
+            "value": "lportrait",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
+          },
+          {
+            "value": "sportrait",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
+          },
+          {
+            "value": "widescreen",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
+          },
+          {
+            "value": "landscape",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
+          },
+          {
+            "value": "circle",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__7.label"
+          }
+        ],
+        "default": "auto",
+        "label": "Aspect Ratio"
+      },
+      {
+        "type": "select",
+        "id": "product_card_image_fit",
+        "options": [
+          {
+            "value": "cover",
+            "label": "Cover"
+          },
+          {
+            "value": "contain",
+            "label": "Contain"
+          }
+        ],
+        "default": "cover",
+        "label": "Image Fit"
+      },
+      {
+        "type": "header",
+        "content": "Hover"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_card_hover_animate",
+        "default": true,
+        "label": "Enable hover animation"
+      },
+      {
+        "type": "select",
+        "id": "product_card_hover_animation",
+        "options": [
+          {
+            "value": "lift",
+            "label": "Lift"
+          },
+          {
+            "value": "zoom",
+            "label": "Zoom"
+          }
+        ],
+        "default": "zoom",
+        "label": "Animation style"
+      },
+      {
+        "type": "checkbox",
+        "id": "product_card_hover_show_info",
+        "default": false,
+        "label": "Show card info on hover",
+        "info": "When enabled, card information like titles, descriptions and prices will animate over the image area on hover."
+      }
+    ]
+  },
+  {
+    "name": "Content Cards",
+    "settings": [
+      {
+        "type": "select",
+        "id": "content_card_text_alignment",
+        "options": [
+          {
+            "value": "left",
+            "label": "t:settings_schema.global.settings.text_alignment.options__1.label"
+          },
+          {
+            "value": "center",
+            "label": "t:settings_schema.global.settings.text_alignment.options__2.label"
+          },
+          {
+            "value": "right",
+            "label": "t:settings_schema.global.settings.text_alignment.options__3.label"
+          }
+        ],
+        "default": "left",
+        "label": "t:settings_schema.global.settings.text_alignment.label"
+      },
+      {
+        "type": "select",
+        "id": "content_card_vertical_alignment",
+        "options": [
+          {
+            "value": "start",
+            "label": "t:settings_schema.cards.settings.vertical_alignment.options__1.label"
+          },
+          {
+            "value": "center",
+            "label": "t:settings_schema.cards.settings.vertical_alignment.options__2.label"
+          },
+          {
+            "value": "end",
+            "label": "t:settings_schema.cards.settings.vertical_alignment.options__3.label"
+          }
+        ],
+        "default": "end",
+        "label": "t:settings_schema.cards.settings.vertical_alignment.label"
+      },
+      {
+        "type": "select",
+        "id": "content_card_color_scheme",
         "options": [
           {
             "value": "background-1",
@@ -422,13 +616,13 @@
       },
       {
         "type": "checkbox",
-        "id": "card_border",
+        "id": "content_card_border",
         "default": true,
         "label": "Show Border"
       },
       {
         "type": "range",
-        "id": "card_corner_radius",
+        "id": "content_card_corner_radius",
         "min": 0,
         "max": 32,
         "step": 2,
@@ -442,23 +636,35 @@
       },
       {
         "type": "select",
-        "id": "card_image_aspect",
+        "id": "content_card_image_aspect",
         "options": [
           {
             "value": "auto",
-            "label": "Auto"
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
           },
           {
             "value": "square",
-            "label": "Square"
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
           },
           {
             "value": "lportrait",
-            "label": "Long Portrait (9:16)"
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
           },
           {
             "value": "sportrait",
-            "label": "Short Portrait (2:3)"
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
+          },
+          {
+            "value": "widescreen",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
+          },
+          {
+            "value": "landscape",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
+          },
+          {
+            "value": "circle",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__7.label"
           }
         ],
         "default": "square",
@@ -466,7 +672,7 @@
       },
       {
         "type": "select",
-        "id": "card_image_fit",
+        "id": "content_card_image_fit",
         "options": [
           {
             "value": "cover",
@@ -486,13 +692,13 @@
       },
       {
         "type": "checkbox",
-        "id": "card_hover_animate",
+        "id": "content_card_hover_animate",
         "default": true,
         "label": "Enable hover animation"
       },
       {
         "type": "select",
-        "id": "card_hover_animation",
+        "id": "content_card_hover_animation",
         "options": [
           {
             "value": "lift",
@@ -501,17 +707,22 @@
           {
             "value": "zoom",
             "label": "Zoom"
+          },
+          {
+            "value": "round",
+            "label": "Round"
           }
         ],
         "default": "zoom",
-        "label": "Animation style"
+        "label": "Animation style",
+        "info": "For more details on card animation styles, please refer to our [theme documentation](https:\/\/www.elementumtech.io)."
       },
       {
         "type": "checkbox",
-        "id": "card_hover_show_info",
+        "id": "content_card_hover_show_info",
         "default": false,
         "label": "Show card info on hover",
-        "info": "When enabled, things like product info or titles will only show on hover."
+        "info": "When enabled, card information like titles, descriptions and prices will animate over the image area on hover."
       }
     ]
   },
@@ -921,6 +1132,30 @@
         ],
         "default": "error",
         "label": "t:settings_schema.badges.settings.sold_out_badge_color_scheme.label"
+      },
+      {
+        "type": "select",
+        "id": "content_badge_color_scheme",
+        "options": [
+          {
+            "value": "background-1",
+            "label": "t:sections.all.colors.background_1.label"
+          },
+          {
+            "value": "background-2",
+            "label": "t:sections.all.colors.background_2.label"
+          },
+          {
+            "value": "accent-1",
+            "label": "t:sections.all.colors.accent_1.label"
+          },
+          {
+            "value": "accent-2",
+            "label": "t:sections.all.colors.accent_2.label"
+          }
+        ],
+        "default": "background-2",
+        "label": "t:settings_schema.badges.settings.sale_badge_color_scheme.label"
       }
     ]
   },

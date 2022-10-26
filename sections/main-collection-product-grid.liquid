@@ -4,8 +4,8 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
-{{ 'cards.css' | asset_url | stylesheet_tag }}
-{{ 'price.css' | asset_url | stylesheet_tag }}
+{{ 'et_cards.css' | asset_url | stylesheet_tag }}
+{{ 'et_price.css' | asset_url | stylesheet_tag }}
 
 {% comment %} theme-check-disable AssetPreload {% endcomment %}
 <link rel="preload" href="{{ 'component-rte.css' | asset_url }}" as="style" onload="this.onload=null;this.rel='stylesheet'">
@@ -83,7 +83,7 @@
 
   <div class="{% if section.settings.filter_type == 'left' or section.settings.filter_type == 'right' %}facets-vertical facets-{{ section.settings.filter_type }} page-width{% endif %}">
     {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-    {{ 'facets.css' | asset_url | stylesheet_tag }}
+    {{ 'et_facets.css' | asset_url | stylesheet_tag }}
     <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
     {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
       <aside aria-labelledby="verticalTitle" class="facets-wrapper{% unless section.settings.enable_filtering %} facets-wrapper--no-filters{% endunless %}" id="main-collection-filters" data-id="{{ section.id }}">
@@ -119,6 +119,7 @@
                   {% render 'card-product',
                     card_product: product,
                     media_aspect_ratio: section.settings.image_ratio,
+                    media_fit: section.settings.card_image_fit,
                     show_secondary_image: section.settings.show_secondary_image,
                     show_price: section.settings.show_price,
                     show_vendor: section.settings.show_vendor,
@@ -176,19 +177,27 @@
       "options": [
         {
           "value": "auto",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__1.label"
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
         },
         {
           "value": "square",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__2.label"
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
         },
         {
           "value": "lportrait",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__3.label"
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
         },
         {
           "value": "sportrait",
-          "label": "t:sections.main-collection-product-grid.settings.image_ratio.options__4.label"
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
+        },
+        {
+          "value": "widescreen",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
         }
       ],
       "default": "square",
@@ -240,7 +249,7 @@
       "id": "card_hover_show_info",
       "default": false,
       "label": "Show card info on hover",
-      "info": "When enabled, things like product info or titles will only show on hover."
+      "info": "When enabled, card information like titles, descriptions and prices will animate over the image area on hover."
     },
     {
       "type": "checkbox",

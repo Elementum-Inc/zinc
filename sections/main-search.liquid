@@ -3,9 +3,9 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-rating.css' | asset_url | stylesheet_tag }}
 
-{{ 'search.css' | asset_url | stylesheet_tag }}
-{{ 'cards.css' | asset_url | stylesheet_tag }}
-{{ 'price.css' | asset_url | stylesheet_tag }}
+{{ 'et_search.css' | asset_url | stylesheet_tag }}
+{{ 'et_cards.css' | asset_url | stylesheet_tag }}
+{{ 'et_price.css' | asset_url | stylesheet_tag }}
 
 <link rel="stylesheet" href="{{ 'component-search.css' | asset_url }}" media="print" onload="this.media='all'">
 
@@ -13,7 +13,7 @@
 
 {%- if section.settings.enable_filtering or section.settings.enable_sorting -%}
   {{ 'component-facets.css' | asset_url | stylesheet_tag }}
-  {{ 'facets.css' | asset_url | stylesheet_tag }}
+  {{ 'et_facets.css' | asset_url | stylesheet_tag }}
   <script src="{{ 'facets.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
@@ -230,27 +230,60 @@
                         {% render 'article-card',
                           article: item,
                           show_image: true,
+                          media_aspect_ratio: section.settings.image_ratio,
                           show_date: section.settings.article_show_date,
                           show_author: section.settings.article_show_author,
-                          show_badge: true,
-                          media_aspect_ratio: 1,
+                          show_tags: section.settings.article_show_tags,
+                          hover_info: section.settings.card_hover_show_info,
                           lazy_load: lazy_load
                         %}
                       {%- when 'page' -%}
+                        {% liquid
+                          case section.settings.image_ratio
+                            when 'lportrait'
+                              assign ratio = 0.5625
+                            when 'sportrait'
+                              assign ratio = 0.67
+                            when 'widescreen'
+                              assign ratio = 1.77
+                            when 'landscape'
+                              assign ratio = 1.5
+                            else
+                              assign ratio = 1
+                          endcase
+                        %}
                         <div class="card-wrapper underline-links-hover">
-                          <div class="card card--card card--text ratio color-scheme--{{ settings.card_color_scheme }}" style="--ratio-percent: 100%;">
-                            <div class="card__content">
-                              <div class="card__information">
-                                <h3 class="card__heading">
-                                  <a href="{{ item.url }}" class="full-unstyled-link">
-                                    {{ item.title | truncate: 50 | escape }}
-                                  </a>
-                                </h3>
-                              </div>
-                              <div class="card__badge {{ settings.badge_position }}">
-                                <span class="badge color-background-1">{{ 'templates.search.page' | t }}</span>
+                          <div class="card card--card card--text ratio color-scheme--{{ settings.content_card_color_scheme }}
+                            {% if settings.content_card_hover_animate %} {{ settings.content_card_hover_animation }}{% endif %}
+                            {% if settings.content_card_border %} border border-scheme-fg{% endif %}
+                            {% if section.settings.card_hover_show_info %} card--info-hover{% endif %}"
+                            style="--ratio-percent: {{ 1 | divided_by: section.settings.aspect_ratio | times: 100 }}"
+                          >
+                            <div class="card__inner {{ section.settings.image_ratio }} ratio" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%;">
+                              <div class="card__content">
+                                <div class="card__information">
+                                  <h3 class="card__heading">
+                                    <a href="{{ item.url }}" class="full-unstyled-link">
+                                      {{ item.title | truncate: 50 | escape }}
+                                    </a>
+                                  </h3>
+                                </div>
+                                <div class="card__badge {{ settings.badge_position }}">
+                                  <span class="badge btn btn-{{ settings.content_badge_color_scheme }}">{{ 'templates.search.page' | t }}</span>
+                                </div>
                               </div>
                             </div>
+                            {%- unless section.settings.card_hover_show_info -%}
+                              <div class="card__content">
+                                <div class="card__information">
+                                  <h3 class="card__heading">
+                                    <a href="{{ item.url }}" class="full-unstyled-link">
+                                      {{ item.title | truncate: 50 | escape }}
+                                    </a>
+                                  </h3>
+                                </div>
+                              </div>
+                            {%- endunless -%}
                           </div>
                         </div>
                     {%- endcase -%}
@@ -293,23 +326,31 @@
       "options": [
         {
           "value": "auto",
-          "label": "t:sections.main-search.settings.image_ratio.options__1.label"
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
         },
         {
           "value": "square",
-          "label": "t:sections.main-search.settings.image_ratio.options__2.label"
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
         },
         {
           "value": "lportrait",
-          "label": "t:sections.main-search.settings.image_ratio.options__3.label"
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
         },
         {
           "value": "sportrait",
-          "label": "t:sections.main-search.settings.image_ratio.options__4.label"
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
+        },
+        {
+          "value": "widescreen",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
         }
       ],
       "default": "auto",
-      "label": "t:sections.main-search.settings.image_ratio.label"
+      "label": "t:settings_schema.global.settings.aspect_ratio.label"
     },
     {
       "type": "checkbox",
@@ -341,7 +382,7 @@
       "id": "card_hover_show_info",
       "default": false,
       "label": "Show card info on hover",
-      "info": "When enabled, things like product info or titles will only show on hover."
+      "info": "When enabled, card information like titles, descriptions and prices will animate over the image area on hover."
     },
     {
       "type": "header",
@@ -400,6 +441,12 @@
       "id": "article_show_author",
       "default": false,
       "label": "t:sections.main-search.settings.article_show_author.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "article_show_tags",
+      "default": false,
+      "label": "Show tags"
     },
     {
       "type": "header",

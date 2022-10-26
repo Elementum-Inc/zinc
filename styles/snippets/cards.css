@@ -1,5 +1,7 @@
-.card {
-  @apply text-scheme-text rounded-card overflow-hidden;
+.card,
+.article-card {
+  @apply text-scheme-text rounded-product-card overflow-hidden;
+  text-align: var(--product-card-text-alignment);
 
   &.lift:not(.card--info-hover) {
     &:hover,
@@ -17,7 +19,7 @@
 
     &:hover,
     &:focus-within {
-      @apply scale-110 -rotate-3 drop-shadow-card filter z-1;
+      @apply scale-110 -rotate-3 drop-shadow-card filter relative z-1;
     }
   }
 
@@ -28,6 +30,10 @@
         @apply scale-110;
       }
     }
+  }
+
+  &.border {
+    @apply border border-scheme-border;
   }
 
   &--info-hover {
@@ -117,11 +123,12 @@
   }
 
   &__media {
-    @apply transform duration-375;
+    @apply transform duration-375 w-full;
   }
 
   &__content {
-    @apply p-0;
+    @apply p-0 flex flex-col;
+    justify-content: var(--product-card-vertical-alignment);
   }
 
   &__information {
@@ -130,6 +137,7 @@
 
   &-information {
     @apply mb-4 px-4;
+    text-align: var(--product-card-text-alignment);
 
     & > * + * {
       @apply mt-1;
@@ -168,6 +176,14 @@
     }
   }
 
+  &__comments {
+    @apply text-sm;
+
+    & > span {
+      @apply align-middle;
+    }
+  }
+
   &__badge {
     @apply p-2;
 
@@ -178,5 +194,67 @@
 
   & .quick-add {
     @apply m-4 mt-0;
+  }
+}
+
+.article-card,
+.page-card {
+  @apply rounded-content-card;
+  text-align: var(--content-card-text-alignment);
+
+  &.card--info-hover {
+    &.card--media {
+      & .card__heading {
+        @apply -translate-y-full;
+      }
+    }
+
+    & .card__heading {
+      @apply -translate-y-1/2;
+    }
+
+    &:hover,
+    &:focus-within {
+      & .card__heading {
+        @apply translate-y-0;
+      }
+    }
+  }
+
+  & .card__content {
+    justify-content: var(--content-card-vertical-alignment);
+  }
+
+  &__header {
+    &.caption-spaced {
+      @apply mt-8;
+      word-break: break-word;
+    }
+
+    & > span:not(:last-child)::after {
+      @apply inline-block mx-2 text-lg font-bold align-sub opacity-25;
+      content: '/';
+    }
+  }
+
+  & .card__information,
+  & .card-information {
+    @apply mx-0;
+  }
+
+  & .card-information {
+    text-align: var(--content-card-text-alignment);
+
+    &.before {
+      @apply pb-0 mb-2;
+    }
+
+    &.after {
+      @apply mt-0;
+    }
+  }
+
+  &__excerpt {
+    @apply my-2;
   }
 }
