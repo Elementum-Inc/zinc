@@ -480,6 +480,11 @@ ul {
   -o-transition-duration: 150ms;
   transition-duration: 150ms;
 }
+.duration {
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
 .animate {
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
@@ -695,7 +700,17 @@ p.small {
   font-size: .875rem;
   line-height: 1.5;
 }
-.rte > p {
+.rte h1, .rte h2, .rte h3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.rte h4, .rte h5, .rte h6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.rte p {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   font-size: inherit;
 }.color-scheme--background-1, .color-scheme--primary, .color-scheme--background-2.inverse, .color-scheme--secondary.inverse {
   --color-scheme-fg: rgb(var(--theme-foreground));

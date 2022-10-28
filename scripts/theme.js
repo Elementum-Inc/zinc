@@ -16,6 +16,7 @@ import '../styles/layout/header.css';
 // Sections
 import('../styles/sections/blog.css');
 import('../styles/sections/image-with-text.css');
+import('../styles/sections/hero.css');
 
 // Snippets
 import('../styles/snippets/cards.css');
@@ -23,7 +24,6 @@ import('../styles/snippets/price.css');
 
 // By page
 if (window.location.href.includes('/collection/')) {
-  import('../styles/sections/collection-hero.css');
   import('../styles/snippets/facets.css');
 }
 

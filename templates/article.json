@@ -1,14 +1,46 @@
 {
   "sections": {
+    "hero": {
+      "type": "main-article-hero",
+      "blocks": {
+        "a2d81ade-3da8-4343-b961-24997ca0629f": {
+          "type": "title",
+          "settings": {
+            "show_article_title": true,
+            "title": "This is a new title"
+          }
+        },
+        "9f515e1e-03aa-4fe9-b0b2-6eeef4487dcd": {
+          "type": "subtitle",
+          "settings": {
+            "title": "And here is a subtitle for your sweet sweet eyes"
+          }
+        },
+        "b5248616-349b-43e9-bf63-df276eb96a14": {
+          "type": "details",
+          "settings": {
+            "show_date": true,
+            "show_author": true
+          }
+        }
+      },
+      "block_order": [
+        "a2d81ade-3da8-4343-b961-24997ca0629f",
+        "9f515e1e-03aa-4fe9-b0b2-6eeef4487dcd",
+        "b5248616-349b-43e9-bf63-df276eb96a14"
+      ],
+      "settings": {
+        "show_featured_image": true,
+        "height": "h-md",
+        "overlay": 30,
+        "color_scheme": "accent-1",
+        "content_position": "top",
+        "content_alignment": "left"
+      }
+    },
     "main": {
       "type": "main-article",
       "blocks": {
-        "featured_image": {
-          "type": "featured_image",
-          "settings": {
-            "image_height": "adapt"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
@@ -29,7 +61,6 @@
         }
       },
       "block_order": [
-        "featured_image",
         "title",
         "share",
         "content"
@@ -39,6 +70,7 @@
     }
   },
   "order": [
+    "hero",
     "main"
   ]
 }
