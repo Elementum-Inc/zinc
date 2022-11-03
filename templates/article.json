@@ -32,8 +32,8 @@
       "settings": {
         "show_featured_image": true,
         "height": "h-md",
-        "overlay": 30,
         "color_scheme": "accent-1",
+        "overlay": 30,
         "content_position": "top",
         "content_alignment": "left"
       }
@@ -44,28 +44,58 @@
         "title": {
           "type": "title",
           "settings": {
+          }
+        },
+        "0f55a664-ecd2-40d4-8e86-5749b647de2b": {
+          "type": "details",
+          "settings": {
             "blog_show_date": true,
-            "blog_show_author": false
+            "blog_show_author": true,
+            "author_image": "shopify:\/\/shop_images\/test_bg.png",
+            "author_image_radius": 50,
+            "author_bio": "Include an optional short bio about your blog's author. Include an optional short bio about your blog's author. Include an optional short bio about your blog's author. Include an optional short bio about your blog's author. Include an optional short bio about your blog's author. Include an optional short bio about your blog's author."
+          }
+        },
+        "34c57ce1-84ef-4e4a-9171-1323ef5d26a1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
+            "show_featured_image": false,
+            "image_ratio": "landscape",
+            "image_caption": "Here is a caption."
           }
         },
         "share": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "share_label": "Share",
+            "share_on_facebook": true,
+            "share_on_twitter": true
           }
         },
         "content": {
           "type": "content",
+          "settings": {
+            "inline_image_ratio": "landscape"
+          }
+        },
+        "da65db9b-63f4-4e49-beb4-3450dbe140b5": {
+          "type": "tags",
           "settings": {
           }
         }
       },
       "block_order": [
         "title",
+        "0f55a664-ecd2-40d4-8e86-5749b647de2b",
+        "34c57ce1-84ef-4e4a-9171-1323ef5d26a1",
         "share",
-        "content"
+        "content",
+        "da65db9b-63f4-4e49-beb4-3450dbe140b5"
       ],
       "settings": {
+        "blog_container_width": "narrow",
+        "back_button": "before"
       }
     }
   },

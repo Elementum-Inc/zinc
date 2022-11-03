@@ -20,3 +20,107 @@
     }
   }
 }
+
+.article-template {
+  & > *:first-child {
+    @apply mt-16;
+  }
+
+  & > *:last-child {
+    @apply mb-16;
+  }
+
+  &__container {
+    @apply flex;
+
+    & .article-template {
+      @apply basis-full md:basis-3/4 lg:basis-4/5;
+    }
+  }
+
+  &__sidebar {
+    @apply <md:hidden mt-20 basis-1/4 lg:basis-1/5;
+
+    &-title {
+      @apply font-serif mb-4;
+    }
+
+    &-tags {
+      @apply pt-2 lg:pt-4;
+
+      & li {
+        @apply my-2 lg:my-4;
+      }
+    }
+  }
+
+  &__back {
+    &.before {
+      @apply mt-8 mb-16;
+    }
+  }
+
+  &__link {
+    @apply text-base;
+
+    & .icon-wrap {
+      @apply mr-2;
+    }
+
+    .after & {
+      @apply text-lg justify-center;
+    }
+  }
+
+  &__image {
+    > img {
+      @apply h-prose;
+    }
+
+    &-caption {
+      @apply m-auto text-center text-sm mt-8;
+    }
+  }
+
+  &__details-container {
+    @apply flex text-sm my-8;
+  }
+
+  &__author {
+    @apply font-serif uppercase leading-4 mb-1;
+  }
+
+  &__author-image img {
+    @apply max-h-[3.5rem] max-w-[3.5rem] aspect-square object-cover mr-4;
+  }
+
+  &__details {
+    & > span {
+      @apply block;
+    }
+  }
+
+  &__content {
+    &.rte img {
+      @apply mx-auto my-8 lg:my-16 h-[20ch] md:h-[30ch] lg:h-[40ch] object-cover;
+    }
+  }
+
+  &__tags {
+    @apply font-bold;
+  }
+
+  &__social-sharing {
+    @apply bg-fg border border-bg2 flex justify-around py-4 px-8;
+  }
+
+  .share-button {
+    &__button {
+      @apply text-base;
+    }
+
+    .icon {
+      @apply h-[1.25rem] mr-4;
+    }
+  }
+}
