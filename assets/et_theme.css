@@ -127,7 +127,7 @@ img, video {
 legend {
   padding: 0;
 }
-p, h3, dl, dd, h2, hr, h1, h6, h4, h5 {
+p, h3, dl, dd, h2, hr, h1, h6, h4, figure, h5 {
   margin: 0;
 }
 strong {
@@ -289,6 +289,12 @@ ul {
 }
 .hidden {
   display: none;
+}
+.items-center {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
 }
 .order-none {
   -webkit-box-ordinal-group: 1;
@@ -480,6 +486,11 @@ ul {
   -o-transition-duration: 150ms;
   transition-duration: 150ms;
 }
+.duration {
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
 .animate {
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
@@ -589,6 +600,12 @@ ul {
 .container--expanded {
   max-width: 1536px;
 }
+.container--narrow {
+  max-width: 1024px;
+}
+.container--tight {
+  max-width: 768px;
+}
 .container--no-pad {
   padding: 0px;
 }
@@ -695,9 +712,36 @@ p.small {
   font-size: .875rem;
   line-height: 1.5;
 }
-.rte > p {
-  font-size: inherit;
-}.color-scheme--background-1, .color-scheme--primary, .color-scheme--background-2.inverse, .color-scheme--secondary.inverse {
+.rte h1, .rte h2, .rte h3 {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+.rte h4, .rte h5, .rte h6 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.rte p {
+  font-size: 1.125rem;
+  line-height: 1.625;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+@media (min-width: 1024px) {
+  .rte p {
+    font-size: 1.25rem;
+    line-height: 1.875rem;
+  }
+}:root {
+  --color-scheme-fg: rgb(var(--theme-foreground));
+  --color-scheme-fgRGB: var(--theme-foreground);
+  --color-scheme-bg: rgb(var(--color-background-1));
+  --color-scheme-bgRGB: var(--color-background-1);
+  --color-scheme-text: rgb(var(--color-text));
+  --color-scheme-accent: rgb(var(--color-background-2));
+  --color-scheme-accentRGB: var(--color-background-2);
+  --color-scheme-border: rgb(var(--theme-foreground));
+}
+.color-scheme--background-1, .color-scheme--primary, .color-scheme--background-2.inverse, .color-scheme--secondary.inverse {
   --color-scheme-fg: rgb(var(--theme-foreground));
   --color-scheme-fgRGB: var(--theme-foreground);
   --color-scheme-bg: rgb(var(--color-background-1));
@@ -789,6 +833,15 @@ p.small {
   margin-bottom: 1rem;
   margin-right: 0.5rem;
 }
+.btn {
+  background-color: var(--button-bg);
+  display: inline-block;
+  padding-top: .375rem;
+  padding-bottom: .375rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: var(--button-fg);
+}
 .btn.primary {
   --button-bg: var(--color-scheme-bg);
   --button-fg: var(--color-scheme-accent);
@@ -828,23 +881,19 @@ p.small {
 .btn.round {
   border-radius: .625rem;
 }
-.btn {
-  background-color: var(--button-bg);
-  display: inline-block;
-  padding-top: .375rem;
-  padding-bottom: .375rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-  color: var(--button-fg);
-}
 .btn-outline {
   border-color: var(--button-fg);
   border-width: 1px;
 }
 .btn-shadow {
   position: relative;
+  z-index: 1;
 }
-.btn-shadow::after {
+.btn-shadow + .text {
+  background-color: var(--button-bg);
+  color: var(--button-fg);
+}
+.btn-shadow + .shadow {
   border-color: var(--button-fg);
   border-width: 1px;
   display: block;
@@ -853,9 +902,8 @@ p.small {
   top: 6px;
   left: 6px;
   width: 100%;
-  z-index: -1;
+  z-index: 0;
   border-radius: inherit;
-  content: '';
 }.field__input {
   background-color: rgb(var(--theme-foreground));
   cursor: pointer;
