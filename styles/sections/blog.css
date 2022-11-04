@@ -39,7 +39,21 @@
   }
 
   &__sidebar {
-    @apply <md:hidden mt-20 basis-1/4 lg:basis-1/5;
+    @apply <md:hidden pt-20 basis-1/4 lg:basis-1/5 self-start sticky top-0;
+
+    .sticky-header-active & {
+      animation: stickySidebarEnter .5s linear;
+      animation-delay: 1.5s;
+      animation-fill-mode: forwards;
+    }
+
+    &--left {
+      @apply mr-8 lg:mr-12 xl:mr-20;
+    }
+
+    &--right {
+      @apply ml-8 lg:ml-12 xl:ml-20;
+    }
 
     &-title {
       @apply font-serif mb-4;
@@ -123,4 +137,29 @@
       @apply h-[1.25rem] mr-4;
     }
   }
+
+  &__comment-wrapper {
+    @apply mt-8;
+
+    h3 {
+      @apply font-serif text-xl;
+    }
+  }
+
+  &__comments {
+    @apply divide-y divide-scheme-accent mb-8;
+
+    &-comment {
+      @apply px-0;
+    }
+
+    &-fields {
+      @apply my-8;
+    }
+  }
+}
+
+@keyframes stickySidebarEnter {
+  from { top: 0; }
+  to { top: 8rem; }
 }

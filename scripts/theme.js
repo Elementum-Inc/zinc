@@ -88,6 +88,7 @@ searchInit.mount(searchMount);
 
 document.addEventListener('DOMContentLoaded', () => {
   if (JSON.parse(megamenuMount.dataset.settings).enable_sticky_header) {
+    const body = document.querySelector('body');
     const header = document.querySelector('#shopify-section-header');
     var ticking = false;
   
@@ -97,8 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           if (yPos < window.innerHeight) {
+            body.classList.remove('sticky-header-active');
             header.classList.remove('sticky');
           } else {
+            body.classList.add('sticky-header-active');
             header.classList.add('sticky');
           }
   

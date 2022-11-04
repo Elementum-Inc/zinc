@@ -11,7 +11,7 @@
 
 {% if section.settings.tag_sidebar %}
   {% capture tag_sidebar %}
-    <aside class="article-template__sidebar">
+    <aside class="article-template__sidebar article-template__sidebar--{{ section.settings.tag_sidebar_side }}">
       <h4 class="article-template__sidebar-title">Tagged</h4>
       <ul class="article-template__sidebar-tags">
         {% for tag in article.tags %}
@@ -25,7 +25,7 @@
 {% endif %}
 
 {% if section.settings.tag_sidebar %}
-  <div class="article-template__container article-template__sidebar-{{ section.settings.tag_sidebar_side }} {{ container_classes }}">
+  <div class="article-template__container {{ container_classes }}">
     {% if section.settings.tag_sidebar_side == 'left' %}
       {{ tag_sidebar }}
     {% endif %}
@@ -218,12 +218,12 @@
   {% endif %}
 
   {%- if blog.comments_enabled? -%}
-    <div class="article-template__comment-wrapper background-secondary">
-      <div id="comments" class="{{ container_classes }}">
+    <div class="article-template__comment-wrapper">
+      <div id="comments">
         {%- if article.comments_count > 0 -%}
           {%- assign anchorId = '#Comments-' | append: article.id -%}
 
-          <h2 id="Comments-{{ article.id }}" tabindex="-1">{{ 'blogs.article.comments' | t: count: article.comments_count }}</h2>
+          <h3 id="Comments-{{ article.id }}" tabindex="-1">{{ 'blogs.article.comments' | t: count: article.comments_count }}</h3>
           {% paginate article.comments by 5 %}
             <div class="article-template__comments">
               {%- if comment.status == 'pending' and comment.content -%}
@@ -254,7 +254,7 @@
               assign post_message = 'blogs.article.success_moderated'
             endif
           -%}
-          <h2>{{ 'blogs.article.comment_form_title' | t }}</h2>
+          <h3>{{ 'blogs.article.comment_form_title' | t }}</h3>
           {%- if form.errors -%}
             <div class="form__message" role="alert">
               <h3 class="form-status caption-large text-body" tabindex="-1" autofocus>
@@ -359,7 +359,9 @@
           {%- if blog.moderated? -%}
             <p class="article-template__comment-warning caption">{{ 'blogs.article.moderated' | t }}</p>
           {%- endif -%}
-          <input type="submit" class="button" value="{{ 'blogs.article.post' | t }}">
+          <button type="submit" class="btn round secondary">
+            {{ 'blogs.article.post' | t }}
+          </button>
         {% endform %}
       </div>
     </div>

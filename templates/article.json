@@ -95,7 +95,9 @@
       ],
       "settings": {
         "blog_container_width": "narrow",
-        "back_button": "before"
+        "back_button": "before",
+        "tag_sidebar": true,
+        "tag_sidebar_side": "right"
       }
     }
   },
