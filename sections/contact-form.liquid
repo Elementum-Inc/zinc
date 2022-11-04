@@ -21,6 +21,15 @@
     {%- else -%}
       <h2 class="visually-hidden">{{ 'templates.contact.form.title' | t }}</h2>
     {%- endif -%}
+
+    {%- if section.settings.text != blank -%}
+      <h3 class="helper-text">{{ section.settings.text | escape }}</h3>
+    {%- endif -%}
+
+    {%- if section.settings.subtext != blank -%}
+      <h3 class="helper-text small">{{ section.settings.subtext | escape }}</h3>
+    {%- endif -%}
+
     {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
       {%- if form.posted_successfully? -%}
         <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>{% render 'icon-success' %} {{ 'templates.contact.form.post_success' | t }}</h2>
@@ -105,19 +114,31 @@
       "label": "Heading"
     },
     {
+      "type": "text",
+      "id": "text",
+      "default": "Some additional instructions could go here!",
+      "label": "Text"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "default": "Call sales at +1 555 505 5050",
+      "label": "Subtext"
+    },
+    {
       "type": "select",
       "id": "heading_size",
       "options": [
         {
-          "value": "h2",
+          "value": "h3",
           "label": "t:sections.all.heading_size.options__1.label"
         },
         {
-          "value": "h1",
+          "value": "h2",
           "label": "t:sections.all.heading_size.options__2.label"
         },
         {
-          "value": "h0",
+          "value": "h1",
           "label": "t:sections.all.heading_size.options__3.label"
         }
       ],
