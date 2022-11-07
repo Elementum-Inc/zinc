@@ -552,7 +552,7 @@
       }
     },
     "featured-blog": {
-      "name": "Blog posts",
+      "name": "Featured blog",
       "settings": {
         "heading": {
           "label": "Heading"
@@ -1324,7 +1324,7 @@
             "label": "Grid"
           },
           "options__2": {
-            "label": "Collage"
+            "label": "List"
           },
           "info": "Posts are stacked on mobile."
         },

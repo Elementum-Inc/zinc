@@ -176,6 +176,10 @@
     }
   }
 
+  &__author {
+    @apply mt-8;
+  }
+
   &__comments {
     @apply text-sm;
 

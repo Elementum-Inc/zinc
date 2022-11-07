@@ -321,6 +321,9 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.card__author, .article-card__author {
+  margin-top: 2rem;
+}
 .card__comments, .article-card__comments {
   font-size: .875rem;
 }
