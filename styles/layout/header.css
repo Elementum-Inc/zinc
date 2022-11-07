@@ -173,6 +173,10 @@
       }
     }
 
+    & .submenus {
+      @apply max-h-4/5 overflow-y-scroll;
+    }
+
     & .submenu {
       &__top-link {
         @apply relative z-3 text-2.75 font-serif uppercase text-left w-full bg-scheme-bg pr-12;
