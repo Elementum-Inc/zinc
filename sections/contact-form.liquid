@@ -23,11 +23,11 @@
     {%- endif -%}
 
     {%- if section.settings.text != blank -%}
-      <h3 class="helper-text">{{ section.settings.text | escape }}</h3>
+      <h3 class="helper-text {{ section.settings.text_size }}">{{ section.settings.text | escape }}</h3>
     {%- endif -%}
 
     {%- if section.settings.subtext != blank -%}
-      <h3 class="helper-text small">{{ section.settings.subtext | escape }}</h3>
+      <h3 class="helper-text small {{ section.settings.subtext_size }}">{{ section.settings.subtext | escape }}</h3>
     {%- endif -%}
 
     {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
