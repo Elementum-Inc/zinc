@@ -581,7 +581,7 @@
         }
       },
       "presets": {
-        "name": "Blog posts"
+        "name": "Featured blog"
       }
     },
     "featured-collection": {
