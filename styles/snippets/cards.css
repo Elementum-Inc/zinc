@@ -1,6 +1,6 @@
 .card,
 .article-card {
-  @apply text-scheme-text rounded-product-card overflow-hidden;
+  @apply text-scheme-text rounded-product overflow-hidden;
   text-align: var(--product-card-text-alignment);
 
   &.lift:not(.card--info-hover) {
@@ -176,6 +176,10 @@
     }
   }
 
+  &__author {
+    @apply mt-8;
+  }
+
   &__comments {
     @apply text-sm;
 
@@ -199,7 +203,7 @@
 
 .article-card,
 .page-card {
-  @apply rounded-content-card;
+  @apply rounded-content;
   text-align: var(--content-card-text-alignment);
 
   &.card--info-hover {

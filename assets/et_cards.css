@@ -1,4 +1,5 @@
 .card, .article-card {
+  border-radius: var(--product-card-corner-radius);
   overflow: hidden;
   color: var(--color-scheme-text);
   text-align: var(--product-card-text-alignment);
@@ -321,6 +322,9 @@
   margin-top: 1rem;
   margin-bottom: 1rem;
 }
+.card__author, .article-card__author {
+  margin-top: 2rem;
+}
 .card__comments, .article-card__comments {
   font-size: .875rem;
 }
@@ -340,6 +344,7 @@
   margin-top: 0px;
 }
 .article-card, .page-card {
+  border-radius: var(--content-card-corner-radius);
   text-align: var(--content-card-text-alignment);
 }
 .article-card.card--info-hover.card--media .card__heading, .page-card.card--info-hover.card--media .card__heading {

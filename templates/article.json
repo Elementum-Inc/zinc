@@ -76,6 +76,7 @@
         "content": {
           "type": "content",
           "settings": {
+            "inline_image_ratio": "landscape"
           }
         },
         "da65db9b-63f4-4e49-beb4-3450dbe140b5": {

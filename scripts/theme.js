@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
     var ticking = false;
   
     document.addEventListener('scroll', () => {
-      var yPos = window.scrollY;
+      var yPos = window.scrollY * .75;
     
       if (!ticking) {
         window.requestAnimationFrame(() => {
