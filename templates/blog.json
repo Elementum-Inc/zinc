@@ -3,11 +3,17 @@
     "main": {
       "type": "main-blog",
       "settings": {
-        "layout": "collage",
+        "blog_description": "{{ blog.metafields.blog.description }}",
+        "posts_per_page": 12,
+        "layout": "list",
+        "columns_desktop": "3-col",
+        "desktop_image_side": "right",
+        "desktop_image_align": "top",
         "show_image": true,
-        "image_height": "medium",
         "show_date": true,
-        "show_author": false,
+        "show_author": true,
+        "show_excerpt": true,
+        "show_tags": true,
         "padding_top": 36,
         "padding_bottom": 36
       }

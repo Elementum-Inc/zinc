@@ -7,7 +7,7 @@
 
 body.search--opened,
 body.menu--opened {
-  @apply max-h-[100vh] overflow-hidden;
+  @apply overflow-hidden;
 }
 
 *:focus {

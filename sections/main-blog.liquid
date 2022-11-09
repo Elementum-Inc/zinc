@@ -1,6 +1,8 @@
 {{ 'component-article-card.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
-{{ 'section-main-blog.css' | asset_url | stylesheet_tag }}
+
+{{ 'et_cards.css' | asset_url | stylesheet_tag }}
+{{ 'et_blog.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -16,21 +18,35 @@
   }
 {%- endstyle -%}
 
-{%- paginate blog.articles by 6 -%}
+{% liquid
+  assign blog_list = false
+
+  if section.settings.layout == 'list'
+    assign blog_list = true
+  endif
+%}
+
+{%- paginate blog.articles by section.setting.posts_per_page -%}
   <div class="main-blog page-width section-{{ section.id }}-padding">
     <h1 class="title--primary">{{ blog.title | escape }}</h1>
+    {% if section.settings.blog_description != nil %}
+      <h3 class="description">{{ section.settings.blog_description }}</h3>
+    {% endif %}
 
-    <div class="blog-articles {% if section.settings.layout == 'collage' %}blog-articles--collage{% endif %}">
+    <div class="blog-articles blog-articles--{{ section.settings.layout }}{% if section.settings.layout == 'grid' %} shopify-grid grid--{{ section.settings.columns_desktop }}-desktop{% endif %}">
       {%- for article in blog.articles -%}
-        <div class="blog-articles__article article">
+        <div class="blog-articles__article article{% if section.settings.layout == 'grid' %} grid__item{% else %} article--image-{{ section.settings.desktop_image_side }} article--image-{{ section.settings.desktop_image_align }}{% endif %}">
           {%- render 'article-card',
             article: article,
             media_height: section.settings.image_height,
-            media_aspect_ratio: article.image.aspect_ratio,
+            media_aspect_ratio: settings.content_card_image_aspect,
+            media_fit: settings.content_card_image_fit,
             show_image: section.settings.show_image,
             show_date: section.settings.show_date,
             show_author: section.settings.show_author,
-            show_excerpt: true 
+            show_tags: section.settings.show_tags,
+            show_excerpt: section.settings.show_excerpt,
+            blog_list: blog_list
           -%}
         </div>
       {%- endfor -%}
@@ -49,8 +65,19 @@
   "class": "section",
   "settings": [
     {
-      "type": "header",
-      "content": "t:sections.main-blog.settings.header.content"
+      "type": "liquid",
+      "id": "blog_description",
+      "label": "Blog description",
+      "info": "Use this optional liquid-enabled field to link to a metafield, or include a generalized description for all blogs."
+    },
+    {
+      "type": "range",
+      "id": "posts_per_page",
+      "min": 6,
+      "max": 18,
+      "step": 3,
+      "default": 12,
+      "label": "Posts per page"
     },
     {
       "type": "select",
@@ -61,44 +88,91 @@
           "label": "t:sections.main-blog.settings.layout.options__1.label"
         },
         {
-          "value": "collage",
+          "value": "list",
           "label": "t:sections.main-blog.settings.layout.options__2.label"
         }
       ],
-      "default": "collage",
+      "default": "list",
       "label": "t:sections.main-blog.settings.layout.label",
       "info": "t:sections.main-blog.settings.layout.info"
+    },
+    {
+      "type": "header",
+      "content": "Grid Settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "These settings will only apply when \"Grid\" is chosen as the desktop layout."
+    },
+    {
+      "type": "radio",
+      "id": "columns_desktop",
+      "label": "Desktop columns",
+      "options": [
+        {
+          "value": "2-col",
+          "label": "Two columns"
+        },
+        {
+          "value": "3-col",
+          "label": "Three columns"
+        }
+      ],
+      "default": "3-col"
+    },
+    {
+      "type": "header",
+      "content": "List Settings"
+    },
+    {
+      "type": "paragraph",
+      "content": "These settings will only apply when \"List\" is chosen as the desktop layout."
+    },
+    {
+      "type": "radio",
+      "id": "desktop_image_side",
+      "label": "Desktop image placement",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    },
+    {
+      "type": "select",
+      "id": "desktop_image_align",
+      "label": "Desktop image alignment",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "bottom"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.main-blog.settings.header.content"
     },
     {
       "type": "checkbox",
       "id": "show_image",
       "default": true,
       "label": "t:sections.main-blog.settings.show_image.label"
-    },
-    {
-      "type": "select",
-      "id": "image_height",
-      "options": [
-        {
-          "value": "adapt",
-          "label": "t:sections.main-blog.settings.image_height.options__1.label"
-        },
-        {
-          "value": "small",
-          "label": "t:sections.main-blog.settings.image_height.options__2.label"
-        },
-        {
-          "value": "medium",
-          "label": "t:sections.main-blog.settings.image_height.options__3.label"
-        },
-        {
-          "value": "large",
-          "label": "t:sections.main-blog.settings.image_height.options__4.label"
-        }
-      ],
-      "default": "medium",
-      "label": "t:sections.main-blog.settings.image_height.label",
-      "info": "t:sections.main-blog.settings.image_height.info"
     },
     {
       "type": "checkbox",
@@ -111,6 +185,18 @@
       "id": "show_author",
       "default": false,
       "label": "t:sections.main-blog.settings.show_author.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_excerpt",
+      "default": false,
+      "label": "Show excerpt"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_tags",
+      "default": false,
+      "label": "Show tags"
     },
     {
       "type": "paragraph",

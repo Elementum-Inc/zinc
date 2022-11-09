@@ -9,8 +9,8 @@ export default {
   theme: {
     borderRadius: {
       badge: 'var(--badge-corner-radius)',
-      'product-card': 'var(--product-card-corner-radius)',
-      'content-card': 'var(--content-card-corner-radius)'
+      product: 'var(--product-card-corner-radius)',
+      content: 'var(--content-card-corner-radius)'
     },
     colors: {
       black: '#0a0a0a',

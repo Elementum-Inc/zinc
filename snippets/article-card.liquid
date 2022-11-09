@@ -95,7 +95,7 @@
                   {%- if show_date -%}
                     <span>{{ article.published_at | time_tag: format: 'date' }}</span>
                   {%- endif -%}
-                  {%- if show_author -%}
+                  {%- if show_author and blog_list == false -%}
                     <span>{{ article.author }}</span>
                   {%- endif -%}
                   {%- if card_hover_info -%}
@@ -139,16 +139,28 @@
             <div class="card-information after">
               {%- if show_excerpt -%}
                 {%- if article.excerpt.size > 0 or article.content.size > 0 -%}
+                  {% liquid
+                    if article.excerpt.size > 0
+                      assign excerpt = article.excerpt
+                    else
+                      assign excerpt = article.content
+                    endif
+
+                    assign excerpt_length = 15
+
+                    if blog_list
+                      assign excerpt_length = 30
+                    endif
+                  %}
                   <p class="article-card__excerpt rte-width">
-                    {%- if article.excerpt.size > 0 -%}
-                      {{ article.excerpt | strip_html | truncatewords: 15 }}
-                    {%- else -%}
-                      {{ article.content | strip_html | truncatewords: 15 }}
-                    {%- endif -%}
+                    {{ excerpt | strip_html | truncatewords: excerpt_length }}
                   </p>
                 {%- endif -%}
               {%- endif -%}
               <div class="article-card__footer">
+                {% if show_author and blog_list %}
+                  <p class="article-card__author">Author: <span>{{ article.author }}</span></p>
+                {% endif %}
                 {%- if article.comments_count > 0 and blog.comments_enabled? -%}
                   <span class="card__comments">
                     <span class="icon">{% render 'icon-comment' %}</span>

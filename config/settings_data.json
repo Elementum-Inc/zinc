@@ -33,6 +33,8 @@
     "content_card_vertical_alignment": "start",
     "content_card_color_scheme": "background-1",
     "content_card_border": false,
+    "content_card_corner_radius": 0,
+    "content_card_image_aspect": "widescreen",
     "content_card_image_fit": "cover",
     "text_boxes_border_thickness": 0,
     "text_boxes_border_opacity": 10,
