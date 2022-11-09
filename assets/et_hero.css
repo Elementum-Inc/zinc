@@ -7,6 +7,7 @@
   height: 100%;
   -o-object-fit: cover;
   object-fit: cover;
+  width: 100%;
 }
 .hero__text-wrapper {
   height: 100%;

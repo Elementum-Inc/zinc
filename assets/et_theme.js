@@ -5242,7 +5242,7 @@ function p$1({ props: r2, attrs: t2, slots: e2, slot: o2, name: i }) {
     }
     return Array.isArray(a2) && a2.length === 1 ? a2[0] : a2;
   }
-  return h$1(n2, Object.assign({}, s, l2), a2);
+  return h$1(n2, Object.assign({}, s, l2), { default: () => a2 });
 }
 function g(r2) {
   return r2.flatMap((t2) => t2.type === Fragment ? g(t2.children) : [t2]);
@@ -5408,7 +5408,7 @@ function y(f2, m2, i = computed(() => true)) {
     if (!i.value || e2.defaultPrevented)
       return;
     let n2 = u2(e2);
-    if (n2 === null || !n2.ownerDocument.documentElement.contains(n2))
+    if (n2 === null || !n2.getRootNode().contains(n2))
       return;
     let c2 = function o2(t2) {
       return typeof t2 == "function" ? o2(t2()) : Array.isArray(t2) || t2 instanceof Set ? t2 : [t2];

@@ -99,10 +99,39 @@
         "tag_sidebar": true,
         "tag_sidebar_side": "right"
       }
+    },
+    "related-posts": {
+      "type": "featured-blog",
+      "settings": {
+        "title": "Related Posts",
+        "subheading": "",
+        "blog": "",
+        "sort_by": "new",
+        "tag_links": false,
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "desktop_slider": false,
+        "color_scheme": "primary",
+        "use_foreground": true,
+        "card_color_scheme": "default",
+        "show_image": true,
+        "image_ratio": "sportrait",
+        "card_image_fit": "cover",
+        "card_vertical_alignment": "start",
+        "show_date": true,
+        "show_author": false,
+        "show_excerpt": false,
+        "show_tags": false,
+        "card_hover_show_info": false,
+        "show_view_all": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "hero",
-    "main"
+    "main",
+    "related-posts"
   ]
 }

@@ -144,7 +144,7 @@
           <p>
             Tags:
             {% for tag in article.tags %}
-              <span class="article-template__tag"> {{ tag }}{% unless forloop.last %},{% endunless %}</span>
+              <a href="{{ blog.url }}/tagged/{{ tag }}" alt="Blog posts tagged with {{ tag }}" class="article-template__tag"> {{ tag }}{% unless forloop.last %},{% endunless %}</a>
             {% endfor %}
           </p>
         </div>
@@ -627,6 +627,14 @@
           "default": "landscape",
           "label": "t:settings_schema.global.settings.aspect_ratio.label"
         }
+      ]
+    },
+    {
+      "type": "tags",
+      "name": "Tags",
+      "limit": 1,
+      "settings": [
+
       ]
     },
     {

@@ -49,7 +49,7 @@
         "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Whether it's friends or fashion, our community is here for you!<\/p>",
+            "text": "<p>Whether it's friends or fashion, our community is here for you!</p>",
             "text_style": "body"
           }
         },
@@ -59,7 +59,7 @@
             "primary_button_label": "",
             "primary_button_link": "",
             "secondary_button_label": "Learn More",
-            "secondary_button_link": "shopify:\/\/blogs\/community"
+            "secondary_button_link": "shopify://blogs/community"
           }
         }
       },
@@ -69,7 +69,7 @@
         "6e3ec468-dbaa-4459-82c2-9e2ed69f8987"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
+        "image": "shopify://shop_images/fall-leaf-cookies-in-the-kitchen.jpg",
         "height": "h-md",
         "desktop_image_columns": 4,
         "desktop_image_side": "right",
@@ -123,7 +123,7 @@
         "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-1": {
           "type": "text",
           "settings": {
-            "text": "<p>See the latest in fall colors, styles and accessories. <\/p>",
+            "text": "<p>See the latest in fall colors, styles and accessories. </p>",
             "text_style": "subtitle"
           }
         },
@@ -131,9 +131,9 @@
           "type": "buttons",
           "settings": {
             "primary_button_label": "Read the latest",
-            "primary_button_link": "shopify:\/\/blogs\/news",
+            "primary_button_link": "shopify://blogs/news",
             "secondary_button_label": "Search our archive",
-            "secondary_button_link": "shopify:\/\/blogs\/trends"
+            "secondary_button_link": "shopify://blogs/trends"
           }
         }
       },
@@ -143,7 +143,7 @@
         "e80808f9-ece3-4f42-873e-22c991b8541a"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/winding-road-covered-in-autumn-trees.jpg",
+        "image": "shopify://shop_images/winding-road-covered-in-autumn-trees.jpg",
         "height": "h-lg",
         "desktop_image_columns": 3,
         "desktop_image_side": "left",
