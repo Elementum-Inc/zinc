@@ -125,10 +125,16 @@
   }
 
   &__social-sharing {
-    @apply bg-fg border border-bg2 flex justify-around py-4 px-8;
+    @apply bg-fg border border-bg2 flex flex-wrap justify-around py-4 px-8;
   }
 
   .share-button {
+    @apply basis-full sm:basis-1/3 md:basis-auto;
+
+    > * {
+      @apply m-auto text-center justify-center;
+    }
+
     &__button {
       @apply text-base;
     }

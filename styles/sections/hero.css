@@ -2,7 +2,7 @@
   @apply relative bg-scheme-bg text-scheme-text;
 
   &__image {
-    @apply h-full object-cover;
+    @apply h-full w-full object-cover;
   }
 
   &__text-wrapper {
