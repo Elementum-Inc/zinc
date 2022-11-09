@@ -42,8 +42,8 @@
       "settings": {
         "show_collection_image": true,
         "height": "h-sm",
-        "overlay": 50,
         "color_scheme": "secondary",
+        "overlay": 50,
         "content_position": "middle",
         "content_alignment": "right"
       }
