@@ -100,11 +100,6 @@ function makeMap(str, expectsLowerCase) {
   }
   return expectsLowerCase ? (val) => !!map[val.toLowerCase()] : (val) => !!map[val];
 }
-const specialBooleanAttrs = `itemscope,allowfullscreen,formnovalidate,ismap,nomodule,novalidate,readonly`;
-const isSpecialBooleanAttr = /* @__PURE__ */ makeMap(specialBooleanAttrs);
-function includeBooleanAttr(value) {
-  return !!value || value === "";
-}
 function normalizeStyle(value) {
   if (isArray(value)) {
     const res = {};
@@ -125,10 +120,11 @@ function normalizeStyle(value) {
   }
 }
 const listDelimiterRE = /;(?![^(]*\))/g;
-const propertyDelimiterRE = /:(.+)/;
+const propertyDelimiterRE = /:([^]+)/;
+const styleCommentRE = /\/\*.*?\*\//gs;
 function parseStringStyle(cssText) {
   const ret = {};
-  cssText.split(listDelimiterRE).forEach((item) => {
+  cssText.replace(styleCommentRE, "").split(listDelimiterRE).forEach((item) => {
     if (item) {
       const tmp = item.split(propertyDelimiterRE);
       tmp.length > 1 && (ret[tmp[0].trim()] = tmp[1].trim());
@@ -155,6 +151,11 @@ function normalizeClass(value) {
     }
   }
   return res.trim();
+}
+const specialBooleanAttrs = `itemscope,allowfullscreen,formnovalidate,ismap,nomodule,novalidate,readonly`;
+const isSpecialBooleanAttr = /* @__PURE__ */ makeMap(specialBooleanAttrs);
+function includeBooleanAttr(value) {
+  return !!value || value === "";
 }
 const toDisplayString = (val) => {
   return isString(val) ? val : val == null ? "" : isArray(val) || isObject(val) && (val.toString === objectToString || !isFunction(val.toString)) ? JSON.stringify(val, replacer, 2) : String(val);
@@ -463,8 +464,9 @@ function trigger(target, type, key, newValue, oldValue, oldTarget) {
   if (type === "clear") {
     deps = [...depsMap.values()];
   } else if (key === "length" && isArray(target)) {
+    const newLength = toNumber(newValue);
     depsMap.forEach((dep, key2) => {
-      if (key2 === "length" || key2 >= newValue) {
+      if (key2 === "length" || key2 >= newLength) {
         deps.push(dep);
       }
     });
@@ -1098,91 +1100,8 @@ function computed$1(getterOrOptions, debugOptions, isSSR = false) {
   const cRef = new ComputedRefImpl(getter, setter, onlyGetter || !setter, isSSR);
   return cRef;
 }
-const stack = [];
 function warn(msg, ...args) {
-  pauseTracking();
-  const instance = stack.length ? stack[stack.length - 1].component : null;
-  const appWarnHandler = instance && instance.appContext.config.warnHandler;
-  const trace = getComponentTrace();
-  if (appWarnHandler) {
-    callWithErrorHandling(appWarnHandler, instance, 11, [
-      msg + args.join(""),
-      instance && instance.proxy,
-      trace.map(({ vnode }) => `at <${formatComponentName(instance, vnode.type)}>`).join("\n"),
-      trace
-    ]);
-  } else {
-    const warnArgs = [`[Vue warn]: ${msg}`, ...args];
-    if (trace.length && true) {
-      warnArgs.push(`
-`, ...formatTrace(trace));
-    }
-    console.warn(...warnArgs);
-  }
-  resetTracking();
-}
-function getComponentTrace() {
-  let currentVNode = stack[stack.length - 1];
-  if (!currentVNode) {
-    return [];
-  }
-  const normalizedStack = [];
-  while (currentVNode) {
-    const last = normalizedStack[0];
-    if (last && last.vnode === currentVNode) {
-      last.recurseCount++;
-    } else {
-      normalizedStack.push({
-        vnode: currentVNode,
-        recurseCount: 0
-      });
-    }
-    const parentInstance = currentVNode.component && currentVNode.component.parent;
-    currentVNode = parentInstance && parentInstance.vnode;
-  }
-  return normalizedStack;
-}
-function formatTrace(trace) {
-  const logs = [];
-  trace.forEach((entry, i) => {
-    logs.push(...i === 0 ? [] : [`
-`], ...formatTraceEntry(entry));
-  });
-  return logs;
-}
-function formatTraceEntry({ vnode, recurseCount }) {
-  const postfix = recurseCount > 0 ? `... (${recurseCount} recursive calls)` : ``;
-  const isRoot = vnode.component ? vnode.component.parent == null : false;
-  const open = ` at <${formatComponentName(vnode.component, vnode.type, isRoot)}`;
-  const close = `>` + postfix;
-  return vnode.props ? [open, ...formatProps(vnode.props), close] : [open + close];
-}
-function formatProps(props) {
-  const res = [];
-  const keys = Object.keys(props);
-  keys.slice(0, 3).forEach((key) => {
-    res.push(...formatProp(key, props[key]));
-  });
-  if (keys.length > 3) {
-    res.push(` ...`);
-  }
-  return res;
-}
-function formatProp(key, value, raw) {
-  if (isString(value)) {
-    value = JSON.stringify(value);
-    return raw ? value : [`${key}=${value}`];
-  } else if (typeof value === "number" || typeof value === "boolean" || value == null) {
-    return raw ? value : [`${key}=${value}`];
-  } else if (isRef(value)) {
-    value = formatProp(key, toRaw(value.value), true);
-    return raw ? value : [`${key}=Ref<`, value, `>`];
-  } else if (isFunction(value)) {
-    return [`${key}=fn${value.name ? `<${value.name}>` : ``}`];
-  } else {
-    value = toRaw(value);
-    return raw ? value : [`${key}=`, value];
-  }
+  return;
 }
 function callWithErrorHandling(fn, instance, type, args) {
   let res;
@@ -1368,7 +1287,7 @@ function emit$1(instance, event, ...rawArgs) {
     const modifiersKey = `${modelArg === "modelValue" ? "model" : modelArg}Modifiers`;
     const { number, trim } = props[modifiersKey] || EMPTY_OBJ;
     if (trim) {
-      args = rawArgs.map((a2) => a2.trim());
+      args = rawArgs.map((a2) => isString(a2) ? a2.trim() : a2);
     }
     if (number) {
       args = rawArgs.map(toNumber);
@@ -1710,6 +1629,7 @@ function doWatch(source, cb, { immediate, deep, flush, onTrack, onTrigger } = EM
       callWithErrorHandling(fn, instance, 4);
     };
   };
+  let ssrCleanup;
   if (isInSSRComponentSetup) {
     onCleanup = NOOP;
     if (!cb) {
@@ -1721,9 +1641,14 @@ function doWatch(source, cb, { immediate, deep, flush, onTrack, onTrigger } = EM
         onCleanup
       ]);
     }
-    return NOOP;
+    if (flush === "sync") {
+      const ctx = useSSRContext();
+      ssrCleanup = ctx.__watcherHandles || (ctx.__watcherHandles = []);
+    } else {
+      return NOOP;
+    }
   }
-  let oldValue = isMultiSource ? [] : INITIAL_WATCHER_VALUE;
+  let oldValue = isMultiSource ? new Array(source.length).fill(INITIAL_WATCHER_VALUE) : INITIAL_WATCHER_VALUE;
   const job = () => {
     if (!effect.active) {
       return;
@@ -1736,7 +1661,7 @@ function doWatch(source, cb, { immediate, deep, flush, onTrack, onTrigger } = EM
         }
         callWithAsyncErrorHandling(cb, instance, 3, [
           newValue,
-          oldValue === INITIAL_WATCHER_VALUE ? void 0 : oldValue,
+          oldValue === INITIAL_WATCHER_VALUE || isMultiSource && oldValue[0] === INITIAL_WATCHER_VALUE ? [] : oldValue,
           onCleanup
         ]);
         oldValue = newValue;
@@ -1769,12 +1694,15 @@ function doWatch(source, cb, { immediate, deep, flush, onTrack, onTrigger } = EM
   } else {
     effect.run();
   }
-  return () => {
+  const unwatch = () => {
     effect.stop();
     if (instance && instance.scope) {
       remove(instance.scope.effects, effect);
     }
   };
+  if (ssrCleanup)
+    ssrCleanup.push(unwatch);
+  return unwatch;
 }
 function instanceWatch(source, value, options) {
   const publicThis = this.proxy;
@@ -1916,7 +1844,9 @@ const BaseTransitionImpl = {
           state.isLeaving = true;
           leavingHooks.afterLeave = () => {
             state.isLeaving = false;
-            instance.update();
+            if (instance.update.active !== false) {
+              instance.update();
+            }
           };
           return emptyPlaceholder(child);
         } else if (mode === "in-out" && innerChild.type !== Comment) {
@@ -2180,23 +2110,25 @@ function withDirectives(vnode, directives) {
   const bindings = vnode.dirs || (vnode.dirs = []);
   for (let i = 0; i < directives.length; i++) {
     let [dir, value, arg, modifiers = EMPTY_OBJ] = directives[i];
-    if (isFunction(dir)) {
-      dir = {
-        mounted: dir,
-        updated: dir
-      };
+    if (dir) {
+      if (isFunction(dir)) {
+        dir = {
+          mounted: dir,
+          updated: dir
+        };
+      }
+      if (dir.deep) {
+        traverse(value);
+      }
+      bindings.push({
+        dir,
+        instance,
+        value,
+        oldValue: void 0,
+        arg,
+        modifiers
+      });
     }
-    if (dir.deep) {
-      traverse(value);
-    }
-    bindings.push({
-      dir,
-      instance,
-      value,
-      oldValue: void 0,
-      arg,
-      modifiers
-    });
   }
   return vnode;
 }
@@ -2883,7 +2815,7 @@ function normalizePropsOptions(comp, appContext, asMixin = false) {
       const normalizedKey = camelize(key);
       if (validatePropName(normalizedKey)) {
         const opt = raw[key];
-        const prop = normalized[normalizedKey] = isArray(opt) || isFunction(opt) ? { type: opt } : opt;
+        const prop = normalized[normalizedKey] = isArray(opt) || isFunction(opt) ? { type: opt } : Object.assign({}, opt);
         if (prop) {
           const booleanIndex = getTypeIndex(Boolean, prop.type);
           const stringIndex = getTypeIndex(String, prop.type);
@@ -4502,34 +4434,15 @@ function getExposeProxy(instance) {
         } else if (key in publicPropertiesMap) {
           return publicPropertiesMap[key](instance);
         }
+      },
+      has(target, key) {
+        return key in target || key in publicPropertiesMap;
       }
     }));
   }
 }
-const classifyRE = /(?:^|[-_])(\w)/g;
-const classify = (str) => str.replace(classifyRE, (c2) => c2.toUpperCase()).replace(/[-_]/g, "");
 function getComponentName(Component, includeInferred = true) {
   return isFunction(Component) ? Component.displayName || Component.name : Component.name || includeInferred && Component.__name;
-}
-function formatComponentName(instance, Component, isRoot = false) {
-  let name = getComponentName(Component);
-  if (!name && Component.__file) {
-    const match = Component.__file.match(/([^/\\]+)\.\w+$/);
-    if (match) {
-      name = match[1];
-    }
-  }
-  if (!name && instance && instance.parent) {
-    const inferFromRegistry = (registry) => {
-      for (const key in registry) {
-        if (registry[key] === Component) {
-          return key;
-        }
-      }
-    };
-    name = inferFromRegistry(instance.components || instance.parent.type.components) || inferFromRegistry(instance.appContext.components);
-  }
-  return name ? classify(name) : isRoot ? `App` : `Anonymous`;
 }
 function isClassComponent(value) {
   return isFunction(value) && "__vccOpts" in value;
@@ -4557,7 +4470,14 @@ function h$1(type, propsOrChildren, children) {
     return createVNode(type, propsOrChildren, children);
   }
 }
-const version = "3.2.41";
+const ssrContextKey = Symbol(``);
+const useSSRContext = () => {
+  {
+    const ctx = inject(ssrContextKey);
+    return ctx;
+  }
+};
+const version = "3.2.43";
 const svgNS = "http://www.w3.org/2000/svg";
 const doc = typeof document !== "undefined" ? document : null;
 const templateContainer = doc && /* @__PURE__ */ doc.createElement("template");
@@ -5053,11 +4973,11 @@ function whenTransitionEnds(el, expectedType, explicitTimeout, resolve2) {
 function getTransitionInfo(el, expectedType) {
   const styles = window.getComputedStyle(el);
   const getStyleProperties = (key) => (styles[key] || "").split(", ");
-  const transitionDelays = getStyleProperties(TRANSITION + "Delay");
-  const transitionDurations = getStyleProperties(TRANSITION + "Duration");
+  const transitionDelays = getStyleProperties(`${TRANSITION}Delay`);
+  const transitionDurations = getStyleProperties(`${TRANSITION}Duration`);
   const transitionTimeout = getTimeout(transitionDelays, transitionDurations);
-  const animationDelays = getStyleProperties(ANIMATION + "Delay");
-  const animationDurations = getStyleProperties(ANIMATION + "Duration");
+  const animationDelays = getStyleProperties(`${ANIMATION}Delay`);
+  const animationDurations = getStyleProperties(`${ANIMATION}Duration`);
   const animationTimeout = getTimeout(animationDelays, animationDurations);
   let type = null;
   let timeout = 0;
@@ -5079,7 +4999,7 @@ function getTransitionInfo(el, expectedType) {
     type = timeout > 0 ? transitionTimeout > animationTimeout ? TRANSITION : ANIMATION : null;
     propCount = type ? type === TRANSITION ? transitionDurations.length : animationDurations.length : 0;
   }
-  const hasTransform = type === TRANSITION && /\b(transform|all)(,|$)/.test(styles[TRANSITION + "Property"]);
+  const hasTransform = type === TRANSITION && /\b(transform|all)(,|$)/.test(getStyleProperties(`${TRANSITION}Property`).toString());
   return {
     type,
     timeout,
