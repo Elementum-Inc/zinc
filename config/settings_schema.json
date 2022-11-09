@@ -4,8 +4,8 @@
     "theme_name": "Zinc",
     "theme_version": "1.0.0-alpha",
     "theme_author": "Elementum Tech",
-    "theme_documentation_url": "https:\/\/www.elementumtech.io\/",
-    "theme_support_url": "https:\/\/www.elementumtech.io\/"
+    "theme_documentation_url": "https://www.elementumtech.io/",
+    "theme_support_url": "https://www.elementumtech.io/"
   },
   {
     "name": "t:settings_schema.colors.name",
@@ -715,7 +715,7 @@
         ],
         "default": "zoom",
         "label": "Animation style",
-        "info": "For more details on card animation styles, please refer to our [theme documentation](https:\/\/www.elementumtech.io)."
+        "info": "For more details on card animation styles, please refer to our [theme documentation](https://www.elementumtech.io)."
       },
       {
         "type": "checkbox",
@@ -1248,7 +1248,7 @@
       {
         "type": "link_list",
         "id": "search_trends",
-        "label": "Suggested\/Trending Searches",
+        "label": "Suggested/Trending Searches",
         "info": "Use this setting to attach a link list of common search terms to point consumers towards."
       },
       {

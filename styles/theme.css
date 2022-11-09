@@ -65,6 +65,14 @@ body.menu--opened {
     @apply max-w-screen-2xl;
   }
 
+  &--narrow {
+    @apply max-w-screen-lg;
+  }
+
+  &--tight {
+    @apply max-w-screen-md;
+  }
+
   &--no-pad {
     @apply p-0;
   }

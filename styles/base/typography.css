@@ -80,7 +80,15 @@ p.small {
     @apply text-sm leading-normal;
   }
 
-  > p {
-    font-size: inherit;
+  h1, h2, h3 {
+    @apply my-8;
+  }
+
+  h4, h5, h6 {
+    @apply my-4;
+  }
+
+  p {
+    @apply my-2 text-lg leading-relaxed lg:(text-xl leading-[1.875rem]);
   }
 }

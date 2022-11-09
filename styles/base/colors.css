@@ -1,3 +1,14 @@
+:root {
+  --color-scheme-fg: theme('colors.fg');
+  --color-scheme-fgRGB: theme('colors.fgRGB');
+  --color-scheme-bg: theme('colors.bg1');
+  --color-scheme-bgRGB: theme('colors.bg1RGB');
+  --color-scheme-text: theme('colors.text');
+  --color-scheme-accent: theme('colors.bg2');
+  --color-scheme-accentRGB: theme('colors.bg2RGB');
+  --color-scheme-border: theme('colors.fg');
+}
+
 .color-scheme {
   &--background-1,
   &--primary,
