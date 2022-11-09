@@ -37,8 +37,14 @@
 {% endif %}
 
 {%- liquid
-  assign posts_displayed = section.settings.blog.articles_count
-  if section.settings.post_limit <= section.settings.blog.articles_count
+  assign featured_blog = blog
+  
+  if section.settings.blog != nil
+    assign featured_blog = section.settings.blog
+  endif
+
+  assign posts_displayed = featured_blog.articles_count
+  if section.settings.post_limit <= featured_blog.articles_count
     assign posts_exceed_limit = true
     assign posts_displayed = section.settings.post_limit
   endif
@@ -49,8 +55,8 @@
       <div class="container blog__title-wrapper">
         <h2 id="SectionHeading-{{ section.id }}" class="blog__title h1">{{ section.settings.title | escape }}</h2>
 
-        {%- if section.settings.blog != blank and section.settings.show_view_all and section.settings.post_limit < section.settings.blog.articles_count -%}
-          <a href="{{ section.settings.blog.url }}"
+        {%- if featured_blog != blank and section.settings.show_view_all and section.settings.post_limit < featured_blog.articles_count -%}
+          <a href="{{ featured_blog.url }}"
             class="link underlined-link large-up-hide"
           >
             {{ 'sections.featured_blog.view_all' | t }}
@@ -66,12 +72,12 @@
         {% endif %}
       </div>
     {%- endunless -%}
-    {%- if section.settings.blog != blank and section.settings.blog.articles_count > 0 -%}
+    {%- if featured_blog != blank and featured_blog.articles_count > 0 -%}
       {% if section.settings.tag_links %}
         {% liquid
           assign blogTags = ''
 
-          for article in section.settings.blog.articles
+          for article in featured_blog.articles
             unless forloop.first
               assign blogTags = blogTags | append: ','
             endunless
@@ -84,7 +90,7 @@
         %}
         <div class="container blog__tag-links">
           {% for tag in blogTags limit: 8 %}
-            <a href="{{ section.settings.blog.url }}/tagged/{{ tag }}" alt="Blog posts tagged with {{ tag }}" class="btn secondary">{{ tag }}</a>
+            <a href="{{ featured_blog.url }}/tagged/{{ tag }}" alt="Blog posts tagged with {{ tag }}" class="btn secondary">{{ tag }}</a>
           {% endfor %}
         </div>
       {% endif %}
@@ -96,7 +102,7 @@
           data-slides-per-page="2"
         >
           {% liquid
-            assign articles = section.settings.blog.articles
+            assign articles = featured_blog.articles
 
             case section.settings.sort_by
               when 'new'
@@ -112,7 +118,7 @@
           {%- for article in articles limit: section.settings.post_limit -%}
             <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="blog__post grid__item article slider__slide slider__slide--full-width">
               {% render 'article-card',
-                blog: section.settings.blog, 
+                blog: featured_blog, 
                 article: article,
                 card_color_scheme: section.settings.card_color_scheme,
                 section_color_scheme: section.settings.color_scheme,
@@ -142,9 +148,9 @@
         {%- endif -%}
       </slider-component>
 
-      {%- if section.settings.show_view_all and section.settings.post_limit < section.settings.blog.articles_count -%}
+      {%- if section.settings.show_view_all and section.settings.post_limit < featured_blog.articles_count -%}
         <div class="blog__view-all center small-hide medium-hide">
-          <a href="{{ section.settings.blog.url }}" id="ViewAll-{{ section.id }}" class="blog__button btn secondary" aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}">
+          <a href="{{ featured_blog.url }}" id="ViewAll-{{ section.id }}" class="blog__button btn secondary" aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}">
             {{ 'sections.featured_blog.view_all' | t }}
           </a>
         </div>
