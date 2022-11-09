@@ -5242,7 +5242,7 @@ function p$1({ props: r2, attrs: t2, slots: e2, slot: o2, name: i }) {
     }
     return Array.isArray(a2) && a2.length === 1 ? a2[0] : a2;
   }
-  return h$1(n2, Object.assign({}, s, l2), a2);
+  return h$1(n2, Object.assign({}, s, l2), { default: () => a2 });
 }
 function g(r2) {
   return r2.flatMap((t2) => t2.type === Fragment ? g(t2.children) : [t2]);
@@ -5408,7 +5408,7 @@ function y(f2, m2, i = computed(() => true)) {
     if (!i.value || e2.defaultPrevented)
       return;
     let n2 = u2(e2);
-    if (n2 === null || !n2.ownerDocument.documentElement.contains(n2))
+    if (n2 === null || !n2.getRootNode().contains(n2))
       return;
     let c2 = function o2(t2) {
       return typeof t2 == "function" ? o2(t2()) : Array.isArray(t2) || t2 instanceof Set ? t2 : [t2];
@@ -7167,10 +7167,10 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
 const SearchMenu = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render]]);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_blog.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_image-with-text.css")] : void 0, import.meta.url);
+__vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_hero.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_cards.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_price.css")] : void 0, import.meta.url);
 if (window.location.href.includes("/collection/")) {
-  __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_collection-hero.css")] : void 0, import.meta.url);
   __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_facets.css")] : void 0, import.meta.url);
 }
 if (window.location.href.includes("/search")) {
@@ -7218,6 +7218,7 @@ megamenuInit.mount(megamenuMount);
 searchInit.mount(searchMount);
 document.addEventListener("DOMContentLoaded", () => {
   if (JSON.parse(megamenuMount.dataset.settings).enable_sticky_header) {
+    const body = document.querySelector("body");
     const header2 = document.querySelector("#shopify-section-header");
     var ticking = false;
     document.addEventListener("scroll", () => {
@@ -7225,8 +7226,10 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           if (yPos < window.innerHeight) {
+            body.classList.remove("sticky-header-active");
             header2.classList.remove("sticky");
           } else {
+            body.classList.add("sticky-header-active");
             header2.classList.add("sticky");
           }
           ticking = false;

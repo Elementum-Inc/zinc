@@ -41,8 +41,11 @@
       ],
       "settings": {
         "show_collection_image": true,
-        "overlay": 0,
-        "color_scheme": "accent-2"
+        "height": "h-sm",
+        "color_scheme": "secondary",
+        "overlay": 50,
+        "content_position": "middle",
+        "content_alignment": "right"
       }
     },
     "product-grid": {

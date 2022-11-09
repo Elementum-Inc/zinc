@@ -1,5 +1,5 @@
 {% comment %}theme-check-disable ImgLazyLoading{% endcomment %}
-{{ 'et_collection-hero.css' | asset_url | stylesheet_tag }}
+{{ 'et_hero.css' | asset_url | stylesheet_tag }}
 
 {% liquid 
   assign collectionImageAvailable = false
@@ -15,10 +15,18 @@
   assign blocksLength = section.blocks | size
 %}
 
-<div class="collection-hero{% if collectionImageAvailable %} has-image{% endif %} {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }}">
-  <div class="collection-hero__inner">
+{% if section.settings.overlay > 0 %}
+  {% style %}
+    .hero--{{ section.id }} {
+      --hero-overlay-opacity: {{ section.settings.overlay }}%;
+    }
+  {% endstyle %}
+{% endif %}
+
+<div class="hero hero--{{ section.id }}{% if collectionImageAvailable %} has-image{% endif %}{% if section.settings.overlay > 0 %} has-overlay{% endif %} {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }}">
+  <div class="hero__inner">
     {%- if collectionImageAvailable -%}
-      <div class="collection-hero__image-wrapper">
+      <div class="hero__image-wrapper {{ section.settings.height }}">
         <img
           srcset="{{ collection.image | image_url: width: 480 }} 480w,
           {{ collection.image | image_url: width: 640 }} 640w,
@@ -31,67 +39,69 @@
           alt="{{ collection.image.alt }}"
           width="{{ collection.image.width }}"
           height="{{ collection.image.height }}"
-          class="collection-hero__image"
+          class="hero__image"
         >
         </div>
       {%- endif -%}
 
       {% if blocksLength > 0 %}
-        <div class="collection-hero__text-wrapper">
-          {% for block in section.blocks %}
-            {% case block.type %}
-              {% when 'title' %}
-                {% if block.settings.title != '' %}
-                  {% if block.settings.show_collection_title %}
-                    <h6 class="collection-hero__collection-title">
-                      <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-                      {{- collection.title | escape -}}
-                    </h6>
-                  {% endif %}
-                  <h1 class="collection-hero__title">
-                    {{- block.settings.title | escape -}}
-                  </h1>
-                {% else %}
-                  {% if block.settings.show_collection_title %}
-                    <h1 class="collection-hero__title">
-                      <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
-                      {{- collection.title | escape -}}
+        <div class="hero__text-wrapper">
+          <div class="hero__text {{ section.settings.content_alignment }} {{ section.settings.content_position }}">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'title' %}
+                  {% if block.settings.title != '' %}
+                    {% if block.settings.show_collection_title %}
+                      <h6 class="hero__collection-title">
+                        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+                        {{- collection.title | escape -}}
+                      </h6>
+                    {% endif %}
+                    <h1 class="hero__title">
+                      {{- block.settings.title | escape -}}
                     </h1>
+                  {% else %}
+                    {% if block.settings.show_collection_title %}
+                      <h1 class="hero__title">
+                        <span class="visually-hidden">{{ 'sections.collection_template.title' | t }}: </span>
+                        {{- collection.title | escape -}}
+                      </h1>
+                    {% endif %}
                   {% endif %}
-                {% endif %}
-              {% when 'subtitle' %}
-                {% if block.settings.title != '' %}
-                  <h2 class="collection-hero__subtitle">
-                    {{- block.settings.title | escape -}}
-                  </h2>
-                {% endif %}
-              {% when 'description' %}
-                {% if block.settings.show_collection_description or block.settings.description != '' %}
-                  <div class="collection-hero__description rte">
-                    {%- if block.settings.show_collection_description -%}
-                      {{ collection.description }}
-                    {%- else -%}
-                      {{ block.settings.description }}
-                    {%- endif -%}
-                  </div>
-                {% endif %}
-              {% when 'buttons' %}
-                {% if block.settings.primary_button_url or block.settings.secondary_button_url %}
-                  <div class="buttons">
-                    {% if block.settings.primary_button_url and block.settings.primary_button_text %}
-                      <a class="btn btn-outline primary" href="{{ block.settings.primary_button_url }}">
-                        <span>{{ block.settings.primary_button_text }}</span>
-                      </a>
-                    {% endif %}
-                    {% if block.settings.secondary_button_url and block.settings.secondary_button_text %}
-                      <a class="btn btn-outline secondary" href="{{ block.settings.secondary_button_url }}">
-                        <span>{{ block.settings.secondary_button_text }}</span>
-                      </a>
-                    {% endif %}
-                  </div>
-                {% endif %}
-            {% endcase %}
-          {% endfor %}
+                {% when 'subtitle' %}
+                  {% if block.settings.title != '' %}
+                    <h2 class="hero__subtitle">
+                      {{- block.settings.title | escape -}}
+                    </h2>
+                  {% endif %}
+                {% when 'description' %}
+                  {% if block.settings.show_collection_description or block.settings.description != '' %}
+                    <div class="hero__description rte">
+                      {%- if block.settings.show_collection_description -%}
+                        {{ collection.description }}
+                      {%- else -%}
+                        {{ block.settings.description }}
+                      {%- endif -%}
+                    </div>
+                  {% endif %}
+                {% when 'buttons' %}
+                  {% if block.settings.primary_button_url or block.settings.secondary_button_url %}
+                    <div class="buttons">
+                      {% if block.settings.primary_button_url and block.settings.primary_button_text %}
+                        <a class="btn btn-outline primary" href="{{ block.settings.primary_button_url }}">
+                          <span>{{ block.settings.primary_button_text }}</span>
+                        </a>
+                      {% endif %}
+                      {% if block.settings.secondary_button_url and block.settings.secondary_button_text %}
+                        <a class="btn btn-outline secondary" href="{{ block.settings.secondary_button_url }}">
+                          <span>{{ block.settings.secondary_button_text }}</span>
+                        </a>
+                      {% endif %}
+                    </div>
+                  {% endif %}
+              {% endcase %}
+            {% endfor %}
+          </div>
         </div>
       {% endif %}
     </div>
@@ -116,15 +126,24 @@
       "info": "If an alternate image is used and \"Show Collection Image\" is enabled, the default image will take priority."
     },
     {
-      "type": "range",
-      "id": "overlay",
-      "min": 0,
-      "max": 100,
-      "step": 10,
-      "unit": "%",
-      "label": "Overlay Opacity",
-      "info": "To leave overlay disabled, keep set to 0%.",
-      "default": 0
+      "type": "select",
+      "id": "height",
+      "options": [
+        {
+          "value": "h-sm",
+          "label": "t:sections.image-with-text.settings.height.options__1.label"
+        },
+        {
+          "value": "h-md",
+          "label": "t:sections.image-with-text.settings.height.options__2.label"
+        },
+        {
+          "value": "h-lg",
+          "label": "t:sections.image-with-text.settings.height.options__3.label"
+        }
+      ],
+      "default": "h-md",
+      "label": "t:sections.image-with-text.settings.height.label"
     },
     {
       "type": "select",
@@ -149,6 +168,57 @@
       ],
       "default": "primary",
       "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "range",
+      "id": "overlay",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "info": "To leave overlay disabled, keep set to 0%.",
+      "default": 0
+    },
+    {
+      "type": "select",
+      "id": "content_position",
+      "options": [
+        {
+          "value": "top",
+          "label": "Top"
+        },
+        {
+          "value": "middle",
+          "label": "Middle"
+        },
+        {
+          "value": "bottom",
+          "label": "Bottom"
+        }
+      ],
+      "default": "middle",
+      "label": "Content Position"
+    },
+    {
+      "type": "select",
+      "id": "content_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Content Alignment"
     }
   ],
   "blocks": [
