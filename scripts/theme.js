@@ -16,6 +16,7 @@ import '../styles/layout/header.css';
 // Sections
 import('../styles/sections/blog.css');
 import('../styles/sections/image-with-text.css');
+import('../styles/sections/hero.css');
 
 // Snippets
 import('../styles/snippets/cards.css');
@@ -23,7 +24,6 @@ import('../styles/snippets/price.css');
 
 // By page
 if (window.location.href.includes('/collection/')) {
-  import('../styles/sections/collection-hero.css');
   import('../styles/snippets/facets.css');
 }
 
@@ -88,6 +88,7 @@ searchInit.mount(searchMount);
 
 document.addEventListener('DOMContentLoaded', () => {
   if (JSON.parse(megamenuMount.dataset.settings).enable_sticky_header) {
+    const body = document.querySelector('body');
     const header = document.querySelector('#shopify-section-header');
     var ticking = false;
   
@@ -97,8 +98,10 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
           if (yPos < window.innerHeight) {
+            body.classList.remove('sticky-header-active');
             header.classList.remove('sticky');
           } else {
+            body.classList.add('sticky-header-active');
             header.classList.add('sticky');
           }
   

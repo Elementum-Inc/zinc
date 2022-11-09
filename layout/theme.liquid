@@ -243,7 +243,7 @@
       window.assetUrl = '{{ 'et_theme.css' | asset_url | split: 'assets/' | first }}'
 
       window.__toCdnUrl = function(filename) {
-        return window.assetUrl + filename;
+        return window.assetUrl + filename + '?v=latest';
       }
     </script>
 
