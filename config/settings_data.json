@@ -127,14 +127,14 @@
             "type": "image_content",
             "settings": {
               "title": "shop",
-              "image": "shopify://shop_images/fall-vegetable-box.jpg",
+              "image": "shopify:\/\/shop_images\/fall-vegetable-box.jpg",
               "content_title": "Newest Arrivals",
               "content_subtitle": "Check out our latest fall fashion.",
-              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.</p>",
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.<\/p>",
               "primary_button_text": "Shop Now",
-              "primary_button_url": "shopify://collections",
+              "primary_button_url": "shopify:\/\/collections",
               "secondary_button_text": "Read our trend blog",
-              "secondary_button_url": "shopify://blogs/news"
+              "secondary_button_url": "shopify:\/\/blogs\/news"
             }
           },
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
@@ -196,7 +196,7 @@
             "type": "text",
             "settings": {
               "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>",
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>",
               "text_column_span": 1
             }
           },
@@ -204,7 +204,7 @@
             "type": "text",
             "settings": {
               "heading": "Money stuff",
-              "subtext": "<p> there should be a currency selector here </p>",
+              "subtext": "<p> there should be a currency selector here <\/p>",
               "text_column_span": 1
             }
           }
@@ -392,7 +392,7 @@
               "type": "text",
               "settings": {
                 "heading": "Our mission",
-                "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
               }
             }
           },
