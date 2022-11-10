@@ -50,6 +50,7 @@
         "92a7dd88-44be-4caf-a9f7-1b2bff547122": {
           "type": "video",
           "settings": {
+            "video_src": "",
             "heading": "Video",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through video",
@@ -76,7 +77,7 @@
       "settings": {
         "slide_height": "small",
         "slider_visual": "dots",
-        "auto_rotate": true,
+        "auto_rotate": false,
         "change_slides_speed": 5,
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
@@ -257,10 +258,12 @@
         "column2": {
           "type": "column",
           "settings": {
+            "image_position": "above",
+            "image-width": 300,
             "border-radius": 0,
             "title": "FEATURED COLLECTION",
             "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
-            "link_label": "Shop it now what if it gets longer okay cool",
+            "link_label": "Shop it now",
             "link": "shopify:\/\/collections\/demo-collection"
           }
         },
@@ -268,6 +271,8 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/sliced-pumpkin-pie.jpg",
+            "image_position": "above",
+            "image-width": 300,
             "border-radius": 0,
             "title": "",
             "text": "",
@@ -303,6 +308,8 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
+            "image_position": "above",
+            "image-width": 300,
             "border-radius": 0,
             "title": "",
             "text": "",
@@ -313,6 +320,8 @@
         "16620107657f4c8cb8-1": {
           "type": "column",
           "settings": {
+            "image_position": "above",
+            "image-width": 300,
             "border-radius": 0,
             "title": "THE BEST FALL FLAVORS",
             "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
@@ -343,11 +352,66 @@
     },
     "16565128829058127c": {
       "type": "custom-liquid",
+      "disabled": true,
       "settings": {
         "custom_liquid": "<div id=\"app\"><\/div>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 52
+      }
+    },
+    "c55cc47d-986c-4af3-889e-e9ebae0d046b": {
+      "type": "film-strip",
+      "blocks": {
+        "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/handful-of-acorns.jpg",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/rooibos-tea.jpg",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/hand-holding-a-pinecone-in-the-forest.jpg",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-0",
+        "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-1",
+        "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-2"
+      ],
+      "settings": {
+        "image_ratio": "square",
+        "columns_desktop": 3,
+        "column_alignment": "left",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_column": 46,
+        "padding_left_right": 30,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
@@ -360,6 +424,7 @@
     "video",
     "multicolumn",
     "1662010765d32d438b",
-    "16565128829058127c"
+    "16565128829058127c",
+    "c55cc47d-986c-4af3-889e-e9ebae0d046b"
   ]
 }

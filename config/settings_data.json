@@ -70,10 +70,10 @@
     "badge_corner_radius": 40,
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "inverse",
-    "social_twitter_link": "",
-    "social_facebook_link": "",
-    "social_pinterest_link": "",
-    "social_instagram_link": "",
+    "social_twitter_link": "https:\/\/twitter.com\/shopify",
+    "social_facebook_link": "https:\/\/facebook.com\/shopify",
+    "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
+    "social_instagram_link": "http:\/\/instagram.com\/shopify",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -123,14 +123,14 @@
             "type": "image_content",
             "settings": {
               "title": "shop",
-              "image": "shopify://shop_images/fall-vegetable-box.jpg",
+              "image": "shopify:\/\/shop_images\/fall-vegetable-box.jpg",
               "content_title": "Newest Arrivals",
               "content_subtitle": "Check out our latest fall fashion.",
-              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.</p>",
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.<\/p>",
               "primary_button_text": "Shop Now",
-              "primary_button_url": "shopify://collections",
+              "primary_button_url": "shopify:\/\/collections",
               "secondary_button_text": "Read our trend blog",
-              "secondary_button_url": "shopify://blogs/news"
+              "secondary_button_url": "shopify:\/\/blogs\/news"
             }
           },
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
@@ -174,46 +174,63 @@
             "type": "link_list",
             "settings": {
               "heading": "Quick links",
-              "menu": "footer"
+              "display_logo": false,
+              "menu": "footer",
+              "menu_column_span": 1
             }
           },
           "footer-1": {
             "type": "link_list",
             "settings": {
               "heading": "Info",
-              "menu": "footer"
+              "display_logo": false,
+              "menu": "footer",
+              "menu_column_span": 1
+            }
+          },
+          "6d9561d4-d380-41ef-a4ad-695b92faa9a4": {
+            "type": "payments",
+            "settings": {
+              "enable_country_selector": true
             }
           },
           "footer-2": {
             "type": "text",
             "settings": {
               "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>",
+              "text_column_span": 1
             }
           },
-          "footer-3": {
-            "type": "text",
+          "48a3efe9-3104-403c-8eb5-a867ecb35aa9": {
+            "type": "newsletter",
             "settings": {
-              "heading": "Money stuff",
-              "subtext": "<p> there should be a currency selector here </p>"
             }
           }
         },
         "block_order": [
           "footer-0",
           "footer-1",
+          "6d9561d4-d380-41ef-a4ad-695b92faa9a4",
           "footer-2",
-          "footer-3"
+          "48a3efe9-3104-403c-8eb5-a867ecb35aa9"
         ],
         "settings": {
-          "color_scheme": "background-1",
+          "color_scheme": "basic-dark",
+          "column_count": "4",
+          "large_logo": "shopify:\/\/shop_images\/basico_1.png",
+          "large_logo_width": 750,
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
           "show_social": true,
+          "show_social_icon": true,
+          "show_social_text": false,
+          "social_location": "above",
           "enable_language_selector": false,
-          "margin_top": 48,
+          "margin_top": 24,
           "padding_top": 36,
           "padding_bottom": 36,
+          "show_poweredbyshopify": true,
           "payment_enable": true
         }
       },
@@ -389,7 +406,7 @@
               "type": "text",
               "settings": {
                 "heading": "Our mission",
-                "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
               }
             }
           },
