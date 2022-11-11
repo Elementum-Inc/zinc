@@ -60,6 +60,7 @@ quantity-input {
 .quantity__button {
   height: 2rem;
   width: 2rem;
+  margin: auto;
 }
 
 .product-form__input input[type="radio"] + label {
@@ -98,8 +99,8 @@ quantity-input {
 }
 
 .shopify-payment-button__button {
-  border: 2px solid black;
-  height: 4.5rem !important;
+  /* border: 2px solid black;
+  height: 4.5rem !important; */
   padding: 0;
 }
 

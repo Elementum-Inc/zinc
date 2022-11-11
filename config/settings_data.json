@@ -83,6 +83,8 @@
     "search_trends": "trending-searches",
     "predictive_search_enabled": true,
     "currency_code_enabled": true,
+    "cart_type": "page",
+    "show_cart_note": true,
     "accent_icons": "text",
     "card_image_padding": 0,
     "card_border_thickness": 0,
