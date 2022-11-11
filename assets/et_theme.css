@@ -486,6 +486,11 @@ ul {
   -o-transition-duration: 150ms;
   transition-duration: 150ms;
 }
+.duration {
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
+}
 .animate {
   -webkit-animation-iteration-count: 1;
   animation-iteration-count: 1;
@@ -898,7 +903,7 @@ p.small {
   background-color: rgb(var(--theme-foreground));
   cursor: pointer;
   height: 3rem;
-  font-size: .875rem;
+  font-size: 1rem;
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
