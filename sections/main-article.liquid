@@ -593,7 +593,41 @@
     {
       "type": "content",
       "name": "t:sections.main-article.blocks.content.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "inline_image_ratio",
+          "options": [
+            {
+              "value": "auto",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
+            },
+            {
+              "value": "square",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
+            },
+            {
+              "value": "lportrait",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
+            },
+            {
+              "value": "sportrait",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
+            },
+            {
+              "value": "widescreen",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
+            },
+            {
+              "value": "landscape",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
+            }
+          ],
+          "default": "landscape",
+          "label": "t:settings_schema.global.settings.aspect_ratio.label"
+        }
+      ]
     },
     {
       "type": "tags",
