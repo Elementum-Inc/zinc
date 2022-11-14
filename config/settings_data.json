@@ -67,10 +67,10 @@
     "badge_corner_radius": 0,
     "sale_badge_color_scheme": "accent-1",
     "sold_out_badge_color_scheme": "error",
-    "social_twitter_link": "",
-    "social_facebook_link": "",
-    "social_pinterest_link": "",
-    "social_instagram_link": "",
+    "social_twitter_link": "https://twitter.com/shopify",
+    "social_facebook_link": "https://facebook.com/shopify",
+    "social_pinterest_link": "https://pinterest.com/shopify",
+    "social_instagram_link": "http://instagram.com/shopify",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -94,6 +94,7 @@
     "inputs_shadow_horizontal_offset": 0,
     "inputs_shadow_vertical_offset": 4,
     "inputs_shadow_blur": 5,
+    "show_cart_note": true,
     "accent_icons": "text",
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
@@ -192,6 +193,12 @@
               "menu_column_span": 1
             }
           },
+          "6d9561d4-d380-41ef-a4ad-695b92faa9a4": {
+            "type": "payments",
+            "settings": {
+              "enable_country_selector": true
+            }
+          },
           "footer-2": {
             "type": "text",
             "settings": {
@@ -200,33 +207,32 @@
               "text_column_span": 1
             }
           },
-          "footer-3": {
-            "type": "text",
+          "48a3efe9-3104-403c-8eb5-a867ecb35aa9": {
+            "type": "newsletter",
             "settings": {
-              "heading": "Money stuff",
-              "subtext": "<p> there should be a currency selector here <\/p>",
-              "text_column_span": 1
             }
           }
         },
         "block_order": [
           "footer-0",
           "footer-1",
+          "6d9561d4-d380-41ef-a4ad-695b92faa9a4",
           "footer-2",
-          "footer-3"
+          "48a3efe9-3104-403c-8eb5-a867ecb35aa9"
         ],
         "settings": {
-          "color_scheme": "background-1",
+          "color_scheme": "basic-dark",
           "column_count": "4",
-          "large_logo_width": 500,
+          "large_logo": "shopify://shop_images/basico_1.png",
+          "large_logo_width": 750,
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
           "show_social": true,
-          "show_social_icon": false,
+          "show_social_icon": true,
           "show_social_text": false,
-          "social_location": "below",
+          "social_location": "above",
           "enable_language_selector": false,
-          "margin_top": 48,
+          "margin_top": 24,
           "padding_top": 36,
           "padding_bottom": 36,
           "show_poweredbyshopify": true,
