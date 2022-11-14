@@ -1,5 +1,7 @@
 .contact .field__input {
   border: 0.2rem solid;
+  border-radius: 0px;
+  height: 4rem;
 }
 
 .contact {
