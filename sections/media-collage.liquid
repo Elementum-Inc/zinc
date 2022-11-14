@@ -67,7 +67,7 @@
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
                 {% endif %}
-                <div class="media-collage-card__image-wrapper media-collage-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} media-collage-card-spacing{% endif %}" style="padding: {{ block.settings.image-padding}}px;">
+                <div class="media-collage-card__image-wrapper media-collage-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} media-collage-card-spacing{% endif %}" style="padding: {{ block.settings.image-padding }}px;">
                   <div class="media media--transparent media--{{ section.settings.image_ratio }}"
                     {% if section.settings.image_ratio == 'adapt' %}
                       style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
@@ -91,7 +91,7 @@
                   </div>
                 </div>
               {%- endif -%}
-              <div class="media-collage-card__info" style="padding: {{ block.settings.text-padding}}px;">
+              <div class="media-collage-card__info" style="padding: {{ block.settings.text-padding }}px;">
                 {%- if block.settings.title != blank -%}
                   <h3>{{ block.settings.title | escape }}</h3>
                 {%- endif -%}

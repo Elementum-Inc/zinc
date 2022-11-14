@@ -51,11 +51,13 @@
         },
         "d9ea8272-20ab-4fa1-8544-4718ea428de8": {
           "type": "rating",
-          "settings": {}
+          "settings": {
+          }
         },
         "description": {
           "type": "description",
-          "settings": {}
+          "settings": {
+          }
         },
         "quantity_selector": {
           "type": "quantity_selector",
@@ -181,7 +183,10 @@
           }
         }
       },
-      "block_order": ["column-0", "column-1"],
+      "block_order": [
+        "column-0",
+        "column-1"
+      ],
       "settings": {
         "title": "Lorem Ipsum",
         "heading_size": "h1",
@@ -203,10 +208,13 @@
       "blocks": {
         "e497a61d-665d-4b06-9cbb-25305cfbb3a0": {
           "type": "shopify://apps/product-reviews/blocks/reviews/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {}
+          "settings": {
+          }
         }
       },
-      "block_order": ["e497a61d-665d-4b06-9cbb-25305cfbb3a0"],
+      "block_order": [
+        "e497a61d-665d-4b06-9cbb-25305cfbb3a0"
+      ],
       "settings": {
         "include_margins": true
       }
@@ -333,10 +341,13 @@
       "blocks": {
         "604b4d95-ef3f-4db5-ad3f-a326cfcef2b9": {
           "type": "shopify://apps/product-reviews/blocks/reviews/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {}
+          "settings": {
+          }
         }
       },
-      "block_order": ["604b4d95-ef3f-4db5-ad3f-a326cfcef2b9"],
+      "block_order": [
+        "604b4d95-ef3f-4db5-ad3f-a326cfcef2b9"
+      ],
       "settings": {
         "include_margins": true
       }

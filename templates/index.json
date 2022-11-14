@@ -140,7 +140,10 @@
           }
         }
       },
-      "block_order": ["column2", "column1"],
+      "block_order": [
+        "column2",
+        "column1"
+      ],
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -182,7 +185,10 @@
           }
         }
       },
-      "block_order": ["16620107657f4c8cb8-0", "16620107657f4c8cb8-1"],
+      "block_order": [
+        "16620107657f4c8cb8-0",
+        "16620107657f4c8cb8-1"
+      ],
       "settings": {
         "title": "",
         "heading_size": "h1",
@@ -229,7 +235,11 @@
           }
         }
       },
-      "block_order": ["heading", "text", "button"],
+      "block_order": [
+        "heading",
+        "text",
+        "button"
+      ],
       "settings": {
         "image_overlay_opacity": 40,
         "image_height": "large",
@@ -261,7 +271,10 @@
           }
         }
       },
-      "block_order": ["heading", "text"],
+      "block_order": [
+        "heading",
+        "text"
+      ],
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
@@ -295,7 +308,11 @@
           }
         }
       },
-      "block_order": ["collection-0", "product", "collection-1"],
+      "block_order": [
+        "collection-0",
+        "product",
+        "collection-1"
+      ],
       "settings": {
         "heading": "Multimedia collage",
         "heading_size": "h2",

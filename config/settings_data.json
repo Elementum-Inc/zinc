@@ -109,7 +109,8 @@
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
-        "settings": {}
+        "settings": {
+        }
       },
       "header": {
         "type": "header",
@@ -208,7 +209,8 @@
           },
           "48a3efe9-3104-403c-8eb5-a867ecb35aa9": {
             "type": "newsletter",
-            "settings": {}
+            "settings": {
+            }
           }
         },
         "block_order": [
@@ -251,7 +253,9 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Classic": {
@@ -354,8 +358,11 @@
               }
             }
           },
-          "block_order": ["announcement-bar-0"],
-          "settings": {}
+          "block_order": [
+            "announcement-bar-0"
+          ],
+          "settings": {
+          }
         },
         "header": {
           "type": "header",
@@ -395,7 +402,11 @@
               }
             }
           },
-          "block_order": ["footer-0", "footer-1", "footer-2"],
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "footer-2"
+          ],
           "settings": {
             "color_scheme": "background-1",
             "newsletter_enable": true,
