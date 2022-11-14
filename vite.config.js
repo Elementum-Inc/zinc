@@ -12,13 +12,13 @@ export default defineConfig(({ command, mode }) => {
           rollupOptions: {
             input: './scripts/theme.js',
             output: {
-              entryFileNames: '[name].js',
-              chunkFileNames: '[name].js',
-              assetFileNames: '[name].[ext]'
+              entryFileNames: 'assets/et_[name].js',
+              chunkFileNames: 'assets/et_[name].js',
+              assetFileNames: 'assets/et_[name].[ext]'
             }
           },
-          outDir: 'assets',
-          assetsDir: './',
+          outDir: './',
+          assetsDir: './assets/',
           emptyOutDir: false,
           minify: false,
           watch: {
@@ -32,6 +32,13 @@ export default defineConfig(({ command, mode }) => {
             ]
           },
         },
+        experimental: {
+          renderBuiltUrl(filename, { type }) {
+            if (type === 'asset') {
+              return { runtime: `window.__toCdnUrl(${JSON.stringify(filename)})` }
+            }
+          }
+        },
       };
     case 'production':
       return {
@@ -41,16 +48,23 @@ export default defineConfig(({ command, mode }) => {
           rollupOptions: {
             input: './scripts/theme.js',
             output: {
-              entryFileNames: '[name].js',
-              chunkFileNames: '[name].js',
-              assetFileNames: '[name].[ext]'
+              entryFileNames: 'assets/et_[name].js',
+              chunkFileNames: 'assets/et_[name].js',
+              assetFileNames: 'assets/et_[name].[ext]'
             }
           },
-          outDir: 'assets',
-          assetsDir: './',
+          outDir: './',
+          assetsDir: './assets/',
           emptyOutDir: false,
           minify: false,
-          watch: null
+          watch: null,
+        },
+        experimental: {
+          renderBuiltUrl(filename, { type }) {
+            if (type === 'asset') {
+              return { runtime: `window.__toCdnUrl(${JSON.stringify(filename)})` }
+            }
+          }
         },
       };
   }

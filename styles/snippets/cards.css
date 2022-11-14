@@ -1,9 +1,264 @@
-.card {
+.card,
+.article-card {
+  @apply text-scheme-text rounded-product overflow-hidden;
+  text-align: var(--product-card-text-alignment);
+
+  &.lift:not(.card--info-hover) {
+    &:hover,
+    &:focus-within {
+      @apply overflow-visible;
+
+      & .card__inner {
+        @apply scale-110 -rotate-3 drop-shadow-card filter z-1;
+      }
+    }
+  }
+
+  &.lift.card--info-hover {
+    @apply transform duration-375;
+
+    &:hover,
+    &:focus-within {
+      @apply scale-110 -rotate-3 drop-shadow-card filter relative z-1;
+    }
+  }
+
+  &.zoom {
+    &:hover,
+    &:focus-within {
+      & .card__media {
+        @apply scale-110;
+      }
+    }
+  }
+
+  &.border {
+    @apply border border-scheme-border;
+  }
+
+  &--info-hover {
+    & .card__content {
+      @apply relative;
+
+      &::before {
+        @apply block absolute top-0 left-0 z-0 h-full w-full bg-scheme-bg transform duration-375 opacity-0;
+        content: '';
+      }
+    }
+
+    &.card--media {
+      & .card__heading {
+        @apply opacity-0 translate-y-full;
+      }
+    }
+
+    & .card__heading {
+      @apply transform duration-375 translate-y-1/2;
+    }
+
+    & .card-information {
+      @apply transform duration-425 delay-200 opacity-0;
+    }
+
+    &:hover,
+    &:focus-within {
+      & .card__media {
+        @apply filter blur-sm scale-105;
+      }
+
+      & .card__content::before {
+        @apply opacity-30;
+      }
+
+      & .card__heading {
+        @apply translate-y-0 opacity-100;
+      }
+
+      & .card-information {
+        @apply opacity-100;
+      }
+    }
+
+    .quick-add {
+      @apply pt-2;
+    }
+  }
+
+  &--text {
+    & .card__inner {
+      & + .card__content {
+        @apply border-t border-scheme-accent;
+      }
+    }
+  }
+
+  &__inner,
   &__image {
     &.square { @apply aspect-square; }
     &.lportrait { aspect-ratio: 9/16; }
     &.sportrait { aspect-ratio: 2/3; }
+  }
+
+  &__inner {
+    @apply transform duration-375 overflow-hidden bg-scheme-bg text-scheme-text;
+
+    & + .card__content {
+      @apply bg-scheme-bg;
+    }
+
+    & .card__content {
+      & .card-information {
+        @apply py-2 px-4;
+      }
+
+      & .card__badge {
+        @apply z-1;
+      }
+    }
+  }
+
+  &__image {
     &.cover { @apply object-cover; }
     &.contain { @apply object-contain; }
+  }
+
+  &__media {
+    @apply transform duration-375 w-full;
+  }
+
+  &__content {
+    @apply p-0 flex flex-col;
+    justify-content: var(--product-card-vertical-alignment);
+  }
+
+  &__information {
+    @apply mt-2;
+  }
+
+  &-information {
+    @apply mb-4 px-4;
+    text-align: var(--product-card-text-alignment);
+
+    & > * + * {
+      @apply mt-1;
+    }
+
+    & > :not(.visually-hidden:first-child) {
+      & + :not(.rating) {
+        @apply mt-1;
+      }
+    }
+
+    & .caption-spaced {
+      @apply text-scheme-text break-all;
+    }
+
+    & .rating-star::before {
+      @apply bg-stars;
+    }
+
+    & > .price {
+      @apply mt-2 text-scheme-text;
+    }
+  }
+
+  &__heading {
+    & > a {
+      @apply font-serif text-base lg:text-lg text-scheme-text mx-4;
+    }
+
+    .card--text .card__inner + .card__content & {
+      @apply hidden;
+    }
+
+    .card--collection & {
+      @apply my-4;
+    }
+  }
+
+  &__author {
+    @apply mt-8;
+  }
+
+  &__comments {
+    @apply text-sm;
+
+    & > span {
+      @apply align-middle;
+    }
+  }
+
+  &__badge {
+    @apply p-2;
+
+    > span {
+      @apply px-4 rounded-badge;
+    }
+  }
+
+  & .quick-add {
+    @apply m-4 mt-0;
+  }
+}
+
+.article-card,
+.page-card {
+  @apply rounded-content;
+  text-align: var(--content-card-text-alignment);
+
+  &.card--info-hover {
+    &.card--media {
+      & .card__heading {
+        @apply -translate-y-full;
+      }
+    }
+
+    & .card__heading {
+      @apply -translate-y-1/2;
+    }
+
+    &:hover,
+    &:focus-within {
+      & .card__heading {
+        @apply translate-y-0;
+      }
+    }
+  }
+
+  & .card__content {
+    justify-content: var(--content-card-vertical-alignment);
+  }
+
+  &__header {
+    &.caption-spaced {
+      @apply mt-8;
+      word-break: break-word;
+    }
+
+    & > span:not(:last-child)::after {
+      @apply inline-block mx-2 text-lg font-bold align-sub opacity-25;
+      content: '/';
+    }
+  }
+
+  & .card__information,
+  & .card-information {
+    @apply mx-0;
+  }
+
+  & .card-information {
+    text-align: var(--content-card-text-alignment);
+
+    &.before {
+      @apply pb-0 mb-2;
+    }
+
+    &.after {
+      @apply mt-0;
+    }
+  }
+
+  &__excerpt {
+    @apply my-2;
   }
 }

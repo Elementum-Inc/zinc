@@ -1,0 +1,225 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "330d53b0-f94a-4966-8b75-7c146e03a880": {
+      "type": "featured-blog",
+      "settings": {
+        "title": "News & Articles",
+        "subheading": "Catch up on our newest blog posts!",
+        "blog": "news",
+        "sort_by": "new",
+        "tag_links": true,
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "desktop_slider": false,
+        "color_scheme": "primary",
+        "use_foreground": false,
+        "card_color_scheme": "inverse",
+        "show_image": true,
+        "image_ratio": "landscape",
+        "card_image_fit": "cover",
+        "card_vertical_alignment": "end",
+        "show_date": false,
+        "show_author": false,
+        "show_excerpt": true,
+        "show_tags": false,
+        "card_hover_show_info": true,
+        "show_view_all": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "58185308-2137-43c1-8e73-eb5d3a045ebf": {
+      "type": "image-with-text",
+      "blocks": {
+        "ea091e7b-1b34-4795-8d95-35fbafa23b90": {
+          "type": "heading",
+          "settings": {
+            "heading": "Get Involved",
+            "all_caps": true
+          }
+        },
+        "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Whether it's friends or fashion, our community is here for you!</p>",
+            "text_style": "body"
+          }
+        },
+        "6e3ec468-dbaa-4459-82c2-9e2ed69f8987": {
+          "type": "buttons",
+          "settings": {
+            "primary_button_label": "",
+            "primary_button_link": "",
+            "secondary_button_label": "Learn More",
+            "secondary_button_link": "shopify://blogs/community"
+          }
+        }
+      },
+      "block_order": [
+        "ea091e7b-1b34-4795-8d95-35fbafa23b90",
+        "template--15412995391627__58185308-2137-43c1-8e73-eb5d3a045ebf-16650055590aa2f631-1",
+        "6e3ec468-dbaa-4459-82c2-9e2ed69f8987"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/fall-leaf-cookies-in-the-kitchen.jpg",
+        "height": "h-md",
+        "desktop_image_columns": 4,
+        "desktop_image_side": "right",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "break_container": false,
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "e04b9fa4-4504-448d-a3d0-4a452cbbb228": {
+      "type": "featured-blog",
+      "settings": {
+        "title": "Community",
+        "subheading": "",
+        "blog": "community",
+        "sort_by": "a-z",
+        "tag_links": false,
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "desktop_slider": false,
+        "color_scheme": "background-1",
+        "use_foreground": false,
+        "card_color_scheme": "default",
+        "show_image": true,
+        "image_ratio": "sportrait",
+        "card_image_fit": "cover",
+        "card_vertical_alignment": "start",
+        "show_date": true,
+        "show_author": false,
+        "show_excerpt": false,
+        "show_tags": true,
+        "card_hover_show_info": false,
+        "show_view_all": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "2fa32e7e-36ca-4829-9aa8-fb81c981169d": {
+      "type": "image-with-text",
+      "blocks": {
+        "cd74d7e5-356a-4631-8874-535dc996cbb4": {
+          "type": "heading",
+          "settings": {
+            "heading": "Fall into new trends",
+            "all_caps": true
+          }
+        },
+        "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>See the latest in fall colors, styles and accessories. </p>",
+            "text_style": "subtitle"
+          }
+        },
+        "e80808f9-ece3-4f42-873e-22c991b8541a": {
+          "type": "buttons",
+          "settings": {
+            "primary_button_label": "Read the latest",
+            "primary_button_link": "shopify://blogs/news",
+            "secondary_button_label": "Search our archive",
+            "secondary_button_link": "shopify://blogs/trends"
+          }
+        }
+      },
+      "block_order": [
+        "cd74d7e5-356a-4631-8874-535dc996cbb4",
+        "template--15412995391627__2fa32e7e-36ca-4829-9aa8-fb81c981169d-16650055590aa2f631-1",
+        "e80808f9-ece3-4f42-873e-22c991b8541a"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/winding-road-covered-in-autumn-trees.jpg",
+        "height": "h-lg",
+        "desktop_image_columns": 3,
+        "desktop_image_side": "left",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-2",
+        "break_container": true,
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "b70e395a-714d-42ae-8882-d6cfc5640353": {
+      "type": "featured-blog",
+      "settings": {
+        "title": "Trends",
+        "subheading": "",
+        "blog": "trends",
+        "sort_by": "new",
+        "tag_links": false,
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "desktop_slider": false,
+        "color_scheme": "background-1",
+        "use_foreground": false,
+        "card_color_scheme": "default",
+        "show_image": true,
+        "image_ratio": "sportrait",
+        "card_image_fit": "cover",
+        "card_vertical_alignment": "start",
+        "show_date": true,
+        "show_author": false,
+        "show_excerpt": false,
+        "show_tags": true,
+        "card_hover_show_info": false,
+        "show_view_all": false,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "aa4f3d87-1afe-4905-8037-9603e25e77ae": {
+      "type": "featured-blog",
+      "settings": {
+        "title": "Archive",
+        "subheading": "",
+        "blog": "news",
+        "sort_by": "new",
+        "tag_links": false,
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "desktop_slider": false,
+        "color_scheme": "background-1",
+        "use_foreground": true,
+        "card_color_scheme": "match",
+        "show_image": true,
+        "image_ratio": "sportrait",
+        "card_image_fit": "cover",
+        "card_vertical_alignment": "start",
+        "show_date": true,
+        "show_author": false,
+        "show_excerpt": false,
+        "show_tags": true,
+        "card_hover_show_info": false,
+        "show_view_all": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "main",
+    "330d53b0-f94a-4966-8b75-7c146e03a880",
+    "58185308-2137-43c1-8e73-eb5d3a045ebf",
+    "e04b9fa4-4504-448d-a3d0-4a452cbbb228",
+    "2fa32e7e-36ca-4829-9aa8-fb81c981169d",
+    "b70e395a-714d-42ae-8882-d6cfc5640353",
+    "aa4f3d87-1afe-4905-8037-9603e25e77ae"
+  ]
+}

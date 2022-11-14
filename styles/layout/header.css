@@ -11,34 +11,14 @@
 }
 
 .header {
-  @apply relative flex flex-wrap justify-between bg-primary text-secondary px-4 md:px-8;
+  @apply relative flex flex-wrap justify-between bg-scheme-bg text-scheme-text px-4 md:px-8;
 
-  &.secondary {
-    @apply bg-secondary text-primary;
-
-    & .icon > svg {
-      @apply stroke-primary;
-    }
+  & .logo__fallback {
+    @apply text-scheme-accent;
   }
 
-  &.accent1 {
-    & .logo__fallback {
-      @apply text-accent1;
-    }
-
-    & .icon > svg {
-      @apply fill-accent1;
-    }
-  }
-
-  &.accent2 {
-    & .logo__fallback {
-      @apply text-accent2;
-    }
-
-    & .icon > svg {
-      @apply fill-accent2;
-    }
+  & .icon > svg {
+    @apply stroke-scheme-accent;
   }
 
   /* LOGO */
@@ -152,32 +132,16 @@
     }
 
     &-collapsed {
-      &.primary {
-        @apply bg-primary text-secondary;
+      @apply bg-scheme-bg text-scheme-text;
 
-        & .submenu__top-link,
-        & .submenu__level1,
-        & .submenu__level2 {
-          @apply bg-primary;
-        }
-
-        & .icon > svg {
-          @apply stroke-secondary;
-        }
+      & .submenu__top-link,
+      & .submenu__level1,
+      & .submenu__level2 {
+        @apply bg-scheme-bg;
       }
 
-      &.secondary {
-        @apply bg-secondary text-primary;
-
-        & .submenu__top-link,
-        & .submenu__level1,
-        & .submenu__level2 {
-          @apply bg-secondary;
-        }
-
-        & .icon > svg {
-          @apply stroke-primary;
-        }
+      & .icon > svg {
+        @apply stroke-scheme-accent;
       }
     }
 
@@ -209,9 +173,13 @@
       }
     }
 
+    & .submenus {
+      @apply max-h-4/5 overflow-y-scroll;
+    }
+
     & .submenu {
       &__top-link {
-        @apply relative z-3 text-2.75 font-serif uppercase text-left w-full bg-primary pr-12;
+        @apply relative z-3 text-2.75 font-serif uppercase text-left w-full bg-scheme-bg pr-12;
       }
 
       &__links {
@@ -248,11 +216,7 @@
     @apply hidden lg:flex;
 
     &.collapsed {
-      @apply absolute top-full left-0 w-full bg-primary text-secondary;
-
-      &.secondary {
-        @apply bg-secondary text-primary;
-      }
+      @apply absolute top-full left-0 w-full bg-scheme-bg text-scheme-text;
 
       & .header__menu-content {
         max-height: calc(-100% + 100vh - 10rem);
@@ -261,27 +225,15 @@
   }
 
   &__menu-dropdown {
-    @apply absolute top-full bg-primary text-secondary w-1/4 px-6 py-4;
+    @apply absolute top-full bg-scheme-bg text-scheme-text w-1/4 px-6 py-4;
 
     & .icon {
       svg {
-        @apply h-[.75rem] w-[.75rem];
+        @apply h-[.75rem] w-[.75rem] stroke-scheme-accent;
       }
 
       &.expand {
         @apply transition-all duration-200 ease-in;
-      }
-    }
-
-    &.primary .icon > svg {
-      @apply stroke-secondary;
-    }
-
-    &.secondary {
-      @apply bg-secondary text-primary;
-
-      & .icon > svg {
-        @apply stroke-primary;
       }
     }
 
@@ -292,7 +244,7 @@
         @apply relative flex items-center justify-between w-full px-2;
 
         & a::after {
-          @apply block h-[1px] w-0 bg-secondary transition-all duration-200 ease-in origin-left;
+          @apply block h-[1px] w-0 bg-scheme-accent transition-all duration-200 ease-in origin-left;
           content: '';
         }
       }
@@ -324,37 +276,17 @@
   }
 
   &__menu-content {
-    @apply absolute left-0 top-full min-h-[40vh] w-full flex bg-primary text-secondary;
+    @apply absolute left-0 top-full min-h-[40vh] w-full flex bg-scheme-bg text-scheme-text;
     max-height: calc(-100% + 100vh);
 
     & .icon > svg {
-      @apply stroke-secondary;
-    }
-
-    &.secondary {
-      @apply bg-secondary text-primary;
-
-      & .submenu-block.menu__toplink > button::after {
-        @apply bg-primary;
-      }
-
-      & .icon > svg {
-        @apply stroke-primary;
-      }
+      @apply stroke-scheme-accent;
     }
   }
 
   & .submenu-block {
     &.menu {
-      @apply flex-grow min-w-1/3 px-4 bg-primary text-secondary;
-
-      &.secondary {
-        @apply bg-secondary text-primary;
-
-        & .menu__level2 {
-          @apply border-primary;
-        }
-      }
+      @apply flex-grow min-w-1/3 px-4 bg-scheme-bg text-scheme-text;
 
       & * {
         background-color: inherit;
@@ -373,7 +305,7 @@
         }
 
         & > button a::after {
-          @apply block bg-secondary h-[1px] w-0 transform-all duration-500 origin-left;
+          @apply block bg-scheme-accent h-[1px] w-0 transform-all duration-500 origin-left;
           content: '';
         }
 
@@ -525,21 +457,17 @@
     & .images-right,
     & .images-none {
       & .menu__level2 {
-        @apply border-l border-secondary;
+        @apply border-l border-scheme-accent;
       }
     }
   }
 
   .bold {
     & .menu {
-      @apply bg-bg2 px-6 py-4 xl:(px-12 py-16);
+      @apply bg-scheme-fg px-6 py-4 xl:(px-12 py-16);
 
       &__inner {
         @apply min-w-full max-h-full overflow-auto;
-
-        &.secondary & {
-          @apply bg-accent1;
-        }
       }
 
       & .menu__level0 span {
@@ -590,7 +518,7 @@
         }
 
         & .menu__level2 {
-          @apply border border-secondary px-2 py-4;
+          @apply border border-scheme-accent px-2 py-4;
           border-radius: 0 0 2rem 2rem;
         }
       }
@@ -617,7 +545,7 @@
         @apply absolute bottom-12 right-12 w-full max-w-3/4 p-4;
 
         &::before {
-          @apply absolute top-0 left-0 h-full w-full bg-primary opacity-25 z-0;
+          @apply absolute top-0 left-0 h-full w-full bg-scheme-bg opacity-25 z-0;
           content: '';
         }
 
@@ -687,14 +615,14 @@
     }
 
     & svg {
-      @apply stroke-secondary fill-none;
+      @apply stroke-scheme-accent fill-none;
     }
 
     & .label {
       @apply text-sm md:text-base;
     }
 
-    &.account {
+    &.account-link {
       @apply <sm:hidden;
     }
   }
@@ -715,10 +643,10 @@
   }
 
   &__popover {
-    @apply absolute left-0 w-full bg-primary text-secondary;
+    @apply absolute left-0 w-full bg-scheme-bg text-scheme-text;
 
-    .secondary & {
-      @apply bg-secondary text-primary;
+    & .search__input {
+      @apply bg-scheme-bg text-scheme-text;
     }
 
     &.over {
@@ -729,19 +657,15 @@
       }
 
       & .search__input {
-        @apply bg-bg2 border-b border-secondary basis-3/4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4;
-
-        .secondary & {
-          @apply bg-secondary border-primary;
-        }
+        @apply border-b border-scheme-accent basis-3/4 md:basis-1/2 lg:basis-1/3 xl:basis-1/4;
       }
 
       & .search__results {
-        @apply w-full border-t border-gray-450;
+        @apply w-full border-t border-scheme-fg;
 
-        .secondary & {
+        /* .secondary & {
           @apply border-gray-900;
-        }
+        } */
       }
 
       &-enter-active,
@@ -770,30 +694,18 @@
 
 
     &.below {
-      @apply left-0 top-full border-t border-gray-450;
-
-      .secondary & {
-        @apply border-gray-900;
-      }
+      @apply left-0 top-full border-t border-scheme-fg;
 
       & .search__form {
         @apply w-full container lg:container-md xl:container-lg m-auto py-4;
       }
 
       & .search__input {
-        @apply bg-primary flex-1;
-
-        .secondary & {
-          @apply bg-secondary;
-        }
+        @apply flex-1;
       }
 
       & .search__results {
-        @apply border-t border-gray-450;
-
-        .secondary & {
-          @apply border-gray-900;
-        }
+        @apply border-t border-scheme-fg;
       }
 
       &-enter-active,
@@ -871,11 +783,7 @@
     }
 
     &-tag {
-      @apply bg-secondary text-primary text-xs py-xs px-4 mb-4 mr-2;
-
-      .secondary & {
-        @apply bg-primary text-secondary;
-      }
+      @apply text-xs py-xs px-4 mb-4 mr-2;
     }
   }
 
@@ -886,12 +794,8 @@
       @apply md:text-lg mx-4;
 
       &::after {
-        @apply block h-[.125rem] bg-secondary w-0 transition-all duration-500 linear mt-2 md:mt-4;
+        @apply block h-[.125rem] bg-scheme-accent w-0 transition-all duration-500 linear mt-2 md:mt-4;
         content: '';
-
-        .secondary & {
-          @apply bg-primary;
-        }
       }
 
       &[aria-selected='true'] {
@@ -915,53 +819,24 @@
   }
 
   &__more {
-    @apply sticky bottom-0 w-full container lg:container-md xl:container-lg py-4 md:py-8 mx-auto mt-12 lg:mt-16 text-center bg-primary text-secondary;
-
-    .secondary & {
-      @apply bg-secondary text-primary;
-    }
+    @apply sticky bottom-0 w-full container lg:container-md xl:container-lg py-4 md:py-8 mx-auto mt-12 lg:mt-16 text-center bg-scheme-bg text-scheme-text;
 
     &::before {
       @apply absolute -top-24 block h-24 w-full md:(border-b border-gray-450);
       /* stylelint-disable indentation, function-comma-space-after */
-      background-image: linear-gradient(to top, rgb(var(--color-primary)),
-                                              rgb(var(--color-primary) / .9),
-                                              rgb(var(--color-primary) / .8),
-                                              rgb(var(--color-primary) / .7),
-                                              rgb(var(--color-primary) / .6),
-                                              rgb(var(--color-primary) / .5),
-                                              rgb(var(--color-primary) / .4),
-                                              rgb(var(--color-primary) / .3),
-                                              rgb(var(--color-primary) / .2),
-                                              rgb(var(--color-primary) / .1),
+      background-image: linear-gradient(to top, rgb(var(--color-scheme-bg)),
+                                              rgb(var(--color-scheme-bg) / .9),
+                                              rgb(var(--color-scheme-bg) / .8),
+                                              rgb(var(--color-scheme-bg) / .7),
+                                              rgb(var(--color-scheme-bg) / .6),
+                                              rgb(var(--color-scheme-bg) / .5),
+                                              rgb(var(--color-scheme-bg) / .4),
+                                              rgb(var(--color-scheme-bg) / .3),
+                                              rgb(var(--color-scheme-bg) / .2),
+                                              rgb(var(--color-scheme-bg) / .1),
                                               transparent);
       /* stylelint-enable indentation, function-comma-space-after */
       content: '';
-
-      .secondary & {
-        @apply from-secondary;
-        /* stylelint-disable indentation, function-comma-space-after */
-        background-image: linear-gradient(to top, rgb(var(--color-secondary)),
-                                                  rgb(var(--color-secondary) / .9),
-                                                  rgb(var(--color-secondary) / .8),
-                                                  rgb(var(--color-secondary) / .7),
-                                                  rgb(var(--color-secondary) / .6),
-                                                  rgb(var(--color-secondary) / .5),
-                                                  rgb(var(--color-secondary) / .4),
-                                                  rgb(var(--color-secondary) / .3),
-                                                  rgb(var(--color-secondary) / .2),
-                                                  rgb(var(--color-secondary) / .1),
-                                                  transparent);
-        /* stylelint-enable indentation, function-comma-space-after */
-      }
-    }
-
-    & button {
-      @apply bg-secondary text-primary text-lg py-xs px-8;
-
-      .secondary & {
-        @apply bg-primary text-secondary;
-      }
     }
   }
 

@@ -1,0 +1,51 @@
+.image-with-text {
+  @apply bg-scheme-bg text-scheme-text;
+
+  &__flex {
+    @apply flex flex-wrap;
+  }
+
+  &__flex-item {
+    @apply basis-full md:basis-1/2;
+
+    &--right {
+      @apply md:order-last;
+    }
+
+    &--2-col {
+      @apply lg:basis-2/6;
+    }
+
+    &--3-col {
+      @apply lg:basis-1/2;
+    }
+
+    &--4-col {
+      @apply lg:basis-4/6;
+    }
+
+    + .image-with-text__flex-item {
+      @apply lg:flex-1;
+    }
+  }
+
+  &__media {
+    @apply <md:h-sm;
+  }
+
+  &__content {
+    @apply pt-4 pb-8 px-8 md:(px-16 py-8) lg:(px-24 py-12);
+
+    > * + * {
+      @apply mt-[1.5rem];
+    }
+  }
+
+  &__heading {
+    @apply text-scheme-text;
+  }
+
+  &__buttons {
+    @apply mt-0 md:mt-2;
+  }
+}

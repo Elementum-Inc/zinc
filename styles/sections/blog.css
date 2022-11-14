@@ -1,0 +1,241 @@
+.blog {
+  &__title-wrapper {
+    @apply pb-4;
+  }
+
+  &__title,
+  &__subtitle {
+    @apply text-scheme-text my-4;
+  }
+
+  &__button {
+    @apply text-xl;
+  }
+
+  &__tag-links {
+    @apply mb-8;
+
+    > a {
+      @apply mb-2;
+    }
+  }
+}
+
+.main-blog {
+  & .title--primary {
+    @apply <md:mb-4 <lg:mb-8;
+  }
+
+  & .description {
+    @apply mb-8 md:(mb-16 max-w-3/4) lg:mb-24;
+  }
+}
+
+.blog-articles {
+  &--list {
+    & .card {
+      @apply sm:flex-row;
+
+      &__heading a {
+        @apply text-xl md:text-2xl lg:text-3xl;
+      }
+
+      & .article-card__header {
+        @apply font-sans md:text-base lg:text-lg;
+
+        & > span::after {
+          @apply align-baseline;
+        }
+      }
+    }
+
+    & .article {
+      @apply sm:border-b;
+
+      &:first-child {
+        @apply sm:border-t;
+      }
+    }
+
+    & .article--image {
+      &-right {
+        & .card {
+          @apply sm:flex-row-reverse;
+        }
+      }
+
+      &-top {
+        @apply sm:pb-8;
+      }
+
+      &-middle {
+        @apply sm:py-4;
+      }
+
+      &-bottom {
+        @apply sm:pt-8;
+      }
+    }
+  }
+
+  & .article {
+    @apply <sm:(pt-4 border-b) border-scheme-accent;
+
+    &:first-child {
+      @apply <sm:border-t;
+    }
+  }
+
+  .card-wrapper {
+    @apply w-full;
+  }
+}
+
+.article-template {
+  & > *:first-child {
+    @apply mt-16;
+  }
+
+  & > *:last-child {
+    @apply mb-16;
+  }
+
+  &__container {
+    @apply flex;
+
+    & .article-template {
+      @apply basis-full md:basis-3/4 lg:basis-4/5;
+    }
+  }
+
+  &__sidebar {
+    @apply <md:hidden pt-20 basis-1/4 lg:basis-1/5 self-start sticky top-0;
+
+    .sticky-header-active & {
+      animation: stickySidebarEnter .5s linear;
+      animation-delay: 1.5s;
+      animation-fill-mode: forwards;
+    }
+
+    &--left {
+      @apply mr-8 lg:mr-12 xl:mr-20;
+    }
+
+    &--right {
+      @apply ml-8 lg:ml-12 xl:ml-20;
+    }
+
+    &-title {
+      @apply font-serif mb-4;
+    }
+
+    &-tags {
+      @apply pt-2 lg:pt-4;
+
+      & li {
+        @apply my-2 lg:my-4;
+      }
+    }
+  }
+
+  &__back {
+    &.before {
+      @apply mt-8 mb-16;
+    }
+  }
+
+  &__link {
+    @apply text-base;
+
+    & .icon-wrap {
+      @apply mr-2;
+    }
+
+    .after & {
+      @apply text-lg justify-center;
+    }
+  }
+
+  &__image {
+    > img {
+      @apply h-prose;
+    }
+
+    &-caption {
+      @apply m-auto text-center text-sm mt-8;
+    }
+  }
+
+  &__details-container {
+    @apply flex text-sm my-8;
+  }
+
+  &__author {
+    @apply font-serif uppercase leading-4 mb-1;
+  }
+
+  &__author-image img {
+    @apply max-h-[3.5rem] max-w-[3.5rem] aspect-square object-cover mr-4;
+  }
+
+  &__details {
+    & > span {
+      @apply block;
+    }
+  }
+
+  &__content {
+    &.rte img {
+      @apply mx-auto my-8 lg:my-16 h-[20ch] md:h-[30ch] lg:h-[40ch] object-cover;
+    }
+  }
+
+  &__tags {
+    @apply font-bold;
+  }
+
+  &__social-sharing {
+    @apply bg-fg border border-bg2 flex flex-wrap justify-around py-4 px-8;
+  }
+
+  .share-button {
+    @apply basis-full sm:basis-1/3 md:basis-auto;
+
+    > * {
+      @apply m-auto text-center justify-center;
+    }
+
+    &__button {
+      @apply text-base;
+    }
+
+    .icon {
+      @apply h-[1.25rem] mr-4;
+    }
+  }
+
+  &__comment-wrapper {
+    @apply mt-8;
+
+    h3 {
+      @apply font-serif text-xl;
+    }
+  }
+
+  &__comments {
+    @apply divide-y divide-scheme-accent mb-8;
+
+    &-comment {
+      @apply px-0;
+    }
+
+    &-fields {
+      @apply my-8;
+    }
+  }
+}
+
+@keyframes stickySidebarEnter {
+  from { top: 0; }
+  to { top: 8rem; }
+}

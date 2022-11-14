@@ -4,13 +4,13 @@
 }
 
 .product .rating-star {
-  --letter-spacing: 0.8;
-  --font-size: 1.7;
+  --letter-spacing: 0.75;
+  --font-size: 1;
 }
 
 .card-wrapper .rating-star {
-  --letter-spacing: 0.7;
-  --font-size: 1.4;
+  --letter-spacing: 0;
+  --font-size: 1.5;
 }
 
 .rating-star {
@@ -34,7 +34,7 @@
   background: linear-gradient(
     90deg,
     var(--color-icon) var(--percent),
-    rgba(var(--color-foreground), 0.15) var(--percent)
+    rgb(var(--color-foreground) / 0.15) var(--percent)
   );
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

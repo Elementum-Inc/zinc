@@ -1,44 +1,137 @@
 {
   "sections": {
+    "hero": {
+      "type": "main-article-hero",
+      "blocks": {
+        "a2d81ade-3da8-4343-b961-24997ca0629f": {
+          "type": "title",
+          "settings": {
+            "show_article_title": true,
+            "title": "This is a new title"
+          }
+        },
+        "9f515e1e-03aa-4fe9-b0b2-6eeef4487dcd": {
+          "type": "subtitle",
+          "settings": {
+            "title": "And here is a subtitle for your sweet sweet eyes"
+          }
+        },
+        "b5248616-349b-43e9-bf63-df276eb96a14": {
+          "type": "details",
+          "settings": {
+            "show_date": true,
+            "show_author": true
+          }
+        }
+      },
+      "block_order": [
+        "a2d81ade-3da8-4343-b961-24997ca0629f",
+        "9f515e1e-03aa-4fe9-b0b2-6eeef4487dcd",
+        "b5248616-349b-43e9-bf63-df276eb96a14"
+      ],
+      "settings": {
+        "show_featured_image": true,
+        "height": "h-md",
+        "color_scheme": "accent-1",
+        "overlay": 30,
+        "content_position": "top",
+        "content_alignment": "left"
+      }
+    },
     "main": {
       "type": "main-article",
       "blocks": {
-        "featured_image": {
-          "type": "featured_image",
-          "settings": {
-            "image_height": "adapt"
-          }
-        },
         "title": {
           "type": "title",
           "settings": {
+          }
+        },
+        "0f55a664-ecd2-40d4-8e86-5749b647de2b": {
+          "type": "details",
+          "settings": {
             "blog_show_date": true,
-            "blog_show_author": false
+            "blog_show_author": true,
+            "author_image": "shopify:\/\/shop_images\/test_bg.png",
+            "author_image_radius": 50,
+            "author_bio": "Include an optional short bio about your blog's author. Include an optional short bio about your blog's author. Include an optional short bio about your blog's author. Include an optional short bio about your blog's author. Include an optional short bio about your blog's author. Include an optional short bio about your blog's author."
+          }
+        },
+        "34c57ce1-84ef-4e4a-9171-1323ef5d26a1": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
+            "show_featured_image": false,
+            "image_ratio": "landscape",
+            "image_caption": "Here is a caption."
           }
         },
         "share": {
           "type": "share",
           "settings": {
-            "share_label": "Share"
+            "share_label": "Share",
+            "share_on_facebook": true,
+            "share_on_twitter": true
           }
         },
         "content": {
           "type": "content",
           "settings": {
+            "inline_image_ratio": "landscape"
+          }
+        },
+        "da65db9b-63f4-4e49-beb4-3450dbe140b5": {
+          "type": "tags",
+          "settings": {
           }
         }
       },
       "block_order": [
-        "featured_image",
         "title",
+        "0f55a664-ecd2-40d4-8e86-5749b647de2b",
+        "34c57ce1-84ef-4e4a-9171-1323ef5d26a1",
         "share",
-        "content"
+        "content",
+        "da65db9b-63f4-4e49-beb4-3450dbe140b5"
       ],
       "settings": {
+        "blog_container_width": "narrow",
+        "back_button": "before",
+        "tag_sidebar": true,
+        "tag_sidebar_side": "right"
+      }
+    },
+    "related-posts": {
+      "type": "featured-blog",
+      "settings": {
+        "title": "Related Posts",
+        "subheading": "",
+        "blog": "",
+        "sort_by": "new",
+        "tag_links": false,
+        "post_limit": 3,
+        "columns_desktop": 3,
+        "desktop_slider": false,
+        "color_scheme": "primary",
+        "use_foreground": true,
+        "card_color_scheme": "default",
+        "show_image": true,
+        "image_ratio": "sportrait",
+        "card_image_fit": "cover",
+        "card_vertical_alignment": "start",
+        "show_date": true,
+        "show_author": false,
+        "show_excerpt": false,
+        "show_tags": false,
+        "card_hover_show_info": false,
+        "show_view_all": false,
+        "padding_top": 36,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
-    "main"
+    "hero",
+    "main",
+    "related-posts"
   ]
 }

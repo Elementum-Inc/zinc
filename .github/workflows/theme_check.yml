@@ -3,8 +3,8 @@ name: Theme Check
 on:
   push:
     # paths-ignore:
-    #   - 'assets/theme.js'
-    #   - 'assets/theme.css'
+    #   - 'assets/et_theme.js'
+    #   - 'assets/et_theme.css'
 
 jobs:
   shopify-theme-check:
@@ -13,7 +13,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Theme Check and Liquid linting
-        uses: shopify/theme-check-action@v1.2.2
+        uses: shopify/theme-check-action@v1.2.3
         with:
           # flags: ''
           token: ${{ github.token }}

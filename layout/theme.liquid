@@ -30,7 +30,6 @@
     {% render 'meta-tags' %}
 
     <script src="{{ 'global.js' | asset_url }}" defer="defer"></script>
-    <script type="module" src="{{ 'theme.js' | asset_url }}" defer="defer"></script>
     {{ content_for_header }}
 
     {%- liquid
@@ -61,12 +60,14 @@
         --font-heading-size: {{ settings.heading_size }};
 
         --color-text: {{ settings.colors_text.red }} {{ settings.colors_text.green }} {{ settings.colors_text.blue }};
-        --color-primary: {{ settings.colors_primary.red }} {{ settings.colors_primary.green }} {{ settings.colors_primary.blue }};
-        --color-secondary: {{ settings.colors_secondary.red }} {{ settings.colors_secondary.green }} {{ settings.colors_secondary.blue }};
-        --color-accent-1: {{ settings.colors_accent_1.red }} {{ settings.colors_accent_1.green }} {{ settings.colors_accent_1.blue }};
-        --color-accent-2: {{ settings.colors_accent_2.red }} {{ settings.colors_accent_2.green }} {{ settings.colors_accent_2.blue }};
         --color-background-1: {{ settings.colors_background_1.red }} {{ settings.colors_background_1.green }} {{ settings.colors_background_1.blue }};
         --color-background-2: {{ settings.colors_background_2.red }} {{ settings.colors_background_2.green }} {{ settings.colors_background_2.blue }};
+        --theme-foreground: {{ settings.colors_foreground.red }} {{ settings.colors_foreground.green }} {{ settings.colors_foreground.blue }};
+        --color-accent-1: {{ settings.colors_accent_1.red }} {{ settings.colors_accent_1.green }} {{ settings.colors_accent_1.blue }};
+        --color-accent-2: {{ settings.colors_accent_2.red }} {{ settings.colors_accent_2.green }} {{ settings.colors_accent_2.blue }};
+        --color-success: {{ settings.colors_success.red }} {{ settings.colors_success.green }} {{ settings.colors_success.blue }};
+        --color-warning: {{ settings.colors_warning.red }} {{ settings.colors_warning.green }} {{ settings.colors_warning.blue }};
+        --color-error: {{ settings.colors_error.red }} {{ settings.colors_error.green }} {{ settings.colors_error.blue }};
 
         --media-padding: {{ settings.media_padding }}px;
         --media-border-opacity: {{ settings.media_border_opacity | divided_by: 100.0 }};
@@ -81,33 +82,15 @@
         --page-width: {{ settings.page_width | divided_by: 10 }}rem;
         --page-width-margin: {% if settings.page_width == '1600' %}2{% else %}0{% endif %}rem;
 
-        --card-image-padding: {{ settings.card_image_padding | divided_by: 10.0 }}rem;
-        --card-corner-radius: {{ settings.card_corner_radius | divided_by: 10.0 }}rem;
-        --card-text-alignment: {{ settings.card_text_alignment }};
-        --card-border-width: {{ settings.card_border_thickness | divided_by: 10.0 }}rem;
-        --card-border-opacity: {{ settings.card_border_opacity | divided_by: 100.0 }};
-        --card-shadow-opacity: {{ settings.card_shadow_opacity | divided_by: 100.0 }};
-        --card-shadow-visible: {% if settings.card_shadow_opacity > 0 %}1{% else %}0{% endif %};
-        --card-shadow-horizontal-offset: {{ settings.card_shadow_horizontal_offset | divided_by: 10.0 }}rem;
-        --card-shadow-vertical-offset: {{ settings.card_shadow_vertical_offset | divided_by: 10.0 }}rem;
-        --card-shadow-blur-radius: {{ settings.card_shadow_blur | divided_by: 10.0 }}rem;
+        --product-card-corner-radius: {{ settings.product_card_corner_radius | divided_by: 16.0 }}rem;
+        --product-card-text-alignment: {{ settings.product_card_text_alignment }};
+        --product-card-vertical-alignment: {{ settings.product_card_vertical_alignment }};
+        
+        --content-card-corner-radius: {{ settings.content_card_corner_radius | divided_by: 16.0 }}rem;
+        --content-card-text-alignment: {{ settings.content_card_text_alignment }};
+        --content-card-vertical-alignment: {{ settings.content_card_vertical_alignment }};
 
-        --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 10.0 }}rem;
-
-        --popup-border-width: {{ settings.popup_border_thickness }}px;
-        --popup-border-opacity: {{ settings.popup_border_opacity | divided_by: 100.0 }};
-        --popup-corner-radius: {{ settings.popup_corner_radius }}px;
-        --popup-shadow-opacity: {{ settings.popup_shadow_opacity | divided_by: 100.0 }};
-        --popup-shadow-horizontal-offset: {{ settings.popup_shadow_horizontal_offset }}px;
-        --popup-shadow-vertical-offset: {{ settings.popup_shadow_vertical_offset }}px;
-        --popup-shadow-blur-radius: {{ settings.popup_shadow_blur }}px;
-
-        --drawer-border-width: {{ settings.drawer_border_thickness }}px;
-        --drawer-border-opacity: {{ settings.drawer_border_opacity | divided_by: 100.0 }};
-        --drawer-shadow-opacity: {{ settings.drawer_shadow_opacity | divided_by: 100.0 }};
-        --drawer-shadow-horizontal-offset: {{ settings.drawer_shadow_horizontal_offset }}px;
-        --drawer-shadow-vertical-offset: {{ settings.drawer_shadow_vertical_offset }}px;
-        --drawer-shadow-blur-radius: {{ settings.drawer_shadow_blur }}px;
+        --badge-corner-radius: {{ settings.badge_corner_radius | divided_by: 16.0 }}rem;
 
         --spacing-sections-desktop: {{ settings.spacing_sections }}px;
         --spacing-sections-mobile: {% if settings.spacing_sections < 24 %}{{ settings.spacing_sections }}{% else %}{{ settings.spacing_sections | times: 0.7 | round | at_least: 20 }}{% endif %}px;
@@ -138,14 +121,6 @@
         --buttons-border-offset: {% if settings.buttons_radius > 0 or settings.buttons_shadow_opacity > 0 %}0.3{% else %}0{% endif %}px;
 
         --inputs-radius: {{ settings.inputs_radius }}px;
-        --inputs-border-width: {{ settings.inputs_border_thickness }}px;
-        --inputs-border-opacity: {{ settings.inputs_border_opacity | divided_by: 100.0 }};
-        --inputs-shadow-opacity: {{ settings.inputs_shadow_opacity | divided_by: 100.0 }};
-        --inputs-shadow-horizontal-offset: {{ settings.inputs_shadow_horizontal_offset }}px;
-        --inputs-margin-offset: {% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_opacity > 0 %}{{ settings.inputs_shadow_vertical_offset | abs }}{% else %}0{% endif %}px;
-        --inputs-shadow-vertical-offset: {{ settings.inputs_shadow_vertical_offset }}px;
-        --inputs-shadow-blur-radius: {{ settings.inputs_shadow_blur }}px;
-        --inputs-radius-outset: {% if settings.inputs_radius > 0 %}{{ settings.inputs_radius | plus: settings.inputs_border_thickness }}{% else %}0{% endif %}px;
 
         --variant-pills-radius: {{ settings.variant_pills_radius }}px;
         --variant-pills-border-width: {{ settings.variant_pills_border_thickness }}px;
@@ -191,12 +166,14 @@
 
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
+    {% comment %} theme-check-disable AssetPreload {% endcomment %}
     {%- unless settings.type_body_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_body_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
     {%- unless settings.type_header_font.system? -%}
       <link rel="preload" as="font" href="{{ settings.type_header_font | font_url }}" type="font/woff2" crossorigin>
     {%- endunless -%}
+    {% comment %} theme-check-enable AssetPreload {% endcomment %}
 
     {%- if settings.predictive_search_enabled -%}
       <link rel="stylesheet" href="{{ 'component-predictive-search.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -208,7 +185,7 @@
     }
     </script>
 
-    {{ 'theme.css' | asset_url | stylesheet_tag }}
+    {{ 'et_theme.css' | asset_url | stylesheet_tag }}
   </head>
 
   <body class="gradient">
@@ -262,7 +239,15 @@
       }
 
       window.themeSettings = {{ settings | json }}
+      
+      window.assetUrl = '{{ 'et_theme.css' | asset_url | split: 'assets/' | first }}'
+
+      window.__toCdnUrl = function(filename) {
+        return window.assetUrl + filename + '?v=latest';
+      }
     </script>
+
+    <script type="module" src="{{ 'et_theme.js' | asset_url }}" defer="defer"></script>
 
     {%- if settings.predictive_search_enabled -%}
       <script src="{{ 'predictive-search.js' | asset_url }}" defer="defer"></script>

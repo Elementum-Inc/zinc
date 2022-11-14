@@ -1,117 +1,236 @@
 {{ 'section-blog-post.css' | asset_url | stylesheet_tag }}
+{{ 'et_blog.css' | asset_url | stylesheet_tag }}
 
-<article class="article-template" itemscope itemtype="http://schema.org/BlogPosting">
+{% liquid 
+  assign container_classes = 'container'
+  
+  if section.settings.blog_container_width != 'default'
+    assign container_classes = container_classes | append: ' container--' | append: section.settings.blog_container_width
+  endif
+%}
+
+{% if section.settings.tag_sidebar %}
+  {% capture tag_sidebar %}
+    <aside class="article-template__sidebar article-template__sidebar--{{ section.settings.tag_sidebar_side }}">
+      <h4 class="article-template__sidebar-title">Tagged</h4>
+      <ul class="article-template__sidebar-tags">
+        {% for tag in article.tags %}
+          <li>
+            <a href="{{ blog.url }}/tagged/{{ tag }}" alt="Blog posts tagged with {{ tag }}">{{ tag }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </aside>
+  {% endcapture %}
+{% endif %}
+
+{% if section.settings.tag_sidebar %}
+  <div class="article-template__container {{ container_classes }}">
+    {% if section.settings.tag_sidebar_side == 'left' %}
+      {{ tag_sidebar }}
+    {% endif %}
+{% endif %}
+
+<article class="article-template{% unless section.settings.tag_sidebar %} {{ container_classes }}{% endunless %}" itemscope itemtype="http://schema.org/BlogPosting">
+  {% capture back_button %}
+    <div class="article-template__back {{ section.settings.back_button }} {{ container_classes }}">
+      <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
+        <span class="icon-wrap">{% render 'icon-arrow' %}</span>
+        {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
+      </a>
+    </div>
+  {% endcapture %}
+
+  {% if section.settings.back_button == 'before' %}
+    {{ back_button }}
+  {% endif %}
+
   {%- for block in section.blocks -%}
     {%- case block.type -%}
       {%- when '@app' -%}
-        <div class="page-width page-width--narrow">
+        <div>
           {% render block %}
         </div>
-      {%- when 'featured_image'-%}
-        {%- if article.image -%}
-          <div class="article-template__hero-container" {{ block.shopify_attributes }}>
-            <div class="article-template__hero-{{ block.settings.image_height }} media"
+      {%- when 'image' -%}
+        {%- liquid
+          assign block_image = block.settings.image
+
+          if block.settings.show_featured_image and article.image
+            assign block_image = article.image
+          endif
+        -%}
+        {%- if block_image -%}
+          <figure class="article-template__image-container" {{ block.shopify_attributes }}>
+            <div class="article-template__image media media--{{ block.settings.image_ratio }}"
               itemprop="image"
-              {% if block.settings.image_height == 'adapt' and article.image %} style="padding-bottom: {{ 1 | divided_by: article.image.aspect_ratio | times: 100 }}%;"{% endif %}
+              {% if block.settings.image_ratio == 'auto' and block_image %} style="padding-bottom: {{ 1 | divided_by: block_image.aspect_ratio | times: 100 }}%;"{% endif %}
             >
               <img
-                srcset="{% if article.image.width >= 350 %}{{ article.image | image_url: width: 350 }} 350w,{% endif %}
-                  {% if article.image.width >= 750 %}{{ article.image | image_url: width: 750 }} 750w,{% endif %}
-                  {% if article.image.width >= 1100 %}{{ article.image | image_url: width: 1100 }} 1100w,{% endif %}
-                  {% if article.image.width >= 1500 %}{{ article.image | image_url: width: 1500 }} 1500w,{% endif %}
-                  {% if article.image.width >= 2200 %}{{ article.image | image_url: width: 2200 }} 2200w,{% endif %}
-                  {% if article.image.width >= 3000 %}{{ article.image | image_url: width: 3000 }} 3000w,{% endif %}
-                  {{ article.image | image_url }} {{ article.image.width }}w"
+                srcset="{% if block_image.width >= 350 %}{{ block_image | image_url: width: 350 }} 350w,{% endif %}
+                  {% if block_image.width >= 750 %}{{ block_image | image_url: width: 750 }} 750w,{% endif %}
+                  {% if block_image.width >= 1100 %}{{ block_image | image_url: width: 1100 }} 1100w,{% endif %}
+                  {% if block_image.width >= 1500 %}{{ block_image | image_url: width: 1500 }} 1500w,{% endif %}
+                  {% if block_image.width >= 2200 %}{{ block_image | image_url: width: 2200 }} 2200w,{% endif %}
+                  {% if block_image.width >= 3000 %}{{ block_image | image_url: width: 3000 }} 3000w,{% endif %}
+                  {{ block_image | image_url }} {{ block_image.width }}w"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw"
-                src="{{ article.image | image_url: width: 1100 }}"
+                src="{{ block_image | image_url: width: 1100 }}"
                 loading="lazy"
-                width="{{ article.image.width }}"
-                height="{{ article.image.height }}"
-                alt="{{ article.image.alt | escape }}">
+                width="{{ block_image.width }}"
+                height="{{ block_image.height }}"
+                alt="{{ block_image.alt | escape }}">
             </div>
-          </div>
+            {%- if block.settings.image_caption -%}
+              <figcaption class="article-template__image-caption">{{ block.settings.image_caption }}</figcaption>
+            {% endif %}
+          </figure>
         {%- endif -%}
 
-        {%- when 'title'-%}
-          <header class="page-width page-width--narrow" {{ block.shopify_attributes }}>
-            <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
-            {%- if block.settings.blog_show_date -%}
-              <span class="circle-divider caption-with-letter-spacing" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'date' }}</span>
-            {%- endif -%}
+      {%- when 'title' -%}
+        <header {{ block.shopify_attributes }}>
+          <h1 class="article-template__title" itemprop="headline">{{ article.title | escape }}</h1>
+          {%- if block.settings.blog_show_date -%}
+            <span class="circle-divider caption-spaced" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'date' }}</span>
+          {%- endif -%}
+          {%- if block.settings.blog_show_author -%}
+            <span class="caption-spaced" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span itemprop="name">{{ article.author }}</span>
+            </span>
+          {%- endif -%}
+        </header>
+
+      {%- when 'details' -%}
+        <div class="article-template__details-container article-template__details-{{ block.id }} {% if block.settings.blog_show_author and block.settings.author_bio != '' %}items-top{% else %}items-center{% endif %}">
+          {% if block.settings.blog_show_author and block.settings.author_image %}
+            {% style %}
+              .article-template__details-{{ block.id }} .article-template__author-image img {
+                border-radius: {{ block.settings.author_image_radius }}%;
+              }
+            {% endstyle %}
+            <div class="article-template__author-image">
+              <img
+                src="{{ block.settings.author_image | image_url: width: 120 }}"
+                loading="lazy"
+                width="{{ block.settings.author_image.width }}"
+                height="{{ block.settings.author_image.height }}"
+                alt="{{ block.settings.author_image.alt | escape }}"
+              />
+            </div>
+          {% endif %}
+          <div class="article-template__details">
             {%- if block.settings.blog_show_author -%}
-              <span class="caption-with-letter-spacing" itemprop="author" itemscope itemtype="http://schema.org/Person">
+              <span class="article-template__author" itemprop="author" itemscope itemtype="http://schema.org/Person">
                 <span itemprop="name">{{ article.author }}</span>
               </span>
             {%- endif -%}
-          </header>
-
-        {%- when 'content'-%}
-          <div class="article-template__content page-width page-width--narrow rte" itemprop="articleBody" {{ block.shopify_attributes }}>
-              {{ article.content }}
+            {%- if block.settings.blog_show_date -%}
+              <span class="article-template__date" itemprop="dateCreated pubdate datePublished">{{ article.published_at | time_tag: format: 'date' }}</span>
+            {%- endif -%}
+            {%- if block.settings.blog_show_author and block.settings.author_bio -%}
+              <span class="article-template__author-bio">
+                {{ block.settings.author_bio }}
+              </span>
+            {%- endif -%}
           </div>
+        </div>
 
-        {%- when 'share' -%}
-          <div class="article-template__social-sharing page-width page-width--narrow" {{ block.shopify_attributes }}>
-            <share-button class="share-button" {{ block.shopify_attributes }}>
-              <button class="share-button__button hidden">
+      {%- when 'content' -%}
+        <div class="article-template__content rte" itemprop="articleBody" {{ block.shopify_attributes }}>
+          {{ article.content }}
+        </div>
+
+      {% when 'tags' %}
+        <div class="article-template__tags">
+          <p>
+            Tags:
+            {% for tag in article.tags %}
+              <a href="{{ blog.url }}/tagged/{{ tag }}" alt="Blog posts tagged with {{ tag }}" class="article-template__tag"> {{ tag }}{% unless forloop.last %},{% endunless %}</a>
+            {% endfor %}
+          </p>
+        </div>
+
+      {%- when 'share' -%}
+        <div class="article-template__social-sharing" {{ block.shopify_attributes }}>
+          <share-button class="share-button" {{ block.shopify_attributes }}>
+            <button class="share-button__button hidden">
+              {% render 'icon-share' %}
+              Share Link
+            </button>
+            <details id="Details-{{ block.id }}-{{ section.id }}">
+              <summary class="share-button__button">
                 {% render 'icon-share' %}
-                {{ block.settings.share_label | escape }}
-              </button>
-              <details id="Details-{{ block.id }}-{{ section.id }}">
-                <summary class="share-button__button">
-                  {% render 'icon-share' %}
-                  {{ block.settings.share_label | escape }}
-                </summary>
-                <div id="Article-share-{{ section.id }}" class="share-button__fallback motion-reduce">
-                  <div class="field">
-                    <span id="ShareMessage-{{ section.id }}" class="share-button__message hidden" role="status">
-                    </span>
-                    <input type="text"
-                          class="field__input"
-                          id="url"
-                          value="{{ request.origin | append: article.url }}"
-                          placeholder="{{ 'general.share.share_url' | t }}"
-                          onclick="this.select();"
-                          readonly
-                    >
-                    <label class="field__label" for="url">{{ 'general.share.share_url' | t }}</label>
-                  </div>
-                  <button class="share-button__close hidden no-js-hidden">
-                    {% render 'icon-close' %}
-                    <span class="visually-hidden">{{ 'general.share.close' | t }}</span>
-                  </button>
-                  <button class="share-button__copy no-js-hidden">
-                    {% render 'icon-clipboard' %}
-                    <span class="visually-hidden">{{ 'general.share.copy_to_clipboard' | t }}</span>
-                  </button>
+                Share Link
+              </summary>
+              <div id="Article-share-{{ section.id }}" class="share-button__fallback motion-reduce">
+                <div class="field">
+                  <span id="ShareMessage-{{ section.id }}" class="share-button__message hidden" role="status">
+                  </span>
+                  <input type="text"
+                        class="field__input"
+                        id="url"
+                        value="{{ request.origin | append: article.url }}"
+                        placeholder="{{ 'general.share.share_url' | t }}"
+                        onclick="this.select();"
+                        readonly
+                  >
+                  <label class="field__label" for="url">{{ 'general.share.share_url' | t }}</label>
                 </div>
-              </details>
-            </share-button>
-            <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
-          </div>
+                <button class="share-button__close hidden no-js-hidden">
+                  {% render 'icon-close' %}
+                  <span class="visually-hidden">{{ 'general.share.close' | t }}</span>
+                </button>
+                <button class="share-button__copy no-js-hidden">
+                  {% render 'icon-clipboard' %}
+                  <span class="visually-hidden">{{ 'general.share.copy_to_clipboard' | t }}</span>
+                </button>
+              </div>
+            </details>
+          </share-button>
+          {% if block.settings.share_on_facebook %}
+            <div class="fb-share-button share-button"
+              data-href="https://developers.facebook.com/docs/plugins/"
+              data-layout="button"
+              data-size="large"
+            >
+              <a class="share-button__button" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u={{ shop.secure_url | append: page.url }}&src=sdkpreparse" class="fb-xfbml-parse-ignore">
+                {% render 'icon-facebook' %}
+                Share on Facebook
+              </a>
+            </div>
+          {% endif %}
+          {% if block.settings.share_on_twitter %}
+            <div class="share-button">
+              <a class="twitter-share-button share-button__button"
+                href="https://twitter.com/intent/tweet?url={{ shop.secure_url | append: page.url }}"
+                data-size="large">
+                {% render 'icon-twitter' %}
+                Share on Twitter
+              </a>
+            </div>
+          {% endif %}
+          <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
+        </div>
     {%- endcase -%}
   {%- endfor -%}
 
-  <div class="article-template__back element-margin-top center">
-    <a href="{{ blog.url }}" class="article-template__link link animate-arrow">
-      <span class="icon-wrap">{% render 'icon-arrow' %}</span>
-      {{ 'blogs.article.back_to_blog' | t: title: blog.title }}
-    </a>
-  </div>
+  {% if section.settings.back_button == 'after' %}
+    {{ back_button }}
+  {% endif %}
+
   {%- if blog.comments_enabled? -%}
-    <div class="article-template__comment-wrapper background-secondary">
-      <div id="comments" class="page-width page-width--narrow">
+    <div class="article-template__comment-wrapper">
+      <div id="comments">
         {%- if article.comments_count > 0 -%}
           {%- assign anchorId = '#Comments-' | append: article.id -%}
 
-          <h2 id="Comments-{{ article.id }}" tabindex="-1">{{ 'blogs.article.comments' | t: count: article.comments_count }}</h2>
+          <h3 id="Comments-{{ article.id }}" tabindex="-1">{{ 'blogs.article.comments' | t: count: article.comments_count }}</h3>
           {% paginate article.comments by 5 %}
             <div class="article-template__comments">
               {%- if comment.status == 'pending' and comment.content -%}
                 <article id="{{ comment.id }}" class="article-template__comments-comment">
                   {{ comment.content }}
                   <footer class="right">
-                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span>
+                    <span class="circle-divider caption-spaced">{{ comment.author }}</span>
                   </footer>
                 </article>
               {%- endif -%}
@@ -120,7 +239,7 @@
                 <article id="{{ comment.id }}" class="article-template__comments-comment">
                   {{ comment.content }}
                   <footer class="right">
-                    <span class="circle-divider caption-with-letter-spacing">{{ comment.author }}</span><span class="caption-with-letter-spacing">{{ comment.created_at | time_tag: format: 'date' }}</span>
+                    <span class="circle-divider caption-spaced">{{ comment.author }}</span><span class="caption-spaced">{{ comment.created_at | time_tag: format: 'date' }}</span>
                   </footer>
                 </article>
               {%- endfor -%}
@@ -135,7 +254,7 @@
               assign post_message = 'blogs.article.success_moderated'
             endif
           -%}
-          <h2>{{ 'blogs.article.comment_form_title' | t }}</h2>
+          <h3>{{ 'blogs.article.comment_form_title' | t }}</h3>
           {%- if form.errors -%}
             <div class="form__message" role="alert">
               <h3 class="form-status caption-large text-body" tabindex="-1" autofocus>
@@ -149,7 +268,7 @@
                     {%- if form.errors.translated_fields[field] contains 'author' -%}
                       {{ 'blogs.article.name' | t }}
                     {%- elsif form.errors.translated_fields[field] contains 'body'-%}
-                     {{ 'blogs.article.message' | t }}
+                    {{ 'blogs.article.message' | t }}
                     {%- else -%}
                       {{ form.errors.translated_fields[field] }}
                     {%- endif -%}
@@ -240,12 +359,21 @@
           {%- if blog.moderated? -%}
             <p class="article-template__comment-warning caption">{{ 'blogs.article.moderated' | t }}</p>
           {%- endif -%}
-          <input type="submit" class="button" value="{{ 'blogs.article.post' | t }}">
+          <button type="submit" class="btn round secondary">
+            {{ 'blogs.article.post' | t }}
+          </button>
         {% endform %}
       </div>
-  </div>
+    </div>
   {%- endif -%}
 </article>
+
+{% if section.settings.tag_sidebar %}
+  {% if section.settings.tag_sidebar_side == 'right' %}
+    {{ tag_sidebar }}
+  {% endif %}
+  </div>
+{% endif %}
 
 <script type="application/ld+json">
   {
@@ -292,39 +420,125 @@
   "name": "t:sections.main-article.name",
   "tag": "section",
   "class": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "blog_container_width",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default (Global page width)"
+        },
+        {
+          "value": "narrow",
+          "label": "Narrow"
+        },
+        {
+          "value": "tight",
+          "label": "Tight"
+        }
+      ],
+      "default": "narrow",
+      "label": "Container width"
+    },
+    {
+      "type": "select",
+      "id": "back_button",
+      "label": "Back button",
+      "options": [
+        {
+          "value": "disabled",
+          "label": "Disabled"
+        },
+        {
+          "value": "before",
+          "label": "Before content"
+        },
+        {
+          "value": "after",
+          "label": "After content"
+        }
+      ],
+      "default": "before"
+    },
+    {
+      "type": "checkbox",
+      "id": "tag_sidebar",
+      "default": true,
+      "label": "Show tags in sidebar"
+    },
+    {
+      "type": "radio",
+      "id": "tag_sidebar_side",
+      "label": "Sidebar alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "right"
+    }
+  ],
   "blocks": [
     {
       "type": "@app"
     },
     {
-      "type": "featured_image",
-      "name": "t:sections.main-article.blocks.featured_image.name",
-      "limit": 1,
+      "type": "image",
+      "name": "Image",
       "settings": [
         {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_featured_image",
+          "default": false,
+          "label": "t:sections.main-article-hero.settings.show_featured_image.label"
+        },
+        {
           "type": "select",
-          "id": "image_height",
+          "id": "image_ratio",
           "options": [
             {
-              "value": "adapt",
-              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__1.label"
+              "value": "auto",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
             },
             {
-              "value": "small",
-              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__2.label"
+              "value": "square",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
             },
             {
-              "value": "medium",
-              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__3.label"
+              "value": "lportrait",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
             },
             {
-              "value": "large",
-              "label": "t:sections.main-article.blocks.featured_image.settings.image_height.options__4.label"
+              "value": "sportrait",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
+            },
+            {
+              "value": "widescreen",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
+            },
+            {
+              "value": "landscape",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
             }
           ],
-          "default": "adapt",
-          "label": "t:sections.main-article.blocks.featured_image.settings.image_height.label",
-          "info": "t:sections.main-article.blocks.featured_image.settings.image_height.info"
+          "default": "landscape",
+          "label": "t:settings_schema.global.settings.aspect_ratio.label"
+        },
+        {
+          "type": "text",
+          "id": "image_caption",
+          "label": "Caption"
         }
       ]
     },
@@ -332,6 +546,14 @@
       "type": "title",
       "name": "t:sections.main-article.blocks.title.name",
       "limit": 1,
+      "settings": [
+
+      ]
+    },
+    {
+      "type": "details",
+      "name": "Details",
+      "limit": 2,
       "settings": [
         {
           "type": "checkbox",
@@ -344,18 +566,78 @@
           "id": "blog_show_author",
           "default": false,
           "label": "t:sections.main-article.blocks.title.settings.blog_show_author.label"
+        },
+        {
+          "type": "image_picker",
+          "id": "author_image",
+          "label": "Author image"
+        },
+        {
+          "type": "range",
+          "id": "author_image_radius",
+          "min": 0,
+          "max": 50,
+          "step": 5,
+          "unit": "%",
+          "label": "Author image radius",
+          "default": 50
+        },
+        {
+          "type": "textarea",
+          "id": "author_bio",
+          "label": "Author bio",
+          "info": "Include an optional bio about the blog post's author."
         }
       ]
     },
     {
       "type": "content",
       "name": "t:sections.main-article.blocks.content.name",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "inline_image_ratio",
+          "options": [
+            {
+              "value": "auto",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
+            },
+            {
+              "value": "square",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
+            },
+            {
+              "value": "lportrait",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
+            },
+            {
+              "value": "sportrait",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
+            },
+            {
+              "value": "widescreen",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
+            },
+            {
+              "value": "landscape",
+              "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
+            }
+          ],
+          "default": "landscape",
+          "label": "t:settings_schema.global.settings.aspect_ratio.label"
+        }
+      ]
+    },
+    {
+      "type": "tags",
+      "name": "Tags",
       "limit": 1
     },
     {
       "type": "share",
       "name": "t:sections.main-article.blocks.share.name",
-      "limit": 2,
+      "limit": 1,
       "settings": [
         {
           "type": "text",
@@ -370,6 +652,18 @@
         {
           "type": "paragraph",
           "content": "t:sections.main-article.blocks.share.settings.title_info.content"
+        },
+        {
+          "type": "checkbox",
+          "id": "share_on_facebook",
+          "default": true,
+          "label": "Share on Facebook"
+        },
+        {
+          "type": "checkbox",
+          "id": "share_on_twitter",
+          "default": true,
+          "label": "Share on Twitter"
         }
       ]
     }

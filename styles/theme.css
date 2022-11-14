@@ -7,7 +7,7 @@
 
 body.search--opened,
 body.menu--opened {
-  @apply max-h-[100vh] overflow-hidden;
+  @apply overflow-hidden;
 }
 
 *:focus {
@@ -58,6 +58,58 @@ body.menu--opened {
 
 .no-js .focus-offset:focus:not(:focus-visible) {
   @apply outline-none shadow-none;
+}
+
+.container {
+  &--expanded {
+    @apply max-w-screen-2xl;
+  }
+
+  &--narrow {
+    @apply max-w-screen-lg;
+  }
+
+  &--tight {
+    @apply max-w-screen-md;
+  }
+
+  &--no-pad {
+    @apply p-0;
+  }
+}
+
+.media {
+  &--auto {
+    @apply aspect-auto h-full;
+
+    & > img {
+      @apply aspect-auto;
+    }
+  }
+
+  &--square, &--circle {
+    @apply aspect-square;
+  }
+
+  &--circle {
+    @apply rounded-full;
+  }
+
+  &--sportrait {
+    aspect-ratio: 2/3;
+  }
+
+  &--lportrait {
+    aspect-ratio: 9/16;
+  }
+
+  &--widescreen {
+    aspect-ratio: 16/9;
+  }
+
+  &--landscape {
+    aspect-ratio: 3/2;
+  }
 }
 
 /*
