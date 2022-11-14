@@ -14,6 +14,14 @@
       padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
     }
 
+    .slider__slide {
+      width: {{ section.settings.thumbnail_width }}px !important; 
+    }
+
+    .divider {
+
+    }
+
     @media screen and (min-width: 750px) {
       .section-{{ section.id }}-padding {
         padding-top: {{ section.settings.padding_top }}px;
@@ -31,7 +39,7 @@
     <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
   {%- endif -%}
 
-  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} shopify-grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+  <div class="product product--{{ section.settings.media_size }} product--{{ section.settings.gallery_layout }} grid grid--1-col {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %} {% if section.settings.gallery_layout == 'vertical_thumbnail_left' or 'vertical_thumbnail_right' %} product--thumbnail vertical_thumbnail {% endif %}">
     <div class="grid__item product__media-wrapper">
       <media-gallery id="MediaGallery-{{ section.id }}" role="region" {% if section.settings.enable_sticky_info %}class="product__media-gallery"{% endif %} aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="{{ section.settings.gallery_layout }}">
         <div id="GalleryStatus-{{ section.id }}" class="visually-hidden" role="status"></div>
@@ -64,7 +72,7 @@
             {%- endif -%}
             {%- for media in product.media -%}
               {%- unless media.id == product.selected_or_first_available_variant.featured_media.id -%}
-                <li id="Slide-{{ section.id }}-{{ media.id }}" class="product__media-item grid__item slider__slide{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
+                <li id="Slide-{{ section.id }}-{{ media.id }}" class="product__media-item grid__item {% if section.settings.gallery_layout == 'stacked_single_column' %} media-item__stacked_single {% endif %} slider__slide{% if product.selected_or_first_available_variant.featured_media == null and forloop.index == 1 %} is-active{% endif %}{% if media.media_type != 'image' %} product__media-item--full{% endif %}{% if section.settings.hide_variants and variant_images contains media.src %} product__media-item--variant{% endif %}" data-media-id="{{ section.id }}-{{ media.id }}">
                   {%- liquid
                     assign media_position = media_position | default: 0 | plus: 1
                     assign lazy_load = false
@@ -206,19 +214,23 @@
           {%- case block.type -%}
           {%- when '@app' -%}
             {% render block %}
-          {%- when 'text' -%}
-            <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-spaced{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
-              {{- block.settings.text -}}
-            </p>
           {%- when 'title' -%}
             <div class="product__title" {{ block.shopify_attributes }}>
-              <h1>{{ product.title | escape }}</h1>
+              <h1 class="{% if block.settings.title_text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.title_text_style == 'subtitle' %} subtitle{% endif %}">{{ product.title | escape }}</h1>
               <a href="{{ product.url }}" class="product__title">
                 <h2 class="h1">
                   {{ product.title | escape }}
                 </h2>
               </a>
             </div>
+            {%- when 'divider' -%}
+              <div class="divider" style="width: {{ block.settings.product_info_divider_length }}px; border-bottom: {{ block.settings.product_info_divider_width }}px solid black" {{ block.shopify_attributes }}>
+              {% comment %} TODO: make color of divider link to theme settings {% endcomment %}
+              </div>
+            {%- when 'text' -%}
+            <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
+              {{- block.settings.text -}}
+            </p> 
           {%- when 'price' -%}
             <div class="no-js-hidden" id="price-{{ section.id }}" role="status" {{ block.shopify_attributes }}>
               {%- render 'price', product: product, use_variant: true, show_badges: true, price_class: 'price--large' -%}
@@ -261,7 +273,7 @@
                       {{ block.settings.heading | default: block.settings.page.title }}
                     </h2>
                   </div>
-                  {% render 'icon-caret' %}
+                  {% render 'icon-plus' %}
                 </summary>
                 <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
                   {{ block.settings.content }}
@@ -337,12 +349,19 @@
             </share-button>
             <script src="{{ 'share.js' | asset_url }}" defer="defer"></script>
           {%- when 'variant_picker' -%}
+            {%- style -%}
+              .product-form__input input[type="radio"] + label {
+                border: {{ block.settings.variant_pill_border_width }}px solid gray !important;
+                border-radius: {{ block.settings.variant_pill_radius }}px !important;
+              }
+            {%- endstyle -%}
+
             {%- unless product.has_only_default_variant -%}
               {%- if block.settings.picker_type == 'button' -%}
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
                       <fieldset class="js product-form__input">
-                        <legend class="form__label">{{ option.name }}</legend>
+                        <legend class="form__label {% if block.settings.show_variant_labels %} hide-label {% endif %}">{{ option.name }}</legend>
                         {%- for value in option.values -%}
                           <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
                                 name="{{ option.name }}"
@@ -646,6 +665,33 @@
       "type": "@app"
     },
     {
+      "type": "divider",
+      "name": "Divider",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "range",
+          "id": "product_info_divider_length",
+          "label": "Divider length",
+          "min": 0,
+          "max": 500,
+          "step": 10,
+          "unit": "px",
+          "default": 150
+        },
+        {
+          "type": "range",
+          "id": "product_info_divider_width",
+          "label": "Divider width",
+          "min": 0,
+          "max": 10,
+          "step": 0.5,
+          "unit": "px",
+          "default": 1
+        } 
+      ]
+    },
+    {
       "type": "text",
       "name": "t:sections.main-product.blocks.text.name",
       "settings": [
@@ -680,17 +726,79 @@
     {
       "type": "title",
       "name": "t:sections.main-product.blocks.title.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "title_text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "Large title"
+            },
+            {
+              "value": "subtitle",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__2.label"
+            },
+            {
+              "value": "uppercase",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__3.label"
+            }
+          ],
+          "default": "body",
+          "label": "Title text style"
+        }
+      ]
     },
     {
       "type": "price",
       "name": "t:sections.main-product.blocks.price.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "price_text_style",
+          "options": [
+            {
+              "value": "body",
+              "label": "Large"
+            },
+            {
+              "value": "subtitle",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__2.label"
+            },
+            {
+              "value": "uppercase",
+              "label": "t:sections.main-product.blocks.text.settings.text_style.options__3.label"
+            }
+          ],
+          "default": "body",
+          "label": "Price text style"
+        }
+      ]
     },
     {
       "type": "quantity_selector",
       "name": "t:sections.main-product.blocks.quantity_selector.name",
-      "limit": 1
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "quantity_selector_type",
+          "label": "Quantity selector type",
+          "options": [
+            {
+              "value": "dropdown",
+              "label": "Dropdown"
+            },
+            {
+              "value": "buttons",
+              "label": "Buttons"
+            }
+          ],
+          "default": "buttons"
+        }
+      ]
     },
     {
       "type": "variant_picker",
@@ -712,6 +820,48 @@
           ],
           "default": "button",
           "label": "t:sections.main-product.blocks.variant_picker.settings.picker_type.label"
+        },
+        {
+          "type": "select",
+          "id": "selected_variant_style",
+          "options": [
+            {
+              "value": "underline",
+              "label": "Underline"
+            },
+            {
+              "value": "highlight",
+              "label": "Highlight"
+            }
+          ],
+          "default": "highlight",
+          "label": "Selected variant style"
+        },
+        {
+          "type": "range",
+          "label": "Variant pill border radius",
+          "id": "variant_pill_radius",
+          "min": 0,
+          "max": 50,
+          "step": 5,
+          "unit": "px",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "label": "Variant pill border width",
+          "id": "variant_pill_border_width",
+          "min": 0,
+          "max": 6,
+          "step": 0.5,
+          "unit": "px",
+          "default": 1
+        },
+        {
+          "type": "checkbox",
+          "id": "show_variant_labels",
+          "default": true,
+          "label": "Hide variant labels"
         }
       ]
     },
@@ -1021,7 +1171,19 @@
       "options": [
         {
           "value": "stacked",
-          "label": "t:sections.main-product.settings.gallery_layout.options__1.label"
+          "label": "Stacked double column"
+        },
+        {
+          "value": "stacked_single_column",
+          "label": "Stacked single column"
+        },
+        {
+          "value": "vertical_thumbnail_left",
+          "label": "Vertical thumbnails - left"
+        },
+        {
+          "value": "vertical_thumbnail_right",
+          "label": "Vertical thumbnails - right"
         },
         {
           "value": "thumbnail",
@@ -1034,6 +1196,16 @@
       ],
       "default": "stacked",
       "label": "t:sections.main-product.settings.gallery_layout.label"
+    },
+    {
+      "type": "range",
+      "id": "thumbnail_width",
+      "min": 0,
+      "max": 200,
+      "step": 10,
+      "unit": "px",
+      "label": "Thumbnail width",
+      "default": 120
     },
     {
       "type": "select",
