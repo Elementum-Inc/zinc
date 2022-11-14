@@ -53,6 +53,10 @@
   display: flex;
 }
 
+.product .thumbnail-list {
+  display: flex;
+}
+
 quantity-input {
   width: 50% !important;
 }
