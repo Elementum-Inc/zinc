@@ -1,34 +1,77 @@
-.multicolumn-list {
+#testimonials-section .content-container {
   display: flex;
 }
 
-.image-left {
-  display: flex;
-  flex-direction: row;
+#testimonials-section .multicolumn-card__image-wrapper {
+  margin: 0 !important;
 }
 
-.image-left .multicolumn-card__image-wrapper {
-  width: 100%;
-  margin: 0;
+#testimonials-section .media {
+  min-width: 70px;
 }
 
-.image-right {
-  display: flex;
-  flex-direction: row-reverse;
+#testimonials-section {
+  background-color: #fbf2de;
 }
 
-.image-right .multicolumn-card__image-wrapper {
-  width: 100%;
-  margin: 0;
+#testimonials-section .title {
+  font-size: 42px;
 }
 
-.image-below {
-  display: flex;
+#testimonials-section h4 {
+  font-family: "Syne";
+  font-weight: 600;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  color: #1e0e62;
+}
+
+#testimonials-section h5 {
+  font-family: "DM Sans";
+  color: rgba(21, 20, 57, 0.4);
+}
+
+#testimonials-section p {
+  color: #111827;
+}
+
+#testimonials-section .slider-buttons {
+  display: none !important;
+}
+
+.background-blocks {
   flex-direction: column-reverse;
 }
 
-.media {
-  min-width: 100%;
+.background-blocks .testimonials-card__image-wrapper {
+  margin: auto;
+  height: 100px;
+}
+
+.background-blocks .multicolumn-card-spacing {
+  padding-top: 0;
+}
+
+.background-blocks .media {
+  margin-top: -4rem;
+  margin-left: 40%;
+  justify-content: center;
+}
+
+.background-blocks .multicolumn-card__info {
+  background-color: white;
+  padding: 1rem 1rem 4rem 1rem;
+  margin: 1rem;
+}
+
+.background-blocks img {
+  height: 100px !important;
+  width: 100px !important;
+}
+
+.background-blocks .multicolumn-card__image-wrapper {
+  height: 3rem;
+  width: 100%;
 }
 
 .multicolumn-btn {
@@ -40,28 +83,8 @@
   color: white;
 }
 
-.multicolumn-card__info {
-  margin: auto;
-}
-
-.multicolumn-card__image-wrapper {
-  margin: auto;
-}
-
-.image-left .multicolumn-card__image-wrapper {
-  margin: auto;
-}
-
-.image-right .multicolumn-card__image-wrapper {
-  margin: auto;
-}
-
 .multicolumn .title {
   margin: 0;
-}
-
-.multicolumn .title {
-  margin: auto;
 }
 
 .multicolumn.no-heading .title {
@@ -70,7 +93,7 @@
 
 .multicolumn .title-wrapper-with-link {
   margin-top: 0;
-  margin-bottom: 1rem;
+  justify-content: center;
 }
 
 @media screen and (max-width: 749px) {
@@ -143,6 +166,12 @@
 .multicolumn-list h3,
 .multicolumn-list p {
   margin: 0;
+}
+
+.multicolumn-card-spacing {
+  padding-top: 2.5rem;
+  margin-left: 2.5rem;
+  margin-right: 2.5rem;
 }
 
 .multicolumn-card__info > :nth-child(2) {

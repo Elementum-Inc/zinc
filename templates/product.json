@@ -13,6 +13,7 @@
         "title": {
           "type": "title",
           "settings": {
+            "title_text_style": "body"
           }
         },
         "caption": {
@@ -25,12 +26,27 @@
         "price": {
           "type": "price",
           "settings": {
+            "price_text_style": "body"
+          }
+        },
+        "ef90e07b-23aa-4857-8a27-35bc11fae2b1": {
+          "type": "shopify://apps/product-reviews/blocks/star_rating/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+            "stars_fill_color": "#000000",
+            "star_size": 15,
+            "text_align": "flex-start",
+            "product": "{{product}}",
+            "stars_text_empty": "No reviews"
           }
         },
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "dropdown"
+            "picker_type": "dropdown",
+            "selected_variant_style": "highlight",
+            "variant_pill_radius": 0,
+            "variant_pill_border_width": 1,
+            "show_variant_labels": true
           }
         },
         "d9ea8272-20ab-4fa1-8544-4718ea428de8": {
@@ -46,12 +62,19 @@
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
+            "quantity_selector_type": "buttons"
           }
         },
         "buy_buttons": {
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
           }
         },
         "collapsible-row-0": {
@@ -90,10 +113,12 @@
             "page": ""
           }
         },
-        "share": {
-          "type": "share",
+        "76bc7bc3-d767-445e-853f-d787a0da797b": {
+          "type": "popup",
+          "disabled": true,
           "settings": {
-            "share_label": "Share"
+            "text": "Pop-up link text",
+            "page": ""
           }
         }
       },
@@ -102,61 +127,30 @@
         "title",
         "caption",
         "price",
+        "ef90e07b-23aa-4857-8a27-35bc11fae2b1",
         "variant_picker",
         "d9ea8272-20ab-4fa1-8544-4718ea428de8",
         "description",
         "quantity_selector",
         "buy_buttons",
+        "description",
+        "share",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
         "collapsible-row-3",
-        "share"
+        "76bc7bc3-d767-445e-853f-d787a0da797b"
       ],
       "settings": {
         "enable_sticky_info": true,
-        "gallery_layout": "stacked",
-        "media_size": "large",
+        "gallery_layout": "thumbnail_slider",
+        "thumbnail_width": 80,
+        "media_size": "medium",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "image-with-text": {
-      "type": "image-with-text",
-      "blocks": {
-        "image-with-text-0": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image with text",
-            "heading_size": "h1"
-          }
-        },
-        "image-with-text-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "image-with-text-0",
-        "image-with-text-1"
-      ],
-      "settings": {
-        "height": "small",
-        "desktop_image_width": "medium",
-        "layout": "text_first",
-        "desktop_content_position": "top",
-        "desktop_content_alignment": "left",
-        "content_layout": "no-overlap",
-        "color_scheme": "background-2",
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
       }
     },
     "multicolumn": {
@@ -165,9 +159,12 @@
         "column-0": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/handful-of-acorns.jpg",
+            "image_position": "left",
+            "image-width": 300,
             "border-radius": 0,
-            "title": "Free Shipping",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "title": "",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
             "link_label": "",
             "link": ""
           }
@@ -175,9 +172,12 @@
         "column-1": {
           "type": "column",
           "settings": {
+            "image": "shopify://shop_images/hand-holding-a-pinecone-in-the-forest.jpg",
+            "image_position": "left",
+            "image-width": 300,
             "border-radius": 0,
             "title": "Hassle-Free Exchanges",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
             "link_label": "",
             "link": ""
           }
@@ -188,10 +188,10 @@
         "column-1"
       ],
       "settings": {
-        "title": "",
+        "title": "Lorem Ipsum",
         "heading_size": "h1",
         "image_width": "full",
-        "image_ratio": "adapt",
+        "image_ratio": "circle",
         "columns_desktop": 2,
         "column_alignment": "left",
         "button_label": "",
@@ -224,6 +224,7 @@
       "settings": {
         "heading": "You may also like",
         "heading_size": "h2",
+        "display_style": "grid",
         "products_to_show": 4,
         "columns_desktop": 4,
         "color_scheme": "accent-1",
@@ -237,13 +238,194 @@
         "padding_top": 36,
         "padding_bottom": 28
       }
+    },
+    "bb18bed4-64dc-47ad-8d5d-2aacba7170f7": {
+      "type": "media-collage",
+      "blocks": {
+        "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/pet-and-owner-on-fall-walk.jpg",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "#ffffff",
+            "column_font_color": "#121212",
+            "column_orientation": "text-below",
+            "title": "Lorem",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/dog-fetching-disc.jpg",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "#d69940",
+            "column_font_color": "#000000",
+            "column_orientation": "text-above",
+            "title": "Ipsum",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        },
+        "d0a11907-24e5-482c-895d-786c03c996b8": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/rooibos-tea.jpg",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "#ffffff",
+            "column_font_color": "#000000",
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "ce9b7823-cc64-463a-a2b6-1135e8580185": {
+          "type": "column",
+          "settings": {
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "#074169",
+            "column_font_color": "#ffffff",
+            "column_orientation": "text-below",
+            "title": "Lorem Ipsum Forever",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-0",
+        "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-1",
+        "d0a11907-24e5-482c-895d-786c03c996b8",
+        "ce9b7823-cc64-463a-a2b6-1135e8580185"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "adapt",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_column": 3,
+        "padding_left_right": 3,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "f29cd85f-0459-48b5-a0b0-73e4bdd3a7e0": {
+      "type": "video",
+      "settings": {
+        "heading": "Buy our boots!",
+        "heading_size": "h1",
+        "subheading": "",
+        "button_label": "",
+        "link": "",
+        "button_style_secondary": false,
+        "second_button_label": "",
+        "second_link": "",
+        "second_button_style_secondary": false,
+        "cover_image": "shopify://shop_images/test_bg.png",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "description": "",
+        "full_width": false,
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1668099507ad2af8f1": {
+      "type": "apps",
+      "blocks": {
+        "604b4d95-ef3f-4db5-ad3f-a326cfcef2b9": {
+          "type": "shopify://apps/product-reviews/blocks/reviews/bae150af-8da8-48b2-9867-398188115e5f",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "604b4d95-ef3f-4db5-ad3f-a326cfcef2b9"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "e621db47-5ffc-4ee3-9d26-4ebf07236654": {
+      "type": "film-strip",
+      "blocks": {
+        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/large-fall-leaf-in-hand.jpg",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/handful-of-acorns.jpg",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/fall-leaf-cookies-in-the-kitchen.jpg",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/sliced-pumpkin-pie.jpg",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-0",
+        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-1",
+        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-2",
+        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-3"
+      ],
+      "settings": {
+        "image_ratio": "square",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_column": 16,
+        "padding_left_right": 11,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
     }
   },
   "order": [
     "main",
-    "image-with-text",
     "multicolumn",
-    "1663186804aaa9eec2",
-    "product-recommendations"
+    "product-recommendations",
+    "bb18bed4-64dc-47ad-8d5d-2aacba7170f7",
+    "f29cd85f-0459-48b5-a0b0-73e4bdd3a7e0",
+    "1668099507ad2af8f1",
+    "e621db47-5ffc-4ee3-9d26-4ebf07236654"
   ]
 }
