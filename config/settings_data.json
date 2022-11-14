@@ -26,8 +26,6 @@
     "variant_pills_shadow_horizontal_offset": 0,
     "variant_pills_shadow_vertical_offset": 4,
     "variant_pills_shadow_blur": 5,
-    "inputs_border_thickness": 5,
-    "inputs_border_opacity": 45,
     "inputs_radius": 16,
     "content_card_text_alignment": "left",
     "content_card_vertical_alignment": "start",
@@ -67,10 +65,10 @@
     "badge_corner_radius": 0,
     "sale_badge_color_scheme": "accent-1",
     "sold_out_badge_color_scheme": "error",
-    "social_twitter_link": "https://twitter.com/shopify",
-    "social_facebook_link": "https://facebook.com/shopify",
-    "social_pinterest_link": "https://pinterest.com/shopify",
-    "social_instagram_link": "http://instagram.com/shopify",
+    "social_twitter_link": "https:\/\/twitter.com\/shopify",
+    "social_facebook_link": "https:\/\/facebook.com\/shopify",
+    "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
+    "social_instagram_link": "http:\/\/instagram.com\/shopify",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -82,6 +80,9 @@
     "predictive_search_show_pages": true,
     "currency_code_enabled": true,
     "cart_type": "drawer",
+    "show_cart_note": true,
+    "inputs_border_thickness": 5,
+    "inputs_border_opacity": 45,
     "card_text_alignment": "left",
     "card_color_scheme": "background-2",
     "card_border": false,
@@ -94,7 +95,6 @@
     "inputs_shadow_horizontal_offset": 0,
     "inputs_shadow_vertical_offset": 4,
     "inputs_shadow_blur": 5,
-    "show_cart_note": true,
     "accent_icons": "text",
     "predictive_search_show_vendor": false,
     "predictive_search_show_price": false,
@@ -128,14 +128,14 @@
             "type": "image_content",
             "settings": {
               "title": "shop",
-              "image": "shopify://shop_images/fall-vegetable-box.jpg",
+              "image": "shopify:\/\/shop_images\/fall-vegetable-box.jpg",
               "content_title": "Newest Arrivals",
               "content_subtitle": "Check out our latest fall fashion.",
-              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.</p>",
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.<\/p>",
               "primary_button_text": "Shop Now",
-              "primary_button_url": "shopify://collections",
+              "primary_button_url": "shopify:\/\/collections",
               "secondary_button_text": "Read our trend blog",
-              "secondary_button_url": "shopify://blogs/news"
+              "secondary_button_url": "shopify:\/\/blogs\/news"
             }
           },
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
@@ -203,7 +203,7 @@
             "type": "text",
             "settings": {
               "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>",
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>",
               "text_column_span": 1
             }
           },
@@ -223,7 +223,7 @@
         "settings": {
           "color_scheme": "basic-dark",
           "column_count": "4",
-          "large_logo": "shopify://shop_images/basico_1.png",
+          "large_logo": "shopify:\/\/shop_images\/basico_1.png",
           "large_logo_width": 750,
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
@@ -398,7 +398,7 @@
               "type": "text",
               "settings": {
                 "heading": "Our mission",
-                "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
               }
             }
           },

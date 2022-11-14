@@ -6,7 +6,7 @@
         "16629989750553a9d2-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/fall-vegetable-box.jpg",
+            "image": "shopify:\/\/shop_images\/fall-vegetable-box.jpg",
             "heading": "Fall is Here",
             "heading_size": "h1",
             "subheading": "It's actually almost over!",
@@ -28,7 +28,7 @@
         "16629989750553a9d2-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/woman-infront-of-tree-with-berries.jpeg",
+            "image": "shopify:\/\/shop_images\/woman-infront-of-tree-with-berries.jpeg",
             "heading": "Are you ready for winter?",
             "heading_size": "h1",
             "subheading": "Better get some gorgeous new winter clothes!",
@@ -50,7 +50,7 @@
         "92a7dd88-44be-4caf-a9f7-1b2bff547122": {
           "type": "video",
           "settings": {
-            "video_src": "https://cdn.shopify.com/videos/c/o/v/2c63748001054a23bc291ee82a7f23cb.mp4",
+            "video_src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/2c63748001054a23bc291ee82a7f23cb.mp4",
             "heading": "Video",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through video",
@@ -121,17 +121,21 @@
         "column2": {
           "type": "column",
           "settings": {
+            "image_position": "above",
+            "image-width": 300,
             "border-radius": 0,
             "title": "FEATURED COLLECTION",
-            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli</p>",
+            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
             "link_label": "Shop it now what if it gets longer okay cool",
-            "link": "shopify://collections/demo-collection"
+            "link": "shopify:\/\/collections\/demo-collection"
           }
         },
         "column1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/sliced-pumpkin-pie.jpg",
+            "image": "shopify:\/\/shop_images\/sliced-pumpkin-pie.jpg",
+            "image_position": "above",
+            "image-width": 300,
             "border-radius": 0,
             "title": "",
             "text": "",
@@ -148,7 +152,7 @@
         "title": "",
         "heading_size": "h1",
         "image_width": "full",
-        "image_ratio": "auto",
+        "image_ratio": "square",
         "columns_desktop": 2,
         "column_alignment": "left",
         "button_label": "",
@@ -166,7 +170,9 @@
         "16620107657f4c8cb8-0": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/fall-leaf-cookies-in-the-kitchen.jpg",
+            "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
+            "image_position": "above",
+            "image-width": 300,
             "border-radius": 0,
             "title": "",
             "text": "",
@@ -177,9 +183,11 @@
         "16620107657f4c8cb8-1": {
           "type": "column",
           "settings": {
+            "image_position": "above",
+            "image-width": 300,
             "border-radius": 0,
             "title": "THE BEST FALL FLAVORS",
-            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli</p>",
+            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
             "link_label": "Taste them all",
             "link": ""
           }
@@ -205,150 +213,11 @@
         "padding_bottom": 36
       }
     },
-    "image_banner": {
-      "type": "image-banner",
-      "disabled": true,
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "Image banner",
-            "heading_size": "h0"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "Give customers details about the banner image(s) or content on the template.",
-            "text_style": "body"
-          }
-        },
-        "button": {
-          "type": "buttons",
-          "settings": {
-            "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
-            "button_style_secondary_1": true,
-            "button_label_2": "",
-            "button_link_2": "",
-            "button_style_secondary_2": false
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text",
-        "button"
-      ],
-      "settings": {
-        "image_overlay_opacity": 40,
-        "image_height": "large",
-        "adapt_height_first_image": false,
-        "desktop_content_position": "bottom-center",
-        "show_text_box": false,
-        "desktop_content_alignment": "center",
-        "color_scheme": "background-1",
-        "mobile_content_alignment": "center",
-        "stack_images_on_mobile": false,
-        "show_text_below": false
-      }
-    },
-    "rich_text": {
-      "type": "rich-text",
-      "disabled": true,
-      "blocks": {
-        "heading": {
-          "type": "heading",
-          "settings": {
-            "heading": "<p>Talk about your brand</p>",
-            "heading_size": "h1"
-          }
-        },
-        "text": {
-          "type": "text",
-          "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "heading",
-        "text"
-      ],
-      "settings": {
-        "desktop_content_position": "center",
-        "content_alignment": "center",
-        "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 0
-      }
-    },
-    "collage": {
-      "type": "collage",
-      "disabled": true,
-      "blocks": {
-        "collection-0": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        },
-        "product": {
-          "type": "product",
-          "settings": {
-            "product": "",
-            "second_image": false
-          }
-        },
-        "collection-1": {
-          "type": "collection",
-          "settings": {
-            "collection": ""
-          }
-        }
-      },
-      "block_order": [
-        "collection-0",
-        "product",
-        "collection-1"
-      ],
-      "settings": {
-        "heading": "Multimedia collage",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "video": {
-      "type": "video",
-      "disabled": true,
-      "settings": {
-        "heading": "",
-        "heading_size": "h1",
-        "subheading": "Tell your brand's story through images",
-        "button_label": "Button label",
-        "link": "",
-        "button_style_secondary": false,
-        "second_button_label": "Secondary button label",
-        "second_link": "",
-        "second_button_style_secondary": false,
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "16565128829058127c": {
       "type": "custom-liquid",
       "disabled": true,
       "settings": {
-        "custom_liquid": "<div id=\"app\"></div>",
+        "custom_liquid": "<div id=\"app\"><\/div>",
         "color_scheme": "background-1",
         "padding_top": 40,
         "padding_bottom": 52
@@ -360,7 +229,7 @@
         "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-0": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/handful-of-acorns.jpg",
+            "image": "shopify:\/\/shop_images\/handful-of-acorns.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -371,7 +240,7 @@
         "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/rooibos-tea.jpg",
+            "image": "shopify:\/\/shop_images\/rooibos-tea.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -382,7 +251,7 @@
         "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/hand-holding-a-pinecone-in-the-forest.jpg",
+            "image": "shopify:\/\/shop_images\/hand-holding-a-pinecone-in-the-forest.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -414,41 +283,41 @@
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-0": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/stylish-man-in-bow-tie.jpg",
+            "image": "shopify:\/\/shop_images\/stylish-man-in-bow-tie.jpg",
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!</p>"
+            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
           }
         },
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/model-with-leather-jacket-over-shoulders.jpg",
+            "image": "shopify:\/\/shop_images\/model-with-leather-jacket-over-shoulders.jpg",
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!</p>"
+            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
           }
         },
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/fashion-model-in-fur.jpg",
+            "image": "shopify:\/\/shop_images\/fashion-model-in-fur.jpg",
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!</p>"
+            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
           }
         },
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/black-and-white-portrait-mens-fashion.jpg",
+            "image": "shopify:\/\/shop_images\/black-and-white-portrait-mens-fashion.jpg",
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!</p>"
+            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
           }
         }
       },
@@ -481,7 +350,7 @@
           "settings": {
             "heading": "What is it?",
             "icon": "question_mark",
-            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
             "page": ""
           }
         },
@@ -490,7 +359,7 @@
           "settings": {
             "heading": "How does it work?",
             "icon": "clipboard",
-            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
             "page": ""
           }
         },
@@ -499,7 +368,7 @@
           "settings": {
             "heading": "Where do you ship?",
             "icon": "truck",
-            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
             "page": ""
           }
         },
@@ -508,7 +377,7 @@
           "settings": {
             "heading": "Do you have stores?",
             "icon": "map_pin",
-            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
             "page": ""
           }
         }
