@@ -280,7 +280,7 @@ cart-drawer {
 }
 
 .cart-drawer__overlay:empty {
-  display: block;
+  display: block !important;
 }
 
 .cart-drawer__form {
