@@ -121,6 +121,8 @@
         "column2": {
           "type": "column",
           "settings": {
+            "image_position": "above",
+            "image-width": 300,
             "border-radius": 0,
             "title": "FEATURED COLLECTION",
             "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
@@ -132,6 +134,8 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/sliced-pumpkin-pie.jpg",
+            "image_position": "above",
+            "image-width": 300,
             "border-radius": 0,
             "title": "",
             "text": "",
@@ -148,7 +152,7 @@
         "title": "",
         "heading_size": "h1",
         "image_width": "full",
-        "image_ratio": "auto",
+        "image_ratio": "square",
         "columns_desktop": 2,
         "column_alignment": "left",
         "button_label": "",
@@ -167,6 +171,8 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
+            "image_position": "above",
+            "image-width": 300,
             "border-radius": 0,
             "title": "",
             "text": "",
@@ -177,6 +183,8 @@
         "16620107657f4c8cb8-1": {
           "type": "column",
           "settings": {
+            "image_position": "above",
+            "image-width": 300,
             "border-radius": 0,
             "title": "THE BEST FALL FLAVORS",
             "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
