@@ -1,0 +1,129 @@
+.hero {
+  position: relative;
+}
+.hero__image {
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  width: 100%;
+}
+.hero__text-wrapper {
+  height: 100%;
+  width: 100%;
+}
+@media (min-width: 1024px) {
+  .has-overlay .hero__text-wrapper {
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+  }
+  .has-overlay .hero__text-wrapper::before {
+    height: 100%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    z-index: 0;
+  }
+}
+.has-overlay .hero__text-wrapper::before {
+  content: '';
+  opacity: var(--hero-overlay-opacity);
+}
+.hero__text {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: start;
+  -ms-flex-pack: start;
+  -webkit-justify-content: flex-start;
+  justify-content: flex-start;
+  height: 100%;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+@media (min-width: 480px) {
+  .hero__text {
+    max-width: 480px;
+  }
+}
+@media (min-width: 640px) {
+  .hero__text {
+    max-width: 640px;
+  }
+}
+@media (min-width: 768px) {
+  .hero__text {
+    max-width: 768px;
+  }
+}
+@media (min-width: 1024px) {
+  .hero__text {
+    max-width: 1024px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero__text {
+    max-width: 1280px;
+  }
+}
+@media (min-width: 1536px) {
+  .hero__text {
+    max-width: 1536px;
+  }
+}
+@media (min-width: 1024px) {
+  .has-overlay .hero__text {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+  }
+  @media (min-width: 1024px) {
+    .has-overlay .hero__text {
+      padding-top: 3rem;
+      padding-bottom: 3rem;
+    }
+  }
+}
+.hero__text.middle {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+.hero__text.bottom {
+  -webkit-box-pack: end;
+  -ms-flex-pack: end;
+  -webkit-justify-content: flex-end;
+  justify-content: flex-end;
+}
+.hero__text > *:last-child {
+  margin-bottom: 0px;
+  padding-bottom: 0px;
+}
+.hero__title, .hero__subtitle {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+.hero__details > span:not(:last-child)::after {
+  display: inline-block;
+  font-weight: 700;
+  font-size: 1.125rem;
+  margin-left: 0.5rem;
+  margin-right: 0.5rem;
+  opacity: 0.25;
+  vertical-align: sub;
+  content: '/';
+}
