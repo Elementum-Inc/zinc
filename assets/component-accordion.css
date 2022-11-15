@@ -1,9 +1,25 @@
+/* UPDATED STYLES */
+.accordion__title {
+  display: inline-block;
+  max-width: calc(100% - 6rem);
+  min-height: 1.6rem;
+  margin: 10px auto 0 auto;
+  word-break: break-word;
+}
+
 .accordion summary {
   display: flex;
   position: relative;
   line-height: 1;
-  padding: 1.5rem 0;
+  padding: 1rem;
+  border-top: 2px solid black;
 }
+
+.accordion svg {
+  width: 1rem;
+}
+
+/* SHOPIFY STYLES */
 
 .accordion .summary__title {
   display: flex;
@@ -24,14 +40,6 @@
   margin-bottom: 0;
   border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
   border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
-}
-
-.accordion__title {
-  display: inline-block;
-  max-width: calc(100% - 6rem);
-  min-height: 1.6rem;
-  margin: 0;
-  word-break: break-word;
 }
 
 .accordion .icon-accordion {

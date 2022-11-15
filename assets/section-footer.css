@@ -5,6 +5,20 @@
   flex-direction: row;
 }
 
+.footer-block__details-content li {
+  margin: 1rem 0;
+}
+
+.field__label {
+  font-size: 1.1rem;
+  padding-top: 0.4rem;
+}
+
+.disclosure .localization-form__select {
+  font-size: 1.1rem;
+  padding-top: 3.4rem !important;
+}
+
 .footer {
   /* background: black; */
   font-family: var(--font-heading-family);
@@ -39,6 +53,7 @@
   height: auto;
   display: flex;
   justify-content: center;
+  margin-top: 2rem;
 }
 
 .link {
@@ -72,7 +87,7 @@
 }
 
 #subfooter-upper {
-  padding-bottom: 5rem;
+  padding-bottom: 2rem;
 }
 
 #big-bold-logo {
@@ -320,6 +335,7 @@
   flex-wrap: wrap;
   flex: initial;
   padding: 1rem 0;
+  float: right;
 }
 
 .localization-form:only-child .button,

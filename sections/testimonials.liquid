@@ -1,4 +1,4 @@
-{{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
+{{ 'section-testimonials.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
 
@@ -24,7 +24,7 @@
   endif
 -%}
 
-<div class="multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
+<div id="testimonials-section" class="multicolumn color-{{ section.settings.color_scheme }} gradient{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div class="page-width section-{{ section.id }}-padding isolate">
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
@@ -37,7 +37,7 @@
       </div>
     {%- endunless -%}
     <slider-component class="slider-mobile-gutter">
-      <ul class="multicolumn-list contains-content-container shopify-grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--mobile grid--peek{% endif %}"
+      <ul class="multicolumn-list contains-content-container grid grid--{{ section.settings.columns_mobile }}-col-tablet-down grid--{{ section.settings.columns_desktop }}-col-desktop{% if show_mobile_slider %} slider slider--mobile grid--peek{% endif %}"
         id="Slider-{{ section.id }}"
         role="list"
       >
@@ -56,14 +56,14 @@
           {%- endif -%}
 
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
-            <div class="multicolumn-card content-container {% if block.settings.image_position == 'left' %} image-left {% endif %} {% if block.settings.image_position == 'right' %} image-right {% endif %} {% if block.settings.image_position == 'below' %} image-below {% endif %}">
+            <div class="multicolumn-card content-container {% if section.settings.display-style == 'blocks' %} background-blocks {% endif %}">
               {%- if block.settings.image != blank -%}
-                {% if section.settings.image_ratio == 'auto' or section.settings.image_ratio == 'circle' %}
+                {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
                 {% endif %}
-                <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}" style="margin: auto;">
+                <div class="multicolumn-card__image-wrapper multicolumn-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} multicolumn-card-spacing{% endif %}">
                   <div class="media media--transparent media--{{ section.settings.image_ratio }}"
-                    {% if section.settings.image_ratio == 'auto' %}
+                    {% if section.settings.image_ratio == 'adapt' %}
                       style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
                     {% endif %}>
                     <img
@@ -87,15 +87,18 @@
                 </div>
               {%- endif -%}
               <div class="multicolumn-card__info">
-                {%- if block.settings.title != blank -%}
-                  <h3>{{ block.settings.title | escape }}</h3>
-                {%- endif -%}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
                 {%- endif -%}
-                {%- if block.settings.link_label != blank -%}
-                  <a class="link multicolumn-btn" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.link_label | escape }}</a>
+                {%- if block.settings.title != blank -%}
+                  <h4>{{ block.settings.title | escape }}</h4>
                 {%- endif -%}
+                {%- if block.settings.subtitle != blank -%}
+                  <h5>{{ block.settings.subtitle | escape }}</h5>
+                {%- endif -%}
+                {% comment %} {%- if block.settings.link_label != blank -%}
+                  <a class="link multicolumn-btn" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.link_label | escape }}</a>
+                {%- endif -%} {% endcomment %}
               </div>
             </div>
           </li>
@@ -127,15 +130,15 @@
 
 {% schema %}
 {
-  "name": "t:sections.multicolumn.name",
+  "name": "Testimonials",
   "class": "section",
   "tag": "section",
   "settings": [
     {
       "type": "text",
       "id": "title",
-      "default": "Multicolumn",
-      "label": "t:sections.multicolumn.settings.title.label"
+      "default": "Testimonials",
+      "label": "Testimonials"
     },
     {
       "type": "select",
@@ -156,6 +159,26 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "display-style",
+      "options": [
+        {
+          "value": "basic",
+          "label": "Basic"
+        },
+        {
+          "value": "blocks",
+          "label": "Blocks"
+        },
+        {
+          "value": "slider",
+          "label": "Slider"
+        }
+      ],
+      "default": "basic",
+      "label": "Display style"
     },
     {
       "type": "select",
@@ -182,36 +205,24 @@
       "id": "image_ratio",
       "options": [
         {
-          "value": "auto",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
+          "value": "adapt",
+          "label": "t:sections.multicolumn.settings.image_ratio.options__1.label"
+        },
+        {
+          "value": "portrait",
+          "label": "t:sections.multicolumn.settings.image_ratio.options__2.label"
         },
         {
           "value": "square",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
-        },
-        {
-          "value": "lportrait",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
-        },
-        {
-          "value": "sportrait",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
-        },
-        {
-          "value": "widescreen",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
-        },
-        {
-          "value": "landscape",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
+          "label": "t:sections.multicolumn.settings.image_ratio.options__3.label"
         },
         {
           "value": "circle",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__7.label"
+          "label": "t:sections.multicolumn.settings.image_ratio.options__4.label"
         }
       ],
-      "default": "auto",
-      "label": "t:settings_schema.global.settings.aspect_ratio.label"
+      "default": "adapt",
+      "label": "t:sections.multicolumn.settings.image_ratio.label"
     },
     {
       "type": "range",
@@ -219,7 +230,7 @@
       "min": 1,
       "max": 6,
       "step": 1,
-      "default": 3,
+      "default": 2,
       "label": "t:sections.multicolumn.settings.columns_desktop.label"
     },
     {
@@ -237,17 +248,6 @@
       ],
       "default": "left",
       "label": "t:sections.multicolumn.settings.column_alignment.label"
-    },
-    {
-      "type": "text",
-      "id": "button_label",
-      "default": "Button label",
-      "label": "t:sections.multicolumn.settings.button_label.label"
-    },
-    {
-      "type": "url",
-      "id": "button_link",
-      "label": "t:sections.multicolumn.settings.button_link.label"
     },
     {
       "type": "select",
@@ -339,78 +339,43 @@
           "label": "t:sections.multicolumn.blocks.column.settings.image.label"
         },
         {
-          "type": "select",
-          "id": "image_position",
-          "options": [
-            {
-              "value": "above",
-              "label": "Above content"
-            },
-            {
-              "value": "below",
-              "label": "Below content"
-            },
-            {
-              "value": "left",
-              "label": "Left of content"
-            },
-            {
-              "value": "right",
-              "label": "Right of content"
-            }
-          ],
-          "default": "above",
-          "label": "Image position"
-        },
-        {
-          "type": "range",
-          "id": "image-width",
-          "min": 0,
-          "max": 500,
-          "step": 5,
-          "unit": "px",
-          "label": "Image size",
-          "default": 300
-        },
-        {
           "type": "range",
           "id": "border-radius",
           "min": 0,
           "max": 50,
           "step": 5,
           "unit": "%",
-          "label": "Image border radius",
+          "label": "Image Border Radius",
           "default": 0
         },
         {
           "type": "text",
           "id": "title",
-          "default": "Column",
-          "label": "t:sections.multicolumn.blocks.column.settings.title.label"
+          "default": "Author",
+          "label": "Author"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "default": "Subtitle",
+          "label": "Subtitle"
         },
         {
           "type": "richtext",
           "id": "text",
           "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
           "label": "t:sections.multicolumn.blocks.column.settings.text.label"
-        },
-        {
-          "type": "text",
-          "id": "link_label",
-          "label": "t:sections.multicolumn.blocks.column.settings.link_label.label"
-        },
-        {
-          "type": "url",
-          "id": "link",
-          "label": "t:sections.multicolumn.blocks.column.settings.link.label"
         }
       ]
     }
   ],
   "presets": [
     {
-      "name": "t:sections.multicolumn.presets.name",
+      "name": "Testimonials",
       "blocks": [
+        {
+          "type": "column"
+        },
         {
           "type": "column"
         },
