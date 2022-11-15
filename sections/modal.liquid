@@ -1,25 +1,14 @@
 {{ 'section-modal.css' | asset_url | stylesheet_tag }}
+{{ 'et_modal.css' | asset_url | stylesheet_tag }}
 
-{%- style -%}
-.modal-image {
-    background: url({{section.settings.modal_background_image | img_url: 'master' }});
-    background-size: cover;
-}
-
-.modal-container {
-    width: 80vw;
-    height: 80vh;
-}
-
-.header-font {
-    font-family: {{settings.type_header_font}}
-}
-
-.body-font {
-    font-family: {{setings.type.body_font}}
-}
-
-{%- endstyle -%}
+{% if section.settings.modal_background_image %}
+  {%- style -%}
+    .section-modal {
+        background: url({{ section.settings.modal_background_image | image_url }});
+        background-size: cover;
+    }
+  {%- endstyle -%}
+{% endif %}
 
 <div id="modal-wrapper">
   {% capture blocks %}
@@ -51,15 +40,13 @@
       {% endfor %}
     ]
   {% endcapture %}
+
   {% comment %} modal {% endcomment %}
     <div id="modal"
       data-settings="{{ section.settings | json | escape }}"
       data-blocks="{{ blocks | strip_newlines | escape }}"
     >
-    {{blocks | strip_newlines | escape }}
-
-</div>
-
+    </div>
 </div>
 
 {% schema %}
@@ -74,27 +61,23 @@
       "id": "color_scheme",
       "options": [
         {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        },
+        {
           "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
+          "label": "Accent 1"
         },
         {
           "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
+          "label": "Accent 2"
         }
       ],
-      "default": "background-1",
+      "default": "primary",
       "label": "t:sections.all.colors.label"
     },
     {
@@ -111,26 +94,6 @@
       "unit": "ms",
       "label": "Delay",
       "default": 2000
-    },
-    {
-        "type": "select",
-        "id": "animation_type",
-        "options": [
-          {
-            "value": "animation-1",
-            "label": "Animation 1"
-          },
-          {
-            "value": "animation-2",
-            "label": "Animation 2"
-          },
-          {
-            "value": "animation-3",
-            "label": "Animation 3"
-          }
-        ],
-        "default": "animation-1",
-        "label": "Animation Type"
     },
     {
       "type": "checkbox",

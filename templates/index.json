@@ -6,7 +6,7 @@
         "16629989750553a9d2-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/fall-vegetable-box.jpg",
+            "image": "shopify:\/\/shop_images\/fall-vegetable-box.jpg",
             "heading": "Fall is coming",
             "heading_size": "h1",
             "subheading": "We cannot wait!",
@@ -28,7 +28,7 @@
         "16629989750553a9d2-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/woman-infront-of-tree-with-berries.jpeg",
+            "image": "shopify:\/\/shop_images\/woman-infront-of-tree-with-berries.jpeg",
             "heading": "Are you ready for it?",
             "heading_size": "h1",
             "subheading": "It's going to be spicy and delicious.",
@@ -123,15 +123,15 @@
           "settings": {
             "border-radius": 0,
             "title": "FEATURED COLLECTION",
-            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli</p>",
+            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
             "link_label": "Shop it now what if it gets longer okay cool",
-            "link": "shopify://collections/demo-collection"
+            "link": "shopify:\/\/collections\/demo-collection"
           }
         },
         "column1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/sliced-pumpkin-pie.jpg",
+            "image": "shopify:\/\/shop_images\/sliced-pumpkin-pie.jpg",
             "border-radius": 0,
             "title": "",
             "text": "",
@@ -166,7 +166,7 @@
         "16620107657f4c8cb8-0": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/fall-leaf-cookies-in-the-kitchen.jpg",
+            "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
             "border-radius": 0,
             "title": "",
             "text": "",
@@ -179,7 +179,7 @@
           "settings": {
             "border-radius": 0,
             "title": "THE BEST FALL FLAVORS",
-            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli</p>",
+            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
             "link_label": "Taste them all",
             "link": ""
           }
@@ -227,7 +227,7 @@
           "type": "buttons",
           "settings": {
             "button_label_1": "Shop all",
-            "button_link_1": "shopify://collections/all",
+            "button_link_1": "shopify:\/\/collections\/all",
             "button_style_secondary_1": true,
             "button_label_2": "",
             "button_link_2": "",
@@ -260,14 +260,14 @@
         "heading": {
           "type": "heading",
           "settings": {
-            "heading": "<p>Talk about your brand</p>",
+            "heading": "<p>Talk about your brand<\/p>",
             "heading_size": "h1"
           }
         },
         "text": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         }
       },
@@ -336,12 +336,39 @@
         "second_button_label": "Secondary button label",
         "second_link": "",
         "second_button_style_secondary": false,
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
+        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
         "color_scheme": "background-1",
         "padding_top": 36,
         "padding_bottom": 36
+      }
+    },
+    "d55fe8da-09b5-45ca-a9fe-2303335b265f": {
+      "type": "modal",
+      "blocks": {
+        "b46b30d7-5007-4864-b2c1-5f147f425cac": {
+          "type": "modal_content",
+          "settings": {
+            "modal_content_title": "Modal Title",
+            "modal_content_subtitle": "Modal Subtitle",
+            "modal_content_body": "<p>Modal Content<\/p>",
+            "modal_content_primary_cta_text": "Primary CTA",
+            "modal_content_primary_cta_url": "shopify:\/\/collections",
+            "modal_content_secondary_cta_text": "Secondary CTA",
+            "modal_content_secondary_cta_url": "shopify:\/\/collections"
+          }
+        }
+      },
+      "block_order": [
+        "b46b30d7-5007-4864-b2c1-5f147f425cac"
+      ],
+      "settings": {
+        "color_scheme": "accent-1",
+        "modal_background_image": "shopify:\/\/shop_images\/88772b321081154b9be75000fbc46933.png",
+        "modal_delay": 4000,
+        "float_modal_content": false,
+        "modal_content_overlay": false
       }
     }
   },
@@ -353,6 +380,7 @@
     "image_banner",
     "rich_text",
     "collage",
-    "video"
+    "video",
+    "d55fe8da-09b5-45ca-a9fe-2303335b265f"
   ]
 }

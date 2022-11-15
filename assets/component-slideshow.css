@@ -35,12 +35,12 @@
 
 .control-container {
   color: black;
-  z-index: 100;
+  z-index: 2;
 }
 
 .slideshow__controls {
   position: absolute;
-  z-index: 100 !important;
+  z-index: 2;
   bottom: 10%;
   color: black;
   margin-left: auto;
@@ -185,7 +185,7 @@ slideshow-component .slideshow.banner {
 
 .slideshow__controls--top {
   order: 2;
-  z-index: 1;
+  z-index: 2;
 }
 
 @media screen and (max-width: 749px) {

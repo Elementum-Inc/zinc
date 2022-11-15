@@ -17,6 +17,7 @@ import '../styles/layout/header.css';
 import('../styles/sections/blog.css');
 import('../styles/sections/image-with-text.css');
 import('../styles/sections/hero.css');
+import('../styles/sections/modal.css');
 
 // Snippets
 import('../styles/snippets/cards.css');
@@ -39,8 +40,6 @@ import Modal from '../vue/Modal.vue';
 const searchMount = document.querySelector('#searchMenuTop');
 const megamenuMount = document.querySelector('#megamenu');
 const modalMount = document.querySelector('#modal');
-
-console.log(modalMount.dataset.blocks);
 
 const menuProps = {};
 const searchProps = {};
@@ -79,13 +78,10 @@ function fetchProps() {
   searchProps.cardAnimation = window.themeSettings.card_hover_animation;
   searchProps.settings = searchSettings;
 
-  const modalSettings = JSON.parse(modalMount.dataset.settings);
-  const modalBlocks = JSON.parse(modalMount.dataset.blocks);
-
-  const modalProps = {
-    settings: modalSettings,
-    blocks: modalBlocks,
-  };
+  modalProps.settings = JSON.parse(modalMount.dataset.settings);
+  modalProps.blocks = JSON.parse(modalMount.dataset.blocks);
+  modalProps.iconSize = window.themeSettings.icon_size;
+  modalProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
 }
 
 fetchProps();
