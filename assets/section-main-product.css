@@ -53,6 +53,10 @@
   display: flex;
 }
 
+.product--right {
+  flex-direction: row-reverse;
+}
+
 .product .thumbnail-list {
   display: flex;
 }
