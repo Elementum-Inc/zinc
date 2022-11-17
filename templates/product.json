@@ -42,10 +42,11 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "dropdown",
-            "selected_variant_style": "highlight",
-            "variant_pill_radius": 0,
-            "variant_pill_border_width": 1,
+            "picker_type": "button",
+            "color_scheme": "accent-2",
+            "variant_pill_radius": 5,
+            "variant_pill_border_width": 1.5,
+            "variant_pills_border_opacity": 55,
             "show_variant_labels": true
           }
         },
@@ -142,9 +143,10 @@
       ],
       "settings": {
         "enable_sticky_info": true,
+        "media_position": "right",
+        "media_size": "medium",
         "gallery_layout": "thumbnail_slider",
         "thumbnail_width": 80,
-        "media_size": "medium",
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
@@ -159,7 +161,7 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/handful-of-acorns.jpg",
-            "image_position": "left",
+            "image_position": "below",
             "image-width": 300,
             "border-radius": 0,
             "title": "",
@@ -172,7 +174,7 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/hand-holding-a-pinecone-in-the-forest.jpg",
-            "image_position": "left",
+            "image_position": "above",
             "image-width": 300,
             "border-radius": 0,
             "title": "Hassle-Free Exchanges",

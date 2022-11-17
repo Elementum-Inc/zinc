@@ -19,10 +19,7 @@
     "buttons_shadow_horizontal_offset": 0,
     "buttons_shadow_vertical_offset": 4,
     "buttons_shadow_blur": 5,
-    "variant_pills_border_thickness": 1,
-    "variant_pills_border_opacity": 55,
-    "variant_pills_radius": 40,
-    "variant_pills_shadow_opacity": 0,
+    "variant_pills_shadow_opacity": 30,
     "variant_pills_shadow_horizontal_offset": 0,
     "variant_pills_shadow_vertical_offset": 4,
     "variant_pills_shadow_blur": 5,
@@ -81,6 +78,9 @@
     "currency_code_enabled": true,
     "cart_type": "drawer",
     "show_cart_note": true,
+    "variant_pills_border_thickness": 1,
+    "variant_pills_border_opacity": 70,
+    "variant_pills_radius": 40,
     "inputs_border_thickness": 5,
     "inputs_border_opacity": 45,
     "card_text_alignment": "left",
@@ -155,7 +155,7 @@
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc"
         ],
         "settings": {
-          "color_scheme": "secondary",
+          "color_scheme": "accent-2",
           "logo_width": 64,
           "logo_position": "top-center",
           "menu": "main-menu",
@@ -180,8 +180,7 @@
             "settings": {
               "heading": "Quick links",
               "display_logo": false,
-              "menu": "footer",
-              "menu_column_span": 1
+              "menu": "footer"
             }
           },
           "footer-1": {
@@ -189,8 +188,7 @@
             "settings": {
               "heading": "Info",
               "display_logo": false,
-              "menu": "footer",
-              "menu_column_span": 1
+              "menu": "footer"
             }
           },
           "6d9561d4-d380-41ef-a4ad-695b92faa9a4": {
@@ -203,8 +201,7 @@
             "type": "text",
             "settings": {
               "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>",
-              "text_column_span": 1
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
             }
           },
           "48a3efe9-3104-403c-8eb5-a867ecb35aa9": {
@@ -221,7 +218,7 @@
           "48a3efe9-3104-403c-8eb5-a867ecb35aa9"
         ],
         "settings": {
-          "color_scheme": "basic-dark",
+          "color_scheme": "bold-dark",
           "column_count": "4",
           "large_logo": "shopify:\/\/shop_images\/basico_1.png",
           "large_logo_width": 750,
