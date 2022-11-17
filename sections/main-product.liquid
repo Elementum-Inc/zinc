@@ -347,7 +347,7 @@
           {%- when 'variant_picker' -%}
             {%- style -%}
               .product-form__input input[type="radio"] + label {
-                border: {{ block.settings.variant_pill_border_width }}px solid gray !important;
+                border: {{ block.settings.variant_pill_border_width }}px solid black !important;
                 border-radius: {{ block.settings.variant_pill_radius }}px !important;
               }
             {%- endstyle -%}
@@ -356,7 +356,7 @@
               {%- if block.settings.picker_type == 'button' -%}
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
-                      <fieldset class="js product-form__input">
+                      <fieldset class="js product-form__input {{ block.settings.color_scheme }}">
                         <legend class="form__label {% if block.settings.show_variant_labels %} hide-label {% endif %}">{{ option.name }}</legend>
                         {%- for value in option.values -%}
                           <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
@@ -819,19 +819,19 @@
         },
         {
           "type": "select",
-          "id": "selected_variant_style",
+          "id": "color_scheme",
           "options": [
             {
-              "value": "underline",
-              "label": "Underline"
+              "value": "primary",
+              "label": "Primary"
             },
             {
-              "value": "highlight",
-              "label": "Highlight"
+              "value": "accent-2",
+              "label": "Accent"
             }
           ],
-          "default": "highlight",
-          "label": "Selected variant style"
+          "default": "primary",
+          "label": "t:sections.all.colors.label"
         },
         {
           "type": "range",
@@ -845,13 +845,23 @@
         },
         {
           "type": "range",
-          "label": "Variant pill border width",
+          "label": "Variant pill border thickness",
           "id": "variant_pill_border_width",
           "min": 0,
           "max": 6,
           "step": 0.5,
           "unit": "px",
           "default": 1
+        },
+        {
+          "type": "range",
+          "id": "variant_pills_border_opacity",
+          "min": 0,
+          "max": 100,
+          "step": 5,
+          "unit": "%",
+          "label": "t:settings_schema.global.settings.opacity.label",
+          "default": 55
         },
         {
           "type": "checkbox",

@@ -68,8 +68,6 @@ quantity-input {
 }
 
 .product-form__input input[type="radio"] + label {
-  border: 1px solid gray !important;
-  /* border-radius: 0 !important; */
   padding: 1rem 0 0 0 !important;
   width: auto;
   min-width: 3rem;
@@ -78,8 +76,13 @@ quantity-input {
   text-align: center !important;
 }
 
-.product-form__input input[type="radio"]:checked + label {
-  background: black !important;
+.primary input[type="radio"]:checked + label {
+  background-color: rgb(var(--color-background-2)) !important;
+  color: white !important;
+}
+
+.accent-2 input[type="radio"]:checked + label {
+  background-color: rgb(var(--color-accent-2)) !important;
   color: white !important;
 }
 

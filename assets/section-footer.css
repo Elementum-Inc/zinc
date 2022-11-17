@@ -20,7 +20,6 @@
 }
 
 .footer {
-  /* background: black; */
   font-family: var(--font-heading-family);
 }
 
@@ -28,24 +27,33 @@
   margin-bottom: 0px;
 }
 
-.color-basic-light {
-  background: white;
-  color: black;
-}
-
 .color-basic-light #large-footer-logo {
   display: none;
 }
 
+.color-basic-light {
+  background-color: rgb(var(--color-background-1));
+  /* color: black; */
+}
+
+/* // basic dark //  */
 .color-basic-dark {
-  background: black;
+  /* background-color: var(--color-scheme-bg); */
+  background-color: rgb(var(--color-background-2));
+  color: white;
+}
+.color-basic-dark #large-footer-logo {
+  display: none;
+}
+
+.color-bold-dark {
+  /* background-color: var(--color-scheme-bg); */
+  background-color: rgb(var(--color-background-2));
   color: white;
 }
 
-/* // unlcear why this is necessary but started having weird //
-// white padding at top of footer section //  */
-#shopify-section-footer {
-  background: black;
+.color-bold-accent {
+  background-color: rgb(var(--color-accent-2));
 }
 
 #large-footer-logo {
