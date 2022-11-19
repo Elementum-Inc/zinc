@@ -1243,7 +1243,7 @@ summary::-webkit-details-marker {
 }
 
 .media--circle {
-  padding-bottom: 100%;
+  /* padding-bottom: 100%; */
   border-radius: 50%;
 }
 
