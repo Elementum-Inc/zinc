@@ -330,7 +330,7 @@
       "settings": {
         "title": "Testimonials",
         "heading_size": "h1",
-        "display-style": "basic",
+        "display-style": "blocks",
         "image_width": "half",
         "image_ratio": "circle",
         "columns_desktop": 2,

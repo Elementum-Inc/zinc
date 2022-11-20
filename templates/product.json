@@ -72,6 +72,13 @@
             "show_dynamic_checkout": true
           }
         },
+        "76bc7bc3-d767-445e-853f-d787a0da797b": {
+          "type": "popup",
+          "settings": {
+            "text": "Sizing Guide",
+            "page": "sizing-guide"
+          }
+        },
         "share": {
           "type": "share",
           "settings": {
@@ -102,7 +109,7 @@
             "heading": "Dimensions",
             "icon": "ruler",
             "content": "",
-            "page": ""
+            "page": "sizing-guide"
           }
         },
         "collapsible-row-3": {
@@ -111,14 +118,6 @@
             "heading": "Care Instructions",
             "icon": "heart",
             "content": "",
-            "page": ""
-          }
-        },
-        "76bc7bc3-d767-445e-853f-d787a0da797b": {
-          "type": "popup",
-          "disabled": true,
-          "settings": {
-            "text": "Pop-up link text",
             "page": ""
           }
         }
@@ -134,12 +133,12 @@
         "description",
         "quantity_selector",
         "buy_buttons",
+        "76bc7bc3-d767-445e-853f-d787a0da797b",
         "share",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
-        "collapsible-row-3",
-        "76bc7bc3-d767-445e-853f-d787a0da797b"
+        "collapsible-row-3"
       ],
       "settings": {
         "enable_sticky_info": true,
@@ -161,7 +160,7 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/handful-of-acorns.jpg",
-            "image_position": "below",
+            "image_position": "left",
             "image-width": 300,
             "border-radius": 0,
             "title": "",
@@ -192,9 +191,9 @@
         "title": "Lorem Ipsum",
         "heading_size": "h1",
         "image_width": "full",
-        "image_ratio": "circle",
+        "image_ratio": "square",
         "columns_desktop": 2,
-        "column_alignment": "left",
+        "column_alignment": "right",
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
