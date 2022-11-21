@@ -125,11 +125,6 @@ export default {
     iconStrokeWidth: Number,
     form: String
   },
-  methods: {
-    blocksByParent(parentHandle) {
-      return this.blocks.filter((b) => b.title == parentHandle);
-    },
-  },
   mounted() {
     window.addEventListener("deviceorientation", () => {
       this.screen = window.innerWidth;
