@@ -32,7 +32,7 @@
                   <div class="section-modal__close">
                     <button
                       type="button"
-                      class="hover:text-gray-500"
+                      class="hover:text-gray-500 icon target"
                       @click="isOpen = false"
                     >
                       <span class="sr-only">Close</span>

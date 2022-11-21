@@ -7854,7 +7854,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                           createBaseVNode("div", _hoisted_6, [
                             createBaseVNode("button", {
                               type: "button",
-                              class: "hover:text-gray-500",
+                              class: "hover:text-gray-500 icon target",
                               onClick: _cache[0] || (_cache[0] = ($event) => $data.isOpen = false)
                             }, [
                               _hoisted_7,
