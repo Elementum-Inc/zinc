@@ -130,6 +130,10 @@
     & .field__button {
       @apply max-w-12;
     }
+
+    & .newsletter-form__message--success {
+      @apply justify-center;
+    }
   }
 
   &__submit {

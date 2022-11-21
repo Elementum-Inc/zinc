@@ -306,6 +306,12 @@
 .section-modal__form .field__button {
   max-width: 3rem;
 }
+.section-modal__form .newsletter-form__message--success {
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
 .section-modal__submit {
   margin-top: 1rem;
   width: 100%;
