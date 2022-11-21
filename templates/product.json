@@ -202,22 +202,6 @@
         "padding_bottom": 36
       }
     },
-    "1663186804aaa9eec2": {
-      "type": "apps",
-      "blocks": {
-        "e497a61d-665d-4b06-9cbb-25305cfbb3a0": {
-          "type": "shopify://apps/product-reviews/blocks/reviews/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "e497a61d-665d-4b06-9cbb-25305cfbb3a0"
-      ],
-      "settings": {
-        "include_margins": true
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
