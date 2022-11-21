@@ -26,7 +26,7 @@
     "variant_pills_shadow_horizontal_offset": 0,
     "variant_pills_shadow_vertical_offset": 4,
     "variant_pills_shadow_blur": 5,
-    "inputs_radius": 16,
+    "inputs_radius": 0,
     "content_card_text_alignment": "left",
     "content_card_vertical_alignment": "start",
     "content_card_color_scheme": "background-1",
@@ -209,6 +209,7 @@
           },
           "48a3efe9-3104-403c-8eb5-a867ecb35aa9": {
             "type": "newsletter",
+            "disabled": true,
             "settings": {
             }
           }
