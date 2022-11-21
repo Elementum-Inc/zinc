@@ -7764,11 +7764,6 @@ const _sfc_main = {
     iconStrokeWidth: Number,
     form: String
   },
-  methods: {
-    blocksByParent(parentHandle) {
-      return this.blocks.filter((b2) => b2.title == parentHandle);
-    }
-  },
   mounted() {
     window.addEventListener("deviceorientation", () => {
       this.screen = window.innerWidth;
