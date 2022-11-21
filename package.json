@@ -33,7 +33,6 @@
     "windicss": "^3.5.4"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.0",
-    "@heroicons/vue": "^2.0.10"
+    "@headlessui/vue": "^1.7.0"
   }
 }
