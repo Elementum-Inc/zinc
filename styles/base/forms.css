@@ -15,6 +15,10 @@
   &__label {
     @apply text-base leading-12 left-4;
   }
+
+  &__button {
+    @apply h-full w-full;
+  }
 }
 
 .select {

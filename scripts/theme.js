@@ -17,6 +17,7 @@ import '../styles/layout/header.css';
 import('../styles/sections/blog.css');
 import('../styles/sections/image-with-text.css');
 import('../styles/sections/hero.css');
+import('../styles/sections/modal.css');
 
 // Snippets
 import('../styles/snippets/cards.css');
@@ -34,12 +35,15 @@ if (window.location.href.includes('/search')) {
 import { createApp } from 'vue';
 import MegaMenu from '../vue/MegaMenu.vue';
 import SearchMenu from '../vue/SearchMenu.vue';
+import Modal from '../vue/Modal.vue';
 
 const searchMount = document.querySelector('#searchMenuTop');
 const megamenuMount = document.querySelector('#megamenu');
+const modalMount = document.querySelector('#modal');
 
 const menuProps = {};
 const searchProps = {};
+const modalProps = {};
 
 function fetchProps() {
   const megamenuSettings = JSON.parse(megamenuMount.dataset.settings);
@@ -73,18 +77,28 @@ function fetchProps() {
   searchProps.cardAnimate = window.themeSettings.card_hover_animate;
   searchProps.cardAnimation = window.themeSettings.card_hover_animation;
   searchProps.settings = searchSettings;
+
+  modalProps.settings = JSON.parse(modalMount.dataset.settings);
+  modalProps.blocks = JSON.parse(modalMount.dataset.blocks);
+  modalProps.form = modalMount.dataset.form;
+  modalProps.iconSize = window.themeSettings.icon_size;
+  modalProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
 }
 
 fetchProps();
 
 const megamenuApp = (component, props) => createApp(component, props);
 const searchApp = (component, props) => createApp(component, props);
+const modalApp = (component, props) => createApp(component, props);
 
 var megamenuInit = megamenuApp(MegaMenu, menuProps);
 var searchInit = searchApp(SearchMenu, searchProps);
+var modalInit = modalApp(Modal, modalProps);
 
 megamenuInit.mount(megamenuMount);
 searchInit.mount(searchMount);
+modalInit.mount(modalMount);
+
 
 document.addEventListener('DOMContentLoaded', () => {
   if (JSON.parse(megamenuMount.dataset.settings).enable_sticky_header) {

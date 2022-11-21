@@ -1,0 +1,142 @@
+.section-modal-container {
+  @apply relative z-10;
+}
+
+.section-modal-overlay {
+  @apply fixed inset-0 bg-scheme-accent bg-opacity-25 transition-opacity;
+}
+
+.section-modal-wrapper {
+  @apply fixed inset-0 z-10 overflow-y-auto;
+
+  &__inner {
+    @apply flex
+      min-h-full
+      items-end
+      justify-center
+      p-4
+      text-center
+      sm:items-center sm:p-0;
+  }
+}
+
+.section-modal {
+  @apply relative max-h-[35rem] max-w-[35rem] lg:(max-h-[40rem] max-w-[40rem]) bg-scheme-accent shadow-lg flex flex-col;
+  height: calc(100vh - 2rem);
+  width: calc(100vw - 2rem);
+
+  &--float-content {
+    @apply items-center justify-center;
+
+    & .section-modal__image {
+      @apply absolute top-0 w-full h-full;
+    }
+
+    & .section-modal__inner {
+      @apply content-center mx-4 px-4 md:(mx-8 px-8) lg:(mx-12 px-16) border;
+      max-height: calc(100% - 2rem);
+      max-width: calc(100% - 2rem);
+
+      &::before {
+        @apply content-DEFAULT absolute top-0 left-0 w-full h-full bg-scheme-bg shadow-md -z-1;
+        opacity: var(--modal-overlay-opacity);
+      }
+    }
+
+    & .section-modal__content-wrapper {
+      @apply overflow-y-auto;
+    }
+  }
+
+  &--stacked {
+    & .section-modal__inner {
+      @apply w-full border-t-2 bg-scheme-bg max-h-2/3 overflow-y-auto;
+    }
+
+    & .section-modal__content {
+      @apply md:basis-2/3 lg:basis-1/2 m-auto;
+    }
+  }
+
+  &--borderless {
+    @apply border-none;
+
+    & .section-modal__inner::before {
+      @apply filter blur-md;
+    }
+  }
+
+  &__image {
+    @apply !block flex-1;
+  }
+
+  &__inner {
+    @apply relative
+      transform
+      border-scheme-accent
+      text-scheme-text
+      <md:px-4
+      py-4
+      md:py-8
+      lg:py-16
+      transition-all;
+  }
+
+  &__content-wrapper {
+    @apply overflow-hidden flex content-center;
+  }
+
+  &__close {
+    @apply absolute top-0 right-0 hidden pt-4 pr-4 sm:block;
+  }
+
+  &__content {
+    @apply basis-full;
+  }
+
+  &__block {
+    @apply my-2;
+
+    &:not(:first-child) {
+      & .section-modal__newsletter {
+        @apply pt-4;
+      }
+    }
+  }
+
+  &__heading {
+    @apply font-serif text-3xl;
+  }
+
+  &__buttons {
+    @apply mt-5 sm:mt-4 sm:flex justify-center;
+
+    > .btn {
+      @apply mx-2;
+    }
+  }
+
+  &__form {
+    & input[type='email'] {
+      @apply bg-scheme-bg border border-scheme-accent rounded-input;
+
+      &:placeholder-shown {
+        & + label {
+          @apply text-opacity-50;
+        }
+      }
+    }
+
+    & .field__button {
+      @apply max-w-12;
+    }
+
+    & .newsletter-form__message--success {
+      @apply justify-center;
+    }
+  }
+
+  &__submit {
+    @apply w-full mt-4;
+  }
+}

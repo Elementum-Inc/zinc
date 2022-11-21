@@ -10,18 +10,15 @@ body.menu--opened {
   @apply overflow-hidden;
 }
 
-*:focus {
-  @apply ring-1 ring-accent1;
-}
-
-*:focus-visible {
-  @apply ring-1 ring-accent1;
+* {
+  @apply focus:(ring-1 ring-scheme-accent)
+    focus-visible:(ring-1 ring-scheme-accent);
 }
 
 /* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
 .focused,
 .no-js *:focus {
-  @apply ring-1 ring-accent1;
+  @apply focus:(ring-1 ring-scheme-accent);
 }
 
 /* Negate the fallback side-effect for browsers that support :focus-visible */
@@ -29,13 +26,13 @@ body.menu--opened {
   @apply outline-none shadow-none;
 }
 
-.focus-inset:focus-visible {
-  @apply ring-1 ring-accent1;
+.focus-inset {
+  @apply focus-visible:(ring-1 ring-scheme-accent);
 }
 
 .focused.focus-inset,
 .no-js .focus-inset:focus {
-  @apply ring-1 ring-accent1;
+  @apply ring-1 ring-scheme-accent;
 }
 
 .no-js .focus-inset:focus:not(:focus-visible) {
@@ -48,12 +45,12 @@ body.menu--opened {
 }
 
 .focus-offset:focus-visible {
-  @apply ring-1 ring-accent1;
+  @apply ring-1 ring-scheme-accent;
 }
 
 .focus-offset.focused,
 .no-js .focus-offset:focus {
-  @apply ring-1 ring-accent1;
+  @apply ring-1 ring-scheme-accent;
 }
 
 .no-js .focus-offset:focus:not(:focus-visible) {
