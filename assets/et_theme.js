@@ -6649,7 +6649,7 @@ const _hoisted_16$2 = [
   _hoisted_15$2
 ];
 const _hoisted_17$2 = ["href"];
-const _hoisted_18$2 = {
+const _hoisted_18$1 = {
   key: 0,
   class: "icon target expand"
 };
@@ -6852,7 +6852,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                           createBaseVNode("a", {
                                             href: child.url
                                           }, toDisplayString(child.title), 9, _hoisted_17$2),
-                                          child.links.length ? (openBlock(), createElementBlock("span", _hoisted_18$2, [
+                                          child.links.length ? (openBlock(), createElementBlock("span", _hoisted_18$1, [
                                             (openBlock(), createElementBlock("svg", {
                                               xmlns: "http://www.w3.org/2000/svg",
                                               "aria-hidden": "true",
@@ -7479,7 +7479,7 @@ const _hoisted_16$1 = {
   class: "search__trends"
 };
 const _hoisted_17$1 = { class: "search__trends-tags" };
-const _hoisted_18$1 = ["href"];
+const _hoisted_18 = ["href"];
 const _hoisted_19 = {
   key: 1,
   class: "search__results--loaded"
@@ -7590,7 +7590,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                               key: trend.id,
                               href: trend.url,
                               class: "search__trends-tag btn secondary"
-                            }, toDisplayString(trend.title), 9, _hoisted_18$1);
+                            }, toDisplayString(trend.title), 9, _hoisted_18);
                           }), 128))
                         ])
                       ])) : createCommentVNode("", true),
@@ -7761,7 +7761,8 @@ const _sfc_main = {
     settings: Object,
     blocks: Array,
     iconSize: Number,
-    iconStrokeWidth: Number
+    iconStrokeWidth: Number,
+    form: String
   },
   methods: {
     blocksByParent(parentHandle) {
@@ -7775,37 +7776,33 @@ const _sfc_main = {
   }
 };
 const _hoisted_1 = /* @__PURE__ */ createBaseVNode("div", { class: "section-modal__overlay" }, null, -1);
-const _hoisted_2 = { class: "section-modal-wrapper" };
+const _hoisted_2 = {
+  class: "section-modal-wrapper",
+  id: "modal_wrapper"
+};
 const _hoisted_3 = { class: "section-modal-wrapper__inner" };
-const _hoisted_4 = { class: "section-modal" };
-const _hoisted_5 = { class: "section-modal__close" };
-const _hoisted_6 = /* @__PURE__ */ createBaseVNode("span", { class: "sr-only" }, "Close", -1);
-const _hoisted_7 = ["height", "width", "stroke-width"];
-const _hoisted_8 = /* @__PURE__ */ createBaseVNode("path", {
+const _hoisted_4 = /* @__PURE__ */ createBaseVNode("div", { class: "section-modal__image" }, null, -1);
+const _hoisted_5 = { class: "section-modal__content-wrapper" };
+const _hoisted_6 = { class: "section-modal__close" };
+const _hoisted_7 = /* @__PURE__ */ createBaseVNode("span", { class: "sr-only" }, "Close", -1);
+const _hoisted_8 = ["height", "width", "stroke-width"];
+const _hoisted_9 = /* @__PURE__ */ createBaseVNode("path", {
   d: "M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z",
   fill: "currentColor"
 }, null, -1);
-const _hoisted_9 = [
-  _hoisted_8
+const _hoisted_10 = [
+  _hoisted_9
 ];
-const _hoisted_10 = /* @__PURE__ */ createBaseVNode("div", { class: "mx-auto flex h-12 w-12 flex-shrink-0 items-center justify-center sm:mx-0 sm:h-10 sm:w-10" }, null, -1);
-const _hoisted_11 = {
-  key: 0,
-  class: "section-modal__content"
+const _hoisted_11 = { class: "section-modal__content" };
+const _hoisted_12 = ["innerHTML"];
+const _hoisted_13 = { key: 2 };
+const _hoisted_14 = { key: 3 };
+const _hoisted_15 = {
+  key: 4,
+  class: "section-modal__buttons buttons"
 };
-const _hoisted_12 = {
-  key: 1,
-  class: "section-modal__content"
-};
-const _hoisted_13 = { key: 1 };
-const _hoisted_14 = ["html"];
-const _hoisted_15 = ["html"];
-const _hoisted_16 = {
-  key: 2,
-  class: "section-modal__buttons"
-};
+const _hoisted_16 = ["href"];
 const _hoisted_17 = ["href"];
-const _hoisted_18 = ["href"];
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_TransitionChild = resolveComponent("TransitionChild");
   const _component_DialogTitle = resolveComponent("DialogTitle");
@@ -7813,6 +7810,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_Dialog = resolveComponent("Dialog");
   const _component_TransitionRoot = resolveComponent("TransitionRoot");
   return openBlock(), createBlock(_component_TransitionRoot, {
+    appear: "",
     as: "template",
     show: $data.isOpen,
     open: true
@@ -7826,7 +7824,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
         default: withCtx(() => [
           createVNode(_component_TransitionChild, {
             as: "template",
-            enter: "ease-out duration-600",
+            enter: "ease-out duration-300",
             "enter-from": "opacity-0",
             "enter-to": "opacity-100",
             leave: "ease-in duration-200",
@@ -7842,7 +7840,8 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
             createBaseVNode("div", _hoisted_3, [
               createVNode(_component_TransitionChild, {
                 as: "template",
-                enter: "ease-out duration-300",
+                name: "modal",
+                enter: "ease-out duration-300 delay-2000",
                 "enter-from": "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95",
                 "enter-to": "opacity-100 translate-y-0 sm:scale-100",
                 leave: "ease-in duration-200",
@@ -7850,40 +7849,46 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                 "leave-to": "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
               }, {
                 default: withCtx(() => [
-                  createBaseVNode("div", _hoisted_4, [
+                  createBaseVNode("div", {
+                    class: normalizeClass(["section-modal", [$props.settings.float_modal_content || $props.settings.overlay > 0 ? "section-modal--float-content" : "section-modal--stacked", $props.settings.overlay > 0 ? "section-modal--borderless" : "", `color-scheme--${$props.settings.color_scheme}`]])
+                  }, [
+                    _hoisted_4,
                     createVNode(_component_DialogPanel, { class: "section-modal__inner" }, {
                       default: withCtx(() => [
                         createBaseVNode("div", _hoisted_5, [
-                          createBaseVNode("button", {
-                            type: "button",
-                            class: "hover:text-gray-500",
-                            onClick: _cache[0] || (_cache[0] = ($event) => $data.isOpen = false)
-                          }, [
-                            _hoisted_6,
-                            (openBlock(), createElementBlock("svg", {
-                              xmlns: "http://www.w3.org/2000/svg",
-                              "aria-hidden": "true",
-                              focusable: "false",
-                              role: "presentation",
-                              class: "stroke-scheme-text",
-                              fill: "none",
-                              viewBox: "0 0 18 17",
-                              height: $props.iconSize,
-                              width: $props.iconSize,
-                              "stroke-width": $props.iconStrokeWidth
-                            }, _hoisted_9, 8, _hoisted_7))
-                          ])
-                        ]),
-                        createBaseVNode("div", null, [
-                          _hoisted_10,
-                          (openBlock(true), createElementBlock(Fragment, null, renderList($props.blocks, (block) => {
-                            return openBlock(), createElementBlock("div", {
-                              class: "mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left",
-                              key: block
+                          createBaseVNode("div", _hoisted_6, [
+                            createBaseVNode("button", {
+                              type: "button",
+                              class: "hover:text-gray-500",
+                              onClick: _cache[0] || (_cache[0] = ($event) => $data.isOpen = false)
                             }, [
-                              block.type == "email_form" ? (openBlock(), createElementBlock("div", _hoisted_11)) : block.type == "modal_content" ? (openBlock(), createElementBlock("div", _hoisted_12, [
-                                block.settings.modal_content_title ? (openBlock(), createBlock(_component_DialogTitle, {
+                              _hoisted_7,
+                              (openBlock(), createElementBlock("svg", {
+                                xmlns: "http://www.w3.org/2000/svg",
+                                "aria-hidden": "true",
+                                focusable: "false",
+                                role: "presentation",
+                                class: "stroke-scheme-text",
+                                fill: "none",
+                                viewBox: "0 0 18 17",
+                                height: $props.iconSize,
+                                width: $props.iconSize,
+                                "stroke-width": $props.iconStrokeWidth
+                              }, _hoisted_10, 8, _hoisted_8))
+                            ])
+                          ]),
+                          createBaseVNode("div", _hoisted_11, [
+                            (openBlock(true), createElementBlock(Fragment, null, renderList($props.blocks, (block) => {
+                              return openBlock(), createElementBlock("div", {
+                                key: block,
+                                class: "section-modal__block"
+                              }, [
+                                block.type == "email_form" ? (openBlock(), createElementBlock("div", {
                                   key: 0,
+                                  class: "section-modal__newsletter",
+                                  innerHTML: $props.form
+                                }, null, 8, _hoisted_12)) : block.type == "modal_title" && block.settings.modal_content_title ? (openBlock(), createBlock(_component_DialogTitle, {
+                                  key: 1,
                                   as: "h2",
                                   class: "section-modal__heading"
                                 }, {
@@ -7891,37 +7896,26 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                                     createTextVNode(toDisplayString(block.settings.modal_content_title), 1)
                                   ]),
                                   _: 2
-                                }, 1024)) : createCommentVNode("", true),
-                                block.settings.modal_content_subtitle ? (openBlock(), createElementBlock("h4", _hoisted_13, toDisplayString(block.settings.modal_content_subtitle), 1)) : createCommentVNode("", true),
-                                createBaseVNode("div", {
-                                  class: "mt-2",
-                                  html: block.settings.modal_content_body
-                                }, [
-                                  createBaseVNode("p", {
-                                    html: block.settings.modal_content_body
-                                  }, " Test Body ", 8, _hoisted_15)
-                                ], 8, _hoisted_14),
-                                block.settings.modal_content_primary_cta_url || block.settings.modal_content_secondary_cta_url ? (openBlock(), createElementBlock("div", _hoisted_16, [
+                                }, 1024)) : block.type == "modal_subtitle" && block.settings.modal_content_subtitle ? (openBlock(), createElementBlock("h4", _hoisted_13, toDisplayString(block.settings.modal_content_subtitle), 1)) : block.type == "modal_body" && block.settings.modal_content_body ? (openBlock(), createElementBlock("p", _hoisted_14, toDisplayString(block.settings.modal_content_body), 1)) : block.type == "modal_buttons" && (block.settings.modal_content_primary_cta_url || block.settings.modal_content_secondary_cta_url) ? (openBlock(), createElementBlock("div", _hoisted_15, [
                                   block.settings.modal_content_primary_cta_url ? (openBlock(), createElementBlock("a", {
                                     key: 0,
                                     href: block.settings.modal_content_primary_cta_url,
                                     class: "btn primary"
-                                  }, toDisplayString(block.settings.modal_content_primary_cta_text), 9, _hoisted_17)) : createCommentVNode("", true),
+                                  }, toDisplayString(block.settings.modal_content_primary_cta_text), 9, _hoisted_16)) : createCommentVNode("", true),
                                   block.settings.modal_content_secondary_cta_url ? (openBlock(), createElementBlock("a", {
                                     key: 1,
                                     href: block.settings.modal_content_secondary_cta_url,
                                     class: "btn secondary"
-                                  }, toDisplayString(block.settings.modal_content_secondary_cta_text), 9, _hoisted_18)) : createCommentVNode("", true)
+                                  }, toDisplayString(block.settings.modal_content_secondary_cta_text), 9, _hoisted_17)) : createCommentVNode("", true)
                                 ])) : createCommentVNode("", true)
-                              ])) : createCommentVNode("", true),
-                              createTextVNode(" No thanks ")
-                            ]);
-                          }), 128))
+                              ]);
+                            }), 128))
+                          ])
                         ])
                       ]),
                       _: 1
                     })
-                  ])
+                  ], 2)
                 ]),
                 _: 1
               })
@@ -7983,6 +7977,7 @@ function fetchProps() {
   searchProps.settings = searchSettings;
   modalProps.settings = JSON.parse(modalMount.dataset.settings);
   modalProps.blocks = JSON.parse(modalMount.dataset.blocks);
+  modalProps.form = modalMount.dataset.form;
   modalProps.iconSize = window.themeSettings.icon_size;
   modalProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
 }

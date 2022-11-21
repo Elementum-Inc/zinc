@@ -26,7 +26,7 @@
     "variant_pills_shadow_horizontal_offset": 0,
     "variant_pills_shadow_vertical_offset": 4,
     "variant_pills_shadow_blur": 5,
-    "inputs_radius": 16,
+    "inputs_radius": 0,
     "content_card_text_alignment": "left",
     "content_card_vertical_alignment": "start",
     "content_card_color_scheme": "background-1",
@@ -128,14 +128,14 @@
             "type": "image_content",
             "settings": {
               "title": "shop",
-              "image": "shopify://shop_images/fall-vegetable-box.jpg",
+              "image": "shopify:\/\/shop_images\/fall-vegetable-box.jpg",
               "content_title": "Newest Arrivals",
               "content_subtitle": "Check out our latest fall fashion.",
-              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.</p>",
+              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.<\/p>",
               "primary_button_text": "Shop Now",
-              "primary_button_url": "shopify://collections",
+              "primary_button_url": "shopify:\/\/collections",
               "secondary_button_text": "Read our trend blog",
-              "secondary_button_url": "shopify://blogs/news"
+              "secondary_button_url": "shopify:\/\/blogs\/news"
             }
           },
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
@@ -209,6 +209,7 @@
           },
           "48a3efe9-3104-403c-8eb5-a867ecb35aa9": {
             "type": "newsletter",
+            "disabled": true,
             "settings": {
             }
           }
@@ -398,7 +399,7 @@
               "type": "text",
               "settings": {
                 "heading": "Our mission",
-                "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
               }
             }
           },

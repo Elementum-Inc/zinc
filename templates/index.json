@@ -406,28 +406,56 @@
     "d55fe8da-09b5-45ca-a9fe-2303335b265f": {
       "type": "modal",
       "blocks": {
-        "b46b30d7-5007-4864-b2c1-5f147f425cac": {
-          "type": "modal_content",
+        "be28b901-b448-4781-9090-96cd86c7c059": {
+          "type": "modal_title",
           "settings": {
-            "modal_content_title": "Modal Title",
-            "modal_content_subtitle": "Modal Subtitle",
-            "modal_content_body": "<p>Modal Content<\/p>",
+            "modal_content_title": "Join our mailing list"
+          }
+        },
+        "6d2da7b4-2909-4132-a461-ac743f56138c": {
+          "type": "modal_subtitle",
+          "settings": {
+            "modal_content_subtitle": "Sign up for updates"
+          }
+        },
+        "a455fbd7-c645-433d-92e2-18e2f47852d7": {
+          "type": "modal_body",
+          "settings": {
+            "modal_content_body": "Learn all about new products and what our community is doing directly from the source!"
+          }
+        },
+        "d396ae47-1765-4d3b-b637-04d7b19c9d64": {
+          "type": "modal_buttons",
+          "settings": {
             "modal_content_primary_cta_text": "Primary CTA",
-            "modal_content_primary_cta_url": "shopify:\/\/collections",
+            "modal_content_primary_cta_url": "shopify:\/\/pages\/test-page",
             "modal_content_secondary_cta_text": "Secondary CTA",
-            "modal_content_secondary_cta_url": "shopify:\/\/collections"
+            "modal_content_secondary_cta_url": "shopify:\/\/pages\/test-page"
+          }
+        },
+        "675f7ffc-ae2a-4969-8efb-229879679287": {
+          "type": "email_form",
+          "settings": {
+            "email_form_code": "",
+            "email_form_input_placeholder": "email address",
+            "email_form_button_text": "Sign Up",
+            "email_form_success_title": "Thank you for signing up!",
+            "email_form_success_message": "<p>You've been subscribed to our newsletter and will receive updates from us shortly!<\/p>"
           }
         }
       },
       "block_order": [
-        "b46b30d7-5007-4864-b2c1-5f147f425cac"
+        "be28b901-b448-4781-9090-96cd86c7c059",
+        "6d2da7b4-2909-4132-a461-ac743f56138c",
+        "a455fbd7-c645-433d-92e2-18e2f47852d7",
+        "d396ae47-1765-4d3b-b637-04d7b19c9d64",
+        "675f7ffc-ae2a-4969-8efb-229879679287"
       ],
       "settings": {
-        "color_scheme": "accent-1",
+        "color_scheme": "primary",
         "modal_background_image": "shopify:\/\/shop_images\/88772b321081154b9be75000fbc46933.png",
-        "modal_delay": 4000,
-        "float_modal_content": false,
-        "modal_content_overlay": false
+        "float_modal_content": true,
+        "overlay": 0
       }
     }
   },

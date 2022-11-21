@@ -8,14 +8,24 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
 .buttons {
   > .btn:not(:last-child),
   > .btn:only-child {
-    @apply my-4 mr-2;
+    @apply <sm:(my-4 mr-2);
   }
 }
 
 .btn {
+  @apply inline-block
+    py-xs
+    px-8
+    bg-button-bg
+    text-button-fg
+    focus:outline-none
+    focus:ring
+    focus:ring-offset-2;
+
   &.primary {
     --button-bg: theme('colors.scheme-bg');
     --button-fg: theme('colors.scheme-accent');
+    @apply border border-scheme-accent;
   }
 
   &.secondary {
@@ -61,7 +71,6 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
   &.round {
     @apply rounded-[.625rem];
   }
-  @apply inline-block py-xs px-8 bg-button-bg text-button-fg;
 }
 
 .btn-outline {

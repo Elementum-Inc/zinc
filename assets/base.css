@@ -370,11 +370,6 @@ body,
   font-weight: var(--font-body-weight);
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
 .h0,
 .h1,
 .h2,
@@ -385,7 +380,6 @@ h5,
   font-style: var(--font-heading-style);
   font-weight: var(--font-heading-weight);
   letter-spacing: calc(var(--font-heading-scale) * 0.06rem);
-  color: rgb(var(--color-foreground));
   line-height: calc(1 + 0.3 / max(1, var(--font-heading-scale)));
   word-break: break-word;
 }
@@ -589,7 +583,7 @@ table:not([class]) th {
 a:empty,
 ul:empty,
 dl:empty,
-div:not([data-app]):empty,
+/* div:not([data-app]):empty, */
 section:empty,
 article:empty,
 p:empty,

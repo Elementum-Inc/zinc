@@ -80,6 +80,7 @@ function fetchProps() {
 
   modalProps.settings = JSON.parse(modalMount.dataset.settings);
   modalProps.blocks = JSON.parse(modalMount.dataset.blocks);
+  modalProps.form = modalMount.dataset.form;
   modalProps.iconSize = window.themeSettings.icon_size;
   modalProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
 }
