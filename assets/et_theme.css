@@ -382,8 +382,8 @@ ul {
 .static {
   position: static;
 }
-.absolute {
-  position: absolute;
+.fixed {
+  position: fixed;
 }
 .relative {
   position: relative;
@@ -674,6 +674,9 @@ ul {
 }
 .media--square, .media--circle {
   aspect-ratio: 1 / 1;
+}
+.media--circle {
+  border-radius: 9999px;
 }
 .media--sportrait {
   aspect-ratio: 2/3;
