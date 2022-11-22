@@ -413,12 +413,12 @@ ul {
 .text\/html {
   color: rgb(var(--color-text));
 }
-.text {
-  color: rgb(var(--color-text));
-}
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
   color: rgba(194, 194, 194, var(--tw-text-opacity));
+}
+.text {
+  color: rgb(var(--color-text));
 }
 .text\/css {
   color: rgb(var(--color-text));
@@ -517,11 +517,6 @@ ul {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   -o-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-.duration {
-  -webkit-transition-duration: 150ms;
-  -o-transition-duration: 150ms;
-  transition-duration: 150ms;
 }
 .duration-300 {
   -webkit-transition-duration: 300ms;
@@ -679,9 +674,6 @@ ul {
 }
 .media--square, .media--circle {
   aspect-ratio: 1 / 1;
-}
-.media--circle {
-  border-radius: 9999px;
 }
 .media--sportrait {
   aspect-ratio: 2/3;
