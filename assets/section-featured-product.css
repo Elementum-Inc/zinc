@@ -1,11 +1,3 @@
-.featured-collection-slider .grid__item {
-  padding: 2px !important ;
-}
-
-.featured-collection-slider slider-component ul {
-  justify-content: space-between !important;
-}
-
 .featured-product .product__media-list {
   width: 100%;
   margin: 0;
