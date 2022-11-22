@@ -142,10 +142,10 @@
       ],
       "settings": {
         "enable_sticky_info": true,
-        "media_position": "right",
+        "media_position": "left",
         "media_size": "medium",
         "gallery_layout": "thumbnail_slider",
-        "thumbnail_width": 80,
+        "thumbnail_width": 50,
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
