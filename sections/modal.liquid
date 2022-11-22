@@ -1,0 +1,341 @@
+{{ 'section-modal.css' | asset_url | stylesheet_tag }}
+{{ 'et_modal.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.modal_background_image %}
+  {%- style -%}
+    .section-modal__image {
+        background: url({{ section.settings.modal_background_image | image_url }});
+        background-size: cover;
+    }
+  {%- endstyle -%}
+{% endif %}
+
+{% if section.settings.overlay > 0 %}
+  {% style %}
+    #modal_wrapper {
+      --modal-overlay-opacity: {{ section.settings.overlay }}%;
+    }
+
+    #modal_wrapper .section-modal__inner {
+      border: 0;
+    }
+  {% endstyle %}
+{% endif %}
+
+{% capture form_code %}
+  {% for block in section.blocks %}
+    {% if block.type == 'email_form' %}
+      {% if block.settings.email_form_code != '' %}
+        {{ block.settings.email_form_code }}
+      {% else %}
+        {% form 'customer', class: 'section-modal__form' %}
+          <input type="hidden" name="contact[tags]" value="newsletter">
+          <div class="section-modal__form--field-wrapper">
+            <div class="field">
+              <input
+                id="ModalNewsletterForm--{{ section.id }}"
+                type="email"
+                name="contact[email]"
+                class="field__input"
+                value="{{ form.email }}"
+                aria-required="true"
+                autocorrect="off"
+                autocapitalize="off"
+                autocomplete="email"
+                {% if form.errors %}
+                  autofocus
+                  aria-invalid="true"
+                  aria-describedby="ModalNewsletter-error--{{ section.id }}"
+                {% elsif form.posted_successfully? %}
+                  aria-describedby="ModalNewsletter-success--{{ section.id }}"
+                {% endif %}
+                placeholder="{{ block.settings.email_form_input_placeholder }}"
+                required
+              >
+              <label class="field__label" for="ModalNewsletterForm--{{ section.id }}">
+                {{ block.settings.email_form_input_placeholder }}
+              </label>
+              <button type="submit" class="section-modal__form--button field__button" name="commit" id="ModalSubscribe" aria-label="{{ block.settings.email_form_button_text }}">
+                {% render 'icon-arrow' %}
+              </button>
+            </div>
+            <button type="submit" class="section-modal__submit btn secondary" name="commit" id="ModalSubscribeButton" aria-label="{{ block.settings.email_form_button_text }}">
+              {{ block.settings.email_form_button_text }}
+            </button>
+            {%- if form.errors -%}
+              <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
+            {%- endif -%}
+          </div>
+          {%- if form.posted_successfully? -%}
+            <h4 class="newsletter-form__message newsletter-form__message--success form__message" id="Newsletter-success--{{ section.id }}" tabindex="-1" autofocus>
+              {% render 'icon-success' %}{{ block.settings.email_form_success_title }}
+            </h4>
+            <p class="caption-spaced">{{ block.settings.email_form_success_message }}</p>
+          {%- endif -%}
+        {% endform %}
+      {% endif %}
+    {% endif %}
+  {% endfor %}
+{% endcapture %}
+
+{% capture blocks %}
+  [
+    {% for block in section.blocks %}
+      {
+        "id": "{{ block.id }}",
+        "settings": {
+          {% case block.type %}
+            {% when 'modal_title' %}
+              "modal_content_title": "{{ block.settings.modal_content_title }}"
+            {% when 'modal_subtitle' %}
+              "modal_content_subtitle": "{{ block.settings.modal_content_subtitle }}"
+            {% when 'modal_body' %}
+              "modal_content_body": "{{ block.settings.modal_content_body }}"
+            {% when 'modal_buttons' %}
+              "modal_content_primary_cta_text": "{{ block.settings.modal_content_primary_cta_text }}",
+              "modal_content_primary_cta_url": "{{ block.settings.modal_content_primary_cta_url }}",
+              "modal_content_secondary_cta_text": "{{ block.settings.modal_content_secondary_cta_text }}",
+              "modal_content_secondary_cta_url": "{{ block.settings.modal_content_secondary_cta_url }}"
+            {% when 'email_form' %}
+              "email_form_input_placeholder": "{{ block.settings.email_form_input_placeholder }}",
+              "email_form_button_text": "{{ block.settings.email_form_button_text }}",
+              "email_form_success_title": "{{ block.settings.email_form_success_title }}",
+              "email_form_success_message": "{{ block.settings.email_form_success_message | escape }}"
+          {% endcase %}
+        },
+        "shopify_attributes": {{ block.shopify_attributes | json }},
+        "type": "{{ block.type }}"
+      }{% unless forloop.last %},{% endunless %}
+    {% endfor %}
+  ]
+{% endcapture %}
+
+{% comment %} modal {% endcomment %}
+  <div id="modal"
+    data-settings="{{ section.settings | json | escape }}"
+    data-blocks="{{ blocks | strip_newlines | escape }}"
+    data-form="{{ form_code | strip_newlines | escape }}"
+  >
+  </div>
+
+{% schema %}
+{
+  "name": "Modal",
+  "tag": "section",
+  "class": "section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "primary",
+          "label": "Primary"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        },
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        }
+      ],
+      "default": "primary",
+      "label": "t:sections.all.colors.label"
+    },
+    {
+      "type": "image_picker",
+      "id": "modal_background_image",
+      "label": "Modal Background Image"
+    },
+    {
+      "type": "checkbox",
+      "id": "float_modal_content",
+      "label": "Float content",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "overlay",
+      "min": 0,
+      "max": 100,
+      "step": 10,
+      "unit": "%",
+      "label": "Overlay Opacity",
+      "info": "To leave overlay disabled, keep set to 0%.",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "modal_title",
+      "name": "Title",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "modal_content_title",
+          "label": "Modal Title",
+          "default": "Capture attention..."
+        }
+      ]
+    },
+    {
+      "type": "modal_subtitle",
+      "name": "Subtitle",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "modal_content_subtitle",
+          "label": "Modal Subtitle",
+          "default": "With a super modular modal section!"
+        }
+      ]
+    },
+    {
+      "type": "modal_body",
+      "name": "Body",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "textarea",
+          "id": "modal_content_body",
+          "label": "Modal Content",
+          "default": "Direct customers to a new release, or gather subscribers for your email list."
+        }
+      ]
+    },
+    {
+      "type": "modal_buttons",
+      "name": "Buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "modal_content_primary_cta_text",
+          "label": "Primary button label",
+          "default": "Primary CTA"
+        },
+        {
+          "type": "url",
+          "id": "modal_content_primary_cta_url",
+          "label": "Primary button link"
+        },
+        {
+          "type": "text",
+          "id": "modal_content_secondary_cta_text",
+          "label": "Secondary button label",
+          "default": "Secondary CTA"
+        },
+        {
+          "type": "url",
+          "id": "modal_content_secondary_cta_url",
+          "label": "Secondary button link"
+        }
+      ]
+    },
+    {
+      "type": "modal_content",
+      "name": "Modal Content",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "modal_content_title",
+          "default": "Modal Title",
+          "label": "Modal Title"
+        },
+        {
+          "type": "text",
+          "id": "modal_content_subtitle",
+          "default": "Modal Subtitle",
+          "label": "Modal Subtitle"
+        },
+        {
+          "type": "richtext",
+          "id": "modal_content_body",
+          "default": "<p>Modal Content</p>",
+          "label": "Modal Content"
+        },
+        {
+          "type": "text",
+          "id": "modal_content_primary_cta_text",
+          "default": "Primary CTA",
+          "label": "Primary CTA Title"
+        },
+        {
+          "type": "url",
+          "id": "modal_content_primary_cta_url",
+          "label": "Primary CTA Link"
+        },
+        {
+          "type": "text",
+          "id": "modal_content_secondary_cta_text",
+          "default": "Secondary CTA",
+          "label": "Secondary CTA Title"
+        },
+        {
+          "type": "url",
+          "id": "modal_content_secondary_cta_url",
+          "label": "Secondary CTA Link"
+        }
+      ]
+    },
+    {
+      "type": "email_form",
+      "name": "Newsletter Signup",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "html",
+          "id": "email_form_code",
+          "label": "External Form Embed Code",
+          "info": "Connect your external form code easily here! If left empty, the default Shopify signup form will be inserted. Learn more in our [documentation](https://www.elementumtech.io/)."
+        },
+        {
+          "type": "text",
+          "id": "email_form_input_placeholder",
+          "label": "Email Form Input Placeholder",
+          "default": "email address"
+        },
+        {
+          "type": "text",
+          "id": "email_form_button_text",
+          "label": "Submit Button Text",
+          "default": "Sign Up"
+        },
+        {
+          "type": "header",
+          "content": "Success Message"
+        },
+        {
+          "type": "text",
+          "id": "email_form_success_title",
+          "label": "Success Title",
+          "default": "Thank you for signing up!"
+        },
+        {
+          "type": "richtext",
+          "id": "email_form_success_message",
+          "label": "Success Text",
+          "default": "<p>You've been subscribed to our newsletter and will receive updates from us shortly!</p>"
+        }
+      ]
+    },
+    {
+      "type": "@app"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Modal"
+    }
+  ]
+}
+{% endschema %}

@@ -10,7 +10,8 @@ export default {
     borderRadius: {
       badge: 'var(--badge-corner-radius)',
       product: 'var(--product-card-corner-radius)',
-      content: 'var(--content-card-corner-radius)'
+      content: 'var(--content-card-corner-radius)',
+      input: 'var(--inputs-radius)'
     },
     colors: {
       black: '#0a0a0a',
@@ -122,7 +123,7 @@ export default {
         '170': 1.7,
         '180': 1.8,
         '190': 1.9,
-      },
+      }
     },
   },
   plugins: [
