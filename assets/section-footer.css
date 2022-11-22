@@ -20,32 +20,44 @@
 }
 
 .footer {
-  /* background: black; */
   font-family: var(--font-heading-family);
+}
+
+.footer-block {
+  color: rgb(var(--color-foreground));
 }
 
 #FooterCountryLabel {
   margin-bottom: 0px;
 }
 
-.color-basic-light {
-  background: white;
-  color: black;
-}
-
 .color-basic-light #large-footer-logo {
   display: none;
 }
 
-.color-basic-dark {
-  background: black;
-  color: white;
+.color-basic-light {
+  background-color: rgb(var(--color-background-1));
+  /* color: black; */
 }
 
-/* // unlcear why this is necessary but started having weird //
-// white padding at top of footer section //  */
-#shopify-section-footer {
-  background: black;
+/* // basic dark //  */
+.color-basic-dark {
+  /* background-color: var(--color-scheme-bg); */
+  background-color: rgb(var(--color-background-2));
+  /* color: white; */
+}
+.color-basic-dark #large-footer-logo {
+  display: none;
+}
+
+.color-bold-dark {
+  /* background-color: var(--color-scheme-bg); */
+  background-color: rgb(var(--color-background-2));
+  /* color: white; */
+}
+
+.color-bold-accent {
+  background-color: rgb(var(--color-accent-2));
 }
 
 #large-footer-logo {

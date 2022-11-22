@@ -46,6 +46,7 @@
 
 .multicolumn-card__image-wrapper {
   margin: auto;
+  width: 100%;
 }
 
 .image-left .multicolumn-card__image-wrapper {

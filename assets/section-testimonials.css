@@ -10,6 +10,10 @@
   min-width: 70px;
 }
 
+#testimonials-section .media--circle {
+  max-width: 100px;
+}
+
 #testimonials-section {
   background-color: #fbf2de;
 }
