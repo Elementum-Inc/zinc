@@ -57,6 +57,16 @@
   flex-direction: row-reverse;
 }
 
+@media screen and (max-width: 749px) {
+  .product {
+    flex-direction: column;
+  }
+
+  .product--stacked_single_column .slider-buttons {
+    display: none;
+  }
+}
+
 .product .thumbnail-list {
   display: flex;
 }
