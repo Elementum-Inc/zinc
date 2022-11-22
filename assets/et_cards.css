@@ -110,7 +110,7 @@
   -webkit-transition-duration: 375ms;
   -o-transition-duration: 375ms;
   transition-duration: 375ms;
-  content: "";
+  content: '';
 }
 .card--info-hover.card--media .card__heading, .article-card--info-hover.card--media .card__heading {
   opacity: 0;
@@ -375,7 +375,7 @@
   margin-right: 0.5rem;
   opacity: 0.25;
   vertical-align: sub;
-  content: "/";
+  content: '/';
 }
 .article-card .card__information, .article-card .card-information, .page-card .card__information, .page-card .card-information {
   margin-left: 0px;

@@ -46,7 +46,7 @@
 
       &::before {
         @apply block absolute top-0 left-0 z-0 h-full w-full bg-scheme-bg transform duration-375 opacity-0;
-        content: "";
+        content: '';
       }
     }
 
@@ -101,9 +101,11 @@
     &.square {
       @apply aspect-square;
     }
+
     &.lportrait {
       aspect-ratio: 9/16;
     }
+
     &.sportrait {
       aspect-ratio: 2/3;
     }
@@ -131,6 +133,7 @@
     &.cover {
       @apply object-cover;
     }
+
     &.contain {
       @apply object-contain;
     }
@@ -251,7 +254,7 @@
 
     & > span:not(:last-child)::after {
       @apply inline-block mx-2 text-lg font-bold align-sub opacity-25;
-      content: "/";
+      content: '/';
     }
   }
 
