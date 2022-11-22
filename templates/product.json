@@ -42,10 +42,11 @@
         "variant_picker": {
           "type": "variant_picker",
           "settings": {
-            "picker_type": "dropdown",
-            "selected_variant_style": "highlight",
-            "variant_pill_radius": 0,
-            "variant_pill_border_width": 1,
+            "picker_type": "button",
+            "color_scheme": "accent-2",
+            "variant_pill_radius": 5,
+            "variant_pill_border_width": 1.5,
+            "variant_pills_border_opacity": 55,
             "show_variant_labels": true
           }
         },
@@ -69,6 +70,13 @@
           "type": "buy_buttons",
           "settings": {
             "show_dynamic_checkout": true
+          }
+        },
+        "76bc7bc3-d767-445e-853f-d787a0da797b": {
+          "type": "popup",
+          "settings": {
+            "text": "Sizing Guide",
+            "page": "sizing-guide"
           }
         },
         "share": {
@@ -101,7 +109,7 @@
             "heading": "Dimensions",
             "icon": "ruler",
             "content": "",
-            "page": ""
+            "page": "sizing-guide"
           }
         },
         "collapsible-row-3": {
@@ -110,14 +118,6 @@
             "heading": "Care Instructions",
             "icon": "heart",
             "content": "",
-            "page": ""
-          }
-        },
-        "76bc7bc3-d767-445e-853f-d787a0da797b": {
-          "type": "popup",
-          "disabled": true,
-          "settings": {
-            "text": "Pop-up link text",
             "page": ""
           }
         }
@@ -133,18 +133,19 @@
         "description",
         "quantity_selector",
         "buy_buttons",
+        "76bc7bc3-d767-445e-853f-d787a0da797b",
         "share",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
-        "collapsible-row-3",
-        "76bc7bc3-d767-445e-853f-d787a0da797b"
+        "collapsible-row-3"
       ],
       "settings": {
         "enable_sticky_info": true,
-        "gallery_layout": "thumbnail_slider",
-        "thumbnail_width": 80,
+        "media_position": "left",
         "media_size": "medium",
+        "gallery_layout": "thumbnail_slider",
+        "thumbnail_width": 50,
         "mobile_thumbnails": "hide",
         "hide_variants": true,
         "enable_video_looping": false,
@@ -172,7 +173,7 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/hand-holding-a-pinecone-in-the-forest.jpg",
-            "image_position": "left",
+            "image_position": "above",
             "image-width": 300,
             "border-radius": 0,
             "title": "Hassle-Free Exchanges",
@@ -190,9 +191,9 @@
         "title": "Lorem Ipsum",
         "heading_size": "h1",
         "image_width": "full",
-        "image_ratio": "circle",
+        "image_ratio": "square",
         "columns_desktop": 2,
-        "column_alignment": "left",
+        "column_alignment": "right",
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",

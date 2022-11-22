@@ -145,12 +145,36 @@
           </div>
 
       {%- when 'video' -%}
-        <div>
-          <video autoplay muted loop playsinline class="slideshow-video">
-            <source src="{{ block.settings.video_src }}" type="video/mp4">
-          </video>
-        <div>
+        {%- if block.settings.video_src != blank -%}
+          <div>
+            <video autoplay muted loop playsinline class="slideshow-video">
+              <source src="{{ block.settings.video_src }}" type="video/mp4">
+            </video>
 
+            <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }} {% if block.settings.banner_text_background %} solid-background {% endif %}" >
+            {%- if block.settings.heading != blank -%}
+              <h2 class="banner__heading {{ block.settings.heading_size }}">{{ block.settings.heading | escape }}</h2>
+            {%- endif -%}
+            {%- if block.settings.subheading != blank -%}
+              <div class="banner__text" {{ block.shopify_attributes }}>
+                <span>{{ block.settings.subheading | escape }}</span>
+              </div>
+            {%- endif -%}
+            {%- if block.settings.button_label != blank -%}
+              <div class="banner__buttons">
+                <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ block.settings.button_label | escape }}</a>
+                <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="button {% if block.settings.second_button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ block.settings.second_button_label | escape }}</a>
+              </div>
+            {%- endif -%}
+          </div>
+          <div>
+
+          
+        {%- endif -%}
+
+        
+
+        
       {%- endcase -%}
       </div>
       </div>
@@ -477,10 +501,6 @@
             {
               "value": "background-2",
               "label": "t:sections.all.colors.background_2.label"
-            },
-            {
-              "value": "inverse",
-              "label": "t:sections.all.colors.inverse.label"
             }
           ],
           "default": "background-1",

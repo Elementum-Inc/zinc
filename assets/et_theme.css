@@ -385,6 +385,9 @@ ul {
 .fixed {
   position: fixed;
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
 }
@@ -527,6 +530,11 @@ ul {
   -webkit-transition-duration: 200ms;
   -o-transition-duration: 200ms;
   transition-duration: 200ms;
+}
+.duration {
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
 }
 .delay-2000 {
   -webkit-transition-delay: 2000ms;
