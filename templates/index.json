@@ -75,9 +75,9 @@
         "92a7dd88-44be-4caf-a9f7-1b2bff547122"
       ],
       "settings": {
-        "slide_height": "small",
+        "slide_height": "medium",
         "slider_visual": "dots",
-        "auto_rotate": false,
+        "auto_rotate": true,
         "change_slides_speed": 7,
         "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
