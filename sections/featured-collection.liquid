@@ -80,10 +80,13 @@ collectionBtn2.addEventListener("click", function() {
 
       <hr class="featured-collection-divider">
 
-      <div id="collection-tab-container">
-        <button id="collection-tab-1" class="collection-tab-btn"> {{ section.settings.collection-title1 }} </button>
-        <button id="collection-tab-2" class="collection-tab-btn"> {{ section.settings.collection-title2 }} </button>
-      </div>
+      {% if section.settings.collection2.products_count %}
+        <div id="collection-tab-container">
+          <button id="collection-tab-1" class="collection-tab-btn"> {% if section.settings.collection-title1 != "" %} {{ section.settings.collection-title1 }} {% else %} {{ section.settings.collection.title }} {% endif %} </button>
+
+          <button id="collection-tab-1" class="collection-tab-btn"> {% if section.settings.collection-title2 != "" %} {{ section.settings.collection-title2 }} {% else %} {{ section.settings.collection2.title }} {% endif %} </button>
+        </div>
+      {% endif %}
 
  {% comment %} COLLECTION 1  {% endcomment %}
     <slider-component id="featured-collection-1" class="featured-collection-slider active slider-mobile-gutter{% if section.settings.full_width %} slider-component-full-width{% endif %}{% if show_mobile_slider == false %} page-width{% endif %}{% if show_desktop_slider == false and section.settings.full_width == false %} page-width-desktop{% endif %}{% if show_desktop_slider %} slider-component-desktop{% endif %}">
@@ -238,10 +241,18 @@ collectionBtn2.addEventListener("click", function() {
       "default": "body"
     },
     {
+      "type": "header",
+      "content": "Collection Tabs"
+    },
+    {
+      "type": "paragraph",
+      "content": "Select a second featured collection to display collection tabs."
+    },
+    {
       "type": "text",
       "id": "collection-title1",
-      "default": "Featured Collection 1",
-      "label": "Collection Title to Display"
+      "label": "Collection 1 Title to Display",
+      "info": "Display title is defaulted to the collection title. Use this field for a unique title."
     },
     {
       "type": "collection",
@@ -251,8 +262,8 @@ collectionBtn2.addEventListener("click", function() {
     {
       "type": "text",
       "id": "collection-title2",
-      "default": "Featured Collection 2",
-      "label": "Collection Title to Display"
+      "label": "Collection 2 Title to Display",
+      "info": "Display title is defaulted to the collection title. Use this field for a unique title."
     },
     {
       "type": "collection",

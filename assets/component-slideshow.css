@@ -7,6 +7,10 @@
   height: auto;
 }
 
+.banner__text {
+  color: black;
+}
+
 .h0 {
   font-style: normal;
   font-weight: 700;
@@ -35,12 +39,12 @@
 
 .control-container {
   color: black;
-  z-index: 100;
+  z-index: 2;
 }
 
 .slideshow__controls {
   position: absolute;
-  z-index: 100 !important;
+  z-index: 2;
   bottom: 10%;
   color: black;
   margin-left: auto;
@@ -98,7 +102,7 @@ slideshow-component .slideshow.banner {
   .slideshow--placeholder.banner--mobile-bottom.banner--adapt_image
     .slideshow__media,
   .slideshow--placeholder.banner--adapt_image:not(.banner--mobile-bottom) {
-    height: 28rem;
+    height: 16rem;
   }
 }
 
@@ -112,9 +116,7 @@ slideshow-component .slideshow.banner {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 45.5rem;
-  color: white;
-  /* background-color: black; */
+  max-width: 54.5rem;
 }
 
 .slideshow__text > * {
@@ -185,7 +187,7 @@ slideshow-component .slideshow.banner {
 
 .slideshow__controls--top {
   order: 2;
-  z-index: 1;
+  z-index: 2;
 }
 
 @media screen and (max-width: 749px) {
@@ -199,6 +201,12 @@ slideshow-component .slideshow.banner {
   slideshow-component:not(.page-width)
   .slideshow__controls {
   border-bottom: none;
+}
+
+@media screen and (min-width: 750px) {
+  .slideshow__controls {
+    position: relative;
+  }
 }
 
 slideshow-component:not(.page-width) .slider-buttons {

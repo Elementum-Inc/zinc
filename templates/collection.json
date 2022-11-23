@@ -20,16 +20,16 @@
           "type": "description",
           "settings": {
             "show_collection_description": true,
-            "description": "<p>Oooooh a different description! :O</p>"
+            "description": "<p>Oooooh a different description! :O<\/p>"
           }
         },
         "59c6c0a0-fc6e-472b-897f-d49810451172": {
           "type": "buttons",
           "settings": {
             "primary_button_text": "Primary",
-            "primary_button_url": "shopify://pages/test-page",
+            "primary_button_url": "shopify:\/\/pages\/test-page",
             "secondary_button_text": "Secondary",
-            "secondary_button_url": "shopify://pages/test-page"
+            "secondary_button_url": "shopify:\/\/pages\/test-page"
           }
         }
       },
@@ -42,8 +42,8 @@
       "settings": {
         "show_collection_image": true,
         "height": "h-sm",
-        "overlay": 50,
         "color_scheme": "secondary",
+        "overlay": 50,
         "content_position": "middle",
         "content_alignment": "right"
       }

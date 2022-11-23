@@ -2,14 +2,12 @@
 .header {
   padding-top: {{ section.settings.padding_top }}px;
 }
-
 .top-link > a,
 .header__menu-trigger,
 .header__icon-link {
   padding-bottom: {{ section.settings.padding_bottom }}px;
 }
 {% endstyle %}
-
 {%- if settings.cart_type == "drawer" -%}
   {{ 'component-cart-drawer.css' | asset_url | stylesheet_tag }}
   {{ 'component-cart.css' | asset_url | stylesheet_tag }}
@@ -49,12 +47,10 @@
   {% capture topmenuJson %}
     {% render 'menu-json', menu: section.settings.menu %}
   {% endcapture %}
-
   {% capture mobileLinksJson %}
     {% render 'menu-json', menu: section.settings.mm_mobile_links %}
   {% endcapture %}
   {% comment %} theme-check-enable LiquidTag {% endcomment %}
-
   {% capture blocks %}
     [
       {% for block in section.blocks %}
@@ -124,9 +120,8 @@
     <a class="header__icon-link cart-link" href="{{ routes.cart_url }}" id="cart-icon-bubble">
       <span class="icon target">
         {% render 'icon-shopping-bag' %}
-      </span>
-     <span class="label">Cart</span>
-     {%- if cart != empty -%}
+
+        {%- if cart != empty -%}
         <div class="cart-count-bubble">
           {%- if cart.item_count < 100 -%}
             <span aria-hidden="true">{{ cart.item_count }}</span>
@@ -134,6 +129,13 @@
           <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
         </div>
       {%- endif -%}
+      
+      </span>
+     <span class="label">Cart
+
+     
+     </span>
+     
     </a>
   </div>
 </header>

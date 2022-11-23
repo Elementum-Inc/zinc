@@ -6,9 +6,9 @@
 <div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
   <div>
     <div class="cart__footer">
-      {%- if settings.show_cart_note -%}
+      {%- if section.settings.enable_note -%}
         <cart-note class="cart__note field">
-          <label for="Cart-note">{{ 'sections.cart.note' | t }}</label>
+          <label for="Cart-note">{{ section.settings.note_label }}</label>
           <textarea class="text-area field__input" name="note" form="cart" id="Cart-note" placeholder="{{ 'sections.cart.note' | t }}">{{ cart.note }}</textarea>
         </cart-note>
       {%- endif -%}
@@ -101,8 +101,21 @@
 
 {% schema %}
 {
-  "name": "t:sections.main-cart-footer.name",
+  "name": "Cart Footer",
   "class": "cart__footer-wrapper",
+  "settings": [
+    {
+      "type": "text",
+      "id": "note_label",
+      "label": "Cart note label",
+      "default": "Leave a note with your order"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_note",
+      "label": "Enable cart note"
+    }
+  ],
   "blocks": [
     {
       "type": "subtotal",
