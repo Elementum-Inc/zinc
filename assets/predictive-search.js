@@ -91,17 +91,29 @@ class PredictiveSearch extends HTMLElement {
 
     const moveUp = direction === 'up';
     const selectedElement = this.querySelector('[aria-selected="true"]');
-    const allElements = this.querySelectorAll('li');
-    let activeElement = this.querySelector('li');
+    const allElements = this.querySelectorAll('li:not(.predictive-search__heading)');
+    let activeElement = this.querySelector('li:not(.predictive-search__heading)');
 
     if (moveUp && !selectedElement) return;
 
     this.statusElement.textContent = '';
 
     if (!moveUp && selectedElement) {
-      activeElement = selectedElement.nextElementSibling || allElements[0];
+      if (selectedElement.nextElementSibling && selectedElement.nextElementSibling.classList.contains('predictive-search__heading')) {
+        var next = selectedElement.nextElementSibling.nextElementSibling
+      } else {
+        var next = selectedElement.nextElementSibling;
+      }
+
+      activeElement = next || allElements[0];
     } else if (moveUp) {
-      activeElement = selectedElement.previousElementSibling || allElements[allElements.length - 1];
+      if (selectedElement.previousElementSibling && selectedElement.previousElementSibling.classList.contains('predictive-search__heading')) {
+        var prev = selectedElement.previousElementSibling.previousElementSibling
+      } else {
+        var prev = selectedElement.previousElementSibling;
+      }
+
+      activeElement = prev || allElements[allElements.length - 1];
     }
 
     if (activeElement === selectedElement) return;

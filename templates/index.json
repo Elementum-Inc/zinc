@@ -418,21 +418,6 @@
             "modal_content_subtitle": "Sign up for updates"
           }
         },
-        "a455fbd7-c645-433d-92e2-18e2f47852d7": {
-          "type": "modal_body",
-          "settings": {
-            "modal_content_body": "Learn all about new products and what our community is doing directly from the source!"
-          }
-        },
-        "d396ae47-1765-4d3b-b637-04d7b19c9d64": {
-          "type": "modal_buttons",
-          "settings": {
-            "modal_content_primary_cta_text": "Primary CTA",
-            "modal_content_primary_cta_url": "shopify:\/\/pages\/test-page",
-            "modal_content_secondary_cta_text": "Secondary CTA",
-            "modal_content_secondary_cta_url": "shopify:\/\/pages\/test-page"
-          }
-        },
         "675f7ffc-ae2a-4969-8efb-229879679287": {
           "type": "email_form",
           "settings": {
@@ -447,8 +432,6 @@
       "block_order": [
         "be28b901-b448-4781-9090-96cd86c7c059",
         "6d2da7b4-2909-4132-a461-ac743f56138c",
-        "a455fbd7-c645-433d-92e2-18e2f47852d7",
-        "d396ae47-1765-4d3b-b637-04d7b19c9d64",
         "675f7ffc-ae2a-4969-8efb-229879679287"
       ],
       "settings": {

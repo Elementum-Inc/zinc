@@ -47,41 +47,49 @@
                       <TabPanel v-if="results.products.length">
                         <div class="search__products shopify-grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
                           <card v-for="product in results.products"
-                                :key="product.id"
-                                class="grid__item"
-                                :cardProduct="product"
-                                :cardColorScheme="cardColorScheme"
-                                :cardAspectRatio="cardImageAspect"
-                                :cardImageFit="cardImageFit"
-                                :cardAnimate="cardAnimate"
-                                :cardAnimation="cardAnimation"
-                                :cardBorder="cardBorder"></card>
+                            :key="product.id"
+                            class="grid__item"
+                            cardType="product"
+                            :card="product"
+                            :cardColorScheme="cardSettings.card_color_scheme"
+                            :cardBorder="cardSettings.card_border"
+                            :cardAspectRatio="cardSettings.card_image_ratio"
+                            :cardImageFit="cardSettings.card_image_fit"
+                            :cardAnimate="cardSettings.card_hover_animate"
+                            :cardAnimation="cardSettings.card_hover_animation"
+                            :showVendor="cardSettings.show_vendor"
+                            :showPrice="cardSettings.show_price"
+                            :themeSettings="themeSettings"></card>
                         </div>
                       </TabPanel>
                     </transition>
                     <transition name="fade">
                       <TabPanel v-if="predictiveShowArticles && results.articles.length">
-                        <div class="search__articles">
-                          <div v-for="article in results.articles" :key="article.id">
-                            <a :href="article.url">
-                              <image-tag v-if="article.featured_image" :src="article.featured_image" width="300" sizes="(min-width: 1280px) 300px, (min-width: 768px) 225px, 150px" :srcsetWidths="[150, 225, 300]"></image-tag>
-                              <h3>
-                                {{ article.title }}
-                              </h3>
-                            </a>
-                          </div>
+                        <div class="search__articles shopify-grid product-grid grid--2-col-tablet-down grid--4-col-desktop">
+                          <card v-for="article in results.articles"
+                            :key="article.id"
+                            class="grid__item"
+                            cardType="article"
+                            :card="article"
+                            :cardColorScheme="cardSettings.card_color_scheme"
+                            :cardBorder="cardSettings.card_border"
+                            :cardAspectRatio="cardSettings.card_image_ratio"
+                            :cardImageFit="cardSettings.card_image_fit"
+                            :cardAnimate="cardSettings.card_hover_animate"
+                            :cardAnimation="cardSettings.card_hover_animation"
+                            :showAuthor="cardSettings.show_author"
+                            :showDate="cardSettings.show_date"
+                            :showTags="cardSettings.show_tags"
+                            :themeSettings="themeSettings"></card>
                         </div>
                       </TabPanel>
                     </transition>
                     <transition name="fade">
                       <TabPanel v-if="predictiveShowPages && results.pages.length">
                         <div class="search__pages">
-                          <div v-for="page in results.pages" :key="page.id">
+                          <div class="search__page" v-for="page in results.pages" :key="page.id">
                             <a :href="page.url">
-                              <image-tag v-if="page.featured_image" :src="page.featured_image" width="300" sizes="(min-width: 1280px) 300px, (min-width: 768px) 225px, 150px" :srcsetWidths="[150, 225, 300]"></image-tag>
-                              <h3>
-                                {{ page.title }}
-                              </h3>
+                              <h3>{{ page.title }}</h3>
                             </a>
                           </div>
                         </div>
@@ -144,7 +152,9 @@
       cardAnimate: Boolean,
       cardAnimation: String,
       cardShowInfoOnHover: Boolean,
-      settings: Object
+      settings: Object,
+      themeSettings: Object,
+      cardSettings: Object
     },
     computed: {
       resultsLength() {
