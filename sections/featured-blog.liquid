@@ -30,8 +30,12 @@
 
 {% if section.settings.card_vertical_alignment != settings.content_card_vertical_alignment %}
   {%- style -%}
-    .section-{{ section.id }} .card .card__content {
-      justify-content: {{ section.settings.card_vertical_alignment }};
+    .section-{{ section.id }} .card + .card__content .card__information {
+        justify-self: {{ section.settings.card_vertical_alignment }};
+    }
+
+    .section-{{ section.id }} .card.card--info-hover .card__inner .card__information {
+        align-self: {{ section.settings.card_vertical_alignment }};
     }
   {%- endstyle -%}
 {% endif %}

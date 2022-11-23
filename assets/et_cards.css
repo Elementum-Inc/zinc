@@ -4,6 +4,28 @@
   color: var(--color-scheme-text);
   text-align: var(--product-card-text-alignment);
 }
+.card:focus-within, .article-card:focus-within {
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  -webkit-box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: var(--color-scheme-accent);
+  --tw-blur: var(--tw-empty,/*!*/ /*!*/);
+  --tw-brightness: var(--tw-empty,/*!*/ /*!*/);
+  --tw-contrast: var(--tw-empty,/*!*/ /*!*/);
+  --tw-grayscale: var(--tw-empty,/*!*/ /*!*/);
+  --tw-hue-rotate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-invert: var(--tw-empty,/*!*/ /*!*/);
+  --tw-saturate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-sepia: var(--tw-empty,/*!*/ /*!*/);
+  --tw-drop-shadow: var(--tw-empty,/*!*/ /*!*/);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  --tw-drop-shadow: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.1)) drop-shadow(0 1px 1px rgba(0, 0, 0, 0.06));
+}
+.card:hover .card__image + img, .article-card:hover .card__image + img {
+  opacity: 1;
+}
 .featured-collection-slider .card, .featured-collection-slider .article-card {
   margin-left: 0.5rem;
   margin-right: 0.5rem;
@@ -137,6 +159,18 @@
   -o-transition-duration: 375ms;
   transition-duration: 375ms;
 }
+.card--info-hover .card__heading > a::after, .article-card--info-hover .card__heading > a::after {
+  display: block;
+  height: 100%;
+  position: absolute;
+  top: 0px;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  width: 100%;
+  z-index: 1;
+  content: '';
+}
 .card--info-hover .card-information, .article-card--info-hover .card-information {
   opacity: 0;
   --tw-translate-x: 0;
@@ -230,6 +264,13 @@
 .card__inner + .card__content, .article-card__inner + .card__content {
   background-color: var(--color-scheme-bg);
 }
+.card__inner .card__content, .article-card__inner .card__content {
+  display: -ms-grid;
+  display: grid;
+  padding: 0px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-rows: repeat(5, minmax(0, 1fr));
+}
 .card__inner .card__content .card-information, .article-card__inner .card__content .card-information {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
@@ -239,6 +280,11 @@
 .card__inner .card__content .card__badge, .article-card__inner .card__content .card__badge {
   z-index: 1;
 }
+.card__inner .card__information, .article-card__inner .card__information {
+  -ms-grid-row-span: span 4 / span 4;
+  grid-row: span 4 / span 4;
+  align-self: var(--product-card-vertical-alignment);
+}
 .card__image.cover, .article-card__image.cover {
   -o-object-fit: cover;
   object-fit: cover;
@@ -246,6 +292,9 @@
 .card__image.contain, .article-card__image.contain {
   -o-object-fit: contain;
   object-fit: contain;
+}
+.card__image + img, .article-card__image + img {
+  opacity: 0;
 }
 .card__media, .article-card__media {
   width: 100%;
@@ -338,6 +387,12 @@
 .card__badge, .article-card__badge {
   padding: 0.5rem;
 }
+.card__badge.top, .article-card__badge.top {
+  grid-row-start: 1;
+}
+.card__badge.bottom, .article-card__badge.bottom {
+  grid-row-start: 5;
+}
 .card__badge > span, .article-card__badge > span {
   border-radius: var(--badge-corner-radius);
   padding-left: 1rem;
@@ -347,12 +402,20 @@
   margin: 1rem;
   margin-top: 0px;
 }
+.card .loading-overlay__spinner, .article-card .loading-overlay__spinner {
+  margin-left: 0.5rem;
+  vertical-align: middle;
+  width: 1rem;
+}
 .article-card, .page-card {
   border-radius: var(--content-card-corner-radius);
   text-align: var(--content-card-text-alignment);
 }
 .article-card.card--info-hover.card--media .card__heading, .page-card.card--info-hover.card--media .card__heading {
   --tw-translate-y: -100%;
+}
+.article-card.card--info-hover .card__information, .page-card.card--info-hover .card__information {
+  align-self: var(--content-card-vertical-alignment);
 }
 .article-card.card--info-hover .card__heading, .page-card.card--info-hover .card__heading {
   --tw-translate-y: -50%;
