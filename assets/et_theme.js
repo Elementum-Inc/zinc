@@ -6622,56 +6622,56 @@ const _hoisted_4$3 = [
 const _hoisted_5$3 = { class: "mobile-header" };
 const _hoisted_6$3 = ["onClick"];
 const _hoisted_7$3 = { class: "icon target" };
-const _hoisted_8$2 = ["width", "height"];
-const _hoisted_9$2 = /* @__PURE__ */ createBaseVNode("path", {
+const _hoisted_8$3 = ["width", "height"];
+const _hoisted_9$3 = /* @__PURE__ */ createBaseVNode("path", {
   "fill-rule": "evenodd",
   "clip-rule": "evenodd",
   d: "M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z",
   fill: "currentColor"
 }, null, -1);
-const _hoisted_10$2 = [
-  _hoisted_9$2
+const _hoisted_10$3 = [
+  _hoisted_9$3
 ];
-const _hoisted_11$2 = { class: "submenus" };
-const _hoisted_12$2 = ["href"];
-const _hoisted_13$2 = {
+const _hoisted_11$3 = { class: "submenus" };
+const _hoisted_12$3 = ["href"];
+const _hoisted_13$3 = {
   key: 0,
   class: "icon target expand"
 };
-const _hoisted_14$2 = ["width", "height"];
-const _hoisted_15$2 = /* @__PURE__ */ createBaseVNode("path", {
+const _hoisted_14$3 = ["width", "height"];
+const _hoisted_15$3 = /* @__PURE__ */ createBaseVNode("path", {
   "fill-rule": "evenodd",
   "clip-rule": "evenodd",
   d: "M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z",
   fill: "currentColor"
 }, null, -1);
-const _hoisted_16$2 = [
-  _hoisted_15$2
+const _hoisted_16$3 = [
+  _hoisted_15$3
 ];
-const _hoisted_17$2 = ["href"];
-const _hoisted_18$1 = {
+const _hoisted_17$3 = ["href"];
+const _hoisted_18$2 = {
   key: 0,
   class: "icon target expand"
 };
-const _hoisted_19$1 = ["width", "height"];
-const _hoisted_20$1 = /* @__PURE__ */ createBaseVNode("path", {
+const _hoisted_19$2 = ["width", "height"];
+const _hoisted_20$2 = /* @__PURE__ */ createBaseVNode("path", {
   "fill-rule": "evenodd",
   "clip-rule": "evenodd",
   d: "M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z",
   fill: "currentColor"
 }, null, -1);
-const _hoisted_21$1 = [
-  _hoisted_20$1
+const _hoisted_21$2 = [
+  _hoisted_20$2
 ];
-const _hoisted_22$1 = {
+const _hoisted_22$2 = {
   key: 0,
   class: "mobile-links"
 };
-const _hoisted_23$1 = ["href"];
-const _hoisted_24$1 = { class: "mobile-footer" };
-const _hoisted_25$1 = { href: "/account" };
-const _hoisted_26$1 = { class: "icon target" };
-const _hoisted_27$1 = ["width", "height", "stroke-width"];
+const _hoisted_23$2 = ["href"];
+const _hoisted_24$2 = { class: "mobile-footer" };
+const _hoisted_25$2 = { href: "/account" };
+const _hoisted_26$2 = { class: "icon target" };
+const _hoisted_27$2 = ["width", "height", "stroke-width"];
 const _hoisted_28$1 = /* @__PURE__ */ createBaseVNode("circle", {
   cx: "12",
   cy: "6",
@@ -6680,41 +6680,41 @@ const _hoisted_28$1 = /* @__PURE__ */ createBaseVNode("circle", {
   opacity: ".25",
   stroke: "none"
 }, null, -1);
-const _hoisted_29 = /* @__PURE__ */ createBaseVNode("circle", {
+const _hoisted_29$1 = /* @__PURE__ */ createBaseVNode("circle", {
   cx: "12",
   cy: "6",
   r: "4"
 }, null, -1);
-const _hoisted_30 = /* @__PURE__ */ createBaseVNode("path", {
+const _hoisted_30$1 = /* @__PURE__ */ createBaseVNode("path", {
   d: "M17.67 22a2 2 0 0 0 1.92-2.56A7.8 7.8 0 0 0 12 14a7.8 7.8 0 0 0-7.59 5.44A2 2 0 0 0 6.34 22Z",
   fill: "#000",
   opacity: ".25",
   stroke: "none"
 }, null, -1);
-const _hoisted_31 = /* @__PURE__ */ createBaseVNode("path", { d: "M17.67 22a2 2 0 0 0 1.92-2.56A7.8 7.8 0 0 0 12 14a7.8 7.8 0 0 0-7.59 5.44A2 2 0 0 0 6.34 22Z" }, null, -1);
-const _hoisted_32 = [
+const _hoisted_31$1 = /* @__PURE__ */ createBaseVNode("path", { d: "M17.67 22a2 2 0 0 0 1.92-2.56A7.8 7.8 0 0 0 12 14a7.8 7.8 0 0 0-7.59 5.44A2 2 0 0 0 6.34 22Z" }, null, -1);
+const _hoisted_32$1 = [
   _hoisted_28$1,
-  _hoisted_29,
-  _hoisted_30,
-  _hoisted_31
+  _hoisted_29$1,
+  _hoisted_30$1,
+  _hoisted_31$1
 ];
-const _hoisted_33 = { key: 0 };
-const _hoisted_34 = { key: 1 };
-const _hoisted_35 = { class: "menu__level0" };
-const _hoisted_36 = ["href"];
-const _hoisted_37 = ["href"];
-const _hoisted_38 = ["href"];
-const _hoisted_39 = ["href"];
-const _hoisted_40 = ["href"];
-const _hoisted_41 = { class: "image_content__content" };
-const _hoisted_42 = { key: 0 };
-const _hoisted_43 = { key: 1 };
-const _hoisted_44 = ["html"];
-const _hoisted_45 = ["href"];
-const _hoisted_46 = ["href"];
-const _hoisted_47 = { class: "dropdown" };
-const _hoisted_48 = ["href"];
-const _hoisted_49 = {
+const _hoisted_33$1 = { key: 0 };
+const _hoisted_34$1 = { key: 1 };
+const _hoisted_35$1 = { class: "menu__level0" };
+const _hoisted_36$1 = ["href"];
+const _hoisted_37$1 = ["href"];
+const _hoisted_38$1 = ["href"];
+const _hoisted_39$1 = ["href"];
+const _hoisted_40$1 = ["href"];
+const _hoisted_41$1 = { class: "image_content__content" };
+const _hoisted_42$1 = { key: 0 };
+const _hoisted_43$1 = { key: 1 };
+const _hoisted_44$1 = ["html"];
+const _hoisted_45$1 = ["href"];
+const _hoisted_46$1 = ["href"];
+const _hoisted_47$1 = { class: "dropdown" };
+const _hoisted_48$1 = ["href"];
+const _hoisted_49$1 = {
   key: 0,
   class: "icon target expand"
 };
@@ -6795,11 +6795,11 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                       viewBox: "0 0 10 10",
                       width: $props.iconSize,
                       height: $props.iconSize
-                    }, _hoisted_10$2, 8, _hoisted_8$2))
+                    }, _hoisted_10$3, 8, _hoisted_8$3))
                   ])
                 ], 8, _hoisted_6$3)
               ]),
-              createBaseVNode("div", _hoisted_11$2, [
+              createBaseVNode("div", _hoisted_11$3, [
                 (openBlock(true), createElementBlock(Fragment, null, renderList($props.topMenu, (link, index) => {
                   return openBlock(), createBlock(_component_Disclosure, {
                     key: link.id
@@ -6815,8 +6815,8 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                           default: withCtx(() => [
                             createBaseVNode("a", {
                               href: link.url
-                            }, toDisplayString(link.title), 9, _hoisted_12$2),
-                            link.links.length ? (openBlock(), createElementBlock("span", _hoisted_13$2, [
+                            }, toDisplayString(link.title), 9, _hoisted_12$3),
+                            link.links.length ? (openBlock(), createElementBlock("span", _hoisted_13$3, [
                               (openBlock(), createElementBlock("svg", {
                                 xmlns: "http://www.w3.org/2000/svg",
                                 "aria-hidden": "true",
@@ -6826,7 +6826,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                 viewBox: "0 0 10 10",
                                 width: $props.iconSize,
                                 height: $props.iconSize
-                              }, _hoisted_16$2, 8, _hoisted_14$2))
+                              }, _hoisted_16$3, 8, _hoisted_14$3))
                             ])) : createCommentVNode("", true)
                           ]),
                           _: 2
@@ -6851,8 +6851,8 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                         default: withCtx(() => [
                                           createBaseVNode("a", {
                                             href: child.url
-                                          }, toDisplayString(child.title), 9, _hoisted_17$2),
-                                          child.links.length ? (openBlock(), createElementBlock("span", _hoisted_18$1, [
+                                          }, toDisplayString(child.title), 9, _hoisted_17$3),
+                                          child.links.length ? (openBlock(), createElementBlock("span", _hoisted_18$2, [
                                             (openBlock(), createElementBlock("svg", {
                                               xmlns: "http://www.w3.org/2000/svg",
                                               "aria-hidden": "true",
@@ -6862,7 +6862,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                               viewBox: "0 0 10 10",
                                               width: $props.iconSize,
                                               height: $props.iconSize
-                                            }, _hoisted_21$1, 8, _hoisted_19$1))
+                                            }, _hoisted_21$2, 8, _hoisted_19$2))
                                           ])) : createCommentVNode("", true)
                                         ]),
                                         _: 2
@@ -6904,18 +6904,18 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                   }, 1024);
                 }), 128))
               ]),
-              $props.mobileLinks.length ? (openBlock(), createElementBlock("div", _hoisted_22$1, [
+              $props.mobileLinks.length ? (openBlock(), createElementBlock("div", _hoisted_22$2, [
                 (openBlock(true), createElementBlock(Fragment, null, renderList($props.mobileLinks, (link) => {
                   return openBlock(), createElementBlock("a", {
                     key: link.id,
                     href: link.url
-                  }, toDisplayString(link.title), 9, _hoisted_23$1);
+                  }, toDisplayString(link.title), 9, _hoisted_23$2);
                 }), 128))
               ])) : createCommentVNode("", true),
-              createBaseVNode("div", _hoisted_24$1, [
-                createBaseVNode("a", _hoisted_25$1, [
+              createBaseVNode("div", _hoisted_24$2, [
+                createBaseVNode("a", _hoisted_25$2, [
                   createTextVNode(" Account "),
-                  createBaseVNode("span", _hoisted_26$1, [
+                  createBaseVNode("span", _hoisted_26$2, [
                     (openBlock(), createElementBlock("svg", {
                       xmlns: "http://www.w3.org/2000/svg",
                       viewBox: "0 0 24 24",
@@ -6926,7 +6926,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                       "stroke-width": $props.iconStrokeWidth,
                       "stroke-linecap": "round",
                       "stroke-linejoin": "round"
-                    }, _hoisted_32, 8, _hoisted_27$1))
+                    }, _hoisted_32$1, 8, _hoisted_27$2))
                   ])
                 ])
               ])
@@ -6980,8 +6980,8 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                       key: 0,
                                       class: normalizeClass([`images-${block.settings.submenu_item_image}__inner`, `${block.type}__inner`, `color-scheme--${$props.settings.mm_color_scheme}`])
                                     }, [
-                                      block.settings.submenu_title != "" ? (openBlock(), createElementBlock("h4", _hoisted_33, toDisplayString(block.settings.submenu_title), 1)) : (openBlock(), createElementBlock("h4", _hoisted_34, toDisplayString(block.settings.submenu.title), 1)),
-                                      createBaseVNode("ul", _hoisted_35, [
+                                      block.settings.submenu_title != "" ? (openBlock(), createElementBlock("h4", _hoisted_33$1, toDisplayString(block.settings.submenu_title), 1)) : (openBlock(), createElementBlock("h4", _hoisted_34$1, toDisplayString(block.settings.submenu.title), 1)),
+                                      createBaseVNode("ul", _hoisted_35$1, [
                                         (openBlock(true), createElementBlock(Fragment, null, renderList(block.settings.submenu, (link2) => {
                                           return openBlock(), createBlock(_component_Disclosure, {
                                             as: "li",
@@ -7011,7 +7011,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                     href: link2.url
                                                   }, [
                                                     createBaseVNode("span", null, toDisplayString(link2.title), 1)
-                                                  ], 8, _hoisted_36)
+                                                  ], 8, _hoisted_36$1)
                                                 ]),
                                                 _: 2
                                               }, 1024)) : (openBlock(), createElementBlock("a", {
@@ -7035,7 +7035,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                   _: 2
                                                 }, 1024),
                                                 createBaseVNode("span", null, toDisplayString(link2.title), 1)
-                                              ], 8, _hoisted_37)),
+                                              ], 8, _hoisted_37$1)),
                                               link2.links.length ? (openBlock(), createBlock(Transition, {
                                                 key: 2,
                                                 name: "slideDown"
@@ -7056,13 +7056,13 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                               default: withCtx(() => [
                                                                 createBaseVNode("a", {
                                                                   href: child.url
-                                                                }, toDisplayString(child.title), 9, _hoisted_38)
+                                                                }, toDisplayString(child.title), 9, _hoisted_38$1)
                                                               ]),
                                                               _: 2
                                                             }, 1024)) : (openBlock(), createElementBlock("a", {
                                                               key: 1,
                                                               href: child.url
-                                                            }, toDisplayString(child.title), 9, _hoisted_39)),
+                                                            }, toDisplayString(child.title), 9, _hoisted_39$1)),
                                                             child.links.length ? (openBlock(), createBlock(Transition, {
                                                               key: 2,
                                                               name: "slideDown"
@@ -7079,7 +7079,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                                       }, [
                                                                         createBaseVNode("a", {
                                                                           href: grandchild.url
-                                                                        }, toDisplayString(grandchild.title), 9, _hoisted_40)
+                                                                        }, toDisplayString(grandchild.title), 9, _hoisted_40$1)
                                                                       ]);
                                                                     }), 128))
                                                                   ]),
@@ -7115,13 +7115,13 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                         srcsetWidths: [960, 640, 320],
                                         class: "image_content__image"
                                       }, null, 8, ["src"])) : createCommentVNode("", true),
-                                      createBaseVNode("div", _hoisted_41, [
-                                        block.settings.content_title ? (openBlock(), createElementBlock("h1", _hoisted_42, toDisplayString(block.settings.content_title), 1)) : createCommentVNode("", true),
-                                        block.settings.content_subtitle ? (openBlock(), createElementBlock("h3", _hoisted_43, toDisplayString(block.settings.content_subtitle), 1)) : createCommentVNode("", true),
+                                      createBaseVNode("div", _hoisted_41$1, [
+                                        block.settings.content_title ? (openBlock(), createElementBlock("h1", _hoisted_42$1, toDisplayString(block.settings.content_title), 1)) : createCommentVNode("", true),
+                                        block.settings.content_subtitle ? (openBlock(), createElementBlock("h3", _hoisted_43$1, toDisplayString(block.settings.content_subtitle), 1)) : createCommentVNode("", true),
                                         block.settings.content ? (openBlock(), createElementBlock("p", {
                                           key: 2,
                                           html: block.settings.content
-                                        }, null, 8, _hoisted_44)) : createCommentVNode("", true),
+                                        }, null, 8, _hoisted_44$1)) : createCommentVNode("", true),
                                         createBaseVNode("div", {
                                           class: normalizeClass(["buttons", [`color-scheme--${$props.settings.mm_color_scheme}`]])
                                         }, [
@@ -7129,12 +7129,12 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                             key: 0,
                                             href: block.settings.primary_button_url,
                                             class: "btn round primary btn-outline"
-                                          }, toDisplayString(block.settings.primary_button_text), 9, _hoisted_45)) : createCommentVNode("", true),
+                                          }, toDisplayString(block.settings.primary_button_text), 9, _hoisted_45$1)) : createCommentVNode("", true),
                                           block.settings.secondary_button_text && block.settings.secondary_button_url ? (openBlock(), createElementBlock("a", {
                                             key: 1,
                                             href: block.settings.secondary_button_url,
                                             class: "btn round secondary btn-outline"
-                                          }, toDisplayString(block.settings.secondary_button_text), 9, _hoisted_46)) : createCommentVNode("", true)
+                                          }, toDisplayString(block.settings.secondary_button_text), 9, _hoisted_46$1)) : createCommentVNode("", true)
                                         ], 2)
                                       ])
                                     ], 2)) : createCommentVNode("", true)
@@ -7147,7 +7147,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                               class: normalizeClass(["header__menu-dropdown", [`color-scheme--${$props.settings.mm_color_scheme}`]])
                             }, {
                               default: withCtx(() => [
-                                createBaseVNode("ul", _hoisted_47, [
+                                createBaseVNode("ul", _hoisted_47$1, [
                                   (openBlock(true), createElementBlock(Fragment, null, renderList(link.links, (child) => {
                                     return openBlock(), createBlock(_component_Disclosure, {
                                       as: "li",
@@ -7159,8 +7159,8 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                           default: withCtx(() => [
                                             createBaseVNode("a", {
                                               href: child.url
-                                            }, toDisplayString(child.title), 9, _hoisted_48),
-                                            child.links.length ? (openBlock(), createElementBlock("span", _hoisted_49, _hoisted_51)) : createCommentVNode("", true)
+                                            }, toDisplayString(child.title), 9, _hoisted_48$1),
+                                            child.links.length ? (openBlock(), createElementBlock("span", _hoisted_49$1, _hoisted_51)) : createCommentVNode("", true)
                                           ]),
                                           _: 2
                                         }, 1024)) : (openBlock(), createElementBlock("a", {
@@ -7223,14 +7223,67 @@ const _sfc_main$2 = {
   name: "Card",
   components: { ImageTag },
   props: {
-    cardProduct: Object,
+    cardType: String,
+    card: Object,
     cardColorScheme: String,
     cardAspectRatio: String,
     cardImageFit: String,
-    showSecondaryImage: Boolean,
     cardAnimate: Boolean,
     cardAnimation: String,
-    cardBorder: Boolean
+    cardBorder: Boolean,
+    showVendor: Boolean,
+    showPrice: Boolean,
+    showAuthor: Boolean,
+    showDate: Boolean,
+    showTags: Boolean,
+    lazyLoad: Boolean,
+    themeSettings: Object
+  },
+  computed: {
+    ratio() {
+      switch (this.cardAspectRatio) {
+        case "lportrait":
+          var ratio = 0.5625;
+        case "sportrait":
+          var ratio = 0.67;
+        case "widescreen":
+          var ratio = 1.77;
+        case "landscape":
+          var ratio = 1.5;
+        case "square":
+          var ratio = 1;
+        case "auto":
+          var ratio = this.card.featured_image.aspect_ratio;
+        default:
+          var ratio = 1;
+          return 1 / ratio * 100;
+      }
+    },
+    regularPrice() {
+      var price = this.card.price || 1999;
+      var money_price = new Intl.NumberFormat(`${window.Shopify.locale}-${window.Shopify.country}`, { style: "currency", currency: window.Shopify.currency.active }).format(price);
+      if (this.themeSettings.currency_code_enabled) {
+        var money_price = money_price + ` ${window.Shopify.currency.active}`;
+      }
+      if (this.card.price_varies) {
+        var money_price = "From " + money_price;
+      }
+      return money_price;
+    },
+    compareAtPrice() {
+      var compare_at_price = this.card.compare_at_price;
+      if (compare_at_price) {
+        var money_price = new Intl.NumberFormat(`${window.Shopify.locale}-${window.Shopify.country}`, { style: "currency", currency: window.Shopify.currency.active }).format(compare_at_price);
+        if (this.themeSettings.currency_code_enabled) {
+          var money_price = money_price + ` ${window.Shopify.currency.active}`;
+        }
+        return money_price;
+      }
+      return false;
+    },
+    formattedDate() {
+      return new Date(this.card.published_at).toLocaleDateString(`${window.Shopify.locale}-${window.Shopify.country}`, { month: "long", day: "numeric", year: "numeric" });
+    }
   }
 };
 const _hoisted_1$2 = {
@@ -7242,56 +7295,230 @@ const _hoisted_2$2 = {
   class: "card__media"
 };
 const _hoisted_3$2 = { class: "media media--transparent" };
-const _hoisted_4$2 = { class: "card__content" };
-const _hoisted_5$2 = { class: "card__information" };
-const _hoisted_6$2 = { class: "card__heading" };
-const _hoisted_7$2 = ["href"];
+const _hoisted_4$2 = ["srcset", "src", "alt", "loading", "width", "height"];
+const _hoisted_5$2 = { class: "card__content" };
+const _hoisted_6$2 = {
+  key: 0,
+  class: "card__information"
+};
+const _hoisted_7$2 = ["id"];
+const _hoisted_8$2 = ["href", "id", "aria-labelledby"];
+const _hoisted_9$2 = ["id"];
+const _hoisted_10$2 = ["id"];
+const _hoisted_11$2 = { class: "card__content" };
+const _hoisted_12$2 = { class: "card__information" };
+const _hoisted_13$2 = ["id"];
+const _hoisted_14$2 = ["href", "id", "aria-labelledby"];
+const _hoisted_15$2 = { class: "card-information" };
+const _hoisted_16$2 = {
+  key: 0,
+  class: "card-information before"
+};
+const _hoisted_17$2 = { class: "article-card__header caption-spaced h5" };
+const _hoisted_18$1 = { key: 0 };
+const _hoisted_19$1 = { key: 1 };
+const _hoisted_20$1 = { key: 2 };
+const _hoisted_21$1 = {
+  key: 1,
+  class: "vendor"
+};
+const _hoisted_22$1 = /* @__PURE__ */ createBaseVNode("span", { class: "visually-hidden" }, "Vendor:", -1);
+const _hoisted_23$1 = { class: "caption-spaced light" };
+const _hoisted_24$1 = {
+  key: 2,
+  class: "price"
+};
+const _hoisted_25$1 = { class: "price__container" };
+const _hoisted_26$1 = { class: "price__regular" };
+const _hoisted_27$1 = /* @__PURE__ */ createBaseVNode("span", { class: "visually-hidden visually-hidden--inline" }, "Regular price", -1);
+const _hoisted_28 = { class: "price-item price-item--regular" };
+const _hoisted_29 = { class: "price__sale" };
+const _hoisted_30 = { key: 0 };
+const _hoisted_31 = /* @__PURE__ */ createBaseVNode("span", { class: "visually-hidden visually-hidden--inline" }, "Regular price", -1);
+const _hoisted_32 = { class: "price-item price-item--regular" };
+const _hoisted_33 = /* @__PURE__ */ createBaseVNode("span", { class: "visually-hidden visually-hidden--inline" }, "Sale price", -1);
+const _hoisted_34 = { class: "price-item price-item--sale price-item--last" };
+const _hoisted_35 = {
+  key: 1,
+  class: "card-wrapper underline-links-hover"
+};
+const _hoisted_36 = /* @__PURE__ */ createBaseVNode("div", { class: "card__inner gradient" }, [
+  /* @__PURE__ */ createBaseVNode("div", { class: "card__content" }, [
+    /* @__PURE__ */ createBaseVNode("div", { class: "card__information" }, [
+      /* @__PURE__ */ createBaseVNode("h3", { class: "card__heading" }, [
+        /* @__PURE__ */ createBaseVNode("a", {
+          role: "link",
+          "aria-disabled": "true",
+          class: "full-unstyled-link"
+        }, " Example Product Title ")
+      ])
+    ])
+  ])
+], -1);
+const _hoisted_37 = { class: "card__content" };
+const _hoisted_38 = { class: "card__information" };
+const _hoisted_39 = /* @__PURE__ */ createBaseVNode("h3", { class: "card__heading" }, [
+  /* @__PURE__ */ createBaseVNode("a", {
+    role: "link",
+    "aria-disabled": "true",
+    class: "full-unstyled-link"
+  }, " Example Product Title ")
+], -1);
+const _hoisted_40 = { class: "card-information" };
+const _hoisted_41 = { key: 0 };
+const _hoisted_42 = /* @__PURE__ */ createBaseVNode("span", { class: "visually-hidden" }, "Vendor", -1);
+const _hoisted_43 = /* @__PURE__ */ createBaseVNode("div", { class: "caption-spaced light" }, "Shopify", -1);
+const _hoisted_44 = [
+  _hoisted_42,
+  _hoisted_43
+];
+const _hoisted_45 = {
+  key: 1,
+  class: "price"
+};
+const _hoisted_46 = { class: "price__container" };
+const _hoisted_47 = { class: "price__regular" };
+const _hoisted_48 = /* @__PURE__ */ createBaseVNode("span", { class: "visually-hidden visually-hidden--inline" }, "Regular price", -1);
+const _hoisted_49 = { class: "price-item price-item--regular" };
 function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
-  const _component_image_tag = resolveComponent("image-tag");
-  return $props.cardProduct ? (openBlock(), createElementBlock("div", _hoisted_1$2, [
+  return $props.card ? (openBlock(), createElementBlock("div", _hoisted_1$2, [
     createBaseVNode("div", {
       class: normalizeClass(["card gradient", [
-        `color-scheme--${$props.cardColorScheme}`,
-        $props.cardProduct.featured_image ? "card--media" : "card--text",
+        $props.card.featured_image ? "card--media" : "card--text",
         $props.cardAnimate ? $props.cardAnimation : "",
+        `color-scheme--${$props.cardColorScheme}`,
         $props.cardBorder ? "border border-scheme-fg" : ""
       ]])
     }, [
       createBaseVNode("div", {
-        class: normalizeClass(["card__inner gradient", $props.cardAspectRatio])
+        class: normalizeClass(["card__inner gradient ratio", [$props.cardAspectRatio]]),
+        style: normalizeStyle([`--ratio-percent: ${$options.ratio}%`])
       }, [
-        $props.cardProduct.featured_image ? (openBlock(), createElementBlock("div", _hoisted_2$2, [
+        $props.card.featured_image ? (openBlock(), createElementBlock("div", _hoisted_2$2, [
           createBaseVNode("div", _hoisted_3$2, [
-            createVNode(_component_image_tag, {
-              src: $props.cardProduct.featured_image,
-              width: "300",
-              sizes: "(min-width: 1280px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)",
-              srcsetWidths: [
-                $props.cardProduct.featured_image.width >= 165 ? 165 : "",
-                $props.cardProduct.featured_image.width >= 360 ? 360 : "",
-                $props.cardProduct.featured_image.width >= 533 ? 533 : "",
-                $props.cardProduct.featured_image.width >= 720 ? 720 : "",
-                $props.cardProduct.featured_image.width >= 940 ? 940 : "",
-                $props.cardProduct.featured_image.width >= 1066 ? 1066 : ""
+            createBaseVNode("img", {
+              srcset: [
+                $props.card.featured_image.width >= 165 ? `${$props.card.featured_image.url} 165w,` : "",
+                $props.card.featured_image.width >= 360 ? `${$props.card.featured_image.url} 360w,` : "",
+                $props.card.featured_image.width >= 533 ? `${$props.card.featured_image.url} 533w,` : "",
+                $props.card.featured_image.width >= 720 ? `${$props.card.featured_image.url} 720w,` : "",
+                $props.card.featured_image.width >= 940 ? `${$props.card.featured_image.url} 940w,` : "",
+                $props.card.featured_image.width >= 1066 ? `${$props.card.featured_image.url} 1066w,` : "",
+                `${$props.card.featured_image.url} ${$props.card.featured_image.width}w`
               ],
-              alt: $props.cardProduct.featured_image.alt,
-              class: normalizeClass(["card__image", [$props.cardAspectRatio, $props.cardImageFit]])
-            }, null, 8, ["src", "srcsetWidths", "alt", "class"])
+              src: $props.card.featured_image,
+              sizes: "(min-width: 1280px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)",
+              alt: $props.card.featured_image.alt,
+              class: normalizeClass(["card__image", [
+                $props.cardAspectRatio,
+                $props.cardImageFit
+              ]]),
+              loading: [$props.lazyLoad ? "lazy" : ""],
+              width: $props.card.featured_image.width,
+              height: $props.card.featured_image.height
+            }, null, 10, _hoisted_4$2)
           ])
-        ])) : createCommentVNode("", true)
-      ], 2),
-      createBaseVNode("div", _hoisted_4$2, [
+        ])) : createCommentVNode("", true),
         createBaseVNode("div", _hoisted_5$2, [
-          createBaseVNode("h3", _hoisted_6$2, [
+          $props.card.featured_image == null ? (openBlock(), createElementBlock("div", _hoisted_6$2, [
+            createBaseVNode("h3", {
+              class: "card__heading",
+              id: [`title-SearchModal-${$props.card.id}`]
+            }, [
+              createBaseVNode("a", {
+                href: $props.card.url,
+                id: [`StandardCardNoMediaLink-SearchModal-${$props.card.id}`],
+                class: "full-unstyled-link",
+                "aria-labelledby": [`StandardCardNoMediaLink-SearchModal-${$props.card.id}`, `NoMediaStandardBadge-SearchModal-${$props.card.id}`]
+              }, toDisplayString($props.card.title), 9, _hoisted_8$2)
+            ], 8, _hoisted_7$2)
+          ])) : createCommentVNode("", true),
+          createBaseVNode("div", {
+            class: normalizeClass(["card__badge", [$props.themeSettings.badge_position]])
+          }, [
+            $props.card.available == false ? (openBlock(), createElementBlock("span", {
+              key: 0,
+              id: [`NoMediaStandardBadge-SearchModal-${$props.card.id}`],
+              class: normalizeClass(["badge badge--bottom-left btn", [`btn-${$props.themeSettings.sold_out_badge_color_scheme}`]])
+            }, " Sold Out ", 10, _hoisted_9$2)) : createCommentVNode("", true),
+            $props.card.compare_at_price > $props.card.price && $props.card.available ? (openBlock(), createElementBlock("span", {
+              key: 1,
+              id: [`NoMediaStandardBadge-SearchModal-${$props.card.id}`],
+              class: normalizeClass(["badge badge--bottom-left btn", [`btn-${$props.themeSettings.sale_badge_color_scheme}`]])
+            }, " On Sale ", 10, _hoisted_10$2)) : createCommentVNode("", true)
+          ], 2)
+        ])
+      ], 6),
+      createBaseVNode("div", _hoisted_11$2, [
+        createBaseVNode("div", _hoisted_12$2, [
+          createBaseVNode("h3", {
+            class: "card__heading",
+            id: [`title-SearchModal-${$props.card.id}`]
+          }, [
             createBaseVNode("a", {
-              href: $props.cardProduct.url,
-              class: "full-unstyled-link"
-            }, toDisplayString($props.cardProduct.title), 9, _hoisted_7$2)
+              href: $props.card.url,
+              id: [`CardLink-SearchModal-${$props.card.id}`],
+              class: "full-unstyled-link",
+              "aria-labelledby": [`CardLink-SearchModal-${$props.card.id}`, `Badge-SearchModal-${$props.card.id}`]
+            }, toDisplayString($props.cardType == "article" ? $props.card.title.length > 40 ? $props.card.title.substring(0, 30).concat("...") : $props.card.title : $props.card.title), 9, _hoisted_14$2)
+          ], 8, _hoisted_13$2),
+          createBaseVNode("div", _hoisted_15$2, [
+            $props.cardType == "article" ? (openBlock(), createElementBlock("div", _hoisted_16$2, [
+              createBaseVNode("div", _hoisted_17$2, [
+                $props.showTags && $props.card.tags.size > 0 ? (openBlock(), createElementBlock("span", _hoisted_18$1, toDisplayString($props.card.tags.join(", ").substring(0, 25)), 1)) : createCommentVNode("", true),
+                $props.showDate ? (openBlock(), createElementBlock("span", _hoisted_19$1, toDisplayString($options.formattedDate), 1)) : createCommentVNode("", true),
+                $props.showAuthor ? (openBlock(), createElementBlock("span", _hoisted_20$1, toDisplayString($props.card.author), 1)) : createCommentVNode("", true)
+              ])
+            ])) : createCommentVNode("", true),
+            $props.cardType == "product" && $props.showVendor ? (openBlock(), createElementBlock("div", _hoisted_21$1, [
+              _hoisted_22$1,
+              createBaseVNode("div", _hoisted_23$1, toDisplayString($props.card.vendor), 1)
+            ])) : createCommentVNode("", true),
+            $props.cardType == "product" && $props.showPrice ? (openBlock(), createElementBlock("div", _hoisted_24$1, [
+              createBaseVNode("div", _hoisted_25$1, [
+                createBaseVNode("div", _hoisted_26$1, [
+                  _hoisted_27$1,
+                  createBaseVNode("span", _hoisted_28, toDisplayString($options.regularPrice), 1)
+                ]),
+                createBaseVNode("div", _hoisted_29, [
+                  $props.card.price_varies && $props.card.compare_at_price_varies == false ? (openBlock(), createElementBlock("div", _hoisted_30, [
+                    _hoisted_31,
+                    createBaseVNode("span", null, [
+                      createBaseVNode("s", _hoisted_32, toDisplayString($options.regularPrice), 1)
+                    ])
+                  ])) : createCommentVNode("", true),
+                  _hoisted_33,
+                  createBaseVNode("span", _hoisted_34, toDisplayString($options.compareAtPrice), 1)
+                ])
+              ])
+            ])) : createCommentVNode("", true)
           ])
         ])
       ])
     ], 2)
-  ])) : createCommentVNode("", true);
+  ])) : (openBlock(), createElementBlock("div", _hoisted_35, [
+    createBaseVNode("div", {
+      class: normalizeClass(["card card--text gradient", [`color-scheme--${$props.themeSettings.product_card_color_scheme}`]])
+    }, [
+      _hoisted_36,
+      createBaseVNode("div", _hoisted_37, [
+        createBaseVNode("div", _hoisted_38, [
+          _hoisted_39,
+          createBaseVNode("div", _hoisted_40, [
+            $props.showVendor ? (openBlock(), createElementBlock("div", _hoisted_41, _hoisted_44)) : createCommentVNode("", true),
+            $props.showPrice ? (openBlock(), createElementBlock("div", _hoisted_45, [
+              createBaseVNode("div", _hoisted_46, [
+                createBaseVNode("div", _hoisted_47, [
+                  _hoisted_48,
+                  createBaseVNode("span", _hoisted_49, toDisplayString($options.regularPrice), 1)
+                ])
+              ])
+            ])) : createCommentVNode("", true)
+          ])
+        ])
+      ])
+    ], 2)
+  ]));
 }
 const Card = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2]]);
 const _sfc_main$1 = {
@@ -7325,7 +7552,9 @@ const _sfc_main$1 = {
     cardAnimate: Boolean,
     cardAnimation: String,
     cardShowInfoOnHover: Boolean,
-    settings: Object
+    settings: Object,
+    themeSettings: Object,
+    cardSettings: Object
   },
   computed: {
     resultsLength() {
@@ -7485,21 +7714,20 @@ const _hoisted_19 = {
   class: "search__results--loaded"
 };
 const _hoisted_20 = { class: "search__products shopify-grid product-grid grid--2-col-tablet-down grid--4-col-desktop" };
-const _hoisted_21 = { class: "search__articles" };
-const _hoisted_22 = ["href"];
-const _hoisted_23 = { class: "search__pages" };
-const _hoisted_24 = ["href"];
-const _hoisted_25 = { class: "search__more" };
-const _hoisted_26 = {
+const _hoisted_21 = { class: "search__articles shopify-grid product-grid grid--2-col-tablet-down grid--4-col-desktop" };
+const _hoisted_22 = { class: "search__pages" };
+const _hoisted_23 = ["href"];
+const _hoisted_24 = { class: "search__more" };
+const _hoisted_25 = {
   action: "/search",
   method: "get",
   role: "search"
 };
-const _hoisted_27 = /* @__PURE__ */ createBaseVNode("button", {
+const _hoisted_26 = /* @__PURE__ */ createBaseVNode("button", {
   class: "btn",
   type: "submit"
 }, "View More", -1);
-const _hoisted_28 = {
+const _hoisted_27 = {
   key: 2,
   class: "search__no-results"
 };
@@ -7509,7 +7737,6 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_TabList = resolveComponent("TabList");
   const _component_card = resolveComponent("card");
   const _component_TabPanel = resolveComponent("TabPanel");
-  const _component_image_tag = resolveComponent("image-tag");
   const _component_TabPanels = resolveComponent("TabPanels");
   const _component_TabGroup = resolveComponent("TabGroup");
   const _component_PopoverPanel = resolveComponent("PopoverPanel");
@@ -7631,14 +7858,18 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                                             return openBlock(), createBlock(_component_card, {
                                               key: product.id,
                                               class: "grid__item",
-                                              cardProduct: product,
-                                              cardColorScheme: $props.cardColorScheme,
-                                              cardAspectRatio: $props.cardImageAspect,
-                                              cardImageFit: $props.cardImageFit,
-                                              cardAnimate: $props.cardAnimate,
-                                              cardAnimation: $props.cardAnimation,
-                                              cardBorder: $props.cardBorder
-                                            }, null, 8, ["cardProduct", "cardColorScheme", "cardAspectRatio", "cardImageFit", "cardAnimate", "cardAnimation", "cardBorder"]);
+                                              cardType: "product",
+                                              card: product,
+                                              cardColorScheme: $props.cardSettings.card_color_scheme,
+                                              cardBorder: $props.cardSettings.card_border,
+                                              cardAspectRatio: $props.cardSettings.card_image_ratio,
+                                              cardImageFit: $props.cardSettings.card_image_fit,
+                                              cardAnimate: $props.cardSettings.card_hover_animate,
+                                              cardAnimation: $props.cardSettings.card_hover_animation,
+                                              showVendor: $props.cardSettings.show_vendor,
+                                              showPrice: $props.cardSettings.show_price,
+                                              themeSettings: $props.themeSettings
+                                            }, null, 8, ["card", "cardColorScheme", "cardBorder", "cardAspectRatio", "cardImageFit", "cardAnimate", "cardAnimation", "showVendor", "showPrice", "themeSettings"]);
                                           }), 128))
                                         ])
                                       ]),
@@ -7653,22 +7884,22 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                                       default: withCtx(() => [
                                         createBaseVNode("div", _hoisted_21, [
                                           (openBlock(true), createElementBlock(Fragment, null, renderList($data.results.articles, (article) => {
-                                            return openBlock(), createElementBlock("div", {
-                                              key: article.id
-                                            }, [
-                                              createBaseVNode("a", {
-                                                href: article.url
-                                              }, [
-                                                article.featured_image ? (openBlock(), createBlock(_component_image_tag, {
-                                                  key: 0,
-                                                  src: article.featured_image,
-                                                  width: "300",
-                                                  sizes: "(min-width: 1280px) 300px, (min-width: 768px) 225px, 150px",
-                                                  srcsetWidths: [150, 225, 300]
-                                                }, null, 8, ["src"])) : createCommentVNode("", true),
-                                                createBaseVNode("h3", null, toDisplayString(article.title), 1)
-                                              ], 8, _hoisted_22)
-                                            ]);
+                                            return openBlock(), createBlock(_component_card, {
+                                              key: article.id,
+                                              class: "grid__item",
+                                              cardType: "article",
+                                              card: article,
+                                              cardColorScheme: $props.cardSettings.card_color_scheme,
+                                              cardBorder: $props.cardSettings.card_border,
+                                              cardAspectRatio: $props.cardSettings.card_image_ratio,
+                                              cardImageFit: $props.cardSettings.card_image_fit,
+                                              cardAnimate: $props.cardSettings.card_hover_animate,
+                                              cardAnimation: $props.cardSettings.card_hover_animation,
+                                              showAuthor: $props.cardSettings.show_author,
+                                              showDate: $props.cardSettings.show_date,
+                                              showTags: $props.cardSettings.show_tags,
+                                              themeSettings: $props.themeSettings
+                                            }, null, 8, ["card", "cardColorScheme", "cardBorder", "cardAspectRatio", "cardImageFit", "cardAnimate", "cardAnimation", "showAuthor", "showDate", "showTags", "themeSettings"]);
                                           }), 128))
                                         ])
                                       ]),
@@ -7681,23 +7912,17 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                                   default: withCtx(() => [
                                     $props.predictiveShowPages && $data.results.pages.length ? (openBlock(), createBlock(_component_TabPanel, { key: 0 }, {
                                       default: withCtx(() => [
-                                        createBaseVNode("div", _hoisted_23, [
+                                        createBaseVNode("div", _hoisted_22, [
                                           (openBlock(true), createElementBlock(Fragment, null, renderList($data.results.pages, (page) => {
                                             return openBlock(), createElementBlock("div", {
+                                              class: "search__page",
                                               key: page.id
                                             }, [
                                               createBaseVNode("a", {
                                                 href: page.url
                                               }, [
-                                                page.featured_image ? (openBlock(), createBlock(_component_image_tag, {
-                                                  key: 0,
-                                                  src: page.featured_image,
-                                                  width: "300",
-                                                  sizes: "(min-width: 1280px) 300px, (min-width: 768px) 225px, 150px",
-                                                  srcsetWidths: [150, 225, 300]
-                                                }, null, 8, ["src"])) : createCommentVNode("", true),
                                                 createBaseVNode("h3", null, toDisplayString(page.title), 1)
-                                              ], 8, _hoisted_24)
+                                              ], 8, _hoisted_23)
                                             ]);
                                           }), 128))
                                         ])
@@ -7713,8 +7938,8 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                           ]),
                           _: 1
                         }),
-                        createBaseVNode("div", _hoisted_25, [
-                          createBaseVNode("form", _hoisted_26, [
+                        createBaseVNode("div", _hoisted_24, [
+                          createBaseVNode("form", _hoisted_25, [
                             withDirectives(createBaseVNode("input", {
                               name: "q",
                               "onUpdate:modelValue": _cache[1] || (_cache[1] = ($event) => $data.query = $event),
@@ -7722,10 +7947,10 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                             }, null, 512), [
                               [vModelText, $data.query]
                             ]),
-                            _hoisted_27
+                            _hoisted_26
                           ])
                         ])
-                      ])) : (openBlock(), createElementBlock("div", _hoisted_28, " No results found. "))
+                      ])) : (openBlock(), createElementBlock("div", _hoisted_27, " No results found. "))
                     ])
                   ], 4)) : createCommentVNode("", true)
                 ]),
@@ -7938,7 +8163,7 @@ if (window.location.href.includes("/search")) {
 }
 const searchMount = document.querySelector("#searchMenuTop");
 const megamenuMount = document.querySelector("#megamenu");
-const modalMount = document.querySelector("#modal");
+const modalMount = document.querySelector("#modal") || false;
 const menuProps = {};
 const searchProps = {};
 const modalProps = {};
@@ -7947,6 +8172,7 @@ function fetchProps() {
   const megamenuBlocks = JSON.parse(megamenuMount.dataset.blocks);
   const topMenu = JSON.parse(megamenuMount.dataset.topmenu);
   const mobileLinks = JSON.parse(megamenuMount.dataset.mobilelinks);
+  const themeSettings = window.themeSettings;
   topMenu.forEach((m2) => m2.blocks = []);
   menuProps.iconSize = window.themeSettings.icon_size;
   menuProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
@@ -7963,29 +8189,41 @@ function fetchProps() {
   searchProps.predictiveShowArticles = window.themeSettings.predictive_search_show_articles;
   searchProps.iconSize = window.themeSettings.icon_size;
   searchProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
-  searchProps.cardColorScheme = window.themeSettings.card_color_scheme;
-  searchProps.cardBorder = window.themeSettings.card_border;
-  searchProps.cardImageAspect = window.themeSettings.card_image_aspect;
-  searchProps.cardImageFit = window.themeSettings.card_image_fit;
-  searchProps.cardAnimate = window.themeSettings.card_hover_animate;
-  searchProps.cardAnimation = window.themeSettings.card_hover_animation;
   searchProps.settings = searchSettings;
-  modalProps.settings = JSON.parse(modalMount.dataset.settings);
-  modalProps.blocks = JSON.parse(modalMount.dataset.blocks);
-  modalProps.form = modalMount.dataset.form;
-  modalProps.iconSize = window.themeSettings.icon_size;
-  modalProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
+  searchProps.themeSettings = themeSettings;
+  searchProps.cardSettings = {
+    card_color_scheme: window.themeSettings.card_color_scheme,
+    card_border: window.themeSettings.card_border,
+    card_image_fit: window.themeSettings.card_image_fit,
+    card_hover_animate: window.themeSettings.product_card_hover_animate,
+    card_hover_animation: window.themeSettings.product_card_hover_animation,
+    image_ratio: window.themeSettings.predictive_card_image_ratio,
+    show_vendor: window.themeSettings.predictive_card_show_vendor,
+    show_price: window.themeSettings.predictive_card_show_price,
+    show_author: window.themeSettings.predictive_card_show_author,
+    show_date: window.themeSettings.predictive_card_show_date,
+    show_tags: window.themeSettings.predictive_card_show_tags
+  };
+  if (modalMount) {
+    modalProps.settings = JSON.parse(modalMount.dataset.settings);
+    modalProps.blocks = JSON.parse(modalMount.dataset.blocks);
+    modalProps.form = modalMount.dataset.form;
+    modalProps.iconSize = window.themeSettings.icon_size;
+    modalProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
+  }
 }
 fetchProps();
 const megamenuApp = (component, props) => createApp(component, props);
 const searchApp = (component, props) => createApp(component, props);
-const modalApp = (component, props) => createApp(component, props);
 var megamenuInit = megamenuApp(MegaMenu, menuProps);
 var searchInit = searchApp(SearchMenu, searchProps);
-var modalInit = modalApp(Modal, modalProps);
 megamenuInit.mount(megamenuMount);
 searchInit.mount(searchMount);
-modalInit.mount(modalMount);
+if (modalMount) {
+  const modalApp = (component, props) => createApp(component, props);
+  var modalInit = modalApp(Modal, modalProps);
+  modalInit.mount(modalMount);
+}
 document.addEventListener("DOMContentLoaded", () => {
   if (JSON.parse(megamenuMount.dataset.settings).enable_sticky_header) {
     const body = document.querySelector("body");
