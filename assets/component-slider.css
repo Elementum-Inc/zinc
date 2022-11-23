@@ -271,12 +271,6 @@ slider-component ul {
   border-radius: 0.4rem;
 }
 
-.slider-counter {
-  display: flex;
-  justify-content: center;
-  min-width: 4.4rem;
-}
-
 @media screen and (min-width: 750px) {
   .slider-counter--dots {
     margin: 0 1.2rem;

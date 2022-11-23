@@ -28,11 +28,11 @@
 
   <slideshow-component class="slider-mobile-gutter{% if section.settings.layout == 'grid' %} page-width{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}" role="region" aria-roledescription="{{ 'sections.slideshow.carousel' | t }}" aria-label="{{ section.settings.accessibility_info | escape }}">
   {%- if section.blocks.size > 1 -%}
-    <div class="slideshow__controls slider-buttons slideshow__controls--top  no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+    <div class="slideshow__controls slider-buttons slideshow__controls--{{ section.settings.slider_visual }}  no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
       <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}" aria-controls="Slider-{{ section.id }}">{% render 'icon-caret' %}</button>
-      <div class="slider-counter slider-counter--{{ section.settings.slider_visual }}{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}">
+      <div class="slider-counter slider-counter--{{ section.settings.slider_visual }}{% if section.settings.slider_visual == 'arrows' or section.settings.slider_visual == 'none' %} caption{% endif %}">
 
-        {%- if section.settings.slider_visual == 'counter' -%}
+        {%- if section.settings.slider_visual == 'arrows' -%}
           <span class="slider-counter--current">1</span>
           <span aria-hidden="true"> / </span>
           <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
@@ -42,7 +42,7 @@
           <div class="slideshow__control-wrapper">
             {%- for block in section.blocks -%}
               <button class="slider-counter__link slider-counter__link--{{ section.settings.slider_visual }} link" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}" aria-controls="Slider-{{ section.id }}">
-                {%- if section.settings.slider_visual == 'numbers' -%}{{ forloop.index }}{% else %}<span class="dot"></span>{%- endif -%}
+                {%- if section.settings.slider_visual == 'none' -%}{{ forloop.index }}{% else %}<span class="dot"></span>{%- endif -%}
               </button>
             {%- endfor -%}
           </div>
@@ -224,15 +224,15 @@
           "label": "Dots"
         },
         {
-          "value": "counter",
+          "value": "arrows",
           "label": "Arrows"
         },
         {
-          "value": "numbers",
+          "value": "none",
           "label": "None"
         }
       ],
-      "default": "counter",
+      "default": "dots",
       "label": "t:sections.slideshow.settings.slider_visual.label"
     },
     {

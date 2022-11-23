@@ -21,9 +21,9 @@ video {
   object-fit: cover;
 }
 
-.banner__text {
+/* .banner__text {
   color: black;
-}
+} */
 
 .h0 {
   font-style: normal;
@@ -74,15 +74,38 @@ video {
   }
 }
 
-.slideshow__controls .slider-button {
-  background: white;
-  border-radius: 50%;
+.slideshow__controls--none {
   visibility: hidden;
 }
 
-.slider-button .hidden {
+.slider-counter--arrows {
+  visibility: hidden;
+  min-width: 0.1rem;
+}
+
+.slideshow__controls--dots .slider-button {
   visibility: hidden;
 }
+
+.slider-counter {
+  display: flex;
+  justify-content: center;
+  min-width: 0.1rem;
+}
+
+.slideshow__autoplay {
+  visibility: hidden;
+}
+
+.slideshow__controls .slider-button {
+  background: white;
+  border-radius: 50%;
+  /* visibility: hidden; */
+}
+
+/* .slider-button .hidden {
+  visibility: hidden;
+} */
 
 /* SHOPIFY STYLES  */
 
