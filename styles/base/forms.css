@@ -17,7 +17,9 @@
   }
 
   &__button {
-    @apply h-full w-full;
+    &.search__button {
+      @apply h-full;
+    }
   }
 }
 

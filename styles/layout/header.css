@@ -812,24 +812,25 @@
   }
 
   &__more {
-    @apply sticky bottom-0 w-full container lg:container-md xl:container-lg py-4 md:py-8 mx-auto mt-12 lg:mt-16 text-center bg-scheme-bg text-scheme-text;
+    @apply sticky
+      bottom-0
+      z-2
+      w-full
+      container
+      lg:container-md
+      xl:container-lg
+      mx-auto
+      mt-12
+      lg:mt-16
+      text-center
+      bg-scheme-bg
+      text-scheme-text;
 
-    &::before {
-      @apply absolute -top-24 block h-24 w-full md:(border-b border-gray-450);
-      /* stylelint-disable indentation, function-comma-space-after */
-      background-image: linear-gradient(to top, rgb(var(--color-scheme-bg)),
-                                              rgb(var(--color-scheme-bg) / .9),
-                                              rgb(var(--color-scheme-bg) / .8),
-                                              rgb(var(--color-scheme-bg) / .7),
-                                              rgb(var(--color-scheme-bg) / .6),
-                                              rgb(var(--color-scheme-bg) / .5),
-                                              rgb(var(--color-scheme-bg) / .4),
-                                              rgb(var(--color-scheme-bg) / .3),
-                                              rgb(var(--color-scheme-bg) / .2),
-                                              rgb(var(--color-scheme-bg) / .1),
-                                              transparent);
-      /* stylelint-enable indentation, function-comma-space-after */
-      content: '';
+    button {
+      @apply py-4
+        md:py-8
+        w-full
+        h-full;
     }
   }
 

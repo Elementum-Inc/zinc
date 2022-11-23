@@ -128,7 +128,7 @@
     }
 
     & .field__button {
-      @apply max-w-12;
+      @apply max-w-12 w-full h-full;
     }
 
     & .newsletter-form__message--success {
