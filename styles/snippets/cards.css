@@ -269,6 +269,10 @@
       }
     }
 
+    & .card__information {
+      align-self: var(--content-card-vertical-alignment);
+    }
+
     & .card__heading {
       @apply -translate-y-1/2;
     }

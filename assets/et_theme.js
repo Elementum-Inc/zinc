@@ -7307,25 +7307,25 @@ const _hoisted_9$2 = ["id"];
 const _hoisted_10$2 = ["id"];
 const _hoisted_11$2 = { class: "card__content" };
 const _hoisted_12$2 = { class: "card__information" };
-const _hoisted_13$2 = ["id"];
-const _hoisted_14$2 = ["href", "id", "aria-labelledby"];
-const _hoisted_15$2 = { class: "card-information" };
-const _hoisted_16$2 = {
+const _hoisted_13$2 = {
   key: 0,
   class: "card-information before"
 };
-const _hoisted_17$2 = { class: "article-card__header caption-spaced h5" };
-const _hoisted_18$1 = { key: 0 };
-const _hoisted_19$1 = { key: 1 };
-const _hoisted_20$1 = { key: 2 };
+const _hoisted_14$2 = { class: "article-card__header caption-spaced h5" };
+const _hoisted_15$2 = { key: 0 };
+const _hoisted_16$2 = { key: 1 };
+const _hoisted_17$2 = { key: 2 };
+const _hoisted_18$1 = ["id"];
+const _hoisted_19$1 = ["href", "id", "aria-labelledby"];
+const _hoisted_20$1 = { class: "card-information" };
 const _hoisted_21$1 = {
-  key: 1,
+  key: 0,
   class: "vendor"
 };
 const _hoisted_22$1 = /* @__PURE__ */ createBaseVNode("span", { class: "visually-hidden" }, "Vendor:", -1);
 const _hoisted_23$1 = { class: "caption-spaced light" };
 const _hoisted_24$1 = {
-  key: 2,
+  key: 1,
   class: "price"
 };
 const _hoisted_25$1 = { class: "price__container" };
@@ -7387,7 +7387,8 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
         $props.card.featured_image ? "card--media" : "card--text",
         $props.cardAnimate ? $props.cardAnimation : "",
         `color-scheme--${$props.cardColorScheme}`,
-        $props.cardBorder ? "border border-scheme-fg" : ""
+        $props.cardBorder ? "border border-scheme-fg" : "",
+        $props.cardType == "article" ? "article-card" : ""
       ]])
     }, [
       createBaseVNode("div", {
@@ -7451,6 +7452,13 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
       ], 6),
       createBaseVNode("div", _hoisted_11$2, [
         createBaseVNode("div", _hoisted_12$2, [
+          $props.cardType == "article" ? (openBlock(), createElementBlock("div", _hoisted_13$2, [
+            createBaseVNode("div", _hoisted_14$2, [
+              $props.showTags && $props.card.tags.size > 0 ? (openBlock(), createElementBlock("span", _hoisted_15$2, toDisplayString($props.card.tags.join(", ").substring(0, 25)), 1)) : createCommentVNode("", true),
+              $props.showDate ? (openBlock(), createElementBlock("span", _hoisted_16$2, toDisplayString($options.formattedDate), 1)) : createCommentVNode("", true),
+              $props.showAuthor ? (openBlock(), createElementBlock("span", _hoisted_17$2, toDisplayString($props.card.author), 1)) : createCommentVNode("", true)
+            ])
+          ])) : createCommentVNode("", true),
           createBaseVNode("h3", {
             class: "card__heading",
             id: [`title-SearchModal-${$props.card.id}`]
@@ -7460,16 +7468,9 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
               id: [`CardLink-SearchModal-${$props.card.id}`],
               class: "full-unstyled-link",
               "aria-labelledby": [`CardLink-SearchModal-${$props.card.id}`, `Badge-SearchModal-${$props.card.id}`]
-            }, toDisplayString($props.cardType == "article" ? $props.card.title.length > 40 ? $props.card.title.substring(0, 30).concat("...") : $props.card.title : $props.card.title), 9, _hoisted_14$2)
-          ], 8, _hoisted_13$2),
-          createBaseVNode("div", _hoisted_15$2, [
-            $props.cardType == "article" ? (openBlock(), createElementBlock("div", _hoisted_16$2, [
-              createBaseVNode("div", _hoisted_17$2, [
-                $props.showTags && $props.card.tags.size > 0 ? (openBlock(), createElementBlock("span", _hoisted_18$1, toDisplayString($props.card.tags.join(", ").substring(0, 25)), 1)) : createCommentVNode("", true),
-                $props.showDate ? (openBlock(), createElementBlock("span", _hoisted_19$1, toDisplayString($options.formattedDate), 1)) : createCommentVNode("", true),
-                $props.showAuthor ? (openBlock(), createElementBlock("span", _hoisted_20$1, toDisplayString($props.card.author), 1)) : createCommentVNode("", true)
-              ])
-            ])) : createCommentVNode("", true),
+            }, toDisplayString($props.cardType == "article" ? $props.card.title.length > 40 ? $props.card.title.substring(0, 30).concat("...") : $props.card.title : $props.card.title), 9, _hoisted_19$1)
+          ], 8, _hoisted_18$1),
+          createBaseVNode("div", _hoisted_20$1, [
             $props.cardType == "product" && $props.showVendor ? (openBlock(), createElementBlock("div", _hoisted_21$1, [
               _hoisted_22$1,
               createBaseVNode("div", _hoisted_23$1, toDisplayString($props.card.vendor), 1)

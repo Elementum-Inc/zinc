@@ -5,7 +5,8 @@
         card.featured_image ? 'card--media' : 'card--text',
         cardAnimate ? cardAnimation : '',
         `color-scheme--${cardColorScheme}`,
-        cardBorder ? 'border border-scheme-fg': ''
+        cardBorder ? 'border border-scheme-fg' : '',
+        cardType == 'article' ? 'article-card' : ''
       ]"
     >
       <div class="card__inner gradient ratio"
@@ -64,6 +65,13 @@
 
       <div class="card__content">
         <div class="card__information">
+          <div class="card-information before" v-if="cardType == 'article'">
+            <div class="article-card__header caption-spaced h5">
+              <span v-if="showTags && card.tags.size > 0">{{ card.tags.join(', ').substring(0, 25) }}</span>
+              <span v-if="showDate">{{ formattedDate }}</span>
+              <span v-if="showAuthor">{{ card.author }}</span>
+            </div>
+          </div>
           <h3 class="card__heading" :id="[`title-SearchModal-${card.id}`]">
             <a :href="card.url"
               :id="[`CardLink-SearchModal-${card.id}`]"
@@ -73,13 +81,6 @@
             </a>
           </h3>
           <div class="card-information">
-            <div class="card-information before" v-if="cardType == 'article'">
-              <div class="article-card__header caption-spaced h5">
-                <span v-if="showTags && card.tags.size > 0">{{ card.tags.join(', ').substring(0, 25) }}</span>
-                <span v-if="showDate">{{ formattedDate }}</span>
-                <span v-if="showAuthor">{{ card.author }}</span>
-              </div>
-            </div>
             <div class="vendor" v-if="cardType == 'product' && showVendor">
               <span class="visually-hidden">Vendor:</span>
               <div class="caption-spaced light">{{ card.vendor }}</div>

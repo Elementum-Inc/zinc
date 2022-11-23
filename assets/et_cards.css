@@ -414,6 +414,9 @@
 .article-card.card--info-hover.card--media .card__heading, .page-card.card--info-hover.card--media .card__heading {
   --tw-translate-y: -100%;
 }
+.article-card.card--info-hover .card__information, .page-card.card--info-hover .card__information {
+  align-self: var(--content-card-vertical-alignment);
+}
 .article-card.card--info-hover .card__heading, .page-card.card--info-hover .card__heading {
   --tw-translate-y: -50%;
 }
