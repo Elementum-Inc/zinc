@@ -26,13 +26,13 @@
   {%- endstyle -%}
 {%- endif -%}
 
-<slideshow-component class="slider-mobile-gutter{% if section.settings.layout == 'grid' %} page-width{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}" role="region" aria-roledescription="{{ 'sections.slideshow.carousel' | t }}" aria-label="{{ section.settings.accessibility_info | escape }}">
-  {%- if section.settings.auto_rotate and section.blocks.size > 1 -%}
-    <div class="slideshow__controls slideshow__controls--top slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
+  <slideshow-component class="slider-mobile-gutter{% if section.settings.layout == 'grid' %} page-width{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}" role="region" aria-roledescription="{{ 'sections.slideshow.carousel' | t }}" aria-label="{{ section.settings.accessibility_info | escape }}">
+  {%- if section.blocks.size > 1 -%}
+    <div class="slideshow__controls slider-buttons slideshow__controls--{{ section.settings.slider_visual }}  no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
       <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}" aria-controls="Slider-{{ section.id }}">{% render 'icon-caret' %}</button>
-      <div class="slider-counter slider-counter--{{ section.settings.slider_visual }}{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}">
+      <div class="slider-counter slider-counter--{{ section.settings.slider_visual }}{% if section.settings.slider_visual == 'arrows' or section.settings.slider_visual == 'none' %} caption{% endif %}">
 
-        {%- if section.settings.slider_visual == 'counter' -%}
+        {%- if section.settings.slider_visual == 'arrows' -%}
           <span class="slider-counter--current">1</span>
           <span aria-hidden="true"> / </span>
           <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
@@ -42,7 +42,7 @@
           <div class="slideshow__control-wrapper">
             {%- for block in section.blocks -%}
               <button class="slider-counter__link slider-counter__link--{{ section.settings.slider_visual }} link" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}" aria-controls="Slider-{{ section.id }}">
-                {%- if section.settings.slider_visual == 'numbers' -%}{{ forloop.index }}{% else %}<span class="dot"></span>{%- endif -%}
+                {%- if section.settings.slider_visual == 'none' -%}{{ forloop.index }}{% else %}<span class="dot"></span>{%- endif -%}
               </button>
             {%- endfor -%}
           </div>
@@ -147,81 +147,38 @@
       {%- when 'video' -%}
         {%- if block.settings.video_src != blank -%}
           <div>
+            <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }} {% if block.settings.banner_text_background %} solid-background {% endif %}" >
+              {%- if block.settings.heading != blank -%}
+                <h2 class="banner__heading {{ block.settings.heading_size }}">{{ block.settings.heading | escape }}</h2>
+              {%- endif -%}
+
+              {%- if block.settings.subheading != blank -%}
+                <div class="banner__text" {{ block.shopify_attributes }}>
+                  <span>{{ block.settings.subheading | escape }}</span>
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.button_label != blank -%}
+                <div class="banner__buttons">
+                  <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ block.settings.button_label | escape }}</a>
+                  <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="button {% if block.settings.second_button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ block.settings.second_button_label | escape }}</a>
+                </div>
+              {%- endif -%}
+            </div>
+
             <video autoplay muted loop playsinline class="slideshow-video">
               <source src="{{ block.settings.video_src }}" type="video/mp4">
             </video>
 
-            <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} gradient slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }} {% if block.settings.banner_text_background %} solid-background {% endif %}" >
-            {%- if block.settings.heading != blank -%}
-              <h2 class="banner__heading {{ block.settings.heading_size }}">{{ block.settings.heading | escape }}</h2>
-            {%- endif -%}
-            {%- if block.settings.subheading != blank -%}
-              <div class="banner__text" {{ block.shopify_attributes }}>
-                <span>{{ block.settings.subheading | escape }}</span>
-              </div>
-            {%- endif -%}
-            {%- if block.settings.button_label != blank -%}
-              <div class="banner__buttons">
-                <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ block.settings.button_label | escape }}</a>
-                <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="button {% if block.settings.second_button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ block.settings.second_button_label | escape }}</a>
-              </div>
-            {%- endif -%}
-          </div>
           <div>
 
-          
         {%- endif -%}
-
-        
-
         
       {%- endcase -%}
       </div>
       </div>
     {%- endfor -%}
   </div>
-
-  {%- if section.blocks.size > 1 and section.settings.auto_rotate == false -%}
-    <div class="slideshow__controls slider-buttons no-js-hidden{% if section.settings.show_text_below %} slideshow__controls--border-radius-mobile{% endif %}">
-    
-      <button type="button" class="slider-button slider-button--prev {% if section.settings.slider_visual == 'dots' or section.settings.slider_visual == 'none' %} visually-hidden {% endif %}" name="previous" aria-label="{{ 'sections.slideshow.previous_slideshow' | t }}" aria-controls="Slider-{{ section.id }}">{% render 'icon-caret' %}</button>
-
-      <div class="slider-counter slider-counter--{{ section.settings.slider_visual }}{% if section.settings.slider_visual == 'counter' or section.settings.slider_visual == 'numbers' %} caption{% endif %}">
-        {%- if section.settings.slider_visual == 'counter' -%}
-          <span class="visually-hidden slider-counter--current">1</span>
-          <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-          <span class="visually-hidden slider-counter--total">{{ section.blocks.size }}</span>
-        {%- else-%}
-          <div class="slideshow__control-wrapper">
-            {%- for block in section.blocks -%}
-              <button class="slider-counter__link slider-counter__link--{{ section.settings.slider_visual }} link" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}" aria-controls="Slider-{{ section.id }}">
-                <span class="dot"></span>
-              </button>
-            {%- endfor -%}
-          </div>
-        {%- endif -%}
-      </div>
-      <button type="button" class="slider-button slider-button--next {% if section.settings.slider_visual == 'dots' or section.settings.slider_visual == 'none' %} hidden {% endif %}" name="next" aria-label="{{ 'sections.slideshow.next_slideshow' | t }}" aria-controls="Slider-{{ section.id }}">{% render 'icon-caret' %}</button>
-
-      {%- if section.settings.auto_rotate -%}
-        {% comment %} <button type="button" class="slideshow__autoplay slider-button no-js-hidden{% if section.settings.auto_rotate == false %} slideshow__autoplay--paused{% endif %}" aria-label="{{ 'sections.slideshow.pause_slideshow' | t }}">
-          {%- render 'icon-pause' -%}
-          {%- render 'icon-play' -%}
-        </button> {% endcomment %}
-      {%- endif -%}
-    </div>
-    <noscript>
-      <div class="slider-buttons">
-        <div class="slider-counter">
-          {%- for block in section.blocks -%}
-            <a href="#Slide-{{ section.id }}-{{ forloop.index }}" class="slider-counter__link link" aria-label="{{ 'sections.slideshow.load_slide' | t }} {{ forloop.index }} {{ 'general.slider.of' | t }} {{ forloop.length }}">
-              {{ forloop.index }}
-            </a>
-          {%- endfor -%}
-        </div>
-      </div>
-    </noscript>
-  {%- endif -%}
 </slideshow-component>
 
 {%- if request.design_mode -%}
@@ -267,15 +224,15 @@
           "label": "Dots"
         },
         {
-          "value": "counter",
+          "value": "arrows",
           "label": "Arrows"
         },
         {
-          "value": "numbers",
+          "value": "none",
           "label": "None"
         }
       ],
-      "default": "counter",
+      "default": "dots",
       "label": "t:sections.slideshow.settings.slider_visual.label"
     },
     {

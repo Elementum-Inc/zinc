@@ -3,13 +3,27 @@
 .slideshow-video {
   right: 0;
   bottom: 0;
-  width: 100%;
-  height: auto;
+  object-fit: cover;
 }
 
-.banner__text {
-  color: black;
+.slideshow__text.banner__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 54.5rem;
+  position: absolute;
 }
+
+.slideshow img,
+video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+/* .banner__text {
+  color: black;
+} */
 
 .h0 {
   font-style: normal;
@@ -44,7 +58,7 @@
 
 .slideshow__controls {
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   bottom: 10%;
   color: black;
   margin-left: auto;
@@ -60,15 +74,38 @@
   }
 }
 
-.slideshow__controls .slider-button {
-  background: white;
-  border-radius: 50%;
+.slideshow__controls--none {
   visibility: hidden;
 }
 
-.slider-button .hidden {
+.slider-counter--arrows {
+  visibility: hidden;
+  min-width: 0.1rem;
+}
+
+.slideshow__controls--dots .slider-button {
   visibility: hidden;
 }
+
+.slider-counter {
+  display: flex;
+  justify-content: center;
+  min-width: 0.1rem;
+}
+
+.slideshow__autoplay {
+  visibility: hidden;
+}
+
+.slideshow__controls .slider-button {
+  background: white;
+  border-radius: 50%;
+  /* visibility: hidden; */
+}
+
+/* .slider-button .hidden {
+  visibility: hidden;
+} */
 
 /* SHOPIFY STYLES  */
 
@@ -110,13 +147,6 @@ slideshow-component .slideshow.banner {
   .slideshow--placeholder.banner--adapt_image {
     height: 56rem;
   }
-}
-
-.slideshow__text.banner__box {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  max-width: 54.5rem;
 }
 
 .slideshow__text > * {
@@ -185,10 +215,10 @@ slideshow-component .slideshow.banner {
   border: 0.1rem solid rgba(var(--color-foreground), 0.08);
 }
 
-.slideshow__controls--top {
+/* .slideshow__controls--top {
   order: 2;
   z-index: 2;
-}
+} */
 
 @media screen and (max-width: 749px) {
   .slideshow__controls--border-radius-mobile {
@@ -205,7 +235,7 @@ slideshow-component .slideshow.banner {
 
 @media screen and (min-width: 750px) {
   .slideshow__controls {
-    position: relative;
+    position: absolute;
   }
 }
 
