@@ -662,10 +662,6 @@
 
       & .search__results {
         @apply w-full border-t border-scheme-fg;
-
-        /* .secondary & {
-          @apply border-gray-900;
-        } */
       }
 
       &-enter-active,
@@ -806,16 +802,13 @@
     }
   }
 
-  &__products {
+  &__products,
+  &__articles {
     @apply flex flex-wrap justify-center;
   }
 
-  &__product-card {
-    @apply basis-1/2 md:basis-1/4 text-center px-2 md:px-xs;
-
-    & .product-title {
-      @apply text-lg mt-2;
-    }
+  &__page {
+    @apply relative z-1;
   }
 
   &__more {
