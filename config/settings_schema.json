@@ -1235,6 +1235,80 @@
         "id": "predictive_search_show_articles",
         "label": "Show article in results",
         "default": true
+      },
+      {
+        "type": "header",
+        "content": "Cards"
+      },
+      {
+        "type": "select",
+        "id": "predictive_card_image_ratio",
+        "options": [
+          {
+            "value": "auto",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
+          },
+          {
+            "value": "square",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
+          },
+          {
+            "value": "lportrait",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
+          },
+          {
+            "value": "sportrait",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
+          },
+          {
+            "value": "widescreen",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
+          },
+          {
+            "value": "landscape",
+            "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
+          }
+        ],
+        "default": "auto",
+        "label": "t:settings_schema.global.settings.aspect_ratio.label"
+      },  
+      {
+        "type": "header",
+        "content": "Product Cards"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_card_show_price",
+        "default": false,
+        "label": "t:sections.main-search.settings.show_price.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_card_show_vendor",
+        "default": false,
+        "label": "t:sections.main-search.settings.show_vendor.label"
+      },
+      {
+        "type": "header",
+        "content": "Article Cards"
+      }, 
+      {
+        "type": "checkbox",
+        "id": "predictive_card_show_date",
+        "default": true,
+        "label": "t:sections.main-search.settings.article_show_date.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_card_show_author",
+        "default": false,
+        "label": "t:sections.main-search.settings.article_show_author.label"
+      },
+      {
+        "type": "checkbox",
+        "id": "predictive_card_show_tags",
+        "default": false,
+        "label": "Show tags"
       }
     ]
   },

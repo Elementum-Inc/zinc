@@ -20,7 +20,7 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
     text-button-fg
     focus:outline-none
     focus:ring
-    focus:ring-offset-2;
+    focus:ring-scheme-accent;
 
   &.primary {
     --button-bg: theme('colors.scheme-bg');

@@ -39,7 +39,7 @@ import Modal from '../vue/Modal.vue';
 
 const searchMount = document.querySelector('#searchMenuTop');
 const megamenuMount = document.querySelector('#megamenu');
-const modalMount = document.querySelector('#modal');
+const modalMount = document.querySelector('#modal') || false;
 
 const menuProps = {};
 const searchProps = {};
@@ -50,6 +50,7 @@ function fetchProps() {
   const megamenuBlocks = JSON.parse(megamenuMount.dataset.blocks);
   const topMenu = JSON.parse(megamenuMount.dataset.topmenu);
   const mobileLinks = JSON.parse(megamenuMount.dataset.mobilelinks);
+  const themeSettings = window.themeSettings;
   
   topMenu.forEach((m) => m.blocks = []);
   
@@ -70,34 +71,47 @@ function fetchProps() {
   searchProps.predictiveShowArticles = window.themeSettings.predictive_search_show_articles;
   searchProps.iconSize = window.themeSettings.icon_size;
   searchProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
-  searchProps.cardColorScheme = window.themeSettings.card_color_scheme;
-  searchProps.cardBorder = window.themeSettings.card_border;
-  searchProps.cardImageAspect = window.themeSettings.card_image_aspect;
-  searchProps.cardImageFit = window.themeSettings.card_image_fit;
-  searchProps.cardAnimate = window.themeSettings.card_hover_animate;
-  searchProps.cardAnimation = window.themeSettings.card_hover_animation;
   searchProps.settings = searchSettings;
+  searchProps.themeSettings = themeSettings;
+  searchProps.cardSettings = {
+    card_color_scheme: window.themeSettings.card_color_scheme,
+    card_border: window.themeSettings.card_border,
+    card_image_fit: window.themeSettings.card_image_fit,
+    card_hover_animate: window.themeSettings.product_card_hover_animate,
+    card_hover_animation: window.themeSettings.product_card_hover_animation,
+    image_ratio: window.themeSettings.predictive_card_image_ratio,
+    show_vendor: window.themeSettings.predictive_card_show_vendor,
+    show_price: window.themeSettings.predictive_card_show_price,
+    show_author: window.themeSettings.predictive_card_show_author,
+    show_date: window.themeSettings.predictive_card_show_date,
+    show_tags: window.themeSettings.predictive_card_show_tags
+  };
 
-  modalProps.settings = JSON.parse(modalMount.dataset.settings);
-  modalProps.blocks = JSON.parse(modalMount.dataset.blocks);
-  modalProps.form = modalMount.dataset.form;
-  modalProps.iconSize = window.themeSettings.icon_size;
-  modalProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
+  if (modalMount) {
+    modalProps.settings = JSON.parse(modalMount.dataset.settings);
+    modalProps.blocks = JSON.parse(modalMount.dataset.blocks);
+    modalProps.form = modalMount.dataset.form;
+    modalProps.iconSize = window.themeSettings.icon_size;
+    modalProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
+  }
 }
 
 fetchProps();
 
 const megamenuApp = (component, props) => createApp(component, props);
 const searchApp = (component, props) => createApp(component, props);
-const modalApp = (component, props) => createApp(component, props);
 
 var megamenuInit = megamenuApp(MegaMenu, menuProps);
 var searchInit = searchApp(SearchMenu, searchProps);
-var modalInit = modalApp(Modal, modalProps);
 
 megamenuInit.mount(megamenuMount);
 searchInit.mount(searchMount);
-modalInit.mount(modalMount);
+
+if (modalMount) {
+  const modalApp = (component, props) => createApp(component, props);
+  var modalInit = modalApp(Modal, modalProps);
+  modalInit.mount(modalMount);
+}
 
 
 document.addEventListener('DOMContentLoaded', () => {
