@@ -6706,7 +6706,10 @@ const _hoisted_37$1 = ["href"];
 const _hoisted_38$1 = ["href"];
 const _hoisted_39$1 = ["href"];
 const _hoisted_40$1 = ["href"];
-const _hoisted_41$1 = { class: "image_content__content" };
+const _hoisted_41$1 = {
+  key: 1,
+  class: "image_content__content"
+};
 const _hoisted_42$1 = { key: 0 };
 const _hoisted_43$1 = { key: 1 };
 const _hoisted_44$1 = ["html"];
@@ -7115,7 +7118,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                         srcsetWidths: [960, 640, 320],
                                         class: "image_content__image"
                                       }, null, 8, ["src"])) : createCommentVNode("", true),
-                                      createBaseVNode("div", _hoisted_41$1, [
+                                      block.settings.content_title || block.settings.content_subtitle || block.settings.content || block.settings.primary_button_text && block.settings.primary_button_url || block.settings.secondary_button_text && block.settings.secondary_button_url ? (openBlock(), createElementBlock("div", _hoisted_41$1, [
                                         block.settings.content_title ? (openBlock(), createElementBlock("h1", _hoisted_42$1, toDisplayString(block.settings.content_title), 1)) : createCommentVNode("", true),
                                         block.settings.content_subtitle ? (openBlock(), createElementBlock("h3", _hoisted_43$1, toDisplayString(block.settings.content_subtitle), 1)) : createCommentVNode("", true),
                                         block.settings.content ? (openBlock(), createElementBlock("p", {
@@ -7136,7 +7139,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                             class: "btn round secondary btn-outline"
                                           }, toDisplayString(block.settings.secondary_button_text), 9, _hoisted_46$1)) : createCommentVNode("", true)
                                         ], 2)
-                                      ])
+                                      ])) : createCommentVNode("", true)
                                     ], 2)) : createCommentVNode("", true)
                                   ], 2);
                                 }), 128))
@@ -7342,7 +7345,7 @@ const _hoisted_35 = {
   key: 1,
   class: "card-wrapper underline-links-hover"
 };
-const _hoisted_36 = /* @__PURE__ */ createBaseVNode("div", { class: "card__inner gradient" }, [
+const _hoisted_36 = /* @__PURE__ */ createBaseVNode("div", { class: "card__inner" }, [
   /* @__PURE__ */ createBaseVNode("div", { class: "card__content" }, [
     /* @__PURE__ */ createBaseVNode("div", { class: "card__information" }, [
       /* @__PURE__ */ createBaseVNode("h3", { class: "card__heading" }, [
@@ -7383,7 +7386,7 @@ const _hoisted_49 = { class: "price-item price-item--regular" };
 function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
   return $props.card ? (openBlock(), createElementBlock("div", _hoisted_1$2, [
     createBaseVNode("div", {
-      class: normalizeClass(["card gradient", [
+      class: normalizeClass(["card", [
         $props.card.featured_image ? "card--media" : "card--text",
         $props.cardAnimate ? $props.cardAnimation : "",
         `color-scheme--${$props.cardColorScheme}`,
@@ -7392,7 +7395,7 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
       ]])
     }, [
       createBaseVNode("div", {
-        class: normalizeClass(["card__inner gradient ratio", [$props.cardAspectRatio]]),
+        class: normalizeClass(["card__inner ratio", [$props.cardAspectRatio]]),
         style: normalizeStyle([`--ratio-percent: ${$options.ratio}%`])
       }, [
         $props.card.featured_image ? (openBlock(), createElementBlock("div", _hoisted_2$2, [
@@ -7499,7 +7502,7 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     ], 2)
   ])) : (openBlock(), createElementBlock("div", _hoisted_35, [
     createBaseVNode("div", {
-      class: normalizeClass(["card card--text gradient", [`color-scheme--${$props.themeSettings.product_card_color_scheme}`]])
+      class: normalizeClass(["card card--text", [`color-scheme--${$props.themeSettings.product_card_color_scheme}`]])
     }, [
       _hoisted_36,
       createBaseVNode("div", _hoisted_37, [

@@ -413,12 +413,12 @@ ul {
 .text\/html {
   color: rgb(var(--color-text));
 }
-.text {
-  color: rgb(var(--color-text));
-}
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
   color: rgba(194, 194, 194, var(--tw-text-opacity));
+}
+.text {
+  color: rgb(var(--color-text));
 }
 .text\/css {
   color: rgb(var(--color-text));
@@ -517,11 +517,6 @@ ul {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   -o-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-.duration {
-  -webkit-transition-duration: 150ms;
-  -o-transition-duration: 150ms;
-  transition-duration: 150ms;
 }
 .duration-300 {
   -webkit-transition-duration: 300ms;
@@ -797,7 +792,6 @@ p.small {
   }
 }:root {
   --color-scheme-fg: rgb(var(--theme-foreground));
-  --color-scheme-fgRGB: var(--theme-foreground);
   --color-scheme-bg: rgb(var(--color-background-1));
   --color-scheme-bgRGB: var(--color-background-1);
   --color-scheme-text: rgb(var(--color-text));
@@ -807,7 +801,6 @@ p.small {
 }
 .color-scheme--background-1, .color-scheme--primary, .color-scheme--background-2.inverse, .color-scheme--secondary.inverse {
   --color-scheme-fg: rgb(var(--theme-foreground));
-  --color-scheme-fgRGB: var(--theme-foreground);
   --color-scheme-bg: rgb(var(--color-background-1));
   --color-scheme-bgRGB: var(--color-background-1);
   --color-scheme-text: rgb(var(--color-text));
@@ -816,8 +809,7 @@ p.small {
   --color-scheme-border: rgb(var(--theme-foreground));
 }
 .color-scheme--background-2, .color-scheme--secondary, .color-scheme--background-1.inverse, .color-scheme--primary.inverse {
-  --color-scheme-fg: rgb(var(--theme-foreground));
-  --color-scheme-fgRGB: var(--theme-foreground);
+  --color-scheme-fg: #424242;
   --color-scheme-bg: rgb(var(--color-background-2));
   --color-scheme-bgRGB: var(--color-background-2);
   --color-scheme-text: rgb(var(--color-background-1));
@@ -827,7 +819,6 @@ p.small {
 }
 .color-scheme--accent-1 {
   --color-scheme-fg: rgb(var(--theme-foreground));
-  --color-scheme-fgRGB: var(--theme-foreground);
   --color-scheme-bg: rgb(var(--color-accent-1));
   --color-scheme-bgRGB: var(--color-accent-1);
   --color-scheme-text: rgb(var(--color-background-1));
@@ -845,7 +836,6 @@ p.small {
 }
 .color-scheme--accent-2 {
   --color-scheme-fg: rgb(var(--theme-foreground));
-  --color-scheme-fgRGB: var(--theme-foreground);
   --color-scheme-bg: rgb(var(--color-accent-2));
   --color-scheme-bgRGB: var(--color-accent-2);
   --color-scheme-text: rgb(var(--color-background-2));
@@ -1022,10 +1012,10 @@ p.small {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
   padding-left: 1rem;
-  padding-right: 1rem;
+  padding-right: 2rem;
 }
 .select .icon-caret {
-  right: 1rem;
+  right: 0.5rem;
 }.fade-enter-active, .fade-leave-active {
   -webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, filter, backdrop-filter;
   -o-transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
