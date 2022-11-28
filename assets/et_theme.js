@@ -6649,19 +6649,19 @@ const _hoisted_16$3 = [
   _hoisted_15$3
 ];
 const _hoisted_17$3 = ["href"];
-const _hoisted_18$2 = {
+const _hoisted_18$3 = {
   key: 0,
   class: "icon target expand"
 };
-const _hoisted_19$2 = ["width", "height"];
-const _hoisted_20$2 = /* @__PURE__ */ createBaseVNode("path", {
+const _hoisted_19$3 = ["width", "height"];
+const _hoisted_20$3 = /* @__PURE__ */ createBaseVNode("path", {
   "fill-rule": "evenodd",
   "clip-rule": "evenodd",
   d: "M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z",
   fill: "currentColor"
 }, null, -1);
 const _hoisted_21$2 = [
-  _hoisted_20$2
+  _hoisted_20$3
 ];
 const _hoisted_22$2 = {
   key: 0,
@@ -6855,7 +6855,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                           createBaseVNode("a", {
                                             href: child.url
                                           }, toDisplayString(child.title), 9, _hoisted_17$3),
-                                          child.links.length ? (openBlock(), createElementBlock("span", _hoisted_18$2, [
+                                          child.links.length ? (openBlock(), createElementBlock("span", _hoisted_18$3, [
                                             (openBlock(), createElementBlock("svg", {
                                               xmlns: "http://www.w3.org/2000/svg",
                                               "aria-hidden": "true",
@@ -6865,7 +6865,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                               viewBox: "0 0 10 10",
                                               width: $props.iconSize,
                                               height: $props.iconSize
-                                            }, _hoisted_21$2, 8, _hoisted_19$2))
+                                            }, _hoisted_21$2, 8, _hoisted_19$3))
                                           ])) : createCommentVNode("", true)
                                         ]),
                                         _: 2
@@ -7318,9 +7318,9 @@ const _hoisted_14$2 = { class: "article-card__header caption-spaced h5" };
 const _hoisted_15$2 = { key: 0 };
 const _hoisted_16$2 = { key: 1 };
 const _hoisted_17$2 = { key: 2 };
-const _hoisted_18$1 = ["id"];
-const _hoisted_19$1 = ["href", "id", "aria-labelledby"];
-const _hoisted_20$1 = { class: "card-information" };
+const _hoisted_18$2 = ["id"];
+const _hoisted_19$2 = ["href", "id", "aria-labelledby"];
+const _hoisted_20$2 = { class: "card-information" };
 const _hoisted_21$1 = {
   key: 0,
   class: "vendor"
@@ -7471,9 +7471,9 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
               id: [`CardLink-SearchModal-${$props.card.id}`],
               class: "full-unstyled-link",
               "aria-labelledby": [`CardLink-SearchModal-${$props.card.id}`, `Badge-SearchModal-${$props.card.id}`]
-            }, toDisplayString($props.cardType == "article" ? $props.card.title.length > 40 ? $props.card.title.substring(0, 30).concat("...") : $props.card.title : $props.card.title), 9, _hoisted_19$1)
-          ], 8, _hoisted_18$1),
-          createBaseVNode("div", _hoisted_20$1, [
+            }, toDisplayString($props.cardType == "article" ? $props.card.title.length > 40 ? $props.card.title.substring(0, 30).concat("...") : $props.card.title : $props.card.title), 9, _hoisted_19$2)
+          ], 8, _hoisted_18$2),
+          createBaseVNode("div", _hoisted_20$2, [
             $props.cardType == "product" && $props.showVendor ? (openBlock(), createElementBlock("div", _hoisted_21$1, [
               _hoisted_22$1,
               createBaseVNode("div", _hoisted_23$1, toDisplayString($props.card.vendor), 1)
@@ -7712,12 +7712,12 @@ const _hoisted_16$1 = {
   class: "search__trends"
 };
 const _hoisted_17$1 = { class: "search__trends-tags" };
-const _hoisted_18 = ["href"];
-const _hoisted_19 = {
+const _hoisted_18$1 = ["href"];
+const _hoisted_19$1 = {
   key: 1,
   class: "search__results--loaded"
 };
-const _hoisted_20 = { class: "search__products shopify-grid product-grid grid--2-col-tablet-down grid--4-col-desktop" };
+const _hoisted_20$1 = { class: "search__products shopify-grid product-grid grid--2-col-tablet-down grid--4-col-desktop" };
 const _hoisted_21 = { class: "search__articles shopify-grid product-grid grid--2-col-tablet-down grid--4-col-desktop" };
 const _hoisted_22 = { class: "search__pages" };
 const _hoisted_23 = ["href"];
@@ -7821,11 +7821,11 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                               key: trend.id,
                               href: trend.url,
                               class: "search__trends-tag btn secondary"
-                            }, toDisplayString(trend.title), 9, _hoisted_18);
+                            }, toDisplayString(trend.title), 9, _hoisted_18$1);
                           }), 128))
                         ])
                       ])) : createCommentVNode("", true),
-                      $options.resultsLength > 0 ? (openBlock(), createElementBlock("div", _hoisted_19, [
+                      $options.resultsLength > 0 ? (openBlock(), createElementBlock("div", _hoisted_19$1, [
                         createVNode(_component_TabGroup, null, {
                           default: withCtx(() => [
                             createVNode(_component_TabList, { class: "search__tabs" }, {
@@ -7857,7 +7857,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                                   default: withCtx(() => [
                                     $data.results.products.length ? (openBlock(), createBlock(_component_TabPanel, { key: 0 }, {
                                       default: withCtx(() => [
-                                        createBaseVNode("div", _hoisted_20, [
+                                        createBaseVNode("div", _hoisted_20$1, [
                                           (openBlock(true), createElementBlock(Fragment, null, renderList($data.results.products, (product) => {
                                             return openBlock(), createBlock(_component_card, {
                                               key: product.id,
@@ -8027,6 +8027,11 @@ const _hoisted_15 = {
 };
 const _hoisted_16 = ["href"];
 const _hoisted_17 = ["href"];
+const _hoisted_18 = { class: "section-modal__close" };
+const _hoisted_19 = /* @__PURE__ */ createBaseVNode("span", null, "Close", -1);
+const _hoisted_20 = [
+  _hoisted_19
+];
 function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_TransitionChild = resolveComponent("TransitionChild");
   const _component_DialogTitle = resolveComponent("DialogTitle");
@@ -8043,7 +8048,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
       createVNode(_component_Dialog, {
         as: "div",
         class: "section-modal-container",
-        onClose: _cache[1] || (_cache[1] = ($event) => $data.isOpen = false)
+        onClose: _cache[2] || (_cache[2] = ($event) => $data.isOpen = false)
       }, {
         default: withCtx(() => [
           createVNode(_component_TransitionChild, {
@@ -8134,6 +8139,13 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
                                 ])) : createCommentVNode("", true)
                               ]);
                             }), 128))
+                          ]),
+                          createBaseVNode("div", _hoisted_18, [
+                            createBaseVNode("button", {
+                              type: "button",
+                              class: "hover:text-gray-500",
+                              onClick: _cache[1] || (_cache[1] = ($event) => $data.isOpen = false)
+                            }, _hoisted_20)
                           ])
                         ])
                       ]),
