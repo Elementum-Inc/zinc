@@ -100,6 +100,7 @@
 
 .collection__description > * {
   margin: 0;
+  text-align: center;
 }
 
 .collection__title .title:not(:only-child) {
