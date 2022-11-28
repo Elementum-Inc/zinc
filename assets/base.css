@@ -4,31 +4,26 @@
 .color-background-1 {
   --color-foreground: var(--color-text);
   --color-background: var(--color-base-background-1);
-  --gradient-background: var(--gradient-base-background-1);
 }
 
 .color-background-2 {
   --color-foreground: var(--color-text);
   --color-background: var(--color-base-background-2);
-  --gradient-background: var(--gradient-base-background-2);
 }
 
 .color-inverse {
   --color-foreground: var(--color-base-background-1);
   --color-background: var(--color-text);
-  --gradient-background: rgb(var(--color-text));
 }
 
 .color-accent-1 {
   --color-foreground: var(--color-base-solid-button-labels);
   --color-background: var(--color-base-accent-1);
-  --gradient-background: var(--gradient-base-accent-1);
 }
 
 .color-accent-2 {
   --color-foreground: var(--color-base-solid-button-labels);
   --color-background: var(--color-base-accent-2);
-  --gradient-background: var(--gradient-base-accent-2);
 }
 
 .color-foreground-outline-button {
@@ -2635,12 +2630,6 @@ details-disclosure > details {
   .overflow-hidden-tablet {
     overflow: auto;
   }
-}
-
-.gradient {
-  background: rgb(var(--color-background));
-  background: var(--gradient-background);
-  background-attachment: fixed;
 }
 
 @media screen and (forced-colors: active) {

@@ -52,11 +52,22 @@
   }
 
   &--info-hover {
+    &:hover {
+      & .card__heading {
+        @apply underline underline-offset-4;
+      }
+    }
+
     & .card__content {
       @apply relative;
 
       &::before {
         @apply block absolute top-0 left-0 z-0 h-full w-full bg-scheme-bg transform duration-375 opacity-0;
+        content: '';
+      }
+
+      &::after {
+        @apply block absolute top-0 bottom-0 left-0 right-0 h-full w-full z-1;
         content: '';
       }
     }
@@ -69,11 +80,6 @@
 
     & .card__heading {
       @apply transform duration-375 translate-y-1/2;
-
-      & > a::after {
-        @apply block absolute top-0 bottom-0 left-0 right-0 h-full w-full z-1;
-        content: '';
-      }
     }
 
     & .card-information {
@@ -207,9 +213,7 @@
   }
 
   &__heading {
-    & > a {
-      @apply font-serif text-base lg:text-lg text-scheme-text mx-4;
-    }
+    @apply font-serif text-base lg:text-lg text-scheme-text mx-4 mb-1 lg:mb-2;
 
     .card--text .card__inner + .card__content & {
       @apply hidden;
@@ -262,6 +266,11 @@
   @apply rounded-content;
   text-align: var(--content-card-text-alignment);
 
+  .template-search & {
+    @apply rounded-product;
+    text-align: var(--product-card-text-alignment);
+  }
+
   &.card--info-hover {
     &.card--media {
       & .card__heading {
@@ -271,6 +280,10 @@
 
     & .card__information {
       align-self: var(--content-card-vertical-alignment);
+
+      .template-search & {
+        align-self: var(--product-card-vertical-alignment);
+      }
     }
 
     & .card__heading {
@@ -287,6 +300,10 @@
 
   & .card__content {
     justify-content: var(--content-card-vertical-alignment);
+
+    .template-search & {
+      justify-content: var(--product-card-vertical-alignment);
+    }
   }
 
   &__header {

@@ -53,7 +53,7 @@
     assign posts_displayed = section.settings.post_limit
   endif
 -%}
-<div class="section section-{{ section.id }} {% if section.settings.use_foreground %}section--foreground {% endif %}blog color-scheme--{{ section.settings.color_scheme }} gradient{% if section.settings.title == blank %} no-heading{% endif %}">
+<div class="section section-{{ section.id }} {% if section.settings.use_foreground %}section--foreground {% endif %}blog color-scheme--{{ section.settings.color_scheme }}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
     {%- unless section.settings.title == blank -%}
       <div class="container blog__title-wrapper">
@@ -133,7 +133,8 @@
                 show_author: section.settings.show_author,
                 show_tags: section.settings.show_tags,
                 show_excerpt: section.settings.show_excerpt,
-                hover_info: section.settings.card_hover_show_info
+                hover_info: section.settings.card_hover_show_info,
+                blog_list: false
               %}
             </li>
           {%- endfor -%}

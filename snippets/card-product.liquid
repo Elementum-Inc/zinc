@@ -41,18 +41,22 @@
     else
       assign ratio = 1
   endcase
+
+  if media_fit == nil
+    assign media_fit = settings.product_card_image_fit
+  endif
 %}
 
 {%- if card_product and card_product != empty -%}
-  <div class="card-wrapper underline-links-hover">
-    <div class="card color-scheme--{{ settings.product_card_color_scheme }} gradient
+  <div class="card-wrapper">
+    <div class="card color-scheme--{{ settings.product_card_color_scheme }}
       {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
       {% if settings.product_card_hover_animate %} {{ settings.product_card_hover_animation }}{% endif %}
       {% if extend_height %} card--extend-height{% endif %}
       {% if settings.product_card_border %} border border-scheme-fg{% endif %}
       {% if card_hover_info %} card--info-hover{% endif %}"
     >
-      <div class="card__inner {{ media_aspect_ratio }} gradient ratio" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%">
+      <div class="card__inner {{ media_aspect_ratio }} ratio" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%">
         {%- if card_product.featured_media -%}
           <div class="card__media">
             <div class="media media--transparent">
@@ -68,7 +72,7 @@
                 src="{{ card_product.featured_media | image_url: width: 533 }}"
                 sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                 alt="{{ card_product.featured_media.alt | escape }}"
-                class="card__image {{ media_aspect_ratio }} {{ settings.product_card_image_fit }}"
+                class="card__image {{ media_aspect_ratio }} {{ media_fit }}"
                 {% unless lazy_load == false %}loading="lazy"{% endunless %}
                 width="{{ card_product.featured_media.width }}"
                 height="{{ card_product.featured_media.height }}"
@@ -87,7 +91,7 @@
                   src="{{ card_product.media[1] | image_url: width: 533 }}"
                   sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 130 | divided_by: 4 }}px, (min-width: 990px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
                   alt=""
-                  class="card__image {{ media_aspect_ratio }} {{ settings.product_card_image_fit }}"
+                  class="card__image {{ media_aspect_ratio }} {{ media_fit }}"
                   loading="lazy"
                   width="{{ card_product.media[1].width }}"
                   height="{{ card_product.media[1].height }}"
@@ -97,7 +101,11 @@
           </div>
         {%- endif -%}
 
-        <div class="card__content">
+        {% if card_product.featured_media == nil or card_hover_info %}
+          <a href="{{ card_product.url }}" id="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}" class="card__content" aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}">
+        {% else %}
+          <div class="card__content">
+        {% endif %}
           {%- capture card-information -%}
             <div class="card-information">
               {%- if show_vendor -%}
@@ -138,9 +146,7 @@
           {% if card_product.featured_media == nil or card_hover_info %}
             <div class="card__information">
               <h3 class="card__heading" id="title-{{ section_id }}-{{ card_product.id }}">
-                <a href="{{ card_product.url }}" id="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }}" class="full-unstyled-link" aria-labelledby="StandardCardNoMediaLink-{{ section_id }}-{{ card_product.id }} NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}">
-                  {{ card_product.title | escape }}
-                </a>
+                {{ card_product.title | escape }}
               </h3>
               {%- if card_hover_info -%}
                 {{ card-information }}
@@ -154,14 +160,19 @@
               <span id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}" class="badge badge--bottom-left btn btn-{{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
             {%- endif -%}
           </div>
-        </div>
+
+        {% if card_product.featured_media == nil or card_hover_info %}
+          </a>
+        {% else %}
+          </div>
+        {% endif %}
       </div>
       {%- if card_hover_info == false or show_quick_add -%}
         <div class="card__content">
           {%- unless card_hover_info -%}
             <div class="card__information">
-              <h3 class="card__heading" id="title-{{ section_id }}-{{ card_product.id }}">
-                <a href="{{ card_product.url }}" id="CardLink-{{ section_id }}-{{ card_product.id }}" class="full-unstyled-link" aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}">
+              <h3 id="title-{{ section_id }}-{{ card_product.id }}">
+                <a href="{{ card_product.url }}" id="CardLink-{{ section_id }}-{{ card_product.id }}" class="card__heading full-unstyled-link" aria-labelledby="CardLink-{{ section_id }}-{{ card_product.id }} Badge-{{ section_id }}-{{ card_product.id }}">
                   {{ card_product.title | escape }}
                 </a>
               </h3>
@@ -242,9 +253,9 @@
     <div class="card
       card--text
       {% if extend_height %} card--extend-height{% endif %}
-      color-scheme--{{ settings.product_card_color_scheme }} gradient"
+      color-scheme--{{ settings.product_card_color_scheme }}"
     >
-      <div class="card__inner gradient">
+      <div class="card__inner">
         <div class="card__content">
           <div class="card__information">
             <h3 class="card__heading">

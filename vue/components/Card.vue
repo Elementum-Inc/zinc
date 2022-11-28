@@ -1,6 +1,6 @@
 <template>
   <div class="card-wrapper underline-links-hover" v-if="card">
-    <div class="card gradient"
+    <div class="card"
       :class="[
         card.featured_image ? 'card--media' : 'card--text',
         cardAnimate ? cardAnimation : '',
@@ -9,7 +9,7 @@
         cardType == 'article' ? 'article-card' : ''
       ]"
     >
-      <div class="card__inner gradient ratio"
+      <div class="card__inner ratio"
         :class="[cardAspectRatio]"
         :style="[`--ratio-percent: ${ratio}%`]">
         <div class="card__media" v-if="card.featured_image">
@@ -115,10 +115,10 @@
     </div>
   </div>
   <div class="card-wrapper underline-links-hover" v-else>
-    <div class="card card--text gradient"
+    <div class="card card--text"
       :class="[`color-scheme--${themeSettings.product_card_color_scheme}`]"
     >
-      <div class="card__inner gradient">
+      <div class="card__inner">
         <div class="card__content">
           <div class="card__information">
             <h3 class="card__heading">
