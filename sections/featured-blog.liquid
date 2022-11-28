@@ -54,7 +54,7 @@
   endif
 -%}
 <div class="section section-{{ section.id }} {% if section.settings.use_foreground %}section--foreground {% endif %}blog color-scheme--{{ section.settings.color_scheme }}{% if section.settings.title == blank %} no-heading{% endif %}">
-  <div class="page-width-desktop isolate{% if posts_displayed < 3 %} page-width-tablet{% endif %} section-{{ section.id }}-padding">
+  <div class="isolate section-{{ section.id }}-padding">
     {%- unless section.settings.title == blank -%}
       <div class="container blog__title-wrapper">
         <h2 id="SectionHeading-{{ section.id }}" class="blog__title h1">{{ section.settings.title | escape }}</h2>
