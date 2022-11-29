@@ -88,49 +88,51 @@
             </div>
           </div>
         {%- endif -%}
-        <div class="card__content">        
-          <div class="card__information">
-            {%- capture card-info-before -%}
-              <div class="card-information before">
-                <div class="article-card__header caption-spaced h5">
-                  {%- if show_tags and article.tags.size > 0 -%}
-                    <span>{{ article.tags | join: ', ' | truncate: 25 }}</span>
-                  {%- endif -%}
-                  {%- if show_date -%}
-                    <span>{{ article.published_at | time_tag: format: 'date' }}</span>
-                  {%- endif -%}
-                  {%- if show_author and blog_list == false -%}
-                    <span>{{ article.author }}</span>
-                  {%- endif -%}
-                  {%- if card_hover_info -%}
-                    {%- if article.comments_count > 0 and blog.comments_enabled? -%}
-                      <span class="card__comments">
-                        <span class="icon">{% render 'icon-comment' %}</span>
-                        <span>{{ article.comments_count }}</span>
-                        <span class="sr-only">comment(s)</span>
-                      </span>
-                  {%- endif -%}
-                {%- endif -%}
-                </div>
-              </div>
-            {% endcapture %}
 
-            {%- if card_hover_info -%}
-              {{ card-info-before }}
-            {%- endif -%}
-            <h4 class="card__heading">
-              <a href="{{ article.url }}" class="full-unstyled-link">
-                {{ article.title | truncate: 50 | escape }}
-              </a>
-            </h4>
-          </div>
-          {%- if show_badge -%}
-            <div class="card__badge {{ settings.badge_position }}">
-              <span class="badge btn btn-{{ settings.content_badge_color_scheme }}">{{ 'blogs.article.blog' | t }}</span>
+        {%- capture card-info-before -%}
+          <div class="card-information before">
+            <div class="article-card__header caption-spaced h5">
+              {%- if show_tags and article.tags.size > 0 -%}
+                <span>{{ article.tags | join: ', ' | truncate: 25 }}</span>
+              {%- endif -%}
+              {%- if show_date -%}
+                <span>{{ article.published_at | time_tag: format: 'date' }}</span>
+              {%- endif -%}
+              {%- if show_author and blog_list == false -%}
+                <span>{{ article.author }}</span>
+              {%- endif -%}
+              {%- if card_hover_info -%}
+                {%- if article.comments_count > 0 and blog.comments_enabled? -%}
+                  <span class="card__comments">
+                    <span class="icon">{% render 'icon-comment' %}</span>
+                    <span>{{ article.comments_count }}</span>
+                    <span class="sr-only">comment(s)</span>
+                  </span>
+                {%- endif -%}
+              {%- endif -%}
             </div>
-          {%- endif -%}
-        </div>
+          </div>
+        {% endcapture %}
+
+        {%- if card_hover_info -%}
+          <div class="card__content">        
+            <div class="card__information">
+              {{ card-info-before }}
+              <h4 class="card__heading">
+                <a href="{{ article.url }}" class="full-unstyled-link">
+                  {{ article.title | truncate: 50 | escape }}
+                </a>
+              </h4>
+            </div>
+            {%- if show_badge -%}
+              <div class="card__badge {{ settings.badge_position }}">
+                <span class="badge btn btn-{{ settings.content_badge_color_scheme }}">{{ 'blogs.article.blog' | t }}</span>
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
       </div>
+
       {%- unless hover_info -%}
         <div class="card__content">
           <div class="card__information">

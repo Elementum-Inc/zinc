@@ -155,11 +155,6 @@
   --border-radius: var(--card-corner-radius);
   --border-width: var(--card-border-width);
   --border-opacity: var(--card-border-opacity);
-  --shadow-horizontal-offset: var(--card-shadow-horizontal-offset);
-  --shadow-vertical-offset: var(--card-shadow-vertical-offset);
-  --shadow-blur-radius: var(--card-shadow-blur-radius);
-  --shadow-opacity: var(--card-shadow-opacity);
-  --shadow-visible: var(--card-shadow-visible);
 }
 
 .contains-content-container,
@@ -167,11 +162,6 @@
   --border-radius: var(--text-boxes-radius);
   --border-width: var(--text-boxes-border-width);
   --border-opacity: var(--text-boxes-border-opacity);
-  --shadow-horizontal-offset: var(--text-boxes-shadow-horizontal-offset);
-  --shadow-vertical-offset: var(--text-boxes-shadow-vertical-offset);
-  --shadow-blur-radius: var(--text-boxes-shadow-blur-radius);
-  --shadow-opacity: var(--text-boxes-shadow-opacity);
-  --shadow-visible: var(--text-boxes-shadow-visible);
 }
 
 .contains-media,
@@ -179,11 +169,6 @@
   --border-radius: var(--media-radius);
   --border-width: var(--media-border-width);
   --border-opacity: var(--media-border-opacity);
-  --shadow-horizontal-offset: var(--media-shadow-horizontal-offset);
-  --shadow-vertical-offset: var(--media-shadow-vertical-offset);
-  --shadow-blur-radius: var(--media-shadow-blur-radius);
-  --shadow-opacity: var(--media-shadow-opacity);
-  --shadow-visible: var(--media-shadow-visible);
 }
 
 /* base */
@@ -474,35 +459,6 @@ blockquote {
   }
 }
 
-/* .caption {
-  font-size: 1rem;
-  letter-spacing: 0.07rem;
-  line-height: calc(1 + 0.7 / var(--font-body-scale));
-}
-
-@media screen and (min-width: 768px) {
-  .caption {
-    font-size: 1.2rem;
-  }
-}
-
-.caption-spaced {
-  font-size: 1rem;
-  letter-spacing: 0.13rem;
-  line-height: calc(1 + 0.2 / var(--font-body-scale));
-  text-transform: uppercase;
-}
-
-.caption-spaced--medium {
-  font-size: 1.2rem;
-  letter-spacing: .16rem;
-}
-
-.caption-spaced--large {
-  font-size: 1.4rem;
-  letter-spacing: 0.18rem;
-} */
-
 /* .caption-large, */
 .customer .field input,
 .customer select,
@@ -777,90 +733,6 @@ summary::-webkit-details-marker {
     z-index: 2;
   }
 }
-
-/* base-focus */
-/*
-  Focus ring - default (with offset)
-*/
-
-/* *:focus {
-  outline: 0;
-  box-shadow: none;
-}
-
-*:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
-} */
-
-/* Fallback - for browsers that don't support :focus-visible, a fallback is set for :focus */
-/* .focused,
-.no-js *:focus {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 0.3rem;
-  box-shadow: 0 0 0 0.3rem rgb(var(--color-background)),
-    0 0 0.5rem 0.4rem rgba(var(--color-foreground), 0.3);
-} */
-
-/* Negate the fallback side-effect for browsers that support :focus-visible */
-/* .no-js *:focus:not(:focus-visible) {
-  outline: 0;
-  box-shadow: none;
-} */
-
-/*
-  Focus ring - inset
-*/
-
-/* .focus-inset:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: -0.2rem;
-  box-shadow: 0 0 0.2rem 0 rgba(var(--color-foreground), 0.3);
-}
-
-.focused.focus-inset,
-.no-js .focus-inset:focus {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: -0.2rem;
-  box-shadow: 0 0 0.2rem 0 rgba(var(--color-foreground), 0.3);
-}
-
-.no-js .focus-inset:focus:not(:focus-visible) {
-  outline: 0;
-  box-shadow: none;
-} */
-
-/*
-  Focus ring - none
-*/
-
-/* Dangerous for a11y - Use with care */
-/* .focus-none {
-  box-shadow: none !important;
-  outline: 0 !important;
-}
-
-.focus-offset:focus-visible {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 1rem;
-  box-shadow: 0 0 0 1rem rgb(var(--color-background)),
-    0 0 0.2rem 1.2rem rgba(var(--color-foreground), 0.3);
-}
-
-.focus-offset.focused,
-.no-js .focus-offset:focus {
-  outline: 0.2rem solid rgba(var(--color-foreground), 0.5);
-  outline-offset: 1rem;
-  box-shadow: 0 0 0 1rem rgb(var(--color-background)),
-    0 0 0.2rem 1.2rem rgba(var(--color-foreground), 0.3);
-}
-
-.no-js .focus-offset:focus:not(:focus-visible) {
-  outline: 0;
-  box-shadow: none;
-} */
 
 /* component-title */
 .title,
