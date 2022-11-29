@@ -244,6 +244,14 @@
       }
     },
     mounted() {
+      console.log('MEGA MENU VUE APP MOUNTED ???? and props -', this.settings )
+      // console.log('MEGA MENU PROPS ON MOUNT - before update', this.settings)
+      this.$forceUpdate();
+      
+      this.$nextTick(() => {
+        console.log('NEXT TICK - mounted ', this.settings);
+      });
+
       window.addEventListener('resize', () => { this.screen = window.innerWidth; });
       window.addEventListener('deviceorientation', () => { this.screen = window.innerWidth; });
 
@@ -295,6 +303,33 @@
           attributes: true
         });
       });
+    },
+    beforeUpdate() {
+      console.log('MEGA MENU VUE APP B E F O R E UPDATE')
+      // this.$forceUpdate();
+      this.$nextTick(() => {
+        console.log('NEXT TICK - before update ', this.settings);
+        console.log('~~ after force update in before update next tick')
+      });
+    },
+    updated() {
+      console.log('MEGA MENU VUE APP U P D A T E D')
+      this.$nextTick(() => {
+        console.log('NEXT TICK - updated ', this.settings);
+      });
+    },
+    beforeUnmount() {
+      console.log('MEGA MENU VUE APP B E F O R E unmount')
+      this.$nextTick(() => {
+        console.log('NEXT TICK - before unmount ', this.settings);
+      });
+    },
+    unmounted() {
+      console.log('MEGA MENU VUE APP UN!!!! - mounted')
+      this.$nextTick(() => {
+        console.log('NEXT TICK - unmounted ', this.settings);
+      });
+      // this.$forceUpdate();
     }
   }
 </script>
