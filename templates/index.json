@@ -405,6 +405,7 @@
     },
     "d55fe8da-09b5-45ca-a9fe-2303335b265f": {
       "type": "modal",
+      "disabled": true,
       "blocks": {
         "be28b901-b448-4781-9090-96cd86c7c059": {
           "type": "modal_title",
@@ -440,6 +441,12 @@
         "float_modal_content": true,
         "overlay": 0
       }
+    },
+    "75a076d9-c2f3-4ef0-829e-7ef771d2d2b8": {
+      "type": "test",
+      "settings": {
+        "name": "Dani"
+      }
     }
   },
   "order": [
@@ -451,6 +458,7 @@
     "c55cc47d-986c-4af3-889e-e9ebae0d046b",
     "0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1",
     "640c42c5-d9ac-402e-a3f7-b51bbbb0e04f",
-    "d55fe8da-09b5-45ca-a9fe-2303335b265f"
+    "d55fe8da-09b5-45ca-a9fe-2303335b265f",
+    "75a076d9-c2f3-4ef0-829e-7ef771d2d2b8"
   ]
 }

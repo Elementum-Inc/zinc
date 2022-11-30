@@ -32,6 +32,8 @@ if (window.location.href.includes('/search')) {
   import('../styles/sections/search.css');
 }
 
+import './vue/vue-loader';
+
 import { createApp } from 'vue';
 import MegaMenu from '../vue/MegaMenu.vue';
 import SearchMenu from '../vue/SearchMenu.vue';
@@ -172,6 +174,7 @@ if (Shopify.designMode) {
       console.log('unmounted');
 
       searchInit.mount();
+      searchInit.render();
 
       console.log('remounted');
       
