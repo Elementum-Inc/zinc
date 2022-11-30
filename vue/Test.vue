@@ -1,7 +1,7 @@
 <template>
   <div>
-    <!-- Hello, {{ settings.name }}. -->
-    Hello, world.
+    Hello, {{ settings.name }}.
+    <!-- Hello, world. -->
   </div>
 </template>
 

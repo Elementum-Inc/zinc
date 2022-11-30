@@ -1,4 +1,5 @@
-import { createApp, h } from 'vue';
+// import { createApp, h } from 'vue';
+import { createApp, h } from 'vue/dist/vue.esm-bundler';
 import Test from '../../../vue/Test.vue';
 
 export class TestApp {
@@ -46,7 +47,7 @@ export class TestApp {
         // it's not a big deal as we were using it in the editor mode only
         }
       }
-    }).mount(this._mountingNode);
+    }, this._appData).mount(this._mountingNode);
 
     console.log('mounted?')
   }
