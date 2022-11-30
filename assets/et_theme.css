@@ -385,6 +385,9 @@ ul {
 .fixed {
   position: fixed;
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
 }
@@ -413,12 +416,12 @@ ul {
 .text\/html {
   color: rgb(var(--color-text));
 }
-.text {
-  color: rgb(var(--color-text));
-}
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
   color: rgba(194, 194, 194, var(--tw-text-opacity));
+}
+.text {
+  color: rgb(var(--color-text));
 }
 .text\/css {
   color: rgb(var(--color-text));
@@ -518,11 +521,6 @@ ul {
   -o-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
-.duration {
-  -webkit-transition-duration: 150ms;
-  -o-transition-duration: 150ms;
-  transition-duration: 150ms;
-}
 .duration-300 {
   -webkit-transition-duration: 300ms;
   -o-transition-duration: 300ms;
@@ -532,6 +530,11 @@ ul {
   -webkit-transition-duration: 200ms;
   -o-transition-duration: 200ms;
   transition-duration: 200ms;
+}
+.duration {
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
 }
 .delay-2000 {
   -webkit-transition-delay: 2000ms;

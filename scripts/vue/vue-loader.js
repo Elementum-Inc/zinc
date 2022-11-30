@@ -1,12 +1,14 @@
-import { TestApp } from './apps/test';
+import { TestApp } from "./apps/test";
+import { MegaMenuApp } from "./apps/megamenu";
 
-document.addEventListener("DOMContentLoaded", function() {
-  console.log('vue test not loaded')
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("vue test not loaded");
 
   let activeApps = [];
   const appTypeClass = [];
 
   appTypeClass["test"] = TestApp;
+  // apptypeClass["megamenu"] = MegaMenuApp;
 
   window.vue.availableApps.forEach((app) => {
     console.log(app);
@@ -19,25 +21,28 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  console.log('vue test loaded')
+  console.log("vue test loaded");
 
   if (Shopify.designMode) {
     // editor mode helper function
-    const registerNewApps = function(event) {
+    const registerNewApps = function (event) {
       const eventSectionId = event.detail.sectionId;
-      event
-        .target
+      event.target
         .querySelectorAll(`div[data-app-id="${eventSectionId}"]`)
-        .forEach(appElement => {
-          const appType = appElement.getAttribute('data-app-type');
-          eval?.(`"use strict";(${document.getElementById(`${eventSectionId}-${appType}`).innerHTML})`);
+        .forEach((appElement) => {
+          const appType = appElement.getAttribute("data-app-type");
+          eval?.(
+            `"use strict";(${
+              document.getElementById(`${eventSectionId}-${appType}`).innerHTML
+            })`
+          );
         });
     };
     // Handle theme editor events
-    document.addEventListener("shopify:section:load", event => {
+    document.addEventListener("shopify:section:load", (event) => {
       const eventSectionId = event.detail.sectionId;
       registerNewApps(event);
-      window.vue.availableApps.forEach(app => {
+      window.vue.availableApps.forEach((app) => {
         // check if a new section has got apps
         if (app.id == eventSectionId) {
           // create instances for apps in the new section
@@ -52,11 +57,11 @@ document.addEventListener("DOMContentLoaded", function() {
       });
     });
 
-    document.addEventListener("shopify:section:unload", event => {
+    document.addEventListener("shopify:section:unload", (event) => {
       const eventSectionId = event.detail.sectionId,
         newActiveApps = [],
         newAvailableApps = [];
-      activeApps.forEach(app => {
+      activeApps.forEach((app) => {
         // check if a unloaded section had apps
         if (app.getSectionId() == eventSectionId) {
           // turn off and unmount apps from unloaded section
@@ -66,15 +71,15 @@ document.addEventListener("DOMContentLoaded", function() {
           newActiveApps.push(app);
         }
       });
-      
-      window.vue.availableApps.forEach(app => {
+
+      window.vue.availableApps.forEach((app) => {
         // check if a unloaded section had apps
         if (app.id != eventSectionId) {
           // save untouched apps aside
           newAvailableApps.push(app);
         }
       });
-      
+
       // reinit global app lists
       window.vue.availableApps = newAvailableApps;
       activeApps = newActiveApps;

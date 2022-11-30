@@ -1,47 +1,47 @@
-import 'vite/modulepreload-polyfill';
+import "vite/modulepreload-polyfill";
 
 // Windi import
-import 'virtual:windi.css';
+import "virtual:windi.css";
 
 // Globals
-import '../styles/theme.css';
-import '../styles/base/typography.css';
-import '../styles/base/colors.css';
-import '../styles/base/icons.css';
-import '../styles/base/buttons.css';
-import '../styles/base/forms.css';
-import '../styles/base/animations.css';
-import '../styles/layout/header.css';
+import "../styles/theme.css";
+import "../styles/base/typography.css";
+import "../styles/base/colors.css";
+import "../styles/base/icons.css";
+import "../styles/base/buttons.css";
+import "../styles/base/forms.css";
+import "../styles/base/animations.css";
+import "../styles/layout/header.css";
 
 // Sections
-import('../styles/sections/blog.css');
-import('../styles/sections/image-with-text.css');
-import('../styles/sections/hero.css');
-import('../styles/sections/modal.css');
+import("../styles/sections/blog.css");
+import("../styles/sections/image-with-text.css");
+import("../styles/sections/hero.css");
+import("../styles/sections/modal.css");
 
 // Snippets
-import('../styles/snippets/cards.css');
-import('../styles/snippets/price.css');
+import("../styles/snippets/cards.css");
+import("../styles/snippets/price.css");
 
 // By page
-if (window.location.href.includes('/collection/')) {
-  import('../styles/snippets/facets.css');
+if (window.location.href.includes("/collection/")) {
+  import("../styles/snippets/facets.css");
 }
 
-if (window.location.href.includes('/search')) {
-  import('../styles/sections/search.css');
+if (window.location.href.includes("/search")) {
+  import("../styles/sections/search.css");
 }
 
-import './vue/vue-loader';
+import "./vue/vue-loader";
 
-import { createApp } from 'vue';
-import MegaMenu from '../vue/MegaMenu.vue';
-import SearchMenu from '../vue/SearchMenu.vue';
-import Modal from '../vue/Modal.vue';
+import { createApp } from "vue";
+import MegaMenu from "../vue/MegaMenu.vue";
+import SearchMenu from "../vue/SearchMenu.vue";
+import Modal from "../vue/Modal.vue";
 
-const searchMount = document.querySelector('#searchMenuTop');
-const megamenuMount = document.querySelector('#megamenu');
-const modalMount = document.querySelector('#modal') || false;
+const searchMount = document.querySelector("#searchMenuTop");
+const megamenuMount = document.querySelector("#megamenu");
+const modalMount = document.querySelector("#modal") || false;
 
 const menuProps = {};
 const searchProps = {};
@@ -53,24 +53,28 @@ function fetchProps() {
   const topMenu = JSON.parse(megamenuMount.dataset.topmenu);
   const mobileLinks = JSON.parse(megamenuMount.dataset.mobilelinks);
   const themeSettings = window.themeSettings;
-  
-  topMenu.forEach((m) => m.blocks = []);
-  
+
+  topMenu.forEach((m) => (m.blocks = []));
+
   menuProps.iconSize = window.themeSettings.icon_size;
   menuProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
   menuProps.settings = megamenuSettings;
   menuProps.blocks = megamenuBlocks;
   menuProps.topMenu = topMenu;
   menuProps.mobileLinks = mobileLinks;
-  
+
   const searchSettings = JSON.parse(searchMount.dataset.settings);
-  
+
   searchProps.searchPosition = window.themeSettings.search_open_position;
   searchProps.trendingSearches = window.themeSettings.search_trends;
-  searchProps.predictiveSearchEnabled = window.themeSettings.predictive_search_enabled;
-  searchProps.predictiveShowNumber = window.themeSettings.predictive_search_show_number;
-  searchProps.predictiveShowPages = window.themeSettings.predictive_search_show_pages;
-  searchProps.predictiveShowArticles = window.themeSettings.predictive_search_show_articles;
+  searchProps.predictiveSearchEnabled =
+    window.themeSettings.predictive_search_enabled;
+  searchProps.predictiveShowNumber =
+    window.themeSettings.predictive_search_show_number;
+  searchProps.predictiveShowPages =
+    window.themeSettings.predictive_search_show_pages;
+  searchProps.predictiveShowArticles =
+    window.themeSettings.predictive_search_show_articles;
   searchProps.iconSize = window.themeSettings.icon_size;
   searchProps.iconStrokeWidth = window.themeSettings.icon_stroke_width;
   searchProps.settings = searchSettings;
@@ -86,7 +90,7 @@ function fetchProps() {
     show_price: window.themeSettings.predictive_card_show_price,
     show_author: window.themeSettings.predictive_card_show_author,
     show_date: window.themeSettings.predictive_card_show_date,
-    show_tags: window.themeSettings.predictive_card_show_tags
+    show_tags: window.themeSettings.predictive_card_show_tags,
   };
 
   if (modalMount) {
@@ -106,7 +110,7 @@ const searchApp = (component, props) => createApp(component, props);
 var megamenuInit = megamenuApp(MegaMenu, menuProps);
 var searchInit = searchApp(SearchMenu, searchProps);
 
-megamenuInit.mount(megamenuMount);
+// megamenuInit.mount(megamenuMount);
 searchInit.mount(searchMount);
 
 if (modalMount) {
@@ -115,29 +119,28 @@ if (modalMount) {
   modalInit.mount(modalMount);
 }
 
-
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
   if (JSON.parse(megamenuMount.dataset.settings).enable_sticky_header) {
-    const body = document.querySelector('body');
-    const header = document.querySelector('#shopify-section-header');
+    const body = document.querySelector("body");
+    const header = document.querySelector("#shopify-section-header");
     var ticking = false;
-  
-    document.addEventListener('scroll', () => {
-      var yPos = window.scrollY * .75;
-    
+
+    document.addEventListener("scroll", () => {
+      var yPos = window.scrollY * 0.75;
+
       if (!ticking) {
         window.requestAnimationFrame(() => {
           if (yPos < window.innerHeight) {
-            body.classList.remove('sticky-header-active');
-            header.classList.remove('sticky');
+            body.classList.remove("sticky-header-active");
+            header.classList.remove("sticky");
           } else {
-            body.classList.add('sticky-header-active');
-            header.classList.add('sticky');
+            body.classList.add("sticky-header-active");
+            header.classList.add("sticky");
           }
-  
+
           ticking = false;
         });
-    
+
         ticking = true;
       }
     });
@@ -165,19 +168,19 @@ if (Shopify.designMode) {
 
   // Handle theme editor events
   document.addEventListener("shopify:section:load", (event) => {
-    if (event.detail.sectionId == 'header') {
-      console.info('testing, hullo there', event);
+    if (event.detail.sectionId == "header") {
+      console.info("testing, hullo there", event);
 
       // megamenuInit.unmount();
       searchInit.unmount();
 
-      console.log('unmounted');
+      console.log("unmounted");
 
       searchInit.mount();
       searchInit.render();
 
-      console.log('remounted');
-      
+      console.log("remounted");
+
       // fetchProps();
 
       // console.log('new props fetched', searchProps);

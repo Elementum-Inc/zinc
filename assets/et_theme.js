@@ -13196,7 +13196,7 @@ function _sfc_render$5(_ctx, _cache, $props, $setup, $data, $options) {
     createCommentVNode(" Hello, world. ")
   ]);
 }
-const Test = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$5], ["__file", "/Users/dani/Elementum/Themes/zinc/vue/Test.vue"]]);
+const Test = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["render", _sfc_render$5], ["__file", "/Users/kristenburgess/Desktop/Elementum/starter-theme/vue/Test.vue"]]);
 class TestApp {
   constructor(id, data) {
     this._sectionId = id;
@@ -13234,64 +13234,6 @@ class TestApp {
     console.log("mounted?");
   }
 }
-document.addEventListener("DOMContentLoaded", function() {
-  console.log("vue test not loaded");
-  let activeApps = [];
-  const appTypeClass = [];
-  appTypeClass["test"] = TestApp;
-  window.vue.availableApps.forEach((app) => {
-    console.log(app);
-    if (appTypeClass[app.type]) {
-      const newApp = new appTypeClass[app.type](app.id, app.data);
-      activeApps.push(newApp);
-      newApp.init();
-    } else {
-      console.log(`App "${app.type}" was not registered`);
-    }
-  });
-  console.log("vue test loaded");
-  if (Shopify.designMode) {
-    const registerNewApps = function(event) {
-      const eventSectionId = event.detail.sectionId;
-      event.target.querySelectorAll(`div[data-app-id="${eventSectionId}"]`).forEach((appElement) => {
-        const appType = appElement.getAttribute("data-app-type");
-        eval == null ? void 0 : (0, eval)(`"use strict";(${document.getElementById(`${eventSectionId}-${appType}`).innerHTML})`);
-      });
-    };
-    document.addEventListener("shopify:section:load", (event2) => {
-      const eventSectionId2 = event2.detail.sectionId;
-      registerNewApps(event2);
-      window.vue.availableApps.forEach((app) => {
-        if (app.id == eventSectionId2) {
-          if (appTypeClass[app.type]) {
-            const newApp = new appTypeClass[app.type](app.id, app.data);
-            activeApps.push(newApp);
-            newApp.init();
-          } else {
-            console.log(`App "${app.type}" was not registered`);
-          }
-        }
-      });
-    });
-    document.addEventListener("shopify:section:unload", (event2) => {
-      const eventSectionId2 = event2.detail.sectionId, newActiveApps = [], newAvailableApps = [];
-      activeApps.forEach((app) => {
-        if (app.getSectionId() == eventSectionId2) {
-          app.kill();
-        } else {
-          newActiveApps.push(app);
-        }
-      });
-      window.vue.availableApps.forEach((app) => {
-        if (app.id != eventSectionId2) {
-          newAvailableApps.push(app);
-        }
-      });
-      window.vue.availableApps = newAvailableApps;
-      activeApps = newActiveApps;
-    });
-  }
-});
 function u$4(r2, n2, ...a2) {
   if (r2 in n2) {
     let e2 = n2[r2];
@@ -14551,7 +14493,7 @@ function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
     class: normalizeClass($props.classes)
   }, null, 10, _hoisted_1$4);
 }
-const ImageTag = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4], ["__file", "/Users/dani/Elementum/Themes/zinc/vue/components/ImageTag.vue"]]);
+const ImageTag = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4], ["__file", "/Users/kristenburgess/Desktop/Elementum/starter-theme/vue/components/ImageTag.vue"]]);
 const _sfc_main$3 = {
   name: "Mega Menu",
   components: { PopoverGroup: He, Popover: ce$1, PopoverButton: ke, PopoverPanel: Le, TabGroup: oe$1, TabList: se$1, Tab: de, TabPanels: fe$1, TabPanel: ce, Disclosure: A, DisclosureButton: G, DisclosurePanel: J, ImageTag },
@@ -15232,7 +15174,67 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
   });
 }
-const MegaMenu = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3], ["__file", "/Users/dani/Elementum/Themes/zinc/vue/MegaMenu.vue"]]);
+const MegaMenu = /* @__PURE__ */ _export_sfc(_sfc_main$3, [["render", _sfc_render$3], ["__file", "/Users/kristenburgess/Desktop/Elementum/starter-theme/vue/MegaMenu.vue"]]);
+document.addEventListener("DOMContentLoaded", function() {
+  console.log("vue test not loaded");
+  let activeApps = [];
+  const appTypeClass = [];
+  appTypeClass["test"] = TestApp;
+  window.vue.availableApps.forEach((app) => {
+    console.log(app);
+    if (appTypeClass[app.type]) {
+      const newApp = new appTypeClass[app.type](app.id, app.data);
+      activeApps.push(newApp);
+      newApp.init();
+    } else {
+      console.log(`App "${app.type}" was not registered`);
+    }
+  });
+  console.log("vue test loaded");
+  if (Shopify.designMode) {
+    const registerNewApps = function(event) {
+      const eventSectionId = event.detail.sectionId;
+      event.target.querySelectorAll(`div[data-app-id="${eventSectionId}"]`).forEach((appElement) => {
+        const appType = appElement.getAttribute("data-app-type");
+        eval == null ? void 0 : (0, eval)(
+          `"use strict";(${document.getElementById(`${eventSectionId}-${appType}`).innerHTML})`
+        );
+      });
+    };
+    document.addEventListener("shopify:section:load", (event2) => {
+      const eventSectionId2 = event2.detail.sectionId;
+      registerNewApps(event2);
+      window.vue.availableApps.forEach((app) => {
+        if (app.id == eventSectionId2) {
+          if (appTypeClass[app.type]) {
+            const newApp = new appTypeClass[app.type](app.id, app.data);
+            activeApps.push(newApp);
+            newApp.init();
+          } else {
+            console.log(`App "${app.type}" was not registered`);
+          }
+        }
+      });
+    });
+    document.addEventListener("shopify:section:unload", (event2) => {
+      const eventSectionId2 = event2.detail.sectionId, newActiveApps = [], newAvailableApps = [];
+      activeApps.forEach((app) => {
+        if (app.getSectionId() == eventSectionId2) {
+          app.kill();
+        } else {
+          newActiveApps.push(app);
+        }
+      });
+      window.vue.availableApps.forEach((app) => {
+        if (app.id != eventSectionId2) {
+          newAvailableApps.push(app);
+        }
+      });
+      window.vue.availableApps = newAvailableApps;
+      activeApps = newActiveApps;
+    });
+  }
+});
 const _sfc_main$2 = {
   name: "Card",
   components: { ImageTag },
@@ -15535,7 +15537,7 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
     ], 2)
   ]));
 }
-const Card = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["__file", "/Users/dani/Elementum/Themes/zinc/vue/components/Card.vue"]]);
+const Card = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["__file", "/Users/kristenburgess/Desktop/Elementum/starter-theme/vue/components/Card.vue"]]);
 const _sfc_main$1 = {
   name: "SearchMenu",
   components: { Popover: ce$1, PopoverButton: ke, PopoverPanel: Le, TabGroup: oe$1, TabList: se$1, Tab: de, TabPanels: fe$1, TabPanel: ce, ImageTag, Card },
@@ -15981,7 +15983,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
   });
 }
-const SearchMenu = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1], ["__file", "/Users/dani/Elementum/Themes/zinc/vue/SearchMenu.vue"]]);
+const SearchMenu = /* @__PURE__ */ _export_sfc(_sfc_main$1, [["render", _sfc_render$1], ["__file", "/Users/kristenburgess/Desktop/Elementum/starter-theme/vue/SearchMenu.vue"]]);
 const _sfc_main = {
   name: "Modal",
   components: {
@@ -16163,7 +16165,7 @@ function _sfc_render(_ctx, _cache, $props, $setup, $data, $options) {
     _: 1
   }, 8, ["show"]);
 }
-const Modal = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/dani/Elementum/Themes/zinc/vue/Modal.vue"]]);
+const Modal = /* @__PURE__ */ _export_sfc(_sfc_main, [["render", _sfc_render], ["__file", "/Users/kristenburgess/Desktop/Elementum/starter-theme/vue/Modal.vue"]]);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_blog.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_image-with-text.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_hero.css")] : void 0, import.meta.url);
@@ -16230,9 +16232,8 @@ function fetchProps() {
 fetchProps();
 const megamenuApp = (component, props) => createApp(component, props);
 const searchApp = (component, props) => createApp(component, props);
-var megamenuInit = megamenuApp(MegaMenu, menuProps);
+megamenuApp(MegaMenu, menuProps);
 var searchInit = searchApp(SearchMenu, searchProps);
-megamenuInit.mount(megamenuMount);
 searchInit.mount(searchMount);
 if (modalMount) {
   const modalApp = (component, props) => createApp(component, props);

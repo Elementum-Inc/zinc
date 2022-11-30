@@ -91,7 +91,33 @@
   {% endcapture %}
   {% comment %} menu {% endcomment %}
   {% if section.settings.menu %}
-    <div id="megamenu"
+
+  {% comment %} {%- assign app_type = 'megamenu' -%}
+
+<div class="header__menu order-1"
+  data-app-type="{{ app_type }}"
+  data-app-id="{{ section.id }}">
+  <script id="{{ section.id }}-{{ app_type }}">
+    window.vue.availableApps.push({
+      type: "{{ app_type }}",
+      id: "{{ section.id }}",
+      data: {
+        "settings": {{ section.settings | json }},
+        "blocks": [
+            {% for block in section.blocks %}
+              {{ block.settings | json }},
+            {% endfor %}
+          ],
+        "topMenu": {{ topmenuJson | strip_newlines }},
+        "mobileLinks": {{ mobileLinksJson | strip_newlines }}
+      }
+    })
+  </script>
+</div> {% endcomment %}
+
+
+    {% comment %} /// OLD MEGAMENU CODE ///  {% endcomment %}
+{% comment %} <div id="megamenu"
       class="header__menu order-1"
       data-settings="{{ section.settings | json | escape }}"
       data-blocks="{{ blocks | strip_newlines | escape }}"
@@ -99,7 +125,8 @@
       data-mobilelinks="{{ mobileLinksJson | strip_newlines | escape }}"
       data-app-type="mega-menu"
       data-app
-    ></div>
+    ></div>  {% endcomment %}
+
   {% endif %}
   {% comment %} user menu {% endcomment %}
   <div class="header__user-menu order-2 {{ section.settings.user_menu_type }} icons-{{ section.settings.menu_icon_position }}">
@@ -110,7 +137,7 @@
       data-app
     ></div>
 
-    {%- assign app_type = 'test' -%}
+    {% comment %} {%- assign app_type = 'test' -%}
 
     <div class=""
       data-app-type="{{ app_type }}"
@@ -124,7 +151,7 @@
           }
         })
       </script>
-    </div>
+    </div> {% endcomment %}
     {% comment %} user {% endcomment %}
     <a class="header__icon-link account-link" href="{{ routes.account_url }}">
       <span class="icon target">
