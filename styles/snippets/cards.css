@@ -12,6 +12,10 @@
         @apply opacity-100;
       }
     }
+
+    & .card__heading {
+      @apply underline underline-offset-4;
+    }
   }
 
   .featured-collection-slider & {
@@ -52,13 +56,7 @@
   }
 
   &--info-hover {
-    &:hover {
-      & .card__heading {
-        @apply underline underline-offset-4;
-      }
-    }
-
-    & .card__content {
+    & .card__content:first-of-type {
       @apply relative;
 
       &::before {
@@ -183,6 +181,13 @@
 
   &__information {
     @apply mt-2;
+
+    a.card__heading {
+      &::after {
+        @apply block absolute top-0 bottom-0 left-0 right-0 h-full w-full z-1;
+        content: '';
+      }
+    }
   }
 
   &-information {
@@ -254,10 +259,18 @@
 
   & .quick-add {
     @apply m-4 mt-0;
+
+    &__submit {
+      @apply px-2 w-full max-w-xs;
+    }
   }
 
   & .loading-overlay__spinner {
     @apply w-4 ml-2 align-middle;
+
+    > svg .path {
+      @apply stroke-scheme-accent;
+    }
   }
 }
 
