@@ -1,10 +1,10 @@
 import { createApp, h } from "vue/dist/vue.esm-bundler";
-import MegaMenu from "../../../vue/MegaMenu.vue";
+import SearchMenu from "../../../vue/SearchMenu.vue";
 
-export class MegaMenuApp {
+export class SearchMenuApp {
   constructor(id, data) {
     this._sectionId = id;
-    this._appType = "megamenu";
+    this._appType = "search";
     this._appInstance = null;
     this._appData = data;
     this._mountingNode = null;
@@ -32,7 +32,7 @@ export class MegaMenuApp {
       {
         el: this._mountingNode,
         render: () =>
-          h(MegaMenu, {
+          h(SearchMenu, {
             props: {
               ...this._appData,
             },
