@@ -1134,7 +1134,8 @@ summary::-webkit-details-marker {
   }
 
   .grid--peek.slider .grid__item:first-of-type {
-    margin-left: 1.5rem;
+    /* // added in attempt to fix slider positioning and count //  */
+    margin-left: 32rem;
   }
 
   .grid--peek.slider .grid__item:last-of-type {
