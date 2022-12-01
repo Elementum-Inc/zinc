@@ -70,10 +70,6 @@
   margin-bottom: 0;
 }
 
-.card__heading:last-child {
-  margin-bottom: 0;
-}
-
 .card__heading a::after {
   bottom: 0;
   content: "";
