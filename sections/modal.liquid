@@ -22,13 +22,13 @@
   {% endstyle %}
 {% endif %}
 
-{% capture form_code %}
-  {% for block in section.blocks %}
-    {% if block.type == 'email_form' %}
-      {% if block.settings.email_form_code != '' %}
+{%- capture form_code -%}
+  {%- for block in section.blocks -%}
+    {%- if block.type == 'email_form' -%}
+      {%- if block.settings.email_form_code != '' -%}
         {{ block.settings.email_form_code }}
-      {% else %}
-        {% form 'customer', class: 'section-modal__form' %}
+      {%- else -%}
+        {%- form 'customer', class: 'section-modal__form' -%}
           <input type="hidden" name="contact[tags]" value="newsletter">
           <div class="section-modal__form--field-wrapper">
             <div class="field">
@@ -42,13 +42,13 @@
                 autocorrect="off"
                 autocapitalize="off"
                 autocomplete="email"
-                {% if form.errors %}
+                {%- if form.errors -%}
                   autofocus
                   aria-invalid="true"
                   aria-describedby="ModalNewsletter-error--{{ section.id }}"
-                {% elsif form.posted_successfully? %}
+                {%- elsif form.posted_successfully? -%}
                   aria-describedby="ModalNewsletter-success--{{ section.id }}"
-                {% endif %}
+                {%- endif -%}
                 placeholder="{{ block.settings.email_form_input_placeholder }}"
                 required
               >
@@ -56,7 +56,7 @@
                 {{ block.settings.email_form_input_placeholder }}
               </label>
               <button type="submit" class="section-modal__form--button field__button" name="commit" id="ModalSubscribe" aria-label="{{ block.settings.email_form_button_text }}">
-                {% render 'icon-arrow' %}
+                {%- render 'icon-arrow' -%}
               </button>
             </div>
             <button type="submit" class="section-modal__submit btn secondary" name="commit" id="ModalSubscribeButton" aria-label="{{ block.settings.email_form_button_text }}">
@@ -72,51 +72,63 @@
             </h4>
             <p class="caption-spaced">{{ block.settings.email_form_success_message }}</p>
           {%- endif -%}
-        {% endform %}
-      {% endif %}
-    {% endif %}
-  {% endfor %}
-{% endcapture %}
+        {%- endform -%}
+      {%- endif -%}
+    {%- endif -%}
+  {%- endfor -%}
+{%- endcapture -%}
 
-{% capture blocks %}
+{%- capture blocks -%}
   [
-    {% for block in section.blocks %}
+    {%- for block in section.blocks -%}
       {
         "id": "{{ block.id }}",
         "settings": {
-          {% case block.type %}
-            {% when 'modal_title' %}
+          {%- case block.type -%}
+            {%- when 'modal_title' -%}
               "modal_content_title": "{{ block.settings.modal_content_title }}"
-            {% when 'modal_subtitle' %}
+            {%- when 'modal_subtitle' -%}
               "modal_content_subtitle": "{{ block.settings.modal_content_subtitle }}"
-            {% when 'modal_body' %}
+            {%- when 'modal_body' -%}
               "modal_content_body": "{{ block.settings.modal_content_body }}"
-            {% when 'modal_buttons' %}
+            {%- when 'modal_buttons' -%}
               "modal_content_primary_cta_text": "{{ block.settings.modal_content_primary_cta_text }}",
               "modal_content_primary_cta_url": "{{ block.settings.modal_content_primary_cta_url }}",
               "modal_content_secondary_cta_text": "{{ block.settings.modal_content_secondary_cta_text }}",
               "modal_content_secondary_cta_url": "{{ block.settings.modal_content_secondary_cta_url }}"
-            {% when 'email_form' %}
+            {%- when 'email_form' -%}
               "email_form_input_placeholder": "{{ block.settings.email_form_input_placeholder }}",
               "email_form_button_text": "{{ block.settings.email_form_button_text }}",
               "email_form_success_title": "{{ block.settings.email_form_success_title }}",
               "email_form_success_message": "{{ block.settings.email_form_success_message | escape }}"
-          {% endcase %}
+          {%- endcase -%}
         },
         "shopify_attributes": {{ block.shopify_attributes | json }},
         "type": "{{ block.type }}"
-      }{% unless forloop.last %},{% endunless %}
-    {% endfor %}
+      }{%- unless forloop.last -%},{%- endunless -%}
+    {%- endfor -%}
   ]
-{% endcapture %}
+{%- endcapture -%}
 
-{% comment %} modal {% endcomment %}
-  <div id="modal"
-    data-settings="{{ section.settings | json | escape }}"
-    data-blocks="{{ blocks | strip_newlines | escape }}"
-    data-form="{{ form_code | strip_newlines | escape }}"
-  >
-  </div>
+{%- assign app_type = 'modal' -%}
+
+<div id="modal"
+  data-app-type="{{ app_type }}"
+  data-app-id="{{ section.id }}">
+  <script id="{{ section.id }}-{{ app_type }}">
+    window.vue.availableApps.push({
+      type: "{{ app_type }}",
+      id: "{{ section.id }}",
+      data: {
+        settings: {{ section.settings | json }},
+        blocks: {{ blocks }},
+        form: `{{ form_code | strip_newlines }}`,
+        iconSize: {{ settings.icon_size }},
+        iconStrokeWidth: {{ settings.icon_stroke_width }},
+      }
+    })
+  </script>
+</div>
 
 {% schema %}
 {
