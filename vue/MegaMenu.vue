@@ -93,7 +93,7 @@
               {{ link.title }}
             </PopoverButton>
             <transition name="slideDown">
-              <PopoverPanel v-if="link.blocks.length" class="header__menu-content" :class="[settings.mm_type]">
+              <PopoverPanel v-if="link.blocks && link.blocks.length" class="header__menu-content" :class="[settings.mm_type]">
                 <div v-for="block in link.blocks" :key="block.id" class="submenu-block" :class="[block.type, block.type == 'menu' ? `images-${block.settings.submenu_item_image}` : '']">
                   <div v-if="block.type == 'menu'" :class="[`images-${block.settings.submenu_item_image}__inner`, `${block.type}__inner`, `color-scheme--${settings.mm_color_scheme}`]">
                     <h4 v-if="block.settings.submenu_title != ''">{{ block.settings.submenu_title }}</h4>
@@ -252,6 +252,8 @@
     mounted() {
       window.addEventListener('resize', () => { this.screen = window.innerWidth; });
       window.addEventListener('deviceorientation', () => { this.screen = window.innerWidth; });
+
+      this.topMenu.forEach((m) => (m.blocks = []));
 
       this.blocks.forEach((block) => {
         var match = this.topMenu.find((item) => item.title.toLowerCase() == block.settings.title.toLowerCase());

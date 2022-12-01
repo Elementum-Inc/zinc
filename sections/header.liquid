@@ -24,7 +24,7 @@
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
-<header class="header {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }} logo-{{ section.settings.logo_position }}">
+<header id="header" class="header {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }} logo-{{ section.settings.logo_position }}{% if section.settings.enable_sticky_header %} sticky{% endif %}">
   {% comment %} logo {% endcomment %}
   <h1 class="header__logo order-none">
     <a href="{{ routes.root_url }}">
@@ -89,26 +89,69 @@
       {% endfor %}
     ]
   {% endcapture %}
+
   {% comment %} menu {% endcomment %}
   {% if section.settings.menu %}
-    <div id="megamenu"
-      class="header__menu order-1"
-      data-settings="{{ section.settings | json | escape }}"
-      data-blocks="{{ blocks | strip_newlines | escape }}"
-      data-topmenu="{{ topmenuJson | strip_newlines | escape }}"
-      data-mobilelinks="{{ mobileLinksJson | strip_newlines | escape }}"
-      data-app-type="mega-menu"
-      data-app
-    ></div>
+    {%- assign app_type = 'megamenu' -%}
+    <div class="header__menu order-1"
+      data-app-type="{{ app_type }}"
+      data-app-id="{{ section.id }}">
+      <script id="{{ section.id }}-{{ app_type }}">
+        window.vue.availableApps.push({
+          type: "{{ app_type }}",
+          id: "{{ section.id }}",
+          data: {
+            "iconSize": {{ settings.icon_size }},
+            "iconStrokeWidth": {{ settings.icon_stroke_width }},
+            "settings": {{ section.settings | json }},
+            "blocks": {{ blocks }},
+            "topMenu": {{ topmenuJson }},
+            "mobileLinks": {{ mobileLinksJson }}
+          }
+        })
+      </script>
+    </div>
   {% endif %}
+
   {% comment %} user menu {% endcomment %}
   <div class="header__user-menu order-2 {{ section.settings.user_menu_type }} icons-{{ section.settings.menu_icon_position }}">
     {% comment %} search {% endcomment %}
+    {%- assign app_type = 'search' -%}
     <div id="searchMenuTop"
-      data-settings="{{ section.settings | json | escape }}"
-      data-app-type="search-menu"
-      data-app
-    ></div>
+      data-app-type="{{ app_type }}"
+      data-app-id="{{ section.id }}">
+      <script id="{{ section.id }}-{{ app_type }}">
+        window.vue.availableApps.push({
+          type: "{{ app_type }}",
+          id: "{{ section.id }}",
+          data: {
+            iconSize: {{ settings.icon_size }},
+            iconStrokeWidth: {{ settings.icon_stroke_width }},
+            searchPosition: "{{ settings.search_open_position }}",
+            predictiveSearchEnabled: {{ settings.predictive_search_enabled }},
+            predictiveShowPages: {{ settings.predictive_search_show_pages }},
+            predictiveShowArticles: {{ settings.predictive_search_show_articles }},
+            trendingSearches: "{{ settings.search_trends }}",
+            cardColorScheme: "{{ settings.card_color_scheme }}",
+            cardBorder: {{ settings.card_border }},
+            cardImageAspect: "{{ settings.predictive_card_image_ratio }}",
+            cardImageFit: "{{ settings.card_image_fit }}",
+            cardAnimate: {{ settings.product_card_hover_animate }},
+            cardAnimation: "{{ settings.product_card_hover_animation }}",
+            cardShowVendor: {{ settings.predictive_card_show_vendor }},
+            cardShowPrice: {{ settings.predictive_card_show_price }},
+            cardShowAuthor: {{ settings.predictive_card_show_author }},
+            cardShowDate: {{ settings.predictive_card_show_date }},
+            cardShowTags: {{ settings.predictive_card_show_tags }},
+            badgePosition: "{{ settings.badge_position }}",
+            soldOutColor: "{{ settings.sold_out_badge_color_scheme }}",
+            saleColor: "{{ settings.sale_badge_color_scheme }}",
+            currencyCodeEnabled: {{ settings.currency_code_enabled }},
+          }
+        })
+      </script>
+    </div>
+
     {% comment %} user {% endcomment %}
     <a class="header__icon-link account-link" href="{{ routes.account_url }}">
       <span class="icon target">

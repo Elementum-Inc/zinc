@@ -46,17 +46,17 @@
               </a>
             </h3>
           </div>
-          <div class="card__badge" :class="[themeSettings.badge_position]">
+          <div class="card__badge" :class="badgePosition">
               <span v-if="card.available == false"
                 :id="[`NoMediaStandardBadge-SearchModal-${card.id}`]"
                 class="badge badge--bottom-left btn"
-                :class="[`btn-${themeSettings.sold_out_badge_color_scheme}`]">
+                :class="[`btn-${soldOutColor}`]">
                 Sold Out
               </span>
               <span v-if="card.compare_at_price > card.price && card.available"
                 :id="[`NoMediaStandardBadge-SearchModal-${card.id}`]"
                 class="badge badge--bottom-left btn"
-                :class="[`btn-${themeSettings.sale_badge_color_scheme}`]">
+                :class="[`btn-${saleColor}`]">
                 On Sale
               </span>
           </div>
@@ -116,7 +116,7 @@
   </div>
   <div class="card-wrapper underline-links-hover" v-else>
     <div class="card card--text"
-      :class="[`color-scheme--${themeSettings.product_card_color_scheme}`]"
+      :class="[`color-scheme--${cardColorScheme}`]"
     >
       <div class="card__inner">
         <div class="card__content">
@@ -179,7 +179,10 @@ export default {
     showDate: Boolean,
     showTags: Boolean,
     lazyLoad: Boolean,
-    themeSettings: Object
+    badgePosition: String,
+    soldOutColor: String,
+    saleColor: String,
+    currencyCodeEnabled: Boolean,
   },
   computed: {
     ratio() {
@@ -206,7 +209,7 @@ export default {
       var price = this.card.price || 1999;
       var money_price = new Intl.NumberFormat(`${window.Shopify.locale}-${window.Shopify.country}`, { style: 'currency', currency: window.Shopify.currency.active }).format(price)
 
-      if (this.themeSettings.currency_code_enabled) {
+      if (this.currencyCodeEnabled) {
         var money_price = money_price + ` ${window.Shopify.currency.active}`
       }
 
@@ -222,7 +225,7 @@ export default {
       if (compare_at_price) {
         var money_price = new Intl.NumberFormat(`${window.Shopify.locale}-${window.Shopify.country}`, { style: 'currency', currency: window.Shopify.currency.active }).format(compare_at_price)
   
-        if (this.themeSettings.currency_code_enabled) {
+        if (this.currencyCodeEnabled) {
           var money_price = money_price + ` ${window.Shopify.currency.active}`
         }
   
