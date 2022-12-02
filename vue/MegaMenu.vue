@@ -160,12 +160,13 @@
                                 sizes="(min-width: 1440px) 960px, (min-width: 1280px) 640px, 320px"
                                 :srcsetWidths="[960, 640, 320]"
                                 class="image_content__image"></image-tag>
-                    <div class="image_content__content" v-if="
-                      block.settings.content_title ||
-                      block.settings.content_subtitle ||
-                      block.settings.content ||
-                      (block.settings.primary_button_text && block.settings.primary_button_url) ||
-                      (block.settings.secondary_button_text && block.settings.secondary_button_url)"
+                    <div class="image_content__content"
+                      :class="[block.settings.image ? 'float' : '']"
+                      v-if="block.settings.content_title ||
+                        block.settings.content_subtitle ||
+                        block.settings.content ||
+                        (block.settings.primary_button_text && block.settings.primary_button_url) ||
+                        (block.settings.secondary_button_text && block.settings.secondary_button_url)"
                     >
                       <h1 v-if="block.settings.content_title">{{ block.settings.content_title }}</h1>
                       <h3 v-if="block.settings.content_subtitle">{{ block.settings.content_subtitle }}</h3>

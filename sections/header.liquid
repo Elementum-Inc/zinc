@@ -43,14 +43,21 @@
       {%- endif -%}
     </a>
   </h1>
+
   {% comment %} theme-check-disable LiquidTag {% endcomment %}
-  {% capture topmenuJson %}
-    {% render 'menu-json', menu: section.settings.menu %}
-  {% endcapture %}
-  {% capture mobileLinksJson %}
-    {% render 'menu-json', menu: section.settings.mm_mobile_links %}
-  {% endcapture %}
+  {%- capture topmenuJson -%}
+    {%- render 'menu-json', menu: section.settings.menu -%}
+  {%- endcapture -%}
+
+  {%- capture mobileLinksJson -%}
+    {%- if section.settings.mm_mobile_links -%}
+      {%- render 'menu-json', menu: section.settings.mm_mobile_links -%}
+    {%- else -%}
+      null
+    {%- endif -%}
+  {%- endcapture -%}
   {% comment %} theme-check-enable LiquidTag {% endcomment %}
+
   {% capture blocks %}
     [
       {% for block in section.blocks %}
@@ -58,7 +65,7 @@
           "id": "{{ block.id }}",
           "settings": {% if block.type == 'menu' %}
             {
-              "submenu": {% render 'menu-json', menu: block.settings.submenu %},
+              "submenu": {%- if block.settings.submenu -%}{% render 'menu-json', menu: block.settings.submenu %}{%- else -%}null{%- endif -%},
               "submenu_title": "{{ block.settings.submenu_title }}",
               "submenu_item_image": "{{ block.settings.submenu_item_image }}",
               "title": "{{ block.settings.title }}" 
@@ -68,14 +75,16 @@
               "content": "{{ block.settings.content }}",
               "content_title": "{{ block.settings.content_title }}",
               "content_subtitle": "{{ block.settings.content_subtitle }}",
-              "image": {
-                "alt": "{{ block.settings.image.alt }}",
-                "aspect_ratio": {{ block.settings.image.aspect_ratio }},
-                "height": "{{ block.settings.image.height }}",
-                "id": {{ block.settings.image.id }},
-                "url": "{{ block.settings.image | image_url }}",
-                "width": "{{ block.settings.image.width }}"
-              },
+              {%- if block.settings.image -%}
+                "image": {
+                  "alt": "{{ block.settings.image.alt }}",
+                  "aspect_ratio": {{ block.settings.image.aspect_ratio }},
+                  "height": "{{ block.settings.image.height }}",
+                  "id": {{ block.settings.image.id }},
+                  "url": "{{ block.settings.image | image_url }}",
+                  "width": "{{ block.settings.image.width }}"
+                },
+              {%- endif -%}
               "primary_button_text": "{{ block.settings.primary_button_text }}",
               "primary_button_url": "{{ block.settings.primary_button_url }}",
               "secondary_button_text": "{{ block.settings.secondary_button_text }}",
