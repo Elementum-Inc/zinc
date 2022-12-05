@@ -4,6 +4,7 @@
 
 {{ 'et_cards.css' | asset_url | stylesheet_tag }}
 {{ 'et_price.css' | asset_url | stylesheet_tag }}
+{{ 'et_featured-collection.css' | asset_url | stylesheet_tag }}
 
 <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'template-collection.css' | asset_url }}" media="print" onload="this.media='all'">
@@ -83,8 +84,7 @@ collectionBtn2.addEventListener("click", function() {
       {% if section.settings.collection2.products_count %}
         <div id="collection-tab-container">
           <button id="collection-tab-1" class="collection-tab-btn"> {% if section.settings.collection-title1 != "" %} {{ section.settings.collection-title1 }} {% else %} {{ section.settings.collection.title }} {% endif %} </button>
-
-          <button id="collection-tab-1" class="collection-tab-btn"> {% if section.settings.collection-title2 != "" %} {{ section.settings.collection-title2 }} {% else %} {{ section.settings.collection2.title }} {% endif %} </button>
+          <button id="collection-tab-2" class="collection-tab-btn"> {% if section.settings.collection-title2 != "" %} {{ section.settings.collection-title2 }} {% else %} {{ section.settings.collection2.title }} {% endif %} </button>
         </div>
       {% endif %}
 

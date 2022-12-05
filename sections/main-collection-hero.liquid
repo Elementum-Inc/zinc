@@ -23,7 +23,7 @@
   {% endstyle %}
 {% endif %}
 
-<div class="hero hero--{{ section.id }}{% if collectionImageAvailable %} has-image{% endif %}{% if section.settings.overlay > 0 %} has-overlay{% endif %} {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }}">
+<div class="hero hero--{{ section.id }}{% if collectionImageAvailable %} has-image{% endif %}{% if collectionImageAvailable and section.settings.overlay > 0 %} has-overlay{% endif %} {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }}">
   <div class="hero__inner">
     {%- if collectionImageAvailable -%}
       <div class="hero__image-wrapper {{ section.settings.height }}">

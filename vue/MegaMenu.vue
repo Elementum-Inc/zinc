@@ -68,7 +68,7 @@
           </a>
         </div>
         <div class="mobile-footer">
-          <a href="/account">
+          <a :href="window.routes.account_url">
             Account
             <span class="icon target">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize" fill="none" stroke="#000" :stroke-width="iconStrokeWidth" stroke-linecap="round" stroke-linejoin="round">
@@ -278,12 +278,8 @@
               var isDropdown = activeTopLink.nextElementSibling.classList.contains('header__menu-dropdown');
             }
 
-            console.log('top links', topLinks);
-            console.log('top link', activeTopLink);
-            console.log('dropdown?', isDropdown);
             if ((menuTrigger.getAttribute('aria-expanded') == 'true' && window.innerWidth < 1024) ||
                 (activeTopLink && !isDropdown && activeTopLink.getAttribute('aria-expanded') == 'true')) { // not actually a true boolean so have to compare text values
-              console.log('hello??????????')
                   document.body.classList.add('menu--opened');
               header.classList.add('menu--opened');
             } else if (menuTrigger.getAttribute('aria-expanded') == 'false' ||

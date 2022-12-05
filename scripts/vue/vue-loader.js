@@ -11,7 +11,6 @@ document.addEventListener("DOMContentLoaded", function() {
   appTypeClass["modal"] = ModalApp;
 
   window.vue.availableApps.forEach((app) => {
-    console.log(app);
     if (appTypeClass[app.type]) {
       const newApp = new appTypeClass[app.type](app.id, app.data);
       activeApps.push(newApp);
