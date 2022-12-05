@@ -701,8 +701,8 @@ ul {
 .media--landscape {
   aspect-ratio: 3/2;
 }
-.newsletter-form [data-lastpass] {
-  display: none;
+.collection--empty .title {
+  font-family: var(--font-heading-family);
 }.page-title {
   font-family: var(--font-heading-family);
   font-size: 3.5rem;

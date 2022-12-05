@@ -12508,11 +12508,7 @@ const _sfc_main$3 = {
           if (activeTopLink) {
             var isDropdown = activeTopLink.nextElementSibling.classList.contains("header__menu-dropdown");
           }
-          console.log("top links", topLinks);
-          console.log("top link", activeTopLink);
-          console.log("dropdown?", isDropdown);
           if (menuTrigger.getAttribute("aria-expanded") == "true" && window.innerWidth < 1024 || activeTopLink && !isDropdown && activeTopLink.getAttribute("aria-expanded") == "true") {
-            console.log("hello??????????");
             document.body.classList.add("menu--opened");
             header2.classList.add("menu--opened");
           } else if (menuTrigger.getAttribute("aria-expanded") == "false" || !triggerVisible && !activeTopLink) {
@@ -12588,7 +12584,7 @@ const _hoisted_22$2 = {
 };
 const _hoisted_23$2 = ["href"];
 const _hoisted_24$2 = { class: "mobile-footer" };
-const _hoisted_25$2 = { href: "/account" };
+const _hoisted_25$2 = ["href"];
 const _hoisted_26$2 = { class: "icon target" };
 const _hoisted_27$2 = ["width", "height", "stroke-width"];
 const _hoisted_28$1 = /* @__PURE__ */ createBaseVNode("circle", {
@@ -12831,7 +12827,9 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                 }), 128))
               ])) : createCommentVNode("", true),
               createBaseVNode("div", _hoisted_24$2, [
-                createBaseVNode("a", _hoisted_25$2, [
+                createBaseVNode("a", {
+                  href: _ctx.window.routes.account_url
+                }, [
                   createTextVNode(" Account "),
                   createBaseVNode("span", _hoisted_26$2, [
                     (openBlock(), createElementBlock("svg", {
@@ -12846,7 +12844,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                       "stroke-linejoin": "round"
                     }, _hoisted_32$1, 8, _hoisted_27$2))
                   ])
-                ])
+                ], 8, _hoisted_25$2)
               ])
             ]),
             _: 1
@@ -14216,7 +14214,6 @@ document.addEventListener("DOMContentLoaded", function() {
   appTypeClass["search"] = SearchMenuApp;
   appTypeClass["modal"] = ModalApp;
   window.vue.availableApps.forEach((app) => {
-    console.log(app);
     if (appTypeClass[app.type]) {
       const newApp = new appTypeClass[app.type](app.id, app.data);
       activeApps.push(newApp);
@@ -14267,6 +14264,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+__vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_featured-collection.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_blog.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_image-with-text.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_hero.css")] : void 0, import.meta.url);
