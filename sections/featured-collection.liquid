@@ -81,8 +81,6 @@
           {% for block in section.blocks %}
             <button id="collection-tab-{{ forloop.index }}" aria-controls="featured-collection-{{ forloop.index }}" class="collection-tab-btn">{%- if block.settings.title != "" -%}{{ block.settings.title }}{%- else -%}{{ block.settings.collection.title }}{%- endif -%}</button>
           {% endfor %}
-          {% comment %} <button id="collection-tab-1" class="collection-tab-btn">{%- if section.settings.collection-title1 != "" -%}{{ section.settings.collection-title1 }}{%- else -%}{{ section.settings.collection.title }}{%- endif -%}</button>
-          <button id="collection-tab-2" class="collection-tab-btn">{%- if section.settings.collection-title2 != "" -%}{{ section.settings.collection-title2 }}{%- else -%}{{ section.settings.collection2.title }}{%- endif -%}</button> {% endcomment %}
         </div>
       {% endif %}
 
