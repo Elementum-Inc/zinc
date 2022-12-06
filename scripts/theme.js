@@ -14,6 +14,7 @@ import "../styles/base/animations.css";
 import "../styles/layout/header.css";
 
 // Sections
+import("../styles/sections/featured-collection.css");
 import("../styles/sections/blog.css");
 import("../styles/sections/image-with-text.css");
 import("../styles/sections/hero.css");

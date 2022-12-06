@@ -68,7 +68,7 @@
           </a>
         </div>
         <div class="mobile-footer">
-          <a href="/account">
+          <a :href="window.routes.account_url">
             Account
             <span class="icon target">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize" fill="none" stroke="#000" :stroke-width="iconStrokeWidth" stroke-linecap="round" stroke-linejoin="round">
@@ -160,12 +160,13 @@
                                 sizes="(min-width: 1440px) 960px, (min-width: 1280px) 640px, 320px"
                                 :srcsetWidths="[960, 640, 320]"
                                 class="image_content__image"></image-tag>
-                    <div class="image_content__content" v-if="
-                      block.settings.content_title ||
-                      block.settings.content_subtitle ||
-                      block.settings.content ||
-                      (block.settings.primary_button_text && block.settings.primary_button_url) ||
-                      (block.settings.secondary_button_text && block.settings.secondary_button_url)"
+                    <div class="image_content__content"
+                      :class="[block.settings.image ? 'float' : '']"
+                      v-if="block.settings.content_title ||
+                        block.settings.content_subtitle ||
+                        block.settings.content ||
+                        (block.settings.primary_button_text && block.settings.primary_button_url) ||
+                        (block.settings.secondary_button_text && block.settings.secondary_button_url)"
                     >
                       <h1 v-if="block.settings.content_title">{{ block.settings.content_title }}</h1>
                       <h3 v-if="block.settings.content_subtitle">{{ block.settings.content_subtitle }}</h3>
@@ -277,12 +278,8 @@
               var isDropdown = activeTopLink.nextElementSibling.classList.contains('header__menu-dropdown');
             }
 
-            console.log('top links', topLinks);
-            console.log('top link', activeTopLink);
-            console.log('dropdown?', isDropdown);
             if ((menuTrigger.getAttribute('aria-expanded') == 'true' && window.innerWidth < 1024) ||
                 (activeTopLink && !isDropdown && activeTopLink.getAttribute('aria-expanded') == 'true')) { // not actually a true boolean so have to compare text values
-              console.log('hello??????????')
                   document.body.classList.add('menu--opened');
               header.classList.add('menu--opened');
             } else if (menuTrigger.getAttribute('aria-expanded') == 'false' ||

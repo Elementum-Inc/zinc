@@ -85,6 +85,34 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "blocks": {
+        "a3e8bd03-23c8-4f47-838e-da7119c64ff9": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": "demo-collection"
+          }
+        },
+        "adbe9b77-6856-4021-95aa-153c4186c305": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": "collection1"
+          }
+        },
+        "62543165-655e-48e2-8bce-e2b210eb9ccc": {
+          "type": "collection",
+          "settings": {
+            "title": "",
+            "collection": "collection10"
+          }
+        }
+      },
+      "block_order": [
+        "a3e8bd03-23c8-4f47-838e-da7119c64ff9",
+        "adbe9b77-6856-4021-95aa-153c4186c305",
+        "62543165-655e-48e2-8bce-e2b210eb9ccc"
+      ],
       "settings": {
         "title": "FEATURED PRODUCTS",
         "heading_size": "h2",

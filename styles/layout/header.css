@@ -542,7 +542,11 @@
       }
 
       &__content {
-        @apply absolute bottom-12 right-12 w-full max-w-3/4 p-4;
+        @apply p-12;
+
+        &.float {
+          @apply absolute bottom-12 right-12 w-full max-w-3/4 p-4;
+        }
 
         &::before {
           @apply absolute top-0 left-0 h-full w-full bg-scheme-bg opacity-25 z-0;
