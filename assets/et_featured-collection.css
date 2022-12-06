@@ -13,11 +13,9 @@
 }
 
 .collection-tab-btn {
-  height: 33px;
-  width: 208px;
-  background: #d9d9d94d;
-  border-radius: 10px;
-  margin-bottom: 1rem;
+  background-color: var(--color-scheme-fg);
+  margin-top: .25rem;
+  margin-bottom: .25rem;
 }
 
 .featured-collection-divider {

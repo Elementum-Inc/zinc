@@ -13,11 +13,7 @@
 }
 
 .collection-tab-btn {
-  height: 33px;
-  width: 208px;
-  background: #d9d9d94d;
-  border-radius: 10px;
-  margin-bottom: 1rem;
+  @apply bg-scheme-fg my-1;
 }
 
 .featured-collection-divider {

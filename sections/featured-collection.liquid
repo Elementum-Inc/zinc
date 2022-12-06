@@ -79,7 +79,7 @@
       {% if section.blocks.size > 1 %}
         <div id="collection-tab-container">
           {% for block in section.blocks %}
-            <button id="collection-tab-{{ forloop.index }}" aria-controls="featured-collection-{{ forloop.index }}" class="collection-tab-btn">{%- if block.settings.title != "" -%}{{ block.settings.title }}{%- else -%}{{ block.settings.collection.title }}{%- endif -%}</button>
+            <button id="collection-tab-{{ forloop.index }}" aria-controls="featured-collection-{{ forloop.index }}" class="collection-tab-btn btn">{%- if block.settings.title != "" -%}{{ block.settings.title }}{%- else -%}{{ block.settings.collection.title }}{%- endif -%}</button>
           {% endfor %}
         </div>
       {% endif %}

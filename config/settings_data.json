@@ -177,8 +177,6 @@
           "mm_mobile_links": "mobile-links-example",
           "user_menu_type": "expanded",
           "menu_icon_position": "top",
-          "enable_country_selector": false,
-          "enable_language_selector": false,
           "padding_top": 20,
           "padding_bottom": 20
         }
@@ -627,8 +625,6 @@
             "mm_mobile_links": "",
             "user_menu_type": "minimal",
             "menu_icon_position": "right",
-            "enable_country_selector": false,
-            "enable_language_selector": false,
             "padding_top": 12,
             "padding_bottom": 12
           }
@@ -712,7 +708,7 @@
         }
       },
       "content_for_index": [
-  
+
       ]
     },
     "Muted": {
@@ -894,8 +890,6 @@
             "mm_mobile_links": "",
             "user_menu_type": "minimal",
             "menu_icon_position": "top",
-            "enable_country_selector": false,
-            "enable_language_selector": false,
             "padding_top": 12,
             "padding_bottom": 12
           }
@@ -979,7 +973,7 @@
         }
       },
       "content_for_index": [
-  
+
       ]
     }
   }
