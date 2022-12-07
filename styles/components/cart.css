@@ -1,13 +1,16 @@
 .cart {
-  position: relative;
-  display: block;
+  @apply block relative
+  /* position: relative;
+  display: block; */;
 }
 
 .cart__footer {
-  border-top: 1px solid gray !important;
+  @apply !border-solid border-gray-500 border-1  
+  /* border-top: 1px solid gray !important; */;
 }
 
 #Cart-note {
-  font-size: 1.1rem;
-  font-style: italic;
+  @apply font-lg italic
+  /* font-size: 1.1rem;
+  font-style: italic; */;
 }
