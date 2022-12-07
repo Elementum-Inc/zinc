@@ -585,7 +585,7 @@
     }
 
     &.icons-top {
-      & .header__icon-link {
+      &:not(.compact) .header__icon-link {
         @apply flex-wrap justify-center;
 
         & .label {
@@ -612,7 +612,7 @@
   }
 
   &__icon-link {
-    @apply inline-block inline-flex;
+    @apply relative inline-flex;
 
     &:not(:first-child) {
       @apply md:ml-4;
@@ -628,6 +628,34 @@
 
     &.account-link {
       @apply <sm:hidden;
+    }
+  }
+
+  .cart-link {
+    &__bubble {
+      @apply bg-scheme-accent
+        text-scheme-bg
+        rounded-full
+        w-[1.5rem]
+        h-[1.5rem]
+        text-sm
+        text-center;
+
+      & > span {
+        @apply leading-[1.5rem];
+      }
+    }
+
+    & > .cart-link__bubble {
+      @apply ml-1;
+    }
+
+    & .icon {
+      @apply relative;
+
+      & > .cart-link__bubble {
+        @apply absolute top-0 -right-2;
+      }
     }
   }
 }

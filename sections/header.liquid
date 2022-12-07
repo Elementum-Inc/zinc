@@ -169,25 +169,28 @@
      <span class="label">Account</span>
     </a>
     {% comment %} cart {% endcomment %}
-    <a class="header__icon-link cart-link" href="{{ routes.cart_url }}" id="cart-icon-bubble">
+    <a class="header__icon-link cart-link" href="{{ routes.cart_url }}">
       <span class="icon target">
         {% render 'icon-shopping-bag' %}
 
-        {%- if cart != empty -%}
-        <div class="cart-count-bubble">
+        {%- if cart != empty and section.settings.user_menu_type != 'compact' -%}
+          <div class="cart-link__bubble">
+            {%- if cart.item_count < 100 -%}
+              <span aria-hidden="true">{{ cart.item_count }}</span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+        {%- endif -%}
+      </span>
+      <span class="label">Cart</span>
+      {%- if cart != empty and section.settings.user_menu_type == 'compact' -%}
+        <span class="cart-link__bubble">
           {%- if cart.item_count < 100 -%}
             <span aria-hidden="true">{{ cart.item_count }}</span>
           {%- endif -%}
           <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-        </div>
+        </span>
       {%- endif -%}
-      
-      </span>
-     <span class="label">Cart
-
-     
-     </span>
-     
     </a>
   </div>
 </header>
