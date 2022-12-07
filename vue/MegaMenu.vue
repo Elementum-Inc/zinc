@@ -68,7 +68,7 @@
           </a>
         </div>
         <div class="mobile-footer">
-          <a :href="window.routes.account_url">
+          <a :href="accountRoute">
             Account
             <span class="icon target">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize" fill="none" stroke="#000" :stroke-width="iconStrokeWidth" stroke-linecap="round" stroke-linejoin="round">
@@ -80,7 +80,6 @@
               </svg>
             </span>
           </a>
-          <!-- payment/language selector -->
         </div>
       </PopoverPanel>
     </transition>
@@ -239,7 +238,8 @@
       settings: Object,
       blocks: Array,
       topMenu: Object,
-      mobileLinks: Object
+      mobileLinks: Object,
+      accountRoute: String
     },
     computed: {
     },

@@ -12473,7 +12473,8 @@ const _sfc_main$3 = {
     settings: Object,
     blocks: Array,
     topMenu: Object,
-    mobileLinks: Object
+    mobileLinks: Object,
+    accountRoute: String
   },
   computed: {},
   watch: {},
@@ -12827,9 +12828,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                 }), 128))
               ])) : createCommentVNode("", true),
               createBaseVNode("div", _hoisted_24$2, [
-                createBaseVNode("a", {
-                  href: _ctx.window.routes.account_url
-                }, [
+                createBaseVNode("a", { href: $props.accountRoute }, [
                   createTextVNode(" Account "),
                   createBaseVNode("span", _hoisted_26$2, [
                     (openBlock(), createElementBlock("svg", {
@@ -13489,7 +13488,6 @@ const _sfc_main$1 = {
   data() {
     return {
       query: "",
-      trends: null,
       results: null,
       resultsHeight: 0
     };
@@ -13501,7 +13499,7 @@ const _sfc_main$1 = {
     predictiveSearchEnabled: Boolean,
     predictiveShowPages: Boolean,
     predictiveShowArticles: Boolean,
-    trendingSearches: String,
+    trendingSearches: Object,
     cardColorScheme: String,
     cardBorder: Boolean,
     cardRadius: Number,
@@ -13517,7 +13515,8 @@ const _sfc_main$1 = {
     badgePosition: String,
     soldOutColor: String,
     saleColor: String,
-    currencyCodeEnabled: Boolean
+    currencyCodeEnabled: Boolean,
+    accountRoute: String
   },
   computed: {
     resultsLength() {
@@ -13564,37 +13563,6 @@ const _sfc_main$1 = {
       } else {
         this.results = null;
       }
-    },
-    async getTrends(handle) {
-      try {
-        const GET_MENU = {
-          query: `
-              query {
-                menu(handle: "${handle}") {
-                  title
-                  items {
-                    id
-                    title
-                    url
-                  }
-                }
-              }
-            `
-        };
-        let res = await fetch("/api/2022-07/graphql.json", {
-          method: "POST",
-          credentials: "include",
-          headers: {
-            "Content-Type": "application/json",
-            "X-Shopify-Storefront-Access-Token": "1c34b11ba2613f92ad45fe82bace6f83"
-          },
-          body: JSON.stringify(GET_MENU)
-        });
-        let json = await res.json();
-        this.trends = json.data.menu;
-      } catch (error) {
-        console.error("Error occurred fetching search trends, please investigate.", error);
-      }
     }
   },
   mounted() {
@@ -13623,9 +13591,6 @@ const _sfc_main$1 = {
     } catch (e2) {
       console.error("Error during observer creation.");
       console.error(e2);
-    }
-    if (this.trendingSearches) {
-      this.getTrends(this.trendingSearches);
     }
   }
 };
@@ -13774,9 +13739,9 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
                     createBaseVNode("div", _hoisted_14$1, [
                       _hoisted_15$1,
                       $props.trendingSearches ? (openBlock(), createElementBlock("div", _hoisted_16$1, [
-                        createBaseVNode("h2", null, toDisplayString($data.trends.title), 1),
+                        createBaseVNode("h2", null, toDisplayString($props.trendingSearches.title), 1),
                         createBaseVNode("div", _hoisted_17$1, [
-                          (openBlock(true), createElementBlock(Fragment, null, renderList($data.trends.items, (trend) => {
+                          (openBlock(true), createElementBlock(Fragment, null, renderList($props.trendingSearches.links, (trend) => {
                             return openBlock(), createElementBlock("a", {
                               key: trend.id,
                               href: trend.url,
