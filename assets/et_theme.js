@@ -92,6 +92,7 @@ const buttons = "";
 const forms = "";
 const animations = "";
 const header = "";
+const footer = "";
 function makeMap(str, expectsLowerCase) {
   const map = /* @__PURE__ */ Object.create(null);
   const list = str.split(",");

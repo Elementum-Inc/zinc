@@ -12,6 +12,7 @@ import "../styles/base/buttons.css";
 import "../styles/base/forms.css";
 import "../styles/base/animations.css";
 import "../styles/layout/header.css";
+import "../styles/layout/footer.css";
 
 // Sections
 import("../styles/sections/featured-collection.css");
