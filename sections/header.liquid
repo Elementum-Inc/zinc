@@ -68,7 +68,7 @@
               "submenu": {%- if block.settings.submenu -%}{% render 'menu-json', menu: block.settings.submenu %}{%- else -%}null{%- endif -%},
               "submenu_title": "{{ block.settings.submenu_title }}",
               "submenu_item_image": "{{ block.settings.submenu_item_image }}",
-              "title": "{{ block.settings.title }}" 
+              "title": "{{ block.settings.title | handleize }}" 
             }
           {% else %}
             {
@@ -450,7 +450,7 @@
           "type": "text",
           "id": "title",
           "label": "Top menu parent",
-          "info": "Your megamenu is built according to block order and this setting, which attaches the submenu to it's parent in the top menu. For more details on how to use this megamenu, please [eventually click here](https://google.com)."
+          "info": "🚨 TODO: ADD DIRECT URL TO THEME DOCS. 🚨 Your megamenu is built according to block order and this setting, which attaches the submenu to it's parent in the top menu via title/handle. For more details on how to use this megamenu, please [visit our documentation](https:\/\/www.elementumtech.io\/)."
         },
         {
           "type": "text",
