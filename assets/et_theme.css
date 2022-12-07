@@ -57,6 +57,18 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
+button, select {
+  text-transform: none;
+}
 button, [type='button'], [type='reset'], [type='submit'] {
   -webkit-appearance: button;
 }
@@ -123,18 +135,6 @@ strong {
 }
 small {
   font-size: 80%;
-}
-select, input, textarea, button {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-  padding: 0;
-  line-height: inherit;
-  color: inherit;
-}
-select, button {
-  text-transform: none;
 }
 svg, img, iframe, video {
   display: block;
@@ -274,9 +274,6 @@ ul {
 .block {
   display: block;
 }
-.inline {
-  display: inline;
-}
 .flex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -393,6 +390,9 @@ ul {
 .fixed {
   position: fixed;
 }
+.absolute {
+  position: absolute;
+}
 .relative {
   position: relative;
 }
@@ -421,12 +421,12 @@ ul {
 .text\/html {
   color: rgb(var(--color-text));
 }
-.text {
-  color: rgb(var(--color-text));
-}
 .hover\:text-gray-500:hover {
   --tw-text-opacity: 1;
   color: rgba(194, 194, 194, var(--tw-text-opacity));
+}
+.text {
+  color: rgb(var(--color-text));
 }
 .text\/css {
   color: rgb(var(--color-text));
@@ -452,9 +452,6 @@ ul {
 .underline {
   -webkit-text-decoration-line: underline;
   text-decoration-line: underline;
-}
-.indent\(\) {
-  text-indent: 1.5rem;
 }
 .content-for-layout {
   content: "for-layout";
@@ -529,11 +526,6 @@ ul {
   -o-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
-.duration {
-  -webkit-transition-duration: 150ms;
-  -o-transition-duration: 150ms;
-  transition-duration: 150ms;
-}
 .duration-300 {
   -webkit-transition-duration: 300ms;
   -o-transition-duration: 300ms;
@@ -543,6 +535,11 @@ ul {
   -webkit-transition-duration: 200ms;
   -o-transition-duration: 200ms;
   transition-duration: 200ms;
+}
+.duration {
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
 }
 .delay-2000 {
   -webkit-transition-delay: 2000ms;
