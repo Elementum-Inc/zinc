@@ -1956,28 +1956,6 @@ input[type="checkbox"] {
   cursor: initial;
 }
 
-/* component-cart-count-bubble */
-.cart-count-bubble:empty {
-  display: none;
-}
-
-#cart-icon-bubble .icon {
-  display: flex;
-  flex-direction: column-reverse;
-}
-
-.cart-count-bubble {
-  margin-bottom: -20px;
-  margin-right: -40px;
-  background-color: rgb(var(--color-button));
-  color: rgb(var(--color-button-text));
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 0.9rem;
-  line-height: calc(1 + 0.1 / var(--font-body-scale));
-}
-
 /* section-announcement-bar */
 #shopify-section-announcement-bar {
   z-index: 4;
