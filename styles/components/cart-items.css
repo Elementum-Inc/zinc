@@ -2,65 +2,99 @@
 
 /* DESKTOP STYLES  */
 .cart-item__name {
-  font-size: 18px;
+  @apply 
+    font-lg;
 }
 
 .cart-item__image-container {
-  height: 200px;
-  width: 200px;
+  @apply
+    h-200px
+    w-200px;
+  /* height: 200px;
+  width: 200px; */
+
 }
+
 .cart-item__image-container img {
-  height: auto;
-  width: auto;
+  @apply 
+    h-auto;
+    w-auto;
+  /* height: auto;
+  width: auto; */
 }
 
 .cart-item cart-remove-button {
-  margin: 0;
+  @apply 
+    m-0;
+  /* margin: 0; */
 }
 
 .cart__ctas button {
-  background: black;
+  @apply 
+    text-xl;
+    min-h-12;
+  /* background: black;
   color: white;
   min-height: 3rem;
-  font-size: 1.3rem;
+  font-size: 1.3rem; */
 }
 
 .price {
-  font-size: 18px !important;
-  font-family: Nunito;
+  @apply 
+    !font-lg;
+    bold;
+    tracking-wider;
+    text-left;
+    pt-2;
+
+  /* font-family: Nunito;
   font-weight: 700;
   letter-spacing: 0.04em;
   text-align: left;
-  padding-top: 10px !important;
+  padding-top: 10px !important; */;
 }
 
 .product-option {
-  font-family: Nunito;
+  @apply 
+    text-base;
+    font-normal;
+    leading-snug;
+    text-left;
+  /* font-family: Nunito;
   font-size: 1rem;
   font-weight: 400;
   line-height: 21px;
   letter-spacing: 0.02em;
-  text-align: left;
+  text-align: left; */;
 }
 
 .totals__subtotal {
-  font-size: 18px !important;
+  @apply 
+    !font-lg;
 }
 
 .totals__subtotal-value {
-  font-size: 18px !important;
+  @apply 
+    !font-lg;
 }
 
 .underlined-link {
-  text-decoration: underline;
+  @apply 
+    underline;
+  /* text-decoration: underline; */
 }
 
 .tax-note {
-  font-size: 14px;
+  @apply 
+    text-sm;
+  /* font-size: 14px; */
 }
 
 .quantity {
-  width: 5rem;
+  @apply 
+    w-20;
+    // ^ I don't like things like there where it is in no way apparent what that value actually equates to (5rem)
+    /* width: 5rem; */
 }
 
 .quantity__button {
