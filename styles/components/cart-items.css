@@ -98,23 +98,39 @@
 }
 
 .quantity__button {
-  font-size: 1.5rem;
+  @apply 
+    text-2xl; 
+    !bg-black; 
+    // ^ need to link to settings 
+    text-white;
+    h-5;
+    w-5;
+    m-auto; 
+  /* font-size: 1.5rem;
   background-color: black !important;
   color: white;
   height: 1.2rem;
   width: 1.2rem;
-  margin: auto;
+  margin: auto; */
 }
 
-@media screen and (min-width: 750px) {
+
   .desktop-table-wrapper {
-    display: block !important;
+    lg:!block; 
   }
 
   .mobile {
+    lg:!hidden;
+  }
+
+/* @media screen and (min-width: 750px) {
+  .desktop-table-wrapper {
+    display: block !important;
+  }
+  .mobile {
     display: none !important;
   }
-}
+} */
 
 /* TABLET STYLES  */
 

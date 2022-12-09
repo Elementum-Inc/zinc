@@ -26,19 +26,12 @@
 }
 .quantity__button {
   font-size: 1.5rem;
-  background-color: black !important;
-  color: white;
-  height: 1.2rem;
-  width: 1.2rem;
-  margin: auto;
 }
-@media screen and (min-width: 750px) {
-  .desktop-table-wrapper {
-    display: block !important;
-  }
-  .mobile {
-    display: none !important;
-  }
+.desktop-table-wrapper {
+  lg: !block;
+}
+.mobile {
+  lg: !hidden;
 }
 @media screen and (max-width: 900px) {
   .cart-item__image-container {
