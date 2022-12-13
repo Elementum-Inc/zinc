@@ -116,3 +116,57 @@ body.menu--opened {
     }
   }
 }
+
+/* Splide */
+.splide {
+  &--desktop {
+    & .splide__track--container {
+      @apply md:px-16 lg:px-20;
+    }
+  }
+
+  &:not(.splide--desktop) {
+    & .splide__arrows {
+      @apply sm:hidden;
+    }
+  }
+
+  &__arrows {
+    @apply relative flex justify-between;
+  }
+
+  &__arrow {
+    @apply <md:relative h-[unset] w-[unset] rounded-none opacity-100 md:-bottom-8;
+    background-color: transparent;
+    top: unset;
+    transform: unset;
+
+    &--next {
+      @apply md:-right-12 lg:-right-16;
+    }
+
+    &--prev {
+      @apply md:-left-12 lg:-left-16;
+    }
+
+    > svg {
+      @apply fill-none h-[unset] w-[unset] <sm:(h-12);
+    }
+  }
+
+  &__pagination {
+    @apply <sm:bottom-12;
+  }
+
+  &__pagination__page {
+    @apply bg-scheme-fg opacity-100;
+
+    .section--foreground & {
+      @apply bg-scheme-bg;
+    }
+
+    &.is-active {
+      @apply bg-scheme-accent;
+    }
+  }
+}

@@ -1,15 +1,11 @@
-<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-card.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'component-article-card.css' | asset_url }}" media="print" onload="this.media='all'">
-<link rel="stylesheet" href="{{ 'section-featured-blog.css' | asset_url }}" media="print" onload="this.media='all'">
 
 <link rel="stylesheet" href="{{ 'et_cards.css' | asset_url }}" media="print" onload="this.media='all'">
 <link rel="stylesheet" href="{{ 'et_blog.css' | asset_url }}" media="print" onload="this.media='all'">
 
-<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-card.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'component-article-card.css' | asset_url | stylesheet_tag }}</noscript>
-<noscript>{{ 'section-featured-blog.css' | asset_url | stylesheet_tag }}</noscript>
 
 <noscript>{{ 'et_cards.css' | asset_url | stylesheet_tag }}</noscript>
 <noscript>{{ 'et_blog.css' | asset_url | stylesheet_tag }}</noscript>
@@ -20,25 +16,43 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-{%- endstyle -%}
 
-{% if section.settings.card_vertical_alignment != settings.content_card_vertical_alignment %}
-  {%- style -%}
+  .section-{{ section.id }} .blog__posts--container {
+    margin: 0 -{{ settings.spacing_grid_horizontal | divided_by: 4 }}px;
+  }
+  
+  .section-{{ section.id }} .blog__posts .blog__post {
+    padding: {{ settings.spacing_grid_vertical | divided_by: 4 }}px {{ settings.spacing_grid_horizontal | divided_by: 4 }}px;
+  }
+  
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }} .blog__posts--container {
+      margin: 0 -{{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
+    }
+
+    .section-{{ section.id }} .blog__posts .blog__post {
+      flex-basis: calc((1/{{ section.settings.columns_desktop }}) * 100%);
+      padding: {{ settings.spacing_grid_vertical | divided_by: 2 }}px {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
+    }
+  }
+
+  {% if section.settings.card_vertical_alignment != settings.content_card_vertical_alignment %}
     .section-{{ section.id }} .card + .card__content .card__information {
-        justify-self: {{ section.settings.card_vertical_alignment }};
+      justify-self: {{ section.settings.card_vertical_alignment }};
     }
 
     .section-{{ section.id }} .card.card--info-hover .card__inner .card__information {
-        align-self: {{ section.settings.card_vertical_alignment }};
+      align-self: {{ section.settings.card_vertical_alignment }};
     }
-  {%- endstyle -%}
-{% endif %}
+  {% endif %}
+{%- endstyle -%}
+
 
 {%- liquid
   assign featured_blog = blog
@@ -54,7 +68,9 @@
   endif
 -%}
 <div class="section section-{{ section.id }} {% if section.settings.use_foreground %}section--foreground {% endif %}blog color-scheme--{{ section.settings.color_scheme }}{% if section.settings.title == blank %} no-heading{% endif %}">
-  <div class="isolate section-{{ section.id }}-padding">
+  <div class="splide{% if section.settings.desktop_slider %} splide--desktop{% endif %} isolate section-{{ section.id }}-padding"
+    data-splide='{ "perPage": 1, "mediaQuery": "min", "breakpoints": { "640": { {% if section.settings.desktop_slider %}"perPage": {{ section.settings.columns_desktop }}{% else %}"destroy": true{% endif %} } } }'
+    aria-labelledby="SectionHeading-{{ section.id }}">
     {%- unless section.settings.title == blank -%}
       <div class="container blog__title-wrapper">
         <h2 id="SectionHeading-{{ section.id }}" class="blog__title h1">{{ section.settings.title | escape }}</h2>
@@ -99,59 +115,69 @@
         </div>
       {% endif %}
 
-      <slider-component class="container slider-mobile-gutter{% if section.settings.desktop_slider %} slider-component-desktop{% endif %}">
-        <ul id="Slider-{{ section.id }}"
-          class="blog__posts articles-wrapper contains-card shopify-grid grid--peek grid--2-col-tablet grid--{{ section.settings.columns_desktop }}-col-desktop slider{% if section.settings.desktop_slider %} slider--desktop{% endif %} {% if posts_displayed > 2 %}slider--tablet{% else %}slider--mobile{% endif %}"
-          role="list"
-          data-slides-per-page="2"
-        >
-          {% liquid
-            assign articles = featured_blog.articles
-
-            case section.settings.sort_by
-              when 'new'
-                assign articles = articles | sort: 'published_at'
-              when 'old'
-                assign articles = articles | sort: 'published_at' | reverse
-              when 'a-z'
-                assign articles = articles | sort: 'title'
-              when 'z-a'
-                assign articles = articles | sort: 'title' | reverse
-            endcase
-          %}
-          {%- for article in articles limit: section.settings.post_limit -%}
-            <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="blog__post grid__item article slider__slide slider__slide--full-width">
-              {% render 'article-card',
-                blog: featured_blog, 
-                article: article,
-                card_color_scheme: section.settings.card_color_scheme,
-                section_color_scheme: section.settings.color_scheme,
-                show_image: section.settings.show_image,
-                media_aspect_ratio: section.settings.image_ratio,
-                media_fit: section.settings.card_image_fit,
-                show_date: section.settings.show_date,
-                show_author: section.settings.show_author,
-                show_tags: section.settings.show_tags,
-                show_excerpt: section.settings.show_excerpt,
-                hover_info: section.settings.card_hover_show_info,
-                blog_list: false
-              %}
-            </li>
-          {%- endfor -%}
-        </ul>
-        {%- if posts_exceed_limit -%}
-          <div class="slider-buttons no-js-hidden{% if section.settings.post_limit < 3 %} medium-hide{% endif %}{% if section.settings.post_limit < 2 %} small-hide{% endif %}">
-            <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-            <div class="slider-counter caption">
-              <span class="slider-counter--current">1</span>
-              <span aria-hidden="true"> / </span>
-              <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-              <span class="slider-counter--total">{{ section.settings.post_limit }}</span>
+      <div class="container splide__track--container">
+        <div class="splide__track blog__posts--container">
+          <ul id="Slider-{{ section.id }}"
+            class="splide__list blog__posts{% unless section.settings.desktop_slider %} blog__posts--desktop-grid{% endunless %}"
+            role="list"
+          >
+            {% liquid
+              assign articles = featured_blog.articles
+  
+              case section.settings.sort_by
+                when 'new'
+                  assign articles = articles | sort: 'published_at'
+                when 'old'
+                  assign articles = articles | sort: 'published_at' | reverse
+                when 'a-z'
+                  assign articles = articles | sort: 'title'
+                when 'z-a'
+                  assign articles = articles | sort: 'title' | reverse
+              endcase
+            %}
+            {%- for article in articles limit: section.settings.post_limit -%}
+              <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="splide__slide blog__post">
+                {% render 'article-card',
+                  blog: featured_blog, 
+                  article: article,
+                  card_color_scheme: section.settings.card_color_scheme,
+                  section_color_scheme: section.settings.color_scheme,
+                  show_image: section.settings.show_image,
+                  media_aspect_ratio: section.settings.image_ratio,
+                  media_fit: section.settings.card_image_fit,
+                  show_date: section.settings.show_date,
+                  show_author: section.settings.show_author,
+                  show_tags: section.settings.show_tags,
+                  show_excerpt: section.settings.show_excerpt,
+                  hover_info: section.settings.card_hover_show_info,
+                  blog_list: false
+                %}
+              </li>
+            {%- endfor -%}
+          </ul>
+          {%- if posts_exceed_limit -%}
+            <div class="slider-buttons no-js-hidden{% if section.settings.post_limit < 3 %} medium-hide{% endif %}{% if section.settings.post_limit < 2 %} small-hide{% endif %}">
+              <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
+              <div class="slider-counter caption">
+                <span class="slider-counter--current">1</span>
+                <span aria-hidden="true"> / </span>
+                <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
+                <span class="slider-counter--total">{{ section.settings.post_limit }}</span>
+              </div>
+              <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
             </div>
-            <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
-          </div>
-        {%- endif -%}
-      </slider-component>
+          {%- endif -%}
+        </div>
+
+        <div class="splide__arrows">
+          <button class="splide__arrow splide__arrow--prev">
+            {%- render 'icon-arrow-big' -%}
+          </button>
+          <button class="splide__arrow splide__arrow--next">
+            {%- render 'icon-arrow-big' -%}
+          </button>
+        </div>
+      </div>
 
       {%- if section.settings.show_view_all and section.settings.post_limit < featured_blog.articles_count -%}
         <div class="blog__view-all center small-hide medium-hide">

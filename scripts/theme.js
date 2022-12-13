@@ -1,5 +1,9 @@
 import "vite/modulepreload-polyfill";
 
+// Splide
+import Splide from '@splidejs/splide';
+import '@splidejs/splide/css';
+
 // Windi import
 import "virtual:windi.css";
 
@@ -14,10 +18,10 @@ import "../styles/base/animations.css";
 import "../styles/layout/header.css";
 
 // Sections
+import("../styles/sections/hero.css");
+import("../styles/sections/image-with-text.css");
 import("../styles/sections/featured-collection.css");
 import("../styles/sections/blog.css");
-import("../styles/sections/image-with-text.css");
-import("../styles/sections/hero.css");
 import("../styles/sections/modal.css");
 
 // Snippets
@@ -33,6 +37,7 @@ if (window.location.href.includes("/search")) {
   import("../styles/sections/search.css");
 }
 
+// Vue components
 import "./vue/vue-loader";
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -58,6 +63,22 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         ticking = true;
+      }
+    });
+  }
+
+  if (document.querySelectorAll('.splide').length) {
+    document.querySelectorAll('.splide').forEach(slider => {
+      new Splide(slider).mount();
+    });
+  }
+
+  if (Shopify.designMode) {
+    document.addEventListener("shopify:section:load", event => {
+      let slider = event.target.querySelector('.splide');
+
+      if (slider) {
+        new Splide(slider).mount();
       }
     });
   }
