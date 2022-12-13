@@ -20,6 +20,17 @@
   margin-bottom: .5rem;
 }
 
+@media (min-width: 640px) {
+  .blog__posts--desktop-grid {
+    display: -webkit-box !important;
+    display: -ms-flexbox !important;
+    display: -webkit-flex !important;
+    display: flex !important;
+    -ms-flex-wrap: wrap;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+  }
+}
 @media (max-width: 1023.9px) {
   .main-blog .title--primary {
     margin-bottom: 2rem;
