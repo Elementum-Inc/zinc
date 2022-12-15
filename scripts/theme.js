@@ -69,8 +69,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (document.querySelectorAll('.splide').length) {
     document.querySelectorAll('.splide').forEach(slider => {
-      new Splide(slider).mount();
+      if (!slider.parentElement.classList.contains('product__media-gallery')) {
+        new Splide(slider).mount();
+      }
     });
+  }
+
+  if (document.querySelector('.product__media-gallery')) {
+    var gallery = new Splide(document.querySelector('[id*=GalleryViewer]'));
+    var thumbnails = new Splide(document.querySelector('[id*=GalleryThumbnails]'));
+
+    if (thumbnails != null || undefined) {
+      gallery.sync(thumbnails);
+      gallery.mount();
+      thumbnails.mount();
+    } else {
+      gallery.mount();
+    }
   }
 
   if (Shopify.designMode) {

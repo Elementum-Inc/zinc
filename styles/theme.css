@@ -127,7 +127,9 @@ body.menu--opened {
 
   &:not(.splide--desktop) {
     & .splide__arrows {
-      @apply sm:hidden;
+      .blog & {
+        @apply sm:hidden;
+      }
     }
   }
 
@@ -169,4 +171,114 @@ body.menu--opened {
       @apply bg-scheme-accent;
     }
   }
+}
+
+/* Product gallery sliders -- TODO: move to appropriate files */
+.product {
+  &--stacked {
+    & .product__gallery-viewer.splide.is-initialized:not(.is-active) {
+      & .splide__list {
+        @apply md:(flex flex-wrap);
+      }
+
+      & .splide__slide:not(:first-child) {
+        width: calc(50% - var(--grid-desktop-horizontal-spacing) / 2);
+      }
+
+      & .splide__arrows {
+        @apply md:hidden;
+      }
+    }
+  }
+
+  &--vertical_thumbnail_left,
+  &--vertical_thumbnail_right {
+    & .product__media-gallery {
+      @apply md:!flex;
+    }
+
+    & .product__gallery-viewer {
+      @apply md:flex-1;
+    }
+
+    & .thumbnail-slider {
+      @apply md:p-0;
+      min-width: calc(var(--thumbnail-width) + 2rem);
+    }
+
+    & .thumbnail-list {
+      @apply md:flex-col;
+    }
+  }
+
+  &--vertical_thumbnail_left {
+    & .product__media-gallery {
+      @apply md:flex-row-reverse;
+    }
+
+    & .product__gallery-viewer {
+      & .splide__arrow--prev {
+        @apply -left-[8rem];
+      }
+    }
+
+    & .thumbnail-slider {
+      @apply md:pr-4;
+    }
+  }
+
+  &--vertical_thumbnail_right {
+    & .product__gallery-viewer {
+      & .splide__arrow--next {
+        @apply -right-[8rem];
+      }
+    }
+
+    & .thumbnail-slider {
+      @apply md:pl-4;
+    }
+  }
+}
+
+.thumbnail-slider {
+  @apply px-8;
+
+  & .splide__track {
+    @apply w-full;
+  }
+
+  & .splide__slide {
+    @apply mx-1 lg:mx-2;
+    width: calc(var(--thumbnail-width) + .5rem);
+    max-width: calc(var(--thumbnail-width) + .5rem);
+
+    @media screen and (min-width: 1024px) {
+      width: calc(var(--thumbnail-width) + 1rem);
+      max-width: calc(var(--thumbnail-width) + 1rem);
+    }
+  }
+
+  & .splide__arrows {
+    position: unset;
+  }
+
+  & .splide__arrow {
+    @apply absolute top-1/2 transform -translate-y-1/2;
+
+    &--prev {
+      @apply left-0;
+    }
+
+    &--next {
+      @apply right-0;
+    }
+
+    & svg {
+      @apply h-8;
+    }
+  }
+}
+
+.thumbnail-list {
+  @apply !flex;
 }
