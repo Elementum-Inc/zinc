@@ -16267,6 +16267,7 @@ __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_me
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_multicolumn.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_quick-add.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_testimonials.css")] : void 0, import.meta.url);
+__vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_accordion.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_cart-drawer.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_cart-items.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_cart.css")] : void 0, import.meta.url);

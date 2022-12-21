@@ -33,6 +33,7 @@ import("../styles/sections/testimonials.css");
 
 //Components
 // KB - WIP- Windi conversion //
+import("../styles/components/accordion.css");
 import("../styles/components/cart-drawer.css");
 import("../styles/components/cart-items.css");
 import("../styles/components/cart.css");

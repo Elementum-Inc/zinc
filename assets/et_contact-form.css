@@ -1,31 +1,31 @@
 .contact .field__input {
-  border: 0.2rem solid;
-  border-radius: 0px;
-  height: 4rem;
+  border-width: 3px;
 }
 .contact {
-  padding: 0 3rem;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 .contact .title {
   font-size: 2rem;
 }
 .helper-text {
-  margin: 1.7rem 0;
-  color: gray;
+  margin-top: 1.7rem;
+  margin-bottom: 1.7rem;
 }
 .helper-text .small {
   font-size: 1rem !important;
-  font-weight: 500;
-  color: black !important;
 }
 .contact img {
   max-width: 100%;
 }
 .contact .form__message {
+  -webkit-box-align: start;
+  -ms-flex-align: start;
+  -webkit-align-items: flex-start;
   align-items: flex-start;
 }
 .contact .icon-success {
-  margin-top: 0.2rem;
+  margin-top: 0.25rem;
 }
 .contact .field {
   margin-bottom: 1.5rem;
@@ -36,7 +36,9 @@
   }
 }
 .contact__button {
-  margin-top: 3rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
 }
 .contact__button button {

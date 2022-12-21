@@ -1,12 +1,21 @@
 /* NEW STYLES  */
 
 .drawer__inner {
-  background-color: white !important;
+  /* background-color: white !important;
   float: right;
   height: 100vh !important;
   overflow-x: auto;
   overflow-y: scroll;
-  padding: 0.5rem 3.5rem;
+  padding: 0.5rem 3.5rem; */
+  
+  @apply
+    !bg-white;
+    float-right;
+    !h-screen;
+    overflow-x-auto;
+    overflow-y-scroll;
+    py-2;
+    px-14;
 }
 
 .drawer__inner {
@@ -22,55 +31,84 @@
 }
 
 .icon-remove {
-  height: 1.65rem;
-  margin-top: 0.4rem;
+  /* height: 1.65rem;
+  margin-top: 0.4rem; */
+  @apply
+    h-7;
+    mt-2;
 }
 
 .cart-item__quantity-wrapper {
-  display: flex;
+  /* display: flex; */
+  @apply
+    flex;
 }
 
 .cart-drawer .price {
-  font-size: 1rem;
-  font-weight: 600;
+  /* font-size: 1rem;
+  font-weight: 600; */
+  @apply
+    text-base;
+    font-semibold;
 }
 
 .cart-item__name {
-  font-weight: 600;
+  /* font-weight: 600; */
+  @apply
+    font-semibold;
 }
 
 .product-option {
-  font-size: 0.8rem;
+  /* font-size: 0.8rem; */
+  @apply
+    text-sm;
 }
 
 .cart-drawer .quantity {
-  width: 4rem;
+  /* width: 4rem; */
+  @apply
+    w-16;
 }
 
 .cart-item__quantity-wrapper {
-  justify-content: space-between;
+  /* justify-content: space-between; */
+  @apply
+    justify-between;
 }
 
 .cart-drawer .remove-btn {
-  padding-right: 0;
-  padding-top: 0;
+  /* padding-right: 0;
+  padding-top: 0; */
+  @apply
+    pr-0;
+    pt-0;
 }
 
 .cart-drawer .remove-btn svg {
-  margin-left: auto;
-  margin-top: 0;
+  /* margin-left: auto;
+  margin-top: 0; */
+  @apply
+    ml-auto;
+    mt-0;
 }
 
 .cart-drawer .remove-btn h3 {
-  margin-left: auto;
-  margin-top: 0;
+  /* margin-left: auto;
+  margin-top: 0; */
+  @apply
+    ml-auto;
+    mt-0;
 }
 
 .cart-item__price-wrapper {
-  margin: auto 0;
+  /* margin: auto 0; */
+  @apply
+    my-auto;
+    mx-0;
 }
 
 .quantity__button {
+  // TODO: WHAT COLOR SHOULD THIS BUTTON BE // 
   font-size: 1.5rem;
   background-color: black !important;
   color: white;
@@ -80,62 +118,97 @@
 }
 
 .quantity__button .increase {
-  padding: 3px;
+  /* padding: 3px; */
+  @apply 
+    p-0.75;
 }
 /* unclear why this doesn't work but needs to be svg anyway */
 
 .quantity__input {
-  font-size: 1rem;
+  /* font-size: 1rem; */
+  @apply
+  text-base;
 }
 
 .cart-drawer .totals__subtotal-value {
-  font-size: 1rem;
-  font-weight: 600;
+  /* font-size: 1rem;
+  font-weight: 600; */
+  @apply
+    text-base;
+    font-semibold;
 }
 
+// TODO: should this be wired to any theme colors // 
 #CartDrawer-Note {
-  font-size: 1rem;
-  border: 1px solid gray;
-  background: #f3f3f1;
+  /* font-size: 1rem;
+  border: 1px solid gray; */
+  background: #f3f3f1; 
+  @apply
+    text-base;
+    border-1;
+    border-gray-500;
 }
 
 .cart-drawer .tax-note {
-  margin: 0.8rem 0 1rem auto;
+  /* margin: 0.8rem 0 1rem auto;
   text-align: left;
-  font-size: 1rem;
+  font-size: 1rem; */
+  @apply
+    mt-3;
+    mr-0;
+    mb-4;
+    ml-auto;
 }
 
 .drawer__close svg {
-  height: 1.5rem;
-  width: 1.5rem;
+  /* height: 1.5rem;
+  width: 1.5rem; */
+  @apply
+    h-6;
+    w-6;
 }
 
 .drawer__heading {
-  margin: auto;
+  /* margin: auto; */
+  @apply
+    m-auto;
 }
 
 .cart-drawer .cart__checkout-button {
-  max-width: none;
+  /* max-width: none;
   background: black;
   color: white;
-  min-height: 3.5rem;
+  min-height: 3.5rem; */
+  @apply
+    max-w-none;
+    bg-black;
+    text-white;
 }
 
 /* MOBILE STYLES  */
 @media screen and (max-width: 749px) {
   .drawer__inner {
-    padding: 0.5rem 1.3rem;
+    /* padding: 0.5rem 1.3rem; */
+    @apply
+      py-2;
+      px-5;
   }
 
   .cart-drawer .remove-btn {
-    min-width: 4rem;
+    /* min-width: 4rem; */
+    @apply
+      min-w-16;
   }
 
   td {
-    padding-top: 0 !important;
+    /* padding-top: 0 !important; */
+    @apply
+      !pt-0;
   }
 
   .drawer__heading {
-    font-size: 2rem;
+    /* font-size: 2rem; */
+    @apply
+      text-3xl;
   }
 }
