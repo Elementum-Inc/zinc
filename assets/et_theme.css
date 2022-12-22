@@ -2726,6 +2726,19 @@ p.small {
 .footer {
   font-family: var(--font-heading-family);
 }
+#FooterCountryForm {
+  width: 100%;
+}
+#FooterCountryForm .icon-caret {
+  position: absolute;
+  content: "";
+  height: 0.6rem;
+  top: calc(50% - 0.2rem);
+  left: 0;
+}
+#FooterCountryForm .disclosure__list-wrapper {
+  background-color: rgb(var(--theme-foreground));
+}
 #FooterCountryLabel {
   margin-bottom: 0px;
 }
@@ -2776,4 +2789,9 @@ p.small {
   font-weight: 600;
   line-height: 1;
   text-align: center;
+}
+@media screen and (max-width: 749px) {
+  .disclosure .localization-form__select {
+    padding-top: 3rem;
+  }
 }

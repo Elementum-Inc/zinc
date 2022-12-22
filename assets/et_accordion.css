@@ -3,7 +3,8 @@
   display: inline-block;
 }
 .accordion summary {
-  line-height: 1;
+  s
+    line-height: 1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;

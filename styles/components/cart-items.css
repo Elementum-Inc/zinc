@@ -10,8 +10,6 @@
   @apply
     h-200px
     w-200px;
-  /* height: 200px;
-  width: 200px; */
 
 }
 
@@ -19,24 +17,20 @@
   @apply 
     h-auto;
     w-auto;
-  /* height: auto;
-  width: auto; */
 }
 
 .cart-item cart-remove-button {
   @apply 
     m-0;
-  /* margin: 0; */
 }
 
+// TODO: COLORS // 
 .cart__ctas button {
   @apply 
     text-xl;
     min-h-12;
   /* background: black;
-  color: white;
-  min-height: 3rem;
-  font-size: 1.3rem; */
+  color: white; */
 }
 
 .price {
@@ -46,12 +40,6 @@
     tracking-wider;
     text-left;
     pt-2;
-
-  /* font-family: Nunito;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  text-align: left;
-  padding-top: 10px !important; */;
 }
 
 .product-option {
@@ -60,12 +48,6 @@
     font-normal;
     leading-snug;
     text-left;
-  /* font-family: Nunito;
-  font-size: 1rem;
-  font-weight: 400;
-  line-height: 21px;
-  letter-spacing: 0.02em;
-  text-align: left; */;
 }
 
 .totals__subtotal {
@@ -81,7 +63,6 @@
 .underlined-link {
   @apply 
     underline;
-  /* text-decoration: underline; */
 }
 
 .tax-note {
@@ -93,25 +74,17 @@
 .quantity {
   @apply 
     w-20;
-    // ^ I don't like things like there where it is in no way apparent what that value actually equates to (5rem)
-    /* width: 5rem; */
 }
 
 .quantity__button {
   @apply 
     text-2xl; 
     !bg-black; 
-    // ^ need to link to settings 
+    // TODO: link to color settings 
     text-white;
     h-5;
     w-5;
     m-auto; 
-  /* font-size: 1.5rem;
-  background-color: black !important;
-  color: white;
-  height: 1.2rem;
-  width: 1.2rem;
-  margin: auto; */
 }
 
 

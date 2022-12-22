@@ -1,13 +1,4 @@
-/* NEW STYLES  */
-
-.drawer__inner {
-  /* background-color: white !important;
-  float: right;
-  height: 100vh !important;
-  overflow-x: auto;
-  overflow-y: scroll;
-  padding: 0.5rem 3.5rem; */
-  
+.drawer__inner {  
   @apply
     !bg-white;
     float-right;
@@ -18,6 +9,7 @@
     px-14;
 }
 
+// TODO: UPDATE COLOR VARIABLES //
 .drawer__inner {
   width: 40rem;
   max-width: calc(100vw - 3rem);
@@ -31,77 +23,61 @@
 }
 
 .icon-remove {
-  /* height: 1.65rem;
-  margin-top: 0.4rem; */
   @apply
     h-7;
     mt-2;
 }
 
 .cart-item__quantity-wrapper {
-  /* display: flex; */
   @apply
     flex;
 }
 
 .cart-drawer .price {
-  /* font-size: 1rem;
-  font-weight: 600; */
   @apply
     text-base;
     font-semibold;
 }
 
 .cart-item__name {
-  /* font-weight: 600; */
   @apply
     font-semibold;
 }
 
 .product-option {
-  /* font-size: 0.8rem; */
   @apply
     text-sm;
 }
 
 .cart-drawer .quantity {
-  /* width: 4rem; */
   @apply
     w-16;
 }
 
 .cart-item__quantity-wrapper {
-  /* justify-content: space-between; */
   @apply
     justify-between;
 }
 
 .cart-drawer .remove-btn {
-  /* padding-right: 0;
-  padding-top: 0; */
   @apply
     pr-0;
     pt-0;
 }
 
 .cart-drawer .remove-btn svg {
-  /* margin-left: auto;
-  margin-top: 0; */
   @apply
     ml-auto;
     mt-0;
 }
 
 .cart-drawer .remove-btn h3 {
-  /* margin-left: auto;
-  margin-top: 0; */
   @apply
     ml-auto;
     mt-0;
 }
 
 .cart-item__price-wrapper {
-  /* margin: auto 0; */
   @apply
     my-auto;
     mx-0;
@@ -118,21 +94,17 @@
 }
 
 .quantity__button .increase {
-  /* padding: 3px; */
   @apply 
     p-0.75;
 }
 /* unclear why this doesn't work but needs to be svg anyway */
 
 .quantity__input {
-  /* font-size: 1rem; */
   @apply
   text-base;
 }
 
 .cart-drawer .totals__subtotal-value {
-  /* font-size: 1rem;
-  font-weight: 600; */
   @apply
     text-base;
     font-semibold;
@@ -140,8 +112,6 @@
 
 // TODO: should this be wired to any theme colors // 
 #CartDrawer-Note {
-  /* font-size: 1rem;
-  border: 1px solid gray; */
   background: #f3f3f1; 
   @apply
     text-base;
@@ -150,9 +120,6 @@
 }
 
 .cart-drawer .tax-note {
-  /* margin: 0.8rem 0 1rem auto;
-  text-align: left;
-  font-size: 1rem; */
   @apply
     mt-3;
     mr-0;
@@ -161,24 +128,17 @@
 }
 
 .drawer__close svg {
-  /* height: 1.5rem;
-  width: 1.5rem; */
   @apply
     h-6;
     w-6;
 }
 
 .drawer__heading {
-  /* margin: auto; */
   @apply
     m-auto;
 }
 
 .cart-drawer .cart__checkout-button {
-  /* max-width: none;
-  background: black;
-  color: white;
-  min-height: 3.5rem; */
   @apply
     max-w-none;
     bg-black;
@@ -188,26 +148,22 @@
 /* MOBILE STYLES  */
 @media screen and (max-width: 749px) {
   .drawer__inner {
-    /* padding: 0.5rem 1.3rem; */
     @apply
       py-2;
       px-5;
   }
 
   .cart-drawer .remove-btn {
-    /* min-width: 4rem; */
     @apply
       min-w-16;
   }
 
   td {
-    /* padding-top: 0 !important; */
     @apply
       !pt-0;
   }
 
   .drawer__heading {
-    /* font-size: 2rem; */
     @apply
       text-3xl;
   }

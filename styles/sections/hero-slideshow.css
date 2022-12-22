@@ -19,10 +19,6 @@ video {
   object-fit: cover;
 }
 
-/* .banner__text {
-    color: black;
-  } */
-
 .h0 {
   font-style: normal;
   font-weight: 700;
@@ -45,8 +41,30 @@ video {
   min-height: 575px !important;
 }
 
-.solid-background {
-  background-color: black !important;
+.no-solid-background {
+  background: none !important;
+  @apply text-base;
+}
+
+.color-accent-1 {
+  @apply 
+    bg-accent1;
+    !text-white;
+}
+
+.color-accent-2 {
+  @apply bg-accent2;
+}
+
+.color-background-1 {
+  @apply bg-bg1;
+}
+
+.color-background-2 {
+  @apply 
+    bg-bg2; 
+    !text-white;
+    // TODO: ^^ figure out why this doesn't work/get proper text color
 }
 
 .control-container {

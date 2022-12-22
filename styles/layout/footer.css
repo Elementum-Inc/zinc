@@ -12,98 +12,117 @@
 
 .footer__blocks-wrapper {
   @apply flex flex-row;
-  /* display: flex;
-  flex-direction: row; */
 }
 
 .footer-block__details-content li {
   @apply my-4 mx-0;
-  /* margin: 1rem 0; */
 }
 
 .footer .field__label {
   @apply font-lg pt-2;
-  /* font-size: 1.1rem; */
-  /* padding-top: 0.4rem; */
 }
 
 .disclosure .localization-form__select {
   @apply font-lg pt-14;
-  /* font-size: 1.1rem;
-  padding-top: 3.4rem !important; */
 }
 
 .footer {
   @apply font-serif;
-  /* font-family: var(--font-heading-family); */
+}
+
+#FooterCountryForm {
+  @apply 
+    w-full;
+    !my-4;
+
+  & .icon-caret {
+    position: absolute;
+    content: "";
+    height: 0.6rem;
+    top: calc(50% - 0.2rem);
+    left: 0;
+  }
+
+  & .disclosure__list-wrapper {
+    @apply
+      bg-fg; 
+  }
 }
 
 #FooterCountryLabel {
   @apply mb-0;
-  /* margin-bottom: 0px; */
 }
 
 .basic #large-footer-logo {
   @apply hidden;
-  /* display: none; */
 }
 
 #large-footer-logo {
   @apply w-screen h-auto flex justify-center mt-8;
-  /* width: 100vw;
-  height: auto;
-  display: flex;
-  justify-content: center;
-  margin-top: 2rem; */
 }
 
 .link {
   @apply no-underline;
-  /* text-decoration: none; */
 }
 
 .list-social {
   @apply !justify-center;
-  /* justify-content: center !important; */
 }
 
 .list-social__link {
   @apply no-underline font-lg;
-  /* text-decoration: none;
-  font-size: 1.1rem; */
 }
 
 .list-payment {
   @apply ml-auto;
-  /* margin-left: auto; */
 }
 
 .lower-social .list-social__link {
   @apply p-2 font-base;
-  /* padding: 0.65rem;
-  font-size: 1rem; */
 }
 
 #newsletter-heading {
   @apply mb-0;
-  /* margin-bottom: 0px; */
 }
 
 .social-text {
   @apply pl-1;
-  /* padding-left: 5px; */
 }
 
 #subfooter-upper {
   @apply pb-8;
-  /* padding-bottom: 2rem; */
 }
 
 #big-bold-logo {
   @apply font-8xl lg:font-[10rem] xl:font-[14rem] font-semibold leading-none tracking-none text-center;
-  /* font-size: 9rem;
-  font-weight: 600;
-  line-height: 288px;
-  letter-spacing: 5.78000020980835px;
-  text-align: center; */
 }
+
+@media screen and (max-width: 749px) { 
+  .disclosure .localization-form__select {
+    @apply
+      pt-12;
+  }
+}
+
+// TODO:  unclear if these are needed.. // 
+/* @media screen and (max-width: 749px) {
+  .footer .grid {
+    display: block;
+  }
+
+  .footer-block.grid__item {
+    padding: 0;
+    margin: 4rem 0;
+    width: 100%;
+  }
+
+  .footer-block.grid__item:first-child {
+    margin-top: 0;
+  }
+
+  .footer__content-top {
+    padding-bottom: 3rem;
+    padding-left: calc(4rem / var(--font-body-scale));
+    padding-right: calc(4rem / var(--font-body-scale));
+  }
+} */

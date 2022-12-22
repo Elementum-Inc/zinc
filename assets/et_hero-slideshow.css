@@ -33,8 +33,21 @@
 .banner--small:not(.banner--adapt) {
   min-height: 575px !important;
 }
-.solid-background {
-  background-color: black !important;
+.no-solid-background {
+  background: none !important;
+  font-size: 1rem;
+}
+.color-accent-1 {
+  background-color: rgb(var(--color-accent-1));
+}
+.color-accent-2 {
+  background-color: rgb(var(--color-accent-2));
+}
+.color-background-1 {
+  background-color: rgb(var(--color-background-1));
+}
+.color-background-2 {
+  background-color: rgb(var(--color-background-2));
 }
 .control-container {
   color: black;
