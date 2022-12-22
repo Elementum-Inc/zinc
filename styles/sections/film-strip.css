@@ -1,4 +1,4 @@
-/* MEDIA COLLAGE STYLES  */
+/* FILM STRIP STYLES  */
 .film-strip .film-strip-list {
   column-gap: 0 !important ;
   row-gap: 0 !important;
@@ -16,7 +16,7 @@
   flex-direction: column-reverse !important;
 }
 
-/* film-strip STYLES  */
+/* MULTICOLUMN STYLES - CAN BE DELETED ??   */
 .film-strip-btn {
   height: 35px;
   min-width: 168px;

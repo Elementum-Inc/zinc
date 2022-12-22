@@ -1,0 +1,15 @@
+.cart {
+  @apply block 
+    relative;
+}
+
+.cart__footer {
+  @apply !border-solid 
+    border-gray-500 
+    border-1;
+}
+
+#Cart-note {
+  @apply font-lg 
+    italic;
+}

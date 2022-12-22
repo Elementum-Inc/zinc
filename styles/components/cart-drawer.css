@@ -1,0 +1,170 @@
+.drawer__inner {  
+  @apply
+    !bg-white;
+    float-right;
+    !h-screen;
+    overflow-x-auto;
+    overflow-y-scroll;
+    py-2;
+    px-14;
+}
+
+// TODO: UPDATE COLOR VARIABLES //
+.drawer__inner {
+  width: 40rem;
+  max-width: calc(100vw - 3rem);
+  border: 0.1rem solid rgba(var(--color-foreground), 0.2);
+  border-right: 0;
+  background-color: rgb(var(--color-background));
+  display: flex;
+  flex-direction: column;
+  transform: translateX(100%);
+  transition: transform var(--duration-default) ease;
+}
+
+.icon-remove {
+  @apply
+    h-7;
+    mt-2;
+}
+
+.cart-item__quantity-wrapper {
+  @apply
+    flex;
+}
+
+.cart-drawer .price {
+  @apply
+    text-base;
+    font-semibold;
+}
+
+.cart-item__name {
+  @apply
+    font-semibold;
+}
+
+.product-option {
+  @apply
+    text-sm;
+}
+
+.cart-drawer .quantity {
+  @apply
+    w-16;
+}
+
+.cart-item__quantity-wrapper {
+  @apply
+    justify-between;
+}
+
+.cart-drawer .remove-btn {
+  @apply
+    pr-0;
+    pt-0;
+}
+
+.cart-drawer .remove-btn svg {
+  @apply
+    ml-auto;
+    mt-0;
+}
+
+.cart-drawer .remove-btn h3 {
+  @apply
+    ml-auto;
+    mt-0;
+}
+
+.cart-item__price-wrapper {
+  @apply
+    my-auto;
+    mx-0;
+}
+
+.quantity__button {
+  // TODO: WHAT COLOR SHOULD THIS BUTTON BE // 
+  font-size: 1.5rem;
+  background-color: black !important;
+  color: white;
+  height: 1rem;
+  width: 1rem;
+  margin: auto;
+}
+
+.quantity__button .increase {
+  @apply 
+    p-0.75;
+}
+/* unclear why this doesn't work but needs to be svg anyway */
+
+.quantity__input {
+  @apply
+  text-base;
+}
+
+.cart-drawer .totals__subtotal-value {
+  @apply
+    text-base;
+    font-semibold;
+}
+
+// TODO: should this be wired to any theme colors // 
+#CartDrawer-Note {
+  background: #f3f3f1; 
+  @apply
+    text-base;
+    border-1;
+    border-gray-500;
+}
+
+.cart-drawer .tax-note {
+  @apply
+    mt-3;
+    mr-0;
+    mb-4;
+    ml-auto;
+}
+
+.drawer__close svg {
+  @apply
+    h-6;
+    w-6;
+}
+
+.drawer__heading {
+  @apply
+    m-auto;
+}
+
+.cart-drawer .cart__checkout-button {
+  @apply
+    max-w-none;
+    bg-black;
+    text-white;
+}
+
+/* MOBILE STYLES  */
+@media screen and (max-width: 749px) {
+  .drawer__inner {
+    @apply
+      py-2;
+      px-5;
+  }
+
+  .cart-drawer .remove-btn {
+    @apply
+      min-w-16;
+  }
+
+  td {
+    @apply
+      !pt-0;
+  }
+
+  .drawer__heading {
+    @apply
+      text-3xl;
+  }
+}

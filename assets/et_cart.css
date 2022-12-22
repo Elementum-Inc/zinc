@@ -1,0 +1,13 @@
+.cart {
+  display: block;
+  position: relative;
+}
+.cart__footer {
+  --tw-border-opacity: 1;
+  border-color: rgba(194, 194, 194, var(--tw-border-opacity));
+  border-style: solid !important;
+  border-width: 1px;
+}
+#Cart-note {
+  font-style: italic;
+}

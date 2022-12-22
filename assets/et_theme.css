@@ -2687,4 +2687,111 @@ p.small {
 }
 .search__no-results {
   text-align: center;
+}.footer .payment-methods__methods {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+.footer .payment-methods__type:not(:last-child) {
+  margin-bottom: 0.25rem;
+  margin-right: 0.25rem;
+}
+.footer__blocks-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  -webkit-flex-direction: row;
+  flex-direction: row;
+}
+.footer-block__details-content li {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  margin-left: 0px;
+  margin-right: 0px;
+}
+.footer .field__label {
+  padding-top: 0.5rem;
+}
+.disclosure .localization-form__select {
+  padding-top: 3.5rem;
+}
+.footer {
+  font-family: var(--font-heading-family);
+}
+#FooterCountryForm {
+  width: 100%;
+}
+#FooterCountryForm .icon-caret {
+  position: absolute;
+  content: "";
+  height: 0.6rem;
+  top: calc(50% - 0.2rem);
+  left: 0;
+}
+#FooterCountryForm .disclosure__list-wrapper {
+  background-color: rgb(var(--theme-foreground));
+}
+#FooterCountryLabel {
+  margin-bottom: 0px;
+}
+.basic #large-footer-logo {
+  display: none;
+}
+#large-footer-logo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  height: auto;
+  margin-top: 2rem;
+  width: 100vw;
+}
+.link {
+  text-decoration: none;
+}
+.list-social {
+  -webkit-box-pack: center !important;
+  -ms-flex-pack: center !important;
+  -webkit-justify-content: center !important;
+  justify-content: center !important;
+}
+.list-social__link {
+  text-decoration: none;
+}
+.list-payment {
+  margin-left: auto;
+}
+.lower-social .list-social__link {
+  padding: 0.5rem;
+}
+#newsletter-heading {
+  margin-bottom: 0px;
+}
+.social-text {
+  padding-left: 0.25rem;
+}
+#subfooter-upper {
+  padding-bottom: 2rem;
+}
+#big-bold-logo {
+  font-weight: 600;
+  line-height: 1;
+  text-align: center;
+}
+@media screen and (max-width: 749px) {
+  .disclosure .localization-form__select {
+    padding-top: 3rem;
+  }
 }

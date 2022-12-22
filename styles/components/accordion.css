@@ -1,29 +1,33 @@
-/* UPDATED STYLES */
 .accordion__title {
-  display: inline-block;
   max-width: calc(100% - 6rem);
-  min-height: 1.6rem;
-  margin: 10px auto 0 auto;
-  word-break: break-word;
+
+  @apply
+    inline-block;
+    mt-3;
+    mx-auto;
+    mb-0;
+    break-words;
 }
 
-.accordion summary {
-  display: flex;
-  position: relative;
+.accordion summary {s
   line-height: 1;
-  padding: 1rem;
-  border-top: 2px solid black;
+  @apply
+    flex;
+    relative;
+    border-t-2;
+    border-gray-500;
 }
 
 .accordion svg {
-  width: 1rem;
+  @apply
+    w-4;
 }
 
 /* SHOPIFY STYLES */
-
 .accordion .summary__title {
-  display: flex;
-  flex: 1;
+  @apply
+    flex;
+    flex-1;
 }
 
 .accordion .summary__title + .icon-caret {
@@ -31,10 +35,12 @@
 }
 
 .accordion + .accordion {
-  margin-top: 0;
-  border-top: none;
+  @apply
+    mt-0;
+    border-t-0;
 }
 
+// TODO: UPDATE THESE COLORS VARIABLES // 
 .accordion {
   margin-top: 2.5rem;
   margin-bottom: 0;
@@ -55,12 +61,15 @@
 }
 
 .accordion__content {
-  margin-bottom: 1.5rem;
-  word-break: break-word;
-  overflow-x: auto;
-  padding: 0 0.6rem;
+  @apply
+    mb-6;
+    break-words;
+    overflow-x-auto;
+    py-4;
+    px-20;
 }
 
 .accordion__content img {
-  max-width: 100%;
+  @apply
+    max-w-full;
 }

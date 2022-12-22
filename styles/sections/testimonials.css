@@ -1,0 +1,87 @@
+#testimonials-section .content-container {
+  @apply
+    flex;
+}
+
+#testimonials-section .multicolumn-card__image-wrapper {
+  @apply
+    !m-0;
+}
+
+#testimonials-section .media {
+  @apply
+    min-w-18;
+}
+
+#testimonials-section .media--circle {
+  @apply
+    max-w-25;
+}
+
+#testimonials-section {
+  // TODO: WHAT COLOR VARIABLE SHOULD THIS BE SET TO?? // 
+  background-color: #fbf2de;
+}
+
+#testimonials-section .title {
+  text-4xl;
+}
+
+#testimonials-section h4 {
+  // TODO: WHICH FONT FAMILY AND COLOR // 
+  color: #1e0e62;
+  @apply 
+    // I DO NOT APPRECIATE THE FONT/TEXT NAMING INCONSISTENCY WITH WINDI // 
+    font-semibold;
+    text-base;
+    tracking-wide;
+
+}
+
+#testimonials-section h5 {
+  font-family: "DM Sans";
+  color: rgba(21, 20, 57, 0.4);
+}
+
+#testimonials-section p {
+  color: #111827;
+}
+
+#testimonials-section .slider-buttons {
+  display: none !important;
+}
+
+.background-blocks {
+  flex-direction: column-reverse;
+}
+
+.background-blocks .testimonials-card__image-wrapper {
+  margin: auto;
+  height: 100px;
+}
+
+.background-blocks .multicolumn-card-spacing {
+  padding-top: 0;
+}
+
+.background-blocks .media {
+  margin-top: -4rem;
+  margin-left: 40%;
+  justify-content: center;
+}
+
+.background-blocks .multicolumn-card__info {
+  background-color: white;
+  padding: 1rem 1rem 4rem 1rem;
+  margin: 1rem;
+}
+
+.background-blocks img {
+  height: 100px !important;
+  width: 100px !important;
+}
+
+.background-blocks .multicolumn-card__image-wrapper {
+  height: 3rem;
+  width: 100%;
+}

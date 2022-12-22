@@ -1,0 +1,187 @@
+/* ADDED STYLES */
+
+/* DESKTOP STYLES  */
+.cart-item__name {
+  @apply 
+    font-lg;
+}
+
+.cart-item__image-container {
+  @apply
+    h-200px
+    w-200px;
+
+}
+
+.cart-item__image-container img {
+  @apply 
+    h-auto;
+    w-auto;
+}
+
+.cart-item cart-remove-button {
+  @apply 
+    m-0;
+}
+
+// TODO: COLORS // 
+.cart__ctas button {
+  @apply 
+    text-xl;
+    min-h-12;
+  /* background: black;
+  color: white; */
+}
+
+.price {
+  @apply 
+    !font-lg;
+    bold;
+    tracking-wider;
+    text-left;
+    pt-2;
+}
+
+.product-option {
+  @apply 
+    text-base;
+    font-normal;
+    leading-snug;
+    text-left;
+}
+
+.totals__subtotal {
+  @apply 
+    !font-lg;
+}
+
+.totals__subtotal-value {
+  @apply 
+    !font-lg;
+}
+
+.underlined-link {
+  @apply 
+    underline;
+}
+
+.tax-note {
+  @apply 
+    text-sm;
+  /* font-size: 14px; */
+}
+
+.quantity {
+  @apply 
+    w-20;
+}
+
+.quantity__button {
+  @apply 
+    text-2xl; 
+    !bg-black; 
+    // TODO: link to color settings 
+    text-white;
+    h-5;
+    w-5;
+    m-auto; 
+}
+
+
+  .desktop-table-wrapper {
+    lg:!block; 
+  }
+
+  .mobile {
+    lg:!hidden;
+  }
+
+/* @media screen and (min-width: 750px) {
+  .desktop-table-wrapper {
+    display: block !important;
+  }
+  .mobile {
+    display: none !important;
+  }
+} */
+
+/* TABLET STYLES  */
+
+@media screen and (max-width: 900px) {
+  .cart-item__image-container {
+    height: 100px;
+    width: 100px;
+  }
+
+  .cart-item > td + td {
+    padding-left: 2rem !important;
+  }
+}
+
+/* MOBILE STYLES  */
+@media screen and (max-width: 749px) {
+  .mobile {
+    display: block !important;
+  }
+
+  .desktop-table-wrapper {
+    display: none !important;
+  }
+
+  .cart-item__image-container {
+    height: 100px;
+    width: 100px;
+    margin-right: 1rem;
+  }
+
+  .cart-item {
+    display: flex;
+    height: 100px;
+    margin-bottom: 3rem;
+  }
+
+  .cart-item__price-wrapper {
+    margin-top: 100px;
+  }
+
+  .quantity__input {
+    width: 2rem;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+  cart-remove-button {
+    float: right;
+  }
+
+  cart-remove-button .button {
+    min-height: 0 !important;
+    position: absolute;
+    right: 1rem;
+  }
+
+  cart-items .title-wrapper-with-link {
+    margin: 0 0 3rem 0;
+    justify-content: center;
+  }
+
+  .cart__ctas button {
+    margin-left: 0;
+  }
+
+  #main-cart-footer .text-area {
+    min-height: auto;
+    font-size: 1rem;
+  }
+
+  .price {
+    font-size: 1rem !important;
+    font-weight: normal;
+    letter-spacing: 0.03em;
+    padding-top: 0 !important;
+  }
+
+  .totals {
+    justify-content: space-between !important;
+  }
+}
