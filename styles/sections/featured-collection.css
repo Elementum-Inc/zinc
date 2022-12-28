@@ -1,8 +1,8 @@
 .featured-collection-slider {
-  @apply hidden;
+  @apply hidden
 
   &.active {
-    @apply !block;
+    @apply !block
   }
 }
 

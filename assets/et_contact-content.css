@@ -11,6 +11,16 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
+  -ms-flex-pack: distribute;
+  -webkit-justify-content: space-around;
+  justify-content: space-around;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
   position: relative;
 }
 .text-above {
@@ -18,18 +28,35 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: vertical !important;
+  -webkit-box-direction: reverse !important;
+  -ms-flex-direction: column-reverse !important;
+  -webkit-flex-direction: column-reverse !important;
+  flex-direction: column-reverse !important;
 }
 .subtitle {
   font-size: 1rem;
+  text-transform: capitalize;
 }
 .large-sub {
+  font-weight: 500;
   font-size: 2.25rem;
 }
 .contact-info {
   margin-top: 3rem;
 }
 .contact-content-btn {
+  --tw-bg-opacity: 1;
+  background-color: rgba(10, 10, 10, var(--tw-bg-opacity));
   height: 2.25rem;
+  min-width: 10.5rem;
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 .contact-content .title {
   margin: 0px;
@@ -46,6 +73,7 @@
   }
   .contact-content .page-width {
     padding-left: 0px;
+    padding-right: 0px;
   }
 }
 .contact-content-card__image-wrapper--third-width {
@@ -57,6 +85,7 @@
 .contact-content-list__item.center
   .contact-content-card__image-wrapper:not(.contact-content-card__image-wrapper--full-width), .contact-content-list__item:only-child {
   margin-left: auto;
+  margin-right: auto;
 }
 .contact-content .button {
   margin-top: 1.5rem;
@@ -68,6 +97,8 @@
 }
 .contact-content-list {
   margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
 }
 .contact-content-list__item:only-child {
   max-width: 72rem;
@@ -92,6 +123,8 @@
 .contact-content-list h3, .contact-content-list p {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .contact-content-card__info > :nth-child(2) {
   margin-top: 1rem;
@@ -106,9 +139,11 @@
 @media screen and (max-width: 749px) {
   .contact-content-list {
     margin: 0px;
+    width: 100%;
   }
   .contact-content-list:not(.slider) {
     padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 @media screen and (min-width: 750px) {
@@ -123,6 +158,7 @@
   }
 }
 .background-none .contact-content-card-spacing {
+  margin: 0px;
   padding: 0px;
 }
 .contact-content-card__info {
@@ -130,6 +166,8 @@
 }
 .background-none .contact-content-card__info {
   padding-top: 0px;
+  padding-left: 0px;
+  padding-right: 0px;
 }
 .background-none .slider .contact-content-card__info {
   padding-bottom: 0px;
@@ -151,6 +189,7 @@
   .center
   .contact-content-card__info {
   padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 @media screen and (max-width: 749px) {
   .background-none .slider .contact-content-card__info {
@@ -170,6 +209,7 @@
       .center
       .contact-content-card__info {
     padding-left: 1.5rem;
+    padding-right: 1.5rem;
   }
 }
 .contact-content-card
@@ -186,10 +226,12 @@
   border-radius: 0px;
 }
 .contact-content-card__info .link {
+  margin-top: 1.5rem;
   text-decoration: none;
 }
 .contact-content-card__info .icon-wrap {
   margin-left: 0.75rem;
+  white-space: nowrap;
 }
 @media screen and (min-width: 990px) {
   .contact-content-list__item--empty {

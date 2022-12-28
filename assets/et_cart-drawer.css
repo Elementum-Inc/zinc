@@ -1,6 +1,14 @@
 .drawer__inner {
   --tw-bg-opacity: 1 !important;
   background-color: rgba(255, 255, 255, var(--tw-bg-opacity)) !important;
+  float: right !important;
+  height: 100vh !important;
+  overflow-x: auto !important;
+  overflow-y: scroll !important;
+  padding-top: 0.5rem !important;
+  padding-bottom: 0.5rem !important;
+  padding-left: 3.5rem !important;
+  padding-right: 3.5rem !important;
   width: 40rem !important;
   max-width: calc(100vw - 3rem) !important;
   border: 0.1rem solid rgba(var(--color-foreground), 0.2) !important;
@@ -13,6 +21,7 @@
 }
 .icon-remove {
   height: 1.75rem;
+  margin-top: 0.5rem;
 }
 .cart-item__quantity-wrapper {
   display: -webkit-box;
@@ -25,6 +34,7 @@
   justify-content: space-between;
 }
 .cart-drawer .price {
+  font-weight: 600;
   font-size: 1rem;
 }
 .cart-item__name {
@@ -38,16 +48,21 @@
 }
 .cart-drawer .remove-btn {
   padding-right: 0px;
+  padding-top: 0px;
 }
 .cart-drawer .remove-btn svg {
   margin-left: auto;
+  margin-top: 0px;
 }
 .cart-drawer .remove-btn h3 {
   margin-left: auto;
+  margin-top: 0px;
 }
 .cart-item__price-wrapper {
   margin-top: auto;
   margin-bottom: auto;
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .quantity__button {
   font-size: 1.5rem;
@@ -64,28 +79,42 @@
   font-size: 1rem;
 }
 .cart-drawer .totals__subtotal-value {
+  font-weight: 600;
   font-size: 1rem;
 }
 #CartDrawer-Note {
   background: #f3f3f1;
+  --tw-border-opacity: 1;
+  border-color: rgba(194, 194, 194, var(--tw-border-opacity));
+  border-width: 1px;
   font-size: 1rem;
 }
 .cart-drawer .tax-note {
   margin-top: 0.75rem;
+  margin-right: 0px;
+  margin-bottom: 1rem;
+  margin-left: auto;
 }
 .drawer__close svg {
   height: 1.5rem;
+  width: 1.5rem;
 }
 .drawer__heading {
   margin: auto;
 }
 .cart-drawer .cart__checkout-button {
+  --tw-bg-opacity: 1;
+  background-color: rgba(10, 10, 10, var(--tw-bg-opacity));
   max-width: none;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 @media screen and (max-width: 749px) {
   .drawer__inner {
     padding-top: 0.5rem;
     padding-bottom: 0.5rem;
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
   }
   .cart-drawer .remove-btn {
     min-width: 4rem;
