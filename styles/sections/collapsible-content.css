@@ -57,9 +57,7 @@
   @apply 
     m-0 m-auto
     pr-6
-    pl-6
-    h-73rem;
-
+    pl-6;
 }
 
 .collapsible-content__header {
