@@ -6,7 +6,7 @@
     overflow-x-auto
     overflow-y-scroll
     py-2
-    px-14
+    px-14;
 }
 
 // TODO: UPDATE COLOR VARIABLES //
@@ -25,62 +25,62 @@
 .icon-remove {
   @apply
     h-7
-    mt-2
+    mt-2;
 }
 
 .cart-item__quantity-wrapper {
   @apply
-    flex
+    flex;
 }
 
 .cart-drawer .price {
   @apply
     text-base
-    font-semibold
+    font-semibold;
 }
 
 .cart-item__name {
   @apply
-    font-semibold
+    font-semibold;
 }
 
 .product-option {
   @apply
-    text-sm
+    text-sm;
 }
 
 .cart-drawer .quantity {
   @apply
-    w-16
+    w-16;
 }
 
 .cart-item__quantity-wrapper {
   @apply
-    justify-between
+    justify-between;
 }
 
 .cart-drawer .remove-btn {
   @apply
     pr-0
-    pt-0
+    pt-0;
 }
 
 .cart-drawer .remove-btn svg {
   @apply
     ml-auto
-    mt-0
+    mt-0;
 }
 
 .cart-drawer .remove-btn h3 {
   @apply
     ml-auto
-    mt-0
+    mt-0;
 }
 
 .cart-item__price-wrapper {
   @apply
     my-auto
-    mx-0
+    mx-0;
 }
 
 .quantity__button {
@@ -95,19 +95,19 @@
 
 .quantity__button .increase {
   @apply 
-    p-0.75
+    p-0.75;
 }
 /* unclear why this doesn't work but needs to be svg anyway */
 
 .quantity__input {
   @apply
-  text-base
+  text-base;
 }
 
 .cart-drawer .totals__subtotal-value {
   @apply
     text-base
-    font-semibold
+    font-semibold;
 }
 
 // TODO: should this be wired to any theme colors // 
@@ -116,7 +116,7 @@
   @apply
     text-base
     border-1
-    border-gray-500
+    border-gray-500;
 }
 
 .cart-drawer .tax-note {
@@ -124,25 +124,25 @@
     mt-3
     mr-0
     mb-4
-    ml-auto
+    ml-auto;
 }
 
 .drawer__close svg {
   @apply
     h-6
-    w-6
+    w-6;
 }
 
 .drawer__heading {
   @apply
-    m-auto
+    m-auto;
 }
 
 .cart-drawer .cart__checkout-button {
   @apply
     max-w-none
     bg-black
-    text-white
+    text-white;
 }
 
 /* MOBILE STYLES  */
@@ -150,21 +150,21 @@
   .drawer__inner {
     @apply
       py-2
-      px-5
+      px-5;
   }
 
   .cart-drawer .remove-btn {
     @apply
-      min-w-16
+      min-w-16;
   }
 
   td {
     @apply
-      !pt-0
+      !pt-0;
   }
 
   .drawer__heading {
     @apply
-      text-3xl
+      text-3xl;
   }
 }

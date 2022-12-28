@@ -1,21 +1,21 @@
 #testimonials-section .content-container {
   @apply
-    flex
+    flex;
 }
 
 #testimonials-section .multicolumn-card__image-wrapper {
   @apply
-    !m-0
+    !m-0;
 }
 
 #testimonials-section .media {
   @apply
-    min-w-18
+    min-w-18;
 }
 
 #testimonials-section .media--circle {
   @apply
-    max-w-25
+    max-w-25;
 }
 
 #testimonials-section {
@@ -25,17 +25,16 @@
 
 #testimonials-section .title {
   @apply
-    text-4xl
+    text-4xl;
 }
 
 #testimonials-section h4 {
-  // TODO: WHICH FONT FAMILY AND COLOR // 
+  /* // TODO: WHICH FONT FAMILY AND COLOR //  */
   color: #1e0e62;
   @apply 
-    /* // I DO NOT APPRECIATE THE FONT/TEXT NAMING INCONSISTENCY WITH WINDI //  */
     font-semibold
     text-base
-    tracking-wide
+    tracking-wide;
 }
 
 #testimonials-section h5 {

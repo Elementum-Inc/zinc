@@ -1,9 +1,8 @@
-@apply hidden
-
-  &.active {
-  .featured-collection-slider {
-    display: block !important;
-  }
+.featured-collection-slider {
+  display: none;
+}
+.featured-collection-slider.active {
+  display: block !important;
 }
 #collection-tab-container {
   text-align: center;
