@@ -1,8 +1,4 @@
 .quick-add {
-  /* position: relative
-  grid-row-start: 4
-  margin: 0 0 1rem
-  z-index: 1 */
   @apply
     relative
     row-start-4
@@ -13,29 +9,21 @@
 }
 
 .quick-add-modal__content-info h2 {
-  /* font-size: 20px !important */
   @apply
     !text-xl
 }
 
 .quick-add-modal__content-info .product__title {
-  /* margin-bottom: 0 !important */
   @apply 
     !mb-0
 }
 
 .quick-add-modal__content-info .price__regular {
-  /* font-size: 18px */
   @apply
     text-lg
 }
 
 .quick-add-modal__content-info .product__view-details {
-  /* border-top: 1px solid
-  border-bottom: 1px solid
-  text-align: center
-  font-size: 16px
-  padding: 0.7rem */
   @apply  
     border-t-1
     border-b-1
@@ -45,8 +33,6 @@
 }
 
 .quick-add-modal__content-info .product__description {
-  /* margin: 0 0 2rem 0 !important
-  font-size: 12px */
   @apply
     !mt-0
     !mr-0
@@ -56,17 +42,12 @@
 }
 
 .quick-add-modal__content-info .product-price {
-  /* margin: 0 !important
-  font-size: 20px !important */
     @apply
         !m-0
         !text-xl;
 }
 
 .quick-add-modal__content-info .form__label {
-  /* font-size: 14px !important
-  padding: 0
-  margin: 2rem 0 0 0 */
   @apply 
     !text-sm
     p-0
@@ -77,22 +58,17 @@
 }
 
 .quick-add-modal__content-info .icon-caret {
-  /* height: 0.5rem !important */
   @apply
     h-0.5rem
 }
 
 .quick-add-modal__content-info .select__select {
-  /* font-size: 16px
-  height: 40px */
   @apply
     text-base
     h-12;
 }
 
 .quick-add-modal__content-info .button {
-  /* font-size: 14px !important
-  min-height: 40px !important */
   @apply
     !text-sm
     !min-h-12
@@ -102,29 +78,22 @@
 }
 
 .quick-add-modal__content-info .shopify-payment-button {
-  /* height: 40px !important */
   @apply
     !h-12
 }
 
 .quick-add-modal__content-info .shopify-payment-button__button {
-  /* font-size: 14px !important
-  min-height: 35px !important
-  padding: 0px !important */
   @apply
     !text-sm
     !min-h-10;
 }
 
 .quick-add-modal__content-info .quantity__input {
-  /* width: 100px !important */
   @apply
     !w-full
 }
 
 .quick-add-modal__content-info .quantity {
-  /* width: 100px
-  min-height: 40px */
   @apply
     w-6.25rem
     min-h-10;
@@ -137,23 +106,11 @@
 }
 
 .form__label {
-  /* padding-top: 20px */
   @apply 
     p-5
 }
 
 .quick-add-modal {
-  /* box-sizing: border-box
-  opacity: 0
-  position: fixed
-  visibility: hidden
-  z-index: -1
-  margin: 0 auto
-  top: 0
-  left: 0
-  width: 100%
-  background: rgba(var(--color-foreground), 0.2)
-  height: 100% */
   @apply 
     box-border
     opacity-0
@@ -171,15 +128,11 @@
 }
 
 .quick-add-modal__toggle {
-  /* display: none !important */
   @apply
     !hidden
 }
 
 .quick-add-modal[open] {
-  /* opacity: 1
-  visibility: visible
-  z-index: 101 */
   @apply
     opacity-100
     visible
@@ -187,26 +140,16 @@
 }
 
 .quick-add-modal__content {
-  /* position: absolute
-  top: 0
-  left: 50%
-  transform: translateX(-50%)
-  margin: 3.2rem auto 0
-  width: 100%
-  background-color: rgb(var(--color-background))
-  overflow: hidden
-  max-width: var(--page-width)
-  width: calc(100% - 3rem)
-  background: white */
   @apply
     absolute
+    top-0
     left-1/2
     transform -translate-x-1/2
     mt-13
     mx-auto
     mb-0
     bg-scheme-bg
-    overflow-hidden
+    <md:overflow-hidden
     max-w-full
     w-2/3;
 }
