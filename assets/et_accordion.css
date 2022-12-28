@@ -9,12 +9,15 @@
 }
 
 .accordion summary {
-  line-height: 1
-    @apply
-    flex
-    relative
-    border-t-2
-    border-gray-500;
+  --tw-border-opacity: 1;
+  border-color: rgb(194 194 194 / var(--tw-border-opacity));
+  border-top-width: 2px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  position: relative;
+  line-height: 1;
 }
 
 .accordion svg {

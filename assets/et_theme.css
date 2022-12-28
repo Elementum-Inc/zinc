@@ -57,6 +57,18 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
+button, input, textarea, select {
+  font-family: inherit;
+  font-size: 100%;
+  line-height: 1.15;
+  margin: 0;
+  padding: 0;
+  line-height: inherit;
+  color: inherit;
+}
+button, select {
+  text-transform: none;
+}
 button, [type='button'], [type='reset'], [type='submit'] {
   -webkit-appearance: button;
 }
@@ -123,18 +135,6 @@ strong {
 }
 small {
   font-size: 80%;
-}
-select, input, textarea, button {
-  font-family: inherit;
-  font-size: 100%;
-  line-height: 1.15;
-  margin: 0;
-  padding: 0;
-  line-height: inherit;
-  color: inherit;
-}
-select, button {
-  text-transform: none;
 }
 svg, img, iframe, video {
   display: block;
@@ -528,11 +528,6 @@ ul {
   -webkit-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   -o-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
   transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
-}
-.duration {
-  -webkit-transition-duration: 150ms;
-  -o-transition-duration: 150ms;
-  transition-duration: 150ms;
 }
 .duration-300 {
   -webkit-transition-duration: 300ms;

@@ -10,12 +10,12 @@
 }
 
 .accordion summary {
-  line-height: 1
   @apply
     flex
     relative
     border-t-2
     border-gray-500;
+  line-height: 1;
 }
 
 .accordion svg {
