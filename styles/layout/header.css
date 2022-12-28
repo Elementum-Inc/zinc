@@ -26,6 +26,10 @@
     @apply basis-1/2 lg:basis-1/3 text-xl md:text-1.75 uppercase;
   }
 
+  & .logo__image {
+    @apply inline-block;
+  }
+
   &.logo-left,
   &.logo-right {
     & .header__logo {
@@ -215,6 +219,16 @@
   &__menu-top {
     @apply hidden lg:flex;
 
+    & .icon.expand {
+      @apply transition-all duration-200 ease-in;
+    }
+
+    & button[aria-expanded='false'] {
+      & .icon.expand {
+        @apply transform rotate-45;
+      }
+    }
+
     &.collapsed {
       @apply absolute top-full left-0 w-full bg-scheme-bg text-scheme-text;
 
@@ -288,17 +302,14 @@
     &.menu {
       @apply flex-grow min-w-1/3 px-4 bg-scheme-bg text-scheme-text;
 
-      & * {
-        background-color: inherit;
-        color: inherit;
-      }
-
-      & .menu__level0 span {
-        @apply text-xl xl:text-2xl 2xl-text-4xl;
-        word-wrap: anywhere;
-      }
-
       & .menu__top-link {
+        @apply w-full;
+
+        & span {
+          @apply text-xl xl:text-2xl 2xl:text-4xl;
+          word-wrap: anywhere;
+        }
+
         & > button,
         & > a {
           @apply block relative z-3 p-1;
@@ -327,7 +338,8 @@
       & .menu__level1 {
         @apply text-base;
 
-        & button {
+        & button,
+        & a {
           @apply relative z-2 w-full p-1;
         }
       }
@@ -338,6 +350,10 @@
         & li {
           @apply m-1;
         }
+      }
+
+      & .menu__view-all {
+        @apply font-semibold;
       }
     }
 
@@ -460,6 +476,42 @@
         @apply border-l border-scheme-accent;
       }
     }
+
+    & .icon.expand {
+      & > svg {
+        @apply h-[.75rem] w-[.75rem];
+      }
+    }
+
+    & .menu__top-link {
+      @apply font-semibold;
+    }
+
+    & .menu__level1 {
+      & button {
+        @apply relative z-2 w-full p-1;
+      }
+
+      & .icon.expand {
+        @apply ml-2;
+
+        & > svg {
+          @apply h-2 w-2;
+        }
+      }
+    }
+
+    & .image_content__inner {
+      @apply max-h-full flex;
+    }
+
+    & .image_content__image {
+      @apply basis-1/3;
+    }
+
+    & .image_content__content {
+      @apply ml-4;
+    }
   }
 
   .bold {
@@ -468,36 +520,6 @@
 
       &__inner {
         @apply min-w-full max-h-full overflow-auto;
-      }
-
-      & .menu__level0 span {
-        @apply font-serif uppercase;
-      }
-
-      & .menu__top-link {
-        > button[aria-expanded='true'] a::after {
-          @apply h-[2px];
-        }
-      }
-
-      & .menu__level1 {
-        @apply flex justify-evenly items-stretch;
-
-        & li {
-          @apply relative flex-1 mr-2 text-lg xl:text-xl 2xl:text-2xl;
-        }
-
-        & li > a {
-          @apply align-sub;
-        }
-      }
-
-      & .menu__level2 {
-        @apply min-w-full z-10;
-
-        & li {
-          @apply text-base xl:text-lg;
-        }
       }
 
       &.images-top {
@@ -513,7 +535,7 @@
       &.images-left,
       &.images-right,
       &.images-none {
-        & .menu__level0 span {
+        & .menu__top-link span {
           @apply text-3xl xl:text-6xl 2xl:text-9xl;
         }
 
@@ -528,6 +550,49 @@
           @apply pl-24;
         }
       }
+    }
+
+    & .menu__top-link span {
+      @apply font-serif uppercase;
+    }
+
+    & .menu__top-link {
+      > button[aria-expanded='true'] a::after {
+        @apply h-[2px];
+      }
+    }
+
+    & .menu__level1 {
+      @apply flex flex-wrap justify-evenly items-stretch;
+
+      & li {
+        @apply relative flex-1 mr-2 text-lg xl:text-xl 2xl:text-2xl;
+      }
+
+      & li > a {
+        @apply align-sub;
+      }
+
+      & .icon.expand {
+        @apply ml-2;
+
+        & > svg {
+          @apply h-2 w-2;
+        }
+      }
+    }
+
+    & .menu__level2 {
+      @apply min-w-full z-10;
+
+      & li {
+        @apply text-base xl:text-lg;
+      }
+    }
+
+    & .menu__view-all {
+      @apply px-1 pt-2 pb-1;
+      flex: 2 0 100% !important;
     }
 
     & .image_content {
