@@ -2,32 +2,32 @@
   max-width: calc(100% - 6rem);
 
   @apply
-    inline-block;
-    mt-3;
-    mx-auto;
-    mb-0;
-    break-words;
+    inline-block
+    mt-3
+    mx-auto
+    mb-0
+    break-words
 }
 
-.accordion summary {s
-  line-height: 1;
+.accordion summary {
+  line-height: 1
   @apply
-    flex;
-    relative;
-    border-t-2;
-    border-gray-500;
+    flex
+    relative
+    border-t-2
+    border-gray-500
 }
 
 .accordion svg {
   @apply
-    w-4;
+    w-4
 }
 
 /* SHOPIFY STYLES */
 .accordion .summary__title {
   @apply
-    flex;
-    flex-1;
+    flex
+    flex-1
 }
 
 .accordion .summary__title + .icon-caret {
@@ -36,8 +36,8 @@
 
 .accordion + .accordion {
   @apply
-    mt-0;
-    border-t-0;
+    mt-0
+    border-t-0
 }
 
 // TODO: UPDATE THESE COLORS VARIABLES // 
@@ -62,14 +62,14 @@
 
 .accordion__content {
   @apply
-    mb-6;
-    break-words;
-    overflow-x-auto;
-    py-4;
-    px-20;
+    mb-6
+    break-words
+    overflow-x-auto
+    py-4
+    px-20
 }
 
 .accordion__content img {
   @apply
-    max-w-full;
+    max-w-full
 }

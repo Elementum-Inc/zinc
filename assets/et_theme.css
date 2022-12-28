@@ -2721,15 +2721,18 @@ p.small {
 .footer {
   font-family: var(--font-heading-family);
 }
-#FooterCountryForm {
-  width: 100%;
-}
-#FooterCountryForm .icon-caret {
-  position: absolute;
-  content: "";
-  height: 0.6rem;
-  top: calc(50% - 0.2rem);
-  left: 0;
+@apply 
+    w-full
+    !my-4
+
+  & .icon-caret {
+  #FooterCountryForm {
+    position: absolute;
+    content: "";
+    height: 0.6rem;
+    top: calc(50% - 0.2rem);
+    left: 0;
+  }
 }
 #FooterCountryForm .disclosure__list-wrapper {
   background-color: rgb(var(--theme-foreground));

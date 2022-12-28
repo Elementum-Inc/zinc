@@ -1,9 +1,13 @@
 .contact .field__input {
+  border-radius: 0px;
   border-width: 3px;
+  height: 4rem;
 }
 .contact {
   padding-left: 3rem;
   padding-right: 3rem;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 .contact .title {
   font-size: 2rem;
@@ -11,8 +15,13 @@
 .helper-text {
   margin-top: 1.7rem;
   margin-bottom: 1.7rem;
+  margin-left: 0px;
+  margin-right: 0px;
+  --tw-text-opacity: 1;
+  color: rgba(194, 194, 194, var(--tw-text-opacity));
 }
 .helper-text .small {
+  font-weight: 500;
   font-size: 1rem !important;
 }
 .contact img {
@@ -40,6 +49,7 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  margin-top: 3rem;
 }
 .contact__button button {
   background-color: black;

@@ -16,9 +16,13 @@
 #testimonials-section {
   background-color: #fbf2de;
 }
+#testimonials-section .title {
+  font-size: 2.25rem;
+}
 #testimonials-section h4 {
   color: #1e0e62;
   font-weight: 600;
+  font-size: 1rem;
 }
 #testimonials-section h5 {
   font-family: "DM Sans";

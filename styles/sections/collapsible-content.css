@@ -1,101 +1,104 @@
 .collapsible-content__grid .grid__item {
   @apply 
-    m-auto;
+    m-auto
 }
 
 .collapsible-content {
   @apply 
-    relative;
-    z-0;
+    relative
+    z-0
 }
 
 .collapsible-section-layout {
   @apply 
-    pb-20;
-    pt-20;
+    pb-20
+    pt-20
 }
 
 @media screen and (min-width: 750px) {
   .collapsible-section-layout {
     @apply 
-      pb-28;
-      pt-28;
+      pb-28
+      pt-28
   }
 }
 
 .collapsible-content__media--small {
   @apply
-    h-xs;
+    h-xs
 }
 
 .collapsible-content__media--large {
   @apply 
-    h-2xl;
+    h-2x
 }
 
 @media screen and (min-width: 750px) {
   .collapsible-content__media--small {
     @apply 
-      h-lg;
+      h-lg
   }
 
   .collapsible-content__media--large {
-    h-69rem; 
+    @apply 
+      h-69rem
   }
 }
 
 @media screen and (min-width: 750px) {
   .collapsible-content__grid--reverse {
     @apply 
-      flex;
-      flex-row-reverse;
+      flex
+      flex-row-reverse
   }
 }
 
 .collapsible-content-wrapper-narrow {
   @apply 
-    m-0 m-auto;
-    pr-6;
-    pl-6;
-    h-73rem;
+    m-0 m-auto
+    pr-6
+    pl-6
+    h-73rem
 
 }
 
 .collapsible-content__header {
   @apply 
-    break-words;
+    break-words
 }
 
 .collapsible-content__heading {
   @apply 
-    mb-8;
-    mt-0;
+    mb-8
+    mt-0
 }
 
 @media screen and (min-width: 750px) {
   .collapsible-content__heading {
     @apply 
-      mb-12;
+      mb-12
   }
 }
 
 .collapsible-none-layout .accordion + .accordion {
   @apply 
-    border-top-0;
+    border-top-0
 }
 
 .collapsible-row-layout .accordion:not(:first-child):not(.color-background-1) {
   @apply
-    mt-4;
+    mt-4
 }
 
 .caption-spaced + h2 {
-    @apply m2;
+    @apply 
+      m2
 }
 
 @media screen and (min-width: 750px) {
   .collapsible-content .accordion {
-    @apply mt-0;
+    @apply 
+      mt-0
   }
 }
 

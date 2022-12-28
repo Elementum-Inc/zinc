@@ -3,97 +3,98 @@
 /* DESKTOP STYLES  */
 .cart-item__name {
   @apply 
-    font-lg;
+    font-lg
 }
 
 .cart-item__image-container {
   @apply
     h-200px
-    w-200px;
+    w-200px
 
 }
 
 .cart-item__image-container img {
   @apply 
-    h-auto;
-    w-auto;
+    h-auto
+    w-auto
 }
 
 .cart-item cart-remove-button {
   @apply 
-    m-0;
+    m-0
 }
 
-// TODO: COLORS // 
+/* // TODO: COLORS //  */
 .cart__ctas button {
   @apply 
-    text-xl;
-    min-h-12;
+    text-xl
+    min-h-12
   /* background: black;
   color: white; */
 }
 
 .price {
   @apply 
-    !font-lg;
-    bold;
-    tracking-wider;
-    text-left;
-    pt-2;
+    !font-lg
+    bold
+    tracking-wider
+    text-left
+    pt-2
 }
 
 .product-option {
   @apply 
-    text-base;
-    font-normal;
-    leading-snug;
-    text-left;
+    text-base
+    font-normal
+    leading-snug
+    text-left
 }
 
 .totals__subtotal {
   @apply 
-    !font-lg;
+    !font-lg
 }
 
 .totals__subtotal-value {
   @apply 
-    !font-lg;
+    !font-lg
 }
 
 .underlined-link {
   @apply 
-    underline;
+    underline
 }
 
 .tax-note {
   @apply 
-    text-sm;
-  /* font-size: 14px; */
+    text-sm
 }
 
 .quantity {
   @apply 
-    w-20;
+    w-20
 }
 
 .quantity__button {
   @apply 
-    text-2xl; 
-    !bg-black; 
-    // TODO: link to color settings 
-    text-white;
-    h-5;
-    w-5;
-    m-auto; 
+    text-2xl
+    !bg-black
+    /* // TODO: link to color settings  */
+    text-white
+    h-5
+    w-5
+    m-auto
 }
 
 
   .desktop-table-wrapper {
-    lg:!block; 
+    @apply 
+      lg:!block
   }
 
   .mobile {
-    lg:!hidden;
+    @apply 
+      lg:!hidden
   }
 
 /* @media screen and (min-width: 750px) {
