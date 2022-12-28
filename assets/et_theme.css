@@ -703,6 +703,26 @@ ul {
 }
 .collection--empty .title {
   font-family: var(--font-heading-family);
+}
+.quick-add-modal .shopify-payment-button__button, .quick-add-modal .product-form__submit {
+  background-color: var(--button-bg);
+  display: inline-block;
+  font-size: 1.25rem;
+  min-height: unset;
+  padding-top: .375rem;
+  padding-bottom: .375rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  color: var(--button-fg);
+}
+.quick-add-modal .shopify-payment-button__button:focus, .quick-add-modal .product-form__submit:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
+  --tw-ring-shadow: var(--tw-ring-inset) 0 0 0 calc(3px + var(--tw-ring-offset-width)) var(--tw-ring-color);
+  -webkit-box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
+  --tw-ring-color: var(--color-scheme-accent);
 }.page-title {
   font-family: var(--font-heading-family);
   font-size: 3.5rem;
@@ -955,6 +975,9 @@ p.small {
 .btn-error {
   --button-bg: rgb(var(--color-error));
   --button-fg: rgb(var(--color-background-1));
+}
+.btn--large {
+  font-size: 1.25rem;
 }
 .btn.round {
   border-radius: .625rem;
@@ -1218,6 +1241,11 @@ p.small {
   .header__logo {
     flex-basis: 33.333333%;
   }
+}
+.header .logo__image {
+  display: inline-block;
+}
+@media (min-width: 1024px) {
   .header.logo-left .header__logo, .header.logo-right .header__logo {
     flex-basis: 25%;
   }
@@ -1538,6 +1566,41 @@ p.small {
     display: flex;
   }
 }
+.header__menu-top .icon.expand {
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  -o-transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
+  -webkit-transition-duration: 200ms;
+  -o-transition-duration: 200ms;
+  transition-duration: 200ms;
+}
+.header__menu-top button[aria-expanded='false'] .icon.expand {
+  --tw-translate-x: 0;
+  --tw-translate-y: 0;
+  --tw-translate-z: 0;
+  --tw-rotate: 0;
+  --tw-rotate-x: 0;
+  --tw-rotate-y: 0;
+  --tw-rotate-z: 0;
+  --tw-skew-x: 0;
+  --tw-skew-y: 0;
+  --tw-scale-x: 1;
+  --tw-scale-y: 1;
+  --tw-scale-z: 1;
+  -webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
+  -ms-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
+  --tw-rotate: 45deg;
+}
 .header__menu-top.collapsed {
   background-color: var(--color-scheme-bg);
   position: absolute;
@@ -1693,17 +1756,21 @@ p.small {
   padding-right: 1rem;
   color: var(--color-scheme-text);
 }
-.header .submenu-block.menu * {
-  background-color: inherit;
-  color: inherit;
+.header .submenu-block.menu .menu__top-link {
+  width: 100%;
 }
-.header .submenu-block.menu .menu__level0 span {
+.header .submenu-block.menu .menu__top-link span {
   font-size: 1.25rem;
   word-wrap: anywhere;
 }
 @media (min-width: 1280px) {
-  .header .submenu-block.menu .menu__level0 span {
+  .header .submenu-block.menu .menu__top-link span {
     font-size: 1.5rem;
+  }
+}
+@media (min-width: 1536px) {
+  .header .submenu-block.menu .menu__top-link span {
+    font-size: 2.25rem;
   }
 }
 .header .submenu-block.menu .menu__top-link > button, .header .submenu-block.menu .menu__top-link > a {
@@ -1754,7 +1821,7 @@ p.small {
 .header .submenu-block.menu .menu__level1 {
   font-size: 1rem;
 }
-.header .submenu-block.menu .menu__level1 button {
+.header .submenu-block.menu .menu__level1 button, .header .submenu-block.menu .menu__level1 a {
   padding: 0.25rem;
   position: relative;
   width: 100%;
@@ -1776,6 +1843,9 @@ p.small {
 }
 .header .submenu-block.menu .menu__level2 li {
   margin: 0.25rem;
+}
+.header .submenu-block.menu .menu__view-all {
+  font-weight: 600;
 }
 .header .submenu-block.image_content {
   -ms-flex-negative: 1;
@@ -1922,6 +1992,39 @@ p.small {
   border-color: var(--color-scheme-accent);
   border-left-width: 1px;
 }
+.header .basic .icon.expand > svg {
+  height: .75rem;
+  width: .75rem;
+}
+.header .basic .menu__top-link {
+  font-weight: 600;
+}
+.header .basic .menu__level1 button {
+  padding: 0.25rem;
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+.header .basic .menu__level1 .icon.expand {
+  margin-left: 0.5rem;
+}
+.header .basic .menu__level1 .icon.expand > svg {
+  height: 0.5rem;
+  width: 0.5rem;
+}
+.header .basic .image_content__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  max-height: 100%;
+}
+.header .basic .image_content__image {
+  flex-basis: 33.333333%;
+}
+.header .basic .image_content__content {
+  margin-left: 1rem;
+}
 .header .bold .menu {
   background-color: var(--color-scheme-fg);
   padding-left: 1.5rem;
@@ -1942,61 +2045,6 @@ p.small {
   min-width: 100%;
   overflow: auto;
 }
-.header .bold .menu .menu__level0 span {
-  font-family: var(--font-heading-family);
-  text-transform: uppercase;
-}
-.header .bold .menu .menu__top-link > button[aria-expanded='true'] a::after {
-  height: 2px;
-}
-.header .bold .menu .menu__level1 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: -webkit-flex;
-  display: flex;
-  -webkit-box-align: stretch;
-  -ms-flex-align: stretch;
-  -webkit-align-items: stretch;
-  align-items: stretch;
-  -webkit-box-pack: space-evenly;
-  -ms-flex-pack: space-evenly;
-  -webkit-justify-content: space-evenly;
-  justify-content: space-evenly;
-}
-.header .bold .menu .menu__level1 li {
-  -webkit-box-flex: 1;
-  -ms-flex: 1 1 0%;
-  -webkit-flex: 1 1 0%;
-  flex: 1 1 0%;
-  font-size: 1.125rem;
-  margin-right: 0.5rem;
-  position: relative;
-}
-@media (min-width: 1280px) {
-  .header .bold .menu .menu__level1 li {
-    font-size: 1.25rem;
-  }
-}
-@media (min-width: 1536px) {
-  .header .bold .menu .menu__level1 li {
-    font-size: 1.5rem;
-  }
-}
-.header .bold .menu .menu__level1 li > a {
-  vertical-align: sub;
-}
-.header .bold .menu .menu__level2 {
-  min-width: 100%;
-  z-index: 10;
-}
-.header .bold .menu .menu__level2 li {
-  font-size: 1rem;
-}
-@media (min-width: 1280px) {
-  .header .bold .menu .menu__level2 li {
-    font-size: 1.125rem;
-  }
-}
 .header .bold .menu.images-top .menu__level0 {
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;
@@ -2005,16 +2053,16 @@ p.small {
 .header .bold .menu.images-top .menu__top-link {
   max-width: 50%;
 }
-.header .bold .menu.images-left .menu__level0 span, .header .bold .menu.images-right .menu__level0 span, .header .bold .menu.images-none .menu__level0 span {
+.header .bold .menu.images-left .menu__top-link span, .header .bold .menu.images-right .menu__top-link span, .header .bold .menu.images-none .menu__top-link span {
   font-size: 2rem;
 }
 @media (min-width: 1280px) {
-  .header .bold .menu.images-left .menu__level0 span, .header .bold .menu.images-right .menu__level0 span, .header .bold .menu.images-none .menu__level0 span {
+  .header .bold .menu.images-left .menu__top-link span, .header .bold .menu.images-right .menu__top-link span, .header .bold .menu.images-none .menu__top-link span {
     font-size: 3rem;
   }
 }
 @media (min-width: 1536px) {
-  .header .bold .menu.images-left .menu__level0 span, .header .bold .menu.images-right .menu__level0 span, .header .bold .menu.images-none .menu__level0 span {
+  .header .bold .menu.images-left .menu__top-link span, .header .bold .menu.images-right .menu__top-link span, .header .bold .menu.images-none .menu__top-link span {
     font-size: 4.5rem;
   }
 }
@@ -2029,6 +2077,78 @@ p.small {
 }
 .header .bold .menu.images-left .menu__level1 {
   padding-left: 6rem;
+}
+.header .bold .menu__top-link span {
+  font-family: var(--font-heading-family);
+  text-transform: uppercase;
+}
+.header .bold .menu__top-link > button[aria-expanded='true'] a::after {
+  height: 2px;
+}
+.header .bold .menu__level1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-align: stretch;
+  -ms-flex-align: stretch;
+  -webkit-align-items: stretch;
+  align-items: stretch;
+  -webkit-box-pack: space-evenly;
+  -ms-flex-pack: space-evenly;
+  -webkit-justify-content: space-evenly;
+  justify-content: space-evenly;
+}
+.header .bold .menu__level1 li {
+  -webkit-box-flex: 1;
+  -ms-flex: 1 1 0%;
+  -webkit-flex: 1 1 0%;
+  flex: 1 1 0%;
+  font-size: 1.125rem;
+  margin-right: 0.5rem;
+  position: relative;
+}
+@media (min-width: 1280px) {
+  .header .bold .menu__level1 li {
+    font-size: 1.25rem;
+  }
+}
+@media (min-width: 1536px) {
+  .header .bold .menu__level1 li {
+    font-size: 1.5rem;
+  }
+}
+.header .bold .menu__level1 li > a {
+  vertical-align: sub;
+}
+.header .bold .menu__level1 .icon.expand {
+  margin-left: 0.5rem;
+}
+.header .bold .menu__level1 .icon.expand > svg {
+  height: 0.5rem;
+  width: 0.5rem;
+}
+.header .bold .menu__level2 {
+  min-width: 100%;
+  z-index: 10;
+}
+.header .bold .menu__level2 li {
+  font-size: 1rem;
+}
+@media (min-width: 1280px) {
+  .header .bold .menu__level2 li {
+    font-size: 1.125rem;
+  }
+}
+.header .bold .menu__view-all {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+  flex: 2 0 100% !important;
 }
 .header .bold .image_content {
   max-width: 50%;

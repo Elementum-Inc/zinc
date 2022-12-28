@@ -12554,11 +12554,9 @@ const _hoisted_13$3 = {
   key: 0,
   class: "icon target expand"
 };
-const _hoisted_14$3 = ["width", "height"];
+const _hoisted_14$3 = ["height", "width", "stroke-width"];
 const _hoisted_15$3 = /* @__PURE__ */ createBaseVNode("path", {
-  "fill-rule": "evenodd",
-  "clip-rule": "evenodd",
-  d: "M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z",
+  d: "M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z",
   fill: "currentColor"
 }, null, -1);
 const _hoisted_16$3 = [
@@ -12569,11 +12567,9 @@ const _hoisted_18$3 = {
   key: 0,
   class: "icon target expand"
 };
-const _hoisted_19$3 = ["width", "height"];
+const _hoisted_19$3 = ["height", "width", "stroke-width"];
 const _hoisted_20$3 = /* @__PURE__ */ createBaseVNode("path", {
-  "fill-rule": "evenodd",
-  "clip-rule": "evenodd",
-  d: "M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z",
+  d: "M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z",
   fill: "currentColor"
 }, null, -1);
 const _hoisted_21$2 = [
@@ -12618,22 +12614,59 @@ const _hoisted_33$1 = { key: 0 };
 const _hoisted_34$1 = { key: 1 };
 const _hoisted_35$1 = { class: "menu__level0" };
 const _hoisted_36$1 = ["href"];
-const _hoisted_37$1 = ["href"];
-const _hoisted_38$1 = ["href"];
-const _hoisted_39$1 = ["href"];
-const _hoisted_40$1 = ["href"];
-const _hoisted_41$1 = { key: 0 };
-const _hoisted_42$1 = { key: 1 };
-const _hoisted_43$1 = ["html"];
-const _hoisted_44$1 = ["href"];
-const _hoisted_45$1 = ["href"];
-const _hoisted_46$1 = { class: "dropdown" };
-const _hoisted_47$1 = ["href"];
-const _hoisted_48$1 = {
-  key: 0,
+const _hoisted_37$1 = { key: 1 };
+const _hoisted_38$1 = {
+  key: 2,
   class: "icon target expand"
 };
-const _hoisted_49$1 = /* @__PURE__ */ createBaseVNode("svg", {
+const _hoisted_39$1 = ["height", "width", "stroke-width"];
+const _hoisted_40$1 = /* @__PURE__ */ createBaseVNode("path", {
+  d: "M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z",
+  fill: "currentColor"
+}, null, -1);
+const _hoisted_41$1 = [
+  _hoisted_40$1
+];
+const _hoisted_42$1 = ["href"];
+const _hoisted_43$1 = {
+  key: 0,
+  class: "menu__view-all"
+};
+const _hoisted_44$1 = ["href"];
+const _hoisted_45$1 = ["href"];
+const _hoisted_46$1 = { key: 1 };
+const _hoisted_47$1 = {
+  key: 2,
+  class: "icon expand"
+};
+const _hoisted_48$1 = ["height", "width", "stroke-width"];
+const _hoisted_49$1 = /* @__PURE__ */ createBaseVNode("path", {
+  d: "M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z",
+  fill: "currentColor"
+}, null, -1);
+const _hoisted_50 = [
+  _hoisted_49$1
+];
+const _hoisted_51 = ["href"];
+const _hoisted_52 = {
+  key: 0,
+  class: "menu__view-all"
+};
+const _hoisted_53 = ["href"];
+const _hoisted_54 = ["href"];
+const _hoisted_55 = { key: 0 };
+const _hoisted_56 = { key: 1 };
+const _hoisted_57 = ["html"];
+const _hoisted_58 = ["href"];
+const _hoisted_59 = ["href"];
+const _hoisted_60 = { class: "dropdown" };
+const _hoisted_61 = ["href"];
+const _hoisted_62 = { key: 1 };
+const _hoisted_63 = {
+  key: 2,
+  class: "icon target expand"
+};
+const _hoisted_64 = /* @__PURE__ */ createBaseVNode("svg", {
   "aria-hidden": "true",
   focusable: "false",
   role: "presentation",
@@ -12647,11 +12680,16 @@ const _hoisted_49$1 = /* @__PURE__ */ createBaseVNode("svg", {
     fill: "currentColor"
   })
 ], -1);
-const _hoisted_50 = [
-  _hoisted_49$1
+const _hoisted_65 = [
+  _hoisted_64
 ];
-const _hoisted_51 = ["href"];
-const _hoisted_52 = ["href"];
+const _hoisted_66 = ["href"];
+const _hoisted_67 = {
+  key: 0,
+  class: "dropdown__view-all"
+};
+const _hoisted_68 = ["href"];
+const _hoisted_69 = ["href"];
 function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_PopoverButton = resolveComponent("PopoverButton");
   const _component_DisclosureButton = resolveComponent("DisclosureButton");
@@ -12737,10 +12775,12 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                 "aria-hidden": "true",
                                 focusable: "false",
                                 role: "presentation",
+                                class: "stroke-scheme-text",
                                 fill: "none",
-                                viewBox: "0 0 10 10",
+                                viewBox: "0 0 18 17",
+                                height: $props.iconSize,
                                 width: $props.iconSize,
-                                height: $props.iconSize
+                                "stroke-width": $props.iconStrokeWidth
                               }, _hoisted_16$3, 8, _hoisted_14$3))
                             ])) : createCommentVNode("", true)
                           ]),
@@ -12773,10 +12813,12 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                               "aria-hidden": "true",
                                               focusable: "false",
                                               role: "presentation",
+                                              class: "stroke-scheme-text",
                                               fill: "none",
-                                              viewBox: "0 0 10 10",
+                                              viewBox: "0 0 18 17",
+                                              height: $props.iconSize,
                                               width: $props.iconSize,
-                                              height: $props.iconSize
+                                              "stroke-width": $props.iconStrokeWidth
                                             }, _hoisted_21$2, 8, _hoisted_19$3))
                                           ])) : createCommentVNode("", true)
                                         ]),
@@ -12900,11 +12942,13 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                         (openBlock(true), createElementBlock(Fragment, null, renderList(block.settings.submenu, (link2) => {
                                           return openBlock(), createBlock(_component_Disclosure, {
                                             as: "li",
-                                            key: link2.id,
-                                            class: "menu__top-link"
+                                            key: link2.id
                                           }, {
                                             default: withCtx(() => [
-                                              link2.links.length ? (openBlock(), createBlock(_component_DisclosureButton, { key: 0 }, {
+                                              link2.links.length ? (openBlock(), createBlock(_component_DisclosureButton, {
+                                                key: 0,
+                                                class: "menu__top-link parent"
+                                              }, {
                                                 default: withCtx(() => [
                                                   createVNode(Transition, {
                                                     name: "fade",
@@ -12922,16 +12966,32 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                     ]),
                                                     _: 2
                                                   }, 1024),
-                                                  createBaseVNode("a", {
+                                                  $props.settings.mm_toplink_behavior == "parent_link" ? (openBlock(), createElementBlock("a", {
+                                                    key: 0,
                                                     href: link2.url
                                                   }, [
                                                     createBaseVNode("span", null, toDisplayString(link2.title), 1)
-                                                  ], 8, _hoisted_36$1)
+                                                  ], 8, _hoisted_36$1)) : (openBlock(), createElementBlock("span", _hoisted_37$1, toDisplayString(link2.title), 1)),
+                                                  $props.settings.mm_enable_caret ? (openBlock(), createElementBlock("span", _hoisted_38$1, [
+                                                    (openBlock(), createElementBlock("svg", {
+                                                      xmlns: "http://www.w3.org/2000/svg",
+                                                      "aria-hidden": "true",
+                                                      focusable: "false",
+                                                      role: "presentation",
+                                                      class: "stroke-scheme-text",
+                                                      fill: "none",
+                                                      viewBox: "0 0 18 17",
+                                                      height: $props.iconSize,
+                                                      width: $props.iconSize,
+                                                      "stroke-width": $props.iconStrokeWidth
+                                                    }, _hoisted_41$1, 8, _hoisted_39$1))
+                                                  ])) : createCommentVNode("", true)
                                                 ]),
                                                 _: 2
                                               }, 1024)) : (openBlock(), createElementBlock("a", {
                                                 key: 1,
-                                                href: link2.url
+                                                href: link2.url,
+                                                class: "menu__top-link"
                                               }, [
                                                 createVNode(Transition, {
                                                   name: "fade",
@@ -12950,7 +13010,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                   _: 2
                                                 }, 1024),
                                                 createBaseVNode("span", null, toDisplayString(link2.title), 1)
-                                              ], 8, _hoisted_37$1)),
+                                              ], 8, _hoisted_42$1)),
                                               link2.links.length ? (openBlock(), createBlock(Transition, {
                                                 key: 2,
                                                 name: "slideDown"
@@ -12961,23 +13021,46 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                     class: "menu__level1"
                                                   }, {
                                                     default: withCtx(() => [
+                                                      $props.settings.mm_toplink_behavior == "view_all_link" ? (openBlock(), createElementBlock("li", _hoisted_43$1, [
+                                                        createBaseVNode("a", {
+                                                          href: link2.url
+                                                        }, " All " + toDisplayString(link2.title), 9, _hoisted_44$1)
+                                                      ])) : createCommentVNode("", true),
                                                       (openBlock(true), createElementBlock(Fragment, null, renderList(link2.links, (child) => {
                                                         return openBlock(), createBlock(_component_Disclosure, {
                                                           as: "li",
                                                           key: child.id
                                                         }, {
                                                           default: withCtx(() => [
-                                                            child.links.length ? (openBlock(), createBlock(_component_DisclosureButton, { key: 0 }, {
+                                                            child.links.length ? (openBlock(), createBlock(_component_DisclosureButton, {
+                                                              key: 0,
+                                                              class: "parent"
+                                                            }, {
                                                               default: withCtx(() => [
-                                                                createBaseVNode("a", {
+                                                                $props.settings.mm_toplink_behavior == "parent_link" ? (openBlock(), createElementBlock("a", {
+                                                                  key: 0,
                                                                   href: child.url
-                                                                }, toDisplayString(child.title), 9, _hoisted_38$1)
+                                                                }, toDisplayString(child.title), 9, _hoisted_45$1)) : (openBlock(), createElementBlock("span", _hoisted_46$1, toDisplayString(child.title), 1)),
+                                                                $props.settings.mm_enable_caret ? (openBlock(), createElementBlock("span", _hoisted_47$1, [
+                                                                  (openBlock(), createElementBlock("svg", {
+                                                                    xmlns: "http://www.w3.org/2000/svg",
+                                                                    "aria-hidden": "true",
+                                                                    focusable: "false",
+                                                                    role: "presentation",
+                                                                    class: "stroke-scheme-text",
+                                                                    fill: "none",
+                                                                    viewBox: "0 0 18 17",
+                                                                    height: $props.iconSize,
+                                                                    width: $props.iconSize,
+                                                                    "stroke-width": $props.iconStrokeWidth
+                                                                  }, _hoisted_50, 8, _hoisted_48$1))
+                                                                ])) : createCommentVNode("", true)
                                                               ]),
                                                               _: 2
                                                             }, 1024)) : (openBlock(), createElementBlock("a", {
                                                               key: 1,
                                                               href: child.url
-                                                            }, toDisplayString(child.title), 9, _hoisted_39$1)),
+                                                            }, toDisplayString(child.title), 9, _hoisted_51)),
                                                             child.links.length ? (openBlock(), createBlock(Transition, {
                                                               key: 2,
                                                               name: "slideDown"
@@ -12988,13 +13071,18 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                                   class: "menu__level2"
                                                                 }, {
                                                                   default: withCtx(() => [
+                                                                    $props.settings.mm_toplink_behavior == "view_all_link" ? (openBlock(), createElementBlock("li", _hoisted_52, [
+                                                                      createBaseVNode("a", {
+                                                                        href: child.url
+                                                                      }, " All " + toDisplayString(child.title), 9, _hoisted_53)
+                                                                    ])) : createCommentVNode("", true),
                                                                     (openBlock(true), createElementBlock(Fragment, null, renderList(child.links, (grandchild) => {
                                                                       return openBlock(), createElementBlock("li", {
                                                                         key: grandchild.id
                                                                       }, [
                                                                         createBaseVNode("a", {
                                                                           href: grandchild.url
-                                                                        }, toDisplayString(grandchild.title), 9, _hoisted_40$1)
+                                                                        }, toDisplayString(grandchild.title), 9, _hoisted_54)
                                                                       ]);
                                                                     }), 128))
                                                                   ]),
@@ -13034,12 +13122,12 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                         key: 1,
                                         class: normalizeClass(["image_content__content", [block.settings.image ? "float" : ""]])
                                       }, [
-                                        block.settings.content_title ? (openBlock(), createElementBlock("h1", _hoisted_41$1, toDisplayString(block.settings.content_title), 1)) : createCommentVNode("", true),
-                                        block.settings.content_subtitle ? (openBlock(), createElementBlock("h3", _hoisted_42$1, toDisplayString(block.settings.content_subtitle), 1)) : createCommentVNode("", true),
+                                        block.settings.content_title ? (openBlock(), createElementBlock("h1", _hoisted_55, toDisplayString(block.settings.content_title), 1)) : createCommentVNode("", true),
+                                        block.settings.content_subtitle ? (openBlock(), createElementBlock("h3", _hoisted_56, toDisplayString(block.settings.content_subtitle), 1)) : createCommentVNode("", true),
                                         block.settings.content ? (openBlock(), createElementBlock("p", {
                                           key: 2,
                                           html: block.settings.content
-                                        }, null, 8, _hoisted_43$1)) : createCommentVNode("", true),
+                                        }, null, 8, _hoisted_57)) : createCommentVNode("", true),
                                         createBaseVNode("div", {
                                           class: normalizeClass(["buttons", [`color-scheme--${$props.settings.mm_color_scheme}`]])
                                         }, [
@@ -13047,12 +13135,12 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                             key: 0,
                                             href: block.settings.primary_button_url,
                                             class: "btn round primary btn-outline"
-                                          }, toDisplayString(block.settings.primary_button_text), 9, _hoisted_44$1)) : createCommentVNode("", true),
+                                          }, toDisplayString(block.settings.primary_button_text), 9, _hoisted_58)) : createCommentVNode("", true),
                                           block.settings.secondary_button_text && block.settings.secondary_button_url ? (openBlock(), createElementBlock("a", {
                                             key: 1,
                                             href: block.settings.secondary_button_url,
                                             class: "btn round secondary btn-outline"
-                                          }, toDisplayString(block.settings.secondary_button_text), 9, _hoisted_45$1)) : createCommentVNode("", true)
+                                          }, toDisplayString(block.settings.secondary_button_text), 9, _hoisted_59)) : createCommentVNode("", true)
                                         ], 2)
                                       ], 2)) : createCommentVNode("", true)
                                     ], 2)) : createCommentVNode("", true)
@@ -13065,7 +13153,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                               class: normalizeClass(["header__menu-dropdown", [`color-scheme--${$props.settings.mm_color_scheme}`]])
                             }, {
                               default: withCtx(() => [
-                                createBaseVNode("ul", _hoisted_46$1, [
+                                createBaseVNode("ul", _hoisted_60, [
                                   (openBlock(true), createElementBlock(Fragment, null, renderList(link.links, (child) => {
                                     return openBlock(), createBlock(_component_Disclosure, {
                                       as: "li",
@@ -13075,16 +13163,17 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                       default: withCtx(() => [
                                         child.links.length ? (openBlock(), createBlock(_component_DisclosureButton, { key: 0 }, {
                                           default: withCtx(() => [
-                                            createBaseVNode("a", {
+                                            $props.settings.mm_toplink_behavior == "parent_link" ? (openBlock(), createElementBlock("a", {
+                                              key: 0,
                                               href: child.url
-                                            }, toDisplayString(child.title), 9, _hoisted_47$1),
-                                            child.links.length ? (openBlock(), createElementBlock("span", _hoisted_48$1, _hoisted_50)) : createCommentVNode("", true)
+                                            }, toDisplayString(child.title), 9, _hoisted_61)) : (openBlock(), createElementBlock("span", _hoisted_62, toDisplayString(child.title), 1)),
+                                            child.links.length ? (openBlock(), createElementBlock("span", _hoisted_63, _hoisted_65)) : createCommentVNode("", true)
                                           ]),
                                           _: 2
                                         }, 1024)) : (openBlock(), createElementBlock("a", {
                                           key: 1,
                                           href: child.url
-                                        }, toDisplayString(child.title), 9, _hoisted_51)),
+                                        }, toDisplayString(child.title), 9, _hoisted_66)),
                                         child.links.length ? (openBlock(), createBlock(Transition, {
                                           key: 2,
                                           name: "slideDown"
@@ -13092,6 +13181,11 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                           default: withCtx(() => [
                                             createVNode(_component_DisclosurePanel, { as: "ul" }, {
                                               default: withCtx(() => [
+                                                $props.settings.mm_toplink_behavior == "view_all_link" ? (openBlock(), createElementBlock("li", _hoisted_67, [
+                                                  createBaseVNode("a", {
+                                                    href: child.url
+                                                  }, " All " + toDisplayString(child.title), 9, _hoisted_68)
+                                                ])) : createCommentVNode("", true),
                                                 (openBlock(true), createElementBlock(Fragment, null, renderList(child.links, (grandchild) => {
                                                   return openBlock(), createElementBlock("li", {
                                                     key: grandchild.id,
@@ -13099,7 +13193,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                   }, [
                                                     createBaseVNode("a", {
                                                       href: grandchild.url
-                                                    }, toDisplayString(grandchild.title), 9, _hoisted_52)
+                                                    }, toDisplayString(grandchild.title), 9, _hoisted_69)
                                                   ]);
                                                 }), 128))
                                               ]),
