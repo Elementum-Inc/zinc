@@ -116,3 +116,18 @@ body.menu--opened {
     }
   }
 }
+
+/* TODO: move to new files */
+.quick-add-modal .shopify-payment-button__button,
+.quick-add-modal .product-form__submit {
+  @apply inline-block
+    min-h-[unset]
+    py-xs
+    px-8
+    bg-button-bg
+    text-button-fg
+    text-xl
+    focus:outline-none
+    focus:ring
+    focus:ring-scheme-accent;
+}

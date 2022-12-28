@@ -274,7 +274,7 @@
                         <button
                           type="submit"
                           name="add"
-                          class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                          class="product-form__submit btn button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}secondary{% else %}primary{% endif %}"
                           {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                         >
                             <span>
@@ -302,7 +302,7 @@
                       <button
                         type="submit"
                         name="add"
-                        class="product-form__submit button button--full-width button--primary"
+                        class="product-form__submit btn button--full-width primary"
                         disabled
                       >
                         {{ 'products.product.sold_out' | t }}

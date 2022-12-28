@@ -50,19 +50,20 @@
   height: 40px;
 }
 
-.quick-add-modal__content-info .button {
+/* .quick-add-modal__content-info .button {
   font-size: 14px !important;
   min-height: 40px !important;
-}
+} */
 
-.quick-add-modal__content-info .shopify-payment-button {
-  height: 40px !important;
-}
+/* .quick-add-modal__content-info .shopify-payment-button {
+  height: 40px;
+} */
 
 .quick-add-modal__content-info .shopify-payment-button__button {
-  font-size: 14px !important;
-  min-height: 35px !important;
-  padding: 0px !important;
+  /* @apply btn; */
+  /* font-size: 14px !important; */
+  min-height: 100%;
+  /* padding: 0px !important; */
 }
 
 .quick-add-modal__content-info .quantity__input {
