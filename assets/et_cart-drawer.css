@@ -65,12 +65,13 @@
   margin-right: 0px;
 }
 .quantity__button {
-  font-size: 1.5rem;
-  background-color: black !important;
-  color: white;
+  background-color: rgb(var(--color-accent-1));
   height: 1rem;
-  width: 1rem;
+  font-size: 1.5rem;
   margin: auto;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
+  width: 1rem;
 }
 .quantity__button .increase {
   padding: 0.1875rem;
@@ -83,7 +84,7 @@
   font-size: 1rem;
 }
 #CartDrawer-Note {
-  background: #f3f3f1;
+  background-color: rgb(var(--theme-foreground));
   --tw-border-opacity: 1;
   border-color: rgba(194, 194, 194, var(--tw-border-opacity));
   border-width: 1px;

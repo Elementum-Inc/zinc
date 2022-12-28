@@ -52,12 +52,12 @@
   min-width: 100%;
 }
 .multicolumn-btn {
-  text-align: center;
-  background-color: black;
-  color: white;
   background-color: rgb(var(--color-accent-2));
   margin-top: 1rem;
   margin-bottom: 1rem;
+  text-align: center;
+  --tw-text-opacity: 1;
+  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 .multicolumn-card__info {
   margin: auto;

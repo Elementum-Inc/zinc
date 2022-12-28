@@ -129,7 +129,6 @@
 }
 
 .contact-content.background-primary .contact-content-card {
-  // TODO: confirm these are used // 
   background: rgb(var(--color-background))
     linear-gradient(
       rgba(var(--color-foreground), 0.04),

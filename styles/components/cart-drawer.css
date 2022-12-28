@@ -9,7 +9,7 @@
     px-14;
 }
 
-// TODO: UPDATE COLOR VARIABLES //
+/* // TODO: UPDATE COLOR VARIABLES // */
 .drawer__inner {
   width: 40rem;
   max-width: calc(100vw - 3rem);
@@ -84,13 +84,13 @@
 }
 
 .quantity__button {
-  // TODO: WHAT COLOR SHOULD THIS BUTTON BE // 
-  font-size: 1.5rem;
-  background-color: black !important;
-  color: white;
-  height: 1rem;
-  width: 1rem;
-  margin: auto;
+  @apply
+    text-2xl
+    bg-accent1
+    text-white
+    h-4
+    w-4
+    m-auto;
 }
 
 .quantity__button .increase {
@@ -110,10 +110,9 @@
     font-semibold;
 }
 
-// TODO: should this be wired to any theme colors // 
 #CartDrawer-Note {
-  background: #f3f3f1; 
   @apply
+    bg-fg
     text-base
     border-1
     border-gray-500;

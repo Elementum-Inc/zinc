@@ -40,16 +40,12 @@
     }
 }
 
-
-//TODO: WHAT SHOULD THIS BUTTON STYLE ACTUALLY BE // 
 .multicolumn-btn {
-  text-align: center;
-  background-color: black;
-  color: white;
-
   @apply
     my-4
-    bg-accent2;
+    bg-accent2
+    text-white
+    text-center;
 }
 
 .multicolumn-card__info {

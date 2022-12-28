@@ -41,7 +41,7 @@
 
   .collapsible-content__media--large {
     @apply 
-      h-69rem;
+      h-[69rem];
   }
 }
 

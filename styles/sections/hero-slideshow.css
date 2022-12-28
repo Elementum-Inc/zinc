@@ -48,7 +48,7 @@ video {
 
 .color-accent-1 {
   @apply 
-    bg-accent1;
+    bg-accent1
     !text-white;
 }
 
@@ -62,9 +62,9 @@ video {
 
 .color-background-2 {
   @apply 
-    bg-bg2; 
+    bg-bg2
     !text-white;
-    // TODO: ^^ figure out why this doesn't work/get proper text color
+    /* // TODO: ^^ figure out why this doesn't work/get proper text color */
 }
 
 .control-container {
@@ -119,6 +119,3 @@ video {
   /* visibility: hidden; */
 }
 
-/* .slider-button .hidden {
-    visibility: hidden;
-  } */
