@@ -1,58 +1,72 @@
 .contact .field__input {
   border-width: 3px;
 }
+
 .contact {
   padding-left: 3rem;
   padding-right: 3rem;
 }
+
 .contact .title {
   font-size: 2rem;
 }
+
 .helper-text {
   margin-top: 1.7rem;
   margin-bottom: 1.7rem;
 }
+
 .helper-text .small {
   font-size: 1rem !important;
 }
+
 .contact img {
   max-width: 100%;
 }
+
 .contact .form__message {
   -webkit-box-align: start;
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
   align-items: flex-start;
 }
+
 .contact .icon-success {
-  margin-top: 0.25rem;
+  margin-top: .25rem;
 }
+
 .contact .field {
   margin-bottom: 1.5rem;
 }
+
 @media screen and (min-width: 750px) {
   .contact .field {
     margin-bottom: 2rem;
   }
 }
+
 .contact__button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
 }
+
 .contact__button button {
   background-color: black;
   color: white;
   margin: auto;
 }
+
 .h0 {
   display: none;
 }
+
 @media screen and (min-width: 750px) {
   .contact__button {
     margin-top: 4rem;
   }
+
   .contact__fields {
     display: grid;
     grid-template-columns: repeat(2, 1fr);

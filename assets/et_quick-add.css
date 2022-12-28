@@ -1,88 +1,114 @@
 .quick-add {
   position: relative;
 }
+
 .quick-add-modal__content-info h2 {
   font-size: 1.25rem !important;
 }
+
 .quick-add-modal__content-info .product__title {
-  margin-bottom: 0px !important;
+  margin-bottom: 0 !important;
 }
+
 .quick-add-modal__content-info .price__regular {
   font-size: 1.125rem;
 }
+
 .quick-add-modal__content-info .product__view-details {
   border-top-width: 1px;
 }
+
 .quick-add-modal__content-info .product__description {
-  margin-top: 0px !important;
+  margin-top: 0 !important;
 }
+
 .quick-add-modal__content-info .product-price {
-  margin: 0px !important;
+  margin: 0 !important;
 }
+
 .quick-add-modal__content-info .form__label {
   font-size: .875rem !important;
 }
+
 .quick-add-modal__content-info .icon-caret {
-  height: 0.5rem;
+  height: .5rem;
 }
+
 .quick-add-modal__content-info .select__select {
   font-size: 1rem;
 }
+
 .quick-add-modal__content-info .button {
   font-size: .875rem !important;
 }
+
 .quick-add-modal__content-info .shopify-payment-button {
   height: 3rem !important;
 }
+
 .quick-add-modal__content-info .shopify-payment-button__button {
   font-size: .875rem !important;
 }
+
 .quick-add-modal__content-info .quantity__input {
   width: 100% !important;
 }
+
 .quick-add-modal__content-info .quantity {
   width: 6.25rem;
 }
+
 .quick-add-modal__content-info .quantity__button {
   background-color: #d9d9d94d !important;
   width: 30px;
   height: 30px;
 }
+
 .form__label {
   padding: 1.25rem;
 }
+
 .quick-add-modal {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
+
 .quick-add-modal__toggle {
   display: none !important;
 }
+
 .quick-add-modal[open] {
-  opacity: 0.01;
+  opacity: .01;
 }
+
 .quick-add-modal__content {
   position: absolute;
 }
+
 .quick-add-modal__content .grid {
   display: flex !important;
 }
+
 .quick-add-modal__content .product-form__submit {
   background-color: black;
   color: white;
   border: 3px solid black;
 }
+
 .quick-add-modal__content .shopify-payment-button {
   border: 3px solid black;
 }
+
 .quick-add-modal__content .caption-spaced {
   display: none;
 }
-.product-form__input input[type="radio"] + label {
+
+.product-form__input input[type='radio'] + label {
   margin: 0;
   border: 1px solid !important;
   border-radius: 5% !important;
 }
+
 .full-unstyled-link {
   font-size: 20px;
 }

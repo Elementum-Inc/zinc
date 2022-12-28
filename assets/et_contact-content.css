@@ -6,6 +6,7 @@
   display: -webkit-flex;
   display: flex;
 }
+
 .contact-content-card {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -13,151 +14,177 @@
   display: flex;
   position: relative;
 }
+
 .text-above {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
 }
+
 .subtitle {
   font-size: 1rem;
 }
+
 .large-sub {
   font-size: 2.25rem;
 }
+
 .contact-info {
   margin-top: 3rem;
 }
+
 .contact-content-btn {
   height: 2.25rem;
 }
+
 .contact-content .title {
-  margin: 0px;
+  margin: 0;
 }
+
 .contact-content.no-heading .title {
   display: none;
 }
+
 .contact-content .title-wrapper-with-link {
-  margin-top: 0px;
+  margin-top: 0;
 }
+
 @media screen and (max-width: 749px) {
   .contact-content .title-wrapper-with-link {
     margin-bottom: 3rem;
   }
+
   .contact-content .page-width {
-    padding-left: 0px;
+    padding-left: 0;
   }
 }
+
 .contact-content-card__image-wrapper--third-width {
   width: 33.333333%;
 }
+
 .contact-content-card__image-wrapper--half-width {
   width: 50%;
 }
-.contact-content-list__item.center
-  .contact-content-card__image-wrapper:not(.contact-content-card__image-wrapper--full-width), .contact-content-list__item:only-child {
+
+.contact-content-list__item.center .contact-content-card__image-wrapper:not(.contact-content-card__image-wrapper--full-width), .contact-content-list__item:only-child {
   margin-left: auto;
 }
+
 .contact-content .button {
   margin-top: 1.5rem;
 }
+
 @media screen and (min-width: 750px) {
   .contact-content .button {
     margin-top: 4rem;
   }
 }
+
 .contact-content-list {
-  margin-top: 0px;
+  margin-top: 0;
 }
+
 .contact-content-list__item:only-child {
   max-width: 72rem;
 }
+
 .contact-content-list__item--empty {
   display: none;
 }
+
 .contact-content:not(.background-none) .contact-content-card {
   background-color: rgb(var(--color-background-1));
   height: 100%;
 }
+
 .contact-content.background-primary .contact-content-card {
   background: rgb(var(--color-background))
-      linear-gradient(
-        rgba(var(--color-foreground), 0.04),
-        rgba(var(--color-foreground), 0.04)
-      );
+    linear-gradient(rgb(var(--color-foreground) .04), rgb(var(--color-foreground) .04));
 }
+
 .contact-content-list h3 {
-  line-height: calc(1 + 0.5 / max(1, var(--font-heading-scale)));
+  line-height: calc(1 + .5 / max(1, var(--font-heading-scale)));
 }
+
 .contact-content-list h3, .contact-content-list p {
-  margin-top: 0.5rem;
-  margin-bottom: 0.5rem;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
 }
+
 .contact-content-card__info > :nth-child(2) {
   margin-top: 1rem;
 }
+
 .contact-content-list__item.center .media--adapt, .contact-content-list__item .media--adapt .contact-content-card__image {
   width: auto;
 }
+
 .contact-content-list__item.center .media--adapt img {
   left: 50%;
   transform: translateX(-50%);
 }
+
 @media screen and (max-width: 749px) {
   .contact-content-list {
-    margin: 0px;
+    margin: 0;
   }
+
   .contact-content-list:not(.slider) {
     padding-left: 1.5rem;
   }
 }
 @media screen and (min-width: 750px) {
   .contact-content-list.slider, .contact-content-list.grid--4-col-desktop {
-    padding: 0px;
+    padding: 0;
   }
+
   .contact-content-list__item, .grid--4-col-desktop .contact-content-list__item {
-    padding-bottom: 0px;
+    padding-bottom: 0;
   }
+
   .background-none .grid--2-col-tablet .contact-content-list__item {
     margin-top: 4rem;
   }
 }
+
 .background-none .contact-content-card-spacing {
-  padding: 0px;
+  padding: 0;
 }
+
 .contact-content-card__info {
   padding: 2.5rem;
 }
+
 .background-none .contact-content-card__info {
-  padding-top: 0px;
+  padding-top: 0;
 }
+
 .background-none .slider .contact-content-card__info {
-  padding-bottom: 0px;
-  padding-left: 0.5rem;
+  padding-bottom: 0;
+  padding-left: .5rem;
 }
-.background-none
-  .contact-content-card__image-wrapper
-  + .contact-content-card__info {
+
+.background-none .contact-content-card__image-wrapper + .contact-content-card__info {
   padding-top: 2.5rem;
 }
-.background-none
-  .slider
-  .contact-content-card__image-wrapper
-  + .contact-content-card__info {
+
+.background-none .slider .contact-content-card__image-wrapper + .contact-content-card__info {
   padding-left: 1.5rem;
 }
-.background-none
-  .contact-content-list:not(.slider)
-  .center
-  .contact-content-card__info {
+
+.background-none .contact-content-list:not(.slider) .center .contact-content-card__info {
   padding-left: 2.5rem;
 }
+
 @media screen and (max-width: 749px) {
   .background-none .slider .contact-content-card__info {
     padding-bottom: 1rem;
   }
+
   .contact-content.background-none .slider.slider--mobile {
-    margin-bottom: 0px;
+    margin-bottom: 0;
   }
 }
 @media screen and (min-width: 750px) {
@@ -165,32 +192,30 @@
     margin-left: 1.5rem;
     margin-right: 1.5rem;
   }
-  .background-none .contact-content-list .contact-content-card__info, .background-none
-      .contact-content-list:not(.slider)
-      .center
-      .contact-content-card__info {
+
+  .background-none .contact-content-list .contact-content-card__info, .background-none .contact-content-list:not(.slider) .center .contact-content-card__info {
     padding-left: 1.5rem;
   }
 }
-.contact-content-card
-  > .contact-content-card__image-wrapper--full-width:not(.contact-content-card-spacing) {
-  border-top-left-radius: calc(
-      var(--text-boxes-radius) - var(--text-boxes-border-width)
-    );
-  border-top-right-radius: calc(
-      var(--text-boxes-radius) - var(--text-boxes-border-width)
-    );
+
+.contact-content-card > .contact-content-card__image-wrapper--full-width:not(.contact-content-card-spacing) {
+  border-top-left-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
+  border-top-right-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
   overflow: hidden;
 }
+
 .contact-content.background-none .contact-content-card {
-  border-radius: 0px;
+  border-radius: 0;
 }
+
 .contact-content-card__info .link {
   text-decoration: none;
 }
+
 .contact-content-card__info .icon-wrap {
-  margin-left: 0.75rem;
+  margin-left: .75rem;
 }
+
 @media screen and (min-width: 990px) {
   .contact-content-list__item--empty {
     display: list-item;
