@@ -2,65 +2,65 @@
   @apply 
     border-3
     rounded-none
-    h-16
+    h-16;
 }
 
 .contact {
   @apply
     px-12
-    py-0
+    py-0;
 }
 
 .contact .title {
   @apply 
-    text-3xl
+    text-3xl;
 }
 
 .helper-text {
   @apply 
     my-1.7rem
     mx-0
-    text-gray-500
+    text-gray-500;
 }
 
 .helper-text .small {
   @apply
     !text-base
     font-medium
-    !text-black-500
+    !text-black-500;
 }
 
 .contact img {
   @apply 
-    max-w-full
+    max-w-full;
 }
 
 .contact .form__message {
   @apply 
-    items-start
+    items-start;
 }
 
 .contact .icon-success {
   @apply 
-    mt-1
+    mt-1;
 }
 
 .contact .field {
   @apply
-    mb-6
+    mb-6;
 }
 
 @media screen and (min-width: 750px) {
   .contact .field {
     @apply 
-      mb-8
+      mb-8;
   }
 }
 
 .contact__button {
   @apply
     flex
-    mt-12
+    mt-12;
 }
 
 // TODO - WIRE TO SETTINGS // 
@@ -72,13 +72,13 @@
 
 .h0 {
   @apply
-    hidden
+    hidden;
 }
 
 @media screen and (min-width: 750px) {
   .contact__button {
     @apply
-      mt-16
+      mt-16;
   }
 }
 

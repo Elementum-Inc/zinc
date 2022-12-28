@@ -3,32 +3,32 @@
 /* DESKTOP STYLES  */
 .cart-item__name {
   @apply 
-    font-lg
+    font-lg;
 }
 
 .cart-item__image-container {
   @apply
     h-200px
-    w-200px
+    w-200px;
 
 }
 
 .cart-item__image-container img {
   @apply 
     h-auto
-    w-auto
+    w-auto;
 }
 
 .cart-item cart-remove-button {
   @apply 
-    m-0
+    m-0;
 }
 
 /* // TODO: COLORS //  */
 .cart__ctas button {
   @apply 
     text-xl
-    min-h-12
+    min-h-12;
   /* background: black;
   color: white; */
 }
@@ -39,7 +39,7 @@
     bold
     tracking-wider
     text-left
-    pt-2
+    pt-2;
 }
 
 .product-option {
@@ -47,32 +47,32 @@
     text-base
     font-normal
     leading-snug
-    text-left
+    text-left;
 }
 
 .totals__subtotal {
   @apply 
-    !font-lg
+    !font-lg;
 }
 
 .totals__subtotal-value {
   @apply 
-    !font-lg
+    !font-lg;
 }
 
 .underlined-link {
   @apply 
-    underline
+    underline;
 }
 
 .tax-note {
   @apply 
-    text-sm
+    text-sm;
 }
 
 .quantity {
   @apply 
-    w-20
+    w-20;
 }
 
 .quantity__button {
@@ -83,18 +83,18 @@
     text-white
     h-5
     w-5
-    m-auto
+    m-auto;
 }
 
 
   .desktop-table-wrapper {
     @apply 
-      lg:!block
+      lg:!block;
   }
 
   .mobile {
     @apply 
-      lg:!hidden
+      lg:!hidden;
   }
 
 /* @media screen and (min-width: 750px) {

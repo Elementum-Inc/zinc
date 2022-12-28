@@ -1,42 +1,42 @@
 .multicolumn-list {
   @apply 
-    flex
+    flex;
 }
 
 .image-left {
   @apply 
     flex
-    flex-row
+    flex-row;
 }
 
 .image-left .multicolumn-card__image-wrapper {
   @apply 
     w-full
-    m-0
+    m-0;
 }
 
 .image-right {
   @apply 
     flex
-    flex-row-reverse
+    flex-row-reverse;
 }
 
 .image-right .multicolumn-card__image-wrapper {
   @apply 
     w-full
-    m-0
+    m-0;
 }
 
 .image-below {
   @apply 
     flex
-    flex-column-reverse
+    flex-column-reverse;
 }
 
 .multicolumn {
   & .media {
     @apply
-      min-w-full
+      min-w-full;
     }
 }
 
@@ -49,7 +49,7 @@
 
   @apply
     my-4
-    bg-accent2
+    bg-accent2;
 }
 
 .multicolumn-card__info {
@@ -60,56 +60,56 @@
 .multicolumn-card__image-wrapper {
   @apply 
     m-auto 
-    w-full
+    w-full;
 }
 
 .image-left .multicolumn-card__image-wrapper {
   @apply 
-    m-auto
+    m-auto;
 }
 
 .image-right .multicolumn-card__image-wrapper {
   @apply
-     m-auto
+     m-auto;
 }
 
 .multicolumn .title {
   @apply 
-    m-0
+    m-0;
 }
 
 .multicolumn .title {
   @apply 
-    m-auto
+    m-auto;
 }
 
 .multicolumn.no-heading .title {
   @apply 
-    hidden
+    hidden;
 }
 
 .multicolumn .title-wrapper-with-link {
   @apply 
     mt-0
-    mb-4
+    mb-4;
 }
 
 @media screen and (max-width: 749px) {
   .multicolumn .title-wrapper-with-link {
     @apply 
-      mb-12
+      mb-12;
   }
 
   .multicolumn .page-width {
     @apply 
       pl-0 
-      pr-0
+      pr-0;
   }
 }
 @media screen and (min-width: 750px) {
   .multicolumn .button {
     @apply
-      mt-16
+      mt-16;
   }
 }
 
@@ -117,13 +117,13 @@
   .multicolumn-list {
     @apply 
       m-0
-      w-full
+      w-full;
   }
 
   .multicolumn-list:not(.slider) {
     @apply 
       pl-6
-      pr-6
+      pr-6;
 
   }
 }
@@ -132,18 +132,18 @@
   .multicolumn-list.slider,
   .multicolumn-list.grid--4-col-desktop {
     @apply
-      p-0
+      p-0;
   }
 
   .multicolumn-list__item,
   .grid--4-col-desktop .multicolumn-list__item {
     @apply 
-      pb-0
+      pb-0;
   }
 
   .background-none .grid--2-col-tablet .multicolumn-list__item {
     @apply
-      mt-16
+      mt-16;
   }
 }
 
@@ -151,12 +151,12 @@
 @media screen and (max-width: 749px) {
   .background-none .slider .multicolumn-card__info {
     @apply 
-      pb-4
+      pb-4;
   }
 
   .multicolumn.background-none .slider.slider--mobile {
     @apply
-      mb-0
+      mb-0;
   }
 }
 
@@ -164,7 +164,7 @@
   .background-none .multicolumn-card__image-wrapper {
     @apply 
       ml-6
-      mr-6
+      mr-6;
   }
 
   .background-none .multicolumn-list .multicolumn-card__info,
@@ -174,7 +174,7 @@
     .multicolumn-card__info {
       @apply
         pl-6
-        pr-6
+        pr-6;
   }
 }
 
@@ -188,17 +188,17 @@
 
 .multicolumn-list__item:only-child {
   @apply 
-    max-w-6xl
+    max-w-6xl;
 }
 
 .multicolumn-card__image-wrapper--third-width {
   @apply 
-    w-1/3
+    w-1/3;
 }
 
 .multicolumn-card__image-wrapper--half-width {
   @apply 
-    w-1/2
+    w-1/2;
 }
 
 .multicolumn-list__item.center
@@ -206,24 +206,24 @@
 .multicolumn-list__item:only-child {
   @apply 
     ml-auto
-    mr-auto
+    mr-auto;
 }
 
 .multicolumn .button {
   @apply 
-    mt-6 
+    mt-6;
 }
 
 .multicolumn-list {
   @apply 
     mt-0 
     mb-0 
-    p-0 
+    p-0;
 }
 
 .multicolumn-list__item--empty {
   @apply 
-    hidden
+    hidden;
 }
 
 .multicolumn:not(.background-none) .multicolumn-card {
@@ -246,18 +246,18 @@
 .multicolumn-list h3,
 .multicolumn-list p {
   @apply 
-    m-0
+    m-0;
 }
 
 .multicolumn-card__info > :nth-child(2) {
   @apply 
-    mt-4
+    mt-4;
 }
 
 .multicolumn-list__item.center .media--adapt,
 .multicolumn-list__item .media--adapt .multicolumn-card__image {
   @apply 
-    w-auto
+    w-auto;
 }
 
 .multicolumn-list__item.center .media--adapt img {
@@ -268,34 +268,34 @@
 .background-none .multicolumn-card-spacing {
   @apply 
     p-0
-    m-0
+    m-0;
 }
 
 .multicolumn-card__info {
   @apply 
-    p-10
+    p-10;
 }
 
 .background-none .multicolumn-card__info {
   @apply 
     pt-0 
     pl-0
-    pr-0
+    pr-0;
 }
 
 .background-none .slider .multicolumn-card__info {
   @apply 
-    pb-0
+    pb-0;
 }
 
 .background-none .multicolumn-card__image-wrapper + .multicolumn-card__info {
   @apply 
-    pt-10
+    pt-10;
 }
 
 .background-none .slider .multicolumn-card__info {
   @apply 
-    pt-2
+    pt-2;
 }
 
 .background-none
@@ -303,7 +303,7 @@
   .multicolumn-card__image-wrapper
   + .multicolumn-card__info {
     @apply 
-      pl-6
+      pl-6;
 }
 
 .background-none
@@ -312,13 +312,13 @@
   .multicolumn-card__info {
     @apply 
       pl-10 
-      pr-10
+      pr-10;
 }
 
 .multicolumn-card {
   @apply 
     relative 
-    box-border
+    box-border;
 }
 
 .multicolumn-card
@@ -334,18 +334,18 @@
 
 .multicolumn.background-none .multicolumn-card {
   @apply 
-    rounded-none 
+    rounded-none; 
 }
 
 .multicolumn-card__info .link {
   @apply 
     no-underline
-    mt-6
+    mt-6;
 }
 
 .multicolumn-card__info .icon-wrap {
   @apply 
     ml-3 
-    whitespace-nowrap
+    whitespace-nowrap;
 }
 
