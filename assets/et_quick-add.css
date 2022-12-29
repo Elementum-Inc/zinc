@@ -107,6 +107,7 @@
   margin-right: auto;
   margin-bottom: 0px;
   max-width: 100%;
+  overflow: auto !important;
   position: absolute;
   top: 0px;
   left: 50%;
@@ -136,13 +137,8 @@
 .quick-add-modal__content .grid {
   display: flex !important;
 }
-.quick-add-modal__content .product-form__submit {
-  background-color: black
-    color: white
-    border: 3px solid black;
-}
 .quick-add-modal__content .shopify-payment-button {
-  border: 3px solid black;
+  height: 3rem !important;
 }
 .quick-add-modal__content .caption-spaced {
   display: none;
