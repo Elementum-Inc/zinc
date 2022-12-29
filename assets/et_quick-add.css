@@ -127,6 +127,7 @@
   margin-right: auto;
   margin-bottom: 0;
   max-width: 100%;
+  overflow: auto !important;
   position: absolute;
   top: 0;
   left: 50%;
@@ -159,14 +160,8 @@
   display: flex !important;
 }
 
-.quick-add-modal__content .product-form__submit {
-  background-color: black;
-  color: white;
-  border: 3px solid black;
-}
-
 .quick-add-modal__content .shopify-payment-button {
-  border: 3px solid black;
+  height: 3rem !important;
 }
 
 .quick-add-modal__content .caption-spaced {

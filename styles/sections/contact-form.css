@@ -63,11 +63,8 @@
     mt-12;
 }
 
-/* // TODO - COLOR SETTINGS //  */
 .contact__button button {
-  background-color: black;
-  color: white;
-  margin: auto;
+  @apply m-auto;
 }
 
 .h0 {
