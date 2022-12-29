@@ -63,8 +63,6 @@ video {
 .color-background-2 {
   @apply 
     bg-bg2
-    !text-white;
-    /* // TODO: ^^ figure out why this doesn't work/get proper text color */
 }
 
 .control-container {

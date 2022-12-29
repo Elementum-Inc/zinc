@@ -24,13 +24,10 @@
     m-0;
 }
 
-/* // TODO: COLORS //  */
 .cart__ctas button {
   @apply 
     text-xl
     min-h-12;
-  /* background: black;
-  color: white; */
 }
 
 .price {
@@ -78,9 +75,6 @@
 .quantity__button {
   @apply 
     text-2xl
-    !bg-black
-    /* // TODO: link to color settings  */
-    text-white
     h-5
     w-5
     m-auto;

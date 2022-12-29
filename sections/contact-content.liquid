@@ -123,7 +123,7 @@
                 </div>
 
                 {%- if block.settings.link_label != blank -%}
-                  <a class="link contact-content-btn" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.link_label | escape }}</a>
+                  <a class="link btn contact-content-btn" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.link_label | escape }}</a>
                 {%- endif -%}
               </div>
             </div>

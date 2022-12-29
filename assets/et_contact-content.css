@@ -46,8 +46,6 @@
   margin-top: 3rem;
 }
 .contact-content-btn {
-  --tw-bg-opacity: 1;
-  background-color: rgba(10, 10, 10, var(--tw-bg-opacity));
   height: 2.25rem;
   min-width: 10.5rem;
   padding-top: 0.25rem;
@@ -55,8 +53,6 @@
   padding-left: 2rem;
   padding-right: 2rem;
   text-align: center;
-  --tw-text-opacity: 1;
-  color: rgba(255, 255, 255, var(--tw-text-opacity));
 }
 .contact-content .title {
   margin: 0px;

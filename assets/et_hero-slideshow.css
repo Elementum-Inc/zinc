@@ -50,8 +50,6 @@
 }
 .color-background-2 {
   background-color: rgb(var(--color-background-2));
-  --tw-text-opacity: 1 !important;
-  color: rgba(255, 255, 255, var(--tw-text-opacity)) !important;
 }
 .control-container {
   color: black;
