@@ -15,8 +15,8 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  position: relative;
   line-height: 1;
+  position: relative;
 }
 .accordion svg {
   width: 1rem;

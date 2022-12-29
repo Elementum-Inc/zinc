@@ -11,22 +11,23 @@
 
 .accordion summary {
   @apply
+    leading-none
     flex
     relative
     border-t-2
-    border-gray-500;
-  line-height: 1;
+    border-gray-500
 }
 
 .accordion svg {
   @apply
-    w-4;
+    w-4
 }
 
+/* SHOPIFY STYLES */
 .accordion .summary__title {
   @apply
     flex
-    flex-1;
+    flex-1
 }
 
 .accordion .summary__title + .icon-caret {
@@ -36,7 +37,7 @@
 .accordion + .accordion {
   @apply
     mt-0
-    border-t-0;
+    border-t-0
 }
 
 // TODO: UPDATE THESE COLORS VARIABLES // 
@@ -65,10 +66,10 @@
     break-words
     overflow-x-auto
     py-4
-    px-20;
+    px-20
 }
 
 .accordion__content img {
   @apply
-    max-w-full;
+    max-w-full
 }
