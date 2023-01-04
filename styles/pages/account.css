@@ -1,0 +1,21 @@
+.login .field+a {
+    @apply
+        ml-auto
+        text-green-500;
+}
+
+.account {
+    @apply 
+        bg-pink-500;
+
+}
+
+
+
+.customer form {
+    @apply
+        bg-pink-500;
+}
+
+
+

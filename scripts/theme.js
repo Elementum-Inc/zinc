@@ -14,12 +14,14 @@ import "../styles/base/animations.css";
 import "../styles/layout/header.css";
 import "../styles/layout/footer.css";
 
+// Pages
+import("../styles/pages/account.css");
+
 // Sections
 import("../styles/sections/blog.css");
 import("../styles/sections/image-with-text.css");
 import("../styles/sections/hero.css");
 import("../styles/sections/modal.css");
-// KB - WIP - Windi conversion //
 import("../styles/sections/collapsible-content.css");
 import("../styles/sections/contact-content.css");
 import("../styles/sections/contact-form.css");
@@ -31,8 +33,7 @@ import("../styles/sections/multicolumn.css");
 import("../styles/sections/quick-add.css");
 import("../styles/sections/testimonials.css");
 
-//Components
-// KB - WIP- Windi conversion //
+// Components
 import("../styles/components/accordion.css");
 import("../styles/components/cart-drawer.css");
 import("../styles/components/cart-items.css");

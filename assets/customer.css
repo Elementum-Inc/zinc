@@ -450,6 +450,10 @@
   }
 }
 
+.account { 
+    background: pink;
+}
+
 .account h1 + a {
   display: inline-flex;
   align-items: center;

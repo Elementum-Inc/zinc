@@ -70,9 +70,12 @@
 }
 
 .background-blocks .multicolumn-card__info {
-  background-color: white;
+  /* TODO: COLOR SETTINGS */
+  /* background-color: white; */
   padding: 1rem 1rem 4rem 1rem;
   margin: 1rem;
+  @apply 
+    bg-fg;
 }
 
 .background-blocks img {
