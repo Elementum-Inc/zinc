@@ -9,8 +9,7 @@
 }
 
 .accordion summary {
-  --tw-border-opacity: 1;
-  border-color: rgb(194 194 194 / var(--tw-border-opacity));
+  border-color: var(--color-scheme-fg);
   border-top-width: 2px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -47,13 +46,13 @@
 .accordion {
   margin-top: 2.5rem;
   margin-bottom: 0;
-  border-top: .1rem solid rgb(var(--color-foreground) .08);
-  border-bottom: .1rem solid rgb(var(--color-foreground) .08);
+  border-top: .1rem solid rgb(var(--color-scheme-fg) .08);
+  border-bottom: .1rem solid rgb(var(--color-scheme-fg) .08);
 }
 
 .accordion .icon-accordion {
   align-self: center;
-  fill: rgb(var(--color-foreground));
+  fill: rgb(var(--color-scheme-accent));
   height: calc(var(--font-heading-scale) * 2rem);
   margin-right: calc(var(--font-heading-scale) * 1rem);
   width: calc(var(--font-heading-scale) * 2rem);

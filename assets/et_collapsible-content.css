@@ -71,8 +71,12 @@
   border-top-width: 0;
 }
 
-.collapsible-row-layout .accordion:not(:first-child):not(.color-background-1) {
+.collapsible-row-layout .accordion:not(:first-child):not(.color-scheme--background-1) {
   margin-top: 1rem;
+}
+
+.collapsible-row-layout .accordion summary {
+  border-top-width: 0;
 }
 
 @media screen and (min-width: 750px) {
@@ -83,7 +87,7 @@
 
 .collapsible-row-layout .accordion {
   border: var(--text-boxes-border-width) solid
-    rgb(var(--color-foreground) var(--text-boxes-border-opacity));
+    rgb(var(--color-scheme-fg) var(--text-boxes-border-opacity));
   margin-bottom: 1.5rem;
 }
 
@@ -96,7 +100,7 @@
 }
 
 .collapsible-content summary:hover {
-  background: rgb(var(--color-foreground) .04);
+  background: rgb(var(--color-scheme-fg) .04);
 }
 
 .collapsible-content summary:hover .accordion__title {
@@ -111,6 +115,7 @@
       padding-right: 0;
     }
   }
+
   @media screen and (min-width: 990px) {
     .collapsible-content__grid:not(.collapsible-content__grid--reverse) .grid__item:last-child, .collapsible-content__grid--reverse .collapsible-content__grid-item {
       padding-left: 7rem;

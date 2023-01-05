@@ -15,42 +15,40 @@
     flex
     relative
     border-t-2
-    border-gray-500
+    border-scheme-fg;
 }
 
 .accordion svg {
-  @apply
-    w-4
+  @apply w-4;
 }
 
 /* SHOPIFY STYLES */
 .accordion .summary__title {
   @apply
     flex
-    flex-1
+    flex-1;
 }
 
 .accordion .summary__title + .icon-caret {
-  height: calc(var(--font-heading-scale) * 0.6rem);
+  height: calc(var(--font-heading-scale) * .6rem);
 }
 
 .accordion + .accordion {
-  @apply
-    mt-0
-    border-t-0
+  @apply mt-0
+    border-t-0;
 }
 
-// TODO: UPDATE THESE COLORS VARIABLES // 
+/* TODO: UPDATE THESE COLORS VARIABLES */
 .accordion {
   margin-top: 2.5rem;
   margin-bottom: 0;
-  border-top: 0.1rem solid rgba(var(--color-foreground), 0.08);
-  border-bottom: 0.1rem solid rgba(var(--color-foreground), 0.08);
+  border-top: .1rem solid rgb(var(--color-scheme-fg) .08);
+  border-bottom: .1rem solid rgb(var(--color-scheme-fg) .08);
 }
 
 .accordion .icon-accordion {
   align-self: center;
-  fill: rgb(var(--color-foreground));
+  fill: rgb(var(--color-scheme-accent));
   height: calc(var(--font-heading-scale) * 2rem);
   margin-right: calc(var(--font-heading-scale) * 1rem);
   width: calc(var(--font-heading-scale) * 2rem);
@@ -66,10 +64,10 @@
     break-words
     overflow-x-auto
     py-4
-    px-20
+    px-20;
 }
 
 .accordion__content img {
   @apply
-    max-w-full
+    max-w-full;
 }
