@@ -1,20 +1,74 @@
-.login .field+a {
+/* :is(.account,.order) h2 {
     @apply
-        ml-auto
-        text-green-500;
+        text-blue-500;
+} */
+
+.account h2 {
+  font-size: 2rem;
+  border-bottom: 1px solid black;
 }
 
-.account {
-    @apply 
-        bg-pink-500;
-
+.customer .field input {
+  font-size: 1.3rem; 
+  border-bottom: 1px solid;
 }
 
+.customer .field label {
+  font-size: 1.3rem; 
+}
 
+.add-address-btn {
+  background: black !important;
+  color: white !important;
+}
 
-.customer form {
-    @apply
-        bg-pink-500;
+.edit-btn {
+  font-weight: bold !important;
+}
+
+.delete-btn {
+  /* background: gray !important; */
+  color: black !important;
+}
+
+.customer button {
+  font-size: 1rem !important;
+  min-height: 3rem !important;
+}
+
+.customer li[data-address] {
+  border-bottom: 1px solid black;
+}
+
+.new-address-btn-container {
+  border-bottom: 1px solid black;
+}
+
+.default-address-label {
+  font-weight: bold;
+}
+
+@media screen and (min-width: 990px) {
+  :is(.account, .order) > div:nth-of-type(2) {
+    /* display: flex; */
+    margin-top: 5rem;
+  }
+}
+
+.order-history-container {
+  margin-top: 3rem;
+}
+
+.order-history td {
+  font-size: 1.25rem;
+}
+
+.account-details-container p {
+  font-size: 1.25rem !important;
+}
+
+.account-details-container a {
+  font-size: 1.15rem;
 }
 
 

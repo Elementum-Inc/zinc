@@ -13,9 +13,18 @@
   </div>
 
   <div>
-    <div>
-      <h2>{{ 'customer.orders.title' | t }}</h2>
+  <div class="account-details-container">
+      <h2>{{ 'customer.account.details' | t }}</h2>
 
+      {{ customer.default_address | format_address }}
+
+      <a href="{{ routes.account_addresses_url }}">
+        {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
+      </a>
+    </div>
+
+    <div class="order-history-container">
+      <h2>{{ 'customer.orders.title' | t }}</h2>
       {% paginate customer.orders by 20 %}
         {%- if customer.orders.size > 0 -%}
           <table role="table" class="order-history">
@@ -105,15 +114,6 @@
       {% endpaginate %}
     </div>
 
-    <div>
-      <h2>{{ 'customer.account.details' | t }}</h2>
-
-      {{ customer.default_address | format_address }}
-
-      <a href="{{ routes.account_addresses_url }}">
-        {{ 'customer.account.view_addresses' | t }} ({{ customer.addresses_count }})
-      </a>
-    </div>
 
   </div>
 </div>

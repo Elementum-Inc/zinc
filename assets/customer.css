@@ -1,3 +1,151 @@
+/* ELEMENTUM STYLES  */
+/* :is(.account,.order) h2  {
+  color: blue;
+} */
+
+/* ACCOUNT PAGE STYLES  */
+
+.account h2 {
+  font-size: 2rem;
+  border-bottom: 1px solid black;
+}
+
+/* order history table */
+
+@media screen and (min-width: 990px) {
+  :is(.account, .order) > div:nth-of-type(2) {
+    /* display: flex; */
+    margin-top: 5rem;
+  }
+}
+
+.order-history-container {
+  margin-top: 3rem;
+}
+
+.order-history td {
+  font-size: 1.25rem;
+}
+
+#RowOrder {
+  text-decoration: underline;
+}
+
+
+/* ADDRESSES PAGE STYLES  */
+
+.customer .field input {
+  font-size: 1.3rem; 
+  border-bottom: 1px solid;
+  height: 4rem; 
+}
+
+.customer .field label {
+  font-size: 1.2rem; 
+}
+
+.add-address-btn {
+  background: black !important;
+  color: white !important;
+}
+
+.edit-btn {
+  font-weight: bold !important;
+}
+
+.delete-btn {
+  /* background: gray !important; */
+  color: black !important;
+}
+
+.customer button {
+  font-size: 1rem !important;
+  min-height: 3rem !important;
+}
+
+.customer li[data-address] {
+  border-bottom: 1px solid black;
+}
+
+.new-address-btn-container {
+  border-bottom: 1px solid black;
+}
+
+.default-address-label {
+  font-weight: bold;
+}
+
+
+.account-details-container p {
+  font-size: 1.25rem !important;
+}
+
+.account-details-container a {
+  font-size: 1.15rem;
+}
+
+label[for='AddressCountryNew'],
+label[for='AddressProvinceNew'] {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: 0.6rem;
+}
+
+/* ORDER DETAILS STYLES  */
+
+.order h2 {
+  font-size: 1.85rem;
+}
+
+.order-title {
+  font-weight: bold;
+}
+
+.order > div:nth-of-type(2) > div:first-of-type h2 ~ p {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+
+.order-details table {
+  border-top: 1px solid;
+  border-bottom: 1px solid; 
+}
+
+.order-details td {
+  font-size: 1.25rem; 
+}
+
+.order-details tfoot {
+  font-size: 1.25rem;
+}
+
+.order-details .totals-row td {
+  font-size: 1.25rem;
+  font-weight: bold;
+}
+
+.order-product-title a {
+  font-size: 1.25rem
+}
+
+.order-address-container p {
+  font-size: 1.25rem; 
+}
+
+.order-address-container .status {
+  font-style: italic;
+}
+
+
+
+/* .address-btn .primary {
+  /* TODO: COLOR SETTINGS  */
+  /* background: black !important;
+  color: white !important; */
+/* } */  
+
+
+/* SHOPIFY STYLES  */
 .customer:not(.account):not(.order) {
   margin: 6rem auto 9rem;
   max-width: 33.4rem;
@@ -51,6 +199,14 @@
 
 .customer .field:first-of-type {
   margin-top: 0;
+}
+
+.account-settings-container p {
+  font-size: 1.3rem;
+}
+
+.account-settings-container a {
+  font-size: 1.15rem;
 }
 
 /* Customer Table */
@@ -407,13 +563,6 @@
 }
 
 @media screen and (min-width: 990px) {
-  :is(.account, .order) > div:nth-of-type(2) {
-    display: flex;
-    margin-top: 5rem;
-  }
-}
-
-@media screen and (min-width: 990px) {
   :is(.account, .order) > div:nth-of-type(2) > div:first-of-type {
     flex-grow: 1;
     padding-right: 3.2rem;
@@ -432,7 +581,7 @@
 
 :is(.account, .order) p {
   margin: 0 0 2rem;
-  font-size: 1.6rem;
+  /* font-size: 1.6rem; */
 }
 
 :is(.account, .order) h1 {
@@ -475,7 +624,6 @@
 
 .account table td:first-of-type a {
   padding: 1.1rem 1.5rem;
-  text-decoration: none;
   box-shadow: 0 0 0 0.1rem rgba(var(--color-link), 0.2);
   border: 0.1rem solid transparent;
   font-size: 1.2rem;
@@ -498,7 +646,6 @@
 
 .order tfoot tr:last-of-type td,
 .order tfoot tr:last-of-type th {
-  font-size: 2.2rem;
   padding-top: 1.5rem;
   padding-bottom: 4rem;
 }
@@ -518,11 +665,6 @@
 .order > div:nth-of-type(2) > div:first-of-type h2,
 .order > div:nth-of-type(2) > div:last-of-type h2 + p {
   margin-bottom: 0;
-}
-
-.order > div:nth-of-type(2) > div:first-of-type h2 ~ p {
-  margin-bottom: 0;
-  font-size: 1.4rem;
 }
 
 .order > div:nth-of-type(2) > div:first-of-type h2 ~ p:last-of-type {
@@ -663,13 +805,6 @@
 
 .addresses form button:first-of-type {
   margin-right: 1rem;
-}
-
-label[for='AddressCountryNew'],
-label[for='AddressProvinceNew'] {
-  display: block;
-  font-size: 1.4rem;
-  margin-bottom: 0.6rem;
 }
 
 .addresses form {
