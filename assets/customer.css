@@ -1,36 +1,3 @@
-/* ELEMENTUM STYLES  */
-/* :is(.account,.order) h2  {
-  color: blue;
-} */
-
-/* ACCOUNT PAGE STYLES  */
-
-.account h2 {
-  font-size: 2rem;
-  border-bottom: 1px solid black;
-}
-
-/* order history table */
-
-@media screen and (min-width: 990px) {
-  :is(.account, .order) > div:nth-of-type(2) {
-    /* display: flex; */
-    margin-top: 5rem;
-  }
-}
-
-.order-history-container {
-  margin-top: 3rem;
-}
-
-.order-history td {
-  font-size: 1.25rem;
-}
-
-#RowOrder {
-  text-decoration: underline;
-}
-
 
 /* ADDRESSES PAGE STYLES  */
 
@@ -89,61 +56,7 @@ label[for='AddressProvinceNew'] {
   display: block;
   font-size: 1.2rem;
   margin-bottom: 0.6rem;
-}
-
-/* ORDER DETAILS STYLES  */
-
-.order h2 {
-  font-size: 1.85rem;
-}
-
-.order-title {
-  font-weight: bold;
-}
-
-.order > div:nth-of-type(2) > div:first-of-type h2 ~ p {
-  margin-bottom: 0;
-  font-size: 1.2rem;
-}
-
-.order-details table {
-  border-top: 1px solid;
-  border-bottom: 1px solid; 
-}
-
-.order-details td {
-  font-size: 1.25rem; 
-}
-
-.order-details tfoot {
-  font-size: 1.25rem;
-}
-
-.order-details .totals-row td {
-  font-size: 1.25rem;
-  font-weight: bold;
-}
-
-.order-product-title a {
-  font-size: 1.25rem
-}
-
-.order-address-container p {
-  font-size: 1.25rem; 
-}
-
-.order-address-container .status {
-  font-style: italic;
-}
-
-
-
-/* .address-btn .primary {
-  /* TODO: COLOR SETTINGS  */
-  /* background: black !important;
-  color: white !important; */
-/* } */  
-
+} 
 
 /* SHOPIFY STYLES  */
 .customer:not(.account):not(.order) {
