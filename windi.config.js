@@ -123,6 +123,9 @@ export default {
         180: 1.8,
         190: 1.9,
       },
+      transitionDuration: {
+        base: "var(--duration-default)"
+      }
     },
   },
   plugins: [require("windicss/plugin/aspect-ratio")],

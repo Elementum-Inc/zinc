@@ -1,15 +1,15 @@
 .cart {
-  @apply block 
+  @apply block
     relative;
 }
 
 .cart__footer {
-  @apply !border-solid 
-    border-gray-500 
-    border-1;
+  @apply
+    border-scheme-fg
+    border-t-1;
 }
 
 #Cart-note {
-  @apply font-lg 
+  @apply font-lg
     italic;
 }

@@ -3,10 +3,10 @@
     "alpha-value-notation": "number",
     "at-rule-empty-line-before": [
       "always",
-      { "except": ["inside-block", "after-same-name"] }
+      { "except": ["first-nested"] }
     ],
     "at-rule-name-case": "lower",
-    "at-rule-name-space-after": "always",
+    "at-rule-name-space-after": "always-single-line",
     "at-rule-no-vendor-prefix": null,
     "at-rule-semicolon-newline-after": "always",
     "at-rule-semicolon-space-before": "never",
@@ -39,7 +39,7 @@
     "declaration-colon-space-before": "never",
     "declaration-empty-line-before": "never",
     "declaration-no-important": true,
-    "font-family-name-quotes": "always-where-required",
+    "font-family-name-quotes": "always-where-recommended",
     "font-family-no-duplicate-names": true,
     "font-family-no-missing-generic-family-keyword": true,
     "font-weight-notation": "numeric",

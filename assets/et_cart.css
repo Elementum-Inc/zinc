@@ -4,10 +4,8 @@
 }
 
 .cart__footer {
-  --tw-border-opacity: 1;
-  border-color: rgb(194 194 194 / var(--tw-border-opacity));
-  border-style: solid !important;
-  border-width: 1px;
+  border-color: var(--color-scheme-fg);
+  border-top-width: 1px;
 }
 
 #Cart-note {
