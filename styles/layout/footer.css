@@ -1,4 +1,6 @@
 .footer {
+  @apply font-serif;
+
   & .payment-methods {
     &__methods {
       @apply flex flex-wrap;
@@ -6,6 +8,42 @@
 
     &__type:not(:last-child) {
       @apply mb-1 mr-1;
+    }
+  }
+
+  .localization-form {
+    &__select {
+      @apply
+        text-sm
+        pl-2
+        mb-2;
+    }
+  }
+
+  .localization-selector {
+    & + .disclosure__list-wrapper {
+      @apply
+        ml-0;
+    }
+  }
+
+  &-block-image {
+    > img {
+      @apply inline-block;
+    }
+  }
+
+  &__newsletter {
+    & .field__input {
+      @apply
+        bg-scheme-bg
+        border
+        border-scheme-accent
+        text-scheme-accent;
+    }
+
+    & .field__button > svg {
+      @apply stroke-scheme-accent;
     }
   }
 }
@@ -18,34 +56,17 @@
   @apply my-4 mx-0;
 }
 
-.footer .field__label {
-  @apply font-lg pt-2;
-}
-
-.disclosure .localization-form__select {
-  @apply font-lg pt-14;
-}
-
-.footer {
-  @apply font-serif;
-}
-
 #FooterCountryForm {
-  @apply 
+  @apply
     w-full
     !my-4
 
-  & .icon-caret {
+    & .icon-caret {
     position: absolute;
-    content: "";
-    height: 0.6rem;
-    top: calc(50% - 0.2rem);
+    content: '';
+    height: .6rem;
+    top: calc(50% - .2rem);
     left: 0;
-  }
-
-  & .disclosure__list-wrapper {
-    @apply
-      bg-fg; 
   }
 }
 
@@ -94,15 +115,22 @@
 }
 
 #big-bold-logo {
-  @apply font-8xl lg:font-[10rem] xl:font-[14rem] font-semibold leading-none tracking-none text-center;
+  @apply
+    font-8xl
+    lg:font-[10rem]
+    xl:font-[14rem]
+    font-semibold
+    leading-none
+    tracking-none
+    text-center;
 }
 
-@media screen and (max-width: 749px) { 
+/* @media screen and (max-width: 749px) {
   .disclosure .localization-form__select {
     @apply
       pt-12;
   }
-}
+} */
 
 /* // TODO:  unclear if these are needed.. //  */
 /* @media screen and (max-width: 749px) {

@@ -36,7 +36,7 @@
   }
 
   &--accent-1 {
-    --color-scheme-fg: theme('colors.fg');
+    --color-scheme-fg: theme('colors.gray.900');
     --color-scheme-bg: theme('colors.accent1');
     --color-scheme-bgRGB: theme('colors.accent1RGB');
     --color-scheme-text: theme('colors.bg1');
@@ -74,7 +74,8 @@
   }
 }
 
-.section {
+.section,
+.color-scheme {
   @apply bg-scheme-bg text-scheme-text;
 
   &--foreground {
@@ -83,5 +84,13 @@
     & .card__inner + .card__content {
       @apply bg-[transparent];
     }
+  }
+
+  & svg.icon:not(.icon-social):not(.icon--full-color) {
+    @apply stroke-scheme-accent;
+  }
+
+  & svg.icon-social > path {
+    @apply fill-scheme-accent;
   }
 }
