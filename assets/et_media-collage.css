@@ -128,6 +128,7 @@
     padding-right: 1.5rem;
   }
 }
+
 @media screen and (min-width: 750px) {
   .media-collage-list.slider, .media-collage-list.grid--4-col-desktop {
     padding: 0;
@@ -184,6 +185,7 @@
     margin-bottom: 0;
   }
 }
+
 @media screen and (min-width: 750px) {
   .background-none .media-collage-card__image-wrapper {
     margin-left: 1.5rem;
