@@ -1,6 +1,20 @@
-.slideshow-video {
-  right: 0;
-  bottom: 0;
+.slideshow .h0 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 92px;
+  line-height: 85px;
+}
+
+.slideshow .h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 54px;
+  letter-spacing: 0;
+}
+
+.slideshow img, .slideshow video {
+  height: 100%;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -12,32 +26,22 @@
   position: absolute;
 }
 
-.slideshow img, video {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
-.h0 {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 92px;
-  line-height: 85px;
-}
-
-.h1 {
-  font-size: 52px;
-  font-weight: 700;
-  line-height: 54px;
-  letter-spacing: 0;
-}
-
 .slideshow .banner--small {
   min-height: 575px !important;
 }
 
-.banner--small:not(.banner--adapt) {
+.slideshow .banner--small:not(.banner--adapt) {
   min-height: 575px !important;
+}
+
+.slideshow__autoplay {
+  visibility: hidden;
+}
+
+.slideshow-video {
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
 }
 
 .no-solid-background {
@@ -45,34 +49,16 @@
   font-size: 1rem;
 }
 
-.color-accent-1 {
-  background-color: rgb(var(--color-accent-1));
-  --tw-text-opacity: 1 !important;
-  color: rgb(255 255 255 / var(--tw-text-opacity)) !important;
-}
-
-.color-accent-2 {
-  background-color: rgb(var(--color-accent-2));
-}
-
-.color-background-1 {
-  background-color: rgb(var(--color-background-1));
-}
-
-.color-background-2 {
-  background-color: rgb(var(--color-background-2));
-}
-
 .control-container {
-  color: black;
+  background-color: var(--color-scheme-bg);
   z-index: 2;
 }
 
 .slideshow__controls {
+  color: var(--color-scheme-text);
   position: absolute;
   z-index: 3;
   bottom: 10%;
-  color: black;
   margin-left: auto;
   margin-right: auto;
   left: 0;
@@ -80,7 +66,7 @@
   text-align: center;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 767px) {
   .slideshow__controls {
     visibility: hidden;
   }
@@ -90,13 +76,13 @@
   visibility: hidden;
 }
 
-.slider-counter--arrows {
-  visibility: hidden;
-  min-width: .1rem;
-}
-
 .slideshow__controls--dots .slider-button {
   visibility: hidden;
+}
+
+.slideshow__controls .slider-button {
+  background-color: var(--color-scheme-accent);
+  border-radius: 50%;
 }
 
 .slider-counter {
@@ -105,11 +91,7 @@
   min-width: .1rem;
 }
 
-.slideshow__autoplay {
+.slider-counter--arrows {
   visibility: hidden;
-}
-
-.slideshow__controls .slider-button {
-  background: white;
-  border-radius: 50%;
+  min-width: .1rem;
 }

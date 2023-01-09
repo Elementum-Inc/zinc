@@ -40,10 +40,9 @@
   }
 
   & .button {
-    @apply {
+    @apply
       mt-6
-      md: mt-16;mdmd
-    }
+      md:mt-16;
   }
 
   & .image-left {
