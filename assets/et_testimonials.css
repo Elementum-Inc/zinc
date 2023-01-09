@@ -1,3 +1,7 @@
+#testimonials-section .title {
+  font-size: 2.25rem;
+}
+
 #testimonials-section .content-container {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -15,33 +19,6 @@
 
 #testimonials-section .media--circle {
   max-width: 6.25rem;
-}
-
-#testimonials-section {
-  background-color: #fbf2de;
-}
-
-#testimonials-section .title {
-  font-size: 2.25rem;
-}
-
-#testimonials-section h4 {
-  color: #1e0e62;
-  font-weight: 600;
-  font-size: 1rem;
-}
-
-#testimonials-section h5 {
-  font-family: DM Sans;
-  color: rgb(21 20 57 / .4);
-}
-
-#testimonials-section p {
-  color: #111827;
-}
-
-#testimonials-section .slider-buttons {
-  display: none !important;
 }
 
 .background-blocks {
@@ -64,7 +41,6 @@
 }
 
 .background-blocks .multicolumn-card__info {
-  background-color: white;
   padding: 1rem 1rem 4rem;
   margin: 1rem;
 }

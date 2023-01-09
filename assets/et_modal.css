@@ -128,6 +128,7 @@
     padding-right: 2rem;
   }
 }
+
 @media (min-width: 1024px) {
   .section-modal--float-content .section-modal__inner {
     margin-left: 3rem;
@@ -174,6 +175,7 @@
     flex-basis: 66.666667%;
   }
 }
+
 @media (min-width: 1024px) {
   .section-modal--stacked .section-modal__content {
     flex-basis: 50%;
@@ -245,12 +247,14 @@
     padding-bottom: 2rem;
   }
 }
+
 @media (min-width: 1024px) {
   .section-modal__inner {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
 }
+
 @media (max-width: 767.9px) {
   .section-modal__inner {
     padding-left: 1rem;
