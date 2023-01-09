@@ -1890,6 +1890,9 @@
           },
           "options__2": {
             "label": "Center"
+          },
+          "options__3": {
+            "label": "Right"
           }
         },
         "background_style": {

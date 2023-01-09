@@ -23,14 +23,81 @@
   }
 }
 
-.select {
-  @apply relative flex;
+.select,
+.localization-form {
+  @apply
+    relative
+    flex;
 
   &__select {
-    @apply h-10 border border-bg2 cursor-pointer leading-4 py-2 pl-4 pr-8;
+    @apply
+      h-10
+      border
+      border-scheme-accent
+      cursor-pointer
+      leading-4
+      py-2
+      pl-4
+      pr-8;
   }
 
   & .icon-caret {
-    @apply right-2;
+    @apply
+      h-6
+      w-6
+      right-2
+      top-1/2
+      transform
+      -translate-y-1/2;
+  }
+}
+
+.disclosure {
+  @apply
+    relative;
+
+  &__button {
+    @apply
+      relative
+      p-2
+      pr-8
+      my-2;
+
+    &[aria-expanded='true'] {
+      & .icon-caret {
+        @apply
+          transform
+          -translate-y-1/2
+          rotate-180;
+      }
+    }
+  }
+
+  & .icon-caret {
+    @apply absolute;
+  }
+
+  &__list-wrapper {
+    @apply
+      absolute
+      top-full
+      h-48
+      w-64
+      filter
+      drop-shadow-md
+      overflow-y-auto
+      bg-scheme-fg;
+  }
+
+  &__list {
+    @apply mx-4;
+  }
+
+  &__item {
+    @apply py-1;
+  }
+
+  &__link {
+    @apply p-0;
   }
 }
