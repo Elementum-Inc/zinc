@@ -87,13 +87,13 @@
 }
 
 .media-collage:not(.background-none) .media-collage-card {
-  background: rgb(var(--color-background));
+  background: rgb(var(--color-scheme-bg));
   height: 100%;
 }
 
 .media-collage.background-primary .media-collage-card {
-  background: rgb(var(--color-background))
-    linear-gradient(rgb(var(--color-foreground) .04), rgb(var(--color-foreground) .04));
+  background: rgb(var(--color-scheme-bg))
+    linear-gradient(rgb(var(--color-scheme-fg) .04), rgb(var(--color-scheme-fg) .04));
 }
 
 .media-collage-list h3 {

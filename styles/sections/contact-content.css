@@ -128,8 +128,8 @@
 }
 
 .contact-content.background-primary .contact-content-card {
-  background: rgb(var(--color-background))
-    linear-gradient(rgb(var(--color-foreground) .04), rgb(var(--color-foreground) .04));
+  background: rgb(var(--color-scheme-bg))
+    linear-gradient(rgb(var(--color-scheme-fg) .04), rgb(var(--color-scheme-fg) .04));
 }
 
 .contact-content-list h3 {
