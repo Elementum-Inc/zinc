@@ -14,7 +14,9 @@
       px-8
       bg-scheme-bg
       h-screen
-      w-sm;
+      w-sm
+      filter
+      drop-shadow-drawer;
     max-width: calc(100vw - 2rem);
     border: .1rem solid rgb(var(--colors-scheme-fg) .2);
     border-right: 0;
@@ -121,11 +123,17 @@
     }
 
     &__details {
-      @apply min-w-[12rem];
+      @apply min-w-[8rem];
+
+      & > * + * {
+        @apply mt-1;
+      }
     }
 
     &__name {
-      @apply font-semibold;
+      @apply
+        text-sm
+        font-semibold;
     }
 
     &__price-wrapper {
@@ -134,13 +142,22 @@
         mx-0;
     }
 
+    & .product-option {
+      @apply text-xs
+        leading-tight;
+    }
+
     & dl > .product-option {
-      @apply
-        text-sm
-        flex;
+      @apply flex;
 
       & > dd {
         @apply ml-1;
+      }
+    }
+
+    & > td + td {
+      &.cart-item__totals {
+        @apply pl-4;
       }
     }
   }

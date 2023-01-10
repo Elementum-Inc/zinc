@@ -46,6 +46,18 @@
   -webkit-transition-duration: var(--duration-default);
   -o-transition-duration: var(--duration-default);
   transition-duration: var(--duration-default);
+  --tw-blur: var(--tw-empty,/*!*/ /*!*/);
+  --tw-brightness: var(--tw-empty,/*!*/ /*!*/);
+  --tw-contrast: var(--tw-empty,/*!*/ /*!*/);
+  --tw-grayscale: var(--tw-empty,/*!*/ /*!*/);
+  --tw-hue-rotate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-invert: var(--tw-empty,/*!*/ /*!*/);
+  --tw-saturate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-sepia: var(--tw-empty,/*!*/ /*!*/);
+  --tw-drop-shadow: var(--tw-empty,/*!*/ /*!*/);
+  -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
+  --tw-drop-shadow: drop-shadow(var(--drawer-shadow-horizontal-offset)                   var(--drawer-shadow-vertical-offset)                   var(--drawer-shadow-blur-radius)                   rgb(var(--color-scheme-accentRGB) / var(--drawer-shadow-opacity)));
   max-width: calc(100vw - 2rem);
   border: .1rem solid rgb(var(--colors-scheme-fg) .2);
   border-right: 0;
@@ -153,11 +165,16 @@
 }
 
 .cart-drawer .cart-item__details {
-  min-width: 12rem;
+  min-width: 8rem;
+}
+
+.cart-drawer .cart-item__details > * + * {
+  margin-top: .25rem;
 }
 
 .cart-drawer .cart-item__name {
   font-weight: 600;
+  font-size: .875rem;
 }
 
 .cart-drawer .cart-item__price-wrapper {
@@ -167,16 +184,24 @@
   margin-right: 0;
 }
 
+.cart-drawer .cart-item .product-option {
+  font-size: .75rem;
+  line-height: 1.25;
+}
+
 .cart-drawer .cart-item dl > .product-option {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  font-size: .875rem;
 }
 
 .cart-drawer .cart-item dl > .product-option > dd {
   margin-left: .25rem;
+}
+
+.cart-drawer .cart-item > td + td.cart-item__totals {
+  padding-left: 1rem;
 }
 
 .cart-drawer .quantity__input {

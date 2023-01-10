@@ -137,6 +137,14 @@ cart-items {
   }
 }
 
+.quantity {
+  &__input {
+    @apply
+      font-serif
+      font-semibold;
+  }
+}
+
 .cart__ctas button {
   @apply
     text-xl

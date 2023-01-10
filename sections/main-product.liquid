@@ -220,8 +220,7 @@
               </a>
             </div>
             {%- when 'divider' -%}
-              <div class="divider" style="width: {{ block.settings.product_info_divider_length }}px; border-bottom: {{ block.settings.product_info_divider_width }}px solid black" {{ block.shopify_attributes }}>
-              {% comment %} TODO: make color of divider link to theme settings {% endcomment %}
+              <div class="divider" style="width: {{ block.settings.product_info_divider_length }}px; border-bottom: {{ block.settings.product_info_divider_width }}px solid var(--color-scheme-accent)" {{ block.shopify_attributes }}>
               </div>
             {%- when 'text' -%}
             <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
@@ -279,9 +278,9 @@
             </div>
           {%- when 'quantity_selector' -%}
             <div class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
-              {% comment %} <label class="form__label" for="Quantity-{{ section.id }}">
+              <label class="form__label visually-hidden" for="Quantity-{{ section.id }}">
                 {{ 'products.product.quantity.label' | t }}
-              </label> {% endcomment %}
+              </label>
 
               <quantity-input class="quantity">
                 <button class="btn btn--qty secondary no-js-hidden" name="minus" type="button">

@@ -139,6 +139,11 @@ cart-items .quantity {
   width: 5rem;
 }
 
+.quantity__input {
+  font-family: var(--font-heading-family);
+  font-weight: 600;
+}
+
 .cart__ctas button {
   font-size: 1.25rem;
   min-height: 3rem;
