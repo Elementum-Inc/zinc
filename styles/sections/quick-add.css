@@ -140,4 +140,18 @@
     @apply
       p-5;
   }
+
+  & .shopify-payment-button__button,
+  & .product-form__submit {
+    @apply inline-block
+      min-h-[unset]
+      py-xs
+      px-8
+      bg-button-bg
+      text-button-fg
+      text-xl
+      focus:outline-none
+      focus:ring
+      focus:ring-scheme-accent;
+  }
 }
