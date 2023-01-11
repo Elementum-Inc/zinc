@@ -366,6 +366,28 @@
       "info": "TODO: A note on the difference between basic and bold."
     },
     {
+      "type": "select",
+      "id": "mm_toplink_behavior",
+      "options": [
+        {
+          "value": "view_all_link",
+          "label": "Include \"View all\" link in submenu"
+        },
+        {
+          "value": "parent_link",
+          "label": "Link directly in topmenu"
+        }
+      ],
+      "default": "parent_link",
+      "label": "Toplink Behavior"
+    },
+    {
+      "type": "checkbox",
+      "id": "mm_enable_caret",
+      "default": false,
+      "label": "Enable caret"
+    },
+    {
       "type": "link_list",
       "id": "mm_mobile_links",
       "label": "Mobile Bottom Links",

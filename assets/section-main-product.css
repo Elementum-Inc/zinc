@@ -22,7 +22,7 @@
 }
 
 .spr-review-header {
-  border-bottom: 0.2rem solid black;
+  border-bottom: 0.2rem solid var(--color-scheme-accent);
   width: 33%;
   margin-bottom: 1rem;
 }
@@ -40,9 +40,7 @@
 }
 
 .divider {
-  /* border-bottom: 2px solid black; */
   margin: 2rem 0;
-  /* width: 33%; */
 }
 
 .product {
@@ -88,12 +86,12 @@ quantity-input {
 
 .primary input[type="radio"]:checked + label {
   background-color: rgb(var(--color-background-2)) !important;
-  color: white !important;
+  color: var(--color-scheme-bg) !important;
 }
 
 .accent-2 input[type="radio"]:checked + label {
   background-color: rgb(var(--color-accent-2)) !important;
-  color: white !important;
+  color: var(--color-scheme-bg) !important;
 }
 
 .product .select__select {
@@ -111,13 +109,12 @@ quantity-input {
 }
 
 .product-form__submit {
-  background: black !important;
-  color: white !important;
+  background: var(--color-scheme-accent);
+  color: var(--color-scheme-bg);
 }
 
 .shopify-payment-button__button {
-  border: 2px solid black;
-  height: 4.5rem !important;
+  border: 2px solid var(--color-scheme-accent);
   padding: 0;
 }
 
@@ -216,8 +213,7 @@ quantity-input {
 }
 
 .product-popup-modal__content {
-  /* background-color: rgb(var(--color-background)); */
-  background: white;
+  background-color: var(--color-scheme-bg);
   overflow: auto;
   height: 80%;
   margin: 0 auto;

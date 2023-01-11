@@ -104,23 +104,6 @@
           h-12;
       }
 
-      & .button {
-        @apply
-          text-sm
-          min-h-12;
-      }
-
-      & .shopify-payment-button {
-        @apply
-          h-12;
-      }
-
-      & .shopify-payment-button__button {
-        @apply
-          text-sm
-          min-h-10;
-      }
-
       & .quantity__input {
         @apply w-full;
       }
@@ -156,5 +139,19 @@
   & .form__label {
     @apply
       p-5;
+  }
+
+  & .shopify-payment-button__button,
+  & .product-form__submit {
+    @apply inline-block
+      min-h-[unset]
+      py-xs
+      px-8
+      bg-button-bg
+      text-button-fg
+      text-xl
+      focus:outline-none
+      focus:ring
+      focus:ring-scheme-accent;
   }
 }

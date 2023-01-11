@@ -69,6 +69,10 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
     --button-fg: theme('colors.bg1');
   }
 
+  &--large {
+    @apply text-xl;
+  }
+
   &--qty {
     @apply
       self-center
