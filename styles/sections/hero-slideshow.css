@@ -28,11 +28,6 @@
     position: absolute;
   }
 
-  &__text--center {
-    align-items: center;
-    text-align: center;
-  }
-
   &.banner--small {
     min-height: 575px;
 

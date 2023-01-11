@@ -26,11 +26,6 @@
   position: absolute;
 }
 
-.slideshow__text--center {
-  align-items: center;
-  text-align: center;
-}
-
 .slideshow.banner--small {
   min-height: 575px;
 }
