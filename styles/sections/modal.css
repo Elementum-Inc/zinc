@@ -67,7 +67,7 @@
   }
 
   &__image {
-    @apply !block flex-1;
+    @apply block flex-1;
   }
 
   &__inner {

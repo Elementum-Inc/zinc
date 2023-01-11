@@ -16,6 +16,13 @@
             "title_text_style": "body"
           }
         },
+        "48a8174b-2b0a-4e15-9027-ab3a60140afd": {
+          "type": "divider",
+          "settings": {
+            "product_info_divider_length": 150,
+            "product_info_divider_width": 1
+          }
+        },
         "caption": {
           "type": "text",
           "settings": {
@@ -125,6 +132,7 @@
       "block_order": [
         "vendor",
         "title",
+        "48a8174b-2b0a-4e15-9027-ab3a60140afd",
         "caption",
         "price",
         "ef90e07b-23aa-4857-8a27-35bc11fae2b1",
@@ -391,6 +399,7 @@
         "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-3"
       ],
       "settings": {
+        "color_scheme": "background-1",
         "image_ratio": "square",
         "columns_desktop": 4,
         "column_alignment": "left",

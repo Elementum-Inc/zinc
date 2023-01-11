@@ -1,0 +1,32 @@
+.cart {
+  @apply block
+    relative;
+
+  &__footer {
+    @apply
+      border-scheme-fg
+      border-t-1;
+
+    & .totals {
+      @apply <md:justify-between;
+    }
+  }
+}
+
+#Cart-note {
+  @apply font-lg
+    italic;
+}
+
+.totals {
+  @media screen and (max-width: 767px) {
+    justify-content: space-between;
+  }
+
+  & > h2,
+  &__subtotal-value {
+    @apply
+      text-sm
+      md:text-base;
+  }
+}

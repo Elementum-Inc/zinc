@@ -1,0 +1,80 @@
+.accordion {
+  margin-top: 2.5rem;
+  margin-bottom: 0;
+  border-top: .1rem solid rgb(var(--color-scheme-fg) .08);
+  border-bottom: .1rem solid rgb(var(--color-scheme-fg) .08);
+
+  &__title {
+    max-width: calc(100% - 6rem);
+
+    @apply
+      inline-block
+      mt-3
+      mx-auto
+      mb-0
+      break-words;
+  }
+
+  & summary {
+    @apply
+      leading-none
+      flex
+      relative
+      border-t-2
+      border-scheme-fg;
+  }
+
+  & svg {
+    @apply
+      absolute
+      w-8
+      h-8
+      top-1/2
+      transform
+      -translate-y-1/2;
+  }
+
+  & details[open] > summary .icon-caret {
+    @apply
+      transform
+      -translate-y-1/2
+      rotate-180;
+  }
+
+  & .icon-accordion {
+    align-self: center;
+    fill: rgb(var(--color-scheme-accent));
+    height: calc(var(--font-heading-scale) * 2rem);
+    margin-right: calc(var(--font-heading-scale) * 1rem);
+    width: calc(var(--font-heading-scale) * 2rem);
+  }
+
+  & .summary__title {
+    @apply
+      flex
+      flex-1;
+
+    & + .icon-caret {
+      height: calc(var(--font-heading-scale) * .6rem);
+    }
+  }
+
+  &__content {
+    @apply
+      mb-6
+      break-words
+      overflow-x-auto
+      py-4
+      px-20;
+
+    & img {
+      @apply
+        max-w-full;
+    }
+  }
+
+  & + .accordion {
+    @apply mt-0
+      border-t-0;
+  }
+}
