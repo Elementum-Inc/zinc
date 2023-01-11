@@ -86,7 +86,7 @@
           opacity: {{ block.settings.image_overlay_opacity | divided_by: 100.0 }};
         }
       </style>
-      
+
       <div class="slideshow__slide grid__item grid--1-col slider__slide"
         id="Slide-{{ section.id }}-{{ forloop.index }}"
         {{ block.shopify_attributes }}
@@ -139,16 +139,21 @@
             {%- endif -%}
             {%- if block.settings.button_label != blank -%}
               <div class="banner__buttons">
-                <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ block.settings.button_label | escape }}</a>
-                <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="button {% if block.settings.second_button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ block.settings.second_button_label | escape }}</a>
+                <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.button_style_secondary %}secondary{% else %}primary{% endif %}">{{ block.settings.button_label | escape }}</a>
+                <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.second_button_style_secondary %}secondary{% else %}primary{% endif %}">{{ block.settings.second_button_label | escape }}</a>
               </div>
             {%- endif -%}
           </div>
 
       {%- when 'video' -%}
         {%- if block.settings.video_src != blank -%}
-          <div>
-            <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-{{ block.settings.color_scheme }} slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }} {% if block.settings.banner_text_background == false %} no-solid-background {% endif %}" >
+            <video autoplay muted loop playsinline class="slideshow-video">
+              <source src="{{ block.settings.video_src }}" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} page-width{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
+            <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-scheme--{{ block.settings.color_scheme }} slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}{% unless block.settings.banner_text_background %} no-solid-background{% endunless %}">
               {%- if block.settings.heading != blank -%}
                 <h2 class="banner__heading {{ block.settings.heading_size }}">{{ block.settings.heading | escape }}</h2>
               {%- endif -%}
@@ -161,20 +166,15 @@
 
               {%- if block.settings.button_label != blank -%}
                 <div class="banner__buttons">
-                  <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="button {% if block.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ block.settings.button_label | escape }}</a>
-                  <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="button {% if block.settings.second_button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ block.settings.second_button_label | escape }}</a>
+                  <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.button_style_secondary %}secondary{% else %}primary{% endif %}">{{ block.settings.button_label | escape }}</a>
+                  <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.second_button_style_secondary %}secondary{% else %}primary{% endif %}">{{ block.settings.second_button_label | escape }}</a>
                 </div>
               {%- endif -%}
             </div>
-
-            <video autoplay muted loop playsinline class="slideshow-video">
-              <source src="{{ block.settings.video_src }}" type="video/mp4">
-            </video>
-
           <div>
 
         {%- endif -%}
-        
+
       {%- endcase -%}
       </div>
       </div>
@@ -527,6 +527,13 @@
           "id": "subheading",
           "default": "Tell your brand's story through video",
           "label": "t:sections.slideshow.blocks.slide.settings.subheading.label"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "default": "Button label",
+          "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
+          "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
         },
         {
           "type": "url",
