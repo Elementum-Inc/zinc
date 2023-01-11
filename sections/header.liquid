@@ -24,7 +24,7 @@
   <script src="{{ 'cart-drawer.js' | asset_url }}" defer="defer"></script>
 {%- endif -%}
 
-<header class="header {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }} logo-{{ section.settings.logo_position }}">
+<header id="header" class="header {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }} logo-{{ section.settings.logo_position }}{% if section.settings.enable_sticky_header %} sticky{% endif %}">
   {% comment %} logo {% endcomment %}
   <h1 class="header__logo order-none">
     <a href="{{ routes.root_url }}">
@@ -43,14 +43,21 @@
       {%- endif -%}
     </a>
   </h1>
+
   {% comment %} theme-check-disable LiquidTag {% endcomment %}
-  {% capture topmenuJson %}
-    {% render 'menu-json', menu: section.settings.menu %}
-  {% endcapture %}
-  {% capture mobileLinksJson %}
-    {% render 'menu-json', menu: section.settings.mm_mobile_links %}
-  {% endcapture %}
+  {%- capture topmenuJson -%}
+    {%- render 'menu-json', menu: section.settings.menu -%}
+  {%- endcapture -%}
+
+  {%- capture mobileLinksJson -%}
+    {%- if section.settings.mm_mobile_links -%}
+      {%- render 'menu-json', menu: section.settings.mm_mobile_links -%}
+    {%- else -%}
+      null
+    {%- endif -%}
+  {%- endcapture -%}
   {% comment %} theme-check-enable LiquidTag {% endcomment %}
+
   {% capture blocks %}
     [
       {% for block in section.blocks %}
@@ -58,24 +65,26 @@
           "id": "{{ block.id }}",
           "settings": {% if block.type == 'menu' %}
             {
-              "submenu": {% render 'menu-json', menu: block.settings.submenu %},
+              "submenu": {%- if block.settings.submenu -%}{% render 'menu-json', menu: block.settings.submenu %}{%- else -%}null{%- endif -%},
               "submenu_title": "{{ block.settings.submenu_title }}",
               "submenu_item_image": "{{ block.settings.submenu_item_image }}",
-              "title": "{{ block.settings.title }}" 
+              "title": "{{ block.settings.title | handleize }}" 
             }
           {% else %}
             {
               "content": "{{ block.settings.content }}",
               "content_title": "{{ block.settings.content_title }}",
               "content_subtitle": "{{ block.settings.content_subtitle }}",
-              "image": {
-                "alt": "{{ block.settings.image.alt }}",
-                "aspect_ratio": {{ block.settings.image.aspect_ratio }},
-                "height": "{{ block.settings.image.height }}",
-                "id": {{ block.settings.image.id }},
-                "url": "{{ block.settings.image | image_url }}",
-                "width": "{{ block.settings.image.width }}"
-              },
+              {%- if block.settings.image -%}
+                "image": {
+                  "alt": "{{ block.settings.image.alt }}",
+                  "aspect_ratio": {{ block.settings.image.aspect_ratio }},
+                  "height": "{{ block.settings.image.height }}",
+                  "id": {{ block.settings.image.id }},
+                  "url": "{{ block.settings.image | image_url }}",
+                  "width": "{{ block.settings.image.width }}"
+                },
+              {%- endif -%}
               "primary_button_text": "{{ block.settings.primary_button_text }}",
               "primary_button_url": "{{ block.settings.primary_button_url }}",
               "secondary_button_text": "{{ block.settings.secondary_button_text }}",
@@ -89,26 +98,82 @@
       {% endfor %}
     ]
   {% endcapture %}
+
   {% comment %} menu {% endcomment %}
   {% if section.settings.menu %}
-    <div id="megamenu"
-      class="header__menu order-1"
-      data-settings="{{ section.settings | json | escape }}"
-      data-blocks="{{ blocks | strip_newlines | escape }}"
-      data-topmenu="{{ topmenuJson | strip_newlines | escape }}"
-      data-mobilelinks="{{ mobileLinksJson | strip_newlines | escape }}"
-      data-app-type="mega-menu"
-      data-app
-    ></div>
+    {%- assign app_type = 'megamenu' -%}
+    <div class="header__menu order-1"
+      data-app-type="{{ app_type }}"
+      data-app-id="{{ section.id }}">
+      <script id="{{ section.id }}-{{ app_type }}">
+        window.vue.availableApps.push({
+          type: "{{ app_type }}",
+          id: "{{ section.id }}",
+          data: {
+            "iconSize": {{ settings.icon_size }},
+            "iconStrokeWidth": {{ settings.icon_stroke_width }},
+            "settings": {{ section.settings | json }},
+            "blocks": {{ blocks }},
+            "topMenu": {{ topmenuJson }},
+            "mobileLinks": {{ mobileLinksJson }},
+            "accountRoute": "{{ routes.account_url }}"
+          }
+        })
+      </script>
+    </div>
   {% endif %}
+
   {% comment %} user menu {% endcomment %}
   <div class="header__user-menu order-2 {{ section.settings.user_menu_type }} icons-{{ section.settings.menu_icon_position }}">
+    {%- capture trendsJson -%}
+      {%- if settings.search_trends != nil -%}
+        {
+          "handle": "{{ settings.search_trends.handle }}",
+          "title": "{{ settings.search_trends.title }}",
+          "links": {%- render 'menu-json', menu: settings.search_trends -%}
+        }
+      {%- else -%}
+        null
+      {%- endif -%}
+    {%- endcapture -%}
+    
     {% comment %} search {% endcomment %}
+    {%- assign app_type = 'search' -%}
     <div id="searchMenuTop"
-      data-settings="{{ section.settings | json | escape }}"
-      data-app-type="search-menu"
-      data-app
-    ></div>
+      data-app-type="{{ app_type }}"
+      data-app-id="{{ section.id }}">
+      <script id="{{ section.id }}-{{ app_type }}">
+        window.vue.availableApps.push({
+          type: "{{ app_type }}",
+          id: "{{ section.id }}",
+          data: {
+            "iconSize": {{ settings.icon_size }},
+            "iconStrokeWidth": {{ settings.icon_stroke_width }},
+            "searchPosition": "{{ settings.search_open_position }}",
+            "predictiveSearchEnabled": {{ settings.predictive_search_enabled }},
+            "predictiveShowPages": {{ settings.predictive_search_show_pages }},
+            "predictiveShowArticles": {{ settings.predictive_search_show_articles }},
+            "trendingSearches": {{ trendsJson }},
+            "cardColorScheme": "{{ settings.card_color_scheme }}",
+            "cardBorder": {{ settings.card_border }},
+            "cardImageAspect": "{{ settings.predictive_card_image_ratio }}",
+            "cardImageFit": "{{ settings.card_image_fit }}",
+            "cardAnimate": {{ settings.product_card_hover_animate }},
+            "cardAnimation": "{{ settings.product_card_hover_animation }}",
+            "cardShowVendor": {{ settings.predictive_card_show_vendor }},
+            "cardShowPrice": {{ settings.predictive_card_show_price }},
+            "cardShowAuthor": {{ settings.predictive_card_show_author }},
+            "cardShowDate": {{ settings.predictive_card_show_date }},
+            "cardShowTags": {{ settings.predictive_card_show_tags }},
+            "badgePosition": "{{ settings.badge_position }}",
+            "soldOutColor": "{{ settings.sold_out_badge_color_scheme }}",
+            "saleColor": "{{ settings.sale_badge_color_scheme }}",
+            "currencyCodeEnabled": {{ settings.currency_code_enabled }}
+          }
+        })
+      </script>
+    </div>
+
     {% comment %} user {% endcomment %}
     <a class="header__icon-link account-link" href="{{ routes.account_url }}">
       <span class="icon target">
@@ -117,25 +182,28 @@
      <span class="label">Account</span>
     </a>
     {% comment %} cart {% endcomment %}
-    <a class="header__icon-link cart-link" href="{{ routes.cart_url }}" id="cart-icon-bubble">
+    <a class="header__icon-link cart-link" href="{{ routes.cart_url }}" id="cart_icon">
       <span class="icon target">
         {% render 'icon-shopping-bag' %}
 
-        {%- if cart != empty -%}
-        <div class="cart-count-bubble">
+        {%- if cart != empty and section.settings.user_menu_type != 'compact' -%}
+          <div class="cart-link__bubble">
+            {%- if cart.item_count < 100 -%}
+              <span aria-hidden="true">{{ cart.item_count }}</span>
+            {%- endif -%}
+            <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
+          </div>
+        {%- endif -%}
+      </span>
+      <span class="label">Cart</span>
+      {%- if cart != empty and section.settings.user_menu_type == 'compact' -%}
+        <span class="cart-link__bubble">
           {%- if cart.item_count < 100 -%}
             <span aria-hidden="true">{{ cart.item_count }}</span>
           {%- endif -%}
           <span class="visually-hidden">{{ 'sections.header.cart_count' | t: count: cart.item_count }}</span>
-        </div>
+        </span>
       {%- endif -%}
-      
-      </span>
-     <span class="label">Cart
-
-     
-     </span>
-     
     </a>
   </div>
 </header>
@@ -349,22 +417,6 @@
     },
     {
       "type": "header",
-      "content": "Country/Language Selection"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_country_selector",
-      "default": false,
-      "label": "t:sections.footer.settings.enable_country_selector.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_language_selector",
-      "default": false,
-      "label": "t:sections.footer.settings.enable_language_selector.label"
-    },
-    {
-      "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
     },
     {
@@ -398,7 +450,7 @@
           "type": "text",
           "id": "title",
           "label": "Top menu parent",
-          "info": "Your megamenu is built according to block order and this setting, which attaches the submenu to it's parent in the top menu. For more details on how to use this megamenu, please [eventually click here](https://google.com)."
+          "info": "🚨 TODO: ADD DIRECT URL TO THEME DOCS. 🚨 Your megamenu is built according to block order and this setting, which attaches the submenu to it's parent in the top menu via title/handle. For more details on how to use this megamenu, please [visit our documentation](https://www.elementumtech.io/)."
         },
         {
           "type": "text",

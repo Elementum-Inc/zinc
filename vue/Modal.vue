@@ -83,6 +83,15 @@
                       </div>
                     </div>
                   </div>
+                  <div class="section-modal__close">
+                    <button
+                      type="button"
+                      class="hover:text-gray-500"
+                      @click="isOpen = false"
+                    >
+                      <span>Close</span>
+                    </button>
+                  </div>
                 </div>
               </DialogPanel>
             </div>

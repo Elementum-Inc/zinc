@@ -28,7 +28,7 @@
     {% if settings.product_card_border %} border border-scheme-fg{% endif %}
     {% if card_hover_info %} card--info-hover{% endif %}"
   >
-    <div class="card__inner {{ media_aspect_ratio }} gradient">
+    <div class="card__inner {{ media_aspect_ratio }}">
       {%- if card_collection.featured_image -%}
         <div class="card__media">
           <div class="media media--transparent media--hover-effect">

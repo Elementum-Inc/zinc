@@ -28,9 +28,9 @@
             <div class="search__results--inner">
               <h1 class="sr-only">Search Results</h1>
               <div v-if="trendingSearches" class="search__trends">
-                <h2>{{ trends.title }}</h2>
+                <h2>{{ trendingSearches.title }}</h2>
                 <div class="search__trends-tags">
-                  <a v-for="trend in trends.items" :key="trend.id" :href="trend.url" class="search__trends-tag btn secondary">
+                  <a v-for="trend in trendingSearches.links" :key="trend.id" :href="trend.url" class="search__trends-tag btn secondary">
                     {{ trend.title }}
                   </a>
                 </div>
@@ -51,15 +51,18 @@
                             class="grid__item"
                             cardType="product"
                             :card="product"
-                            :cardColorScheme="cardSettings.card_color_scheme"
-                            :cardBorder="cardSettings.card_border"
-                            :cardAspectRatio="cardSettings.card_image_ratio"
-                            :cardImageFit="cardSettings.card_image_fit"
-                            :cardAnimate="cardSettings.card_hover_animate"
-                            :cardAnimation="cardSettings.card_hover_animation"
-                            :showVendor="cardSettings.show_vendor"
-                            :showPrice="cardSettings.show_price"
-                            :themeSettings="themeSettings"></card>
+                            :cardColorScheme="cardColorScheme"
+                            :cardBorder="cardBorder"
+                            :cardAspectRatio="cardImageAspect"
+                            :cardImageFit="cardImageFit"
+                            :cardAnimate="cardAnimate"
+                            :cardAnimation="cardAnimation"
+                            :showVendor="cardShowVendor"
+                            :showPrice="cardShowPrice"
+                            :badgePosition="badgePosition"
+                            :soldOutColor="soldOutColor"
+                            :saleColor="saleColor"
+                            :currencyCodeEnabled="currencyCodeEnabled"></card>
                         </div>
                       </TabPanel>
                     </transition>
@@ -71,16 +74,19 @@
                             class="grid__item"
                             cardType="article"
                             :card="article"
-                            :cardColorScheme="cardSettings.card_color_scheme"
-                            :cardBorder="cardSettings.card_border"
-                            :cardAspectRatio="cardSettings.card_image_ratio"
-                            :cardImageFit="cardSettings.card_image_fit"
-                            :cardAnimate="cardSettings.card_hover_animate"
-                            :cardAnimation="cardSettings.card_hover_animation"
-                            :showAuthor="cardSettings.show_author"
-                            :showDate="cardSettings.show_date"
-                            :showTags="cardSettings.show_tags"
-                            :themeSettings="themeSettings"></card>
+                            :cardColorScheme="cardColorScheme"
+                            :cardBorder="cardBorder"
+                            :cardAspectRatio="cardImageAspect"
+                            :cardImageFit="cardImageFit"
+                            :cardAnimate="cardAnimate"
+                            :cardAnimation="cardAnimation"
+                            :showAuthor="cardShowAuthor"
+                            :showDate="cardShowDate"
+                            :showTags="cardShowTags"
+                            :badgePosition="badgePosition"
+                            :soldOutColor="soldOutColor"
+                            :saleColor="saleColor"
+                            :currencyCodeEnabled="currencyCodeEnabled"></card>
                         </div>
                       </TabPanel>
                     </transition>
@@ -128,7 +134,6 @@
     data() {
       return {
         query: '',
-        trends: null,
         results: null,
         resultsHeight: 0
       }
@@ -138,12 +143,9 @@
       iconStrokeWidth: Number,
       searchPosition: String,
       predictiveSearchEnabled: Boolean,
-      predictiveShowNumber: Boolean,
       predictiveShowPages: Boolean,
       predictiveShowArticles: Boolean,
-      trendingSearches: String,
-      cardStyle: String,
-      cardAlignment: String,
+      trendingSearches: Object,
       cardColorScheme: String,
       cardBorder: Boolean,
       cardRadius: Number,
@@ -151,10 +153,16 @@
       cardImageFit: String,
       cardAnimate: Boolean,
       cardAnimation: String,
-      cardShowInfoOnHover: Boolean,
-      settings: Object,
-      themeSettings: Object,
-      cardSettings: Object
+      cardShowVendor: Boolean,
+      cardShowPrice: Boolean,
+      cardShowAuthor: Boolean,
+      cardShowDate: Boolean,
+      cardShowTags: Boolean,
+      badgePosition: String,
+      soldOutColor: String,
+      saleColor: String,
+      currencyCodeEnabled: Boolean,
+      accountRoute: String
     },
     computed: {
       resultsLength() {
@@ -204,37 +212,6 @@
         } else {
           this.results = null;
         }
-      },
-      async getTrends(handle) {
-        try {
-          const GET_MENU = {
-            query: `
-              query {
-                menu(handle: "${handle}") {
-                  title
-                  items {
-                    id
-                    title
-                    url
-                  }
-                }
-              }
-            `
-          };
-          let res = await fetch('/api/2022-07/graphql.json', {
-            method: 'POST',
-            credentials: 'include',
-            headers: {
-              'Content-Type': 'application/json',
-              'X-Shopify-Storefront-Access-Token': '1c34b11ba2613f92ad45fe82bace6f83' // TO-DO: create token on app installation for vue components
-            },
-            body: JSON.stringify(GET_MENU)
-          });
-          let json = await res.json();
-          this.trends = json.data.menu;
-        } catch (error) {
-          console.error('Error occurred fetching search trends, please investigate.', error);
-        }
       }
     },
     mounted() {
@@ -265,10 +242,7 @@
         });
       } catch (e) {
         console.error('Error during observer creation.')
-      }
-
-      if (this.trendingSearches) {
-        this.getTrends(this.trendingSearches);
+        console.error(e);
       }
     }
   }

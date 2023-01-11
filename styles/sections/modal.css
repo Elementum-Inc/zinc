@@ -83,15 +83,21 @@
   }
 
   &__content-wrapper {
-    @apply overflow-hidden flex content-center;
+    @apply overflow-y-scroll max-h-full;
   }
 
   &__close {
-    @apply absolute top-0 right-0 hidden pt-4 pr-4 sm:block;
+    &:first-child {
+      @apply hidden sm:block float-right;
+    }
+
+    &:last-child {
+      @apply sm:hidden;
+    }
   }
 
   &__content {
-    @apply basis-full;
+    @apply basis-full clear-both;
   }
 
   &__block {
