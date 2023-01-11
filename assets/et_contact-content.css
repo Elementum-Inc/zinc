@@ -1,6 +1,6 @@
 .contact-content .contact-content-list {
-  column-gap: 0 !important;
-  row-gap: 0 !important;
+  column-gap: 0;
+  row-gap: 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
@@ -29,11 +29,11 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -webkit-box-orient: vertical !important;
-  -webkit-box-direction: reverse !important;
-  -ms-flex-direction: column-reverse !important;
-  -webkit-flex-direction: column-reverse !important;
-  flex-direction: column-reverse !important;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
 }
 
 .contact-content .large-sub {

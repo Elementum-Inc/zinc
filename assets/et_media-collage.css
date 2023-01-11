@@ -1,6 +1,6 @@
 .media-collage .media-collage-list {
-  column-gap: 0 !important;
-  row-gap: 0 !important;
+  column-gap: 0;
+  row-gap: 0;
   display: flex;
 }
 
@@ -12,18 +12,18 @@
   box-sizing: border-box;
 }
 
-.text-above {
+.media-collage .text-above {
   display: flex;
-  flex-direction: column-reverse !important;
+  flex-direction: column-reverse;
 }
 
 .media-collage-btn {
+  background-color: var(--color-scheme-accent);
+  color: var(--color-scheme-bg);
   height: 35px;
   min-width: 168px;
   text-align: center;
   padding: .25rem 2rem;
-  background-color: black;
-  color: white;
 }
 
 .media-collage .title {

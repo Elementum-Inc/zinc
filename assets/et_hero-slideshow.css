@@ -26,12 +26,12 @@
   position: absolute;
 }
 
-.slideshow .banner--small {
-  min-height: 575px !important;
+.slideshow.banner--small {
+  min-height: 575px;
 }
 
-.slideshow .banner--small:not(.banner--adapt) {
-  min-height: 575px !important;
+.slideshow.banner--small:not(.banner--adapt) {
+  min-height: 575px;
 }
 
 .slideshow__autoplay {
@@ -45,7 +45,7 @@
 }
 
 .no-solid-background {
-  background: none !important;
+  background: none;
   font-size: 1rem;
 }
 

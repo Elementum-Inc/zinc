@@ -10,7 +10,7 @@
 }
 
 #testimonials-section .multicolumn-card__image-wrapper {
-  margin: 0 !important;
+  margin: 0;
 }
 
 #testimonials-section .media {
@@ -45,9 +45,9 @@
   margin: 1rem;
 }
 
-.background-blocks img {
-  height: 100px !important;
-  width: 100px !important;
+.background-blocks .multicolumn-card__image {
+  height: 100px;
+  width: 100px;
 }
 
 .background-blocks .multicolumn-card__image-wrapper {

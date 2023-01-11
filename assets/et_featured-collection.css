@@ -3,7 +3,7 @@
 }
 
 .featured-collection-slider.active {
-  display: block !important;
+  display: block;
 }
 
 #collection-tab-container {
