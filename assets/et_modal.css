@@ -163,6 +163,8 @@
   border-top-width: 2px;
   max-height: 66.666667%;
   overflow-y: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
   width: 100%;
 }
 
@@ -264,7 +266,7 @@
 
 .section-modal__content-wrapper {
   max-height: 100%;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 .section-modal__close:first-child {

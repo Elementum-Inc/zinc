@@ -19,6 +19,7 @@
     @apply
       leading-none
       flex
+      p-4
       relative
       border-t-2
       border-scheme-fg;
