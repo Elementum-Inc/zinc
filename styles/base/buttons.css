@@ -71,13 +71,16 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
 
   &--qty {
     @apply
-      py-1
-      px-2;
+      self-center
+      leading-0
+      p-1
+      md:p-2;
 
     > svg {
       @apply
-        h-4
-        w-4;
+        h-[.75rem]
+        w-[.75rem]
+        md:(h-4 w-4);
     }
   }
 

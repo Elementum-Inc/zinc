@@ -1,73 +1,72 @@
-.film-strip .film-strip-list {
-  column-gap: 0 !important;
-  row-gap: 0 !important;
-  display: flex;
+.film-strip {
+  & .film-strip-list {
+    column-gap: 0;
+    row-gap: 0;
+    display: flex;
+  }
+
+  & .title {
+    margin: 0;
+  }
+
+  &.no-heading .title {
+    display: none;
+  }
+
+  & .title-wrapper-with-link {
+    margin-top: 0;
+
+    @media screen and (max-width: 767px) {
+      margin-bottom: 3rem;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    & .page-width {
+      padding-left: 0;
+      padding-right: 0;
+    }
+  }
+
+  & .button {
+    margin-top: 1.5rem;
+
+    @media screen and (min-width: 768px) {
+      margin-top: 4rem;
+    }
+  }
+
+  &:not(.background-none) .film-strip-card {
+    background: rgb(var(--color-scheme-bg));
+    height: 100%;
+  }
+
+  &.background-primary .film-strip-card {
+    background: rgb(var(--color-scheme-bg))
+      linear-gradient(rgb(var(--color-scheme-fg) .04), rgb(var(--color-scheme-fg) .04));
+  }
+
+  & .text-above {
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }
 
 .film-strip-card {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-}
 
-.text-above {
-  display: flex;
-  flex-direction: column-reverse !important;
-}
-
-/* MULTICOLUMN STYLES - CAN BE DELETED ??   */
-.film-strip-btn {
-  height: 35px;
-  min-width: 168px;
-  text-align: center;
-  padding: .25rem 2rem;
-  background-color: black;
-  color: white;
-}
-
-.film-strip .title {
-  margin: 0;
-}
-
-.film-strip.no-heading .title {
-  display: none;
-}
-
-.film-strip .title-wrapper-with-link {
-  margin-top: 0;
-}
-
-@media screen and (max-width: 749px) {
-  .film-strip .title-wrapper-with-link {
-    margin-bottom: 3rem;
+  &__image-wrapper--third-width {
+    width: 33%;
   }
 
-  .film-strip .page-width {
-    padding-left: 0;
-    padding-right: 0;
+  &__image-wrapper--half-width {
+    width: 50%;
   }
-}
 
-.film-strip-card__image-wrapper--third-width {
-  width: 33%;
-}
-
-.film-strip-card__image-wrapper--half-width {
-  width: 50%;
-}
-
-.film-strip-list__item:only-child {
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.film-strip .button {
-  margin-top: 1.5rem;
-}
-
-@media screen and (min-width: 750px) {
-  .film-strip .button {
-    margin-top: 4rem;
+  &__info > :nth-child(2) {
+    margin-top: 1rem;
   }
 }
 
@@ -75,50 +74,38 @@
   margin-top: 0;
   margin-bottom: 0;
   padding: 0;
+
+  & h3 {
+    line-height: calc(1 + .5 / max(1, var(--font-heading-scale)));
+  }
+
+  & h3,
+  & p {
+    margin: 0;
+  }
+
+  &__item--empty {
+    display: none;
+  }
+
+  &__item:only-child {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 72rem;
+  }
+
+  &__item.center .media--adapt,
+  &__item .media--adapt .film-strip-card__image {
+    width: auto;
+  }
+
+  &__item.center .media--adapt img {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 }
 
-.film-strip-list__item:only-child {
-  max-width: 72rem;
-}
-
-.film-strip-list__item--empty {
-  display: none;
-}
-
-.film-strip:not(.background-none) .film-strip-card {
-  background: rgb(var(--color-scheme-bg));
-  height: 100%;
-}
-
-.film-strip.background-primary .film-strip-card {
-  background: rgb(var(--color-scheme-bg))
-    linear-gradient(rgb(var(--color-scheme-fg) .04), rgb(var(--color-scheme-fg) .04));
-}
-
-.film-strip-list h3 {
-  line-height: calc(1 + .5 / max(1, var(--font-heading-scale)));
-}
-
-.film-strip-list h3,
-.film-strip-list p {
-  margin: 0;
-}
-
-.film-strip-card__info > :nth-child(2) {
-  margin-top: 1rem;
-}
-
-.film-strip-list__item.center .media--adapt,
-.film-strip-list__item .media--adapt .film-strip-card__image {
-  width: auto;
-}
-
-.film-strip-list__item.center .media--adapt img {
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 767px) {
   .film-strip-list {
     margin: 0;
     width: 100%;
@@ -130,7 +117,7 @@
   }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .film-strip-list.slider,
   .film-strip-list.grid--4-col-desktop {
     padding: 0;
@@ -182,7 +169,7 @@
   padding-right: 2.5rem;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 767px) {
   .background-none .slider .film-strip-card__info {
     padding-bottom: 1rem;
   }
@@ -192,7 +179,7 @@
   }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .background-none .film-strip-card__image-wrapper {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
@@ -231,7 +218,7 @@
   white-space: nowrap;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .film-strip-list__item--empty {
     display: list-item;
   }

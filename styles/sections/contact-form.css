@@ -69,21 +69,15 @@
   }
 }
 
-/* .contact .title {
-  @apply
-    text-3xl;
-} */
-
 .helper-text {
   @apply
     my-1.7rem
     mx-0
     text-gray-500;
 
-  & .small {
+  &.small {
     @apply
-      !text-base
-      font-medium
-      !text-black-500;
+      text-base
+      font-medium;
   }
 }

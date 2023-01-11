@@ -10,8 +10,7 @@
   }
 
   & .multicolumn-card__image-wrapper {
-    @apply
-      !m-0;
+    @apply m-0;
   }
 
   & .media {
@@ -48,9 +47,9 @@
     margin: 1rem;
   }
 
-  & img {
-    height: 100px !important;
-    width: 100px !important;
+  & .multicolumn-card__image {
+    height: 100px;
+    width: 100px;
   }
 
   & .multicolumn-card__image-wrapper {

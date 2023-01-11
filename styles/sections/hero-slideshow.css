@@ -28,11 +28,11 @@
     position: absolute;
   }
 
-  & .banner--small {
-    min-height: 575px !important;
+  &.banner--small {
+    min-height: 575px;
 
     &:not(.banner--adapt) {
-      min-height: 575px !important;
+      min-height: 575px;
     }
   }
 
@@ -48,7 +48,7 @@
 }
 
 .no-solid-background {
-  background: none !important;
+  background: none;
 
   @apply text-base;
 }

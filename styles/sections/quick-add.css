@@ -31,8 +31,7 @@
   }
 
   &__toggle {
-    @apply
-      !hidden;
+    @apply hidden;
   }
 
   &__content {
@@ -52,8 +51,7 @@
 
     &-info {
       & h2 {
-        @apply
-          !text-xl;
+        @apply text-xl;
       }
 
       & .product {
@@ -61,8 +59,7 @@
       }
 
       & .product__title {
-        @apply
-          !mb-0;
+        @apply mb-0;
       }
 
       & .price__regular {
@@ -79,24 +76,16 @@
           p-3;
       }
 
-      & .product__description {
+      & .product__info-container .product__description {
         @apply
-          !mt-0
-          !mr-0
-          !mb-8
-          !ml-0
+          m-0
+          mb-8
           text-xs;
-      }
-
-      & .product-price {
-        @apply
-          !m-0
-          !text-xl;
       }
 
       & .form__label {
         @apply
-          !text-sm
+          text-sm
           p-0
           mt-8
           mr-0
@@ -117,26 +106,23 @@
 
       & .button {
         @apply
-          !text-sm
-          !min-h-12
-          !text-sm
-          !min-h-12;
+          text-sm
+          min-h-12;
       }
 
       & .shopify-payment-button {
         @apply
-          !h-12;
+          h-12;
       }
 
       & .shopify-payment-button__button {
         @apply
-          !text-sm
-          !min-h-10;
+          text-sm
+          min-h-10;
       }
 
       & .quantity__input {
-        @apply
-          !w-full;
+        @apply w-full;
       }
 
       & .quantity {
@@ -146,13 +132,9 @@
       }
     }
 
-    & .grid {
-      display: flex !important;
-    }
-
     & .shopify-payment-button {
       @apply
-        !h-12;
+        h-12;
     }
 
     & .caption-spaced {
@@ -161,9 +143,10 @@
   }
 
   & .product-form__input input[type='radio'] + label {
+    @apply
+      border-scheme-accent
+      rounded-[5%];
     margin: 0;
-    border: 1px solid !important;
-    border-radius: 5% !important;
   }
 
   & .full-unstyled-link {

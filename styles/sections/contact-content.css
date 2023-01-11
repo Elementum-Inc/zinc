@@ -1,7 +1,7 @@
 .contact-content {
   & .contact-content-list {
-    column-gap: 0 !important;
-    row-gap: 0 !important;
+    column-gap: 0;
+    row-gap: 0;
 
     @apply
       flex;
@@ -31,7 +31,7 @@
   & .text-above {
     @apply
       flex
-      !flex-col-reverse;
+      flex-col-reverse;
   }
 
   & .large-sub {

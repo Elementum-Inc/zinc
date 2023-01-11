@@ -21,7 +21,8 @@
 .cart-item {
   &__name {
     @apply
-      font-lg;
+      text-sm
+      lg:text-lg;
   }
 
   &__image-container {
@@ -47,6 +48,18 @@
     }
   }
 
+  &__details {
+    & > * + * {
+      @apply
+        mt-1
+        md:mt-2;
+    }
+
+    & + .cart-item__quantity {
+      @apply mt-4;
+    }
+  }
+
   &__price-wrapper {
     @media screen and (max-width: 767px) {
       margin-top: 100px;
@@ -61,7 +74,7 @@
       float: right;
 
       & .button {
-        min-height: 0 !important;
+        min-height: 0;
         position: absolute;
         right: 1rem;
       }
@@ -93,29 +106,36 @@ cart-items {
       margin: 0 0 3rem;
       justify-content: center;
     }
+
+    & > .title {
+      @apply
+        <md:(basis-full text-center)
+        font-semibold
+        text-1.375
+        md:text-6xl
+        lg:text-8xl;
+    }
   }
 
   .price {
     @apply
-      !font-lg
-      bold
+      text-lg
+      font-semibold
       tracking-wider
-      text-left
-      pt-2;
+      text-left;
 
     @media screen and (max-width: 767px) {
-      font-size: 1rem !important;
       font-weight: 400;
       letter-spacing: .03em;
-      padding-top: 0 !important;
+      padding-top: 0;
     }
   }
 
   .product-option {
     @apply
-      text-base
+      text-xs md:text-sm
       font-normal
-      leading-snug
+      leading-tight
       text-left;
   }
 
@@ -140,6 +160,9 @@ cart-items {
 .quantity {
   &__input {
     @apply
+      text-sm
+      md:text-lg
+      lg:text-xl
       font-serif
       font-semibold;
   }
@@ -155,26 +178,18 @@ cart-items {
   }
 }
 
-.totals {
-  @media screen and (max-width: 767px) {
-    justify-content: space-between !important;
-  }
-
-  &__subtotal {
-    @apply
-      !font-lg;
-  }
-
-  &__subtotal-value {
-    @apply
-      !font-lg;
-  }
-}
-
 .desktop-table-wrapper {
   @apply
     hidden
     md:block;
+}
+
+.mobile-price-container {
+  @apply flex-grow;
+
+  & .price {
+    @apply text-right;
+  }
 }
 
 .mobile {
