@@ -1,4 +1,4 @@
-{{ 'section-contact-content.css' | asset_url | stylesheet_tag }}
+{{ 'et_contact-content.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
 
@@ -62,7 +62,7 @@
           {%- endif -%}
 
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="contact-content-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
-            <div class="contact-content-card content-container {% if block.settings.column_orientation == 'text-above' %} text-above {% endif %}" style="background-color: {{ block.settings.column_background_color }}; color: {{ block.settings.column_font_color }};">
+            <div class="contact-content-card content-container {{ block.settings.column_orientation }}" style="background-color: {{ block.settings.column_background_color }}; color: {{ block.settings.column_font_color }};">
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
@@ -123,7 +123,7 @@
                 </div>
 
                 {%- if block.settings.link_label != blank -%}
-                  <a class="link contact-content-btn" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.link_label | escape }}</a>
+                  <a class="link btn contact-content-btn" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.link_label | escape }}</a>
                 {%- endif -%}
               </div>
             </div>
@@ -191,23 +191,35 @@
       "id": "image_ratio",
       "options": [
         {
-          "value": "adapt",
-          "label": "Adapt"
-        },
-        {
-          "value": "portrait",
-          "label": "Portrait"
+          "value": "auto",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
         },
         {
           "value": "square",
-          "label": "Square"
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
+        },
+        {
+          "value": "lportrait",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
+        },
+        {
+          "value": "sportrait",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
+        },
+        {
+          "value": "widescreen",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
         },
         {
           "value": "circle",
-          "label": "Circle"
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__7.label"
         }
       ],
-      "default": "adapt",
+      "default": "auto",
       "label": "Image aspect ratio"
     },
     {

@@ -70,16 +70,19 @@
     max-width: 480px;
   }
 }
+
 @media (min-width: 640px) {
   .hero__text {
     max-width: 640px;
   }
 }
+
 @media (min-width: 768px) {
   .hero__text {
     max-width: 768px;
   }
 }
+
 @media (min-width: 1024px) {
   .hero__text {
     max-width: 1024px;
@@ -87,16 +90,19 @@
     padding-bottom: 2rem;
   }
 }
+
 @media (min-width: 1280px) {
   .hero__text {
     max-width: 1280px;
   }
 }
+
 @media (min-width: 1536px) {
   .hero__text {
     max-width: 1536px;
   }
 }
+
 @media (min-width: 1024px) {
   .has-overlay .hero__text {
     padding-top: 2rem;
@@ -104,6 +110,7 @@
     position: relative;
     z-index: 1;
   }
+
   @media (min-width: 1024px) {
     .has-overlay .hero__text {
       padding-top: 3rem;

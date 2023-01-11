@@ -1,5 +1,5 @@
-{{ 'component-accordion.css' | asset_url | stylesheet_tag }}
-{{ 'collapsible-content.css' | asset_url | stylesheet_tag }}
+{{ 'et_accordion.css' | asset_url | stylesheet_tag }}
+{{ 'et_collapsible-content.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -7,7 +7,7 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -15,10 +15,10 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }}">
+<div class="color-scheme color-scheme--{{ section.settings.color_scheme }}">
   <div class="collapsible-content collapsible-{{ section.settings.layout }}-layout isolate{% if section.settings.layout == 'section' %} page-width{% elsif section.settings.layout == 'none' %} content-container content-container--full-width{% endif %}">
-    <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} content-container color-{{ section.settings.container_color_scheme }}{% endif %}">
-      <div class="{% if section.settings.image == blank %}collapsible-content-wrapper-narrow{% else %}page-width{% endif %}">
+    <div class="collapsible-content__wrapper section-{{ section.id }}-padding{% if section.settings.layout == 'section' %} color-scheme color-scheme--{{ section.settings.container_color_scheme }}{% endif %}">
+      <div class="container{% if section.settings.image == blank %} container--narrow{% endif %}">
         <div class="collapsible-content__header" style="text-align: {{ section.settings.heading_alignment }};">
           {%- if section.settings.caption != blank -%}
             <p class="caption-spaced"> {{ section.settings.caption | escape }}</p>
@@ -56,7 +56,7 @@
           {% endif %}
           <div class="grid__item">
             {%- for block in section.blocks -%}
-              <div class="accordion{% if section.settings.layout == 'row' %} content-container color-{{ section.settings.container_color_scheme }}{% endif %}" {{ block.shopify_attributes }}>
+              <div class="accordion{% if section.settings.layout == 'row' %} content-container color-scheme color-scheme--{{ section.settings.container_color_scheme }}{% endif %}" {{ block.shopify_attributes }}>
                 <details id="Details-{{ block.id }}-{{ section.id }}"{% if section.settings.open_first_collapsible_row and forloop.first %} open{% endif %}>
                   <summary id="Summary-{{ block.id }}-{{ section.id }}">
                     {% render 'icon-accordion', icon: block.settings.icon %}
@@ -175,10 +175,6 @@
         {
           "value": "background-2",
           "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
         }
       ],
       "default": "background-1",
@@ -203,10 +199,6 @@
         {
           "value": "background-2",
           "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
         }
       ],
       "default": "background-2",
@@ -233,19 +225,31 @@
       "id": "image_ratio",
       "options": [
         {
-          "value": "adapt",
-          "label": "Adapt"
+          "value": "auto",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
         },
         {
-          "value": "small",
-          "label": "Small"
+          "value": "square",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
         },
         {
-          "value": "large",
-          "label": "Large"
+          "value": "lportrait",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
+        },
+        {
+          "value": "sportrait",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
+        },
+        {
+          "value": "widescreen",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
         }
       ],
-      "default": "adapt",
+      "default": "auto",
       "label": "Image aspect ratio"
     },
     {

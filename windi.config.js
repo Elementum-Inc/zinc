@@ -110,7 +110,7 @@ export default {
           "var(--drawer-shadow-horizontal-offset) \
                   var(--drawer-shadow-vertical-offset) \
                   var(--drawer-shadow-blur-radius) \
-                  rgba(var(--color-secondary), var(--drawer-shadow-opacity))",
+                  rgb(var(--color-scheme-accentRGB) / var(--drawer-shadow-opacity))",
         card: "0px 2px 8px #00000020",
       },
       lineHeight: {
@@ -123,6 +123,9 @@ export default {
         180: 1.8,
         190: 1.9,
       },
+      transitionDuration: {
+        base: "var(--duration-default)"
+      }
     },
   },
   plugins: [require("windicss/plugin/aspect-ratio")],

@@ -72,10 +72,9 @@
             {{ 'products.product.quantity.label' | t }}
         </label>
         <quantity-input class="quantity">
-            <button class="quantity__button no-js-hidiven" name="minus" type="button">
+            <button class="btn btn--qty secondary no-js-hidiven" name="minus" type="button">
             <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
-            {% comment %} {% render 'icon-minus' %} {% endcomment %}
-            -
+                {% render 'icon-minus' %}
             </button>
             <input class="quantity__input"
             type="number"
@@ -86,10 +85,9 @@
             id="Quantity-{{ item.index | plus: 1 }}"
             data-index="{{ item.index | plus: 1 }}"
             >
-            <button class="quantity__button no-js-hidiven" name="plus" type="button">
+            <button class="btn btn--qty secondary no-js-hidiven" name="plus" type="button">
             <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
-            {% comment %} {% render 'icon-plus' %} {% endcomment %}
-            +
+                {% render 'icon-plus' %}
             </button>
         </quantity-input>
         </div>
@@ -108,8 +106,7 @@
     <div class="mobile-price-container">
     <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
         <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
-        {% comment %} {% render 'icon-remove' %} {% endcomment %}
-        X
+            {% render 'icon-remove' %}
         </a>
     </cart-remove-button>
     <div class="cart-item__price-wrapper">
