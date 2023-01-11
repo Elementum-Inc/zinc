@@ -2130,7 +2130,7 @@ p.small {
   display: flex;
   max-height: 100%;
 }
-.header .basic .image_content__image {
+.header .basic .image_content__image-container {
   flex-basis: 33.333333%;
 }
 .header .basic .image_content__content {
@@ -2196,6 +2196,13 @@ p.small {
 .header .bold .menu__top-link > button[aria-expanded='true'] a::after {
   height: 2px;
 }
+.header .bold .menu__view-all {
+  padding-left: 0.25rem;
+  padding-right: 0.25rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.25rem;
+  flex: 2 0 100%;
+}
 .header .bold .menu__level1 {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -2242,6 +2249,9 @@ p.small {
   height: 0.5rem;
   width: 0.5rem;
 }
+.header .bold .menu__level1 .menu__view-all {
+  flex: 2 0 100%;
+}
 .header .bold .menu__level2 {
   min-width: 100%;
   z-index: 10;
@@ -2253,13 +2263,6 @@ p.small {
   .header .bold .menu__level2 li {
     font-size: 1.125rem;
   }
-}
-.header .bold .menu__view-all {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-  padding-top: 0.5rem;
-  padding-bottom: 0.25rem;
-  flex: 2 0 100% !important;
 }
 .header .bold .image_content {
   max-width: 50%;

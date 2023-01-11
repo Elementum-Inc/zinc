@@ -180,11 +180,13 @@
                     </ul>
                   </div>
                   <div v-else-if="block.type == 'image_content'" :class="[`${block.type}__inner`]">
-                    <image-tag v-if="block.settings.image" :src="block.settings.image"
-                                width="960"
-                                sizes="(min-width: 1440px) 960px, (min-width: 1280px) 640px, 320px"
-                                :srcsetWidths="[960, 640, 320]"
-                                class="image_content__image"></image-tag>
+                    <div class="image_content__image-container">
+                      <image-tag v-if="block.settings.image" :src="block.settings.image"
+                                  width="960"
+                                  sizes="(min-width: 1440px) 960px, (min-width: 1280px) 640px, 320px"
+                                  :srcsetWidths="[960, 640, 320]"
+                                  class="image_content__image"></image-tag>
+                    </div>
                     <div class="image_content__content"
                       :class="[block.settings.image ? 'float' : '']"
                       v-if="block.settings.content_title ||

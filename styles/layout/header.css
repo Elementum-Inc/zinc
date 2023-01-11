@@ -505,7 +505,7 @@
       @apply max-h-full flex;
     }
 
-    & .image_content__image {
+    & .image_content__image-container {
       @apply basis-1/3;
     }
 
@@ -562,6 +562,11 @@
       }
     }
 
+    & .menu__view-all {
+      @apply px-1 pt-2 pb-1;
+      flex: 2 0 100%;
+    }
+
     & .menu__level1 {
       @apply flex flex-wrap justify-evenly items-stretch;
 
@@ -580,6 +585,10 @@
           @apply h-2 w-2;
         }
       }
+
+      & .menu__view-all {
+        flex: 2 0 100%;
+      }
     }
 
     & .menu__level2 {
@@ -588,11 +597,6 @@
       & li {
         @apply text-base xl:text-lg;
       }
-    }
-
-    & .menu__view-all {
-      @apply px-1 pt-2 pb-1;
-      flex: 2 0 100% !important;
     }
 
     & .image_content {
