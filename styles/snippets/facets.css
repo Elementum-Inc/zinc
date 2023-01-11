@@ -247,6 +247,23 @@
       @apply text-xs text-right mb-2;
     }
   }
+
+  &__summary {
+    & .icon-caret {
+      @apply
+        h-6
+        w-6
+        top-1/2
+        transform -translate-y-1/2;
+
+      .facets__disclosure-vertical[open] & {
+        @apply
+          transform
+          rotate-180
+          -translate-y-1/2;
+      }
+    }
+  }
 }
 
 .facet-filters {

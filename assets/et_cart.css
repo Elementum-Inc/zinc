@@ -1,0 +1,38 @@
+.cart {
+  display: block;
+  position: relative;
+}
+
+.cart__footer {
+  border-color: var(--color-scheme-fg);
+  border-top-width: 1px;
+}
+
+@media (max-width: 767.9px) {
+  .cart__footer .totals {
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+}
+
+#Cart-note {
+  font-style: italic;
+}
+
+@media screen and (max-width: 767px) {
+  .totals {
+    justify-content: space-between;
+  }
+}
+
+.totals > h2, .totals__subtotal-value {
+  font-size: .875rem;
+}
+
+@media (min-width: 768px) {
+  .totals > h2, .totals__subtotal-value {
+    font-size: 1rem;
+  }
+}

@@ -1,0 +1,143 @@
+.quick-add {
+  @apply
+    relative
+    row-start-4
+    mt-0
+    mx-0
+    mb-4
+    z-1;
+}
+
+.quick-add-modal {
+  @apply
+    box-border
+    opacity-0
+    fixed
+    invisible
+    -z-1
+    my-0
+    mx-auto
+    top-0
+    left-0
+    w-full
+    h-full;
+  background: rgb(var(--color-scheme-fg) .2);
+
+  &[open] {
+    @apply
+      opacity-100
+      visible
+      z-101;
+  }
+
+  &__toggle {
+    @apply hidden;
+  }
+
+  &__content {
+    @apply
+      absolute
+      top-0
+      left-1/2
+      transform -translate-x-1/2
+      mt-13
+      mx-auto
+      mb-0
+      bg-scheme-bg
+      filter
+      drop-shadow-md
+      max-w-full
+      w-2/3;
+
+    &-info {
+      & h2 {
+        @apply text-xl;
+      }
+
+      & .product {
+        @apply <md:(flex-col flex-nowrap);
+      }
+
+      & .product__title {
+        @apply mb-0;
+      }
+
+      & .price__regular {
+        @apply
+          text-lg;
+      }
+
+      & .product__view-details {
+        @apply
+          border-t-1
+          border-b-1
+          text-center
+          text-base
+          p-3;
+      }
+
+      & .product__info-container .product__description {
+        @apply
+          m-0
+          mb-8
+          text-xs;
+      }
+
+      & .form__label {
+        @apply
+          text-sm
+          p-0
+          mt-8
+          mr-0
+          mb-0
+          ml-0;
+      }
+
+      & .icon-caret {
+        @apply
+          h-.5rem;
+      }
+
+      & .select__select {
+        @apply
+          text-base
+          h-12;
+      }
+
+      & .quantity__input {
+        @apply w-full;
+      }
+
+      & .quantity {
+        @apply
+          w-6.25rem
+          min-h-10;
+      }
+    }
+
+    & .shopify-payment-button {
+      @apply
+        h-12;
+    }
+
+    & .caption-spaced {
+      display: none;
+    }
+  }
+
+  & .product-form__input input[type='radio'] + label {
+    @apply
+      border-scheme-accent
+      rounded-[5%];
+    margin: 0;
+  }
+
+  & .full-unstyled-link {
+    font-size: 20px;
+  }
+
+  & .form__label {
+    @apply
+      p-5;
+  }
+}

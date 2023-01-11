@@ -1,4 +1,4 @@
-{{ 'section-contact-form.css' | asset_url | stylesheet_tag }}
+{{ 'et_contact-form.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -92,7 +92,7 @@
         </textarea>
         <label class="form__label field__label" for="ContactForm-body">{{ 'templates.contact.form.comment' | t }}</label>
       </div>
-      <div class="contact__button">
+      <div class="contact__button btn">
         <button type="submit" class="button">
           {{ 'templates.contact.form.send' | t }}
         </button>

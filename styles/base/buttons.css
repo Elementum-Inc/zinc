@@ -25,6 +25,7 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
   &.primary {
     --button-bg: theme('colors.scheme-bg');
     --button-fg: theme('colors.scheme-accent');
+
     @apply border border-scheme-accent;
   }
 
@@ -70,6 +71,21 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
 
   &--large {
     @apply text-xl;
+  }
+
+  &--qty {
+    @apply
+      self-center
+      leading-0
+      p-1
+      md:p-2;
+
+    > svg {
+      @apply
+        h-[.75rem]
+        w-[.75rem]
+        md:(h-4 w-4);
+    }
   }
 
   &.round {

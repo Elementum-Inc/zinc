@@ -1,0 +1,97 @@
+.slideshow .h0 {
+  font-style: normal;
+  font-weight: 700;
+  font-size: 92px;
+  line-height: 85px;
+}
+
+.slideshow .h1 {
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 54px;
+  letter-spacing: 0;
+}
+
+.slideshow img, .slideshow video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.slideshow__text.banner__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  max-width: 54.5rem;
+  position: absolute;
+}
+
+.slideshow.banner--small {
+  min-height: 575px;
+}
+
+.slideshow.banner--small:not(.banner--adapt) {
+  min-height: 575px;
+}
+
+.slideshow__autoplay {
+  visibility: hidden;
+}
+
+.slideshow-video {
+  right: 0;
+  bottom: 0;
+  object-fit: cover;
+}
+
+.no-solid-background {
+  background: none;
+  font-size: 1rem;
+}
+
+.control-container {
+  background-color: var(--color-scheme-bg);
+  z-index: 2;
+}
+
+.slideshow__controls {
+  color: var(--color-scheme-text);
+  position: absolute;
+  z-index: 3;
+  bottom: 10%;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
+}
+
+@media screen and (max-width: 767px) {
+  .slideshow__controls {
+    visibility: hidden;
+  }
+}
+
+.slideshow__controls--none {
+  visibility: hidden;
+}
+
+.slideshow__controls--dots .slider-button {
+  visibility: hidden;
+}
+
+.slideshow__controls .slider-button {
+  background-color: var(--color-scheme-accent);
+  border-radius: 50%;
+}
+
+.slider-counter {
+  display: flex;
+  justify-content: center;
+  min-width: .1rem;
+}
+
+.slider-counter--arrows {
+  visibility: hidden;
+  min-width: .1rem;
+}
