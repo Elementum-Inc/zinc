@@ -12,13 +12,31 @@ import "../styles/base/buttons.css";
 import "../styles/base/forms.css";
 import "../styles/base/animations.css";
 import "../styles/layout/header.css";
+import "../styles/layout/footer.css";
 
 // Sections
-import("../styles/sections/featured-collection.css");
 import("../styles/sections/blog.css");
 import("../styles/sections/image-with-text.css");
 import("../styles/sections/hero.css");
 import("../styles/sections/modal.css");
+// KB - WIP - Windi conversion //
+import("../styles/sections/collapsible-content.css");
+import("../styles/sections/contact-content.css");
+import("../styles/sections/contact-form.css");
+import("../styles/sections/featured-collection.css");
+import("../styles/sections/film-strip.css");
+import("../styles/sections/hero-slideshow.css");
+import("../styles/sections/media-collage.css");
+import("../styles/sections/multicolumn.css");
+import("../styles/sections/quick-add.css");
+import("../styles/sections/testimonials.css");
+
+//Components
+// KB - WIP- Windi conversion //
+import("../styles/components/accordion.css");
+import("../styles/components/cart-drawer.css");
+import("../styles/components/cart-items.css");
+import("../styles/components/cart.css");
 
 // Snippets
 import("../styles/snippets/cards.css");
@@ -36,7 +54,7 @@ if (window.location.href.includes("/search")) {
 import "./vue/vue-loader";
 
 document.addEventListener("DOMContentLoaded", () => {
-  if (document.querySelector('#header').classList.contains('sticky')) {
+  if (document.querySelector("#header").classList.contains("sticky")) {
     const body = document.querySelector("body");
     const header = document.querySelector("#shopify-section-header");
     var ticking = false;

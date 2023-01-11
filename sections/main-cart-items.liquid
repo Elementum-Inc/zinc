@@ -4,6 +4,8 @@
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'et_cart.css' | asset_url | stylesheet_tag }}
+{{ 'et_cart-items.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -11,7 +13,7 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -62,7 +64,6 @@
                   <th class="small-hide right caption-with-letter-spacing" colspan="1" scope="col">{{ 'sections.cart.headings.total' | t }}</th>
                 </tr>
               </thead>
-              
 
               <tbody>
                 {%- for item in cart.items -%}
@@ -87,29 +88,6 @@
                       {%- if settings.show_vendor -%}
                         <p class="caption-with-letter-spacing">{{ item.product.vendor }}</p>
                       {%- endif -%}
-
-                      {% comment %}
-                        {%- if item.original_price != item.final_price -%}
-                          <div class="cart-item__discounted-prices">
-                            <span class="visually-hidden">
-                              {{ 'products.product.price.regular_price' | t }}
-                            </span>
-                            <s class="cart-item__old-price product-option">
-                              {{- item.original_price | money -}}
-                            </s>
-                            <span class="visually-hidden">
-                              {{ 'products.product.price.sale_price' | t }}
-                            </span>
-                            <strong class="cart-item__final-price product-option">
-                              {{ item.final_price | money }}
-                            </strong>
-                          </div>
-                        {%- else -%}
-                          <div class="product-option">
-                            {{ item.original_price | money }}
-                          </div>
-                        {%- endif -%} 
-                      {% endcomment %} 
 
                       <a href="{{ item.url }}" class="cart-item__name h4 break">{{ item.product.title | escape }}</a>
                       {%- if item.product.has_only_default_variant == false or item.properties.size != 0 or item.selling_plan_allocation != nil -%}
@@ -208,10 +186,9 @@
                           {{ 'products.product.quantity.label' | t }}
                         </label>
                         <quantity-input class="quantity">
-                          <button class="quantity__button no-js-hidden" name="minus" type="button">
+                          <button class="btn btn--qty secondary no-js-hidden" name="minus" type="button">
                             <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: item.product.title | escape }}</span>
-                            {% comment %} {% render 'icon-minus' %} {% endcomment %}
-                            -
+                            {% render 'icon-minus' %}
                           </button>
                           <input class="quantity__input"
                             type="number"
@@ -222,15 +199,14 @@
                             id="Quantity-{{ item.index | plus: 1 }}"
                             data-index="{{ item.index | plus: 1 }}"
                           >
-                          <button class="quantity__button no-js-hidden" name="plus" type="button">
+                          <button class="btn btn--qty secondary no-js-hidden" name="plus" type="button">
                             <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: item.product.title | escape }}</span>
-                            {% comment %} {% render 'icon-plus' %} {% endcomment %}
-                            +
+                            {% render 'icon-plus' %}
                           </button>
                         </quantity-input>
 
                         <cart-remove-button id="Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                          <a href="{{ item.url_to_remove }}" class="button button--tertiary" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
+                          <a href="{{ item.url_to_remove }}" class="icon target" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                             {% render 'icon-remove' %}
                           </a>
                         </cart-remove-button>

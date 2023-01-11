@@ -2,6 +2,7 @@
 {{ 'component-totals.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
+{{ 'et_cart.css' | asset_url | stylesheet_tag }}
 
 <div class="page-width{% if cart == empty %} is-empty{% endif %}" id="main-cart-footer" data-id="{{ section.id }}">
   <div>
@@ -54,12 +55,12 @@
             {%- else -%}
               <div class="cart__ctas" {{ block.shopify_attributes }}>
                 <noscript>
-                  <button type="submit" class="cart__update-button button button--secondary" form="cart">
+                  <button type="submit" class="cart__update-button btn primary" form="cart">
                     {{ 'sections.cart.update' | t }}
                   </button>
                 </noscript>
 
-                <button type="submit" id="checkout" class="cart__checkout-button button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
+                <button type="submit" id="checkout" class="btn secondary cart__checkout-button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
                   {{ 'sections.cart.checkout' | t }}
                 </button>
               </div>
