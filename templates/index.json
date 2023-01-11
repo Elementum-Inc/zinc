@@ -461,7 +461,7 @@
       "settings": {
         "color_scheme": "primary",
         "modal_background_image": "shopify:\/\/shop_images\/88772b321081154b9be75000fbc46933.png",
-        "float_modal_content": true,
+        "float_modal_content": false,
         "overlay": 0
       }
     }
