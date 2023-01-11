@@ -1,0 +1,176 @@
+.drawer {
+  &__inner {
+    @apply
+      flex
+      flex-col
+      transform
+      translate-x-full
+      transition-transform
+      duration-base
+      float-right
+      overflow-x-auto
+      overflow-y-scroll
+      py-4
+      px-8
+      bg-scheme-bg
+      h-screen
+      w-sm
+      filter
+      drop-shadow-drawer;
+    max-width: calc(100vw - 2rem);
+    border: .1rem solid rgb(var(--colors-scheme-fg) .2);
+    border-right: 0;
+
+    @media screen and (max-width: 767px) {
+      @apply
+        py-2
+        px-4;
+    }
+  }
+
+  &__close svg {
+    @apply
+      h-6
+      w-6;
+  }
+
+  &__header {
+    @apply p-0;
+  }
+
+  &__heading {
+    @apply
+      m-auto
+      font-serif
+      font-bold;
+
+    @media screen and (max-width: 767px) {
+      @apply text-3xl;
+    }
+  }
+}
+
+.cart-drawer {
+  & .price {
+    @apply
+      text-base
+      font-semibold;
+  }
+
+  & .quantity {
+    @apply basis-1/2;
+  }
+
+  & .remove-btn {
+    @apply
+      pr-0
+      pt-0;
+
+    @media screen and (max-width: 767px) {
+      @apply min-w-16;
+    }
+
+    & svg,
+    & h3 {
+      @apply
+        ml-auto
+        mt-0;
+    }
+  }
+
+  & .totals__subtotal-value {
+    @apply
+      text-base
+      font-semibold;
+  }
+
+  & .tax-note {
+    @apply
+      mt-3
+      mr-0
+      mb-4
+      ml-auto;
+  }
+
+  & .cart__checkout-button {
+    @apply
+      max-w-none
+      bg-black
+      text-white;
+  }
+
+  @media screen and (max-width: 767px) {
+    td {
+      @apply pt-0;
+    }
+  }
+
+  .icon-remove {
+    @apply
+      h-7
+      mt-2;
+  }
+
+  .cart-item {
+    &__quantity-wrapper {
+      @apply
+        flex
+        justify-between;
+    }
+
+    &__media {
+      @apply w-24;
+    }
+
+    &__details {
+      @apply min-w-[8rem];
+
+      & > * + * {
+        @apply mt-1;
+      }
+    }
+
+    &__name {
+      @apply
+        text-sm
+        font-semibold;
+    }
+
+    &__price-wrapper {
+      @apply
+        my-auto
+        mx-0;
+    }
+
+    & .product-option {
+      @apply text-xs
+        leading-tight;
+    }
+
+    & dl > .product-option {
+      @apply flex;
+
+      & > dd {
+        @apply ml-1;
+      }
+    }
+
+    & > td + td {
+      &.cart-item__totals {
+        @apply pl-4;
+      }
+    }
+  }
+
+  .quantity__input {
+    @apply text-base;
+  }
+
+  #CartDrawer-Note {
+    @apply
+      bg-fg
+      text-base
+      border-1
+      border-gray-500;
+  }
+}

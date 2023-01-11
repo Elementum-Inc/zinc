@@ -16,6 +16,8 @@
   {{ 'component-discounts.css' | asset_url | stylesheet_tag }}
   {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 
+  {{ 'et_cart-drawer.css' | asset_url | stylesheet_tag }}
+  {{ 'et_cart.css' | asset_url | stylesheet_tag }}
   {{ 'et_price.css' | asset_url | stylesheet_tag }}
 {%- endif -%}
 
@@ -182,7 +184,7 @@
      <span class="label">Account</span>
     </a>
     {% comment %} cart {% endcomment %}
-    <a class="header__icon-link cart-link" href="{{ routes.cart_url }}" id="cart_icon">
+    <a class="header__icon-link cart-link" href="{{ routes.cart_url }}" id="cart-icon-bubble">
       <span class="icon target">
         {% render 'icon-shopping-bag' %}
 
@@ -362,6 +364,28 @@
       "default": "basic",
       "label": "Menu Type",
       "info": "TODO: A note on the difference between basic and bold."
+    },
+    {
+      "type": "select",
+      "id": "mm_toplink_behavior",
+      "options": [
+        {
+          "value": "view_all_link",
+          "label": "Include \"View all\" link in submenu"
+        },
+        {
+          "value": "parent_link",
+          "label": "Link directly in topmenu"
+        }
+      ],
+      "default": "parent_link",
+      "label": "Toplink Behavior"
+    },
+    {
+      "type": "checkbox",
+      "id": "mm_enable_caret",
+      "default": false,
+      "label": "Enable caret"
     },
     {
       "type": "link_list",

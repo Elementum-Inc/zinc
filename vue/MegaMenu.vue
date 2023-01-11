@@ -29,8 +29,8 @@
                   {{ link.title }}
                 </a>
                 <span v-if="link.links.length" class="icon target expand">
-                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" fill="none" viewBox="0 0 10 10" :width="iconSize" :height="iconSize">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor" />
+                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" class="stroke-scheme-text" fill="none" viewBox="0 0 18 17" :height="iconSize" :width="iconSize" :stroke-width="iconStrokeWidth">
+                    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor"></path>
                   </svg>
                 </span>
               </DisclosureButton>
@@ -42,8 +42,8 @@
                         {{ child.title }}
                       </a>
                       <span v-if="child.links.length" class="icon target expand">
-                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" fill="none" viewBox="0 0 10 10" :width="iconSize" :height="iconSize">
-                          <path fill-rule="evenodd" clip-rule="evenodd" d="M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z" fill="currentColor" />
+                        <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" class="stroke-scheme-text" fill="none" viewBox="0 0 18 17" :height="iconSize" :width="iconSize" :stroke-width="iconStrokeWidth">
+                          <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor"></path>
                         </svg>
                       </span>
                     </DisclosureButton>
@@ -98,8 +98,8 @@
                     <h4 v-if="block.settings.submenu_title != ''">{{ block.settings.submenu_title }}</h4>
                     <h4 v-else>{{ block.settings.submenu.title }}</h4>
                     <ul class="menu__level0">
-                      <Disclosure as="li" v-for="link in block.settings.submenu" :key="link.id" class="menu__top-link">
-                        <DisclosureButton v-if="link.links.length">
+                      <Disclosure as="li" v-for="link in block.settings.submenu" :key="link.id">
+                        <DisclosureButton v-if="link.links.length" class="menu__top-link parent">
                           <transition name="fade" appear>
                             <image-tag v-if="link.object && link.object.image && block.settings.submenu_item_image != 'none'" :src="link.object.image"
                                         width="320"
@@ -108,13 +108,21 @@
                                         class="menu__image"></image-tag>
   
                           </transition>
-                          <a :href="link.url">
+                          <a v-if="settings.mm_toplink_behavior == 'parent_link'" :href="link.url">
                             <span>
                               {{ link.title }}
                             </span>
                           </a>
+                          <span v-else>
+                            {{ link.title }}
+                          </span>
+                          <span v-if="settings.mm_enable_caret" class="icon target expand">
+                            <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" class="stroke-scheme-text" fill="none" viewBox="0 0 18 17" :height="iconSize" :width="iconSize" :stroke-width="iconStrokeWidth">
+                              <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor"></path>
+                            </svg>
+                          </span>
                         </DisclosureButton>
-                        <a v-else :href="link.url">
+                        <a v-else :href="link.url" class="menu__top-link">
                           <transition name="fade" appear>
                             <image-tag v-if="link.object && link.object.image && block.settings.submenu_item_image != 'none'" :src="link.object.image"
                                         width="320"
@@ -129,17 +137,35 @@
                         </a>
                         <transition name="slideDown" v-if="link.links.length">
                           <DisclosurePanel as="ul" class="menu__level1">
+                            <li v-if="settings.mm_toplink_behavior == 'view_all_link'" class="menu__view-all">
+                              <a :href="link.url">
+                                All {{ link.title }}
+                              </a>
+                            </li>
                             <Disclosure as="li" v-for="child in link.links" :key="child.id">
-                              <DisclosureButton v-if="child.links.length">
-                                <a :href="child.url">
+                              <DisclosureButton v-if="child.links.length" class="parent">
+                                <a v-if="settings.mm_toplink_behavior == 'parent_link'" :href="child.url">
                                   {{ child.title }}
                                 </a>
+                                <span v-else>
+                                  {{ child.title }}
+                                </span>
+                                <span v-if="settings.mm_enable_caret" class="icon expand">      
+                                  <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" role="presentation" class="stroke-scheme-text" fill="none" viewBox="0 0 18 17" :height="iconSize" :width="iconSize" :stroke-width="iconStrokeWidth">
+                                    <path d="M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z" fill="currentColor"></path>
+                                  </svg>
+                                </span>
                               </DisclosureButton>
                               <a v-else :href="child.url">
                                 {{ child.title }}
                               </a>
                               <transition name="slideDown" v-if="child.links.length">
                                 <DisclosurePanel as="ul" class="menu__level2">
+                                  <li v-if="settings.mm_toplink_behavior == 'view_all_link'" class="menu__view-all">
+                                    <a :href="child.url">
+                                      All {{ child.title }}
+                                    </a>
+                                  </li>
                                   <li v-for="grandchild in child.links" :key="grandchild.id">
                                     <a :href="grandchild.url">
                                       {{ grandchild.title }}
@@ -154,11 +180,13 @@
                     </ul>
                   </div>
                   <div v-else-if="block.type == 'image_content'" :class="[`${block.type}__inner`]">
-                    <image-tag v-if="block.settings.image" :src="block.settings.image"
-                                width="960"
-                                sizes="(min-width: 1440px) 960px, (min-width: 1280px) 640px, 320px"
-                                :srcsetWidths="[960, 640, 320]"
-                                class="image_content__image"></image-tag>
+                    <div class="image_content__image-container">
+                      <image-tag v-if="block.settings.image" :src="block.settings.image"
+                                  width="960"
+                                  sizes="(min-width: 1440px) 960px, (min-width: 1280px) 640px, 320px"
+                                  :srcsetWidths="[960, 640, 320]"
+                                  class="image_content__image"></image-tag>
+                    </div>
                     <div class="image_content__content"
                       :class="[block.settings.image ? 'float' : '']"
                       v-if="block.settings.content_title ||
@@ -186,9 +214,12 @@
                 <ul class="dropdown">
                   <Disclosure as="li" v-for="child in link.links" :key="child.id" class="dropdown__level1">
                     <DisclosureButton v-if="child.links.length">
-                      <a :href="child.url">
+                      <a v-if="settings.mm_toplink_behavior == 'parent_link'" :href="child.url">
                         {{ child.title }}
                       </a>
+                      <span v-else>
+                        {{  child.title }}
+                      </span>
                       <span v-if="child.links.length" class="icon target expand">
                         <svg aria-hidden="true" focusable="false" role="presentation" class="icon icon-caret" viewBox="0 0 10 6">
                           <path fill-rule="evenodd" clip-rule="evenodd" d="M9.354.646a.5.5 0 00-.708 0L5 4.293 1.354.646a.5.5 0 00-.708.708l4 4a.5.5 0 00.708 0l4-4a.5.5 0 000-.708z" fill="currentColor" />
@@ -200,6 +231,11 @@
                     </a>
                     <transition name="slideDown" v-if="child.links.length">
                       <DisclosurePanel as="ul">
+                        <li v-if="settings.mm_toplink_behavior == 'view_all_link'" class="dropdown__view-all">
+                          <a :href="child.url">
+                            All {{ child.title }}
+                          </a>
+                        </li>
                         <li v-for="grandchild in child.links" :key="grandchild.id" class="dropdown__level2">
                           <a :href="grandchild.url">
                             {{ grandchild.title }}

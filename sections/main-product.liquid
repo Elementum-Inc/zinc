@@ -1,6 +1,6 @@
-<section id="MainProduct-{{ section.id }}" class="page-width section-{{ section.id }}-padding" data-section="{{ section.id }}">
+<section id="MainProduct-{{ section.id }}" class="container section-{{ section.id }}-padding" data-section="{{ section.id }}">
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
-  {{ 'component-accordion.css' | asset_url | stylesheet_tag }}
+  {{ 'et_accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-rte.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
@@ -243,8 +243,7 @@
               </a>
             </div>
             {%- when 'divider' -%}
-              <div class="divider" style="width: {{ block.settings.product_info_divider_length }}px; border-bottom: {{ block.settings.product_info_divider_width }}px solid black" {{ block.shopify_attributes }}>
-              {% comment %} TODO: make color of divider link to theme settings {% endcomment %}
+              <div class="divider" style="width: {{ block.settings.product_info_divider_length }}px; border-bottom: {{ block.settings.product_info_divider_width }}px solid var(--color-scheme-accent)" {{ block.shopify_attributes }}>
               </div>
             {%- when 'text' -%}
             <p class="product__text{% if block.settings.text_style == 'uppercase' %} caption-with-letter-spacing{% elsif block.settings.text_style == 'subtitle' %} subtitle{% endif %}" {{ block.shopify_attributes }}>
@@ -292,7 +291,7 @@
                       {{ block.settings.heading | default: block.settings.page.title }}
                     </h2>
                   </div>
-                  {% render 'icon-plus' %}
+                  {% render 'icon-caret' %}
                 </summary>
                 <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
                   {{ block.settings.content }}
@@ -302,12 +301,12 @@
             </div>
           {%- when 'quantity_selector' -%}
             <div class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
-              {% comment %} <label class="form__label" for="Quantity-{{ section.id }}">
+              <label class="form__label visually-hidden" for="Quantity-{{ section.id }}">
                 {{ 'products.product.quantity.label' | t }}
-              </label> {% endcomment %}
+              </label>
 
               <quantity-input class="quantity">
-                <button class="quantity__button no-js-hidden" name="minus" type="button">
+                <button class="btn btn--qty secondary no-js-hidden" name="minus" type="button">
                   <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
                   {% render 'icon-minus' %}
                 </button>
@@ -319,7 +318,7 @@
                     value="1"
                     form="{{ product_form_id }}"
                   >
-                <button class="quantity__button no-js-hidden" name="plus" type="button">
+                <button class="btn btn--qty secondary no-js-hidden" name="plus" type="button">
                   <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
                   {% render 'icon-plus' %}
                 </button>
@@ -469,7 +468,7 @@
                     <button
                       type="submit"
                       name="add"
-                      class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                      class="product-form__submit btn button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}secondary{% else %}primary{% endif %}"
                       {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                     >
                         <span>
@@ -677,7 +676,6 @@
 {
   "name": "t:sections.main-product.name",
   "tag": "section",
-  "class": "section",
   "blocks": [
     {
       "type": "@app"

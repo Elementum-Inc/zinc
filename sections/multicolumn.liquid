@@ -1,4 +1,4 @@
-{{ 'section-multicolumn.css' | asset_url | stylesheet_tag }}
+{{ 'et_multicolumn.css' | asset_url | stylesheet_tag }}
 <link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
 <noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
 
@@ -8,7 +8,7 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -24,8 +24,8 @@
   endif
 -%}
 
-<div class="multicolumn color-{{ section.settings.color_scheme }}{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
-  <div class="page-width section-{{ section.id }}-padding isolate">
+<div class="multicolumn color-scheme color-scheme--{{ section.settings.color_scheme }}{% if section.settings.title == blank %} no-heading{% endif %}">
+  <div class="container section-{{ section.id }}-padding isolate">
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
         <h2 class="title {{ section.settings.heading_size }}">
@@ -56,7 +56,7 @@
           {%- endif -%}
 
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %} {{ section.settings.column_alignment }} {{ empty_column }}" {{ block.shopify_attributes }}>            
-            <div class="multicolumn-card content-container {% if block.settings.image_position == 'left' %} image-left {% endif %} {% if block.settings.image_position == 'right' %} image-right {% endif %} {% if block.settings.image_position == 'below' %} image-below {% endif %}">
+            <div class="multicolumn-card content-container image-{{ block.settings.image_position }}">
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'auto' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
@@ -94,7 +94,7 @@
                   <div class="rte">{{ block.settings.text }}</div>
                 {%- endif -%}
                 {%- if block.settings.link_label != blank -%}
-                  <a class="link multicolumn-btn" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.link_label | escape }}</a>
+                  <a class="link btn secondary" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.link_label | escape }}</a>
                 {%- endif -%}
               </div>
             </div>
@@ -272,10 +272,6 @@
         {
           "value": "background-2",
           "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
         }
       ],
       "default": "background-1",

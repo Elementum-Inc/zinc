@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "scripts": {
-    "build": "vite build -m production && npx stylelint --fix assets/et_*.css",
+    "build": "vite build -m production && npx stylelint --fix styles/**/* assets/et_*.css",
     "dev": "vite build -m development",
     "lint": "npx stylelint styles && npx eslint ./ && shopify theme check",
     "lint:styles": "npx stylelint styles",
