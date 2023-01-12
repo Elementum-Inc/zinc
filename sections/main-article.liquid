@@ -73,7 +73,7 @@
                   {% if block_image.width >= 2200 %}{{ block_image | image_url: width: 2200 }} 2200w,{% endif %}
                   {% if block_image.width >= 3000 %}{{ block_image | image_url: width: 3000 }} 3000w,{% endif %}
                   {{ block_image | image_url }} {{ block_image.width }}w"
-                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw"
+                sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 768px) calc(100vw - 10rem), 100vw"
                 src="{{ block_image | image_url: width: 1100 }}"
                 loading="lazy"
                 width="{{ block_image.width }}"

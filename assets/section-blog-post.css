@@ -15,7 +15,7 @@
   height: 33rem;
 }
 
-@media screen and (min-width: 750px) and (max-width: 989px) {
+@media screen and (min-width: 768px) and (max-width: 1023px) {
   .article-template__hero-small {
     height: 22rem;
   }
@@ -29,7 +29,7 @@
   }
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .article-template__hero-small {
     height: 27.5rem;
   }
@@ -49,7 +49,7 @@
   line-height: calc(0.8 / var(--font-body-scale));
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .article-template header {
     margin-top: 5rem;
   }
@@ -94,7 +94,7 @@
   padding: 2.7rem 0;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .article-template__comment-wrapper {
     margin-top: 6rem;
     padding: 3.6rem 0;
@@ -109,7 +109,7 @@
   margin-bottom: 5rem;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .article-template__comments {
     margin-bottom: 7rem;
   }
@@ -126,7 +126,7 @@
   padding: 2rem 2rem 1.5rem;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .article-template__comments-comment {
     padding: 2rem 2.5rem;
   }
@@ -140,7 +140,7 @@
   margin-bottom: 3rem;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .article-template__comment-fields {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -152,7 +152,7 @@
   margin: 2rem 0 2.5rem;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .article-template__comments .pagination-wrapper {
     margin: 5rem 0 8rem;
   }

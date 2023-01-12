@@ -25,7 +25,7 @@
                 `${card.featured_image.url} ${card.featured_image.width}w`
               ]"
               :src="card.featured_image"
-              sizes="(min-width: 1280px) calc((100vw - 130px) / 4), (min-width: 750px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
+              sizes="(min-width: 1280px) calc((100vw - 130px) / 4), (min-width: 768px) calc((100vw - 120px) / 3), calc((100vw - 35px) / 2)"
               :alt="card.featured_image.alt"
               class="card__image"
               :class="[

@@ -7,7 +7,7 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -56,7 +56,7 @@
                 {%- if section.settings.cover_image.width >= 3840 -%}{{ section.settings.cover_image | image_url: width: 3840 }} 3840w,{%- endif -%}
                 {{ section.settings.cover_image | image_url }} {{ section.settings.cover_image.width }}w"
               src="{{ section.settings.cover_image | image_url: width: 1920 }}"
-              sizes="{% if section.settings.full_width %}100vw{% else %}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw{% endif %}"
+              sizes="{% if section.settings.full_width %}100vw{% else %}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 768px) calc(100vw - 10rem), 100vw{% endif %}"
               alt="{{ 'sections.video.load_video' | t: description: section.settings.description | escape }}"
               loading="lazy"
               width="{{ section.settings.cover_image.width }}"
@@ -89,7 +89,7 @@
               {%- if section.settings.cover_image.width >= 3840 -%}{{ section.settings.cover_image | image_url: width: 3840 }} 3840w,{%- endif -%}
               {{ section.settings.cover_image | image_url }} {{ section.settings.cover_image.width }}w"
             src="{{ section.settings.cover_image | image_url: width: 1920 }}"
-            sizes="{% if section.settings.full_width %}100vw{% else %}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 750px) calc(100vw - 10rem), 100vw{% endif %}"
+            sizes="{% if section.settings.full_width %}100vw{% else %}(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 }}px, (min-width: 768px) calc(100vw - 10rem), 100vw{% endif %}"
             alt="{{ 'sections.video.load_video' | t: description: section.settings.description | escape }}"
             loading="lazy"
             width="{{ section.settings.cover_image.width }}"

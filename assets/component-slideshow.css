@@ -4,7 +4,7 @@ slideshow-component {
   flex-direction: column;
 }
 
-@media screen and (max-width: 989px) {
+@media screen and (max-width: 1023px) {
   .no-js slideshow-component .slider {
     padding-bottom: 3rem;
   }
@@ -24,13 +24,13 @@ slideshow-component .slideshow.banner {
   flex-direction: column;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 767px) {
   .slideshow--placeholder.banner--mobile-bottom.banner--adapt_image .slideshow__media,
   .slideshow--placeholder.banner--adapt_image:not(.banner--mobile-bottom) {
     height: 16rem;
   }
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .slideshow--placeholder.banner--adapt_image {
     height: 56rem;
   }
@@ -40,7 +40,7 @@ slideshow-component .slideshow.banner {
   max-width: 100%;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 767px) {
   slideshow-component.page-width .slideshow__text {
     border-right: var(--text-boxes-border-width) solid
       rgb(var(--color-foreground) var(--text-boxes-border-opacity));
@@ -72,7 +72,7 @@ slideshow-component .slideshow.banner {
     text-align: right;
   }
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .slideshow__text.slideshow__text--left {
     align-items: flex-start;
     text-align: left;
@@ -93,7 +93,7 @@ slideshow-component .slideshow.banner {
   height: 100%;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .slideshow__text-wrapper.banner__content {
     height: 100%;
     padding: 5rem;
@@ -109,7 +109,7 @@ slideshow-component .slideshow.banner {
   z-index: 2;
 } */
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 767px) {
   .slideshow__controls--border-radius-mobile {
     border-bottom-right-radius: var(--text-boxes-radius);
     border-bottom-left-radius: var(--text-boxes-radius);
@@ -120,7 +120,7 @@ slideshow-component .slideshow.banner {
   border-bottom: none;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .slideshow__controls {
     position: absolute;
   }
@@ -144,12 +144,12 @@ slideshow-component:not(.page-width) .slider-buttons {
   align-items: center;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 767px) {
   slideshow-component.page-width .slideshow__autoplay {
     right: 1.5rem;
   }
 }
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .slideshow__autoplay.slider-button {
     position: inherit;
     margin-left: .6rem;
