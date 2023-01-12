@@ -1,15 +1,10 @@
-/* ACCOUNT PAGE STYLES  */
-
 .account h2 {
   font-size: 2rem;
   border-bottom: 1px solid black;
 }
 
-/* order history table */
-
 @media screen and (min-width: 990px) {
   :is(.account, .order) > div:nth-of-type(2) {
-    /* display: flex; */
     margin-top: 5rem;
   }
 }
@@ -25,9 +20,6 @@
 #RowOrder {
   text-decoration: underline;
 }
-
-
-/* ADDRESSES PAGE STYLES  */
 
 .customer .field input {
   font-size: 1.3rem;
@@ -49,7 +41,6 @@
 }
 
 .delete-btn {
-  /* background: gray !important; */
   color: black !important;
 }
 
@@ -70,7 +61,6 @@
   font-weight: 700;
 }
 
-
 .account-details-container p {
   font-size: 1.25rem !important;
 }
@@ -79,14 +69,11 @@
   font-size: 1.15rem;
 }
 
-label[for='AddressCountryNew'],
-label[for='AddressProvinceNew'] {
+label[for='AddressCountryNew'], label[for='AddressProvinceNew'] {
   display: block;
   font-size: 1.2rem;
   margin-bottom: .6rem;
 }
-
-/* ORDER DETAILS STYLES  */
 
 .order h2 {
   font-size: 1.85rem;
@@ -130,11 +117,3 @@ label[for='AddressProvinceNew'] {
 .order-address-container .status {
   font-style: italic;
 }
-
-
-/* .address-btn .primary {
-  /* TODO: COLOR SETTINGS  */
-/* background: black !important;
-  color: white !important; */
-/* } */
-
