@@ -4,6 +4,8 @@ import "vite/modulepreload-polyfill";
 import Splide from '@splidejs/splide';
 import '@splidejs/splide/css';
 
+window.Splide = Splide;
+
 // Windi import
 import "virtual:windi.css";
 
@@ -22,6 +24,7 @@ import "../styles/layout/footer.css";
 import("../styles/sections/hero.css");
 import("../styles/sections/image-with-text.css");
 import("../styles/sections/blog.css");
+import("../styles/sections/product.css");
 import("../styles/sections/modal.css");
 import("../styles/sections/collapsible-content.css");
 import("../styles/sections/contact-content.css");
@@ -35,7 +38,6 @@ import("../styles/sections/quick-add.css");
 import("../styles/sections/testimonials.css");
 
 //Components
-// KB - WIP- Windi conversion //
 import("../styles/components/accordion.css");
 import("../styles/components/cart-drawer.css");
 import("../styles/components/cart-items.css");
@@ -86,7 +88,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (document.querySelectorAll('.splide').length) {
     document.querySelectorAll('.splide').forEach(slider => {
-      if (!slider.parentElement.classList.contains('product__media-gallery')) {
+      if (!slider.parentElement.classList.contains('product__media-gallery') && !slider.classList.contains('product-recommendations')) {
         new Splide(slider).mount();
       }
     });

@@ -18,10 +18,6 @@
     }
   }
 
-  .featured-collection-slider & {
-    @apply mx-2;
-  }
-
   &.lift:not(.card--info-hover) {
     &:hover,
     &:focus-within {

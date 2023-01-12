@@ -1,11 +1,12 @@
 <section id="MainProduct-{{ section.id }}" class="container section-{{ section.id }}-padding" data-section="{{ section.id }}">
   {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
-  {{ 'et_accordion.css' | asset_url | stylesheet_tag }}
   {{ 'component-price.css' | asset_url | stylesheet_tag }}
   {{ 'component-rte.css' | asset_url | stylesheet_tag }}
   {{ 'component-rating.css' | asset_url | stylesheet_tag }}
   {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
   {{ 'component-deferred-media.css' | asset_url | stylesheet_tag }}
+  {{ 'et_product.css' | asset_url | stylesheet_tag }}
+  {{ 'et_accordion.css' | asset_url | stylesheet_tag }}
 
   {%- style -%}
     .product {
@@ -378,7 +379,7 @@
               {%- if block.settings.picker_type == 'button' -%}
                 <variant-radios class="no-js-hidden" data-section="{{ section.id }}" data-url="{{ product.url }}" {{ block.shopify_attributes }}>
                   {%- for option in product.options_with_values -%}
-                      <fieldset class="js product-form__input {{ block.settings.color_scheme }}">
+                      <fieldset class="js product-form__input">
                         <legend class="form__label {% if block.settings.show_variant_labels %} hide-label {% endif %}">{{ option.name }}</legend>
                         {%- for value in option.values -%}
                           <input type="radio" id="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}"
@@ -387,7 +388,7 @@
                                 form="{{ product_form_id }}"
                                 {% if option.selected_value == value %}checked{% endif %}
                           >
-                          <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                          <label class="btn btn-{{ block.settings.color_scheme }}" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                             {{ value }}
                           </label>
                         {%- endfor -%}
@@ -842,15 +843,23 @@
           "id": "color_scheme",
           "options": [
             {
-              "value": "primary",
-              "label": "Primary"
+              "value": "background-1",
+              "label": "Background 1"
+            },
+            {
+              "value": "background-2",
+              "label": "Background 2"
+            },
+            {
+              "value": "accent-1",
+              "label": "Accent 1"
             },
             {
               "value": "accent-2",
-              "label": "Accent"
+              "label": "Accent 2"
             }
           ],
-          "default": "primary",
+          "default": "background-2",
           "label": "t:sections.all.colors.label"
         },
         {

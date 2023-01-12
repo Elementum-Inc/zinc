@@ -50,6 +50,12 @@
     display: flex;
     flex-direction: column-reverse;
   }
+
+  & .container:not(.splide) {
+    & .splide__list {
+      @apply flex-wrap;
+    }
+  }
 }
 
 .film-strip-card {

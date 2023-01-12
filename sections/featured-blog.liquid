@@ -11,34 +11,21 @@
 <noscript>{{ 'et_blog.css' | asset_url | stylesheet_tag }}</noscript>
 
 {%- style -%}
-  .section-{{ section.id }}-padding {
+  .section-{{ section.id }} {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
   @media screen and (min-width: 768px) {
-    .section-{{ section.id }}-padding {
+    .section-{{ section.id }} {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
   }
-
-  .section-{{ section.id }} .blog__posts--container {
-    margin: 0 -{{ settings.spacing_grid_horizontal | divided_by: 4 }}px;
-  }
-  
-  .section-{{ section.id }} .blog__posts .blog__post {
-    padding: {{ settings.spacing_grid_vertical | divided_by: 4 }}px {{ settings.spacing_grid_horizontal | divided_by: 4 }}px;
-  }
   
   @media screen and (min-width: 768px) {
-    .section-{{ section.id }} .blog__posts--container {
-      margin: 0 -{{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
-    }
-
     .section-{{ section.id }} .blog__posts .blog__post {
       flex-basis: calc((1/{{ section.settings.columns_desktop }}) * 100%);
-      padding: {{ settings.spacing_grid_vertical | divided_by: 2 }}px {{ settings.spacing_grid_horizontal | divided_by: 2 }}px;
     }
   }
 
@@ -67,14 +54,12 @@
     assign posts_displayed = section.settings.post_limit
   endif
 -%}
-<div class="section section-{{ section.id }} {% if section.settings.use_foreground %}section--foreground {% endif %}blog color-scheme--{{ section.settings.color_scheme }}{% if section.settings.title == blank %} no-heading{% endif %}">
-  <div class="splide{% if section.settings.desktop_slider %} splide--desktop{% endif %} isolate section-{{ section.id }}-padding"
-    data-splide='{ "perPage": 1, "mediaQuery": "min", "breakpoints": { "640": { {% if section.settings.desktop_slider %}"perPage": {{ section.settings.columns_desktop }}{% else %}"destroy": true{% endif %} } } }'
-    aria-labelledby="SectionHeading-{{ section.id }}">
+<div class="blog section-{{ section.id }}{% if section.settings.use_foreground %} section--foreground{% endif %} color-scheme color-scheme--{{ section.settings.color_scheme }}">
+  <div class="container{% if section.settings.title == blank %} no-heading{% endif %}">
     {%- unless section.settings.title == blank -%}
-      <div class="container blog__title-wrapper">
+      <div class="blog__title-wrapper">
         <h2 id="SectionHeading-{{ section.id }}" class="blog__title h1">{{ section.settings.title | escape }}</h2>
-
+  
         {%- if featured_blog != blank and section.settings.show_view_all and section.settings.post_limit < featured_blog.articles_count -%}
           <a href="{{ featured_blog.url }}"
             class="link underlined-link large-up-hide"
@@ -82,125 +67,118 @@
             {{ 'sections.featured_blog.view_all' | t }}
           </a>
         {%- endif -%}
-
+  
         {%- if section.settings.subheading != blank -%}
           <h3 class="blog__subtitle">{{ section.settings.subheading }}</h3>
         {%- endif -%}
-
+  
         {% if section.settings.subheading != blank and section.settings.tag_links %}
           <hr class="border-0 border-t-2 border-solid border-scheme-accent" />
         {% endif %}
       </div>
     {%- endunless -%}
-    {%- if featured_blog != blank and featured_blog.articles_count > 0 -%}
-      {% if section.settings.tag_links %}
-        {% liquid
-          assign blogTags = ''
-
-          for article in featured_blog.articles
-            unless forloop.first
-              assign blogTags = blogTags | append: ','
-            endunless
-
-            assign articleTags = article.tags | join: ','
-            assign blogTags = blogTags | append: articleTags
-          endfor
-
-          assign blogTags = blogTags | split: ',' | uniq
-        %}
-        <div class="container blog__tag-links">
+    {% if section.settings.tag_links %}
+      {% liquid
+        assign blogTags = ''
+  
+        for article in featured_blog.articles
+          unless forloop.first
+            assign blogTags = blogTags | append: ','
+          endunless
+  
+          assign articleTags = article.tags | join: ','
+          assign blogTags = blogTags | append: articleTags
+        endfor
+  
+        assign blogTags = blogTags | split: ',' | uniq
+      %}
+      {% if blogTags %}
+        <div class="blog__tag-links">
           {% for tag in blogTags limit: 8 %}
             <a href="{{ featured_blog.url }}/tagged/{{ tag }}" alt="Blog posts tagged with {{ tag }}" class="btn secondary">{{ tag }}</a>
           {% endfor %}
         </div>
       {% endif %}
-
-      <div class="container splide__track--container">
-        <div class="splide__track blog__posts--container">
-          <ul id="Slider-{{ section.id }}"
-            class="splide__list blog__posts{% unless section.settings.desktop_slider %} blog__posts--desktop-grid{% endunless %}"
-            role="list"
-          >
-            {% liquid
-              assign articles = featured_blog.articles
+    {% endif %}
+    <div class="splide{% if section.settings.desktop_slider %} splide--desktop{% endif %} isolate"
+      data-splide='{ "perPage": 1, "mediaQuery": "min", "breakpoints": { "768": { {% if section.settings.desktop_slider %}"perPage": {{ section.settings.columns_desktop }}{% else %}"destroy": true{% endif %} } } }'
+      aria-labelledby="SectionHeading-{{ section.id }}">
+      {%- if featured_blog != blank and featured_blog.articles_count > 0 -%}
+        <div class="splide__track--container">
+          <div class="splide__track blog__posts--container">
+            <ul id="Slider-{{ section.id }}"
+              class="splide__list blog__posts{% unless section.settings.desktop_slider %} blog__posts--desktop-grid{% endunless %}"
+              role="list"
+            >
+              {% liquid
+                assign articles = featured_blog.articles
+    
+                case section.settings.sort_by
+                  when 'new'
+                    assign articles = articles | sort: 'published_at'
+                  when 'old'
+                    assign articles = articles | sort: 'published_at' | reverse
+                  when 'a-z'
+                    assign articles = articles | sort: 'title'
+                  when 'z-a'
+                    assign articles = articles | sort: 'title' | reverse
+                endcase
+              %}
+              {%- for article in articles limit: section.settings.post_limit -%}
+                <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="splide__slide blog__post">
+                  {% render 'article-card',
+                    blog: featured_blog, 
+                    article: article,
+                    card_color_scheme: section.settings.card_color_scheme,
+                    section_color_scheme: section.settings.color_scheme,
+                    show_image: section.settings.show_image,
+                    media_aspect_ratio: section.settings.image_ratio,
+                    media_fit: section.settings.card_image_fit,
+                    show_date: section.settings.show_date,
+                    show_author: section.settings.show_author,
+                    show_tags: section.settings.show_tags,
+                    show_excerpt: section.settings.show_excerpt,
+                    hover_info: section.settings.card_hover_show_info,
+                    blog_list: false
+                  %}
+                </li>
+              {%- endfor -%}
+            </ul>
+          </div>
   
-              case section.settings.sort_by
-                when 'new'
-                  assign articles = articles | sort: 'published_at'
-                when 'old'
-                  assign articles = articles | sort: 'published_at' | reverse
-                when 'a-z'
-                  assign articles = articles | sort: 'title'
-                when 'z-a'
-                  assign articles = articles | sort: 'title' | reverse
-              endcase
-            %}
-            {%- for article in articles limit: section.settings.post_limit -%}
-              <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="splide__slide blog__post">
-                {% render 'article-card',
-                  blog: featured_blog, 
-                  article: article,
-                  card_color_scheme: section.settings.card_color_scheme,
-                  section_color_scheme: section.settings.color_scheme,
-                  show_image: section.settings.show_image,
-                  media_aspect_ratio: section.settings.image_ratio,
-                  media_fit: section.settings.card_image_fit,
-                  show_date: section.settings.show_date,
-                  show_author: section.settings.show_author,
-                  show_tags: section.settings.show_tags,
-                  show_excerpt: section.settings.show_excerpt,
-                  hover_info: section.settings.card_hover_show_info,
-                  blog_list: false
-                %}
-              </li>
-            {%- endfor -%}
-          </ul>
-          {%- if posts_exceed_limit -%}
-            <div class="slider-buttons no-js-hidden{% if section.settings.post_limit < 3 %} medium-hide{% endif %}{% if section.settings.post_limit < 2 %} small-hide{% endif %}">
-              <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-              <div class="slider-counter caption">
-                <span class="slider-counter--current">1</span>
-                <span aria-hidden="true"> / </span>
-                <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-                <span class="slider-counter--total">{{ section.settings.post_limit }}</span>
-              </div>
-              <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
-            </div>
-          {%- endif -%}
+          <div class="splide__arrows">
+            <button class="splide__arrow splide__arrow--prev">
+              {%- render 'icon-arrow-big' -%}
+            </button>
+            <button class="splide__arrow splide__arrow--next">
+              {%- render 'icon-arrow-big' -%}
+            </button>
+          </div>
         </div>
-
-        <div class="splide__arrows">
-          <button class="splide__arrow splide__arrow--prev">
-            {%- render 'icon-arrow-big' -%}
-          </button>
-          <button class="splide__arrow splide__arrow--next">
-            {%- render 'icon-arrow-big' -%}
-          </button>
-        </div>
-      </div>
-
-      {%- if section.settings.show_view_all and section.settings.post_limit < featured_blog.articles_count -%}
-        <div class="blog__view-all center small-hide medium-hide">
-          <a href="{{ featured_blog.url }}" id="ViewAll-{{ section.id }}" class="blog__button btn secondary" aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}">
-            {{ 'sections.featured_blog.view_all' | t }}
-          </a>
+  
+        {%- if section.settings.show_view_all and section.settings.post_limit < featured_blog.articles_count -%}
+          <div class="blog__view-all center small-hide medium-hide">
+            <a href="{{ featured_blog.url }}" id="ViewAll-{{ section.id }}" class="blog__button btn secondary" aria-labelledby="ViewAll-{{ section.id }} SectionHeading-{{ section.id }}">
+              {{ 'sections.featured_blog.view_all' | t }}
+            </a>
+          </div>
+        {%- endif -%}
+      {%- else -%}
+        <div class="blog-placeholder">
+          <div class="placeholder media media--landscape">
+            {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
+          </div>
+          <div class="blog-placeholder__content">
+            <h2>
+              {{ 'sections.featured_blog.onboarding_title' | t }}
+            </h2>
+            <p class="rte-width">
+              {{ 'sections.featured_blog.onboarding_content' | t }}
+            </p>
+          </div>
         </div>
       {%- endif -%}
-    {%- else -%}
-      <div class="blog-placeholder">
-        <div class="placeholder media media--landscape">
-          {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
-        </div>
-        <div class="blog-placeholder__content">
-          <h2>
-            {{ 'sections.featured_blog.onboarding_title' | t }}
-          </h2>
-          <p class="rte-width">
-            {{ 'sections.featured_blog.onboarding_content' | t }}
-          </p>
-        </div>
-      </div>
-    {%- endif -%}
+    </div>
   </div>
 </div>
 
