@@ -14537,17 +14537,9 @@ const _hoisted_12$3 = {
   key: 0,
   class: "icon target expand"
 };
-<<<<<<< HEAD
 const _hoisted_14$3 = ["height", "width", "stroke-width"];
 const _hoisted_15$3 = /* @__PURE__ */ createBaseVNode("path", {
   d: "M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z",
-=======
-const _hoisted_13$3 = ["width", "height"];
-const _hoisted_14$3 = /* @__PURE__ */ createBaseVNode("path", {
-  "fill-rule": "evenodd",
-  "clip-rule": "evenodd",
-  d: "M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z",
->>>>>>> 39fce57 (fixing conflicts?)
   fill: "currentColor"
 }, null, -1);
 const _hoisted_15$3 = [
@@ -14558,17 +14550,11 @@ const _hoisted_17$3 = {
   key: 0,
   class: "icon target expand"
 };
-<<<<<<< HEAD
-const _hoisted_19$3 = ["height", "width", "stroke-width"];
-const _hoisted_20$3 = /* @__PURE__ */ createBaseVNode("path", {
-  d: "M.865 15.978a.5.5 0 00.707.707l7.433-7.431 7.579 7.282a.501.501 0 00.846-.37.5.5 0 00-.153-.351L9.712 8.546l7.417-7.416a.5.5 0 10-.707-.708L8.991 7.853 1.413.573a.5.5 0 10-.693.72l7.563 7.268-7.418 7.417z",
-=======
 const _hoisted_18$3 = ["width", "height"];
 const _hoisted_19$3 = /* @__PURE__ */ createBaseVNode("path", {
   "fill-rule": "evenodd",
   "clip-rule": "evenodd",
   d: "M1 4.51a.5.5 0 000 1h3.5l.01 3.5a.5.5 0 001-.01V5.5l3.5-.01a.5.5 0 00-.01-1H5.5L5.49.99a.5.5 0 00-1 .01v3.5l-3.5.01H1z",
->>>>>>> 39fce57 (fixing conflicts?)
   fill: "currentColor"
 }, null, -1);
 const _hoisted_20$3 = [
@@ -14609,7 +14595,6 @@ const _hoisted_33$1 = { class: "menu__level0" };
 const _hoisted_34$1 = ["href"];
 const _hoisted_35$1 = ["href"];
 const _hoisted_36$1 = ["href"];
-<<<<<<< HEAD
 const _hoisted_37$1 = { key: 1 };
 const _hoisted_38$1 = {
   key: 2,
@@ -14664,22 +14649,6 @@ const _hoisted_64 = {
   class: "icon target expand"
 };
 const _hoisted_65 = /* @__PURE__ */ createBaseVNode("svg", {
-=======
-const _hoisted_37$1 = ["href"];
-const _hoisted_38$1 = ["href"];
-const _hoisted_39$1 = { key: 0 };
-const _hoisted_40$1 = { key: 1 };
-const _hoisted_41$1 = ["html"];
-const _hoisted_42$1 = ["href"];
-const _hoisted_43$1 = ["href"];
-const _hoisted_44$1 = { class: "dropdown" };
-const _hoisted_45$1 = ["href"];
-const _hoisted_46$1 = {
-  key: 0,
-  class: "icon target expand"
-};
-const _hoisted_47$1 = /* @__PURE__ */ createBaseVNode("svg", {
->>>>>>> 39fce57 (fixing conflicts?)
   "aria-hidden": "true",
   focusable: "false",
   role: "presentation",
@@ -14693,7 +14662,6 @@ const _hoisted_47$1 = /* @__PURE__ */ createBaseVNode("svg", {
     fill: "currentColor"
   })
 ], -1);
-<<<<<<< HEAD
 const _hoisted_66 = [
   _hoisted_65
 ];
@@ -14704,13 +14672,6 @@ const _hoisted_68 = {
 };
 const _hoisted_69 = ["href"];
 const _hoisted_70 = ["href"];
-=======
-const _hoisted_48$1 = [
-  _hoisted_47$1
-];
-const _hoisted_49$1 = ["href"];
-const _hoisted_50 = ["href"];
->>>>>>> 39fce57 (fixing conflicts?)
 function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_PopoverButton = resolveComponent("PopoverButton");
   const _component_DisclosureButton = resolveComponent("DisclosureButton");
@@ -14806,15 +14767,9 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                 viewBox: "0 0 18 17",
                                 height: $props.iconSize,
                                 width: $props.iconSize,
-<<<<<<< HEAD
                                 "stroke-width": $props.iconStrokeWidth
                               }, _hoisted_16$3, 8, _hoisted_14$3))
                             ])) : createCommentVNode("", true)
-=======
-                                height: $props.iconSize
-                              }, _hoisted_15$3, 8, _hoisted_13$3))
-                            ])) : createCommentVNode("v-if", true)
->>>>>>> 39fce57 (fixing conflicts?)
                           ]),
                           _: 2
                         }, 1032, ["name"]),
@@ -14850,15 +14805,9 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                               viewBox: "0 0 18 17",
                                               height: $props.iconSize,
                                               width: $props.iconSize,
-<<<<<<< HEAD
                                               "stroke-width": $props.iconStrokeWidth
                                             }, _hoisted_21$2, 8, _hoisted_19$3))
                                           ])) : createCommentVNode("", true)
-=======
-                                              height: $props.iconSize
-                                            }, _hoisted_20$3, 8, _hoisted_18$3))
-                                          ])) : createCommentVNode("v-if", true)
->>>>>>> 39fce57 (fixing conflicts?)
                                         ]),
                                         _: 2
                                       }, 1032, ["name"]),
@@ -14976,7 +14925,6 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                       key: block.id,
                                       class: normalizeClass(["submenu-block", [block.type, block.type == "menu" ? `images-${block.settings.submenu_item_image}` : ""]])
                                     }, [
-<<<<<<< HEAD
                                       block.settings.submenu_title != "" ? (openBlock(), createElementBlock("h4", _hoisted_33$1, toDisplayString(block.settings.submenu_title), 1)) : (openBlock(), createElementBlock("h4", _hoisted_34$1, toDisplayString(block.settings.submenu.title), 1)),
                                       createBaseVNode("ul", _hoisted_35$1, [
                                         (openBlock(true), createElementBlock(Fragment, null, renderList(block.settings.submenu, (link2) => {
@@ -14990,50 +14938,6 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                 class: "menu__top-link parent"
                                               }, {
                                                 default: withCtx(() => [
-=======
-                                      block.type == "menu" ? (openBlock(), createElementBlock("div", {
-                                        key: 0,
-                                        class: normalizeClass([`images-${block.settings.submenu_item_image}__inner`, `${block.type}__inner`, `color-scheme--${$props.settings.mm_color_scheme}`])
-                                      }, [
-                                        block.settings.submenu_title != "" ? (openBlock(), createElementBlock("h4", _hoisted_31$1, toDisplayString(block.settings.submenu_title), 1)) : (openBlock(), createElementBlock("h4", _hoisted_32$1, toDisplayString(block.settings.submenu.title), 1)),
-                                        createBaseVNode("ul", _hoisted_33$1, [
-                                          (openBlock(true), createElementBlock(Fragment, null, renderList(block.settings.submenu, (link2) => {
-                                            return openBlock(), createBlock(_component_Disclosure, {
-                                              as: "li",
-                                              key: link2.id,
-                                              class: "menu__top-link"
-                                            }, {
-                                              default: withCtx(() => [
-                                                link2.links.length ? (openBlock(), createBlock(_component_DisclosureButton, { key: 0 }, {
-                                                  default: withCtx(() => [
-                                                    createVNode(Transition, {
-                                                      name: "fade",
-                                                      appear: ""
-                                                    }, {
-                                                      default: withCtx(() => [
-                                                        link2.object && link2.object.image && block.settings.submenu_item_image != "none" ? (openBlock(), createBlock(_component_image_tag, {
-                                                          key: 0,
-                                                          src: link2.object.image,
-                                                          width: "320",
-                                                          sizes: "320px",
-                                                          srcsetWidths: [320],
-                                                          class: "menu__image"
-                                                        }, null, 8, ["src"])) : createCommentVNode("v-if", true)
-                                                      ]),
-                                                      _: 2
-                                                    }, 1024),
-                                                    createBaseVNode("a", {
-                                                      href: link2.url
-                                                    }, [
-                                                      createBaseVNode("span", null, toDisplayString(link2.title), 1)
-                                                    ], 8, _hoisted_34$1)
-                                                  ]),
-                                                  _: 2
-                                                }, 1024)) : (openBlock(), createElementBlock("a", {
-                                                  key: 1,
-                                                  href: link2.url
-                                                }, [
->>>>>>> 39fce57 (fixing conflicts?)
                                                   createVNode(Transition, {
                                                     name: "fade",
                                                     appear: ""
@@ -15050,7 +14954,6 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                     ]),
                                                     _: 2
                                                   }, 1024),
-<<<<<<< HEAD
                                                   $props.settings.mm_toplink_behavior == "parent_link" ? (openBlock(), createElementBlock("a", {
                                                     key: 0,
                                                     href: link2.url
@@ -15081,13 +14984,6 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                 createVNode(Transition, {
                                                   name: "fade",
                                                   appear: ""
-=======
-                                                  createBaseVNode("span", null, toDisplayString(link2.title), 1)
-                                                ], 8, _hoisted_35$1)),
-                                                link2.links.length ? (openBlock(), createBlock(Transition, {
-                                                  key: 2,
-                                                  name: "slideDown"
->>>>>>> 39fce57 (fixing conflicts?)
                                                 }, {
                                                   default: withCtx(() => [
                                                     createVNode(_component_DisclosurePanel, {
@@ -15146,7 +15042,6 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                     }, 1024)
                                                   ]),
                                                   _: 2
-<<<<<<< HEAD
                                                 }, 1024),
                                                 createBaseVNode("span", null, toDisplayString(link2.title), 1)
                                               ], 8, _hoisted_42$1)),
