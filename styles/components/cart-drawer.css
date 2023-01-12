@@ -168,7 +168,7 @@
 
   #CartDrawer-Note {
     @apply
-      bg-fg
+      bg-scheme-fg
       text-base
       border-1
       border-gray-500;

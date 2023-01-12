@@ -20,33 +20,55 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
+  .section-{{ section.id }}-padding .splide__slide {
+    flex-basis: calc(1/{{ section.settings.columns_mobile }} * 100%);
+  }
+
+  @media screen and (min-width: 768px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+
+    .section-{{ section.id }}-padding .splide__slide {
+      flex-basis: calc(1/{{ section.settings.columns_desktop }} * 100%);
+    }
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }}">
-  <product-recommendations class="product-recommendations page-width section-{{ section.id }}-padding isolate" data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
+<div id="product-recommendations" class="section color-scheme--{{ section.settings.color_scheme }}">
+  <product-recommendations class="product-recommendations splide page-width section-{{ section.id }}-padding isolate"
+    data-splide='{ "perPage": {{ section.settings.columns_mobile }}, "mediaQuery": "min", "breakpoints": { {% if section.settings.display_style == 'grid' %}"768": { "destroy": true }{% else %}"768": { "perPage": {{ section.settings.columns_desktop }} }{% endif %} } }'
+    data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
     {% if recommendations.performed and recommendations.products_count > 0 %}
       <h2 class="product-recommendations__heading {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
-      <ul class="shopify-grid product-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down" role="list">
-        {% for recommendation in recommendations.products %}
-          <li class="grid__item">
-            {% render 'card-product',
-              card_product: recommendation,
-              media_aspect_ratio: section.settings.image_ratio,
-              show_secondary_image: section.settings.show_secondary_image,
-              show_price: section.settings.show_price,
-              show_vendor: section.settings.show_vendor,
-              show_rating: section.settings.show_rating,
-              hover_info: section.settings.card_hover_show_info
-            %}
-          </li>
-        {% endfor %}
-      </ul>
+      <div class="splide__track">
+        <ul class="splide__list product-grid" role="list">
+          {% for recommendation in recommendations.products %}
+            <li class="splide__slide">
+              {% render 'card-product',
+                card_product: recommendation,
+                media_aspect_ratio: section.settings.image_ratio,
+                card_color_scheme: section.settings.card_color_scheme,
+                section_color_scheme: section.settings.color_scheme,
+                show_secondary_image: section.settings.show_secondary_image,
+                show_price: section.settings.show_price,
+                show_vendor: section.settings.show_vendor,
+                show_rating: section.settings.show_rating,
+                hover_info: section.settings.card_hover_show_info
+              %}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="splide__arrows{% if section.settings.display_style == 'grid' or recommendations.products_count <= section.settings.columns_desktop %} medium-hide large-up-hide{% endif %}">
+        <button class="splide__arrow splide__arrow--prev">
+          {%- render 'icon-arrow-big' -%}
+        </button>
+        <button class="splide__arrow splide__arrow--next">
+          {%- render 'icon-arrow-big' -%}
+        </button>
+      </div>
     {% endif %}
   </product-recommendations>
 </div>
@@ -71,8 +93,10 @@
               this.innerHTML = recommendations.innerHTML;
             }
 
-            if (html.querySelector('.grid__item')) {
+            if (html.querySelector('.splide__slide')) {
               this.classList.add('product-recommendations--loaded');
+
+              new window.Splide(this).mount();
             }
           })
           .catch(e => {
@@ -162,14 +186,6 @@
       "id": "color_scheme",
       "options": [
         {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
           "value": "background-1",
           "label": "t:sections.all.colors.background_1.label"
         },
@@ -178,17 +194,40 @@
           "label": "t:sections.all.colors.background_2.label"
         },
         {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
         }
       ],
       "default": "background-1",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info"
+      "label": "t:sections.all.colors.label"
     },
     {
       "type": "header",
       "content": "t:sections.product-recommendations.settings.header__2.content"
+    },
+    {
+      "type": "select",
+      "id": "card_color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default (theme settings)"
+        },
+        {
+          "value": "match",
+          "label": "Match section"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse section"
+        }
+      ],
+      "default": "default",
+      "label": "Card color scheme"
     },
     {
       "type": "select",

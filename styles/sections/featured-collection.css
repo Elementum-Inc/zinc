@@ -4,6 +4,14 @@
   &.active {
     @apply block;
   }
+
+  & > div {
+    &:not(.splide) {
+      & .splide__list {
+        @apply flex-wrap;
+      }
+    }
+  }
 }
 
 #collection-tab-container {

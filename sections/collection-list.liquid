@@ -1,35 +1,45 @@
 {{ 'section-collection-list.css' | asset_url | stylesheet_tag }}
 {{ 'component-card.css' | asset_url | stylesheet_tag }}
 
-<link rel="stylesheet" href="{{ 'component-slider.css' | asset_url }}" media="print" onload="this.media='all'">
-<noscript>{{ 'component-slider.css' | asset_url | stylesheet_tag }}</noscript>
-
 {%- style -%}
-  .section-{{ section.id }}-padding {
+  .section-{{ section.id }} {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
-    .section-{{ section.id }}-padding {
+  .section-{{ section.id }} .splide__slide {
+    flex-basis: calc(1/{{ section.settings.columns_mobile }} * 100%);
+  }
+
+  @media screen and (min-width: 768px) {
+    .section-{{ section.id }} {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .section-{{ section.id }} .splide__slide {
+      flex-basis: calc(1/{{ section.settings.columns_desktop }} * 100%);
     }
   }
 {%- endstyle -%}
 
 {%- liquid
-  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
   assign show_mobile_slider = false
+  assign columns_mobile_int = section.settings.columns_mobile | plus: 0
   if section.settings.swipe_on_mobile and section.blocks.size > columns_mobile_int
     assign show_mobile_slider = true
   endif
+
+  assign show_desktop_slider = false
+  if section.settings.enable_desktop_slider and section.blocks.size > section.settings.columns_desktop
+    assign show_desktop_slider = true
+  endif
 -%}
 
-<div class="{% if section.settings.use_foreground %}section--foreground {% endif %}color-scheme--{{ section.settings.color_scheme }}">
-  <div class="collection-list-wrapper page-width isolate{% if show_mobile_slider %} page-width-desktop{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}-padding">
+<div class="{% if section.settings.use_foreground %}section--foreground {% endif %}section color-scheme--{{ section.settings.color_scheme }}">
+  <div class="collection-list-wrapper isolate{% if section.settings.title == blank %} no-heading{% endif %}{% if section.settings.show_view_all == false or section.blocks.size > collections.size %} no-mobile-link{% endif %} section-{{ section.id }}">
     {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
+      <div class="container title-wrapper-with-link{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% else %} title-wrapper--self-padded-mobile{% endif %} title-wrapper--no-top-margin">
         <h2 id="SectionHeading-{{ section.id }}" class="collection-list-title {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h2>
   
         {%- if section.settings.show_view_all and show_mobile_slider -%}
@@ -38,39 +48,42 @@
       </div>
     {%- endunless -%}
   
-    <slider-component class="slider-mobile-gutter">
-      <ul class="collection-list contains-card shopify-grid grid--{{ section.settings.columns_desktop }}-col-desktop grid--{{ section.settings.columns_mobile }}-col-tablet-down{% if section.settings.swipe_on_mobile %} slider slider--tablet grid--peek{% endif %} collection-list--{{ section.blocks.size }}-items"
-        id="Slider-{{ section.id }}"
-        role="list"
+    <div class="splide container"
+      {% comment %} data-splide='{ "perPage": {{ section.settings.columns_mobile }}, "mediaQuery": "min", "breakpoints": { "768": { "perPage": {{ section.settings.columns_desktop }} } } }' {% endcomment %}
+      data-splide='
+        {%- if show_mobile_slider and show_desktop_slider != true -%}
+          { "perPage": {{ section.settings.columns_mobile }}, "mediaQuery": "min", "breakpoints": { "768": { "destroy": true } } }
+        {%- elsif show_mobile_slider != true and show_desktop_slider -%}
+          { "perPage": {{ section.settings.columns_desktop }}, "mediaQuery": "max", "breakpoints": { "767": { "destroy": true } } }
+        {% else %}
+          { "perPage": {{ section.settings.columns_mobile }}, "mediaQuery": "min", "breakpoints": { "768": { "perPage": {{ section.settings.columns_desktop }} } } }
+        {% endif %}
+      '
       >
-        {%- liquid
-          assign columns = section.blocks.size
-          if columns > 3
-            assign columns = 3
-          endif
-        -%}
-        {%- for block in section.blocks -%}
-          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item grid__item{% if show_mobile_slider %} slider__slide{% endif %}{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>
-            {% render 'card-collection',
-              card_collection: block.settings.collection,
-              media_aspect_ratio: section.settings.image_ratio,
-              columns: columns %}
-          </li>
-        {%- endfor -%}
-      </ul>
-      {%- if show_mobile_slider -%}
-        <div class="slider-buttons no-js-hidden">
-          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-              <span aria-hidden="true"> / </span>
-              <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ section.blocks.size }}</span>
-          </div>
-          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
-        </div>
-      {%- endif -%}
-    </slider-component>
+      <div class="splide__track">
+        <ul class="splide__list collection-list contains-card collection-list--{{ section.blocks.size }}-items"
+          id="Slider-{{ section.id }}"
+          role="list">
+          {%- for block in section.blocks -%}
+            <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="collection-list__item splide__slide{% if block.settings.collection.featured_image == nil %} collection-list__item--no-media{% endif %}" {{ block.shopify_attributes }}>
+              {% render 'card-collection',
+                card_collection: block.settings.collection,
+                card_color_scheme: section.settings.card_color_scheme,
+                section_color_scheme: section.settings.color_scheme,
+                media_aspect_ratio: section.settings.image_ratio %}
+            </li>
+          {%- endfor -%}
+        </ul>
+      </div>
+      <div class="splide__arrows{% unless show_mobile_slider %} small-hide{% endunless %}{% unless show_desktop_slider %} medium-hide large-up-hide{% endunless %}">
+        <button class="splide__arrow splide__arrow--prev">
+          {%- render 'icon-arrow-big' -%}
+        </button>
+        <button class="splide__arrow splide__arrow--next">
+          {%- render 'icon-arrow-big' -%}
+        </button>
+      </div>
+    </div>
   
     {%- if section.settings.show_view_all and section.blocks.size < collections.size -%}
       <div class="center collection-list-view-all{% if show_mobile_slider %} small-hide medium-hide{% endif %}">
@@ -143,17 +156,22 @@
         }
       ],
       "default": "square",
-      "label": "t:settings_schema.global.settings.aspect_ratio.label",
-      "info": "t:sections.collection-list.settings.image_ratio.info"
+      "label": "t:settings_schema.global.settings.aspect_ratio.label"
     },
     {
       "type": "range",
       "id": "columns_desktop",
       "min": 1,
-      "max": 5,
+      "max": 6,
       "step": 1,
       "default": 3,
       "label": "t:sections.collection-list.settings.columns_desktop.label"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_desktop_slider",
+      "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
+      "default": false
     },
     {
       "type": "select",
@@ -179,6 +197,26 @@
       "default": "primary",
       "label": "t:sections.all.colors.label",
       "info": "t:sections.all.colors.has_cards_info"
+    },
+    {
+      "type": "select",
+      "id": "card_color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default (theme settings)"
+        },
+        {
+          "value": "match",
+          "label": "Match section"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse section"
+        }
+      ],
+      "default": "default",
+      "label": "Card color scheme"
     },
     {
       "type": "checkbox",

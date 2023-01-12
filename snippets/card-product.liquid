@@ -45,11 +45,24 @@
   if media_fit == nil
     assign media_fit = settings.product_card_image_fit
   endif
+
+  assign color_scheme = settings.product_card_color_scheme
+
+  if card_color_scheme and card_color_scheme != 'default'
+    assign color_scheme = section_color_scheme
+  endif
+
+  assign card_hover_info = false
+
+  if hover_info or settings.product_card_hover_show_info
+    assign card_hover_info = true
+  endif
 %}
 
 {%- if card_product and card_product != empty -%}
   <div class="card-wrapper">
-    <div class="card color-scheme--{{ settings.product_card_color_scheme }}
+    <div class="card color-scheme--{{ color_scheme }}
+      {% if card_color_scheme == 'inverse' %} inverse{% endif %}
       {% if card_product.featured_media %} card--media{% else %} card--text{% endif %}
       {% if settings.product_card_hover_animate %} {{ settings.product_card_hover_animation }}{% endif %}
       {% if extend_height %} card--extend-height{% endif %}

@@ -19,6 +19,12 @@
       @apply mb-2;
     }
   }
+
+  &__posts {
+    &--desktop-grid {
+      @apply md:(!flex flex-wrap);
+    }
+  }
 }
 
 .main-blog {

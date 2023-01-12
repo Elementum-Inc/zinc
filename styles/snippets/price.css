@@ -1,9 +1,13 @@
 .price {
-  @apply text-base leading-normal;
+  @apply
+    text-base
+    leading-normal;
   letter-spacing: .015rem;
 
   & .price-item {
-    @apply mr-2;
+    @apply
+      mr-2
+      text-scheme-text;
   }
 
   &--on-sale {

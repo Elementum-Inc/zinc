@@ -24,7 +24,7 @@ export default {
       bg1RGB: "var(--color-background-1)",
       bg2: "rgb(var(--color-background-2))",
       bg2RGB: "var(--color-background-2)",
-      fg: "rgb(var(--theme-foreground))",
+      fg: "rgb(var(--zinc-color-foreground))",
       accent1: "rgb(var(--color-accent-1))",
       accent1RGB: "var(--color-accent-1)",
       accent2: "rgb(var(--color-accent-2))",

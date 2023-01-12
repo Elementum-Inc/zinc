@@ -209,7 +209,7 @@
 }
 
 .cart-drawer #CartDrawer-Note {
-  background-color: rgb(var(--theme-foreground));
+  background-color: var(--color-scheme-fg);
   --tw-border-opacity: 1;
   border-color: rgb(194 194 194 / var(--tw-border-opacity));
   border-width: 1px;
