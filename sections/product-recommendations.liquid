@@ -37,7 +37,7 @@
 {%- endstyle -%}
 
 <div id="product-recommendations" class="section color-scheme--{{ section.settings.color_scheme }}">
-  <product-recommendations class="product-recommendations splide page-width section-{{ section.id }}-padding isolate"
+  <product-recommendations class="product-recommendations splide container section-{{ section.id }}-padding isolate"
     data-splide='{ "perPage": {{ section.settings.columns_mobile }}, "mediaQuery": "min", "breakpoints": { {% if section.settings.display_style == 'grid' %}"768": { "destroy": true }{% else %}"768": { "perPage": {{ section.settings.columns_desktop }} }{% endif %} } }'
     data-url="{{ routes.product_recommendations_url }}?section_id={{ section.id }}&product_id={{ product.id }}&limit={{ section.settings.products_to_show }}">
     {% if recommendations.performed and recommendations.products_count > 0 %}
