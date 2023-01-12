@@ -43,7 +43,7 @@
   {%- endif -%}
 
   {%- if section.blocks.size > 0 or section.settings.newsletter_enable or section.settings.show_social -%}
-    <div class="footer__content-top page-width">
+    <div class="footer__content-top container">
       {%- if section.blocks.size > 0 -%}
         {%- liquid
           if section.blocks.size == 9
@@ -228,7 +228,7 @@
 
   {%- if section.settings.show_poweredbyshopify or section.settings.social_location == "below" -%}
     <div class="footer__content-bottom">
-      <div class="footer__content-bottom-wrapper page-width">
+      <div class="footer__content-bottom-wrapper container">
 
         {%- if section.settings.show_social and section.settings.social_location == "below" -%}
           <div class="lower-social">

@@ -27,7 +27,7 @@
 %}
 
 {%- paginate blog.articles by section.setting.posts_per_page -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
+  <div class="main-blog container section-{{ section.id }}-padding">
     <h1 class="title--primary">{{ blog.title | escape }}</h1>
     {% if section.settings.blog_description != nil %}
       <h3 class="description">{{ section.settings.blog_description }}</h3>
