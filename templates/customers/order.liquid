@@ -1,4 +1,6 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ 'et_account.css' | asset_url | stylesheet_tag }}
+
 
 <div class="customer order">
   <svg style="display:none">
@@ -13,7 +15,7 @@
 
   <div>
     <div>
-      <h2>{{ 'customer.order.title' | t: name: order.name }}</h2>
+      <h2 class="order-title">{{ 'customer.order.title' | t: name: order.name }}</h2>
       {%- assign order_date = order.created_at | time_tag: format: "date_at_time" -%}
       <p>{{ 'customer.order.date_html' | t: date: order_date }}</p>
       {%- if order.cancelled -%}
@@ -38,6 +40,7 @@
             <tr role="row">
               <td
                 id="Row{{ line_item.key }}"
+                class="order-product-title"
                 headers="ColumnProduct"
                 role="rowheader"
                 scope="row"
@@ -255,7 +258,7 @@
               <td headers="RowDuties" role="cell" data-label="{{ 'customer.order.total_duties' | t }}">{{ order.total_duties | money }}</td>
             </tr>
           {%- endif -%}
-          <tr role="row">
+          <tr class="totals-row" role="row">
             <td id="RowTotal" role="rowheader" scope="row" colspan="3">{{ 'customer.order.total' | t }}</td>
             <td headers="RowTotal" role="cell" colspan="2" data-label="{{ 'customer.order.total' | t }}">{{ order.total_price | money_with_currency }}</td>
           </tr>
@@ -263,17 +266,17 @@
       </table>
     </div>
     <div>
-      <div>
+      <div class="order-address-container">
         <h2>{{ 'customer.order.billing_address' | t }}</h2>
-        <p>
+        <p class="status">
           <strong>{{ 'customer.order.payment_status' | t }}:</strong>
           {{ order.financial_status_label }}
         </p>
         {{ order.billing_address | format_address }}
       </div>
-      <div>
+      <div class="order-address-container">
         <h2>{{ 'customer.order.shipping_address' | t }}</h2>
-        <p>
+        <p class="status">
           <strong>{{ 'customer.order.fulfillment_status' | t }}:</strong>
           {{ order.fulfillment_status_label }}
         </p>
