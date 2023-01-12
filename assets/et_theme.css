@@ -613,6 +613,9 @@ ul {
     display: none;
   }
 }
+body {
+  font-family: var(--font-body-family);
+}
 body.search--opened, body.menu--opened {
   overflow: hidden;
 }

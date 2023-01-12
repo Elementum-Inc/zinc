@@ -5,6 +5,10 @@
   found in the assets folder.
 */
 
+body {
+  @apply font-body;
+}
+
 body.search--opened,
 body.menu--opened {
   @apply overflow-hidden;
