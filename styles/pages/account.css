@@ -30,13 +30,13 @@
 /* ADDRESSES PAGE STYLES  */
 
 .customer .field input {
-  font-size: 1.3rem; 
+  font-size: 1.3rem;
   border-bottom: 1px solid;
-  height: 4rem; 
+  height: 4rem;
 }
 
 .customer .field label {
-  font-size: 1.2rem; 
+  font-size: 1.2rem;
 }
 
 .add-address-btn {
@@ -45,7 +45,7 @@
 }
 
 .edit-btn {
-  font-weight: bold !important;
+  font-weight: 700 !important;
 }
 
 .delete-btn {
@@ -67,7 +67,7 @@
 }
 
 .default-address-label {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 
@@ -83,8 +83,8 @@ label[for='AddressCountryNew'],
 label[for='AddressProvinceNew'] {
   display: block;
   font-size: 1.2rem;
-  margin-bottom: 0.6rem;
-} 
+  margin-bottom: .6rem;
+}
 
 /* ORDER DETAILS STYLES  */
 
@@ -93,7 +93,7 @@ label[for='AddressProvinceNew'] {
 }
 
 .order-title {
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .order > div:nth-of-type(2) > div:first-of-type h2 ~ p {
@@ -103,11 +103,11 @@ label[for='AddressProvinceNew'] {
 
 .order-details {
   border-top: 1px solid !important;
-  border-bottom: 1px solid !important; 
+  border-bottom: 1px solid !important;
 }
 
 .order-details td {
-  font-size: 1.25rem; 
+  font-size: 1.25rem;
 }
 
 .order-details tfoot {
@@ -116,15 +116,15 @@ label[for='AddressProvinceNew'] {
 
 .order-details .totals-row td {
   font-size: 1.25rem;
-  font-weight: bold;
+  font-weight: 700;
 }
 
 .order-product-title a {
-  font-size: 1.25rem
+  font-size: 1.25rem;
 }
 
 .order-address-container p {
-  font-size: 1.25rem; 
+  font-size: 1.25rem;
 }
 
 .order-address-container .status {
@@ -132,11 +132,9 @@ label[for='AddressProvinceNew'] {
 }
 
 
-
 /* .address-btn .primary {
   /* TODO: COLOR SETTINGS  */
-  /* background: black !important;
+/* background: black !important;
   color: white !important; */
-/* } */  
+/* } */
 
-  

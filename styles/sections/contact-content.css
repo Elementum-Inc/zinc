@@ -1,33 +1,51 @@
-.contact-content .contact-content-list {
-  column-gap: 0 !important ;
-  row-gap: 0 !important;
-  @apply
-    flex;
+.contact-content {
+  & .contact-content-list {
+    column-gap: 0;
+    row-gap: 0;
+
+    @apply
+      flex;
+  }
+
+  & .title {
+    @apply
+      m-0;
+  }
+
+  &.no-heading .title {
+    @apply
+      hidden;
+  }
+
+  & .title-wrapper-with-link {
+    @apply
+      mt-0;
+  }
+
+  & .subtitle {
+    @apply
+      text-base
+      capitalize;
+  }
+
+  & .text-above {
+    @apply
+      flex
+      flex-col-reverse;
+  }
+
+  & .large-sub {
+    @apply
+      text-4xl
+      font-medium;
+  }
 }
 
 .contact-content-card {
-  @apply 
+  @apply
     flex
     flex-col
     justify-around;
-}
-
-.text-above {
-  @apply 
-    flex
-    !flex-col-reverse;
-}
-
-.subtitle {
-  @apply 
-    text-base
-    capitalize;
-}
-
-.large-sub {
-  @apply
-    text-4xl
-    font-medium;
 }
 
 .contact-info {
@@ -41,22 +59,7 @@
     min-w-42
     text-center
     py-1
-    px-8
-}
-
-.contact-content .title {
-  @apply
-    m-0;
-}
-
-.contact-content.no-heading .title {
-  @apply
-    hidden;
-}
-
-.contact-content .title-wrapper-with-link {
-  @apply
-    mt-0;
+    px-8;
 }
 
 @media screen and (max-width: 749px) {
@@ -73,25 +76,24 @@
 }
 
 .contact-content-card__image-wrapper--third-width {
-  @apply 
+  @apply
     w-1/3;
 }
 
 .contact-content-card__image-wrapper--half-width {
-  @apply 
+  @apply
     w-1/2;
 }
 
-.contact-content-list__item.center
-  .contact-content-card__image-wrapper:not(.contact-content-card__image-wrapper--full-width),
+.contact-content-list__item.center .contact-content-card__image-wrapper:not(.contact-content-card__image-wrapper--full-width),
 .contact-content-list__item:only-child {
-  @apply 
+  @apply
     ml-auto
     mr-auto;
 }
 
 .contact-content .button {
-  @apply 
+  @apply
     mt-6;
 }
 
@@ -110,7 +112,7 @@
 }
 
 .contact-content-list__item:only-child {
-  @apply 
+  @apply
     max-w-6xl;
 }
 
@@ -126,15 +128,12 @@
 }
 
 .contact-content.background-primary .contact-content-card {
-  background: rgb(var(--color-background))
-    linear-gradient(
-      rgba(var(--color-foreground), 0.04),
-      rgba(var(--color-foreground), 0.04)
-    );
+  background: rgb(var(--color-scheme-bg))
+    linear-gradient(rgb(var(--color-scheme-fg) .04), rgb(var(--color-scheme-fg) .04));
 }
 
 .contact-content-list h3 {
-  line-height: calc(1 + 0.5 / max(1, var(--font-heading-scale)));
+  line-height: calc(1 + .5 / max(1, var(--font-heading-scale)));
 }
 
 .contact-content-list h3,
@@ -216,9 +215,7 @@
     pb-0;
 }
 
-.background-none
-  .contact-content-card__image-wrapper
-  + .contact-content-card__info {
+.background-none .contact-content-card__image-wrapper + .contact-content-card__info {
   @apply
     pt-10;
 }
@@ -228,18 +225,12 @@
     pl-2;
 }
 
-.background-none
-  .slider
-  .contact-content-card__image-wrapper
-  + .contact-content-card__info {
+.background-none .slider .contact-content-card__image-wrapper + .contact-content-card__info {
   @apply
     pl-6;
 }
 
-.background-none
-  .contact-content-list:not(.slider)
-  .center
-  .contact-content-card__info {
+.background-none .contact-content-list:not(.slider) .center .contact-content-card__info {
   @apply
     pl-10
     pr-10;
@@ -264,10 +255,7 @@
   }
 
   .background-none .contact-content-list .contact-content-card__info,
-  .background-none
-    .contact-content-list:not(.slider)
-    .center
-    .contact-content-card__info {
+  .background-none .contact-content-list:not(.slider) .center .contact-content-card__info {
     @apply
       pl-6
       pr-6;
@@ -280,14 +268,9 @@
     box-border;
 }
 
-.contact-content-card
-  > .contact-content-card__image-wrapper--full-width:not(.contact-content-card-spacing) {
-  border-top-left-radius: calc(
-    var(--text-boxes-radius) - var(--text-boxes-border-width)
-  );
-  border-top-right-radius: calc(
-    var(--text-boxes-radius) - var(--text-boxes-border-width)
-  );
+.contact-content-card > .contact-content-card__image-wrapper--full-width:not(.contact-content-card-spacing) {
+  border-top-left-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
+  border-top-right-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
   overflow: hidden;
 }
 
@@ -297,13 +280,13 @@
 }
 
 .contact-content-card__info .link {
-  @apply 
+  @apply
     no-underline
     mt-6;
 }
 
 .contact-content-card__info .icon-wrap {
-  @apply 
+  @apply
     ml-3
     whitespace-nowrap;
 }

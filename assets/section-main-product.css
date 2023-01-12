@@ -22,7 +22,7 @@
 }
 
 .spr-review-header {
-  border-bottom: 0.2rem solid black;
+  border-bottom: 0.2rem solid var(--color-scheme-accent);
   width: 33%;
   margin-bottom: 1rem;
 }
@@ -40,13 +40,7 @@
 }
 
 .divider {
-  /* border-bottom: 2px solid black; */
   margin: 2rem 0;
-  /* width: 33%; */
-}
-
-.accordion .summary__title + .icon-caret {
-  height: 0.5rem !important;
 }
 
 .product {
@@ -92,12 +86,12 @@ quantity-input {
 
 .primary input[type="radio"]:checked + label {
   background-color: rgb(var(--color-background-2)) !important;
-  color: white !important;
+  color: var(--color-scheme-bg) !important;
 }
 
 .accent-2 input[type="radio"]:checked + label {
   background-color: rgb(var(--color-accent-2)) !important;
-  color: white !important;
+  color: var(--color-scheme-bg) !important;
 }
 
 .product .select__select {
@@ -115,13 +109,12 @@ quantity-input {
 }
 
 .product-form__submit {
-  background: black !important;
-  color: white !important;
+  background: var(--color-scheme-accent);
+  color: var(--color-scheme-bg);
 }
 
 .shopify-payment-button__button {
-  border: 2px solid black;
-  height: 4.5rem !important;
+  border: 2px solid var(--color-scheme-accent);
   padding: 0;
 }
 
@@ -196,36 +189,6 @@ quantity-input {
   width: inherit;
 }
 
-/* 
-UNCLEAR WHY THE BELOW CODE IS BEING APPLIED TO NORMAL THUMBNAILS */
-
-/* .vertical_thumbnail .product__media-gallery {
-  display: flex !important;
-  flex-direction: row-reverse;
-}
-
-.vertical_thumbnail .thumbnail-list {
-  flex-wrap: nowrap;
-  flex-direction: column;
-}
-
-.vertical_thumbnail .slider-mobile-gutter {
-  width: 100%;
-}
-
-.vertical_thumbnail .thumbnail-slider {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  margin-right: auto;
-  width: inherit;
-} */
-
-/* vertical thumbnails right  */
-/* .product--vertical_thumbnail_right .product__media-gallery {
-  flex-direction: row;
-} */
-
 /* Product popup */
 
 .product-popup-modal {
@@ -250,8 +213,7 @@ UNCLEAR WHY THE BELOW CODE IS BEING APPLIED TO NORMAL THUMBNAILS */
 }
 
 .product-popup-modal__content {
-  /* background-color: rgb(var(--color-background)); */
-  background: white;
+  background-color: var(--color-scheme-bg);
   overflow: auto;
   height: 80%;
   margin: 0 auto;

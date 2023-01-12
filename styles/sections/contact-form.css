@@ -1,88 +1,83 @@
-.contact .field__input {
-  @apply 
-    border-3
-    rounded-none
-    h-16;
-}
-
 .contact {
   @apply
     px-12
     py-0;
-}
 
-.contact .title {
-  @apply 
-    text-3xl;
+  & .title {
+    @apply
+      text-3xl;
+  }
+
+  &__fields {
+    @media screen and (min-width: 768px) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-column-gap: 2rem;
+    }
+  }
+
+  & .field {
+    @apply
+      mb-6;
+
+    @media screen and (min-width: 768px) {
+      @apply
+        mb-8;
+    }
+
+    &__input {
+      @apply
+        border-3
+        rounded-none
+        h-16;
+    }
+  }
+
+  & img {
+    @apply
+      max-w-full;
+  }
+
+  & .form__message {
+    @apply
+      items-start;
+  }
+
+  & .icon-success {
+    @apply
+      mt-1;
+  }
+
+  &__button {
+    @apply
+      flex
+      mt-12;
+
+    @media screen and (min-width: 768px) {
+      @apply
+        mt-16;
+    }
+
+    & button {
+      @apply m-auto;
+    }
+  }
+
+  & .h0 {
+    @apply
+      hidden;
+  }
 }
 
 .helper-text {
-  @apply 
+  @apply
     my-1.7rem
     mx-0
     text-gray-500;
-}
 
-.helper-text .small {
-  @apply
-    !text-base
-    font-medium
-    !text-black-500;
-}
-
-.contact img {
-  @apply 
-    max-w-full;
-}
-
-.contact .form__message {
-  @apply 
-    items-start;
-}
-
-.contact .icon-success {
-  @apply 
-    mt-1;
-}
-
-.contact .field {
-  @apply
-    mb-6;
-}
-
-@media screen and (min-width: 750px) {
-  .contact .field {
-    @apply 
-      mb-8;
-  }
-}
-
-.contact__button {
-  @apply
-    flex
-    mt-12;
-}
-
-.contact__button button {
-  @apply m-auto;
-}
-
-.h0 {
-  @apply
-    hidden;
-}
-
-@media screen and (min-width: 750px) {
-  .contact__button {
+  &.small {
     @apply
-      mt-16;
-  }
-}
-
-@media screen and (min-width: 750px) {
-  .contact__fields {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-column-gap: 2rem;
+      text-base
+      font-medium;
   }
 }

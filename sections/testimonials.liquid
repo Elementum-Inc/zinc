@@ -9,7 +9,7 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -25,8 +25,8 @@
   endif
 -%}
 
-<div id="testimonials-section" class="testimonials color-{{ section.settings.color_scheme }}{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
-  <div class="page-width section-{{ section.id }}-padding isolate">
+<div id="testimonials-section" class="testimonials color-scheme color-scheme--{{ section.settings.color_scheme }}{% if section.settings.use_foreground %} color-scheme--foreground{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}">
+  <div class="container section-{{ section.id }}-padding isolate">
     {%- unless section.settings.title == blank -%}
       <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
         <h2 class="title {{ section.settings.heading_size }}">
@@ -57,7 +57,7 @@
           {%- endif -%}
 
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
-            <div class="multicolumn-card content-container {% if section.settings.display-style == 'blocks' %} background-blocks {% endif %}">
+            <div class="multicolumn-card content-container {% if section.settings.display-style == 'blocks' %} background-blocks{% endif %}">
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
@@ -87,7 +87,7 @@
                   </div>
                 </div>
               {%- endif -%}
-              <div class="multicolumn-card__info">
+              <div class="multicolumn-card__info{% if section.settings.display-style == 'blocks' %} color-scheme{% if section.settings.card_color_scheme != 'default' %} color-scheme--{{ section.settings.color_scheme }} {{ section.settings.card_color_scheme }}{% else %} color-scheme--{{ settings.content_card_color_scheme }}{% endif %}{% endif %}">
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
                 {%- endif -%}
@@ -97,9 +97,6 @@
                 {%- if block.settings.subtitle != blank -%}
                   <h5>{{ block.settings.subtitle | escape }}</h5>
                 {%- endif -%}
-                {% comment %} {%- if block.settings.link_label != blank -%}
-                  <a class="link multicolumn-btn" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.link_label | escape }}</a>
-                {%- endif -%} {% endcomment %}
               </div>
             </div>
           </li>
@@ -182,6 +179,33 @@
       "label": "Display style"
     },
     {
+      "type": "checkbox",
+      "id": "use_foreground",
+      "default": false,
+      "label": "Enable foreground color",
+      "info": "Use foreground color as background color to highlight section from rest of the page."
+    },
+    {
+      "type": "select",
+      "id": "card_color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default (theme settings)"
+        },
+        {
+          "value": "match",
+          "label": "Match section"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse section"
+        }
+      ],
+      "default": "default",
+      "label": "Card color scheme"
+    },
+    {
       "type": "select",
       "id": "image_width",
       "options": [
@@ -206,23 +230,31 @@
       "id": "image_ratio",
       "options": [
         {
-          "value": "adapt",
-          "label": "Adapt"
-        },
-        {
-          "value": "portrait",
-          "label": "Portrait"
+          "value": "auto",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
         },
         {
           "value": "square",
-          "label": "Square"
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
         },
         {
-          "value": "circle",
-          "label": "Circle"
+          "value": "lportrait",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
+        },
+        {
+          "value": "sportrait",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
+        },
+        {
+          "value": "widescreen",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
+        },
+        {
+          "value": "landscape",
+          "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
         }
       ],
-      "default": "adapt",
+      "default": "auto",
       "label": "Image aspect ratio"
     },
     {
@@ -269,10 +301,6 @@
         {
           "value": "background-2",
           "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
         }
       ],
       "default": "background-1",

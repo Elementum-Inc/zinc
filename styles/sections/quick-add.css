@@ -8,110 +8,8 @@
     z-1;
 }
 
-.quick-add-modal__content-info h2 {
-  @apply
-    !text-xl;
-}
-
-.quick-add-modal__content-info .product__title {
-  @apply 
-    !mb-0;
-}
-
-.quick-add-modal__content-info .price__regular {
-  @apply
-    text-lg;
-}
-
-.quick-add-modal__content-info .product__view-details {
-  @apply  
-    border-t-1
-    border-b-1
-    text-center
-    text-base
-    p-3;
-}
-
-.quick-add-modal__content-info .product__description {
-  @apply
-    !mt-0
-    !mr-0
-    !mb-8
-    !ml-0
-    text-xs;
-}
-
-.quick-add-modal__content-info .product-price {
-    @apply
-        !m-0
-        !text-xl;
-}
-
-.quick-add-modal__content-info .form__label {
-  @apply 
-    !text-sm
-    p-0
-    mt-8
-    mr-0
-    mb-0
-    ml-0;
-}
-
-.quick-add-modal__content-info .icon-caret {
-  @apply
-    h-0.5rem;
-}
-
-.quick-add-modal__content-info .select__select {
-  @apply
-    text-base
-    h-12;
-}
-
-.quick-add-modal__content-info .button {
-  @apply
-    !text-sm
-    !min-h-12
-    !text-sm
-    !min-h-12;
-
-}
-
-.quick-add-modal__content-info .shopify-payment-button {
-  @apply
-    !h-12;
-}
-
-.quick-add-modal__content-info .shopify-payment-button__button {
-  @apply
-    !text-sm
-    !min-h-10;
-}
-
-.quick-add-modal__content-info .quantity__input {
-  @apply
-    !w-full;
-}
-
-.quick-add-modal__content-info .quantity {
-  @apply
-    w-6.25rem
-    min-h-10;
-}
-
-.quick-add-modal__content-info .quantity__button {
-  background-color: #d9d9d94d !important;
-  width: 30px;
-  height: 30px;
-}
-
-.form__label {
-  @apply 
-    p-5;
-}
-
 .quick-add-modal {
-  @apply 
+  @apply
     box-border
     opacity-0
     fixed
@@ -123,66 +21,137 @@
     left-0
     w-full
     h-full;
-  background: rgba(var(--color-scheme-fg), 0.2);
+  background: rgb(var(--color-scheme-fg) .2);
+
+  &[open] {
+    @apply
+      opacity-100
+      visible
+      z-101;
+  }
+
+  &__toggle {
+    @apply hidden;
+  }
+
+  &__content {
+    @apply
+      absolute
+      top-0
+      left-1/2
+      transform -translate-x-1/2
+      mt-13
+      mx-auto
+      mb-0
+      bg-scheme-bg
+      filter
+      drop-shadow-md
+      max-w-full
+      w-2/3;
+
+    &-info {
+      & h2 {
+        @apply text-xl;
+      }
+
+      & .product {
+        @apply <md:(flex-col flex-nowrap);
+      }
+
+      & .product__title {
+        @apply mb-0;
+      }
+
+      & .price__regular {
+        @apply
+          text-lg;
+      }
+
+      & .product__view-details {
+        @apply
+          border-t-1
+          border-b-1
+          text-center
+          text-base
+          p-3;
+      }
+
+      & .product__info-container .product__description {
+        @apply
+          m-0
+          mb-8
+          text-xs;
+      }
+
+      & .form__label {
+        @apply
+          text-sm
+          p-0
+          mt-8
+          mr-0
+          mb-0
+          ml-0;
+      }
+
+      & .icon-caret {
+        @apply
+          h-.5rem;
+      }
+
+      & .select__select {
+        @apply
+          text-base
+          h-12;
+      }
+
+      & .quantity__input {
+        @apply w-full;
+      }
+
+      & .quantity {
+        @apply
+          w-6.25rem
+          min-h-10;
+      }
+    }
+
+    & .shopify-payment-button {
+      @apply
+        h-12;
+    }
+
+    & .caption-spaced {
+      display: none;
+    }
+  }
+
+  & .product-form__input input[type='radio'] + label {
+    @apply
+      border-scheme-accent
+      rounded-[5%];
+    margin: 0;
+  }
+
+  & .full-unstyled-link {
+    font-size: 20px;
+  }
+
+  & .form__label {
+    @apply
+      p-5;
+  }
+
+  & .shopify-payment-button__button,
+  & .product-form__submit {
+    @apply inline-block
+      min-h-[unset]
+      py-xs
+      px-8
+      bg-button-bg
+      text-button-fg
+      text-xl
+      focus:outline-none
+      focus:ring
+      focus:ring-scheme-accent;
+  }
 }
-
-.quick-add-modal__toggle {
-  @apply
-    !hidden;
-}
-
-.quick-add-modal[open] {
-  @apply
-    opacity-100
-    visible
-    z-101;
-}
-
-.quick-add-modal__content {
-  @apply
-    absolute
-    top-0
-    left-1/2
-    transform -translate-x-1/2
-    mt-13
-    mx-auto
-    mb-0
-    bg-scheme-bg
-    /* TODO: FIX THIS OVERFLOW  */
-    !overflow-auto
-    /* <md:overflow-hidden */
-    max-w-full
-    w-2/3;
-}
-
-.quick-add-modal__content .grid {
-  display: flex !important;
-}
-
-/* TODO: Update these button styles ??  */
-/* .quick-add-modal__content .product-form__submit {
-  background-color: black;
-  color: white;
-  border: 3px solid black;
-} */
-
-.quick-add-modal__content .shopify-payment-button {
-  @apply 
-    !h-12;
-}
-
-.quick-add-modal__content .caption-spaced {
-  display: none;
-}
-
-.product-form__input input[type="radio"] + label {
-  margin: 0
-  border: 1px solid !important
-  border-radius: 5% !important;
-}
-
-.full-unstyled-link {
-  font-size: 20px;
-}
-
-/* END DEMO STYLES */

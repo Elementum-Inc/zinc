@@ -50,7 +50,7 @@
 
   &--stacked {
     & .section-modal__inner {
-      @apply w-full border-t-2 bg-scheme-bg max-h-2/3 overflow-y-auto;
+      @apply w-full px-4 border-t-2 bg-scheme-bg max-h-2/3 overflow-y-auto;
     }
 
     & .section-modal__content {
@@ -67,7 +67,7 @@
   }
 
   &__image {
-    @apply !block flex-1;
+    @apply block flex-1;
   }
 
   &__inner {
@@ -83,7 +83,7 @@
   }
 
   &__content-wrapper {
-    @apply overflow-y-scroll max-h-full;
+    @apply overflow-y-auto max-h-full;
   }
 
   &__close {
