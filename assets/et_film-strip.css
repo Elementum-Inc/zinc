@@ -52,6 +52,12 @@
   flex-direction: column-reverse;
 }
 
+.film-strip .container:not(.splide) .splide__list {
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 .film-strip-card {
   display: flex;
   flex-direction: column;

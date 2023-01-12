@@ -6,6 +6,12 @@
   display: block;
 }
 
+.featured-collection-slider > div:not(.splide) .splide__list {
+  -ms-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
 #collection-tab-container {
   text-align: center;
   margin: auto;

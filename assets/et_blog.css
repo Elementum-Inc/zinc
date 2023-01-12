@@ -20,7 +20,7 @@
   margin-bottom: .5rem;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 768px) {
   .blog__posts--desktop-grid {
     display: -webkit-box !important;
     display: -ms-flexbox !important;
@@ -367,7 +367,7 @@
 }
 
 .article-template__social-sharing {
-  background-color: rgb(var(--theme-foreground));
+  background-color: rgb(var(--zinc-color-foreground));
   border-color: rgb(var(--color-background-2));
   border-width: 1px;
   display: -webkit-box;

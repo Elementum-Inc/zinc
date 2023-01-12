@@ -16898,9 +16898,11 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   }
 });
+window.Splide = Splide;
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_hero.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_image-with-text.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_blog.css")] : void 0, import.meta.url);
+__vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_product.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_modal.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_collapsible-content.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_contact-content.css")] : void 0, import.meta.url);
@@ -16948,7 +16950,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (document.querySelectorAll(".splide").length) {
     document.querySelectorAll(".splide").forEach((slider) => {
-      if (!slider.parentElement.classList.contains("product__media-gallery")) {
+      if (!slider.parentElement.classList.contains("product__media-gallery") && !slider.classList.contains("product-recommendations")) {
         new Splide(slider).mount();
       }
     });

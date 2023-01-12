@@ -35,11 +35,6 @@
   text-decoration-line: underline;
 }
 
-.featured-collection-slider .card, .featured-collection-slider .article-card {
-  margin-left: .5rem;
-  margin-right: .5rem;
-}
-
 .card.lift:not(.card--info-hover):hover, .card.lift:not(.card--info-hover):focus-within, .article-card.lift:not(.card--info-hover):hover, .article-card.lift:not(.card--info-hover):focus-within {
   overflow: visible;
 }
