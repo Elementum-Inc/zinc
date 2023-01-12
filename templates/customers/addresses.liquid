@@ -17,7 +17,7 @@
 
     <div data-address class="new-address-btn-container">
       <button
-        class="address-btn btn primary add-address-btn"
+        class="address-btn btn secondary add-address-btn"
         type="button"
         aria-expanded="false"
         aria-controls="AddAddress"
@@ -110,7 +110,7 @@
           {{ address | format_address }}
           <button
             type="button"
-            class="address-btn secondary delete-btn"
+            class="address-btn btn secondary delete-btn"
             aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
             data-target="{{ address.url }}"
             data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
@@ -119,7 +119,7 @@
           </button>
           <button
             type="button"
-            class="address-btn primary edit-btn"
+            class="address-btn btn primary edit-btn"
             id="EditFormButton_{{ address.id }}"
             aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
             aria-controls="EditAddress_{{ address.id }}"

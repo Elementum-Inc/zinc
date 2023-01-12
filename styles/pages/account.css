@@ -2,7 +2,7 @@
 
 .account h2 {
   font-size: 2rem;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-scheme-accent);
 }
 
 /* order history table */
@@ -39,37 +39,43 @@
   font-size: 1.2rem;
 }
 
-.add-address-btn {
-  background: black !important;
-  color: white !important;
-}
-
-.edit-btn {
-  font-weight: 700 !important;
-}
-
-.delete-btn {
-  /* background: gray !important; */
-  color: black !important;
-}
-
 .customer button {
-  font-size: 1rem !important;
-  min-height: 3rem !important;
+  @apply
+    bg-button-bg
+    text-button-fg
+    border-button-fg;
+  font-size: 1rem;
+  min-height: 3rem;
+}
+
+.addresses li > button {
+  @apply
+    bg-button-bg
+    text-button-fg
+    border-button-fg;
+  border: inherit;
+
+  &.edit-btn {
+    font-weight: 700;
+  }
+
+  /* &.delete-btn {
+    background: gray !important;
+    color: black !important;
+  } */
 }
 
 .customer li[data-address] {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-scheme-accent);
 }
 
 .new-address-btn-container {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-scheme-accent);
 }
 
 .default-address-label {
   font-weight: 700;
 }
-
 
 .account-details-container p {
   font-size: 1.25rem !important;
@@ -130,11 +136,3 @@ label[for='AddressProvinceNew'] {
 .order-address-container .status {
   font-style: italic;
 }
-
-
-/* .address-btn .primary {
-  /* TODO: COLOR SETTINGS  */
-/* background: black !important;
-  color: white !important; */
-/* } */
-

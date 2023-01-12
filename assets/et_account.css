@@ -1,6 +1,6 @@
 .account h2 {
   font-size: 2rem;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-scheme-accent);
 }
 
 @media screen and (min-width: 990px) {
@@ -31,30 +31,31 @@
   font-size: 1.2rem;
 }
 
-.add-address-btn {
-  background: black !important;
-  color: white !important;
-}
-
-.edit-btn {
-  font-weight: 700 !important;
-}
-
-.delete-btn {
-  color: black !important;
-}
-
 .customer button {
-  font-size: 1rem !important;
-  min-height: 3rem !important;
+  background-color: var(--button-bg);
+  border-color: var(--button-fg);
+  color: var(--button-fg);
+  font-size: 1rem;
+  min-height: 3rem;
+}
+
+.addresses li > button {
+  background-color: var(--button-bg);
+  border-color: var(--button-fg);
+  color: var(--button-fg);
+  border: inherit;
+}
+
+.addresses li > button.edit-btn {
+  font-weight: 700;
 }
 
 .customer li[data-address] {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-scheme-accent);
 }
 
 .new-address-btn-container {
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid var(--color-scheme-accent);
 }
 
 .default-address-label {
