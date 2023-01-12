@@ -136,6 +136,8 @@
                     class="splide__slide">
                     {% render 'card-product',
                       card_product: product,
+                      card_color_scheme: section.settings.card_color_scheme,
+                      section_color_scheme: section.settings.color_scheme,
                       media_aspect_ratio: section.settings.image_ratio,
                       show_secondary_image: section.settings.show_secondary_image,
                       show_price: section.settings.show_price,
@@ -338,6 +340,26 @@
     {
       "type": "header",
       "content": "t:sections.featured-collection.settings.header.content"
+    },
+    {
+      "type": "select",
+      "id": "card_color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default (theme settings)"
+        },
+        {
+          "value": "match",
+          "label": "Match section"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse section"
+        }
+      ],
+      "default": "default",
+      "label": "Card color scheme"
     },
     {
       "type": "select",
