@@ -1,23 +1,19 @@
 .featured-collection-slider {
   display: none;
 }
-
 .featured-collection-slider.active {
   display: block;
 }
-
 #collection-tab-container {
   text-align: center;
   margin: auto;
   padding-bottom: 20px;
 }
-
 .collection-tab-btn {
   background-color: var(--color-scheme-fg);
-  margin-top: .25rem;
-  margin-bottom: .25rem;
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
 }
-
 .featured-collection-divider {
   height: 1px;
   border: none;
@@ -27,11 +23,9 @@
   text-align: center;
   margin: 0 auto 2rem;
 }
-
 .featured-collection-slider .slider-buttons {
   display: none;
 }
-
 .featured-collection-slider .title-wrapper {
   margin-bottom: 1.2rem;
 }
