@@ -1,0 +1,138 @@
+/* ACCOUNT PAGE STYLES  */
+
+.account h2 {
+  font-size: 2rem;
+  border-bottom: 1px solid var(--color-scheme-accent);
+}
+
+/* order history table */
+
+@media screen and (min-width: 990px) {
+  :is(.account, .order) > div:nth-of-type(2) {
+    /* display: flex; */
+    margin-top: 5rem;
+  }
+}
+
+.order-history-container {
+  margin-top: 3rem;
+}
+
+.order-history td {
+  font-size: 1.25rem;
+}
+
+#RowOrder {
+  text-decoration: underline;
+}
+
+
+/* ADDRESSES PAGE STYLES  */
+
+.customer .field input {
+  font-size: 1.3rem;
+  border-bottom: 1px solid;
+  height: 4rem;
+}
+
+.customer .field label {
+  font-size: 1.2rem;
+}
+
+.customer button {
+  @apply
+    bg-button-bg
+    text-button-fg
+    border-button-fg;
+  font-size: 1rem;
+  min-height: 3rem;
+}
+
+.addresses li > button {
+  @apply
+    bg-button-bg
+    text-button-fg
+    border-button-fg;
+  border: inherit;
+
+  &.edit-btn {
+    font-weight: 700;
+  }
+
+  /* &.delete-btn {
+    background: gray !important;
+    color: black !important;
+  } */
+}
+
+.customer li[data-address] {
+  border-bottom: 1px solid var(--color-scheme-accent);
+}
+
+.new-address-btn-container {
+  border-bottom: 1px solid var(--color-scheme-accent);
+}
+
+.default-address-label {
+  font-weight: 700;
+}
+
+.account-details-container p {
+  font-size: 1.25rem !important;
+}
+
+.account-details-container a {
+  font-size: 1.15rem;
+}
+
+label[for='AddressCountryNew'],
+label[for='AddressProvinceNew'] {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: .6rem;
+}
+
+/* ORDER DETAILS STYLES  */
+
+.order h2 {
+  font-size: 1.85rem;
+}
+
+.order-title {
+  font-weight: 700;
+}
+
+.order > div:nth-of-type(2) > div:first-of-type h2 ~ p {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+
+.order-details {
+  border-top: 1px solid !important;
+  border-bottom: 1px solid !important;
+}
+
+.order-details td {
+  font-size: 1.25rem;
+}
+
+.order-details tfoot {
+  font-size: 1.25rem;
+}
+
+.order-details .totals-row td {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.order-product-title a {
+  font-size: 1.25rem;
+}
+
+.order-address-container p {
+  font-size: 1.25rem;
+}
+
+.order-address-container .status {
+  font-style: italic;
+}

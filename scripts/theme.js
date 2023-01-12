@@ -20,6 +20,9 @@ import "../styles/base/animations.css";
 import "../styles/layout/header.css";
 import "../styles/layout/footer.css";
 
+// Pages 
+import("../styles/pages/account.css");
+
 // Sections
 import("../styles/sections/hero.css");
 import("../styles/sections/image-with-text.css");
