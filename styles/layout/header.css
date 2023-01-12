@@ -183,7 +183,7 @@
 
     & .submenu {
       &__top-link {
-        @apply relative z-3 text-2.75 font-serif uppercase text-left w-full bg-scheme-bg pr-12;
+        @apply relative z-3 text-2.75 font-heading uppercase text-left w-full bg-scheme-bg pr-12;
       }
 
       &__links {
@@ -191,7 +191,7 @@
       }
 
       &__level1 {
-        @apply relative z-1 py-sm text-1.75 font-serif text-left w-full;
+        @apply relative z-1 py-sm text-1.75 font-heading text-left w-full;
       }
 
       &__level2 {
@@ -200,7 +200,7 @@
     }
 
     & .mobile-links a {
-      @apply text-lg font-serif;
+      @apply text-lg font-heading;
 
       &:not(:last-child) {
         @apply mr-4;
@@ -553,7 +553,7 @@
     }
 
     & .menu__top-link span {
-      @apply font-serif uppercase;
+      @apply font-heading uppercase;
     }
 
     & .menu__top-link {
@@ -837,7 +837,7 @@
     height: calc(-100% + 100vh);
 
     & h2 {
-      @apply font-serif text-lg;
+      @apply font-heading text-lg;
     }
 
     &--inner {

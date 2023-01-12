@@ -163,7 +163,7 @@ cart-items {
       text-sm
       md:text-lg
       lg:text-xl
-      font-serif
+      font-heading
       font-semibold;
   }
 }

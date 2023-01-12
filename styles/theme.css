@@ -112,7 +112,7 @@ body.menu--opened {
 .collection {
   &--empty {
     .title {
-      @apply font-serif;
+      @apply font-heading;
     }
   }
 }

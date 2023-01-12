@@ -48,8 +48,8 @@ export default {
       padding: "1rem",
     },
     fontFamily: {
-      sans: ["var(--font-body-family)"],
-      serif: ["var(--font-heading-family)"],
+      body: ["var(--font-body-family)"],
+      heading: ["var(--font-heading-family)"],
     },
     fontSize: {
       // calculated values below based on a root size of 16px

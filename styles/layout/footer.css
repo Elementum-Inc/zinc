@@ -1,5 +1,5 @@
 .footer {
-  @apply font-serif;
+  @apply font-heading;
 
   & .payment-methods {
     &__methods {
