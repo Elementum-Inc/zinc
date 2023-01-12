@@ -15,7 +15,7 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }}">
+<div class="color-scheme color-scheme--{{ section.settings.color_scheme }}">
   <div class="video-section isolate{% unless section.settings.full_width %} container{% endunless %} section-{{ section.id }}-padding">
     <div{% if section.settings.full_width %} class="container"{% endif %}>
       {%- unless section.settings.heading == blank -%}
