@@ -18,13 +18,13 @@
     {% render 'card-product', show_vendor: section.settings.show_vendor %}
 {% endcomment %}
 
-{% liquid 
+{% liquid
   assign card_hover_info = false
 
   if hover_info or settings.product_card_hover_show_info
     assign card_hover_info = true
   endif
-    
+
   case media_aspect_ratio
     when 'lportrait'
       assign ratio = 0.5625
@@ -127,7 +127,7 @@
                   <div class="caption-spaced light">{{ card_product.vendor }}</div>
                 </div>
               {%- endif -%}
-  
+
               {%- if show_rating and card_product.metafields.reviews.rating.value != blank -%}
                 {% liquid
                   assign rating_decimal = 0
@@ -149,7 +149,7 @@
                   <span class="visually-hidden">{{ card_product.metafields.reviews.rating_count }} {{ "accessibility.total_reviews" | t }}</span>
                 </p>
               {%- endif -%}
-  
+
               {%- if show_price -%}
                 {% render 'price', product: card_product, price_class: '' %}
               {%- endif -%}
@@ -248,7 +248,7 @@
                   </button>
                 </modal-opener>
                 <quick-add-modal id="QuickAdd-{{ card_product.id }}" class="quick-add-modal">
-                  <div role="dialog" aria-label="{{ 'products.product.choose_product_options' | t: product_name: card_product.title | escape }}" aria-modal="true" class="quick-add-modal__content global-settings-popup" tabindex="-1">
+                  <div role="dialog" aria-label="{{ 'products.product.choose_product_options' | t: product_name: card_product.title | escape }}" aria-modal="true" class="quick-add-modal__content global-settings-popup shadow-xl" tabindex="-1">
                     <button id="ModalClose-{{ card_product.id }}" type="button" class="quick-add-modal__toggle" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
                     <div id="QuickAddInfo-{{ card_product.id }}" class="quick-add-modal__content-info">
                     </div>
