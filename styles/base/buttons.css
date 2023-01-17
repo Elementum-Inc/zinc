@@ -78,13 +78,17 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
       self-center
       leading-0
       p-1
-      md:p-2;
+      md:p-2
+      relative
+      z-1;
 
     > svg {
       @apply
         h-[.75rem]
         w-[.75rem]
-        md:(h-4 w-4);
+        md:(h-4 w-4)
+        relative
+        -z-1;
     }
   }
 
