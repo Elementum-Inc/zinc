@@ -57,7 +57,7 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
-button, input, textarea, select {
+button, select, input, textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -392,6 +392,9 @@ ul {
 }
 .fixed {
   position: fixed;
+}
+.absolute {
+  position: absolute;
 }
 .relative {
   position: relative;
