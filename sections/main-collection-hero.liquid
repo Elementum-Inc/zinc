@@ -6,9 +6,11 @@
 
   if section.settings.show_collection_image and collection.image
     assign collectionImageAvailable = true
+    assign collectionImage = collection.image
   else
     if section.settings.alternate_collection_image
       assign collectionImageAvailable = true
+      assign collectionImage = section.settings.alternate_collection_image
     endif
   endif
 
@@ -24,21 +26,21 @@
 {% endif %}
 
 <div class="hero hero--{{ section.id }}{% if collectionImageAvailable %} has-image{% endif %}{% if collectionImageAvailable and section.settings.overlay > 0 %} has-overlay{% endif %} {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }}">
-  <div class="hero__inner">
+  <div class="hero__inner {{ section.settings.height }}">
     {%- if collectionImageAvailable -%}
       <div class="hero__image-wrapper {{ section.settings.height }}">
         <img
-          srcset="{{ collection.image | image_url: width: 480 }} 480w,
-          {{ collection.image | image_url: width: 640 }} 640w,
-          {{ collection.image | image_url: width: 768 }} 768w,
-          {{ collection.image | image_url: width: 1024 }} 1024w,
-          {{ collection.image | image_url: width: 1280 }} 1280w,
-          {{ collection.image | image_url: width: 1536 }} 1536w,
-          {{ collection.image | image_url }} {{ collection.image.width }}w"
-          src="{{ collection.image | image_url: width: 1024 }}"
-          alt="{{ collection.image.alt }}"
-          width="{{ collection.image.width }}"
-          height="{{ collection.image.height }}"
+          srcset="{{ collectionImage | image_url: width: 480 }} 480w,
+          {{ collectionImage | image_url: width: 640 }} 640w,
+          {{ collectionImage | image_url: width: 768 }} 768w,
+          {{ collectionImage | image_url: width: 1024 }} 1024w,
+          {{ collectionImage | image_url: width: 1280 }} 1280w,
+          {{ collectionImage | image_url: width: 1536 }} 1536w,
+          {{ collectionImage | image_url }} {{ collectionImage.width }}w"
+          src="{{ collectionImage | image_url: width: 1024 }}"
+          alt="{{ collectionImage.alt }}"
+          width="{{ collectionImage.width }}"
+          height="{{ collectionImage.height }}"
           class="hero__image"
         >
         </div>
