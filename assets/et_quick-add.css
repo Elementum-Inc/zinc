@@ -23,7 +23,7 @@
   visibility: hidden;
   width: 100%;
   z-index: -1;
-  background: rgb(var(--color-scheme-fg) .2);
+  background: rgb(var(--color-background-2) / .75);
 }
 
 .quick-add-modal[open] {
