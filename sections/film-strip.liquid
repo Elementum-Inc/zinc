@@ -125,55 +125,23 @@
   "settings": [
     {
       "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
-          "value": "background-1",
-          "label": "t:sections.all.colors.background_1.label"
-        },
-        {
-          "value": "background-2",
-          "label": "t:sections.all.colors.background_2.label"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.all.colors.label"
-    },
-    {
-      "type": "select",
       "id": "image_ratio",
       "options": [
         {
-          "value": "auto",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
+          "value": "adapt",
+          "label": "Adapt"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
         },
         {
           "value": "square",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
+          "label": "Square"
         },
         {
-          "value": "lportrait",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
-        },
-        {
-          "value": "sportrait",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
-        },
-        {
-          "value": "widescreen",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
-        },
-        {
-          "value": "landscape",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
+          "value": "circle",
+          "label": "Circle"
         }
       ],
       "default": "square",
@@ -199,20 +167,10 @@
         {
           "value": "center",
           "label": "t:sections.multicolumn.settings.column_alignment.options__2.label"
-        },
-        {
-          "value": "right",
-          "label": "t:sections.multicolumn.settings.column_alignment.options__3.label"
         }
       ],
       "default": "left",
       "label": "t:sections.multicolumn.settings.column_alignment.label"
-    },
-    {
-      "type": "checkbox",
-      "id": "enable_desktop_slider",
-      "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
-      "default": false
     },
     {
       "type": "header",
@@ -334,7 +292,6 @@
         {
           "type": "text",
           "id": "title",
-          "default": "Column",
           "label": "t:sections.multicolumn.blocks.column.settings.title.label"
         },
         {

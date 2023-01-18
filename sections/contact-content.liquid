@@ -191,35 +191,23 @@
       "id": "image_ratio",
       "options": [
         {
-          "value": "auto",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
+          "value": "adapt",
+          "label": "Adapt"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
         },
         {
           "value": "square",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
-        },
-        {
-          "value": "lportrait",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
-        },
-        {
-          "value": "sportrait",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
-        },
-        {
-          "value": "widescreen",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
-        },
-        {
-          "value": "landscape",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
+          "label": "Square"
         },
         {
           "value": "circle",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__7.label"
+          "label": "Circle"
         }
       ],
-      "default": "auto",
+      "default": "adapt",
       "label": "Image aspect ratio"
     },
     {
@@ -263,6 +251,14 @@
       "id": "color_scheme",
       "options": [
         {
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
+        },
+        {
           "value": "background-1",
           "label": "t:sections.all.colors.background_1.label"
         },
@@ -271,12 +267,8 @@
           "label": "t:sections.all.colors.background_2.label"
         },
         {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
         }
       ],
       "default": "background-1",
@@ -414,13 +406,13 @@
         {
           "type": "text",
           "id": "title",
-          "default": "Column",
+          "default": "Heading",
           "label": "Heading 1"
         },
         {
           "type": "richtext",
           "id": "text",
-          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
+          "default": "<p>Provide additional information about your brand or company, or the best way to reach out.</p>",
           "label": "Text 1"
         },
         {

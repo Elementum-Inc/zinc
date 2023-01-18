@@ -175,6 +175,10 @@
         {
           "value": "background-2",
           "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
         }
       ],
       "default": "background-1",
@@ -199,6 +203,10 @@
         {
           "value": "background-2",
           "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
         }
       ],
       "default": "background-2",
@@ -225,31 +233,19 @@
       "id": "image_ratio",
       "options": [
         {
-          "value": "auto",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
+          "value": "adapt",
+          "label": "Adapt"
         },
         {
-          "value": "square",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
+          "value": "small",
+          "label": "Small"
         },
         {
-          "value": "lportrait",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
-        },
-        {
-          "value": "sportrait",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
-        },
-        {
-          "value": "widescreen",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
-        },
-        {
-          "value": "landscape",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
+          "value": "large",
+          "label": "Large"
         }
       ],
-      "default": "auto",
+      "default": "adapt",
       "label": "Image aspect ratio"
     },
     {
@@ -493,7 +489,8 @@
         {
           "type": "richtext",
           "id": "row_content",
-          "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.row_content.label"
+          "label": "t:sections.collapsible_content.blocks.collapsible_row.settings.row_content.label",
+          "default": "<p>This is a great place to post information about your products, especially answers to FAQs!</p>"
         },
         {
           "type": "page",

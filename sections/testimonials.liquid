@@ -179,33 +179,6 @@
       "label": "Display style"
     },
     {
-      "type": "checkbox",
-      "id": "use_foreground",
-      "default": false,
-      "label": "Enable foreground color",
-      "info": "Use foreground color as background color to highlight section from rest of the page."
-    },
-    {
-      "type": "select",
-      "id": "card_color_scheme",
-      "options": [
-        {
-          "value": "default",
-          "label": "Default (theme settings)"
-        },
-        {
-          "value": "match",
-          "label": "Match section"
-        },
-        {
-          "value": "inverse",
-          "label": "Inverse section"
-        }
-      ],
-      "default": "default",
-      "label": "Card color scheme"
-    },
-    {
       "type": "select",
       "id": "image_width",
       "options": [
@@ -230,31 +203,23 @@
       "id": "image_ratio",
       "options": [
         {
-          "value": "auto",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__1.label"
+          "value": "adapt",
+          "label": "Adapt"
+        },
+        {
+          "value": "portrait",
+          "label": "Portrait"
         },
         {
           "value": "square",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__2.label"
+          "label": "Square"
         },
         {
-          "value": "lportrait",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__3.label"
-        },
-        {
-          "value": "sportrait",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__4.label"
-        },
-        {
-          "value": "widescreen",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__5.label"
-        },
-        {
-          "value": "landscape",
-          "label": "t:settings_schema.global.settings.aspect_ratio.options__6.label"
+          "value": "circle",
+          "label": "Circle"
         }
       ],
-      "default": "auto",
+      "default": "square",
       "label": "Image aspect ratio"
     },
     {
@@ -301,6 +266,10 @@
         {
           "value": "background-2",
           "label": "t:sections.all.colors.background_2.label"
+        },
+        {
+          "value": "inverse",
+          "label": "t:sections.all.colors.inverse.label"
         }
       ],
       "default": "background-1",
@@ -392,8 +361,8 @@
         {
           "type": "richtext",
           "id": "text",
-          "default": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>",
-          "label": "t:sections.multicolumn.blocks.column.settings.text.label"
+          "default": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>",
+          "label": "Text content"
         }
       ]
     }
