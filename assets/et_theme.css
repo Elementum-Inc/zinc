@@ -57,7 +57,7 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
-button, input, textarea, select {
+button, select, input, textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -1128,6 +1128,8 @@ p.small {
   align-self: center;
   line-height: 0rem;
   padding: 0.25rem;
+  position: relative;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   .btn--qty {
@@ -1136,7 +1138,9 @@ p.small {
 }
 .btn--qty > svg {
   height: .75rem;
+  position: relative;
   width: .75rem;
+  z-index: -1;
 }
 @media (min-width: 768px) {
   .btn--qty > svg {

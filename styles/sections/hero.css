@@ -1,21 +1,46 @@
 .hero {
   @apply relative bg-scheme-bg text-scheme-text;
 
+  &__inner {
+    @apply <lg:h-auto;
+
+    .hero:not(.has-overlay) & {
+      @apply lg:(flex flex-col);
+    }
+  }
+
+
+  &__image-wrapper {
+    .has-overlay & {
+      @apply lg:h-full;
+    }
+
+    .hero:not(.has-overlay) & {
+      @apply lg:(h-0 flex-grow);
+    }
+  }
+
   &__image {
     @apply h-full w-full object-cover;
   }
 
   &__text-wrapper {
-    @apply w-full h-full;
-
     .has-overlay & {
-      @apply lg:(absolute top-0 left-0 w-full h-full);
+      @apply w-full h-full lg:(absolute top-0 left-0);
 
       &::before {
         @apply lg:(absolute top-0 left-0 w-full h-full bg-scheme-bg z-0);
         content: '';
         opacity: var(--hero-overlay-opacity);
       }
+    }
+
+    .hero:not(.has-overlay) & {
+      @apply lg:(h-auto);
+    }
+
+    .hero:not(.has-image) & {
+      @apply lg:(h-full);
     }
   }
 
