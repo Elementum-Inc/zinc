@@ -21,7 +21,7 @@
     left-0
     w-full
     h-full;
-  background: rgb(var(--color-scheme-fg) .2);
+  background: rgb(var(--color-background-2) / .75);
 
   &[open] {
     @apply
