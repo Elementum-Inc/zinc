@@ -1,55 +1,44 @@
 #testimonials-section .title {
   font-size: 2.25rem;
 }
-
 #testimonials-section .content-container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
 }
-
 #testimonials-section .multicolumn-card__image-wrapper {
-  margin: 0;
+  margin: 0px;
 }
-
 #testimonials-section .media {
   min-width: 4.5rem;
 }
-
 #testimonials-section .media--circle {
   max-width: 6.25rem;
 }
-
 .background-blocks {
   flex-direction: column-reverse;
 }
-
 .background-blocks .testimonials-card__image-wrapper {
   margin: auto;
   height: 100px;
 }
-
 .background-blocks .multicolumn-card-spacing {
   padding-top: 0;
 }
-
 .background-blocks .media {
   margin-top: -4rem;
   margin-left: 40%;
   justify-content: center;
 }
-
 .background-blocks .multicolumn-card__info {
   padding: 1rem 1rem 4rem;
   margin: 1rem;
 }
-
 .background-blocks .multicolumn-card__image {
   height: 100px;
   width: 100px;
 }
-
 .background-blocks .multicolumn-card__image-wrapper {
   height: 3rem;
   width: 100%;
