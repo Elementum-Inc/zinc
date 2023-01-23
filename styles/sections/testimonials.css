@@ -1,8 +1,4 @@
 #testimonials-section {
-  & .title {
-    @apply
-      text-4xl;
-  }
 
   & .content-container {
     @apply
