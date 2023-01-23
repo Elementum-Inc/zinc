@@ -36,8 +36,10 @@
     <div class="featured-product product shopify-grid grid--1-col gradient color-scheme color-scheme--{{ section.settings.color_scheme }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         <media-gallery id="MediaGallery-{{ section.id }}" role="region" aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="stacked">
-          <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
-            {{ "accessibility.skip_to_product_info" | t }}
+          <a class="skip-to-content-link btn visually-hidden" href="#ProductInfo-{{ section.id }}">
+            <span class="btn__label">
+              {{ "accessibility.skip_to_product_info" | t }}
+            </span>
           </a>
           <div id="GalleryViewer-{{ section.id }}" class="product__media-list">
             {%- if product.selected_or_first_available_variant.featured_media != null -%}
@@ -62,7 +64,7 @@
           </div>
           {%- if first_3d_model -%}
             <button
-              class="button button--full-width product__xr-button"
+              class="btn btn--full secondary product__xr-button"
               type="button"
               aria-label="{{ 'products.product.xr_button_label' | t }}"
               data-shopify-xr
@@ -70,8 +72,10 @@
               data-shopify-title="{{ product.title | escape }}"
               data-shopify-xr-hidden
             >
-              {% render 'icon-3d-model' %}
-              {{ 'products.product.xr_button' | t }}
+              <span class="btn__label">
+                {% render 'icon-3d-model' %}
+                {{ 'products.product.xr_button' | t }}
+              </span>
             </button>
           {%- endif -%}
         </media-gallery>
@@ -278,6 +282,7 @@
                           class="product-form__submit btn button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}secondary{% else %}primary{% endif %}"
                           {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                         >
+                          <span class="btn__label">
                             <span>
                               {%- if product.selected_or_first_available_variant.available -%}
                                 {{ 'products.product.add_to_cart' | t }}
@@ -290,6 +295,7 @@
                                 <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
                               </svg>
                             </div>
+                          </span>
                         </button>
                         {%- if block.settings.show_dynamic_checkout -%}
                           {{ form | payment_button }}
@@ -306,7 +312,9 @@
                         class="product-form__submit btn button--full-width primary"
                         disabled
                       >
-                        {{ 'products.product.sold_out' | t }}
+                        <span class="btn__label">
+                          {{ 'products.product.sold_out' | t }}
+                        </span>
                       </button>
                     </div>
                   </div>

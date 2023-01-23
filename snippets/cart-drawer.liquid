@@ -17,15 +17,19 @@
   <div id="CartDrawer" class="cart-drawer">
     <div id="CartDrawer-Overlay"class="cart-drawer__overlay"></div>
     <div class="drawer__inner" role="dialog" aria-modal="true" aria-label="{{ 'sections.cart.title' | t }}" tabindex="-1">
-       {%- if cart == empty -%}
+      {%- if cart == empty -%}
         <div class="drawer__inner-empty">
           <div class="cart-drawer__warnings center{% if settings.cart_drawer_collection != blank %} cart-drawer__warnings--has-collection{% endif %}">
             <div class="cart-drawer__empty-content">
               <h2 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h2>
               <button class="drawer__close" type="button" onclick="this.closest('cart-drawer').close()" aria-label="{{ 'accessibility.close' | t }}">{% render 'icon-close' %}</button>
-              <a href="{{ routes.all_products_collection_url }}" class="button">
-                {{ 'general.continue_shopping' | t }}
-              </a>
+              <div class="buttons">
+                <a href="{{ routes.all_products_collection_url }}" class="btn secondary btn-shadow">
+                  <span class="btn__label">
+                    {{ 'general.continue_shopping' | t }}
+                  </span>
+                </a>
+              </div>
 
               {%- if shop.customer_accounts_enabled and customer == nil -%}
                 <p class="cart__login-title h3">{{ 'sections.cart.login.title' | t }}</p>
@@ -147,7 +151,7 @@
 
                         <td class="cart-item__totals right" role="cell" headers="CartDrawer-ColumnTotal">
                           <cart-remove-button id="CartDrawer-Remove-{{ item.index | plus: 1 }}" data-index="{{ item.index | plus: 1 }}">
-                              <button class="button button--tertiary remove-btn" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
+                              <button class="remove-btn" aria-label="{{ 'sections.cart.remove_title' | t: title: item.title }}">
                                 {% render 'icon-remove' %}
                               </button>
                             </cart-remove-button>
@@ -300,12 +304,16 @@
         <div class="cart__ctas" {{ block.shopify_attributes }}>
           <noscript>
             <button type="submit" class="cart__update-button btn primary" form="CartDrawer-Form">
-              {{ 'sections.cart.update' | t }}
+              <span class="btn__label">
+                {{ 'sections.cart.update' | t }}
+              </span>
             </button>
           </noscript>
 
           <button type="submit" id="CartDrawer-Checkout" class="cart__checkout-button btn secondary" name="checkout" form="CartDrawer-Form"{% if cart == empty %} disabled{% endif %}>
-            {{ 'sections.cart.checkout' | t }}
+            <span class="btn__label">
+              {{ 'sections.cart.checkout' | t }}
+            </span>  
           </button>
         </div>
       </div>

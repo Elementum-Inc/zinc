@@ -6,27 +6,50 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
 */
 
 .buttons {
+  @apply
+    flex
+    my-4;
+
+  > .btn {
+    @apply mx-2;
+  }
+
   > .btn:not(:last-child),
   > .btn:only-child {
-    @apply <sm:(my-4 mr-2);
+    @apply <sm:(mr-2);
+  }
+
+  .right & {
+    @apply justify-end;
+  }
+
+  .center & {
+    @apply justify-center;
   }
 }
 
 .btn {
   @apply inline-block
-    py-xs
-    px-8
-    bg-button-bg
-    text-button-fg
+    rounded-button
     focus:outline-none
     focus:ring
     focus:ring-scheme-accent;
 
+  &__label {
+    @apply
+      relative
+      z-1
+      block
+      rounded-button
+      bg-button-bg
+      text-button-fg
+      py-xs
+      px-8;
+  }
+
   &.primary {
     --button-bg: theme('colors.scheme-bg');
     --button-fg: theme('colors.scheme-accent');
-
-    @apply border border-scheme-accent;
   }
 
   &.secondary {
@@ -69,12 +92,26 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
     --button-fg: theme('colors.bg1');
   }
 
+  &--small {
+    @apply text-sm;
+  }
+
   &--large {
     @apply text-xl;
   }
 
+  &--full {
+    @apply w-full;
+  }
+
+  &--1/2 {
+    @apply w-1/2;
+  }
+
   &--qty {
     @apply
+      bg-button-bg
+      text-button-fg
       self-center
       leading-0
       p-1
@@ -91,22 +128,49 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
         -z-1;
     }
   }
-
-  &.round {
-    @apply rounded-[.625rem];
-  }
 }
 
 .btn-outline {
-  @apply border border-button-fg;
+  @apply relative;
+  padding: var(--buttons-border-width);
+
+  &::after {
+    @apply
+      content-DEFAULT
+      absolute
+      top-1/2
+      left-1/2
+      transform
+      -translate-y-1/2
+      -translate-x-1/2
+      block
+      h-full
+      w-full
+      border-t-button
+      border-l-button
+      border-b-button
+      border-r-button
+      border-button-fg;
+    border-radius: calc(var(--buttons-radius) + var(--buttons-border-width));
+  }
 }
 
 .btn-shadow {
   @apply relative;
 
   &::after {
-    @apply block absolute top-[6px] left-[6px] -z-1 h-full w-full border border-button-fg;
-    border-radius: inherit;
-    content: '';
+    @apply
+      content-DEFAULT
+      block
+      absolute
+      -z-1
+      h-full
+      w-full
+      border-[1.5px]
+      border-button-bg
+      rounded-button;
+    background: rgb(var(--button-fg) / var(--buttons-shadow-opacity));
+    left: var(--buttons-shadow-x-offset);
+    top: var(--buttons-shadow-y-offset);
   }
 }

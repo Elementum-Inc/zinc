@@ -30,8 +30,16 @@
         {%- endif -%}
         {%- if section.settings.button_label != blank -%}
               <div class="banner__buttons">
-                <a{% if section.settings.link %} href="{{ section.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="button {% if section.settings.button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ section.settings.button_label | escape }}</a>
-                <a{% if section.settings.second_link %} href="{{ section.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="button {% if section.settings.second_button_style_secondary %}button--secondary{% else %}button--primary{% endif %}">{{ section.settings.second_button_label | escape }}</a>
+                <a{% if section.settings.link %} href="{{ section.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if section.settings.button_style_secondary %}secondary{% else %}primary{% endif %}">
+                  <span class="btn__label">
+                    {{ section.settings.button_label | escape }}
+                  </span>
+                </a>
+                <a{% if section.settings.second_link %} href="{{ section.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if section.settings.second_button_style_secondary %}secondary{% else %}primary{% endif %}">
+                  <span class="btn__label">
+                    {{ section.settings.second_button_label | escape }}
+                  </span>
+                </a>
               </div>
             {%- endif -%}
         

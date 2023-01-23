@@ -55,18 +55,16 @@
             {%- when 'text' -%}
               <div class="image-with-text__text rte {{ block.settings.text_style }}" {{ block.shopify_attributes }}>{{ block.settings.text }}</div>
             {%- when 'buttons' -%}
-              <div class="image-with-text__buttons buttons">
-                {%- if block.settings.primary_button_label != blank -%}
-                  <a{% if block.settings.primary_button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.primary_button_link }}"{% endif %} class="btn btn-outline primary" {{ block.shopify_attributes }}>
-                    {{ block.settings.primary_button_label | escape }}
-                  </a>
-                {%- endif -%}
-                {%- if block.settings.secondary_button_label != blank -%}
-                  <a{% if block.settings.secondary_button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.secondary_button_link }}"{% endif %} class="btn btn-outline secondary" {{ block.shopify_attributes }}>
-                    {{ block.settings.secondary_button_label | escape }}
-                  </a>
-                {%- endif -%}
-              </div>
+              {% render 'buttons',
+                container_class: 'image-with-text__buttons',
+                primary_button_label: block.settings.primary_button_label,
+                primary_button_link: block.settings.primary_button_url,
+                secondary_button_label: block.settings.secondary_button_label,
+                secondary_button_link: block.settings.secondary_button_url,
+                type: block.settings.type,
+                style: block.settings.style,
+                reverse: block.settings.reverse
+              %}
           {%- endcase -%}
         {%- endfor -%}
       </div>
@@ -305,28 +303,50 @@
       "limit": 1,
       "settings": [
         {
+          "type": "select",
+          "id": "style",
+          "options": [
+            {
+              "value": "flat",
+              "label": "Flat"
+            },
+            {
+              "value": "outline",
+              "label": "Outline"
+            },
+            {
+              "value": "shadow",
+              "label": "Shadow"
+            }
+          ],
+          "label": "Style",
+          "default": "flat"
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse",
+          "label": "Reverse button order",
+          "default": false
+        },
+        {
           "type": "text",
           "id": "primary_button_label",
-          "default": "Button label",
-          "label": "t:sections.image-with-text.blocks.buttons.settings.primary_button_label.label",
-          "info": "t:sections.image-with-text.blocks.buttons.settings.primary_button_label.info"
+          "label": "Primary button label"
         },
         {
           "type": "url",
-          "id": "primary_button_link",
-          "label": "t:sections.image-with-text.blocks.buttons.settings.primary_button_link.label"
+          "id": "primary_button_url",
+          "label": "Primary button link"
         },
         {
           "type": "text",
           "id": "secondary_button_label",
-          "default": "Button label",
-          "label": "t:sections.image-with-text.blocks.buttons.settings.secondary_button_label.label",
-          "info": "t:sections.image-with-text.blocks.buttons.settings.secondary_button_label.info"
+          "label": "Secondary button label"
         },
         {
           "type": "url",
-          "id": "secondary_button_link",
-          "label": "t:sections.image-with-text.blocks.buttons.settings.secondary_button_link.label"
+          "id": "secondary_button_url",
+          "label": "Primary button link"
         }
       ]
     }

@@ -100,7 +100,9 @@
               </p>
             {%- endif -%}
             <a{% if card_collection == blank %} role="link" aria-disabled="true"{% else %} href="{{ card_collection.url }}"{% endif %} class="btn btn-outline primary">
-              View
+              <span class="btn__label">
+                View
+              </span>
             </a>
           </div>
         </div>

@@ -59,8 +59,10 @@
                 {%- render 'icon-arrow' -%}
               </button>
             </div>
-            <button type="submit" class="section-modal__submit btn secondary" name="commit" id="ModalSubscribeButton" aria-label="{{ block.settings.email_form_button_text }}">
-              {{ block.settings.email_form_button_text }}
+            <button type="submit" class="section-modal__submit btn secondary btn--large" name="commit" id="ModalSubscribeButton" aria-label="{{ block.settings.email_form_button_text }}">
+              <span class="btn__label">
+                {{ block.settings.email_form_button_text }}
+              </span>
             </button>
             {%- if form.errors -%}
               <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>

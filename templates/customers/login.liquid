@@ -124,7 +124,9 @@
       {%- endif -%}
 
       <button class="btn primary">
-        {{ 'customer.login_page.sign_in' | t }}
+        <span class="btn__label">
+          {{ 'customer.login_page.sign_in' | t }}
+        </span>
       </button>
 
       <a href="{{ routes.account_register_url }}">

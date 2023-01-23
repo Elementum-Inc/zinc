@@ -87,20 +87,15 @@
                     </div>
                   {% endif %}
                 {% when 'buttons' %}
-                  {% if block.settings.primary_button_url or block.settings.secondary_button_url %}
-                    <div class="buttons">
-                      {% if block.settings.primary_button_url and block.settings.primary_button_text %}
-                        <a class="btn btn-outline primary" href="{{ block.settings.primary_button_url }}">
-                          <span>{{ block.settings.primary_button_text }}</span>
-                        </a>
-                      {% endif %}
-                      {% if block.settings.secondary_button_url and block.settings.secondary_button_text %}
-                        <a class="btn btn-outline secondary" href="{{ block.settings.secondary_button_url }}">
-                          <span>{{ block.settings.secondary_button_text }}</span>
-                        </a>
-                      {% endif %}
-                    </div>
-                  {% endif %}
+                  {% render 'buttons',
+                    primary_button_label: block.settings.primary_button_label,
+                    primary_button_link: block.settings.primary_button_url,
+                    secondary_button_label: block.settings.secondary_button_label,
+                    secondary_button_link: block.settings.secondary_button_url,
+                    type: block.settings.type,
+                    style: block.settings.style,
+                    reverse: block.settings.reverse
+                  %}
               {% endcase %}
             {% endfor %}
           </div>
@@ -280,24 +275,50 @@
       "type": "buttons",
       "settings": [
         {
+          "type": "select",
+          "id": "style",
+          "options": [
+            {
+              "value": "flat",
+              "label": "Flat"
+            },
+            {
+              "value": "outline",
+              "label": "Outline"
+            },
+            {
+              "value": "shadow",
+              "label": "Shadow"
+            }
+          ],
+          "label": "Style",
+          "default": "flat"
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse",
+          "label": "Reverse button order",
+          "default": false
+        },
+        {
           "type": "text",
-          "id": "primary_button_text",
-          "label": "Primary Button text"
+          "id": "primary_button_label",
+          "label": "Primary button label"
         },
         {
           "type": "url",
           "id": "primary_button_url",
-          "label": "Primary Button link"
+          "label": "Primary button link"
         },
         {
           "type": "text",
-          "id": "secondary_button_text",
-          "label": "Secondary Button text"
+          "id": "secondary_button_label",
+          "label": "Secondary button label"
         },
         {
           "type": "url",
           "id": "secondary_button_url",
-          "label": "Primary Button link"
+          "label": "Primary button link"
         }
       ],
       "limit": 1

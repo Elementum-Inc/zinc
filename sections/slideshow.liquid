@@ -139,8 +139,16 @@
             {%- endif -%}
             {%- if block.settings.button_label != blank -%}
               <div class="banner__buttons">
-                <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.button_style_secondary %}secondary{% else %}primary{% endif %}">{{ block.settings.button_label | escape }}</a>
-                <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.second_button_style_secondary %}secondary{% else %}primary{% endif %}">{{ block.settings.second_button_label | escape }}</a>
+                <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.button_style_secondary %}secondary{% else %}primary{% endif %}">
+                  <span class="btn__label">
+                    {{ block.settings.button_label | escape }}
+                  </span>
+                </a>
+                <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.second_button_style_secondary %}secondary{% else %}primary{% endif %}">
+                  <span class="btn__label">
+                    {{ block.settings.second_button_label | escape }}
+                  </span>
+                </a>
               </div>
             {%- endif -%}
           </div>
@@ -166,8 +174,16 @@
 
               {%- if block.settings.button_label != blank -%}
                 <div class="banner__buttons">
-                  <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.button_style_secondary %}secondary{% else %}primary{% endif %}">{{ block.settings.button_label | escape }}</a>
-                  <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.second_button_style_secondary %}secondary{% else %}primary{% endif %}">{{ block.settings.second_button_label | escape }}</a>
+                  <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.button_style_secondary %}secondary{% else %}primary{% endif %}">
+                    <span class="btn__label">
+                      {{ block.settings.button_label | escape }}
+                    </span>
+                  </a>
+                  <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.second_button_style_secondary %}secondary{% else %}primary{% endif %}">
+                    <span class="btn__label">
+                      {{ block.settings.second_button_label | escape }}
+                    </span>
+                  </a>
                 </div>
               {%- endif -%}
             </div>
