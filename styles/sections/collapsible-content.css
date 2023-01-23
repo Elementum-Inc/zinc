@@ -62,17 +62,18 @@
 
 .collapsible-content__header {
   @apply
-    break-words;
+    break-words
+    mb-8;
 }
 
 .collapsible-content__heading {
   @apply
-    mb-8
+    mb-2
     mt-0;
 }
 
 @media screen and (min-width: 768px) {
-  .collapsible-content__heading {
+  .caption-spaced {
     @apply
       mb-12;
   }
@@ -94,10 +95,16 @@
   }
 }
 
-.caption-spaced + h2 {
-  @apply
-    m2;
+.caption-spaced {
+    @apply
+      normal-case
+      text-base;
 }
+
+/* .caption-spaced + h2 {
+  @apply
+    mb-2;
+} */
 
 @media screen and (min-width: 768px) {
   .collapsible-content .accordion {
