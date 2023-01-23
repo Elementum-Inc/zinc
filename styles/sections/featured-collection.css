@@ -46,6 +46,10 @@
   text-align: center;
 }
 
+.collection__description {
+  text-align: center;
+}
+
 .featured-collection-slider .title-wrapper h2 {
   font-size: 34px;
   font-weight: 700;
