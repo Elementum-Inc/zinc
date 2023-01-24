@@ -28,8 +28,8 @@
 <div id="testimonials-section" class="testimonials color-scheme color-scheme--{{ section.settings.color_scheme }}{% if section.settings.use_foreground %} color-scheme--foreground{% endif %}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div class="container section-{{ section.id }}-padding isolate">
     {%- unless section.settings.title == blank -%}
-      <div class="title-wrapper-with-link title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
-        <h2 class="title {{ section.settings.heading_size }}">
+      <div class="title-wrapper--self-padded-mobile title-wrapper--no-top-margin">
+        <h2 class="title {{ section.settings.heading_size }} align-{{ section.settings.heading_alignment }}">
           {{ section.settings.title | escape }}
         </h2>
         {%- if section.settings.button_label != blank and show_mobile_slider -%}
@@ -157,6 +157,26 @@
       ],
       "default": "h1",
       "label": "t:sections.all.heading_size.label"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Heading Alignment"
     },
     {
       "type": "select",

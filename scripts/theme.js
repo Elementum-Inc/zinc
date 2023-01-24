@@ -30,6 +30,7 @@ import("../styles/sections/blog.css");
 import("../styles/sections/product.css");
 import("../styles/sections/modal.css");
 import("../styles/sections/collapsible-content.css");
+import("../styles/sections/collection-list.css");
 import("../styles/sections/contact-content.css");
 import("../styles/sections/contact-form.css");
 import("../styles/sections/featured-collection.css");

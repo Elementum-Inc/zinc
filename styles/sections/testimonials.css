@@ -9,6 +9,18 @@
     @apply m-0;
   }
 
+  & .align-left {
+    @apply text-left;
+  }
+
+  & .align-center {
+    @apply text-center;
+  }
+
+  & .align-right {
+    @apply text-right;
+  }
+
   & .media {
     @apply
       min-w-18;
