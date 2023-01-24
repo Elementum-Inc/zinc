@@ -78,7 +78,7 @@
   }
 
   #large-footer-logo {
-    @apply w-screen h-auto flex justify-center mt-8;
+    @apply w-full h-auto flex justify-center mt-8;
   }
 
   .link {

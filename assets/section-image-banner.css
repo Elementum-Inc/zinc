@@ -402,13 +402,6 @@
   word-break: break-word;
 }
 
-.banner__buttons a {
-  min-width: calc(12rem + var(--buttons-border-width) * 2);
-  min-height: calc(2.5rem + var(--buttons-border-width) * 2);
-  font-size: 16px;
-  text-align: center;
-}
-
 @media screen and (max-width: 767px) {
   .banner--content-align-mobile-right .banner__buttons--multiple {
     justify-content: flex-end;

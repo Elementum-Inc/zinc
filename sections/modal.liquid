@@ -94,10 +94,12 @@
             {%- when 'modal_body' -%}
               "modal_content_body": "{{ block.settings.modal_content_body }}"
             {%- when 'modal_buttons' -%}
-              "modal_content_primary_cta_text": "{{ block.settings.modal_content_primary_cta_text }}",
-              "modal_content_primary_cta_url": "{{ block.settings.modal_content_primary_cta_url }}",
-              "modal_content_secondary_cta_text": "{{ block.settings.modal_content_secondary_cta_text }}",
-              "modal_content_secondary_cta_url": "{{ block.settings.modal_content_secondary_cta_url }}"
+              "style": "{{ block.settings.style }}",
+              "reverse": {{ block.settings.reverse }},
+              "primary_button_label": "{{ block.settings.primary_button_label }}",
+              "primary_button_url": "{{ block.settings.primary_button_url }}",
+              "secondary_button_label": "{{ block.settings.secondary_button_label }}",
+              "secondary_button_url": "{{ block.settings.secondary_button_url }}"
             {%- when 'email_form' -%}
               "email_form_input_placeholder": "{{ block.settings.email_form_input_placeholder }}",
               "email_form_button_text": "{{ block.settings.email_form_button_text }}",
@@ -231,25 +233,51 @@
       "limit": 1,
       "settings": [
         {
+          "type": "select",
+          "id": "style",
+          "options": [
+            {
+              "value": "flat",
+              "label": "Flat"
+            },
+            {
+              "value": "outline",
+              "label": "Outline"
+            },
+            {
+              "value": "shadow",
+              "label": "Shadow"
+            }
+          ],
+          "label": "Style",
+          "default": "flat"
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse",
+          "label": "Reverse button order",
+          "default": false
+        },
+        {
           "type": "text",
-          "id": "modal_content_primary_cta_text",
+          "id": "primary_button_label",
           "label": "Primary button label",
-          "default": "Primary CTA"
+          "default": "Primary button"
         },
         {
           "type": "url",
-          "id": "modal_content_primary_cta_url",
+          "id": "primary_button_url",
           "label": "Primary button link"
         },
         {
           "type": "text",
-          "id": "modal_content_secondary_cta_text",
+          "id": "secondary_button_label",
           "label": "Secondary button label",
-          "default": "Secondary CTA"
+          "default": "Secondary button"
         },
         {
           "type": "url",
-          "id": "modal_content_secondary_cta_url",
+          "id": "secondary_button_url",
           "label": "Secondary button link"
         }
       ]

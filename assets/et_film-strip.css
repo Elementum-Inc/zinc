@@ -58,6 +58,10 @@
   flex-wrap: wrap;
 }
 
+.film-strip .splide.is-initialized {
+  overflow-x: hidden;
+}
+
 .film-strip-card {
   display: flex;
   flex-direction: column;

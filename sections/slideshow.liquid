@@ -137,19 +137,16 @@
                 <span>{{ block.settings.subheading | escape }}</span>
               </div>
             {%- endif -%}
-            {%- if block.settings.button_label != blank -%}
-              <div class="banner__buttons">
-                <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.button_style_secondary %}secondary{% else %}primary{% endif %}">
-                  <span class="btn__label">
-                    {{ block.settings.button_label | escape }}
-                  </span>
-                </a>
-                <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.second_button_style_secondary %}secondary{% else %}primary{% endif %}">
-                  <span class="btn__label">
-                    {{ block.settings.second_button_label | escape }}
-                  </span>
-                </a>
-              </div>
+            {%- if block.settings.primary_button_label != blank or block.settings.secondary_button_label != blank -%}
+              {% render 'buttons',
+                container_class: 'banner__buttons',
+                primary_button_label: block.settings.primary_button_label,
+                primary_button_link: block.settings.primary_button_url,
+                secondary_button_label: block.settings.secondary_button_label,
+                secondary_button_link: block.settings.secondary_button_url,
+                style: block.settings.button_style,
+                reverse: block.settings.button_reverse
+              %}
             {%- endif -%}
           </div>
 
@@ -172,19 +169,16 @@
                 </div>
               {%- endif -%}
 
-              {%- if block.settings.button_label != blank -%}
-                <div class="banner__buttons">
-                  <a{% if block.settings.link %} href="{{ block.settings.link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.button_style_secondary %}secondary{% else %}primary{% endif %}">
-                    <span class="btn__label">
-                      {{ block.settings.button_label | escape }}
-                    </span>
-                  </a>
-                  <a{% if block.settings.second_link %} href="{{ block.settings.second_link }}"{% else %} role="link" aria-disabled="true"{% endif %} class="btn {% if block.settings.second_button_style_secondary %}secondary{% else %}primary{% endif %}">
-                    <span class="btn__label">
-                      {{ block.settings.second_button_label | escape }}
-                    </span>
-                  </a>
-                </div>
+              {%- if block.settings.primary_button_label != blank or block.settings.secondary_button_label != blank -%}
+                {% render 'buttons',
+                  container_class: 'banner__buttons',
+                  primary_button_label: block.settings.primary_button_label,
+                  primary_button_link: block.settings.primary_button_url,
+                  secondary_button_label: block.settings.secondary_button_label,
+                  secondary_button_link: block.settings.secondary_button_url,
+                  style: block.settings.button_style,
+                  reverse: block.settings.button_reverse
+                %}
               {%- endif -%}
             </div>
           <div>
@@ -334,40 +328,56 @@
           "label": "t:sections.slideshow.blocks.slide.settings.subheading.label"
         },
         {
-          "type": "text",
-          "id": "button_label",
-          "default": "Button label",
-          "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
-          "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
+          "type": "header",
+          "content": "Buttons"
         },
         {
-          "type": "url",
-          "id": "link",
-          "label": "t:sections.slideshow.blocks.slide.settings.link.label"
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            {
+              "value": "flat",
+              "label": "Flat"
+            },
+            {
+              "value": "outline",
+              "label": "Outline"
+            },
+            {
+              "value": "shadow",
+              "label": "Shadow"
+            }
+          ],
+          "label": "Button style",
+          "default": "flat"
         },
         {
           "type": "checkbox",
-          "id": "button_style_secondary",
-          "label": "t:sections.slideshow.blocks.slide.settings.secondary_style.label",
+          "id": "button_reverse",
+          "label": "Reverse button order",
           "default": false
         },
         {
           "type": "text",
-          "id": "second_button_label",
-          "default": "Secondary button label",
-          "label": "Second button label",
-          "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
+          "id": "primary_button_label",
+          "label": "Primary button label",
+          "default": "Primary button"
         },
         {
           "type": "url",
-          "id": "second_link",
-          "label": "Second button link"
+          "id": "primary_button_url",
+          "label": "Primary button link"
         },
         {
-          "type": "checkbox",
-          "id": "second_button_style_secondary",
-          "label": "Use outline button style for second button",
-          "default": false
+          "type": "text",
+          "id": "secondary_button_label",
+          "label": "Secondary button label",
+          "default": "Secondary button"
+        },
+        {
+          "type": "url",
+          "id": "secondary_button_url",
+          "label": "Secondary button link"
         },
         {
           "type": "select",
@@ -545,40 +555,56 @@
           "label": "t:sections.slideshow.blocks.slide.settings.subheading.label"
         },
         {
-          "type": "text",
-          "id": "button_label",
-          "default": "Button label",
-          "label": "t:sections.slideshow.blocks.slide.settings.button_label.label",
-          "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
+          "type": "header",
+          "content": "Buttons"
         },
         {
-          "type": "url",
-          "id": "link",
-          "label": "t:sections.slideshow.blocks.slide.settings.link.label"
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            {
+              "value": "flat",
+              "label": "Flat"
+            },
+            {
+              "value": "outline",
+              "label": "Outline"
+            },
+            {
+              "value": "shadow",
+              "label": "Shadow"
+            }
+          ],
+          "label": "Button style",
+          "default": "flat"
         },
         {
           "type": "checkbox",
-          "id": "button_style_secondary",
-          "label": "t:sections.slideshow.blocks.slide.settings.secondary_style.label",
+          "id": "button_reverse",
+          "label": "Reverse button order",
           "default": false
         },
         {
           "type": "text",
-          "id": "second_button_label",
-          "default": "Secondary button label",
-          "label": "Second button label",
-          "info": "t:sections.slideshow.blocks.slide.settings.button_label.info"
+          "id": "primary_button_label",
+          "label": "Primary button label",
+          "default": "Primary button"
         },
         {
           "type": "url",
-          "id": "second_link",
-          "label": "Second button link"
+          "id": "primary_button_url",
+          "label": "Primary button link"
         },
         {
-          "type": "checkbox",
-          "id": "second_button_style_secondary",
-          "label": "Use outline button style for second button",
-          "default": false
+          "type": "text",
+          "id": "secondary_button_label",
+          "label": "Secondary button label",
+          "default": "Secondary button"
+        },
+        {
+          "type": "url",
+          "id": "secondary_button_url",
+          "label": "Secondary button link"
         },
         {
           "type": "select",
