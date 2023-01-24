@@ -5,6 +5,9 @@ export default {
     include: ["./**/*.{liquid,vue,css,js}"],
   },
   theme: {
+    borderWidth: {
+      button: "var(--buttons-border-width)"
+    },
     colors: {
       black: "#0a0a0a",
       white: "#ffffff",
@@ -104,6 +107,7 @@ export default {
         product: "var(--product-card-corner-radius)",
         content: "var(--content-card-corner-radius)",
         input: "var(--inputs-radius)",
+        button: "var(--buttons-radius)"
       },
       dropShadow: {
         drawer:
@@ -122,6 +126,9 @@ export default {
         170: 1.7,
         180: 1.8,
         190: 1.9,
+      },
+      opacity: {
+        'button-shadow': 'var(--buttons-shadow-opacity)'
       },
       transitionDuration: {
         base: "var(--duration-default)"

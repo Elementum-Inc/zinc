@@ -359,8 +359,10 @@
           {%- if blog.moderated? -%}
             <p class="article-template__comment-warning caption">{{ 'blogs.article.moderated' | t }}</p>
           {%- endif -%}
-          <button type="submit" class="btn round secondary">
-            {{ 'blogs.article.post' | t }}
+          <button type="submit" class="btn secondary">
+            <span class="btn__label">
+              {{ 'blogs.article.post' | t }}
+            </span>
           </button>
         {% endform %}
       </div>

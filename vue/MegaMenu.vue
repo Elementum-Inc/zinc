@@ -192,18 +192,22 @@
                       v-if="block.settings.content_title ||
                         block.settings.content_subtitle ||
                         block.settings.content ||
-                        (block.settings.primary_button_text && block.settings.primary_button_url) ||
-                        (block.settings.secondary_button_text && block.settings.secondary_button_url)"
+                        (block.settings.primary_button_label && block.settings.primary_button_url) ||
+                        (block.settings.secondary_button_label && block.settings.secondary_button_url)"
                     >
                       <h1 v-if="block.settings.content_title">{{ block.settings.content_title }}</h1>
                       <h3 v-if="block.settings.content_subtitle">{{ block.settings.content_subtitle }}</h3>
                       <p v-if="block.settings.content" :html="block.settings.content"></p>
                       <div class="buttons" :class="[`color-scheme--${settings.mm_color_scheme}`]">
-                        <a v-if="block.settings.primary_button_text && block.settings.primary_button_url" :href="block.settings.primary_button_url" class="btn round primary btn-outline">
-                          {{ block.settings.primary_button_text }}
+                        <a v-if="block.settings.primary_button_label && block.settings.primary_button_url" :href="block.settings.primary_button_url" class="btn primary" :class="[`btn-${block.settings.button_style}`, block.settings.button_reverse ? 'order-2' : '']">
+                          <span class="btn__label">
+                            {{ block.settings.primary_button_label }}
+                          </span>
                         </a>
-                        <a v-if="block.settings.secondary_button_text && block.settings.secondary_button_url" :href="block.settings.secondary_button_url" class="btn round secondary btn-outline">
-                          {{ block.settings.secondary_button_text }}
+                        <a v-if="block.settings.secondary_button_label && block.settings.secondary_button_url" :href="block.settings.secondary_button_url" class="btn secondary" :class="[`btn-${block.settings.button_style}`]">
+                          <span class="btn__label">
+                            {{ block.settings.secondary_button_label }}
+                          </span>
                         </a>
                       </div>
                     </div>

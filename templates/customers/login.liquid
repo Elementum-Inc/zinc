@@ -44,10 +44,12 @@
       {%- endif -%}
 
       <button class="btn secondary">
-        {{ 'customer.login_page.submit' | t }}
+        <span class="btn__label">
+          {{ 'customer.login_page.submit' | t }}
+        </span>
       </button>
 
-      <a href="#login">
+      <a href="#login" class="underlined-link">
         {{ 'customer.login_page.cancel' | t }}
       </a>
     {%- endform -%}
@@ -124,7 +126,9 @@
       {%- endif -%}
 
       <button class="btn secondary">
-        {{ 'customer.login_page.sign_in' | t }}
+        <span class="btn__label">
+          {{ 'customer.login_page.sign_in' | t }}
+        </span>
       </button>
 
       <a href="{{ routes.account_register_url }}">
