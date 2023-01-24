@@ -1,5 +1,5 @@
 .multicolumn-card__image-wrapper--half-width {
-  width: 50%;
+  width: 50% !important;
 }
 @media screen and (min-width: 768px) {
   .multicolumn .multicolumn-list.slider, .multicolumn .multicolumn-list.grid--4-col-desktop {
@@ -125,6 +125,10 @@
 .multicolumn-card {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   position: relative;
 }
 .multicolumn-card__info {
