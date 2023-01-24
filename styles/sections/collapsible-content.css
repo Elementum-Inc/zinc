@@ -96,15 +96,10 @@
 }
 
 .caption-spaced {
-    @apply
-      normal-case
-      text-base;
-}
-
-/* .caption-spaced + h2 {
   @apply
-    mb-2;
-} */
+    normal-case
+    text-base;
+}
 
 @media screen and (min-width: 768px) {
   .collapsible-content .accordion {

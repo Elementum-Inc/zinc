@@ -1,6 +1,6 @@
 .collection-list-wrapper {
   & .collection-list-title {
-      @apply mb-8;
+    @apply mb-8;
   }
 
   & .align-left {
