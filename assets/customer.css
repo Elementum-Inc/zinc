@@ -322,77 +322,6 @@
   background-color: currentColor;
 }
 
-/* Login */
-.login a {
-  display: block;
-  margin: 0 auto;
-  width: fit-content;
-}
-
-.login a[href='#recover'] {
-  margin-left: 0;
-  margin-right: 0;
-}
-
-.login .field + a {
-  margin-top: 1rem;
-}
-
-.login p {
-  margin: 1.5rem 0;
-}
-
-.login h3 {
-  margin-top: 1.5rem;
-  text-align: left;
-  font-size: calc(var(--font-heading-scale) * 1.6rem);
-}
-
-#customer_login_guest button {
-  margin-top: 0;
-}
-
-#recover,
-#recover + div {
-  display: none;
-}
-
-#recover:target {
-  display: block;
-}
-
-#recover:target + div {
-  display: block;
-}
-
-#recover:target ~ #login,
-#recover:target ~ #login + div {
-  display: none;
-}
-
-#recover,
-#login {
-  scroll-margin-top: 20rem;
-}
-
-#recover {
-  margin-bottom: 0;
-}
-
-.activate button[name='decline'],
-.addresses li > button,
-.addresses form button[type] {
-  background-color: rgba(var(--color-background), var(--alpha-button-background));
-  color: rgb(var(--color-link));
-}
-
-@media only screen and (min-width: 768px) {
-  .activate button[name='decline'] {
-    margin-top: inherit;
-    margin-left: 1rem;
-  }
-}
-
 /* Account/Order */
 :is(.account, .order) {
   margin: 6rem auto 9rem;
@@ -473,18 +402,6 @@
   }
 }
 
-.account table td:first-of-type a {
-  padding: 1.1rem 1.5rem;
-  text-decoration: none;
-  box-shadow: 0 0 0 0.1rem rgba(var(--color-link), 0.2);
-  border: 0.1rem solid transparent;
-  font-size: 1.2rem;
-}
-
-.account table td:first-of-type a:hover {
-  box-shadow: 0 0 0 0.2rem rgba(var(--color-link), 0.2);
-}
-
 .order td:first-of-type {
   align-items: initial;
 }
@@ -496,13 +413,6 @@
   }
 }
 
-.order tfoot tr:last-of-type td,
-.order tfoot tr:last-of-type th {
-  font-size: 2.2rem;
-  padding-top: 1.5rem;
-  padding-bottom: 4rem;
-}
-
 @media screen and (min-width: 768px) {
   .order tfoot tr:last-of-type td,
   .order tfoot tr:last-of-type th {
@@ -510,9 +420,6 @@
   }
 }
 
-.order tfoot tr:last-of-type td:before {
-  font-size: 2.2rem;
-}
 
 .order table p,
 .order > div:nth-of-type(2) > div:first-of-type h2,

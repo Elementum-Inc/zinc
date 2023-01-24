@@ -12,8 +12,8 @@
     </a>
   </div>
 
-  <div>
-  <div class="account-details-container">
+  <div class="details-history-container">
+    <div class="account-details-container">
       <h2>{{ 'customer.account.details' | t }}</h2>
 
       {{ customer.default_address | format_address }}
@@ -113,7 +113,5 @@
         {%- endif -%}
       {% endpaginate %}
     </div>
-
-
   </div>
 </div>

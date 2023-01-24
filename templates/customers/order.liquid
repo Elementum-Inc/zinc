@@ -13,7 +13,7 @@
     <a href="{{ routes.account_url }}">{{ 'customer.account.return' | t }}</a>
   </div>
 
-  <div>
+  <div class="order-details-container">
     <div>
       <h2 class="order-title">{{ 'customer.order.title' | t: name: order.name }}</h2>
       {%- assign order_date = order.created_at | time_tag: format: "date_at_time" -%}
@@ -265,7 +265,7 @@
         </tfoot>
       </table>
     </div>
-    <div>
+    <div class="order-addresses-container">
       <div class="order-address-container">
         <h2>{{ 'customer.order.billing_address' | t }}</h2>
         <p class="status">
