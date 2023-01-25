@@ -14,18 +14,6 @@
   }
 }
 
-/* .align-left {
-  @apply text-left;
-}
-
-.align-center {
-  @apply text-center;
-}
-
-.align-right {
-  @apply text-right;
-} */
-
 #collection-tab-container {
   text-align: center;
   margin: auto;
