@@ -9,15 +9,6 @@
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-.align-left {
-  text-align: left;
-}
-.align-center {
-  text-align: center;
-}
-.align-right {
-  text-align: right;
-}
 #collection-tab-container {
   text-align: center;
   margin: auto;

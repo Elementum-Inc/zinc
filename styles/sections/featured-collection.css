@@ -14,7 +14,7 @@
   }
 }
 
-.align-left {
+/* .align-left {
   @apply text-left;
 }
 
@@ -24,7 +24,7 @@
 
 .align-right {
   @apply text-right;
-}
+} */
 
 #collection-tab-container {
   text-align: center;
