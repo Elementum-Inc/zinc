@@ -7,15 +7,6 @@
 #testimonials-section .multicolumn-card__image-wrapper {
   margin: 0px;
 }
-#testimonials-section .align-left {
-  text-align: left;
-}
-#testimonials-section .align-center {
-  text-align: center;
-}
-#testimonials-section .align-right {
-  text-align: right;
-}
 #testimonials-section .media {
   min-width: 4.5rem;
 }

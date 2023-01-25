@@ -2,16 +2,4 @@
   & .collection-list-title {
     @apply mb-8;
   }
-
-  & .align-left {
-    @apply text-left;
-  }
-
-  & .align-center {
-    @apply text-center;
-  }
-
-  & .align-right {
-    @apply text-right;
-  }
 }
