@@ -4,8 +4,18 @@
       flex;
   }
 
+  & .multicolumn-card__info {
+    @apply w-full;
+  }
+
+  & .multicolumn-list__item {
+    @apply m-auto;
+  }
+
   & .multicolumn-card__image-wrapper {
-    @apply m-0;
+    @apply 
+      m-auto
+      w-1/2;
   }
 
   & .media {
@@ -48,7 +58,7 @@
   }
 
   & .multicolumn-card__image-wrapper {
-    height: 3rem;
-    width: 100%;
+    height: 100%;
+    width: 10rem;
   }
 }
