@@ -28,12 +28,23 @@
     position: absolute;
   }
 
+  &.banner,
+  & .banner__media {
+    &::after {
+      @apply z-0;
+    }
+  }
+
   &.banner--small {
     min-height: 575px;
 
     &:not(.banner--adapt) {
       min-height: 575px;
     }
+  }
+
+  & .banner__content {
+    @apply z-0;
   }
 
   &__autoplay {
@@ -62,7 +73,7 @@
 .slideshow__controls {
   @apply text-scheme-text;
   position: absolute;
-  z-index: 3;
+  z-index: 1;
   bottom: 10%;
   margin-left: auto;
   margin-right: auto;
