@@ -115,7 +115,7 @@
       }
 
       & .product-form__quantity {
-        @apply 
+        @apply
           flex
           justify-center;
       }
