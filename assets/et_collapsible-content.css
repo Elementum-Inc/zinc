@@ -53,16 +53,17 @@
 }
 
 .collapsible-content__header {
+  margin-bottom: 2rem;
   overflow-wrap: break-word;
 }
 
 .collapsible-content__heading {
-  margin-bottom: 2rem;
+  margin-bottom: .5rem;
   margin-top: 0;
 }
 
 @media screen and (min-width: 768px) {
-  .collapsible-content__heading {
+  .caption-spaced {
     margin-bottom: 3rem;
   }
 }
@@ -77,6 +78,11 @@
 
 .collapsible-row-layout .accordion summary {
   border-top-width: 0;
+}
+
+.caption-spaced {
+  font-size: 1rem;
+  text-transform: none;
 }
 
 @media screen and (min-width: 768px) {

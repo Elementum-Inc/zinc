@@ -42,10 +42,6 @@
   margin-bottom: 1.2rem;
 }
 
-.collection__title h2 {
-  text-align: center;
-}
-
 .featured-collection-slider .title-wrapper h2 {
   font-size: 34px;
   font-weight: 700;
@@ -53,3 +49,4 @@
   letter-spacing: 1px;
   margin-bottom: 1rem;
 }
+
