@@ -126,7 +126,11 @@
             </div>
             {%- if show_badge -%}
               <div class="card__badge {{ settings.badge_position }}">
-                <span class="badge btn btn-{{ settings.content_badge_color_scheme }}">{{ 'blogs.article.blog' | t }}</span>
+                <span class="badge btn btn-{{ settings.content_badge_color_scheme }}">
+                  <span class="btn__label">
+                    {{ 'blogs.article.blog' | t }}
+                  </span>
+                </span>
               </div>
             {%- endif -%}
           </div>

@@ -84,7 +84,7 @@
   {%- if media.media_type == 'model' -%}
       </product-model>
       <button
-        class="button button--full-width product__xr-button"
+        class="btn secondary btn--full product__xr-button"
         type="button"
         aria-label="{{ 'products.product.xr_button_label' | t }}"
         data-shopify-xr
@@ -92,8 +92,10 @@
         data-shopify-title="title"
         data-shopify-xr-hidden
         >
-        {% render 'icon-3d-model' %}
-        {{ 'products.product.xr_button' | t }}
+          <span class="btn__label">
+            {% render 'icon-3d-model' %}
+            {{ 'products.product.xr_button' | t }}
+          </span>
       </button>
     </div>
   {%- else -%}

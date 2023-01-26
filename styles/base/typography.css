@@ -92,3 +92,32 @@ p.small {
     @apply my-2 text-lg leading-relaxed lg:(text-xl leading-[1.875rem]);
   }
 }
+
+.link {
+  @apply
+    text-sm
+    md:text-base
+    lg: text-lg;
+
+  .title-wrapper-with-link & {
+    @apply self-center;
+  }
+}
+
+.underlined-link {
+  @apply
+    underline
+    tracking-[4%];
+
+  &--small {
+    @apply
+      text-sm
+      tracking-[2%];
+  }
+
+  &--big {
+    @apply
+      text-lg
+      tracking-[6%];
+  }
+}

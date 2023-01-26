@@ -51,13 +51,17 @@
                 :id="[`NoMediaStandardBadge-SearchModal-${card.id}`]"
                 class="badge badge--bottom-left btn"
                 :class="[`btn-${soldOutColor}`]">
-                Sold Out
+                <span class="btn__label">
+                  Sold Out
+                </span>
               </span>
               <span v-if="card.compare_at_price > card.price && card.available"
                 :id="[`NoMediaStandardBadge-SearchModal-${card.id}`]"
                 class="badge badge--bottom-left btn"
                 :class="[`btn-${saleColor}`]">
-                On Sale
+                <span class="btn__label">
+                  On Sale
+                </span>
               </span>
           </div>
         </div>

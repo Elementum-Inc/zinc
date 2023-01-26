@@ -30,8 +30,10 @@
               <div v-if="trendingSearches" class="search__trends">
                 <h2>{{ trendingSearches.title }}</h2>
                 <div class="search__trends-tags">
-                  <a v-for="trend in trendingSearches.links" :key="trend.id" :href="trend.url" class="search__trends-tag btn secondary">
-                    {{ trend.title }}
+                  <a v-for="trend in trendingSearches.links" :key="trend.id" :href="trend.url" class="search__trends-tag btn secondary btn--small">
+                    <span class="btn__label">
+                      {{ trend.title }}
+                    </span>
                   </a>
                 </div>
               </div>
@@ -106,7 +108,11 @@
                 <div class="search__more">
                   <form action="/search" method="get" role="search">
                     <input name="q" v-model="query" type="hidden" />
-                    <button class="btn" type="submit">View More</button>
+                    <button class="btn" type="submit">
+                      <span class="btn__label">
+                        View More
+                      </span>
+                    </button>
                   </form>
                 </div>
               </div>

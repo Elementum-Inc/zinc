@@ -199,7 +199,7 @@
         "type": "range",
         "id": "buttons_border_thickness",
         "min": 0,
-        "max": 12,
+        "max": 16,
         "step": 1,
         "unit": "px",
         "label": "t:settings_schema.global.settings.thickness.label",
@@ -231,16 +231,6 @@
       },
       {
         "type": "range",
-        "id": "buttons_shadow_opacity",
-        "min": 0,
-        "max": 100,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.global.settings.opacity.label",
-        "default": 0
-      },
-      {
-        "type": "range",
         "id": "buttons_shadow_horizontal_offset",
         "min": -12,
         "max": 12,
@@ -257,16 +247,6 @@
         "step": 2,
         "unit": "px",
         "label": "t:settings_schema.global.settings.vertical_offset.label",
-        "default": 0
-      },
-      {
-        "type": "range",
-        "id": "buttons_shadow_blur",
-        "min": 0,
-        "max": 20,
-        "step": 5,
-        "unit": "px",
-        "label": "t:settings_schema.global.settings.blur.label",
         "default": 0
       }
     ]

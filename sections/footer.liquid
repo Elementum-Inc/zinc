@@ -174,7 +174,11 @@
                             </select>
                             {% render 'icon-caret' %}
                           </div>
-                          <button class="button button--tertiary">{{ 'localization.update_country' | t }}</button>
+                          <button class="btn secondary">
+                            <span class="btn__label">
+                              {{ 'localization.update_country' | t }}
+                            </span>
+                          </button>
                         {%- endform -%}
                       </noscript>
                       <localization-form>
