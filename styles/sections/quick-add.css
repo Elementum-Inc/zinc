@@ -154,4 +154,14 @@
       focus:ring
       focus:ring-scheme-accent;
   }
+
+  .splide {
+    &.is-active {
+      @apply p-0;
+    }
+
+    &__slide {
+      @apply block;
+    }
+  }
 }
