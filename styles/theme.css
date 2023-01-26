@@ -184,7 +184,7 @@ body.menu--opened {
   }
 
   &__pagination {
-    @apply relative <md:bottom-12;
+    @apply m-8 relative <md:bottom-12;
   }
 
   &__pagination__page {

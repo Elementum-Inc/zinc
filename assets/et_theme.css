@@ -57,7 +57,7 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
-button, select, input, textarea {
+button, input, textarea, select {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -299,12 +299,6 @@ ul {
   -webkit-align-items: center;
   align-items: center;
 }
-.order-2 {
-  -webkit-box-ordinal-group: 3;
-  -webkit-order: 2;
-  -ms-flex-order: 2;
-  order: 2;
-}
 .order-none {
   -webkit-box-ordinal-group: 1;
   -webkit-order: 0;
@@ -316,6 +310,12 @@ ul {
   -webkit-order: 1;
   -ms-flex-order: 1;
   order: 1;
+}
+.order-2 {
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2;
 }
 .h-sm {
   height: 24rem;
@@ -843,6 +843,7 @@ body.search--opened, body.menu--opened {
   }
 }
 .splide__pagination {
+  margin: 2rem;
   position: relative;
 }
 @media (max-width: 767.9px) {
@@ -1117,7 +1118,6 @@ p.small {
   justify-content: center;
 }
 .btn {
-  border-radius: var(--buttons-radius);
   display: inline-block;
 }
 .btn:focus {
@@ -1131,7 +1131,6 @@ p.small {
 }
 .btn__label {
   background-color: var(--button-bg);
-  border-radius: var(--buttons-radius);
   display: block;
   padding-top: .375rem;
   padding-bottom: .375rem;
@@ -1224,10 +1223,6 @@ p.small {
 }
 .btn-outline::after {
   border-color: var(--button-fg);
-  border-top-width: var(--buttons-border-width);
-  border-left-width: var(--buttons-border-width);
-  border-bottom-width: var(--buttons-border-width);
-  border-right-width: var(--buttons-border-width);
   display: block;
   height: 100%;
   position: absolute;
@@ -1259,7 +1254,6 @@ p.small {
 }
 .btn-shadow::after {
   border-color: var(--button-bg);
-  border-radius: var(--buttons-radius);
   border-width: 1.5px;
   display: block;
   height: 100%;

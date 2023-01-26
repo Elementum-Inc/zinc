@@ -86,21 +86,19 @@
                   </div>
                 </div>
               {%- endif -%}
-              <div class="multicolumn-card__info">
-                {%- if block.settings.title != blank -%}
-                  <h3>{{ block.settings.title | escape }}</h3>
-                {%- endif -%}
-                {%- if block.settings.text != blank -%}
-                  <div class="rte">{{ block.settings.text }}</div>
-                {%- endif -%}
-                {%- if block.settings.link_label != blank -%}
-                  <a class="link btn secondary" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>
-                    <span class="btn__label">
-                      {{ block.settings.link_label | escape }}
-                    </span>
-                  </a>
-                {%- endif -%}
-              </div>
+              {%- if block.settings.title != blank or block.settings.title != blank or block.settings.link_label != blank -%}
+                <div class="multicolumn-card__info">
+                  {%- if block.settings.title != blank -%}
+                    <h3>{{ block.settings.title | escape }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.text != blank -%}
+                    <div class="rte">{{ block.settings.text }}</div>
+                  {%- endif -%}
+                  {%- if block.settings.link_label != blank -%}
+                    <a class="link btn secondary" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>{{ block.settings.link_label | escape }}</a>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
             </div>
           </li>
         {%- endfor -%}
@@ -367,16 +365,6 @@
           ],
           "default": "above",
           "label": "Image position"
-        },
-        {
-          "type": "range",
-          "id": "image-width",
-          "min": 0,
-          "max": 500,
-          "step": 5,
-          "unit": "px",
-          "label": "Image size",
-          "default": 300
         },
         {
           "type": "range",
