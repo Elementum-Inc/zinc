@@ -107,9 +107,21 @@
     width: 100%;
   }
 
-  .multicolumn-list:not(.slider) {
+  .multicolumn-list:not(.splide__list) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .multicolumn-list.splide__list {
+    -ms-flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+
+  .multicolumn-list__item {
+    max-width: unset;
   }
 }
 

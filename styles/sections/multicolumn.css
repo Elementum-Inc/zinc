@@ -163,7 +163,7 @@
       w-full;
   }
 
-  &:not(.slider) {
+  &:not(.splide__list) {
     @media screen and (max-width: 767px) {
       @apply
         pl-6
@@ -171,7 +171,13 @@
     }
   }
 
+  &.splide__list {
+    @apply <md:flex-nowrap;
+  }
+
   &__item {
+    @apply <md:max-w-[unset];
+
     &:only-child {
       @apply
         max-w-6xl;
