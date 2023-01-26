@@ -4,6 +4,9 @@
 .featured-collection-slider.active {
   display: block;
 }
+.featured-collection-slider .splide__arrow {
+  margin: 0 -2.125rem;
+}
 .featured-collection-slider > div:not(.splide) .splide__list {
   -ms-flex-wrap: wrap;
   -webkit-flex-wrap: wrap;

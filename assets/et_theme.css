@@ -843,6 +843,7 @@ body.search--opened, body.menu--opened {
   }
 }
 .splide__pagination {
+  margin: 2rem;
   position: relative;
 }
 @media (max-width: 767.9px) {

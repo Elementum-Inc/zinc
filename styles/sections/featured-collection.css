@@ -5,6 +5,10 @@
     @apply block;
   }
 
+  & .splide__arrow {
+      margin: 0 -2.125rem;
+    }
+
   & > div {
     &:not(.splide) {
       & .splide__list {
