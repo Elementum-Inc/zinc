@@ -83,7 +83,7 @@
   }
 
   & .slider-button {
-    @apply 
+    @apply
       bg-fg
       h-12
       w-12;
@@ -92,7 +92,7 @@
 
   & .slider-button .icon {
     @apply h-12;
-}
+  }
 
   & .slider-counter__link--dots .dot {
     @apply
