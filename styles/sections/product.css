@@ -284,6 +284,10 @@ quantity-input {
 
 /* Product gallery sliders */
 .product {
+  & .splide__pagination {
+    @apply absolute;
+  }
+
   &--stacked {
     & .product__gallery-viewer.splide.is-initialized:not(.is-active) {
       & .splide__list {
