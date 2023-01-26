@@ -20,29 +20,26 @@
     <div{% if section.settings.full_width %} class="container"{% endif %}>
       {%- unless section.settings.heading == blank -%}
         <div class="title-wrapper title-wrapper--no-top-margin">
-
-          <h2 class="title {{ section.settings.heading_size }}">{{ section.settings.heading }}
+          <h2 class="title {{ section.settings.heading_size }}">
+            {{ section.settings.heading }}
           </h2>
           {%- if section.settings.subheading != blank -%}
-              <div class="banner__text" >
-                <span>{{ section.settings.subheading | escape }}</span>
-              </div>
-        {%- endif -%}
-
-        {%- if section.settings.primary_button_label != blank or section.settings.secondary_button_label != blank -%}
-          {% render 'buttons',
-            container_class: 'banner__buttons',
-            primary_button_label: section.settings.primary_button_label,
-            primary_button_link: section.settings.primary_button_url,
-            secondary_button_label: section.settings.secondary_button_label,
-            secondary_button_link: section.settings.secondary_button_url,
-            style: section.settings.button_style,
-            reverse: section.settings.button_reverse
-          %}
-        {%- endif -%}
-        
+            <div class="subtitle">
+              {{ section.settings.subheading | escape }}
+            </div>
+          {%- endif -%}
+          {%- if section.settings.primary_button_label != blank or section.settings.secondary_button_label != blank -%}
+            {% render 'buttons',
+              container_class: 'banner__buttons',
+              primary_button_label: section.settings.primary_button_label,
+              primary_button_link: section.settings.primary_button_url,
+              secondary_button_label: section.settings.secondary_button_label,
+              secondary_button_link: section.settings.secondary_button_url,
+              style: section.settings.button_style,
+              reverse: section.settings.button_reverse
+            %}
+          {%- endif -%}
         </div>
-        
       {%- endunless -%}
     </div>
     <noscript>
