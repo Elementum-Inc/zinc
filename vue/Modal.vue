@@ -62,23 +62,29 @@
                       </p>
   
                       <div v-else-if="block.type == 'modal_buttons' &&
-                        (block.settings.modal_content_primary_cta_url ||
-                        block.settings.modal_content_secondary_cta_url)"
+                        (block.settings.primary_button_url ||
+                        block.settings.secondary_button_url)"
                         class="section-modal__buttons buttons"
                       >
                         <a
-                          v-if="block.settings.modal_content_primary_cta_url"
-                          :href="block.settings.modal_content_primary_cta_url"
+                          v-if="block.settings.primary_button_url"
+                          :href="block.settings.primary_button_url"
                           class="btn primary"
+                          :class="[`btn-${block.settings.style}`, block.settings.reverse ? 'order-2' : '']"
                         >
-                          {{ block.settings.modal_content_primary_cta_text }}
+                          <span class="btn__label">
+                            {{ block.settings.primary_button_label }}
+                          </span>
                         </a>
                         <a
-                          v-if="block.settings.modal_content_secondary_cta_url"
-                          :href="block.settings.modal_content_secondary_cta_url"
+                          v-if="block.settings.secondary_button_url"
+                          :href="block.settings.secondary_button_url"
                           class="btn secondary"
+                          :class="[`btn-${block.settings.style}`]"
                         >
-                          {{ block.settings.modal_content_secondary_cta_text }}
+                          <span class="btn__label">
+                            {{ block.settings.secondary_button_label }}
+                          </span>
                         </a>
                       </div>
                     </div>

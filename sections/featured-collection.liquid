@@ -90,7 +90,15 @@
       {% if section.blocks.size > 1 %}
         <div id="collection-tab-container" class="container">
           {% for block in section.blocks %}
-            <button id="collection-tab-{{ forloop.index }}" aria-controls="featured-collection-{{ forloop.index }}" class="collection-tab-btn btn">{%- if block.settings.title != "" -%}{{ block.settings.title }}{%- else -%}{{ block.settings.collection.title }}{%- endif -%}</button>
+            <button id="collection-tab-{{ forloop.index }}" aria-controls="featured-collection-{{ forloop.index }}" class="collection-tab-btn btn">
+              <span class="btn__label">
+                {%- if block.settings.title != "" -%}
+                  {{ block.settings.title }}
+                {%- else -%}
+                  {{ block.settings.collection.title }}
+                {%- endif -%}
+              </span>
+            </button>
           {% endfor %}
         </div>
       {% endif %}
@@ -178,7 +186,15 @@
           class="{% if section.blocks[0].settings.collection.all_products_count < section.settings.products_to_show %}hidden {% endif %}{% if section.settings.view_all_style == 'link' %}link underlined-link{% else %}btn{% if section.settings.view_all_style == 'outline' %} btn-outline primary{% else %} secondary{% endif %}{% endif %}"
           aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title }}"
         >
+          {%- if section.settings.view_all_style != 'link' -%}
+            <span class="btn__label">
+          {%- endif -%}
+
           {{ 'sections.featured_collection.view_all' | t }}
+
+          {%- if section.settings.view_all_style != 'link' -%}
+            </span>
+          {%- endif -%}
         </a>
       </div>
     {%- endif -%}

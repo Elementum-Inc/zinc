@@ -107,15 +107,17 @@
         
         {%- if first_3d_model -%}
           <button
-            class="button button--full-width product__xr-button"
+            class="btn secondary product__xr-button"
             type="button"
             aria-label="{{ 'products.product.xr_button_label' | t }}"
             data-shopify-xr
             data-shopify-model3d-id="{{ first_3d_model.id }}"
             data-shopify-title="{{ product.title | escape }}"
             data-shopify-xr-hidden>
-            {% render 'icon-3d-model' %}
-            {{ 'products.product.xr_button' | t }}
+            <span class="btn__label">
+              {% render 'icon-3d-model' %}
+              {{ 'products.product.xr_button' | t }}
+            </span>
           </button>
         {%- endif -%}
 
@@ -472,6 +474,7 @@
                       class="product-form__submit btn button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}secondary{% else %}primary{% endif %}"
                       {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                     >
+                      <span class="btn__label">
                         <span>
                           {%- if product.selected_or_first_available_variant.available -%}
                             {{ 'products.product.add_to_cart' | t }}
@@ -484,6 +487,7 @@
                             <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
                           </svg>
                         </div>
+                      </span>
                     </button>
                     {%- if block.settings.show_dynamic_checkout -%}
                       {{ form | payment_button }}

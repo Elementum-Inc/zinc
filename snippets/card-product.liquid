@@ -168,9 +168,17 @@
           {% endif %}
           <div class="card__badge {{ settings.badge_position }}">
             {%- if card_product.available == false -%}
-              <span id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}" class="badge badge--bottom-left btn btn-{{ settings.sold_out_badge_color_scheme }}">{{ 'products.product.sold_out' | t }}</span>
+              <span id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}" class="badge badge--bottom-left btn btn-{{ settings.sold_out_badge_color_scheme }}">
+                <span class="btn__label">
+                  {{ 'products.product.sold_out' | t }}
+                </span>
+              </span>
             {%- elsif card_product.compare_at_price > card_product.price and card_product.available -%}
-              <span id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}" class="badge badge--bottom-left btn btn-{{ settings.sale_badge_color_scheme }}">{{ 'products.product.on_sale' | t }}</span>
+              <span id="NoMediaStandardBadge-{{ section_id }}-{{ card_product.id }}" class="badge badge--bottom-left btn btn-{{ settings.sale_badge_color_scheme }}">
+                <span class="btn__label">
+                  {{ 'products.product.on_sale' | t }}
+                </span>
+              </span>
             {%- endif -%}
           </div>
 
@@ -210,21 +218,23 @@
                       data-sold-out-message="true"
                       {% if card_product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                     >
-                      <span>
-                        {%- if card_product.selected_or_first_available_variant.available -%}
-                          {{ 'products.product.add_to_cart' | t }}
-                        {%- else -%}
+                      <span class="btn__label">
+                        <span>
+                          {%- if card_product.selected_or_first_available_variant.available -%}
+                            {{ 'products.product.add_to_cart' | t }}
+                          {%- else -%}
+                            {{ 'products.product.sold_out' | t }}
+                          {%- endif -%}
+                        </span>
+                        <span class="sold-out-message hidden">
                           {{ 'products.product.sold_out' | t }}
-                        {%- endif -%}
+                        </span>
+                        <div class="loading-overlay__spinner hidden">
+                          <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                            <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                          </svg>
+                        </div>
                       </span>
-                      <span class="sold-out-message hidden">
-                        {{ 'products.product.sold_out' | t }}
-                      </span>
-                      <div class="loading-overlay__spinner hidden">
-                        <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                        </svg>
-                      </div>
                     </button>
                   {%- endform -%}
                 </product-form>
@@ -239,12 +249,14 @@
                     aria-labelledby="{{ product_form_id }}-submit title-{{ section_id }}-{{ card_product.id }}"
                     data-product-url="{{ card_product.url }}"
                   >
-                    {{ 'products.product.choose_options' | t }}
-                    <div class="loading-overlay__spinner hidden">
-                      <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
-                        <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
-                      </svg>
-                    </div>
+                    <span class="btn__label">
+                      {{ 'products.product.choose_options' | t }}
+                      <div class="loading-overlay__spinner hidden">
+                        <svg aria-hidden="true" focusable="false" role="presentation" class="spinner" viewBox="0 0 66 66" xmlns="http://www.w3.org/2000/svg">
+                          <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
+                        </svg>
+                      </div>
+                    </span>
                   </button>
                 </modal-opener>
                 <quick-add-modal id="QuickAdd-{{ card_product.id }}" class="quick-add-modal">

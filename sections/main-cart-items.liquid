@@ -28,13 +28,18 @@
 <cart-items id="cart-items" class="container{% if cart == empty %} is-empty{% else %} section-{{ section.id }}-padding{% endif %}">
   <div class="title-wrapper-with-link">
     <h1 class="title title--primary">{{ 'sections.cart.title' | t }}</h1>
-    <a href="{{ routes.all_products_collection_url }}" class="underlined-link">{{ 'general.continue_shopping' | t }}</a>
+    <a href="{{ routes.all_products_collection_url }}" class="{% if section.settings.continue_shopping_style == 'button' %} btn secondary btn-shadow{% else %} underlined-link{% endif %}">
+      <span class="btn__label">
+        {{ 'general.continue_shopping' | t }}</a>
+      </span>
   </div>
 
   <div class="cart__warnings">
     <h1 class="cart__empty-text">{{ 'sections.cart.empty' | t }}</h1>
-    <a href="{{ routes.all_products_collection_url }}" class="button">
-      {{ 'general.continue_shopping' | t }}
+    <a href="{{ routes.all_products_collection_url }}" class="{% if section.settings.continue_shopping_style == 'button' %} btn secondary btn-shadow{% else %} underlined-link{% endif %}">
+      <span class="btn__label">
+        {{ 'general.continue_shopping' | t }}
+      </span>
     </a>
 
     {%- if shop.customer_accounts_enabled and customer == nil -%}
@@ -290,6 +295,22 @@
     {
       "type": "header",
       "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "select",
+      "id": "continue_shopping_style",
+      "label": "\"Continue Shopping\" style",
+      "options": [
+        {
+          "value": "button",
+          "label": "Button"
+        },
+        {
+          "value": "link",
+          "label": "Link"
+        }
+      ],
+      "default": "button"
     },
     {
       "type": "range",

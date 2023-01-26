@@ -271,7 +271,11 @@
                                   </h3>
                                 </div>
                                 <div class="card__badge {{ settings.badge_position }}">
-                                  <span class="badge btn btn-{{ settings.content_badge_color_scheme }}">{{ 'templates.search.page' | t }}</span>
+                                  <span class="badge btn btn-{{ settings.content_badge_color_scheme }}">
+                                    <span class="btn__label">
+                                      {{ 'templates.search.page' | t }}
+                                    </span>
+                                  </span>
                                 </div>
                               </div>
                             </div>
