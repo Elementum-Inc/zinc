@@ -16,10 +16,8 @@
     "buttons_border_thickness": 1,
     "buttons_border_opacity": 100,
     "buttons_radius": 40,
-    "buttons_shadow_opacity": 50,
     "buttons_shadow_horizontal_offset": 6,
     "buttons_shadow_vertical_offset": 6,
-    "buttons_shadow_blur": 5,
     "variant_pills_shadow_opacity": 30,
     "variant_pills_shadow_horizontal_offset": 0,
     "variant_pills_shadow_vertical_offset": 4,
@@ -89,6 +87,8 @@
     "currency_code_enabled": true,
     "cart_type": "drawer",
     "show_cart_note": true,
+    "buttons_shadow_opacity": 50,
+    "buttons_shadow_blur": 5,
     "predictive_card_show_secondary_image": true,
     "variant_pills_border_thickness": 1,
     "variant_pills_border_opacity": 70,
@@ -144,9 +144,7 @@
               "content_title": "Newest Arrivals",
               "content_subtitle": "Check out our latest fall fashion.",
               "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.<\/p>",
-              "primary_button_text": "Shop Now",
               "primary_button_url": "shopify:\/\/collections",
-              "secondary_button_text": "Read our trend blog",
               "secondary_button_url": "shopify:\/\/blogs\/news"
             }
           },
@@ -167,13 +165,13 @@
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc"
         ],
         "settings": {
-          "color_scheme": "secondary",
+          "color_scheme": "background-2",
           "logo_width": 64,
           "logo_position": "top-center",
           "menu": "main-menu",
           "collapse_menu_desktop": false,
           "enable_sticky_header": true,
-          "mm_color_scheme": "primary",
+          "mm_color_scheme": "background-1",
           "mm_type": "basic",
           "mm_toplink_behavior": "view_all_link",
           "mm_enable_caret": true,
@@ -595,9 +593,7 @@
                 "content_title": "Newest Arrivals",
                 "content_subtitle": "Check out our latest fall fashion.",
                 "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.<\/p>",
-                "primary_button_text": "Shop Now",
                 "primary_button_url": "shopify:\/\/collections",
-                "secondary_button_text": "Read our trend blog",
                 "secondary_button_url": "shopify:\/\/blogs\/news"
               }
             },
@@ -624,7 +620,7 @@
             "menu": "main-menu",
             "collapse_menu_desktop": false,
             "enable_sticky_header": false,
-            "mm_color_scheme": "primary",
+            "mm_color_scheme": "background-1",
             "mm_type": "bold",
             "mm_mobile_links": "",
             "user_menu_type": "minimal",
@@ -860,9 +856,7 @@
                 "content_title": "Newest Arrivals",
                 "content_subtitle": "Check out our latest fall fashion.",
                 "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.<\/p>",
-                "primary_button_text": "Shop Now",
                 "primary_button_url": "shopify:\/\/collections",
-                "secondary_button_text": "Read our trend blog",
                 "secondary_button_url": "shopify:\/\/blogs\/news"
               }
             },
@@ -883,13 +877,13 @@
             "5771ba81-313e-4f85-9ea9-d675f4eb17fc"
           ],
           "settings": {
-            "color_scheme": "primary",
+            "color_scheme": "background-1",
             "logo_width": 64,
             "logo_position": "left",
             "menu": "main-menu",
             "collapse_menu_desktop": false,
             "enable_sticky_header": true,
-            "mm_color_scheme": "primary",
+            "mm_color_scheme": "background-1",
             "mm_type": "bold",
             "mm_mobile_links": "",
             "user_menu_type": "minimal",
