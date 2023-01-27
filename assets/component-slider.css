@@ -288,15 +288,6 @@ slider-component ul {
   }
 }
 
-.slider-counter__link--dots .dot {
-  width: 4rem;
-  height: 0.25rem;
-  background-color: white;
-  border: 0.1rem solid rgba(var(--color-foreground), 0.5);
-  padding: 0;
-  display: block;
-}
-
 .slider-counter__link--active.slider-counter__link--dots .dot {
   /* background-color: rgb(var(--color-foreground)); */
   background-color: black;
@@ -377,9 +368,6 @@ slider-component ul {
   color: rgb(var(--color-foreground));
 }
 
-.slider-button .icon {
-  height: 0.6rem;
-}
 
 .slider-button[disabled] .icon {
   color: rgba(var(--color-foreground), 0.3);
