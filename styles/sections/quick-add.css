@@ -113,6 +113,12 @@
           w-6.25rem
           min-h-10;
       }
+
+      & .product-form__quantity {
+        @apply
+          flex
+          <md:justify-center;
+      }
     }
 
     & .shopify-payment-button {
@@ -163,5 +169,19 @@
     &__slide {
       @apply block;
     }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quick-add-modal__content {
+    margin-top: 10rem;
+    width: 80%;
+    max-height: calc(100% - 6rem);
+    overflow-y: auto;
+  }
+
+  quick-add-modal .quick-add-modal__toggle {
+    top: 2rem;
+    right: 2rem;
   }
 }

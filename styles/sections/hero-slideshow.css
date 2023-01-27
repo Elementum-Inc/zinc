@@ -94,8 +94,24 @@
   }
 
   & .slider-button {
-    @apply bg-scheme-accent;
+    @apply
+      bg-fg
+      h-12
+      w-12;
     border-radius: 50%;
+  }
+
+  & .slider-button .icon {
+    @apply h-12;
+  }
+
+  & .slider-counter__link--dots .dot {
+    @apply
+      block
+      w-8
+      h-1
+      bg-fg
+      p-0;
   }
 }
 

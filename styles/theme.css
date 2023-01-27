@@ -131,7 +131,7 @@ body.menu--opened {
     @apply p-[inherit];
 
     & .splide__list {
-      @apply flex flex-wrap;
+      @apply flex flex-wrap justify-center;
     }
 
     & .splide__arrows {
@@ -153,6 +153,10 @@ body.menu--opened {
     }
   }
 
+  &--draggable {
+    @apply pb-4 md:pb-[3rem];
+  }
+
   &__track {
     @apply z-1;
     margin: 0 calc(var(--grid-mobile-horizontal-spacing) * -1);
@@ -171,7 +175,10 @@ body.menu--opened {
   }
 
   &__arrows {
-    @apply relative flex justify-between md:(bottom-8 h-12 absolute w-full left-0);
+    @apply relative
+      flex
+      justify-between
+      md:(bottom-8 h-12 absolute w-full left-0);
   }
 
   &__arrow {
@@ -186,7 +193,9 @@ body.menu--opened {
   }
 
   &__pagination {
-    @apply relative <md:bottom-12;
+    @apply m-2
+      bottom-[2.5rem]
+      md:(m-4 -bottom-2);
   }
 
   &__pagination__page {

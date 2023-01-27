@@ -139,6 +139,22 @@
   width: 6.25rem;
 }
 
+.quick-add-modal__content-info .product-form__quantity {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@media (max-width: 767.9px) {
+  .quick-add-modal__content-info .product-form__quantity {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+}
+
 .quick-add-modal__content .shopify-payment-button {
   height: 3rem;
 }
@@ -181,4 +197,18 @@
   -webkit-box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   box-shadow: var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow, 0 0 #0000);
   --tw-ring-color: var(--color-scheme-accent);
+}
+
+@media screen and (min-width: 768px) {
+  .quick-add-modal__content {
+    margin-top: 10rem;
+    width: 80%;
+    max-height: calc(100% - 6rem);
+    overflow-y: auto;
+  }
+
+  quick-add-modal .quick-add-modal__toggle {
+    top: 2rem;
+    right: 2rem;
+  }
 }

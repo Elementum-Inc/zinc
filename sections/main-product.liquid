@@ -801,25 +801,7 @@
     {
       "type": "quantity_selector",
       "name": "t:sections.main-product.blocks.quantity_selector.name",
-      "limit": 1,
-      "settings": [
-        {
-          "type": "select",
-          "id": "quantity_selector_type",
-          "label": "Quantity selector type",
-          "options": [
-            {
-              "value": "dropdown",
-              "label": "Dropdown"
-            },
-            {
-              "value": "buttons",
-              "label": "Buttons"
-            }
-          ],
-          "default": "buttons"
-        }
-      ]
+      "limit": 1
     },
     {
       "type": "variant_picker",
@@ -900,7 +882,8 @@
           "type": "checkbox",
           "id": "show_variant_labels",
           "default": true,
-          "label": "Hide variant labels"
+          "label": "Hide variant labels",
+          "info": "Only applies when pill variant type is selected."
         }
       ]
     },

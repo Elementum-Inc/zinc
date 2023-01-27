@@ -1,0 +1,5 @@
+.collection-list-wrapper {
+  & .collection-list-title {
+    @apply mb-8;
+  }
+}

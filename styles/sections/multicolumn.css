@@ -225,6 +225,7 @@
 
 .multicolumn-card {
   @apply
+    flex
     relative
     box-border;
 
@@ -263,7 +264,7 @@
 
     &--half-width {
       @apply
-        w-1/2;
+        !w-1/2;
     }
   }
 
