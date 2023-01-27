@@ -58,7 +58,19 @@
   }
 
   & .splide.is-initialized {
-    @apply overflow-x-hidden;
+    @apply overflow-hidden;
+
+    &.splide--draggable {
+      @apply
+        py-8
+        md:pt-4;
+    }
+
+    & .splide__pagination {
+      @apply
+        bottom-0
+        md:-bottom-4;
+    }
   }
 }
 
