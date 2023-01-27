@@ -87,7 +87,7 @@
                     </div>
                   </div>
                 {%- endif -%}
-                {%- if block.settings.title != blank or block.settings.title != blank or block.settings.link_label != blank -%}
+                {%- if block.settings.title != blank or block.settings.title != blank or block.settings.button_label != blank -%}
                   <div class="multicolumn-card__info">
                     {%- if block.settings.title != blank -%}
                       <h3>{{ block.settings.title | escape }}</h3>
@@ -95,12 +95,14 @@
                     {%- if block.settings.text != blank -%}
                       <div class="rte">{{ block.settings.text }}</div>
                     {%- endif -%}
-                    {%- if block.settings.link_label != blank -%}
-                      <a class="link btn secondary" {% if block.settings.link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.link }}"{% endif %}>
-                        <span class="btn__label">
-                          {{ block.settings.link_label | escape }}
-                        </span>
-                      </a>
+                    {%- if block.settings.button_label != blank -%}
+                      <div class="buttons">
+                        <a class="btn secondary" {% if block.settings.button_link == blank %}role="link" aria-disabled="true"{% else %}href="{{ block.settings.button_link }}"{% endif %}>
+                          <span class="btn__label">
+                            {{ block.settings.button_label | escape }}
+                          </span>
+                        </a>
+                      </div>
                     {%- endif -%}
                   </div>
                 {%- endif -%}
