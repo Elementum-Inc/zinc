@@ -74,7 +74,7 @@
   document.addEventListener('shopify:section:load', () => { renderFeaturedCollections() });
 </script>
 
-<div class="section color-scheme--{{ section.settings.color_scheme }} isolate">
+<div class="section featured-collection color-scheme--{{ section.settings.color_scheme }} isolate">
   <div class="collection section-{{ section.id }}{% if section.settings.full_width %} collection--full-width{% endif %}">
       <div class="collection__title title-wrapper title-wrapper--no-top-margin container{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
         {%- if section.settings.title != blank -%}

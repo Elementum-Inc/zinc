@@ -92,7 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (document.querySelectorAll('.splide').length) {
     document.querySelectorAll('.splide').forEach(slider => {
-      if (!slider.parentElement.classList.contains('product__media-gallery') && !slider.classList.contains('product-recommendations')) {
+      if (!slider.parentElement.classList.contains('product__media-gallery') &&
+          !slider.classList.contains('product-recommendations')) {
         new Splide(slider).mount();
       }
     });
