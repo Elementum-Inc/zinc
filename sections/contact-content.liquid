@@ -64,12 +64,12 @@
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="contact-content-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
             <div class="contact-content-card content-container {{ block.settings.column_orientation }}" style="background-color: {{ block.settings.column_background_color }}; color: {{ block.settings.column_font_color }};">
               {%- if block.settings.image != blank -%}
-                {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
+                {% if section.settings.image_ratio == 'auto' or section.settings.image_ratio == 'circle' %}
                   {% assign spaced_image = true %}
                 {% endif %}
                 <div class="contact-content-card__image-wrapper contact-content-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} contact-content-card-spacing{% endif %}" style="padding: {{ block.settings.image-padding }}px;">
                   <div class="media media--transparent media--{{ section.settings.image_ratio }}"
-                    {% if section.settings.image_ratio == 'adapt' %}
+                    {% if section.settings.image_ratio == 'auto' %}
                       style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
                     {% endif %}>
                     <img

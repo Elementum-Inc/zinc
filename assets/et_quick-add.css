@@ -199,6 +199,14 @@
   --tw-ring-color: var(--color-scheme-accent);
 }
 
+.quick-add-modal .splide.is-active {
+  padding: 0;
+}
+
+.quick-add-modal .splide__slide {
+  display: block;
+}
+
 @media screen and (min-width: 768px) {
   .quick-add-modal__content {
     margin-top: 10rem;

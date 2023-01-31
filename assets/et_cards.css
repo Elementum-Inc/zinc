@@ -297,7 +297,6 @@
   display: grid;
   padding: 0;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  grid-template-rows: repeat(5, minmax(0, 1fr));
 }
 
 .card__inner .card__content .card-information, .article-card__inner .card__content .card-information {

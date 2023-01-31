@@ -59,12 +59,9 @@
           <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %} {{ section.settings.column_alignment }} {{ empty_column }}" {{ block.shopify_attributes }}>            
             <div class="multicolumn-card content-container {% if section.settings.display-style == 'blocks' %} background-blocks{% endif %}">
               {%- if block.settings.image != blank -%}
-                {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
-                  {% assign spaced_image = true %}
-                {% endif %}
                 <div class="multicolumn-card__image-wrapper">
                   <div class="media media--transparent media--{{ section.settings.image_ratio }}"
-                    {% if section.settings.image_ratio == 'adapt' %}
+                    {% if section.settings.image_ratio == 'auto' %}
                       style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
                     {% endif %}>
                     <img

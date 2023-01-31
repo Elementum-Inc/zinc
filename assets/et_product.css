@@ -276,6 +276,10 @@ quantity-input {
   width: 2.2rem;
 }
 
+.product .splide__pagination {
+  position: absolute;
+}
+
 @media (min-width: 768px) {
   .product--stacked .product__gallery-viewer.splide.is-initialized:not(.is-active) .splide__list {
     display: -webkit-box;

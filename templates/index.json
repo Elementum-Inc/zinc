@@ -10,12 +10,12 @@
             "heading": "Fall is Here",
             "heading_size": "h1",
             "subheading": "It's actually almost over!",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": true,
-            "second_button_label": "Secondary button label",
-            "second_link": "",
-            "second_button_style_secondary": false,
+            "button_style": "flat",
+            "button_reverse": false,
+            "primary_button_label": "Primary button",
+            "primary_button_url": "",
+            "secondary_button_label": "Secondary button",
+            "secondary_button_url": "",
             "box_align": "middle-center",
             "text_alignment": "center",
             "image_overlay_opacity": 30,
@@ -31,12 +31,12 @@
             "heading": "Are you ready for winter?",
             "heading_size": "h1",
             "subheading": "Better get some gorgeous new winter clothes!",
-            "button_label": "",
-            "link": "",
-            "button_style_secondary": false,
-            "second_button_label": "",
-            "second_link": "",
-            "second_button_style_secondary": false,
+            "button_style": "flat",
+            "button_reverse": false,
+            "primary_button_label": "Primary button",
+            "primary_button_url": "",
+            "secondary_button_label": "Secondary button",
+            "secondary_button_url": "",
             "box_align": "middle-center",
             "text_alignment": "center",
             "image_overlay_opacity": 30,
@@ -52,12 +52,12 @@
             "heading": "This is the Video",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through video",
-            "button_label": "Button label",
-            "link": "#",
-            "button_style_secondary": false,
-            "second_button_label": "Secondary button label",
-            "second_link": "#",
-            "second_button_style_secondary": true,
+            "button_style": "flat",
+            "button_reverse": false,
+            "primary_button_label": "Primary button",
+            "primary_button_url": "",
+            "secondary_button_label": "Secondary button",
+            "secondary_button_url": "",
             "box_align": "bottom-right",
             "text_alignment": "right",
             "banner_text_background": true,
@@ -87,29 +87,29 @@
         "a3e8bd03-23c8-4f47-838e-da7119c64ff9": {
           "type": "collection",
           "settings": {
-            "title": "",
+            "title": "Handcrafted Boots",
             "collection": "demo-collection"
+          }
+        },
+        "da995554-d7d9-44fd-9daf-b0a159f5c06d": {
+          "type": "collection",
+          "settings": {
+            "title": "New Arrivals",
+            "collection": "collection10"
           }
         },
         "adbe9b77-6856-4021-95aa-153c4186c305": {
           "type": "collection",
           "settings": {
-            "title": "",
+            "title": "Accessories",
             "collection": "collection1"
-          }
-        },
-        "62543165-655e-48e2-8bce-e2b210eb9ccc": {
-          "type": "collection",
-          "settings": {
-            "title": "",
-            "collection": "collection10"
           }
         }
       },
       "block_order": [
         "a3e8bd03-23c8-4f47-838e-da7119c64ff9",
-        "adbe9b77-6856-4021-95aa-153c4186c305",
-        "62543165-655e-48e2-8bce-e2b210eb9ccc"
+        "da995554-d7d9-44fd-9daf-b0a159f5c06d",
+        "adbe9b77-6856-4021-95aa-153c4186c305"
       ],
       "settings": {
         "title": "FEATURED PRODUCTS",
@@ -117,6 +117,7 @@
         "description": "",
         "show_description": false,
         "description_style": "body",
+        "heading_alignment": "center",
         "products_to_show": 12,
         "columns_desktop": 4,
         "full_width": false,
@@ -145,12 +146,11 @@
           "type": "column",
           "settings": {
             "image_position": "above",
-            "image-width": 300,
             "border-radius": 0,
             "title": "FEATURED COLLECTION",
             "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
-            "link_label": "Shop it now what if it gets longer okay cool",
-            "link": "shopify:\/\/collections\/demo-collection"
+            "button_label": "Button label",
+            "button_link": "shopify:\/\/collections"
           }
         },
         "column1": {
@@ -158,12 +158,11 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/sliced-pumpkin-pie.jpg",
             "image_position": "above",
-            "image-width": 180,
             "border-radius": 0,
-            "title": "",
+            "title": "Testing",
             "text": "",
-            "link_label": "",
-            "link": ""
+            "button_label": "Button label",
+            "button_link": ""
           }
         }
       },
@@ -172,8 +171,9 @@
         "column1"
       ],
       "settings": {
-        "title": "",
+        "title": "Testtestets",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "image_width": "full",
         "image_ratio": "square",
         "columns_desktop": 2,
@@ -182,7 +182,7 @@
         "button_link": "",
         "color_scheme": "background-2",
         "columns_mobile": "1",
-        "swipe_on_mobile": false,
+        "swipe_on_mobile": true,
         "padding_top": 36,
         "padding_bottom": 36
       }
@@ -238,10 +238,11 @@
       "settings": {
         "title": "Collections",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "image_ratio": "square",
         "columns_desktop": 3,
         "enable_desktop_slider": true,
-        "color_scheme": "secondary",
+        "color_scheme": "background-2",
         "card_color_scheme": "inverse",
         "card_hover_show_info": false,
         "use_foreground": false,
@@ -260,24 +261,22 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
             "image_position": "above",
-            "image-width": 300,
             "border-radius": 0,
             "title": "",
             "text": "",
-            "link_label": "",
-            "link": ""
+            "button_label": "Button label",
+            "button_link": ""
           }
         },
         "16620107657f4c8cb8-1": {
           "type": "column",
           "settings": {
             "image_position": "above",
-            "image-width": 300,
             "border-radius": 0,
             "title": "THE BEST FALL FLAVORS",
             "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
-            "link_label": "Taste them all",
-            "link": ""
+            "button_label": "Button label",
+            "button_link": ""
           }
         }
       },
@@ -288,6 +287,7 @@
       "settings": {
         "title": "",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "image_width": "full",
         "image_ratio": "square",
         "columns_desktop": 2,
@@ -443,10 +443,9 @@
       "settings": {
         "title": "Testimonials",
         "heading_size": "h1",
+        "heading_alignment": "center",
         "display-style": "blocks",
         "use_foreground": true,
-        "card_color_scheme": "default",
-        "image_width": "half",
         "image_ratio": "circle",
         "columns_desktop": 2,
         "column_alignment": "left",
@@ -504,8 +503,8 @@
         "template--15348023656587__640c42c5-d9ac-402e-a3f7-b51bbbb0e04f-166810135047762c57-2"
       ],
       "settings": {
-        "caption": "",
         "heading": "FAQS",
+        "caption": "",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "row",
@@ -551,7 +550,7 @@
         "675f7ffc-ae2a-4969-8efb-229879679287"
       ],
       "settings": {
-        "color_scheme": "primary",
+        "color_scheme": "background-1",
         "modal_background_image": "shopify:\/\/shop_images\/88772b321081154b9be75000fbc46933.png",
         "float_modal_content": true,
         "overlay": 0

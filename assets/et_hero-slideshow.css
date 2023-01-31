@@ -26,12 +26,20 @@
   position: absolute;
 }
 
+.slideshow.banner::after, .slideshow .banner__media::after {
+  z-index: 0;
+}
+
 .slideshow.banner--small {
   min-height: 575px;
 }
 
 .slideshow.banner--small:not(.banner--adapt) {
   min-height: 575px;
+}
+
+.slideshow .banner__content {
+  z-index: 0;
 }
 
 .slideshow__autoplay {
@@ -57,7 +65,7 @@
 .slideshow__controls {
   color: var(--color-scheme-text);
   position: absolute;
-  z-index: 3;
+  z-index: 1;
   bottom: 10%;
   margin-left: auto;
   margin-right: auto;

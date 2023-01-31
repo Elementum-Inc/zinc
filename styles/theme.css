@@ -45,7 +45,7 @@ body.menu--opened {
 
 /* Dangerous for a11y - Use with care */
 .focus-none {
-  @apply outline-none shadow-none;
+  @apply outline-none shadow-none ring-0;
 }
 
 .focus-offset:focus-visible {
@@ -123,11 +123,13 @@ body.menu--opened {
 
 /* Splide */
 .splide {
-  &:not(.splide--no-padding) {
+  &.is-active:not(.splide--no-padding) {
     @apply md:(px-16) lg:(px-20);
   }
 
   &.is-initialized:not(.is-active) {
+    @apply p-[inherit];
+
     & .splide__list {
       @apply flex flex-wrap justify-center;
     }
@@ -187,7 +189,7 @@ body.menu--opened {
 
   &__pagination {
     @apply m-2
-      bottom-[2.5rem]
+      bottom-[1.5rem]
       md:(m-4 -bottom-2);
   }
 

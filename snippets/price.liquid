@@ -82,12 +82,16 @@
     </small>
   </div>
   {%- if show_badges -%}
-    <span class="badge price__badge-sale color-{{ settings.sale_badge_color_scheme }}">
-      {{ 'products.product.on_sale' | t }}
+    <span class="badge price__badge-sale btn btn--small btn-{{ settings.sale_badge_color_scheme }}">
+      <span class="btn__label">
+        {{ 'products.product.on_sale' | t }}
+      </span>
     </span>
 
-    <span class="badge price__badge-sold-out color-{{ settings.sold_out_badge_color_scheme }}">
-      {{ 'products.product.sold_out' | t }}
+    <span class="badge price__badge-sold-out btn btn--small btn-{{ settings.sold_out_badge_color_scheme }}">
+      <span class="btn__label">
+        {{ 'products.product.sold_out' | t }}
+      </span>
     </span>
   {%- endif -%}
 </div>

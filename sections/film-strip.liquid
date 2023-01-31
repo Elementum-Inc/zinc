@@ -71,7 +71,7 @@
             <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="splide__slide film-strip-list__item{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
               <div class="film-strip-card content-container {% if block.settings.column_orientation == 'text-above' %} text-above {% endif %}">
                 {%- if block.settings.image != blank -%}
-                  {% if section.settings.image_ratio == 'adapt' or section.settings.image_ratio == 'circle' %}
+                  {% if section.settings.image_ratio == 'auto' or section.settings.image_ratio == 'circle' %}
                     {% assign spaced_image = true %}
                   {% endif %}
                   <div class="film-strip-card__image-wrapper film-strip-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} film-strip-card-spacing{% endif %}" style="padding: {{ block.settings.image-padding }}px;">

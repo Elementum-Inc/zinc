@@ -19,7 +19,7 @@
         "post_limit": 6,
         "columns_desktop": 3,
         "desktop_slider": true,
-        "color_scheme": "primary",
+        "color_scheme": "background-1",
         "use_foreground": false,
         "card_color_scheme": "inverse",
         "show_image": true,
@@ -57,9 +57,7 @@
           "type": "buttons",
           "settings": {
             "primary_button_label": "",
-            "primary_button_link": "",
-            "secondary_button_label": "Learn More",
-            "secondary_button_link": "shopify:\/\/blogs\/community"
+            "secondary_button_label": "Learn More"
           }
         }
       },
@@ -131,9 +129,7 @@
           "type": "buttons",
           "settings": {
             "primary_button_label": "Read the latest",
-            "primary_button_link": "shopify:\/\/blogs\/news",
-            "secondary_button_label": "Search our archive",
-            "secondary_button_link": "shopify:\/\/blogs\/trends"
+            "secondary_button_label": "Search our archive"
           }
         }
       },
