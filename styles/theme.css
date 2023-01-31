@@ -173,17 +173,12 @@ body.menu--opened {
   }
 
   &__arrows {
-    @apply relative
-      flex
-      justify-between
-      md:(bottom-8 h-12 absolute w-full left-0);
+    @apply relative flex justify-between md:(top-1/2 h-12 absolute transform -translate-y-1/2 w-full left-0);
   }
 
   &__arrow {
     @apply relative h-min w-[unset] rounded-none opacity-100;
     background-color: transparent;
-    top: unset;
-    transform: unset;
 
     > svg {
       @apply fill-none stroke-scheme-accent h-[unset] w-[unset] <md:(h-12);
