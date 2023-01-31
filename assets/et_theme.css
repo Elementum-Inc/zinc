@@ -57,7 +57,7 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
-button, select, input, textarea {
+button, input, textarea, select {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -826,9 +826,25 @@ body.search--opened, body.menu--opened {
   .splide__arrows {
     height: 3rem;
     position: absolute;
-    bottom: 2rem;
+    top: 50%;
     left: 0px;
     width: 100%;
+    --tw-translate-x: 0;
+    --tw-translate-y: 0;
+    --tw-translate-z: 0;
+    --tw-rotate: 0;
+    --tw-rotate-x: 0;
+    --tw-rotate-y: 0;
+    --tw-rotate-z: 0;
+    --tw-skew-x: 0;
+    --tw-skew-y: 0;
+    --tw-scale-x: 1;
+    --tw-scale-y: 1;
+    --tw-scale-z: 1;
+    -webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
+    -ms-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
+    transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
+    --tw-translate-y: -50%;
   }
 }
 .splide__arrow {
@@ -840,8 +856,6 @@ body.search--opened, body.menu--opened {
   position: relative;
   width: unset;
   background-color: transparent;
-  top: unset;
-  transform: unset;
 }
 .splide__arrow > svg {
   height: unset;
