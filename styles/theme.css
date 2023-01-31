@@ -129,7 +129,7 @@ body.menu--opened {
 
   &.is-initialized:not(.is-active) {
     & .splide__list {
-      @apply flex flex-wrap;
+      @apply flex flex-wrap justify-center;
     }
 
     & .splide__arrows {
@@ -149,6 +149,10 @@ body.menu--opened {
         @apply sm:hidden;
       }
     }
+  }
+
+  &--draggable {
+    @apply pb-4 md:pb-[3rem];
   }
 
   &__track {
@@ -182,7 +186,9 @@ body.menu--opened {
   }
 
   &__pagination {
-    @apply relative <md:bottom-12;
+    @apply m-2
+      bottom-[2.5rem]
+      md:(m-4 -bottom-2);
   }
 
   &__pagination__page {

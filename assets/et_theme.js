@@ -17014,6 +17014,7 @@ __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_bl
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_product.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_modal.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_collapsible-content.css")] : void 0, import.meta.url);
+__vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_collection-list.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_contact-content.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_contact-form.css")] : void 0, import.meta.url);
 __vitePreload(() => Promise.resolve({}), true ? [window.__toCdnUrl("assets/et_featured-collection.css")] : void 0, import.meta.url);

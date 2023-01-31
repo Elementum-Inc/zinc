@@ -30,6 +30,7 @@ import("../styles/sections/blog.css");
 import("../styles/sections/product.css");
 import("../styles/sections/modal.css");
 import("../styles/sections/collapsible-content.css");
+import("../styles/sections/collection-list.css");
 import("../styles/sections/contact-content.css");
 import("../styles/sections/contact-form.css");
 import("../styles/sections/featured-collection.css");
@@ -91,7 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (document.querySelectorAll('.splide').length) {
     document.querySelectorAll('.splide').forEach(slider => {
-      if (!slider.parentElement.classList.contains('product__media-gallery') && !slider.classList.contains('product-recommendations')) {
+      if (!slider.parentElement.classList.contains('product__media-gallery') &&
+          !slider.classList.contains('product-recommendations')) {
         new Splide(slider).mount();
       }
     });

@@ -81,8 +81,22 @@
 }
 
 .slideshow__controls .slider-button {
-  background-color: var(--color-scheme-accent);
+  background-color: rgb(var(--zinc-color-foreground));
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
+}
+
+.slideshow__controls .slider-button .icon {
+  height: 3rem;
+}
+
+.slideshow__controls .slider-counter__link--dots .dot {
+  background-color: rgb(var(--zinc-color-foreground));
+  display: block;
+  height: .25rem;
+  padding: 0;
+  width: 2rem;
 }
 
 .slider-counter {
