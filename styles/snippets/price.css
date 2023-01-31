@@ -20,4 +20,18 @@
   &--large {
     @apply text-lg md:text-xl;
   }
+
+  &.caption-with-letter-spacing {
+    font-size: 1rem;
+    letter-spacing: .13rem;
+    line-height: calc(1 + .2 / var(--font-body-scale));
+    text-transform: uppercase;
+  }
+
+  &.subtitle {
+    font-size: 1.8rem;
+    line-height: calc(1 + .8 / var(--font-body-scale));
+    letter-spacing: .06rem;
+    color: rgb(var(--color-foreground) .7);
+  }
 }
