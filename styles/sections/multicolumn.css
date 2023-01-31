@@ -72,7 +72,13 @@
   & .image-below {
     @apply
       flex
-      flex-column-reverse;
+      flex-col-reverse;
+  }
+
+  & .image-above {
+    @apply
+      flex
+      flex-col;
   }
 
   /* &.background-none {
