@@ -77,6 +77,11 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
     --button-fg: theme('colors.bg1');
   }
 
+  &-foreground {
+    --button-bg: theme('colors.scheme-fg');
+    --button-fg: theme('colors.scheme-bg');
+  }
+
   &-success {
     --button-bg: theme('colors.success');
     --button-fg: theme('colors.bg1');
