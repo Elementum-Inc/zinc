@@ -479,7 +479,6 @@ a.product__text {
   .product__media-list {
     margin-left: -2.5rem;
     margin-bottom: 3rem;
-    width: calc(100% + 4rem);
   }
 
   .product__media-wrapper slider-component:not(.thumbnail-slider--no-slide) {
@@ -517,11 +516,6 @@ a.product__text {
     padding-right: calc(
       var(--media-shadow-horizontal-offset) * var(--media-shadow-visible)
     );
-  }
-
-  .product--thumbnail .product__media-item:not(.is-active),
-  .product--thumbnail_slider .product__media-item:not(.is-active) {
-    display: none;
   }
 
   .product-media-modal__content
