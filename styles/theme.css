@@ -139,6 +139,10 @@ body.menu--opened {
     }
   }
 
+  &--no-padding {
+    padding-bottom: 0;
+  }
+
   &--desktop {
     & .splide__track--container {
       @apply md:px-16 lg:px-20;
@@ -153,8 +157,10 @@ body.menu--opened {
     }
   }
 
-  &--draggable {
-    @apply pb-4 md:pb-[3rem];
+  &--draggable:not(.splide--nav) {
+    @apply
+      pb-4
+      md:pb-[3rem];
   }
 
   &__track {
