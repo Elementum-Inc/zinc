@@ -660,6 +660,21 @@
 }
 
 @media (min-width: 768px) {
+  .facets-vertical-form {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-pack: justify;
+    -ms-flex-pack: justify;
+    -webkit-justify-content: space-between;
+    justify-content: space-between;
+  }
+
+  .facets-vertical-form > .sorting {
+    padding-left: 0;
+  }
+
   .facets-vertical .facets-wrapper {
     min-width: 50%;
     padding-right: 2rem;
