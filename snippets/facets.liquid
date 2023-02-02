@@ -309,7 +309,7 @@
             </div>
           {%- endif -%}
           <div class="product-count light{% if filter_type == 'top' %} medium-hide large-up-hide{% endif %}" role="status">
-            <h2 class="product-count__text">
+            <h2 class="product-count__text h4">
               <span id="ProductCountDesktop">
                 {%- if results.results_count -%}
                   {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
@@ -712,7 +712,7 @@
     </facet-filters-form>
   {%- endif -%}
   <div class="product-count light{% unless filter_type == 'collapsed' %} medium-hide large-up-hide{% endunless %}" role="status">
-    <h2 class="product-count__text text-body">
+    <h2 class="product-count__text h4">
       <span id="ProductCount">
         {%- if results.results_count -%}
           {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
@@ -773,7 +773,7 @@
       </form>
       {% if filter_type == 'top' %}
         <div class="product-count light" role="status">
-          <h2 class="product-count__text text-body">
+          <h2 class="product-count__text h4">
             <span id="ProductCount">
               {%- if results.results_count -%}
                 {{ 'templates.search.results_with_count' | t: terms: results.terms, count: results.results_count }}
