@@ -82,12 +82,13 @@
       {
         "type": "range",
         "id": "heading_size",
-        "min": 36,
-        "max": 72,
+        "min": 13,
+        "max": 24,
         "step": 1,
         "unit": "px",
         "label": "t:settings_schema.typography.settings.heading_size.label",
-        "default": 48
+        "info": "Scales up from lowest heading size.",
+        "default": 16
       },
       {
         "type": "header",

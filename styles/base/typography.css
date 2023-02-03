@@ -18,9 +18,31 @@ _/__(_/__/_)__(_/_(_/__/ (_(_/(__/_)__/ (__(_/_
   }
 }
 
+.h0 {
+  @apply text-h0 leading-120;
+
+  @media screen and (max-width: 767px) {
+    font-size: calc(var(--font-heading0-size) * .8);
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: calc(var(--font-heading0-size) * 1.2);
+  }
+}
+
 h1, .h1 {
-  @apply font-heading text-6xl leading-120;
-  &.big { @apply text-7xl; }
+  @apply
+    font-heading
+    text-h1
+    leading-120;
+
+  @media screen and (max-width: 767px) {
+    font-size: calc(var(--font-heading1-size) * .8);
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: calc(var(--font-heading1-size) * 1.2);
+  }
 }
 
 h2, h3, h4, h5, h6 {
@@ -28,23 +50,63 @@ h2, h3, h4, h5, h6 {
 }
 
 h2, .h2 {
-  @apply text-5xl leading-120;
+  @apply text-h2 leading-120;
+
+  @media screen and (max-width: 767px) {
+    font-size: calc(var(--font-heading2-size) * .8);
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: calc(var(--font-heading2-size) * 1.2);
+  }
 }
 
 h3, .h3 {
-  @apply text-2xl leading-130;
+  @apply text-h3 leading-130;
+
+  @media screen and (max-width: 767px) {
+    font-size: calc(var(--font-heading3-size) * .8);
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: calc(var(--font-heading3-size) * 1.2);
+  }
 }
 
 h4, .h4 {
-  @apply text-xl leading-130;
+  @apply text-h4 leading-130;
+
+  @media screen and (max-width: 767px) {
+    font-size: calc(var(--font-heading4-size) * .8);
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: calc(var(--font-heading4-size) * 1.2);
+  }
 }
 
 h5, .h5 {
-  @apply text-base leading-140;
+  @apply text-h5 leading-140;
+
+  @media screen and (max-width: 767px) {
+    font-size: calc(var(--font-heading5-size) * .8);
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: calc(var(--font-heading5-size) * 1.2);
+  }
 }
 
 h6, .h6 {
-  @apply text-xs leading-140;
+  @apply text-h6 leading-140;
+
+  @media screen and (max-width: 767px) {
+    font-size: calc(var(--font-heading6-size) * .8);
+  }
+
+  @media screen and (min-width: 1280px) {
+    font-size: calc(var(--font-heading6-size) * 1.2);
+  }
 }
 
 p {
