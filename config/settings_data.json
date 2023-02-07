@@ -142,9 +142,15 @@
               "title": "shop",
               "image": "shopify:\/\/shop_images\/fall-vegetable-box.jpg",
               "content_title": "Newest Arrivals",
+              "content_title_size": "h2",
               "content_subtitle": "Check out our latest fall fashion.",
-              "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.<\/p>",
+              "content_subtitle_size": "h5",
+              "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.",
+              "button_style": "flat",
+              "button_reverse": false,
+              "primary_button_label": "Primary button",
               "primary_button_url": "shopify:\/\/collections",
+              "secondary_button_label": "Secondary button",
               "secondary_button_url": "shopify:\/\/blogs\/news"
             }
           },
