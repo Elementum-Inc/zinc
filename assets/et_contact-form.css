@@ -5,10 +5,6 @@
   padding-bottom: 0;
 }
 
-.contact .title {
-  font-size: 2rem;
-}
-
 @media screen and (min-width: 768px) {
   .contact__fields {
     display: grid;
