@@ -140,7 +140,32 @@ export default {
       transitionDuration: {
         base: "var(--duration-default)"
       }
+    }
+  },
+  shortcuts: {
+    'payment-btn': {
+      '@apply': `inline-block
+                rounded-button
+                border-button
+                bg-button-bg
+                text-button-fg
+                text-xl
+                leading-140
+                py-4
+                px-8
+                focus:outline-none
+                focus:ring
+                focus:ring-scheme-accent`
     },
+    'btn-primary': {
+      '@apply': `bg-scheme-bg
+                text-scheme-accent
+                border-scheme-accent`,
+      'border': 'var(--buttons-border-width) solid'
+    },
+    'btn-secondary': {
+      '@apply': 'bg-scheme-accent text-scheme-bg'
+    }
   },
   plugins: [require("windicss/plugin/aspect-ratio")],
 };

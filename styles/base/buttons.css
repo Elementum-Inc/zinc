@@ -43,7 +43,7 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
       rounded-button
       bg-button-bg
       text-button-fg
-      py-xs
+      py-2
       px-8;
   }
 
@@ -99,10 +99,18 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
 
   &--small {
     @apply text-sm;
+
+    & .btn__label {
+      @apply py-xs px-4;
+    }
   }
 
   &--large {
     @apply text-xl;
+
+    & .btn__label {
+      @apply py-4;
+    }
   }
 
   &--full {
@@ -134,9 +142,16 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
     }
   }
 
-  &.badge,
-  &.badge .btn__label {
-    @apply rounded-badge;
+  &.badge {
+    & .btn__label {
+      @apply rounded-badge;
+
+      > svg {
+        height: calc(var(--icon-size) * .75);
+        width: calc(var(--icon-size) * .75);
+        vertical-align: text-top;
+      }
+    }
   }
 }
 

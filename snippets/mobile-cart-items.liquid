@@ -58,9 +58,11 @@
 
         <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
           {%- for discount in item.discounts -%}
-            <li class="discounts__discount">
-              {%- render 'icon-discount' -%}
-              {{ discount.title }}
+            <li class="discounts__discount badge btn btn-success btn--small">
+              <span class="btn__label">
+                {%- render 'icon-discount' -%}
+                {{ discount.title }}
+              </span>
             </li>
           {%- endfor -%}
         </ul>

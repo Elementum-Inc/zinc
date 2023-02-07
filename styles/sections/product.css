@@ -111,14 +111,8 @@
 }
 
 .product-form {
-  &__submit {
-    background: var(--color-scheme-accent);
-    color: var(--color-scheme-bg);
-  }
-
   & .shopify-payment-button__button {
-    border: 2px solid var(--color-scheme-accent);
-    padding: 0;
+    @apply payment-btn btn-primary;
   }
 }
 
