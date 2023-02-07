@@ -299,11 +299,11 @@
                 <summary>
                   <div class="summary__title">
                     {% render 'icon-accordion', icon: block.settings.icon %}
-                    <h2 class="h4 accordion__title">
+                    <h2 class="h6 accordion__title">
                       {{ block.settings.heading | default: block.settings.page.title }}
                     </h2>
+                    {% render 'icon-caret' %}
                   </div>
-                  {% render 'icon-caret' %}
                 </summary>
                 <div class="accordion__content rte" id="ProductAccordion-{{ block.id }}-{{ section.id }}">
                   {{ block.settings.content }}
@@ -480,7 +480,7 @@
                     <button
                       type="submit"
                       name="add"
-                      class="product-form__submit btn button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}secondary{% else %}primary{% endif %}"
+                      class="product-form__submit btn btn--large button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}secondary{% else %}primary{% endif %}"
                       {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                     >
                       <span class="btn__label">
