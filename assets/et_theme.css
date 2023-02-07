@@ -57,7 +57,7 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
-button, input, textarea, select {
+button, select, input, textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -1169,7 +1169,16 @@ p.small, .text-body.small {
 .section--foreground, .color-scheme--foreground {
   background-color: var(--color-scheme-fg);
 }
-.section--foreground .card__inner + .card__content, .color-scheme--foreground .card__inner + .card__content {
+.section--foreground .card.match, .color-scheme--foreground .card.match {
+  border-radius: 0;
+}
+.section--foreground .card.match.article-card .card__inner, .color-scheme--foreground .card.match.article-card .card__inner {
+  border-radius: var(--content-card-corner-radius);
+}
+.section--foreground .card.match .card__inner, .color-scheme--foreground .card.match .card__inner {
+  border-radius: var(--product-card-corner-radius);
+}
+.section--foreground .card.match .card__inner + .card__content, .color-scheme--foreground .card.match .card__inner + .card__content {
   background-color: transparent;
 }
 .section svg.icon:not(.icon-social):not(.icon--full-color):not(.icon-accordion), .color-scheme svg.icon:not(.icon-social):not(.icon--full-color):not(.icon-accordion) {

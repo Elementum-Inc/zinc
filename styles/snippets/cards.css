@@ -257,7 +257,11 @@
     @apply m-4 mt-0;
 
     &__submit {
-      @apply px-2 w-full max-w-xs;
+      @apply w-full max-w-xs;
+
+      & > .btn__label {
+        @apply px-xs;
+      }
     }
   }
 
