@@ -241,13 +241,6 @@
       m-auto
       p-10;
 
-    .image-above &,
-    .image-below & {
-      @apply
-        flex-grow
-        basis-full;
-    }
-
     & .link {
       @apply
         no-underline

@@ -30,10 +30,12 @@
                   {%- if cart.cart_level_discount_applications.size > 0 -%}
                     <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                       {%- for discount in cart.cart_level_discount_applications -%}
-                        <li class="discounts__discount discounts__discount--position">
-                          {%- render 'icon-discount' -%}
-                          {{ discount.title }}
-                          (-{{ discount.total_allocated_amount | money }})
+                        <li class="discounts__discount discounts__discount--position badge btn btn-success">
+                          <span class="btn__label">
+                            {%- render 'icon-discount' -%}
+                            {{ discount.title }}
+                            (-{{ discount.total_allocated_amount | money }})
+                          </span>
                         </li>
                       {%- endfor -%}
                     </ul>
@@ -62,7 +64,7 @@
                   </button>
                 </noscript>
 
-                <button type="submit" id="checkout" class="btn secondary cart__checkout-button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
+                <button type="submit" id="checkout" class="btn btn--large secondary cart__checkout-button" name="checkout"{% if cart == empty %} disabled{% endif %} form="cart">
                   <span class="btn__label">
                     {{ 'sections.cart.checkout' | t }}
                   </span>

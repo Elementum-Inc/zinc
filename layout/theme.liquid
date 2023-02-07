@@ -60,14 +60,22 @@
         --font-body-style: {{ settings.type_body_font.style }};
         --font-body-weight: {{ settings.type_body_font.weight }};
         --font-body-weight-bold: {{ settings.type_body_font.weight | plus: 300 | at_most: 1000 }};
+        --font-body-size: {{ settings.body_size }}px;
 
         --font-heading-family: {{ settings.type_header_font.family }}, {{ settings.type_header_font.fallback_families }};
         --font-heading-style: {{ settings.type_header_font.style }};
         --font-heading-weight: {{ settings.type_header_font.weight }};
+        --font-heading-scale: 1.333;
+        --font-heading-size: {{ settings.heading_size }}px;
+        --font-heading6-size: {{ settings.heading_size }}px;
+        --font-heading5-size: calc(var(--font-heading6-size) * var(--font-heading-scale));
+        --font-heading4-size: calc(var(--font-heading5-size) * var(--font-heading-scale));
+        --font-heading3-size: calc(var(--font-heading4-size) * var(--font-heading-scale));
+        --font-heading2-size: calc(var(--font-heading3-size) * var(--font-heading-scale));
+        --font-heading1-size: calc(var(--font-heading2-size) * var(--font-heading-scale));
+        --font-heading0-size: calc(var(--font-heading1-size) * var(--font-heading-scale));
 
-        /* TODO: figure out an easily implemented font size setting */
-        --font-body-size: {{ settings.body_size }};
-        --font-heading-size: {{ settings.heading_size }};
+        --icon-size: {{ settings.icon_size }}px;
 
         --color-text: {{ settings.colors_text.red }} {{ settings.colors_text.green }} {{ settings.colors_text.blue }};
         --color-background-1: {{ settings.colors_background_1.red }} {{ settings.colors_background_1.green }} {{ settings.colors_background_1.blue }};

@@ -56,6 +56,13 @@ export default {
     },
     fontSize: {
       // calculated values below based on a root size of 16px
+      h0: "var(--font-heading0-size)",
+      h1: "var(--font-heading1-size)",
+      h2: "var(--font-heading2-size)",
+      h3: "var(--font-heading3-size)",
+      h4: "var(--font-heading4-size)",
+      h5: "var(--font-heading5-size)",
+      h6: "var(--font-heading6-size)",
       "3xs": ".5rem", // 8px
       "2xs": ".625rem", // 10px
       xs: ".75rem", // 12px
@@ -133,7 +140,32 @@ export default {
       transitionDuration: {
         base: "var(--duration-default)"
       }
+    }
+  },
+  shortcuts: {
+    'payment-btn': {
+      '@apply': `inline-block
+                rounded-button
+                border-button
+                bg-button-bg
+                text-button-fg
+                text-xl
+                leading-140
+                py-4
+                px-8
+                focus:outline-none
+                focus:ring
+                focus:ring-scheme-accent`
     },
+    'btn-primary': {
+      '@apply': `bg-scheme-bg
+                text-scheme-accent
+                border-scheme-accent`,
+      'border': 'var(--buttons-border-width) solid'
+    },
+    'btn-secondary': {
+      '@apply': 'bg-scheme-accent text-scheme-bg'
+    }
   },
   plugins: [require("windicss/plugin/aspect-ratio")],
 };

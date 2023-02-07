@@ -905,42 +905,113 @@ body.search--opened, body.menu--opened {
 .title-wrapper .title, .title-wrapper-with-link .title {
   margin-bottom: 0.5rem;
 }
-h1, .h1 {
-  font-family: var(--font-heading-family);
-  font-size: 3rem;
+.h0 {
+  font-size: var(--font-heading0-size);
   line-height: 1.2;
 }
-h1.big, .h1.big {
-  font-size: 3.5rem;
+@media screen and (max-width: 767px) {
+  .h0 {
+    font-size: calc(var(--font-heading0-size) * .8);
+  }
+}
+@media screen and (min-width: 1280px) {
+  .h0 {
+    font-size: calc(var(--font-heading0-size) * 1.2);
+  }
+}
+h1, .h1 {
+  font-family: var(--font-heading-family);
+  font-size: var(--font-heading1-size);
+  line-height: 1.2;
+}
+@media screen and (max-width: 767px) {
+  h1, .h1 {
+    font-size: calc(var(--font-heading1-size) * .8);
+  }
+}
+@media screen and (min-width: 1280px) {
+  h1, .h1 {
+    font-size: calc(var(--font-heading1-size) * 1.2);
+  }
 }
 h2, h3, h4, h5, h6 {
   font-family: var(--font-body-family);
 }
 h2, .h2 {
-  font-size: 2.5rem;
+  font-size: var(--font-heading2-size);
   line-height: 1.2;
 }
+@media screen and (max-width: 767px) {
+  h2, .h2 {
+    font-size: calc(var(--font-heading2-size) * .8);
+  }
+}
+@media screen and (min-width: 1280px) {
+  h2, .h2 {
+    font-size: calc(var(--font-heading2-size) * 1.2);
+  }
+}
 h3, .h3 {
-  font-size: 1.5rem;
+  font-size: var(--font-heading3-size);
   line-height: 1.3;
+}
+@media screen and (max-width: 767px) {
+  h3, .h3 {
+    font-size: calc(var(--font-heading3-size) * .8);
+  }
+}
+@media screen and (min-width: 1280px) {
+  h3, .h3 {
+    font-size: calc(var(--font-heading3-size) * 1.2);
+  }
 }
 h4, .h4 {
-  font-size: 1.25rem;
+  font-size: var(--font-heading4-size);
   line-height: 1.3;
 }
+@media screen and (max-width: 767px) {
+  h4, .h4 {
+    font-size: calc(var(--font-heading4-size) * .8);
+  }
+}
+@media screen and (min-width: 1280px) {
+  h4, .h4 {
+    font-size: calc(var(--font-heading4-size) * 1.2);
+  }
+}
 h5, .h5 {
-  font-size: 1rem;
+  font-size: var(--font-heading5-size);
   line-height: 1.4;
+}
+@media screen and (max-width: 767px) {
+  h5, .h5 {
+    font-size: calc(var(--font-heading5-size) * .8);
+  }
+}
+@media screen and (min-width: 1280px) {
+  h5, .h5 {
+    font-size: calc(var(--font-heading5-size) * 1.2);
+  }
 }
 h6, .h6 {
-  font-size: .75rem;
+  font-size: var(--font-heading6-size);
   line-height: 1.4;
 }
-p {
+@media screen and (max-width: 767px) {
+  h6, .h6 {
+    font-size: calc(var(--font-heading6-size) * .8);
+  }
+}
+@media screen and (min-width: 1280px) {
+  h6, .h6 {
+    font-size: calc(var(--font-heading6-size) * 1.2);
+  }
+}
+p, .text-body {
   font-size: 1rem;
   line-height: 1.6;
 }
-p.small {
+p.small, .text-body.small {
   font-size: .875rem;
   line-height: 1.6;
 }
@@ -1101,7 +1172,7 @@ p.small {
 .section--foreground .card__inner + .card__content, .color-scheme--foreground .card__inner + .card__content {
   background-color: transparent;
 }
-.section svg.icon:not(.icon-social):not(.icon--full-color), .color-scheme svg.icon:not(.icon-social):not(.icon--full-color) {
+.section svg.icon:not(.icon-social):not(.icon--full-color):not(.icon-accordion), .color-scheme svg.icon:not(.icon-social):not(.icon--full-color):not(.icon-accordion) {
   stroke: var(--color-scheme-accent);
 }
 .section svg.icon-social > path, .color-scheme svg.icon-social > path {
@@ -1174,8 +1245,8 @@ p.small {
   background-color: var(--button-bg);
   border-radius: var(--buttons-radius);
   display: block;
-  padding-top: .375rem;
-  padding-bottom: .375rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
   padding-left: 2rem;
   padding-right: 2rem;
   position: relative;
@@ -1225,8 +1296,18 @@ p.small {
 .btn--small {
   font-size: .875rem;
 }
+.btn--small .btn__label {
+  padding-top: .375rem;
+  padding-bottom: .375rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
 .btn--large {
   font-size: 1.25rem;
+}
+.btn--large .btn__label {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 .btn--full {
   width: 100%;
@@ -1263,8 +1344,13 @@ p.small {
     width: 1rem;
   }
 }
-.btn.badge, .btn.badge .btn__label {
+.btn.badge .btn__label {
   border-radius: var(--badge-corner-radius);
+}
+.btn.badge .btn__label > svg {
+  height: calc(var(--icon-size) * .75);
+  width: calc(var(--icon-size) * .75);
+  vertical-align: text-top;
 }
 .btn-outline {
   position: relative;

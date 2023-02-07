@@ -141,9 +141,11 @@
 
                           <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                             {%- for discount in item.discounts -%}
-                              <li class="discounts__discount">
-                                {%- render 'icon-discount' -%}
-                                {{ discount.title }}
+                              <li class="discounts__discount badge btn btn-success btn--small">
+                                <span class="btn__label">
+                                  {%- render 'icon-discount' -%}
+                                  {{ discount.title }}
+                                </span>
                               </li>
                             {%- endfor -%}
                           </ul>
@@ -276,10 +278,12 @@
             {%- if cart.cart_level_discount_applications.size > 0 -%}
               <ul class="discounts list-unstyled" role="list" aria-label="{{ 'customer.order.discount' | t }}">
                 {%- for discount in cart.cart_level_discount_applications -%}
-                  <li class="discounts__discount discounts__discount--end">
-                    {%- render 'icon-discount' -%}
-                    {{ discount.title }}
-                    (-{{ discount.total_allocated_amount | money }})
+                  <li class="discounts__discount discounts__discount--end badge btn btn-success">
+                    <span class="btn__label">
+                      {%- render 'icon-discount' -%}
+                      {{ discount.title }}
+                      (-{{ discount.total_allocated_amount | money }})
+                    </span>
                   </li>
                 {%- endfor -%}
               </ul>
