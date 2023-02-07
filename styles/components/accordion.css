@@ -9,9 +9,8 @@
 
     @apply
       inline-block
-      mt-3
+      my-0
       mx-auto
-      mb-0
       break-words;
   }
 
@@ -23,41 +22,58 @@
       relative
       border-t-2
       border-scheme-fg;
+
+    & .icon-caret {
+      @apply
+        transition
+        duration-300;
+      position: relative;
+      right: 0;
+      top: 0;
+      height: var(--icon-size);
+      width: var(--icon-size);
+    }
   }
 
-  & svg {
+  /* & svg {
     @apply
       absolute
-      w-8
-      h-8
       top-1/2
       transform
       -translate-y-1/2;
-  }
+  } */
 
   & details[open] > summary .icon-caret {
     @apply
       transform
-      -translate-y-1/2
       rotate-180;
   }
 
   & .icon-accordion {
     align-self: center;
     fill: rgb(var(--color-scheme-accent));
-    height: calc(var(--font-heading-scale) * 2rem);
-    margin-right: calc(var(--font-heading-scale) * 1rem);
-    width: calc(var(--font-heading-scale) * 2rem);
+    height: calc(var(--icon-size) * 1.25);
+    margin-right: var(--icon-size);
+    width: calc(var(--icon-size) * 1.25);
+
+    > path {
+      @apply fill-scheme-accent;
+    }
+  }
+
+  &:not(.product__accordion) {
+    & .icon-accordion {
+      height: calc(var(--icon-size) * 1.5);
+      /* margin-right: var(--icon-size); */
+      width: calc(var(--icon-size) * 1.5);
+    }
   }
 
   & .summary__title {
     @apply
       flex
-      flex-1;
-
-    & + .icon-caret {
-      height: calc(var(--font-heading-scale) * .6rem);
-    }
+      flex-1
+      items-center;
   }
 
   &__content {

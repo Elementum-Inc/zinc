@@ -109,12 +109,17 @@ h6, .h6 {
   }
 }
 
-p {
-  @apply text-base leading-160;
-}
+p,
+.text-body {
+  @apply
+    text-base
+    leading-160;
 
-p.small {
-  @apply text-sm leading-160;
+  &.small {
+    @apply
+      text-sm
+      leading-160;
+  }
 }
 
 .caption {
