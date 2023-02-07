@@ -196,14 +196,6 @@
   padding: 2.5rem;
 }
 
-.image-above .multicolumn-card__info, .image-below .multicolumn-card__info {
-  flex-basis: 100%;
-  -webkit-box-flex: 1;
-  -ms-flex-positive: 1;
-  -webkit-flex-grow: 1;
-  flex-grow: 1;
-}
-
 .multicolumn-card__info .link {
   margin-top: 1.5rem;
   text-decoration: none;
