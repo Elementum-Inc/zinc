@@ -35,14 +35,6 @@
     }
   }
 
-  /* & svg {
-    @apply
-      absolute
-      top-1/2
-      transform
-      -translate-y-1/2;
-  } */
-
   & details[open] > summary .icon-caret {
     @apply
       transform
@@ -62,9 +54,9 @@
   }
 
   &:not(.product__accordion) {
-    & .icon-accordion {
+    & .icon-accordion,
+    & .icon-caret {
       height: calc(var(--icon-size) * 1.5);
-      /* margin-right: var(--icon-size); */
       width: calc(var(--icon-size) * 1.5);
     }
   }

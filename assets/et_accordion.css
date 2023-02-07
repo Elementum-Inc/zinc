@@ -78,7 +78,7 @@
   fill: var(--color-scheme-accent);
 }
 
-.accordion:not(.product__accordion) .icon-accordion {
+.accordion:not(.product__accordion) .icon-accordion, .accordion:not(.product__accordion) .icon-caret {
   height: calc(var(--icon-size) * 1.5);
   width: calc(var(--icon-size) * 1.5);
 }
