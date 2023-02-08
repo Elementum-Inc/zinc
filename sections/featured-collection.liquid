@@ -129,7 +129,7 @@
       <div id="featured-collection-{{ forloop.index }}"
         aria-labelledby="collection-tab-{{ forloop.index }}"
         class="featured-collection-slider {% if forloop.first %} active{% endif %}">
-        <div class="{% if show_mobile_slider or show_desktop_slider %}splide {% endif %}container"
+        <div class="{% if show_mobile_slider or show_desktop_slider %}splide {% else %}splide--disabled {% endif %}container"
           aria-label="{{ block.settings.collection.title }}"
           data-splide='
             {%- if show_mobile_slider and show_desktop_slider != true -%}

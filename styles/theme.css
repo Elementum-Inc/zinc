@@ -127,8 +127,13 @@ body.menu--opened {
     @apply md:(px-16) lg:(px-20);
   }
 
-  &.is-initialized:not(.is-active) {
+  &.is-initialized:not(.is-active),
+  &--disabled {
     @apply p-[inherit];
+
+    :not(.container) > & {
+      @apply container;
+    }
 
     & .splide__list {
       @apply flex flex-wrap justify-center;

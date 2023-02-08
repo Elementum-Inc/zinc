@@ -49,8 +49,7 @@
       </div>
     {%- endunless -%}
   
-    <div class="splide container"
-      {% comment %} data-splide='{ "perPage": {{ section.settings.columns_mobile }}, "mediaQuery": "min", "breakpoints": { "768": { "perPage": {{ section.settings.columns_desktop }} } } }' {% endcomment %}
+    <div class="{% if show_mobile_slider or show_desktop_slider %}splide {% else %}splide--disabled {% endif %}container"
       data-splide='
         {%- if show_mobile_slider and show_desktop_slider != true -%}
           { "perPage": {{ section.settings.columns_mobile }}, "mediaQuery": "min", "breakpoints": { "768": { "destroy": true } } }
