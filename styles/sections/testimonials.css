@@ -32,9 +32,14 @@
   }
 
   & .media {
-    @apply bottom-0 left-1/2 absolute transform -translate-y-1/2 -translate-x-1/2
-
-      margin-top: -4rem;
+    @apply
+      bottom-0
+      left-1/2
+      absolute
+      transform
+      -translate-y-1/2
+      -translate-x-1/2;
+    margin-top: -4rem;
     justify-content: center;
   }
 
