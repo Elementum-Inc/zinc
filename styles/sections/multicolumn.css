@@ -169,16 +169,24 @@
       w-full;
   }
 
-  &:not(.splide__list) {
-    @media screen and (max-width: 767px) {
-      @apply
-        pl-6
-        pr-6;
+  .multicolumn .splide & {
+    &.splide__list {
+      @apply <md:flex-nowrap;
     }
   }
 
-  &.splide__list {
-    @apply <md:flex-nowrap;
+  .multicolumn .splide--disabled & {
+    &:not(.splide__list) {
+      @media screen and (max-width: 767px) {
+        @apply
+          pl-6
+          pr-6;
+      }
+    }
+
+    .splide__slide {
+      @apply <md:w-full;
+    }
   }
 
   &__item {
