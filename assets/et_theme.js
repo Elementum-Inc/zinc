@@ -9746,7 +9746,7 @@ function withAsyncContext(getAwaitable) {
   }
   return [awaitable, () => setCurrentInstance(ctx)];
 }
-function h$2(type, propsOrChildren, children2) {
+function h$1(type, propsOrChildren, children2) {
   const l2 = arguments.length;
   if (l2 === 2) {
     if (isObject(propsOrChildren) && !isArray(propsOrChildren)) {
@@ -10231,8 +10231,8 @@ function parseName(name) {
   return [event2, options];
 }
 let cachedNow = 0;
-const p$3 = /* @__PURE__ */ Promise.resolve();
-const getNow = () => cachedNow || (p$3.then(() => cachedNow = 0), cachedNow = Date.now());
+const p$4 = /* @__PURE__ */ Promise.resolve();
+const getNow = () => cachedNow || (p$4.then(() => cachedNow = 0), cachedNow = Date.now());
 function createInvoker(initialValue, instance) {
   const invoker = (e2) => {
     if (!e2._vts) {
@@ -10580,7 +10580,7 @@ function setVarsOnNode(el, vars) {
 }
 const TRANSITION$1 = "transition";
 const ANIMATION = "animation";
-const Transition = (props, { slots }) => h$2(BaseTransition, resolveTransitionProps(props), slots);
+const Transition = (props, { slots }) => h$1(BaseTransition, resolveTransitionProps(props), slots);
 Transition.displayName = "Transition";
 const DOMTransitionPropsValidators = {
   name: String,
@@ -11469,7 +11469,7 @@ const runtimeDom = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePr
   getCurrentInstance,
   getTransitionRawChildren,
   guardReactiveProps,
-  h: h$2,
+  h: h$1,
   handleError,
   initCustomFormatter,
   inject,
@@ -15749,33 +15749,33 @@ function initDev() {
 {
   initDev();
 }
-function u$4(r2, n2, ...a2) {
+function u$3(r2, n2, ...a2) {
   if (r2 in n2) {
     let e2 = n2[r2];
     return typeof e2 == "function" ? e2(...a2) : e2;
   }
   let t2 = new Error(`Tried to handle "${r2}" but there is no handler defined. Only defined handlers are: ${Object.keys(n2).map((e2) => `"${e2}"`).join(", ")}.`);
-  throw Error.captureStackTrace && Error.captureStackTrace(t2, u$4), t2;
+  throw Error.captureStackTrace && Error.captureStackTrace(t2, u$3), t2;
 }
-var R$1 = ((o2) => (o2[o2.None = 0] = "None", o2[o2.RenderStrategy = 1] = "RenderStrategy", o2[o2.Static = 2] = "Static", o2))(R$1 || {}), O$1 = ((e2) => (e2[e2.Unmount = 0] = "Unmount", e2[e2.Hidden = 1] = "Hidden", e2))(O$1 || {});
-function P$3({ visible: r2 = true, features: t2 = 0, ourProps: e2, theirProps: o2, ...i2 }) {
+var R$2 = ((o2) => (o2[o2.None = 0] = "None", o2[o2.RenderStrategy = 1] = "RenderStrategy", o2[o2.Static = 2] = "Static", o2))(R$2 || {}), O$1 = ((e2) => (e2[e2.Unmount = 0] = "Unmount", e2[e2.Hidden = 1] = "Hidden", e2))(O$1 || {});
+function P$2({ visible: r2 = true, features: t2 = 0, ourProps: e2, theirProps: o2, ...i2 }) {
   var a2;
   let n2 = k$1(o2, e2), s2 = Object.assign(i2, { props: n2 });
   if (r2 || t2 & 2 && n2.static)
-    return p$2(s2);
+    return p$3(s2);
   if (t2 & 1) {
     let l2 = (a2 = n2.unmount) == null || a2 ? 0 : 1;
-    return u$4(l2, { [0]() {
+    return u$3(l2, { [0]() {
       return null;
     }, [1]() {
-      return p$2({ ...i2, props: { ...n2, hidden: true, style: { display: "none" } } });
+      return p$3({ ...i2, props: { ...n2, hidden: true, style: { display: "none" } } });
     } });
   }
-  return p$2(s2);
+  return p$3(s2);
 }
-function p$2({ props: r2, attrs: t2, slots: e2, slot: o2, name: i2 }) {
+function p$3({ props: r2, attrs: t2, slots: e2, slot: o2, name: i2 }) {
   var y2;
-  let { as: n2, ...s2 } = w$4(r2, ["unmount", "static"]), a2 = (y2 = e2.default) == null ? void 0 : y2.call(e2, o2), l2 = {};
+  let { as: n2, ...s2 } = w$3(r2, ["unmount", "static"]), a2 = (y2 = e2.default) == null ? void 0 : y2.call(e2, o2), l2 = {};
   if (o2) {
     let d2 = false, u2 = [];
     for (let [f2, c2] of Object.entries(o2))
@@ -15783,9 +15783,9 @@ function p$2({ props: r2, attrs: t2, slots: e2, slot: o2, name: i2 }) {
     d2 && (l2["data-headlessui-state"] = u2.join(" "));
   }
   if (n2 === "template") {
-    if (a2 = g$3(a2 != null ? a2 : []), Object.keys(s2).length > 0 || Object.keys(t2).length > 0) {
+    if (a2 = g$4(a2 != null ? a2 : []), Object.keys(s2).length > 0 || Object.keys(t2).length > 0) {
       let [d2, ...u2] = a2 != null ? a2 : [];
-      if (!x$2(d2) || u2.length > 0)
+      if (!x$1(d2) || u2.length > 0)
         throw new Error(['Passing props on "template"!', "", `The current component <${i2} /> is rendering a "template".`, "However we need to passthrough the following props:", Object.keys(s2).concat(Object.keys(t2)).sort((f2, c2) => f2.localeCompare(c2)).map((f2) => `  - ${f2}`).join(`
 `), "", "You can apply a few solutions:", ['Add an `as="..."` prop, to ensure that we render an actual element instead of a "template".', "Render a single element as the child so that we can forward the props onto that element."].map((f2) => `  - ${f2}`).join(`
 `)].join(`
@@ -15794,10 +15794,10 @@ function p$2({ props: r2, attrs: t2, slots: e2, slot: o2, name: i2 }) {
     }
     return Array.isArray(a2) && a2.length === 1 ? a2[0] : a2;
   }
-  return h$2(n2, Object.assign({}, s2, l2), { default: () => a2 });
+  return h$1(n2, Object.assign({}, s2, l2), { default: () => a2 });
 }
-function g$3(r2) {
-  return r2.flatMap((t2) => t2.type === Fragment ? g$3(t2.children) : [t2]);
+function g$4(r2) {
+  return r2.flatMap((t2) => t2.type === Fragment ? g$4(t2.children) : [t2]);
 }
 function k$1(...r2) {
   if (r2.length === 0)
@@ -15821,13 +15821,13 @@ function k$1(...r2) {
     } });
   return t2;
 }
-function w$4(r2, t2 = []) {
+function w$3(r2, t2 = []) {
   let e2 = Object.assign({}, r2);
   for (let o2 of t2)
     o2 in e2 && delete e2[o2];
   return e2;
 }
-function x$2(r2) {
+function x$1(r2) {
   return r2 == null ? false : typeof r2.type == "string" || typeof r2.type == "object" || typeof r2.type == "function";
 }
 let e$2 = 0;
@@ -15844,10 +15844,10 @@ function o$1(n2) {
 }
 let n$1 = Symbol("Context");
 var l$2 = ((e2) => (e2[e2.Open = 0] = "Open", e2[e2.Closed = 1] = "Closed", e2))(l$2 || {});
-function f$1() {
-  return p$1() !== null;
+function f$2() {
+  return p$2() !== null;
 }
-function p$1() {
+function p$2() {
   return inject(n$1, null);
 }
 function c$1(o2) {
@@ -15860,7 +15860,7 @@ function r$1(t2, e2) {
   if (typeof n2 == "string" && n2.toLowerCase() === "button")
     return "button";
 }
-function b$2(t2, e2) {
+function b$1(t2, e2) {
   let n2 = ref(r$1(t2.value.type, t2.value.as));
   return onMounted(() => {
     n2.value = r$1(t2.value.type, t2.value.as);
@@ -15870,7 +15870,7 @@ function b$2(t2, e2) {
   }), n2;
 }
 const e$1 = typeof window == "undefined" || typeof document == "undefined";
-function m$2(r2) {
+function m$1(r2) {
   if (e$1)
     return null;
   if (r2 instanceof Node)
@@ -15882,79 +15882,79 @@ function m$2(r2) {
   }
   return document;
 }
-let m$1 = ["[contentEditable=true]", "[tabindex]", "a[href]", "area[href]", "button:not([disabled])", "iframe", "input:not([disabled])", "select:not([disabled])", "textarea:not([disabled])"].map((e2) => `${e2}:not([tabindex='-1'])`).join(",");
-var M = ((n2) => (n2[n2.First = 1] = "First", n2[n2.Previous = 2] = "Previous", n2[n2.Next = 4] = "Next", n2[n2.Last = 8] = "Last", n2[n2.WrapAround = 16] = "WrapAround", n2[n2.NoScroll = 32] = "NoScroll", n2))(M || {}), N = ((o2) => (o2[o2.Error = 0] = "Error", o2[o2.Overflow = 1] = "Overflow", o2[o2.Success = 2] = "Success", o2[o2.Underflow = 3] = "Underflow", o2))(N || {}), b$1 = ((r2) => (r2[r2.Previous = -1] = "Previous", r2[r2.Next = 1] = "Next", r2))(b$1 || {});
-function E$2(e2 = document.body) {
-  return e2 == null ? [] : Array.from(e2.querySelectorAll(m$1));
+let f$1 = ["[contentEditable=true]", "[tabindex]", "a[href]", "area[href]", "button:not([disabled])", "iframe", "input:not([disabled])", "select:not([disabled])", "textarea:not([disabled])"].map((e2) => `${e2}:not([tabindex='-1'])`).join(",");
+var N = ((n2) => (n2[n2.First = 1] = "First", n2[n2.Previous = 2] = "Previous", n2[n2.Next = 4] = "Next", n2[n2.Last = 8] = "Last", n2[n2.WrapAround = 16] = "WrapAround", n2[n2.NoScroll = 32] = "NoScroll", n2))(N || {}), T = ((o2) => (o2[o2.Error = 0] = "Error", o2[o2.Overflow = 1] = "Overflow", o2[o2.Success = 2] = "Success", o2[o2.Underflow = 3] = "Underflow", o2))(T || {}), F$2 = ((r2) => (r2[r2.Previous = -1] = "Previous", r2[r2.Next = 1] = "Next", r2))(F$2 || {});
+function d$4(e2 = document.body) {
+  return e2 == null ? [] : Array.from(e2.querySelectorAll(f$1)).sort((t2, r2) => Math.sign((t2.tabIndex || Number.MAX_SAFE_INTEGER) - (r2.tabIndex || Number.MAX_SAFE_INTEGER)));
 }
-var F$2 = ((r2) => (r2[r2.Strict = 0] = "Strict", r2[r2.Loose = 1] = "Loose", r2))(F$2 || {});
-function h$1(e2, t2 = 0) {
+var h = ((r2) => (r2[r2.Strict = 0] = "Strict", r2[r2.Loose = 1] = "Loose", r2))(h || {});
+function S$1(e2, t2 = 0) {
   var r2;
-  return e2 === ((r2 = m$2(e2)) == null ? void 0 : r2.body) ? false : u$4(t2, { [0]() {
-    return e2.matches(m$1);
+  return e2 === ((r2 = m$1(e2)) == null ? void 0 : r2.body) ? false : u$3(t2, { [0]() {
+    return e2.matches(f$1);
   }, [1]() {
     let l2 = e2;
     for (; l2 !== null; ) {
-      if (l2.matches(m$1))
+      if (l2.matches(f$1))
         return true;
       l2 = l2.parentElement;
     }
     return false;
   } });
 }
-function w$3(e2) {
+function H(e2) {
   e2 == null || e2.focus({ preventScroll: true });
 }
-let H$1 = ["textarea", "input"].join(",");
-function S$2(e2) {
+let w$2 = ["textarea", "input"].join(",");
+function A$1(e2) {
   var t2, r2;
-  return (r2 = (t2 = e2 == null ? void 0 : e2.matches) == null ? void 0 : t2.call(e2, H$1)) != null ? r2 : false;
+  return (r2 = (t2 = e2 == null ? void 0 : e2.matches) == null ? void 0 : t2.call(e2, w$2)) != null ? r2 : false;
 }
-function O(e2, t2 = (r2) => r2) {
+function I(e2, t2 = (r2) => r2) {
   return e2.slice().sort((r2, l2) => {
-    let o2 = t2(r2), s2 = t2(l2);
-    if (o2 === null || s2 === null)
+    let o2 = t2(r2), i2 = t2(l2);
+    if (o2 === null || i2 === null)
       return 0;
-    let n2 = o2.compareDocumentPosition(s2);
+    let n2 = o2.compareDocumentPosition(i2);
     return n2 & Node.DOCUMENT_POSITION_FOLLOWING ? -1 : n2 & Node.DOCUMENT_POSITION_PRECEDING ? 1 : 0;
   });
 }
-function P$2(e2, t2, r2 = true, l2 = null) {
-  var c2;
-  let o2 = (c2 = Array.isArray(e2) ? e2.length > 0 ? e2[0].ownerDocument : document : e2 == null ? void 0 : e2.ownerDocument) != null ? c2 : document, s2 = Array.isArray(e2) ? r2 ? O(e2) : e2 : E$2(e2);
-  l2 = l2 != null ? l2 : o2.activeElement;
-  let n2 = (() => {
+function O(e2, t2, { sorted: r2 = true, relativeTo: l2 = null, skipElements: o2 = [] } = {}) {
+  var m2;
+  let i2 = (m2 = Array.isArray(e2) ? e2.length > 0 ? e2[0].ownerDocument : document : e2 == null ? void 0 : e2.ownerDocument) != null ? m2 : document, n2 = Array.isArray(e2) ? r2 ? I(e2) : e2 : d$4(e2);
+  o2.length > 0 && (n2 = n2.filter((s2) => !o2.includes(s2))), l2 = l2 != null ? l2 : i2.activeElement;
+  let x2 = (() => {
     if (t2 & 5)
       return 1;
     if (t2 & 10)
       return -1;
     throw new Error("Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last");
-  })(), x2 = (() => {
+  })(), p2 = (() => {
     if (t2 & 1)
       return 0;
     if (t2 & 2)
-      return Math.max(0, s2.indexOf(l2)) - 1;
+      return Math.max(0, n2.indexOf(l2)) - 1;
     if (t2 & 4)
-      return Math.max(0, s2.indexOf(l2)) + 1;
+      return Math.max(0, n2.indexOf(l2)) + 1;
     if (t2 & 8)
-      return s2.length - 1;
+      return n2.length - 1;
     throw new Error("Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last");
-  })(), p2 = t2 & 32 ? { preventScroll: true } : {}, a2 = 0, i2 = s2.length, u2;
+  })(), M2 = t2 & 32 ? { preventScroll: true } : {}, c2 = 0, a2 = n2.length, u2;
   do {
-    if (a2 >= i2 || a2 + i2 <= 0)
+    if (c2 >= a2 || c2 + a2 <= 0)
       return 0;
-    let f2 = x2 + a2;
+    let s2 = p2 + c2;
     if (t2 & 16)
-      f2 = (f2 + i2) % i2;
+      s2 = (s2 + a2) % a2;
     else {
-      if (f2 < 0)
+      if (s2 < 0)
         return 3;
-      if (f2 >= i2)
+      if (s2 >= a2)
         return 1;
     }
-    u2 = s2[f2], u2 == null || u2.focus(p2), a2 += n2;
-  } while (u2 !== o2.activeElement);
-  return t2 & 6 && S$2(u2) && u2.select(), u2.hasAttribute("tabindex") || u2.setAttribute("tabindex", "0"), 2;
+    u2 = n2[s2], u2 == null || u2.focus(M2), c2 += x2;
+  } while (u2 !== i2.activeElement);
+  return t2 & 6 && A$1(u2) && u2.select(), u2.hasAttribute("tabindex") || u2.setAttribute("tabindex", "0"), 2;
 }
 function v$1(e2, t2, n2) {
   e$1 || watchEffect((o2) => {
@@ -15975,10 +15975,10 @@ function y(f2, m2, i2 = computed(() => true)) {
       if (o2 === null)
         continue;
       let t2 = o2 instanceof HTMLElement ? o2 : o$1(o2);
-      if (t2 != null && t2.contains(n2))
+      if (t2 != null && t2.contains(n2) || e2.composed && e2.composedPath().includes(t2))
         return;
     }
-    return !h$1(n2, F$2.Loose) && n2.tabIndex !== -1 && e2.preventDefault(), m2(e2, n2);
+    return !S$1(n2, h.Loose) && n2.tabIndex !== -1 && e2.preventDefault(), m2(e2, n2);
   }
   let r2 = ref(null);
   v$1("mousedown", (e2) => {
@@ -15992,10 +15992,10 @@ var a = ((e2) => (e2[e2.None = 1] = "None", e2[e2.Focusable = 2] = "Focusable", 
 let f = defineComponent({ name: "Hidden", props: { as: { type: [Object, String], default: "div" }, features: { type: Number, default: 1 } }, setup(r2, { slots: t2, attrs: d2 }) {
   return () => {
     let { features: e2, ...o2 } = r2, n2 = { "aria-hidden": (e2 & 2) === 2 ? true : void 0, style: { position: "fixed", top: 1, left: 1, width: 1, height: 0, padding: 0, margin: -1, overflow: "hidden", clip: "rect(0, 0, 0, 0)", whiteSpace: "nowrap", borderWidth: "0", ...(e2 & 4) === 4 && (e2 & 2) !== 2 && { display: "none" } } };
-    return P$3({ ourProps: n2, theirProps: o2, slot: {}, attrs: d2, slots: t2, name: "Hidden" });
+    return P$2({ ourProps: n2, theirProps: o2, slot: {}, attrs: d2, slots: t2, name: "Hidden" });
   };
 } });
-function w$2(e2, n2, t2) {
+function w$1(e2, n2, t2) {
   e$1 || watchEffect((o2) => {
     window.addEventListener(e2, n2, t2), o2(() => window.removeEventListener(e2, n2, t2));
   });
@@ -16003,7 +16003,7 @@ function w$2(e2, n2, t2) {
 var d$3 = ((r2) => (r2[r2.Forwards = 0] = "Forwards", r2[r2.Backwards = 1] = "Backwards", r2))(d$3 || {});
 function n() {
   let o2 = ref(0);
-  return w$2("keydown", (e2) => {
+  return w$1("keydown", (e2) => {
     e2.key === "Tab" && (o2.value = e2.shiftKey ? 1 : 0);
   }), o2;
 }
@@ -16017,99 +16017,116 @@ function t(e2) {
     throw o2;
   }));
 }
-var h = ((e2) => (e2[e2.None = 1] = "None", e2[e2.InitialFocus = 2] = "InitialFocus", e2[e2.TabLock = 4] = "TabLock", e2[e2.FocusLock = 8] = "FocusLock", e2[e2.RestoreFocus = 16] = "RestoreFocus", e2[e2.All = 30] = "All", e2))(h || {});
-let ee$1 = Object.assign(defineComponent({ name: "FocusTrap", props: { as: { type: [Object, String], default: "div" }, initialFocus: { type: Object, default: null }, features: { type: Number, default: 30 }, containers: { type: Object, default: ref(/* @__PURE__ */ new Set()) } }, inheritAttrs: false, setup(u2, { attrs: a$1, slots: t2, expose: r2 }) {
-  let n$12 = ref(null);
-  r2({ el: n$12, $el: n$12 });
-  let o2 = computed(() => m$2(n$12));
-  A$1({ ownerDocument: o2 }, computed(() => Boolean(u2.features & 16)));
-  let e2 = C$1({ ownerDocument: o2, container: n$12, initialFocus: computed(() => u2.initialFocus) }, computed(() => Boolean(u2.features & 2)));
-  _$1({ ownerDocument: o2, container: n$12, containers: u2.containers, previousActiveElement: e2 }, computed(() => Boolean(u2.features & 8)));
+var P$1 = ((e2) => (e2[e2.None = 1] = "None", e2[e2.InitialFocus = 2] = "InitialFocus", e2[e2.TabLock = 4] = "TabLock", e2[e2.FocusLock = 8] = "FocusLock", e2[e2.RestoreFocus = 16] = "RestoreFocus", e2[e2.All = 30] = "All", e2))(P$1 || {});
+let le$2 = Object.assign(defineComponent({ name: "FocusTrap", props: { as: { type: [Object, String], default: "div" }, initialFocus: { type: Object, default: null }, features: { type: Number, default: 30 }, containers: { type: Object, default: ref(/* @__PURE__ */ new Set()) } }, inheritAttrs: false, setup(l2, { attrs: i2, slots: n$12, expose: r2 }) {
+  let t2 = ref(null);
+  r2({ el: t2, $el: t2 });
+  let o2 = computed(() => m$1(t2));
+  U({ ownerDocument: o2 }, computed(() => Boolean(l2.features & 16)));
+  let e2 = _$1({ ownerDocument: o2, container: t2, initialFocus: computed(() => l2.initialFocus) }, computed(() => Boolean(l2.features & 2)));
+  q({ ownerDocument: o2, container: t2, containers: l2.containers, previousActiveElement: e2 }, computed(() => Boolean(l2.features & 8)));
   let s2 = n();
-  function i2() {
-    let l2 = o$1(n$12);
-    !l2 || u$4(s2.value, { [d$3.Forwards]: () => P$2(l2, M.First), [d$3.Backwards]: () => P$2(l2, M.Last) });
+  function c2(a2) {
+    let m2 = o$1(t2);
+    if (!m2)
+      return;
+    ((p2) => p2())(() => {
+      u$3(s2.value, { [d$3.Forwards]: () => O(m2, N.First, { skipElements: [a2.relatedTarget] }), [d$3.Backwards]: () => O(m2, N.Last, { skipElements: [a2.relatedTarget] }) });
+    });
+  }
+  let u2 = ref(false);
+  function f$12(a2) {
+    a2.key === "Tab" && (u2.value = true, requestAnimationFrame(() => {
+      u2.value = false;
+    }));
+  }
+  function L2(a2) {
+    var p2;
+    let m2 = new Set((p2 = l2.containers) == null ? void 0 : p2.value);
+    m2.add(t2);
+    let d2 = a2.relatedTarget;
+    !d2 || d2.dataset.headlessuiFocusGuard !== "true" && (B$2(m2, d2) || (u2.value ? O(o$1(t2), u$3(s2.value, { [d$3.Forwards]: () => N.Next, [d$3.Backwards]: () => N.Previous }) | N.WrapAround, { relativeTo: a2.target }) : a2.target instanceof HTMLElement && H(a2.target)));
   }
   return () => {
-    let l2 = {}, c2 = { ref: n$12 }, { features: f$12, initialFocus: p2, containers: U, ...y2 } = u2;
-    return h$2(Fragment, [Boolean(f$12 & 4) && h$2(f, { as: "button", type: "button", onFocus: i2, features: a.Focusable }), P$3({ ourProps: c2, theirProps: { ...a$1, ...y2 }, slot: l2, attrs: a$1, slots: t2, name: "FocusTrap" }), Boolean(f$12 & 4) && h$2(f, { as: "button", type: "button", onFocus: i2, features: a.Focusable })]);
+    let a$1 = {}, m2 = { ref: t2, onKeydown: f$12, onFocusout: L2 }, { features: d2, initialFocus: p2, containers: G, ...S2 } = l2;
+    return h$1(Fragment, [Boolean(d2 & 4) && h$1(f, { as: "button", type: "button", "data-headlessui-focus-guard": true, onFocus: c2, features: a.Focusable }), P$2({ ourProps: m2, theirProps: { ...i2, ...S2 }, slot: a$1, attrs: i2, slots: n$12, name: "FocusTrap" }), Boolean(d2 & 4) && h$1(f, { as: "button", type: "button", "data-headlessui-focus-guard": true, onFocus: c2, features: a.Focusable })]);
   };
-} }), { features: h });
-function A$1({ ownerDocument: u2 }, a2) {
-  let t2 = ref(null);
+} }), { features: P$1 });
+function U({ ownerDocument: l2 }, i2) {
+  let n2 = ref(null);
   function r2() {
     var o2;
-    t2.value || (t2.value = (o2 = u2.value) == null ? void 0 : o2.activeElement);
+    n2.value || (n2.value = (o2 = l2.value) == null ? void 0 : o2.activeElement);
   }
-  function n2() {
-    !t2.value || (w$3(t2.value), t2.value = null);
+  function t2() {
+    !n2.value || (H(n2.value), n2.value = null);
   }
   onMounted(() => {
-    watch(a2, (o2, e2) => {
-      o2 !== e2 && (o2 ? r2() : n2());
+    watch(i2, (o2, e2) => {
+      o2 !== e2 && (o2 ? r2() : t2());
     }, { immediate: true });
-  }), onUnmounted(n2);
+  }), onUnmounted(t2);
 }
-function C$1({ ownerDocument: u2, container: a2, initialFocus: t$12 }, r2) {
-  let n2 = ref(null), o2 = ref(false);
+function _$1({ ownerDocument: l2, container: i2, initialFocus: n2 }, r2) {
+  let t$12 = ref(null), o2 = ref(false);
   return onMounted(() => o2.value = true), onUnmounted(() => o2.value = false), onMounted(() => {
-    watch([a2, t$12, r2], (e2, s2) => {
-      if (e2.every((l2, c2) => (s2 == null ? void 0 : s2[c2]) === l2) || !r2.value)
+    watch([i2, n2, r2], (e2, s2) => {
+      if (e2.every((u2, f2) => (s2 == null ? void 0 : s2[f2]) === u2) || !r2.value)
         return;
-      let i2 = o$1(a2);
-      !i2 || t(() => {
-        var f2, p2;
+      let c2 = o$1(i2);
+      !c2 || t(() => {
+        var L2, a2;
         if (!o2.value)
           return;
-        let l2 = o$1(t$12), c2 = (f2 = u2.value) == null ? void 0 : f2.activeElement;
-        if (l2) {
-          if (l2 === c2) {
-            n2.value = c2;
+        let u2 = o$1(n2), f2 = (L2 = l2.value) == null ? void 0 : L2.activeElement;
+        if (u2) {
+          if (u2 === f2) {
+            t$12.value = f2;
             return;
           }
-        } else if (i2.contains(c2)) {
-          n2.value = c2;
+        } else if (c2.contains(f2)) {
+          t$12.value = f2;
           return;
         }
-        l2 ? w$3(l2) : P$2(i2, M.First | M.NoScroll) === N.Error && console.warn("There are no focusable elements inside the <FocusTrap />"), n2.value = (p2 = u2.value) == null ? void 0 : p2.activeElement;
+        u2 ? H(u2) : O(c2, N.First | N.NoScroll) === T.Error && console.warn("There are no focusable elements inside the <FocusTrap />"), t$12.value = (a2 = l2.value) == null ? void 0 : a2.activeElement;
       });
     }, { immediate: true, flush: "post" });
-  }), n2;
+  }), t$12;
 }
-function _$1({ ownerDocument: u2, container: a2, containers: t2, previousActiveElement: r2 }, n2) {
+function q({ ownerDocument: l2, container: i2, containers: n2, previousActiveElement: r2 }, t2) {
   var o2;
-  E$1((o2 = u2.value) == null ? void 0 : o2.defaultView, "focus", (e2) => {
-    if (!n2.value)
+  E$1((o2 = l2.value) == null ? void 0 : o2.defaultView, "focus", (e2) => {
+    if (!t2.value)
       return;
-    let s2 = new Set(t2 == null ? void 0 : t2.value);
-    s2.add(a2);
-    let i2 = r2.value;
-    if (!i2)
+    let s2 = new Set(n2 == null ? void 0 : n2.value);
+    s2.add(i2);
+    let c2 = r2.value;
+    if (!c2)
       return;
-    let l2 = e2.target;
-    l2 && l2 instanceof HTMLElement ? x$1(s2, l2) ? (r2.value = l2, w$3(l2)) : (e2.preventDefault(), e2.stopPropagation(), w$3(i2)) : w$3(r2.value);
+    let u2 = e2.target;
+    u2 && u2 instanceof HTMLElement ? B$2(s2, u2) ? (r2.value = u2, H(u2)) : (e2.preventDefault(), e2.stopPropagation(), H(c2)) : H(r2.value);
   }, true);
 }
-function x$1(u2, a2) {
-  var t2;
-  for (let r2 of u2)
-    if ((t2 = r2.value) != null && t2.contains(a2))
+function B$2(l2, i2) {
+  var n2;
+  for (let r2 of l2)
+    if ((n2 = r2.value) != null && n2.contains(i2))
       return true;
   return false;
 }
 let l$1 = "body > *", i = /* @__PURE__ */ new Set(), r = /* @__PURE__ */ new Map();
-function u$3(t2) {
+function u$2(t2) {
   t2.setAttribute("aria-hidden", "true"), t2.inert = true;
 }
 function s$1(t2) {
   let n2 = r.get(t2);
   !n2 || (n2["aria-hidden"] === null ? t2.removeAttribute("aria-hidden") : t2.setAttribute("aria-hidden", n2["aria-hidden"]), t2.inert = n2.inert);
 }
-function g$2(t2, n2 = ref(true)) {
+function g$3(t2, n2 = ref(true)) {
   watchEffect((d2) => {
     if (!n2.value || !t2.value)
       return;
-    let a2 = t2.value, o2 = m$2(a2);
+    let a2 = t2.value, o2 = m$1(a2);
     if (!!o2) {
       i.add(a2);
       for (let e2 of r.keys())
@@ -16119,7 +16136,7 @@ function g$2(t2, n2 = ref(true)) {
           for (let f2 of i)
             if (e2.contains(f2))
               return;
-          i.size === 1 && (r.set(e2, { "aria-hidden": e2.getAttribute("aria-hidden"), inert: e2.inert }), u$3(e2));
+          i.size === 1 && (r.set(e2, { "aria-hidden": e2.getAttribute("aria-hidden"), inert: e2.inert }), u$2(e2));
         }
       }), d2(() => {
         if (i.delete(a2), i.size > 0)
@@ -16128,7 +16145,7 @@ function g$2(t2, n2 = ref(true)) {
               for (let f2 of i)
                 if (e2.contains(f2))
                   return;
-              r.set(e2, { "aria-hidden": e2.getAttribute("aria-hidden"), inert: e2.inert }), u$3(e2);
+              r.set(e2, { "aria-hidden": e2.getAttribute("aria-hidden"), inert: e2.inert }), u$2(e2);
             }
           });
         else
@@ -16139,17 +16156,17 @@ function g$2(t2, n2 = ref(true)) {
   });
 }
 let e = Symbol("ForcePortalRootContext");
-function u$2() {
+function u$1() {
   return inject(e, false);
 }
-let P$1 = defineComponent({ name: "ForcePortalRoot", props: { as: { type: [Object, String], default: "template" }, force: { type: Boolean, default: false } }, setup(o2, { slots: t2, attrs: r2 }) {
+let P = defineComponent({ name: "ForcePortalRoot", props: { as: { type: [Object, String], default: "template" }, force: { type: Boolean, default: false } }, setup(o2, { slots: t2, attrs: r2 }) {
   return provide(e, o2.force), () => {
     let { force: f2, ...n2 } = o2;
-    return P$3({ theirProps: n2, ourProps: {}, slot: {}, slots: t2, attrs: r2, name: "ForcePortalRoot" });
+    return P$2({ theirProps: n2, ourProps: {}, slot: {}, slots: t2, attrs: r2, name: "ForcePortalRoot" });
   };
 } });
 function c(t2) {
-  let r2 = m$2(t2);
+  let r2 = m$1(t2);
   if (!r2) {
     if (t2 === null)
       return null;
@@ -16161,8 +16178,8 @@ function c(t2) {
   let e2 = r2.createElement("div");
   return e2.setAttribute("id", "headlessui-portal-root"), r2.body.appendChild(e2);
 }
-let R = defineComponent({ name: "Portal", props: { as: { type: [Object, String], default: "div" } }, setup(t2, { slots: r2, attrs: o2 }) {
-  let e2 = ref(null), p2 = computed(() => m$2(e2)), n2 = u$2(), u2 = inject(g$1, null), l2 = ref(n2 === true || u2 == null ? c(e2.value) : u2.resolveTarget());
+let R$1 = defineComponent({ name: "Portal", props: { as: { type: [Object, String], default: "div" } }, setup(t2, { slots: r2, attrs: o2 }) {
+  let e2 = ref(null), p2 = computed(() => m$1(e2)), n2 = u$1(), u2 = inject(g$2, null), l2 = ref(n2 === true || u2 == null ? c(e2.value) : u2.resolveTarget());
   return watchEffect(() => {
     n2 || u2 != null && (l2.value = u2.resolveTarget());
   }), onUnmounted(() => {
@@ -16173,24 +16190,24 @@ let R = defineComponent({ name: "Portal", props: { as: { type: [Object, String],
     if (l2.value === null)
       return null;
     let a2 = { ref: e2, "data-headlessui-portal": "" };
-    return h$2(Teleport, { to: l2.value }, P$3({ ourProps: a2, theirProps: t2, slot: {}, attrs: o2, slots: r2, name: "Portal" }));
+    return h$1(Teleport, { to: l2.value }, P$2({ ourProps: a2, theirProps: t2, slot: {}, attrs: o2, slots: r2, name: "Portal" }));
   };
-} }), g$1 = Symbol("PortalGroupContext"), L$1 = defineComponent({ name: "PortalGroup", props: { as: { type: [Object, String], default: "template" }, target: { type: Object, default: null } }, setup(t2, { attrs: r2, slots: o2 }) {
+} }), g$2 = Symbol("PortalGroupContext"), L$2 = defineComponent({ name: "PortalGroup", props: { as: { type: [Object, String], default: "template" }, target: { type: Object, default: null } }, setup(t2, { attrs: r2, slots: o2 }) {
   let e2 = reactive({ resolveTarget() {
     return t2.target;
   } });
-  return provide(g$1, e2), () => {
+  return provide(g$2, e2), () => {
     let { target: p2, ...n2 } = t2;
-    return P$3({ theirProps: n2, ourProps: {}, slot: {}, attrs: r2, slots: o2, name: "PortalGroup" });
+    return P$2({ theirProps: n2, ourProps: {}, slot: {}, attrs: r2, slots: o2, name: "PortalGroup" });
   };
 } });
-let u$1 = Symbol("StackContext");
-var p = ((e2) => (e2[e2.Add = 0] = "Add", e2[e2.Remove = 1] = "Remove", e2))(p || {});
+let u = Symbol("StackContext");
+var p$1 = ((e2) => (e2[e2.Add = 0] = "Add", e2[e2.Remove = 1] = "Remove", e2))(p$1 || {});
 function v() {
-  return inject(u$1, () => {
+  return inject(u, () => {
   });
 }
-function S$1({ type: o2, enabled: r2, element: e2, onUpdate: i2 }) {
+function S({ type: o2, enabled: r2, element: e2, onUpdate: i2 }) {
   let a2 = v();
   function t2(...n2) {
     i2 == null || i2(...n2), a2(...n2);
@@ -16201,30 +16218,30 @@ function S$1({ type: o2, enabled: r2, element: e2, onUpdate: i2 }) {
     }, { immediate: true, flush: "sync" });
   }), onUnmounted(() => {
     r2.value && t2(1, o2, e2);
-  }), provide(u$1, t2);
+  }), provide(u, t2);
 }
-let u = Symbol("DescriptionContext");
+let p = Symbol("DescriptionContext");
 function b() {
-  let t2 = inject(u, null);
+  let t2 = inject(p, null);
   if (t2 === null)
     throw new Error("Missing parent");
   return t2;
 }
-function P({ slot: t2 = ref({}), name: o2 = "Description", props: s2 = {} } = {}) {
+function M$1({ slot: t2 = ref({}), name: i2 = "Description", props: o2 = {} } = {}) {
   let e2 = ref([]);
-  function n2(r2) {
-    return e2.value.push(r2), () => {
-      let i2 = e2.value.indexOf(r2);
-      i2 !== -1 && e2.value.splice(i2, 1);
+  function s2(n2) {
+    return e2.value.push(n2), () => {
+      let r2 = e2.value.indexOf(n2);
+      r2 !== -1 && e2.value.splice(r2, 1);
     };
   }
-  return provide(u, { register: n2, slot: t2, name: o2, props: s2 }), computed(() => e2.value.length > 0 ? e2.value.join(" ") : void 0);
+  return provide(p, { register: s2, slot: t2, name: i2, props: o2 }), computed(() => e2.value.length > 0 ? e2.value.join(" ") : void 0);
 }
-let S = defineComponent({ name: "Description", props: { as: { type: [Object, String], default: "p" } }, setup(t2, { attrs: o2, slots: s2 }) {
-  let e2 = b(), n2 = `headlessui-description-${t$1()}`;
-  return onMounted(() => onUnmounted(e2.register(n2))), () => {
-    let { name: r2 = "Description", slot: i2 = ref({}), props: l2 = {} } = e2, c2 = t2, d2 = { ...Object.entries(l2).reduce((f2, [a2, g2]) => Object.assign(f2, { [a2]: unref(g2) }), {}), id: n2 };
-    return P$3({ ourProps: d2, theirProps: c2, slot: i2.value, attrs: o2, slots: s2, name: r2 });
+let E = defineComponent({ name: "Description", props: { as: { type: [Object, String], default: "p" }, id: { type: String, default: () => `headlessui-description-${t$1()}` } }, setup(t2, { attrs: i2, slots: o2 }) {
+  let e2 = b();
+  return onMounted(() => onUnmounted(e2.register(t2.id))), () => {
+    let { name: s2 = "Description", slot: n2 = ref({}), props: r2 = {} } = e2, { id: d2, ...l2 } = t2, c2 = { ...Object.entries(r2).reduce((f2, [a2, g2]) => Object.assign(f2, { [a2]: unref(g2) }), {}), id: d2 };
+    return P$2({ ourProps: c2, theirProps: l2, slot: n2.value, attrs: i2, slots: o2, name: s2 });
   };
 } });
 function s() {
@@ -16256,424 +16273,465 @@ function s() {
 function o() {
   return /iPhone/gi.test(window.navigator.platform) || /Mac/gi.test(window.navigator.platform) && window.navigator.maxTouchPoints > 0;
 }
-var De = ((t2) => (t2[t2.Open = 0] = "Open", t2[t2.Closed = 1] = "Closed", t2))(De || {});
-let j$1 = Symbol("DialogContext");
-function T(a2) {
-  let u2 = inject(j$1, null);
-  if (u2 === null) {
-    let t2 = new Error(`<${a2} /> is missing a parent <Dialog /> component.`);
-    throw Error.captureStackTrace && Error.captureStackTrace(t2, T), t2;
+var ye = ((t2) => (t2[t2.Open = 0] = "Open", t2[t2.Closed = 1] = "Closed", t2))(ye || {});
+let W = Symbol("DialogContext");
+function R(l2) {
+  let i2 = inject(W, null);
+  if (i2 === null) {
+    let t2 = new Error(`<${l2} /> is missing a parent <Dialog /> component.`);
+    throw Error.captureStackTrace && Error.captureStackTrace(t2, R), t2;
   }
-  return u2;
+  return i2;
 }
-let k = "DC8F892D-2EBD-447C-A4C8-A03058436FF4", Ne = defineComponent({ name: "Dialog", inheritAttrs: false, props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true }, open: { type: [Boolean, String], default: k }, initialFocus: { type: Object, default: null } }, emits: { close: (a2) => true }, setup(a$1, { emit: u2, attrs: t2, slots: s$12, expose: i2 }) {
-  var A2;
-  let g2 = ref(false);
+let M = "DC8F892D-2EBD-447C-A4C8-A03058436FF4", Ue = defineComponent({ name: "Dialog", inheritAttrs: false, props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true }, open: { type: [Boolean, String], default: M }, initialFocus: { type: Object, default: null }, id: { type: String, default: () => `headlessui-dialog-${t$1()}` } }, emits: { close: (l2) => true }, setup(l2, { emit: i2, attrs: t2, slots: u2, expose: s$12 }) {
+  var K2;
+  let o$3 = ref(false);
   onMounted(() => {
-    g2.value = true;
+    o$3.value = true;
   });
-  let r2 = ref(0), d2 = p$1(), S2 = computed(() => a$1.open === k && d2 !== null ? u$4(d2.value, { [l$2.Open]: true, [l$2.Closed]: false }) : a$1.open), x2 = ref(/* @__PURE__ */ new Set()), m2 = ref(null), B2 = ref(null), I = computed(() => m$2(m2));
-  if (i2({ el: m2, $el: m2 }), !(a$1.open !== k || d2 !== null))
+  let d2 = ref(0), D = p$2(), h2 = computed(() => l2.open === M && D !== null ? u$3(D.value, { [l$2.Open]: true, [l$2.Closed]: false }) : l2.open), H2 = ref(/* @__PURE__ */ new Set()), m2 = ref(null), V2 = ref(null), x2 = computed(() => m$1(m2));
+  if (s$12({ el: m2, $el: m2 }), !(l2.open !== M || D !== null))
     throw new Error("You forgot to provide an `open` prop to the `Dialog`.");
-  if (typeof S2.value != "boolean")
-    throw new Error(`You provided an \`open\` prop to the \`Dialog\`, but the value is not a boolean. Received: ${S2.value === k ? void 0 : a$1.open}`);
-  let f$12 = computed(() => g2.value && S2.value ? 0 : 1), H2 = computed(() => f$12.value === 0), C2 = computed(() => r2.value > 1), G2 = inject(j$1, null) !== null, z = computed(() => C2.value ? "parent" : "leaf");
-  g$2(m2, computed(() => C2.value ? H2.value : false)), S$1({ type: "Dialog", enabled: computed(() => f$12.value === 0), element: m2, onUpdate: (o2, l2, n2) => {
-    if (l2 === "Dialog")
-      return u$4(o2, { [p.Add]() {
-        x2.value.add(n2), r2.value += 1;
-      }, [p.Remove]() {
-        x2.value.delete(n2), r2.value -= 1;
+  if (typeof h2.value != "boolean")
+    throw new Error(`You provided an \`open\` prop to the \`Dialog\`, but the value is not a boolean. Received: ${h2.value === M ? void 0 : l2.open}`);
+  let c2 = computed(() => o$3.value && h2.value ? 0 : 1), Y = computed(() => c2.value === 0), k2 = computed(() => d2.value > 1), Z = inject(W, null) !== null, ee = computed(() => k2.value ? "parent" : "leaf");
+  g$3(m2, computed(() => k2.value ? Y.value : false)), S({ type: "Dialog", enabled: computed(() => c2.value === 0), element: m2, onUpdate: (a2, e2, n2) => {
+    if (e2 === "Dialog")
+      return u$3(a2, { [p$1.Add]() {
+        H2.value.add(n2), d2.value += 1;
+      }, [p$1.Remove]() {
+        H2.value.delete(n2), d2.value -= 1;
       } });
   } });
-  let J2 = P({ name: "DialogDescription", slot: computed(() => ({ open: S2.value })) }), Q = `headlessui-dialog-${t$1()}`, E2 = ref(null), O2 = { titleId: E2, panelRef: ref(null), dialogState: f$12, setTitleId(o2) {
-    E2.value !== o2 && (E2.value = o2);
+  let te = M$1({ name: "DialogDescription", slot: computed(() => ({ open: h2.value })) }), L2 = ref(null), b2 = { titleId: L2, panelRef: ref(null), dialogState: c2, setTitleId(a2) {
+    L2.value !== a2 && (L2.value = a2);
   }, close() {
-    u2("close", false);
+    i2("close", false);
   } };
-  return provide(j$1, O2), y(() => {
-    var l2, n2, p2;
-    return [...Array.from((n2 = (l2 = I.value) == null ? void 0 : l2.querySelectorAll("body > *, [data-headlessui-portal]")) != null ? n2 : []).filter((e2) => !(!(e2 instanceof HTMLElement) || e2.contains(o$1(B2)) || O2.panelRef.value && e2.contains(O2.panelRef.value))), (p2 = O2.panelRef.value) != null ? p2 : m2.value];
-  }, (o2, l2) => {
-    O2.close(), nextTick(() => l2 == null ? void 0 : l2.focus());
-  }, computed(() => f$12.value === 0 && !C2.value)), E$1((A2 = I.value) == null ? void 0 : A2.defaultView, "keydown", (o2) => {
-    o2.defaultPrevented || o2.key === o$2.Escape && f$12.value === 0 && (C2.value || (o2.preventDefault(), o2.stopPropagation(), O2.close()));
-  }), watchEffect((o$12) => {
-    var W;
-    if (f$12.value !== 0 || G2)
+  provide(W, b2);
+  function I2() {
+    var e2, n2, v2;
+    return [...Array.from((n2 = (e2 = x2.value) == null ? void 0 : e2.querySelectorAll("body > *, [data-headlessui-portal]")) != null ? n2 : []).filter((r2) => !(!(r2 instanceof HTMLElement) || r2.contains(o$1(V2)) || b2.panelRef.value && r2.contains(b2.panelRef.value))), (v2 = b2.panelRef.value) != null ? v2 : m2.value];
+  }
+  return y(() => I2(), (a2, e2) => {
+    b2.close(), nextTick(() => e2 == null ? void 0 : e2.focus());
+  }, computed(() => c2.value === 0 && !k2.value)), E$1((K2 = x2.value) == null ? void 0 : K2.defaultView, "keydown", (a2) => {
+    a2.defaultPrevented || a2.key === o$2.Escape && c2.value === 0 && (k2.value || (a2.preventDefault(), a2.stopPropagation(), b2.close()));
+  }), watchEffect((a2) => {
+    var U2;
+    if (c2.value !== 0 || Z)
       return;
-    let l2 = I.value;
-    if (!l2)
+    let e2 = x2.value;
+    if (!e2)
       return;
-    let n2 = s();
-    function p2(v2, b2, X) {
-      let Z = v2.style.getPropertyValue(b2);
-      return Object.assign(v2.style, { [b2]: X }), n2.add(() => {
-        Object.assign(v2.style, { [b2]: Z });
+    let n2 = s(), v2 = window.pageYOffset;
+    function r2(f2, p2, w2) {
+      let F2 = f2.style.getPropertyValue(p2);
+      return Object.assign(f2.style, { [p2]: w2 }), n2.add(() => {
+        Object.assign(f2.style, { [p2]: F2 });
       });
     }
-    let e2 = l2 == null ? void 0 : l2.documentElement, L2 = ((W = l2.defaultView) != null ? W : window).innerWidth - e2.clientWidth;
-    if (p2(e2, "overflow", "hidden"), L2 > 0) {
-      let v2 = e2.clientWidth - e2.offsetWidth, b2 = L2 - v2;
-      p2(e2, "paddingRight", `${b2}px`);
+    let O2 = e2 == null ? void 0 : e2.documentElement, N2 = ((U2 = e2.defaultView) != null ? U2 : window).innerWidth - O2.clientWidth;
+    if (r2(O2, "overflow", "hidden"), N2 > 0) {
+      let f2 = O2.clientWidth - O2.offsetWidth, p2 = N2 - f2;
+      r2(O2, "paddingRight", `${p2}px`);
     }
     if (o()) {
-      let v2 = window.pageYOffset;
-      p2(e2, "position", "fixed"), p2(e2, "marginTop", `-${v2}px`), p2(e2, "width", "100%"), n2.add(() => window.scrollTo(0, v2));
+      r2(e2.body, "marginTop", `-${v2}px`), window.scrollTo(0, 0);
+      let f2 = null;
+      n2.addEventListener(e2, "click", (p2) => {
+        if (p2.target instanceof HTMLElement)
+          try {
+            let w2 = p2.target.closest("a");
+            if (!w2)
+              return;
+            let { hash: F2 } = new URL(w2.href), $2 = e2.querySelector(F2);
+            $2 && !I2().some((le2) => le2.contains($2)) && (f2 = $2);
+          } catch {
+          }
+      }, true), n2.addEventListener(e2, "touchmove", (p2) => {
+        p2.target instanceof HTMLElement && !I2().some((w2) => w2.contains(p2.target)) && p2.preventDefault();
+      }, { passive: false }), n2.add(() => {
+        window.scrollTo(0, window.pageYOffset + v2), f2 && f2.isConnected && (f2.scrollIntoView({ block: "nearest" }), f2 = null);
+      });
     }
-    o$12(n2.dispose);
-  }), watchEffect((o2) => {
-    if (f$12.value !== 0)
+    a2(n2.dispose);
+  }), watchEffect((a2) => {
+    if (c2.value !== 0)
       return;
-    let l2 = o$1(m2);
-    if (!l2)
+    let e2 = o$1(m2);
+    if (!e2)
       return;
-    let n2 = new IntersectionObserver((p2) => {
-      for (let e2 of p2)
-        e2.boundingClientRect.x === 0 && e2.boundingClientRect.y === 0 && e2.boundingClientRect.width === 0 && e2.boundingClientRect.height === 0 && O2.close();
+    let n2 = new IntersectionObserver((v2) => {
+      for (let r2 of v2)
+        r2.boundingClientRect.x === 0 && r2.boundingClientRect.y === 0 && r2.boundingClientRect.width === 0 && r2.boundingClientRect.height === 0 && b2.close();
     });
-    n2.observe(l2), o2(() => n2.disconnect());
+    n2.observe(e2), a2(() => n2.disconnect());
   }), () => {
-    let o2 = { ...t2, ref: m2, id: Q, role: "dialog", "aria-modal": f$12.value === 0 ? true : void 0, "aria-labelledby": E2.value, "aria-describedby": J2.value }, { open: l2, initialFocus: n2, ...p2 } = a$1, e2 = { open: f$12.value === 0 };
-    return h$2(P$1, { force: true }, () => [h$2(R, () => h$2(L$1, { target: m2.value }, () => h$2(P$1, { force: false }, () => h$2(ee$1, { initialFocus: n2, containers: x2, features: H2.value ? u$4(z.value, { parent: ee$1.features.RestoreFocus, leaf: ee$1.features.All & ~ee$1.features.FocusLock }) : ee$1.features.None }, () => P$3({ ourProps: o2, theirProps: p2, slot: e2, attrs: t2, slots: s$12, visible: f$12.value === 0, features: R$1.RenderStrategy | R$1.Static, name: "Dialog" }))))), h$2(f, { features: a.Hidden, ref: B2 })]);
+    let { id: a$1, open: e2, initialFocus: n2, ...v2 } = l2, r2 = { ...t2, ref: m2, id: a$1, role: "dialog", "aria-modal": c2.value === 0 ? true : void 0, "aria-labelledby": L2.value, "aria-describedby": te.value }, O2 = { open: c2.value === 0 };
+    return h$1(P, { force: true }, () => [h$1(R$1, () => h$1(L$2, { target: m2.value }, () => h$1(P, { force: false }, () => h$1(le$2, { initialFocus: n2, containers: H2, features: Y.value ? u$3(ee.value, { parent: le$2.features.RestoreFocus, leaf: le$2.features.All & ~le$2.features.FocusLock }) : le$2.features.None }, () => P$2({ ourProps: r2, theirProps: v2, slot: O2, attrs: t2, slots: u2, visible: c2.value === 0, features: R$2.RenderStrategy | R$2.Static, name: "Dialog" }))))), h$1(f, { features: a.Hidden, ref: V2 })]);
   };
 } });
-defineComponent({ name: "DialogOverlay", props: { as: { type: [Object, String], default: "div" } }, setup(a2, { attrs: u2, slots: t2 }) {
-  let s2 = T("DialogOverlay"), i2 = `headlessui-dialog-overlay-${t$1()}`;
-  function g2(r2) {
-    r2.target === r2.currentTarget && (r2.preventDefault(), r2.stopPropagation(), s2.close());
+defineComponent({ name: "DialogOverlay", props: { as: { type: [Object, String], default: "div" }, id: { type: String, default: () => `headlessui-dialog-overlay-${t$1()}` } }, setup(l2, { attrs: i2, slots: t2 }) {
+  let u2 = R("DialogOverlay");
+  function s2(o2) {
+    o2.target === o2.currentTarget && (o2.preventDefault(), o2.stopPropagation(), u2.close());
   }
-  return () => P$3({ ourProps: { id: i2, "aria-hidden": true, onClick: g2 }, theirProps: a2, slot: { open: s2.dialogState.value === 0 }, attrs: u2, slots: t2, name: "DialogOverlay" });
+  return () => {
+    let { id: o2, ...d2 } = l2;
+    return P$2({ ourProps: { id: o2, "aria-hidden": true, onClick: s2 }, theirProps: d2, slot: { open: u2.dialogState.value === 0 }, attrs: i2, slots: t2, name: "DialogOverlay" });
+  };
 } });
-defineComponent({ name: "DialogBackdrop", props: { as: { type: [Object, String], default: "div" } }, inheritAttrs: false, setup(a2, { attrs: u2, slots: t2, expose: s2 }) {
-  let i2 = T("DialogBackdrop"), g2 = `headlessui-dialog-backdrop-${t$1()}`, r2 = ref(null);
-  return s2({ el: r2, $el: r2 }), onMounted(() => {
-    if (i2.panelRef.value === null)
+defineComponent({ name: "DialogBackdrop", props: { as: { type: [Object, String], default: "div" }, id: { type: String, default: () => `headlessui-dialog-backdrop-${t$1()}` } }, inheritAttrs: false, setup(l2, { attrs: i2, slots: t2, expose: u2 }) {
+  let s2 = R("DialogBackdrop"), o2 = ref(null);
+  return u2({ el: o2, $el: o2 }), onMounted(() => {
+    if (s2.panelRef.value === null)
       throw new Error("A <DialogBackdrop /> component is being used, but a <DialogPanel /> component is missing.");
   }), () => {
-    let d2 = a2, S2 = { id: g2, ref: r2, "aria-hidden": true };
-    return h$2(P$1, { force: true }, () => h$2(R, () => P$3({ ourProps: S2, theirProps: { ...u2, ...d2 }, slot: { open: i2.dialogState.value === 0 }, attrs: u2, slots: t2, name: "DialogBackdrop" })));
+    let { id: d2, ...D } = l2, h2 = { id: d2, ref: o2, "aria-hidden": true };
+    return h$1(P, { force: true }, () => h$1(R$1, () => P$2({ ourProps: h2, theirProps: { ...i2, ...D }, slot: { open: s2.dialogState.value === 0 }, attrs: i2, slots: t2, name: "DialogBackdrop" })));
   };
 } });
-let _e = defineComponent({ name: "DialogPanel", props: { as: { type: [Object, String], default: "div" } }, setup(a2, { attrs: u2, slots: t2, expose: s2 }) {
-  let i2 = T("DialogPanel"), g2 = `headlessui-dialog-panel-${t$1()}`;
-  s2({ el: i2.panelRef, $el: i2.panelRef });
-  function r2(d2) {
+let Ge = defineComponent({ name: "DialogPanel", props: { as: { type: [Object, String], default: "div" }, id: { type: String, default: () => `headlessui-dialog-panel-${t$1()}` } }, setup(l2, { attrs: i2, slots: t2, expose: u2 }) {
+  let s2 = R("DialogPanel");
+  u2({ el: s2.panelRef, $el: s2.panelRef });
+  function o2(d2) {
     d2.stopPropagation();
   }
   return () => {
-    let d2 = { id: g2, ref: i2.panelRef, onClick: r2 };
-    return P$3({ ourProps: d2, theirProps: a2, slot: { open: i2.dialogState.value === 0 }, attrs: u2, slots: t2, name: "DialogPanel" });
+    let { id: d2, ...D } = l2, h2 = { id: d2, ref: s2.panelRef, onClick: o2 };
+    return P$2({ ourProps: h2, theirProps: D, slot: { open: s2.dialogState.value === 0 }, attrs: i2, slots: t2, name: "DialogPanel" });
   };
-} }), Ue = defineComponent({ name: "DialogTitle", props: { as: { type: [Object, String], default: "h2" } }, setup(a2, { attrs: u2, slots: t2 }) {
-  let s2 = T("DialogTitle"), i2 = `headlessui-dialog-title-${t$1()}`;
+} }), ze = defineComponent({ name: "DialogTitle", props: { as: { type: [Object, String], default: "h2" }, id: { type: String, default: () => `headlessui-dialog-title-${t$1()}` } }, setup(l2, { attrs: i2, slots: t2 }) {
+  let u2 = R("DialogTitle");
   return onMounted(() => {
-    s2.setTitleId(i2), onUnmounted(() => s2.setTitleId(null));
-  }), () => P$3({ ourProps: { id: i2 }, theirProps: a2, slot: { open: s2.dialogState.value === 0 }, attrs: u2, slots: t2, name: "DialogTitle" });
+    u2.setTitleId(l2.id), onUnmounted(() => u2.setTitleId(null));
+  }), () => {
+    let { id: s2, ...o2 } = l2;
+    return P$2({ ourProps: { id: s2 }, theirProps: o2, slot: { open: u2.dialogState.value === 0 }, attrs: i2, slots: t2, name: "DialogTitle" });
+  };
 } });
-S;
-var w$1 = ((n2) => (n2[n2.Open = 0] = "Open", n2[n2.Closed = 1] = "Closed", n2))(w$1 || {});
+E;
+var j = ((o2) => (o2[o2.Open = 0] = "Open", o2[o2.Closed = 1] = "Closed", o2))(j || {});
 let x = Symbol("DisclosureContext");
-function C(l2) {
+function g$1(t2) {
   let r2 = inject(x, null);
   if (r2 === null) {
-    let n2 = new Error(`<${l2} /> is missing a parent <Disclosure /> component.`);
-    throw Error.captureStackTrace && Error.captureStackTrace(n2, C), n2;
+    let o2 = new Error(`<${t2} /> is missing a parent <Disclosure /> component.`);
+    throw Error.captureStackTrace && Error.captureStackTrace(o2, g$1), o2;
   }
   return r2;
 }
 let B$1 = Symbol("DisclosurePanelContext");
-function H() {
+function $() {
   return inject(B$1, null);
 }
-let A = defineComponent({ name: "Disclosure", props: { as: { type: [Object, String], default: "template" }, defaultOpen: { type: [Boolean], default: false } }, setup(l2, { slots: r2, attrs: n2 }) {
-  let d2 = `headlessui-disclosure-button-${t$1()}`, e2 = `headlessui-disclosure-panel-${t$1()}`, o2 = ref(l2.defaultOpen ? 0 : 1), i2 = ref(null), s2 = ref(null), u2 = { buttonId: d2, panelId: e2, disclosureState: o2, panel: i2, button: s2, toggleDisclosure() {
-    o2.value = u$4(o2.value, { [0]: 1, [1]: 0 });
+let Q = defineComponent({ name: "Disclosure", props: { as: { type: [Object, String], default: "template" }, defaultOpen: { type: [Boolean], default: false } }, setup(t2, { slots: r2, attrs: o2 }) {
+  let u2 = ref(t2.defaultOpen ? 0 : 1), e2 = ref(null), i2 = ref(null), s2 = { buttonId: ref(null), panelId: ref(null), disclosureState: u2, panel: e2, button: i2, toggleDisclosure() {
+    u2.value = u$3(u2.value, { [0]: 1, [1]: 0 });
   }, closeDisclosure() {
-    o2.value !== 1 && (o2.value = 1);
-  }, close(a2) {
-    u2.closeDisclosure();
-    let c2 = (() => a2 ? a2 instanceof HTMLElement ? a2 : a2.value instanceof HTMLElement ? o$1(a2) : o$1(u2.button) : o$1(u2.button))();
-    c2 == null || c2.focus();
+    u2.value !== 1 && (u2.value = 1);
+  }, close(l2) {
+    s2.closeDisclosure();
+    let a2 = (() => l2 ? l2 instanceof HTMLElement ? l2 : l2.value instanceof HTMLElement ? o$1(l2) : o$1(s2.button) : o$1(s2.button))();
+    a2 == null || a2.focus();
   } };
-  return provide(x, u2), c$1(computed(() => u$4(o2.value, { [0]: l$2.Open, [1]: l$2.Closed }))), () => {
-    let { defaultOpen: a2, ...c2 } = l2, m2 = { open: o2.value === 0, close: u2.close };
-    return P$3({ theirProps: c2, ourProps: {}, slot: m2, slots: r2, attrs: n2, name: "Disclosure" });
+  return provide(x, s2), c$1(computed(() => u$3(u2.value, { [0]: l$2.Open, [1]: l$2.Closed }))), () => {
+    let { defaultOpen: l2, ...a2 } = t2, c2 = { open: u2.value === 0, close: s2.close };
+    return P$2({ theirProps: a2, ourProps: {}, slot: c2, slots: r2, attrs: o2, name: "Disclosure" });
   };
-} }), G = defineComponent({ name: "DisclosureButton", props: { as: { type: [Object, String], default: "button" }, disabled: { type: [Boolean], default: false } }, setup(l2, { attrs: r2, slots: n2, expose: d2 }) {
-  let e2 = C("DisclosureButton"), o2 = H(), i2 = o2 === null ? false : o2 === e2.panelId, s2 = ref(null);
-  d2({ el: s2, $el: s2 }), i2 || watchEffect(() => {
-    e2.button.value = s2.value;
+} }), V = defineComponent({ name: "DisclosureButton", props: { as: { type: [Object, String], default: "button" }, disabled: { type: [Boolean], default: false }, id: { type: String, default: () => `headlessui-disclosure-button-${t$1()}` } }, setup(t2, { attrs: r2, slots: o2, expose: u2 }) {
+  let e2 = g$1("DisclosureButton");
+  onMounted(() => {
+    e2.buttonId.value = t2.id;
+  }), onUnmounted(() => {
+    e2.buttonId.value = null;
   });
-  let u2 = b$2(computed(() => ({ as: l2.as, type: r2.type })), s2);
-  function a2() {
-    var t2;
-    l2.disabled || (i2 ? (e2.toggleDisclosure(), (t2 = o$1(e2.button)) == null || t2.focus()) : e2.toggleDisclosure());
+  let i2 = $(), s2 = computed(() => i2 === null ? false : i2.value === e2.panelId.value), l2 = ref(null);
+  u2({ el: l2, $el: l2 }), s2.value || watchEffect(() => {
+    e2.button.value = l2.value;
+  });
+  let a2 = b$1(computed(() => ({ as: t2.as, type: r2.type })), l2);
+  function c2() {
+    var n2;
+    t2.disabled || (s2.value ? (e2.toggleDisclosure(), (n2 = o$1(e2.button)) == null || n2.focus()) : e2.toggleDisclosure());
   }
-  function c2(t2) {
-    var D;
-    if (!l2.disabled)
-      if (i2)
-        switch (t2.key) {
+  function D(n2) {
+    var S2;
+    if (!t2.disabled)
+      if (s2.value)
+        switch (n2.key) {
           case o$2.Space:
           case o$2.Enter:
-            t2.preventDefault(), t2.stopPropagation(), e2.toggleDisclosure(), (D = o$1(e2.button)) == null || D.focus();
+            n2.preventDefault(), n2.stopPropagation(), e2.toggleDisclosure(), (S2 = o$1(e2.button)) == null || S2.focus();
             break;
         }
       else
-        switch (t2.key) {
+        switch (n2.key) {
           case o$2.Space:
           case o$2.Enter:
-            t2.preventDefault(), t2.stopPropagation(), e2.toggleDisclosure();
+            n2.preventDefault(), n2.stopPropagation(), e2.toggleDisclosure();
             break;
         }
   }
-  function m2(t2) {
-    switch (t2.key) {
+  function T2(n2) {
+    switch (n2.key) {
       case o$2.Space:
-        t2.preventDefault();
+        n2.preventDefault();
         break;
     }
   }
   return () => {
-    let t2 = { open: e2.disclosureState.value === 0 }, D = i2 ? { ref: s2, type: u2.value, onClick: a2, onKeydown: c2 } : { id: e2.buttonId, ref: s2, type: u2.value, "aria-expanded": l2.disabled ? void 0 : e2.disclosureState.value === 0, "aria-controls": o$1(e2.panel) ? e2.panelId : void 0, disabled: l2.disabled ? true : void 0, onClick: a2, onKeydown: c2, onKeyup: m2 };
-    return P$3({ ourProps: D, theirProps: l2, slot: t2, attrs: r2, slots: n2, name: "DisclosureButton" });
+    let n2 = { open: e2.disclosureState.value === 0 }, { id: S2, ...k2 } = t2, K2 = s2.value ? { ref: l2, type: a2.value, onClick: c2, onKeydown: D } : { id: S2, ref: l2, type: a2.value, "aria-expanded": t2.disabled ? void 0 : e2.disclosureState.value === 0, "aria-controls": o$1(e2.panel) ? e2.panelId.value : void 0, disabled: t2.disabled ? true : void 0, onClick: c2, onKeydown: D, onKeyup: T2 };
+    return P$2({ ourProps: K2, theirProps: k2, slot: n2, attrs: r2, slots: o2, name: "DisclosureButton" });
   };
-} }), J = defineComponent({ name: "DisclosurePanel", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true } }, setup(l2, { attrs: r2, slots: n2, expose: d2 }) {
-  let e2 = C("DisclosurePanel");
-  d2({ el: e2.panel, $el: e2.panel }), provide(B$1, e2.panelId);
-  let o2 = p$1(), i2 = computed(() => o2 !== null ? o2.value === l$2.Open : e2.disclosureState.value === 0);
+} }), X = defineComponent({ name: "DisclosurePanel", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true }, id: { type: String, default: () => `headlessui-disclosure-panel-${t$1()}` } }, setup(t2, { attrs: r2, slots: o2, expose: u2 }) {
+  let e2 = g$1("DisclosurePanel");
+  onMounted(() => {
+    e2.panelId.value = t2.id;
+  }), onUnmounted(() => {
+    e2.panelId.value = null;
+  }), u2({ el: e2.panel, $el: e2.panel }), provide(B$1, e2.panelId);
+  let i2 = p$2(), s2 = computed(() => i2 !== null ? i2.value === l$2.Open : e2.disclosureState.value === 0);
   return () => {
-    let s2 = { open: e2.disclosureState.value === 0, close: e2.close }, u2 = { id: e2.panelId, ref: e2.panel };
-    return P$3({ ourProps: u2, theirProps: l2, slot: s2, attrs: r2, slots: n2, features: R$1.RenderStrategy | R$1.Static, visible: i2.value, name: "DisclosurePanel" });
+    let l2 = { open: e2.disclosureState.value === 0, close: e2.close }, { id: a2, ...c2 } = t2, D = { id: a2, ref: e2.panel };
+    return P$2({ ourProps: D, theirProps: c2, slot: l2, attrs: r2, slots: o2, features: R$2.RenderStrategy | R$2.Static, visible: s2.value, name: "DisclosurePanel" });
   };
 } });
-var fe$2 = ((v2) => (v2[v2.Open = 0] = "Open", v2[v2.Closed = 1] = "Closed", v2))(fe$2 || {});
-let ee = Symbol("PopoverContext");
-function V(m2) {
-  let S2 = inject(ee, null);
-  if (S2 === null) {
-    let v2 = new Error(`<${m2} /> is missing a parent <${ce$1.name} /> component.`);
-    throw Error.captureStackTrace && Error.captureStackTrace(v2, V), v2;
+var ce$1 = ((p2) => (p2[p2.Open = 0] = "Open", p2[p2.Closed = 1] = "Closed", p2))(ce$1 || {});
+let oe$1 = Symbol("PopoverContext");
+function A(c2) {
+  let m2 = inject(oe$1, null);
+  if (m2 === null) {
+    let p2 = new Error(`<${c2} /> is missing a parent <${Pe.name} /> component.`);
+    throw Error.captureStackTrace && Error.captureStackTrace(p2, A), p2;
   }
-  return S2;
+  return m2;
 }
-let te = Symbol("PopoverGroupContext");
-function oe$2() {
-  return inject(te, null);
-}
-let ne = Symbol("PopoverPanelContext");
-function ve() {
+let ne = Symbol("PopoverGroupContext");
+function le$1() {
   return inject(ne, null);
 }
-let ce$1 = defineComponent({ name: "Popover", props: { as: { type: [Object, String], default: "div" } }, setup(m2, { slots: S2, attrs: v2, expose: E2 }) {
-  var p2;
-  let t2 = `headlessui-popover-button-${t$1()}`, e2 = `headlessui-popover-panel-${t$1()}`, b2 = ref(null);
-  E2({ el: b2, $el: b2 });
-  let u2 = ref(1), d2 = ref(null), g2 = ref(null), y$1 = ref(null), s2 = ref(null), c2 = computed(() => m$2(b2)), h2 = computed(() => {
-    var R2, C2;
-    if (!o$1(d2) || !o$1(s2))
+let re = Symbol("PopoverPanelContext");
+function de$1() {
+  return inject(re, null);
+}
+let Pe = defineComponent({ name: "Popover", props: { as: { type: [Object, String], default: "div" } }, setup(c2, { slots: m2, attrs: p2, expose: y$1 }) {
+  var n2;
+  let o2 = ref(null);
+  y$1({ el: o2, $el: o2 });
+  let e2 = ref(1), f2 = ref(null), d2 = ref(null), I2 = ref(null), s2 = ref(null), b2 = computed(() => m$1(o2)), P2 = computed(() => {
+    var h2, w2;
+    if (!o$1(f2) || !o$1(s2))
       return false;
-    for (let D of document.querySelectorAll("body > *"))
-      if (Number(D == null ? void 0 : D.contains(o$1(d2))) ^ Number(D == null ? void 0 : D.contains(o$1(s2))))
+    for (let C of document.querySelectorAll("body > *"))
+      if (Number(C == null ? void 0 : C.contains(o$1(f2))) ^ Number(C == null ? void 0 : C.contains(o$1(s2))))
         return true;
-    let r2 = E$2(), a2 = r2.indexOf(o$1(d2)), f2 = (a2 + r2.length - 1) % r2.length, F2 = (a2 + 1) % r2.length, M2 = r2[f2], x2 = r2[F2];
-    return !((R2 = o$1(s2)) != null && R2.contains(M2)) && !((C2 = o$1(s2)) != null && C2.contains(x2));
-  }), P2 = { popoverState: u2, buttonId: t2, panelId: e2, panel: s2, button: d2, isPortalled: h2, beforePanelSentinel: g2, afterPanelSentinel: y$1, togglePopover() {
-    u2.value = u$4(u2.value, { [0]: 1, [1]: 0 });
+    let t2 = d$4(), r2 = t2.indexOf(o$1(f2)), u2 = (r2 + t2.length - 1) % t2.length, v2 = (r2 + 1) % t2.length, S2 = t2[u2], j2 = t2[v2];
+    return !((h2 = o$1(s2)) != null && h2.contains(S2)) && !((w2 = o$1(s2)) != null && w2.contains(j2));
+  }), a2 = { popoverState: e2, buttonId: ref(null), panelId: ref(null), panel: s2, button: f2, isPortalled: P2, beforePanelSentinel: d2, afterPanelSentinel: I2, togglePopover() {
+    e2.value = u$3(e2.value, { [0]: 1, [1]: 0 });
   }, closePopover() {
-    u2.value !== 1 && (u2.value = 1);
-  }, close(r2) {
-    P2.closePopover();
-    let a2 = (() => r2 ? r2 instanceof HTMLElement ? r2 : r2.value instanceof HTMLElement ? o$1(r2) : o$1(P2.button) : o$1(P2.button))();
-    a2 == null || a2.focus();
+    e2.value !== 1 && (e2.value = 1);
+  }, close(t2) {
+    a2.closePopover();
+    let r2 = (() => t2 ? t2 instanceof HTMLElement ? t2 : t2.value instanceof HTMLElement ? o$1(t2) : o$1(a2.button) : o$1(a2.button))();
+    r2 == null || r2.focus();
   } };
-  provide(ee, P2), c$1(computed(() => u$4(u2.value, { [0]: l$2.Open, [1]: l$2.Closed })));
-  let I = { buttonId: t2, panelId: e2, close() {
-    P2.closePopover();
-  } }, l2 = oe$2(), o2 = l2 == null ? void 0 : l2.registerPopover;
+  provide(oe$1, a2), c$1(computed(() => u$3(e2.value, { [0]: l$2.Open, [1]: l$2.Closed })));
+  let D = { buttonId: a2.buttonId, panelId: a2.panelId, close() {
+    a2.closePopover();
+  } }, g2 = le$1(), E2 = g2 == null ? void 0 : g2.registerPopover;
   function i2() {
-    var r2, a2, f2, F2;
-    return (F2 = l2 == null ? void 0 : l2.isFocusWithinPopoverGroup()) != null ? F2 : ((r2 = c2.value) == null ? void 0 : r2.activeElement) && (((a2 = o$1(d2)) == null ? void 0 : a2.contains(c2.value.activeElement)) || ((f2 = o$1(s2)) == null ? void 0 : f2.contains(c2.value.activeElement)));
+    var t2, r2, u2, v2;
+    return (v2 = g2 == null ? void 0 : g2.isFocusWithinPopoverGroup()) != null ? v2 : ((t2 = b2.value) == null ? void 0 : t2.activeElement) && (((r2 = o$1(f2)) == null ? void 0 : r2.contains(b2.value.activeElement)) || ((u2 = o$1(s2)) == null ? void 0 : u2.contains(b2.value.activeElement)));
   }
-  return watchEffect(() => o2 == null ? void 0 : o2(I)), E$1((p2 = c2.value) == null ? void 0 : p2.defaultView, "focus", (r2) => {
-    var a2, f2;
-    u2.value === 0 && (i2() || !d2 || !s2 || (a2 = o$1(P2.beforePanelSentinel)) != null && a2.contains(r2.target) || (f2 = o$1(P2.afterPanelSentinel)) != null && f2.contains(r2.target) || P2.closePopover());
-  }, true), y([d2, s2], (r2, a2) => {
-    var f2;
-    P2.closePopover(), h$1(a2, F$2.Loose) || (r2.preventDefault(), (f2 = o$1(d2)) == null || f2.focus());
-  }, computed(() => u2.value === 0)), () => {
-    let r2 = { open: u2.value === 0, close: P2.close };
-    return P$3({ theirProps: m2, ourProps: { ref: b2 }, slot: r2, slots: S2, attrs: v2, name: "Popover" });
+  return watchEffect(() => E2 == null ? void 0 : E2(D)), E$1((n2 = b2.value) == null ? void 0 : n2.defaultView, "focus", (t2) => {
+    var r2, u2;
+    e2.value === 0 && (i2() || !f2 || !s2 || t2.target !== window && ((r2 = o$1(a2.beforePanelSentinel)) != null && r2.contains(t2.target) || (u2 = o$1(a2.afterPanelSentinel)) != null && u2.contains(t2.target) || a2.closePopover()));
+  }, true), y([f2, s2], (t2, r2) => {
+    var u2;
+    a2.closePopover(), S$1(r2, h.Loose) || (t2.preventDefault(), (u2 = o$1(f2)) == null || u2.focus());
+  }, computed(() => e2.value === 0)), () => {
+    let t2 = { open: e2.value === 0, close: a2.close };
+    return P$2({ theirProps: c2, ourProps: { ref: o2 }, slot: t2, slots: m2, attrs: p2, name: "Popover" });
   };
-} }), ke = defineComponent({ name: "PopoverButton", props: { as: { type: [Object, String], default: "button" }, disabled: { type: [Boolean], default: false } }, inheritAttrs: false, setup(m2, { attrs: S2, slots: v2, expose: E2 }) {
-  let t2 = V("PopoverButton"), e2 = computed(() => m$2(t2.button));
-  E2({ el: t2.button, $el: t2.button });
-  let b2 = oe$2(), u2 = b2 == null ? void 0 : b2.closeOthers, d2 = ve(), g2 = d2 === null ? false : d2 === t2.panelId, y2 = ref(null), s2 = `headlessui-focus-sentinel-${t$1()}`;
-  g2 || watchEffect(() => {
-    t2.button.value = y2.value;
+} }), Be = defineComponent({ name: "PopoverButton", props: { as: { type: [Object, String], default: "button" }, disabled: { type: [Boolean], default: false }, id: { type: String, default: () => `headlessui-popover-button-${t$1()}` } }, inheritAttrs: false, setup(c2, { attrs: m2, slots: p2, expose: y2 }) {
+  let o2 = A("PopoverButton"), e2 = computed(() => m$1(o2.button));
+  y2({ el: o2.button, $el: o2.button }), onMounted(() => {
+    o2.buttonId.value = c2.id;
+  }), onUnmounted(() => {
+    o2.buttonId.value = null;
   });
-  let c2 = b$2(computed(() => ({ as: m2.as, type: S2.type })), y2);
-  function h2(o2) {
-    var i2, p2, r2, a2, f2;
-    if (g2) {
-      if (t2.popoverState.value === 1)
+  let f$12 = le$1(), d2 = f$12 == null ? void 0 : f$12.closeOthers, I2 = de$1(), s2 = computed(() => I2 === null ? false : I2.value === o2.panelId.value), b2 = ref(null), P2 = `headlessui-focus-sentinel-${t$1()}`;
+  s2.value || watchEffect(() => {
+    o2.button.value = b2.value;
+  });
+  let a$1 = b$1(computed(() => ({ as: c2.as, type: m2.type })), b2);
+  function D(n2) {
+    var t2, r2, u2, v2, S2;
+    if (s2.value) {
+      if (o2.popoverState.value === 1)
         return;
-      switch (o2.key) {
+      switch (n2.key) {
         case o$2.Space:
         case o$2.Enter:
-          o2.preventDefault(), (p2 = (i2 = o2.target).click) == null || p2.call(i2), t2.closePopover(), (r2 = o$1(t2.button)) == null || r2.focus();
+          n2.preventDefault(), (r2 = (t2 = n2.target).click) == null || r2.call(t2), o2.closePopover(), (u2 = o$1(o2.button)) == null || u2.focus();
           break;
       }
     } else
-      switch (o2.key) {
+      switch (n2.key) {
         case o$2.Space:
         case o$2.Enter:
-          o2.preventDefault(), o2.stopPropagation(), t2.popoverState.value === 1 && (u2 == null || u2(t2.buttonId)), t2.togglePopover();
+          n2.preventDefault(), n2.stopPropagation(), o2.popoverState.value === 1 && (d2 == null || d2(o2.buttonId.value)), o2.togglePopover();
           break;
         case o$2.Escape:
-          if (t2.popoverState.value !== 0)
-            return u2 == null ? void 0 : u2(t2.buttonId);
-          if (!o$1(t2.button) || ((a2 = e2.value) == null ? void 0 : a2.activeElement) && !((f2 = o$1(t2.button)) != null && f2.contains(e2.value.activeElement)))
+          if (o2.popoverState.value !== 0)
+            return d2 == null ? void 0 : d2(o2.buttonId.value);
+          if (!o$1(o2.button) || ((v2 = e2.value) == null ? void 0 : v2.activeElement) && !((S2 = o$1(o2.button)) != null && S2.contains(e2.value.activeElement)))
             return;
-          o2.preventDefault(), o2.stopPropagation(), t2.closePopover();
+          n2.preventDefault(), n2.stopPropagation(), o2.closePopover();
           break;
       }
   }
-  function P2(o2) {
-    g2 || o2.key === o$2.Space && o2.preventDefault();
+  function g2(n2) {
+    s2.value || n2.key === o$2.Space && n2.preventDefault();
   }
-  function I(o2) {
-    var i2, p2;
-    m2.disabled || (g2 ? (t2.closePopover(), (i2 = o$1(t2.button)) == null || i2.focus()) : (o2.preventDefault(), o2.stopPropagation(), t2.popoverState.value === 1 && (u2 == null || u2(t2.buttonId)), t2.togglePopover(), (p2 = o$1(t2.button)) == null || p2.focus()));
+  function E2(n2) {
+    var t2, r2;
+    c2.disabled || (s2.value ? (o2.closePopover(), (t2 = o$1(o2.button)) == null || t2.focus()) : (n2.preventDefault(), n2.stopPropagation(), o2.popoverState.value === 1 && (d2 == null || d2(o2.buttonId.value)), o2.togglePopover(), (r2 = o$1(o2.button)) == null || r2.focus()));
   }
-  function l2(o2) {
-    o2.preventDefault(), o2.stopPropagation();
+  function i2(n2) {
+    n2.preventDefault(), n2.stopPropagation();
   }
   return () => {
-    let o2 = t2.popoverState.value === 0, i2 = { open: o2 }, p2 = g2 ? { ref: y2, type: c2.value, onKeydown: h2, onClick: I } : { ref: y2, id: t2.buttonId, type: c2.value, "aria-expanded": m2.disabled ? void 0 : t2.popoverState.value === 0, "aria-controls": o$1(t2.panel) ? t2.panelId : void 0, disabled: m2.disabled ? true : void 0, onKeydown: h2, onKeyup: P2, onClick: I, onMousedown: l2 }, r2 = n();
-    function a$1() {
-      let f2 = o$1(t2.panel);
-      if (!f2)
+    let n$12 = o2.popoverState.value === 0, t2 = { open: n$12 }, { id: r2, ...u2 } = c2, v2 = s2.value ? { ref: b2, type: a$1.value, onKeydown: D, onClick: E2 } : { ref: b2, id: r2, type: a$1.value, "aria-expanded": c2.disabled ? void 0 : o2.popoverState.value === 0, "aria-controls": o$1(o2.panel) ? o2.panelId.value : void 0, disabled: c2.disabled ? true : void 0, onKeydown: D, onKeyup: g2, onClick: E2, onMousedown: i2 }, S2 = n();
+    function j2() {
+      let h2 = o$1(o2.panel);
+      if (!h2)
         return;
-      function F2() {
-        u$4(r2.value, { [d$3.Forwards]: () => P$2(f2, M.First), [d$3.Backwards]: () => P$2(f2, M.Last) });
+      function w2() {
+        u$3(S2.value, { [d$3.Forwards]: () => O(h2, N.First), [d$3.Backwards]: () => O(h2, N.Last) });
       }
-      F2();
+      w2();
     }
-    return h$2(Fragment, [P$3({ ourProps: p2, theirProps: { ...S2, ...m2 }, slot: i2, attrs: S2, slots: v2, name: "PopoverButton" }), o2 && !g2 && t2.isPortalled.value && h$2(f, { id: s2, features: a.Focusable, as: "button", type: "button", onFocus: a$1 })]);
+    return h$1(Fragment, [P$2({ ourProps: v2, theirProps: { ...m2, ...u2 }, slot: t2, attrs: m2, slots: p2, name: "PopoverButton" }), n$12 && !s2.value && o2.isPortalled.value && h$1(f, { id: P2, features: a.Focusable, as: "button", type: "button", onFocus: j2 })]);
   };
 } });
-defineComponent({ name: "PopoverOverlay", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true } }, setup(m2, { attrs: S2, slots: v2 }) {
-  let E2 = V("PopoverOverlay"), t2 = `headlessui-popover-overlay-${t$1()}`, e2 = p$1(), b2 = computed(() => e2 !== null ? e2.value === l$2.Open : E2.popoverState.value === 0);
-  function u2() {
-    E2.closePopover();
+defineComponent({ name: "PopoverOverlay", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true } }, setup(c2, { attrs: m2, slots: p2 }) {
+  let y2 = A("PopoverOverlay"), o2 = `headlessui-popover-overlay-${t$1()}`, e2 = p$2(), f2 = computed(() => e2 !== null ? e2.value === l$2.Open : y2.popoverState.value === 0);
+  function d2() {
+    y2.closePopover();
   }
   return () => {
-    let d2 = { open: E2.popoverState.value === 0 };
-    return P$3({ ourProps: { id: t2, "aria-hidden": true, onClick: u2 }, theirProps: m2, slot: d2, attrs: S2, slots: v2, features: R$1.RenderStrategy | R$1.Static, visible: b2.value, name: "PopoverOverlay" });
+    let I2 = { open: y2.popoverState.value === 0 };
+    return P$2({ ourProps: { id: o2, "aria-hidden": true, onClick: d2 }, theirProps: c2, slot: I2, attrs: m2, slots: p2, features: R$2.RenderStrategy | R$2.Static, visible: f2.value, name: "PopoverOverlay" });
   };
 } });
-let Le = defineComponent({ name: "PopoverPanel", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true }, focus: { type: Boolean, default: false } }, inheritAttrs: false, setup(m2, { attrs: S2, slots: v2, expose: E2 }) {
-  let { focus: t2 } = m2, e2 = V("PopoverPanel"), b2 = computed(() => m$2(e2.panel)), u2 = `headlessui-focus-sentinel-before-${t$1()}`, d2 = `headlessui-focus-sentinel-after-${t$1()}`;
-  E2({ el: e2.panel, $el: e2.panel }), provide(ne, e2.panelId), watchEffect(() => {
-    var o2, i2;
-    if (!t2 || e2.popoverState.value !== 0 || !e2.panel)
+let He = defineComponent({ name: "PopoverPanel", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true }, focus: { type: Boolean, default: false }, id: { type: String, default: () => `headlessui-popover-panel-${t$1()}` } }, inheritAttrs: false, setup(c2, { attrs: m2, slots: p2, expose: y2 }) {
+  let { focus: o2 } = c2, e2 = A("PopoverPanel"), f$12 = computed(() => m$1(e2.panel)), d2 = `headlessui-focus-sentinel-before-${t$1()}`, I2 = `headlessui-focus-sentinel-after-${t$1()}`;
+  y2({ el: e2.panel, $el: e2.panel }), onMounted(() => {
+    e2.panelId.value = c2.id;
+  }), onUnmounted(() => {
+    e2.panelId.value = null;
+  }), provide(re, e2.panelId), watchEffect(() => {
+    var n2, t2;
+    if (!o2 || e2.popoverState.value !== 0 || !e2.panel)
       return;
-    let l2 = (o2 = b2.value) == null ? void 0 : o2.activeElement;
-    (i2 = o$1(e2.panel)) != null && i2.contains(l2) || P$2(o$1(e2.panel), M.First);
+    let i2 = (n2 = f$12.value) == null ? void 0 : n2.activeElement;
+    (t2 = o$1(e2.panel)) != null && t2.contains(i2) || O(o$1(e2.panel), N.First);
   });
-  let g2 = p$1(), y2 = computed(() => g2 !== null ? g2.value === l$2.Open : e2.popoverState.value === 0);
-  function s2(l2) {
-    var o2, i2;
-    switch (l2.key) {
+  let s2 = p$2(), b2 = computed(() => s2 !== null ? s2.value === l$2.Open : e2.popoverState.value === 0);
+  function P2(i2) {
+    var n2, t2;
+    switch (i2.key) {
       case o$2.Escape:
-        if (e2.popoverState.value !== 0 || !o$1(e2.panel) || b2.value && !((o2 = o$1(e2.panel)) != null && o2.contains(b2.value.activeElement)))
+        if (e2.popoverState.value !== 0 || !o$1(e2.panel) || f$12.value && !((n2 = o$1(e2.panel)) != null && n2.contains(f$12.value.activeElement)))
           return;
-        l2.preventDefault(), l2.stopPropagation(), e2.closePopover(), (i2 = o$1(e2.button)) == null || i2.focus();
+        i2.preventDefault(), i2.stopPropagation(), e2.closePopover(), (t2 = o$1(e2.button)) == null || t2.focus();
         break;
     }
   }
-  function c2(l2) {
-    var i2, p2, r2, a2, f2;
-    let o2 = l2.relatedTarget;
-    !o2 || !o$1(e2.panel) || (i2 = o$1(e2.panel)) != null && i2.contains(o2) || (e2.closePopover(), (((r2 = (p2 = o$1(e2.beforePanelSentinel)) == null ? void 0 : p2.contains) == null ? void 0 : r2.call(p2, o2)) || ((f2 = (a2 = o$1(e2.afterPanelSentinel)) == null ? void 0 : a2.contains) == null ? void 0 : f2.call(a2, o2))) && o2.focus({ preventScroll: true }));
+  function a$1(i2) {
+    var t2, r2, u2, v2, S2;
+    let n2 = i2.relatedTarget;
+    !n2 || !o$1(e2.panel) || (t2 = o$1(e2.panel)) != null && t2.contains(n2) || (e2.closePopover(), (((u2 = (r2 = o$1(e2.beforePanelSentinel)) == null ? void 0 : r2.contains) == null ? void 0 : u2.call(r2, n2)) || ((S2 = (v2 = o$1(e2.afterPanelSentinel)) == null ? void 0 : v2.contains) == null ? void 0 : S2.call(v2, n2))) && n2.focus({ preventScroll: true }));
   }
-  let h2 = n();
-  function P2() {
-    let l2 = o$1(e2.panel);
-    if (!l2)
+  let D = n();
+  function g2() {
+    let i2 = o$1(e2.panel);
+    if (!i2)
       return;
-    function o2() {
-      u$4(h2.value, { [d$3.Forwards]: () => {
-        P$2(l2, M.Next);
+    function n2() {
+      u$3(D.value, { [d$3.Forwards]: () => {
+        O(i2, N.Next);
       }, [d$3.Backwards]: () => {
-        var i2;
-        (i2 = o$1(e2.button)) == null || i2.focus({ preventScroll: true });
+        var t2;
+        (t2 = o$1(e2.button)) == null || t2.focus({ preventScroll: true });
       } });
     }
-    o2();
+    n2();
   }
-  function I() {
-    let l2 = o$1(e2.panel);
-    if (!l2)
+  function E2() {
+    let i2 = o$1(e2.panel);
+    if (!i2)
       return;
-    function o2() {
-      u$4(h2.value, { [d$3.Forwards]: () => {
-        var x2, R2;
-        let i2 = o$1(e2.button), p2 = o$1(e2.panel);
-        if (!i2)
+    function n2() {
+      u$3(D.value, { [d$3.Forwards]: () => {
+        var w2, C;
+        let t2 = o$1(e2.button), r2 = o$1(e2.panel);
+        if (!t2)
           return;
-        let r2 = E$2(), a2 = r2.indexOf(i2), f2 = r2.slice(0, a2 + 1), M$1 = [...r2.slice(a2 + 1), ...f2];
-        for (let C2 of M$1.slice())
-          if (((R2 = (x2 = C2 == null ? void 0 : C2.id) == null ? void 0 : x2.startsWith) == null ? void 0 : R2.call(x2, "headlessui-focus-sentinel-")) || (p2 == null ? void 0 : p2.contains(C2))) {
-            let D = M$1.indexOf(C2);
-            D !== -1 && M$1.splice(D, 1);
+        let u2 = d$4(), v2 = u2.indexOf(t2), S2 = u2.slice(0, v2 + 1), h2 = [...u2.slice(v2 + 1), ...S2];
+        for (let B2 of h2.slice())
+          if (((C = (w2 = B2 == null ? void 0 : B2.id) == null ? void 0 : w2.startsWith) == null ? void 0 : C.call(w2, "headlessui-focus-sentinel-")) || (r2 == null ? void 0 : r2.contains(B2))) {
+            let J = h2.indexOf(B2);
+            J !== -1 && h2.splice(J, 1);
           }
-        P$2(M$1, M.First, false);
-      }, [d$3.Backwards]: () => P$2(l2, M.Previous) });
+        O(h2, N.First, { sorted: false });
+      }, [d$3.Backwards]: () => O(i2, N.Previous) });
     }
-    o2();
+    n2();
   }
   return () => {
-    let l2 = { open: e2.popoverState.value === 0, close: e2.close }, o2 = { ref: e2.panel, id: e2.panelId, onKeydown: s2, onFocusout: t2 && e2.popoverState.value === 0 ? c2 : void 0, tabIndex: -1 };
-    return P$3({ ourProps: o2, theirProps: { ...S2, ...w$4(m2, ["focus"]) }, attrs: S2, slot: l2, slots: { ...v2, default: (...i2) => {
-      var p2;
-      return [h$2(Fragment, [y2.value && e2.isPortalled.value && h$2(f, { id: u2, ref: e2.beforePanelSentinel, features: a.Focusable, as: "button", type: "button", onFocus: P2 }), (p2 = v2.default) == null ? void 0 : p2.call(v2, ...i2), y2.value && e2.isPortalled.value && h$2(f, { id: d2, ref: e2.afterPanelSentinel, features: a.Focusable, as: "button", type: "button", onFocus: I })])];
-    } }, features: R$1.RenderStrategy | R$1.Static, visible: y2.value, name: "PopoverPanel" });
+    let i2 = { open: e2.popoverState.value === 0, close: e2.close }, { id: n2, focus: t2, ...r2 } = c2, u2 = { ref: e2.panel, id: n2, onKeydown: P2, onFocusout: o2 && e2.popoverState.value === 0 ? a$1 : void 0, tabIndex: -1 };
+    return P$2({ ourProps: u2, theirProps: { ...m2, ...r2 }, attrs: m2, slot: i2, slots: { ...p2, default: (...v2) => {
+      var S2;
+      return [h$1(Fragment, [b2.value && e2.isPortalled.value && h$1(f, { id: d2, ref: e2.beforePanelSentinel, features: a.Focusable, as: "button", type: "button", onFocus: g2 }), (S2 = p2.default) == null ? void 0 : S2.call(p2, ...v2), b2.value && e2.isPortalled.value && h$1(f, { id: I2, ref: e2.afterPanelSentinel, features: a.Focusable, as: "button", type: "button", onFocus: E2 })])];
+    } }, features: R$2.RenderStrategy | R$2.Static, visible: b2.value, name: "PopoverPanel" });
   };
-} }), He = defineComponent({ name: "PopoverGroup", props: { as: { type: [Object, String], default: "div" } }, setup(m2, { attrs: S2, slots: v2, expose: E2 }) {
-  let t2 = ref(null), e2 = ref([]), b2 = computed(() => m$2(t2));
-  E2({ el: t2, $el: t2 });
-  function u2(s2) {
-    let c2 = e2.value.indexOf(s2);
-    c2 !== -1 && e2.value.splice(c2, 1);
+} }), Ke = defineComponent({ name: "PopoverGroup", props: { as: { type: [Object, String], default: "div" } }, setup(c2, { attrs: m2, slots: p2, expose: y2 }) {
+  let o2 = ref(null), e2 = shallowRef([]), f2 = computed(() => m$1(o2));
+  y2({ el: o2, $el: o2 });
+  function d2(P2) {
+    let a2 = e2.value.indexOf(P2);
+    a2 !== -1 && e2.value.splice(a2, 1);
   }
-  function d2(s2) {
-    return e2.value.push(s2), () => {
-      u2(s2);
+  function I2(P2) {
+    return e2.value.push(P2), () => {
+      d2(P2);
     };
   }
-  function g2() {
-    var h2;
-    let s2 = b2.value;
-    if (!s2)
+  function s2() {
+    var D;
+    let P2 = f2.value;
+    if (!P2)
       return false;
-    let c2 = s2.activeElement;
-    return (h2 = o$1(t2)) != null && h2.contains(c2) ? true : e2.value.some((P2) => {
-      var I, l2;
-      return ((I = s2.getElementById(P2.buttonId)) == null ? void 0 : I.contains(c2)) || ((l2 = s2.getElementById(P2.panelId)) == null ? void 0 : l2.contains(c2));
+    let a2 = P2.activeElement;
+    return (D = o$1(o2)) != null && D.contains(a2) ? true : e2.value.some((g2) => {
+      var E2, i2;
+      return ((E2 = P2.getElementById(g2.buttonId.value)) == null ? void 0 : E2.contains(a2)) || ((i2 = P2.getElementById(g2.panelId.value)) == null ? void 0 : i2.contains(a2));
     });
   }
-  function y2(s2) {
-    for (let c2 of e2.value)
-      c2.buttonId !== s2 && c2.close();
+  function b2(P2) {
+    for (let a2 of e2.value)
+      a2.buttonId.value !== P2 && a2.close();
   }
-  return provide(te, { registerPopover: d2, unregisterPopover: u2, isFocusWithinPopoverGroup: g2, closeOthers: y2 }), () => P$3({ ourProps: { ref: t2 }, theirProps: m2, slot: {}, attrs: S2, slots: v2, name: "PopoverGroup" });
+  return provide(ne, { registerPopover: I2, unregisterPopover: d2, isFocusWithinPopoverGroup: s2, closeOthers: b2 }), () => P$2({ ourProps: { ref: o2 }, theirProps: c2, slot: {}, attrs: m2, slots: p2, name: "PopoverGroup" });
 } });
 let d$2 = defineComponent({ props: { onFocus: { type: Function, required: true } }, setup(t2) {
   let n2 = ref(true);
-  return () => n2.value ? h$2(f, { as: "button", type: "button", features: a.Focusable, onFocus(o2) {
+  return () => n2.value ? h$1(f, { as: "button", type: "button", features: a.Focusable, onFocus(o2) {
     o2.preventDefault();
     let e2, a2 = 50;
     function r2() {
@@ -16691,125 +16749,150 @@ let d$2 = defineComponent({ props: { onFocus: { type: Function, required: true }
     e2 = requestAnimationFrame(r2);
   } }) : null;
 } });
-let j = Symbol("TabsContext");
-function E(l2) {
-  let i2 = inject(j, null);
-  if (i2 === null) {
-    let o2 = new Error(`<${l2} /> is missing a parent <TabGroup /> component.`);
-    throw Error.captureStackTrace && Error.captureStackTrace(o2, E), o2;
+let K$1 = Symbol("TabsContext");
+function L$1(a2) {
+  let o2 = inject(K$1, null);
+  if (o2 === null) {
+    let s2 = new Error(`<${a2} /> is missing a parent <TabGroup /> component.`);
+    throw Error.captureStackTrace && Error.captureStackTrace(s2, L$1), s2;
   }
-  return i2;
+  return o2;
 }
-let oe$1 = defineComponent({ name: "TabGroup", emits: { change: (l2) => true }, props: { as: { type: [Object, String], default: "template" }, selectedIndex: { type: [Number], default: null }, defaultIndex: { type: [Number], default: 0 }, vertical: { type: [Boolean], default: false }, manual: { type: [Boolean], default: false } }, inheritAttrs: false, setup(l2, { slots: i2, attrs: o2, emit: f2 }) {
-  let e2 = ref(null), s2 = ref([]), n2 = ref([]), c2 = computed(() => l2.selectedIndex !== null), p2 = computed(() => c2.value ? l2.selectedIndex : e2.value), b2 = { selectedIndex: e2, orientation: computed(() => l2.vertical ? "vertical" : "horizontal"), activation: computed(() => l2.manual ? "manual" : "auto"), tabs: s2, panels: n2, setSelectedIndex(t2) {
-    p2.value !== t2 && f2("change", t2), c2.value || (e2.value = t2);
-  }, registerTab(t2) {
-    s2.value.includes(t2) || s2.value.push(t2);
-  }, unregisterTab(t2) {
-    let r2 = s2.value.indexOf(t2);
-    r2 !== -1 && s2.value.splice(r2, 1);
-  }, registerPanel(t2) {
-    n2.value.includes(t2) || n2.value.push(t2);
-  }, unregisterPanel(t2) {
-    let r2 = n2.value.indexOf(t2);
+let k = Symbol("TabsSSRContext"), de = defineComponent({ name: "TabGroup", emits: { change: (a2) => true }, props: { as: { type: [Object, String], default: "template" }, selectedIndex: { type: [Number], default: null }, defaultIndex: { type: [Number], default: 0 }, vertical: { type: [Boolean], default: false }, manual: { type: [Boolean], default: false } }, inheritAttrs: false, setup(a2, { slots: o2, attrs: s2, emit: p2 }) {
+  let t2 = ref(null), n2 = ref([]), u2 = ref([]), g2 = computed(() => a2.selectedIndex !== null), x2 = computed(() => g2.value ? a2.selectedIndex : t2.value), d2 = { selectedIndex: computed(() => {
+    var l2, r2;
+    return (r2 = (l2 = t2.value) != null ? l2 : a2.defaultIndex) != null ? r2 : null;
+  }), orientation: computed(() => a2.vertical ? "vertical" : "horizontal"), activation: computed(() => a2.manual ? "manual" : "auto"), tabs: n2, panels: u2, setSelectedIndex(l2) {
+    x2.value !== l2 && p2("change", l2), g2.value || (t2.value = l2);
+  }, registerTab(l2) {
+    n2.value.includes(l2) || n2.value.push(l2);
+  }, unregisterTab(l2) {
+    let r2 = n2.value.indexOf(l2);
     r2 !== -1 && n2.value.splice(r2, 1);
+  }, registerPanel(l2) {
+    u2.value.includes(l2) || u2.value.push(l2);
+  }, unregisterPanel(l2) {
+    let r2 = u2.value.indexOf(l2);
+    r2 !== -1 && u2.value.splice(r2, 1);
   } };
-  return provide(j, b2), watchEffect(() => {
-    var R2;
-    if (b2.tabs.value.length <= 0 || l2.selectedIndex === null && e2.value !== null)
+  provide(K$1, d2);
+  let f2 = ref({ tabs: [], panels: [] }), h2 = ref(false);
+  return onMounted(() => {
+    h2.value = true;
+  }), provide(k, computed(() => h2.value ? null : f2.value)), watchEffect(() => {
+    var D;
+    if (d2.tabs.value.length <= 0 || a2.selectedIndex === null && t2.value !== null)
       return;
-    let t2 = b2.tabs.value.map((y2) => o$1(y2)).filter(Boolean), r2 = t2.filter((y2) => !y2.hasAttribute("disabled")), d2 = (R2 = l2.selectedIndex) != null ? R2 : l2.defaultIndex;
-    if (d2 < 0)
-      e2.value = t2.indexOf(r2[0]);
-    else if (d2 > b2.tabs.value.length)
-      e2.value = t2.indexOf(r2[r2.length - 1]);
+    let l2 = d2.tabs.value.map((e2) => o$1(e2)).filter(Boolean), r2 = l2.filter((e2) => !e2.hasAttribute("disabled")), i2 = (D = a2.selectedIndex) != null ? D : a2.defaultIndex;
+    if (i2 < 0)
+      t2.value = l2.indexOf(r2[0]);
+    else if (i2 > d2.tabs.value.length)
+      t2.value = l2.indexOf(r2[r2.length - 1]);
     else {
-      let y2 = t2.slice(0, d2), u2 = [...t2.slice(d2), ...y2].find((T2) => r2.includes(T2));
-      if (!u2)
+      let e2 = l2.slice(0, i2), y2 = [...l2.slice(i2), ...e2].find((S2) => r2.includes(S2));
+      if (!y2)
         return;
-      e2.value = t2.indexOf(u2);
+      t2.value = l2.indexOf(y2);
     }
   }), () => {
-    let t2 = { selectedIndex: e2.value };
-    return h$2(Fragment, [s2.value.length <= 0 && h$2(d$2, { onFocus: () => {
-      for (let r2 of s2.value) {
-        let d2 = o$1(r2);
-        if ((d2 == null ? void 0 : d2.tabIndex) === 0)
-          return d2.focus(), true;
+    let l2 = { selectedIndex: t2.value };
+    return h$1(Fragment, [n2.value.length <= 0 && h$1(d$2, { onFocus: () => {
+      for (let r2 of n2.value) {
+        let i2 = o$1(r2);
+        if ((i2 == null ? void 0 : i2.tabIndex) === 0)
+          return i2.focus(), true;
       }
       return false;
-    } }), P$3({ theirProps: { ...o2, ...w$4(l2, ["selectedIndex", "defaultIndex", "manual", "vertical", "onChange"]) }, ourProps: {}, slot: t2, slots: i2, attrs: o2, name: "TabGroup" })]);
+    } }), P$2({ theirProps: { ...s2, ...w$3(a2, ["selectedIndex", "defaultIndex", "manual", "vertical", "onChange"]) }, ourProps: {}, slot: l2, slots: o2, attrs: s2, name: "TabGroup" })]);
   };
-} }), se$1 = defineComponent({ name: "TabList", props: { as: { type: [Object, String], default: "div" } }, setup(l2, { attrs: i2, slots: o2 }) {
-  let f2 = E("TabList");
+} }), fe$1 = defineComponent({ name: "TabList", props: { as: { type: [Object, String], default: "div" } }, setup(a2, { attrs: o2, slots: s2 }) {
+  let p2 = L$1("TabList");
   return () => {
-    let e2 = { selectedIndex: f2.selectedIndex.value }, s2 = { role: "tablist", "aria-orientation": f2.orientation.value };
-    return P$3({ ourProps: s2, theirProps: l2, slot: e2, attrs: i2, slots: o2, name: "TabList" });
+    let t2 = { selectedIndex: p2.selectedIndex.value }, n2 = { role: "tablist", "aria-orientation": p2.orientation.value };
+    return P$2({ ourProps: n2, theirProps: a2, slot: t2, attrs: o2, slots: s2, name: "TabList" });
   };
-} }), de = defineComponent({ name: "Tab", props: { as: { type: [Object, String], default: "button" }, disabled: { type: [Boolean], default: false } }, setup(l2, { attrs: i2, slots: o2, expose: f2 }) {
-  let e2 = E("Tab"), s2 = `headlessui-tabs-tab-${t$1()}`, n2 = ref(null);
-  f2({ el: n2, $el: n2 }), onMounted(() => e2.registerTab(n2)), onUnmounted(() => e2.unregisterTab(n2));
-  let c2 = computed(() => e2.tabs.value.indexOf(n2)), p2 = computed(() => c2.value === e2.selectedIndex.value);
-  function b2(a2) {
-    var T2;
-    let u2 = a2();
-    if (u2 === N.Success && e2.activation.value === "auto") {
-      let L2 = (T2 = m$2(n2)) == null ? void 0 : T2.activeElement, M2 = e2.tabs.value.findIndex((B2) => o$1(B2) === L2);
-      M2 !== -1 && e2.setSelectedIndex(M2);
+} }), ce = defineComponent({ name: "Tab", props: { as: { type: [Object, String], default: "button" }, disabled: { type: [Boolean], default: false }, id: { type: String, default: () => `headlessui-tabs-tab-${t$1()}` } }, setup(a2, { attrs: o2, slots: s2, expose: p2 }) {
+  let t$12 = L$1("Tab"), n2 = ref(null);
+  p2({ el: n2, $el: n2 }), onMounted(() => t$12.registerTab(n2)), onUnmounted(() => t$12.unregisterTab(n2));
+  let u2 = inject(k), g2 = computed(() => {
+    if (u2.value) {
+      let e2 = u2.value.tabs.indexOf(a2.id);
+      return e2 === -1 ? u2.value.tabs.push(a2.id) - 1 : e2;
     }
-    return u2;
+    return -1;
+  }), x2 = computed(() => {
+    let e2 = t$12.tabs.value.indexOf(n2);
+    return e2 === -1 ? g2.value : e2;
+  }), d2 = computed(() => x2.value === t$12.selectedIndex.value);
+  function f2(e2) {
+    var y2;
+    let b2 = e2();
+    if (b2 === T.Success && t$12.activation.value === "auto") {
+      let S2 = (y2 = m$1(n2)) == null ? void 0 : y2.activeElement, R2 = t$12.tabs.value.findIndex(($2) => o$1($2) === S2);
+      R2 !== -1 && t$12.setSelectedIndex(R2);
+    }
+    return b2;
   }
-  function t$2(a2) {
-    let u2 = e2.tabs.value.map((L2) => o$1(L2)).filter(Boolean);
-    if (a2.key === o$2.Space || a2.key === o$2.Enter) {
-      a2.preventDefault(), a2.stopPropagation(), e2.setSelectedIndex(c2.value);
+  function h2(e2) {
+    let b2 = t$12.tabs.value.map((S2) => o$1(S2)).filter(Boolean);
+    if (e2.key === o$2.Space || e2.key === o$2.Enter) {
+      e2.preventDefault(), e2.stopPropagation(), t$12.setSelectedIndex(x2.value);
       return;
     }
-    switch (a2.key) {
+    switch (e2.key) {
       case o$2.Home:
       case o$2.PageUp:
-        return a2.preventDefault(), a2.stopPropagation(), b2(() => P$2(u2, M.First));
+        return e2.preventDefault(), e2.stopPropagation(), f2(() => O(b2, N.First));
       case o$2.End:
       case o$2.PageDown:
-        return a2.preventDefault(), a2.stopPropagation(), b2(() => P$2(u2, M.Last));
+        return e2.preventDefault(), e2.stopPropagation(), f2(() => O(b2, N.Last));
     }
-    if (b2(() => u$4(e2.orientation.value, { vertical() {
-      return a2.key === o$2.ArrowUp ? P$2(u2, M.Previous | M.WrapAround) : a2.key === o$2.ArrowDown ? P$2(u2, M.Next | M.WrapAround) : N.Error;
+    if (f2(() => u$3(t$12.orientation.value, { vertical() {
+      return e2.key === o$2.ArrowUp ? O(b2, N.Previous | N.WrapAround) : e2.key === o$2.ArrowDown ? O(b2, N.Next | N.WrapAround) : T.Error;
     }, horizontal() {
-      return a2.key === o$2.ArrowLeft ? P$2(u2, M.Previous | M.WrapAround) : a2.key === o$2.ArrowRight ? P$2(u2, M.Next | M.WrapAround) : N.Error;
-    } })) === N.Success)
-      return a2.preventDefault();
+      return e2.key === o$2.ArrowLeft ? O(b2, N.Previous | N.WrapAround) : e2.key === o$2.ArrowRight ? O(b2, N.Next | N.WrapAround) : T.Error;
+    } })) === T.Success)
+      return e2.preventDefault();
   }
-  let r2 = ref(false);
-  function d2() {
-    var a2;
-    r2.value || (r2.value = true, !l2.disabled && ((a2 = o$1(n2)) == null || a2.focus(), e2.setSelectedIndex(c2.value), t(() => {
-      r2.value = false;
+  let l2 = ref(false);
+  function r2() {
+    var e2;
+    l2.value || (l2.value = true, !a2.disabled && ((e2 = o$1(n2)) == null || e2.focus(), t$12.setSelectedIndex(x2.value), t(() => {
+      l2.value = false;
     })));
   }
-  function R2(a2) {
-    a2.preventDefault();
+  function i2(e2) {
+    e2.preventDefault();
   }
-  let y2 = b$2(computed(() => ({ as: l2.as, type: i2.type })), n2);
+  let D = b$1(computed(() => ({ as: a2.as, type: o2.type })), n2);
   return () => {
-    var T2;
-    let a2 = { selected: p2.value }, u2 = { ref: n2, onKeydown: t$2, onMousedown: R2, onClick: d2, id: s2, role: "tab", type: y2.value, "aria-controls": (T2 = o$1(e2.panels.value[c2.value])) == null ? void 0 : T2.id, "aria-selected": p2.value, tabIndex: p2.value ? 0 : -1, disabled: l2.disabled ? true : void 0 };
-    return P$3({ ourProps: u2, theirProps: l2, slot: a2, attrs: i2, slots: o2, name: "Tab" });
+    var R2;
+    let e2 = { selected: d2.value }, { id: b2, ...y2 } = a2, S2 = { ref: n2, onKeydown: h2, onMousedown: i2, onClick: r2, id: b2, role: "tab", type: D.value, "aria-controls": (R2 = o$1(t$12.panels.value[x2.value])) == null ? void 0 : R2.id, "aria-selected": d2.value, tabIndex: d2.value ? 0 : -1, disabled: a2.disabled ? true : void 0 };
+    return P$2({ ourProps: S2, theirProps: y2, slot: e2, attrs: o2, slots: s2, name: "Tab" });
   };
-} }), fe$1 = defineComponent({ name: "TabPanels", props: { as: { type: [Object, String], default: "div" } }, setup(l2, { slots: i2, attrs: o2 }) {
-  let f2 = E("TabPanels");
+} }), be = defineComponent({ name: "TabPanels", props: { as: { type: [Object, String], default: "div" } }, setup(a2, { slots: o2, attrs: s2 }) {
+  let p2 = L$1("TabPanels");
   return () => {
-    let e2 = { selectedIndex: f2.selectedIndex.value };
-    return P$3({ theirProps: l2, ourProps: {}, slot: e2, attrs: o2, slots: i2, name: "TabPanels" });
+    let t2 = { selectedIndex: p2.selectedIndex.value };
+    return P$2({ theirProps: a2, ourProps: {}, slot: t2, attrs: s2, slots: o2, name: "TabPanels" });
   };
-} }), ce = defineComponent({ name: "TabPanel", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true } }, setup(l2, { attrs: i2, slots: o2, expose: f$12 }) {
-  let e2 = E("TabPanel"), s2 = `headlessui-tabs-panel-${t$1()}`, n2 = ref(null);
-  f$12({ el: n2, $el: n2 }), onMounted(() => e2.registerPanel(n2)), onUnmounted(() => e2.unregisterPanel(n2));
-  let c2 = computed(() => e2.panels.value.indexOf(n2)), p2 = computed(() => c2.value === e2.selectedIndex.value);
+} }), pe = defineComponent({ name: "TabPanel", props: { as: { type: [Object, String], default: "div" }, static: { type: Boolean, default: false }, unmount: { type: Boolean, default: true }, id: { type: String, default: () => `headlessui-tabs-panel-${t$1()}` } }, setup(a2, { attrs: o2, slots: s2, expose: p2 }) {
+  let t2 = L$1("TabPanel"), n2 = ref(null);
+  p2({ el: n2, $el: n2 }), onMounted(() => t2.registerPanel(n2)), onUnmounted(() => t2.unregisterPanel(n2));
+  let u2 = inject(k), g2 = computed(() => {
+    if (u2.value) {
+      let f2 = u2.value.panels.indexOf(a2.id);
+      return f2 === -1 ? u2.value.panels.push(a2.id) - 1 : f2;
+    }
+    return -1;
+  }), x2 = computed(() => {
+    let f2 = t2.panels.value.indexOf(n2);
+    return f2 === -1 ? g2.value : f2;
+  }), d2 = computed(() => x2.value === t2.selectedIndex.value);
   return () => {
-    var r2;
-    let b2 = { selected: p2.value }, t2 = { ref: n2, id: s2, role: "tabpanel", "aria-labelledby": (r2 = o$1(e2.tabs.value[c2.value])) == null ? void 0 : r2.id, tabIndex: p2.value ? 0 : -1 };
-    return !p2.value && l2.unmount && !l2.static ? h$2(f, { as: "span", ...t2 }) : P$3({ ourProps: t2, theirProps: l2, slot: b2, attrs: i2, slots: o2, features: R$1.Static | R$1.RenderStrategy, visible: p2.value, name: "TabPanel" });
+    var i2;
+    let f$12 = { selected: d2.value }, { id: h2, ...l2 } = a2, r2 = { ref: n2, id: h2, role: "tabpanel", "aria-labelledby": (i2 = o$1(t2.tabs.value[x2.value])) == null ? void 0 : i2.id, tabIndex: d2.value ? 0 : -1 };
+    return !d2.value && a2.unmount && !a2.static ? h$1(f, { as: "span", ...r2 }) : P$2({ ourProps: r2, theirProps: l2, slot: f$12, attrs: o2, slots: s2, features: R$2.Static | R$2.RenderStrategy, visible: d2.value, name: "TabPanel" });
   };
 } });
 function l(r2) {
@@ -16872,7 +16955,7 @@ function K(e2) {
   onMounted(() => a2.value = true), onUnmounted(() => a2.value = false);
   function s2(r2, n2 = O$1.Hidden) {
     let l2 = t2.value.findIndex(({ id: i2 }) => i2 === r2);
-    l2 !== -1 && (u$4(n2, { [O$1.Unmount]() {
+    l2 !== -1 && (u$3(n2, { [O$1.Unmount]() {
       t2.value.splice(l2, 1);
     }, [O$1.Hidden]() {
       t2.value[l2].state = "hidden";
@@ -16884,9 +16967,9 @@ function K(e2) {
   }
   return { children: t2, register: v2, unregister: s2 };
 }
-let _ = R$1.RenderStrategy, oe = defineComponent({ props: { as: { type: [Object, String], default: "div" }, show: { type: [Boolean], default: null }, unmount: { type: [Boolean], default: true }, appear: { type: [Boolean], default: false }, enter: { type: [String], default: "" }, enterFrom: { type: [String], default: "" }, enterTo: { type: [String], default: "" }, entered: { type: [String], default: "" }, leave: { type: [String], default: "" }, leaveFrom: { type: [String], default: "" }, leaveTo: { type: [String], default: "" } }, emits: { beforeEnter: () => true, afterEnter: () => true, beforeLeave: () => true, afterLeave: () => true }, setup(e2, { emit: t2, attrs: a2, slots: s2, expose: v2 }) {
-  if (!le() && f$1())
-    return () => h$2(fe, { ...e2, onBeforeEnter: () => t2("beforeEnter"), onAfterEnter: () => t2("afterEnter"), onBeforeLeave: () => t2("beforeLeave"), onAfterLeave: () => t2("afterLeave") }, s2);
+let _ = R$2.RenderStrategy, oe = defineComponent({ props: { as: { type: [Object, String], default: "div" }, show: { type: [Boolean], default: null }, unmount: { type: [Boolean], default: true }, appear: { type: [Boolean], default: false }, enter: { type: [String], default: "" }, enterFrom: { type: [String], default: "" }, enterTo: { type: [String], default: "" }, entered: { type: [String], default: "" }, leave: { type: [String], default: "" }, leaveFrom: { type: [String], default: "" }, leaveTo: { type: [String], default: "" } }, emits: { beforeEnter: () => true, afterEnter: () => true, beforeLeave: () => true, afterLeave: () => true }, setup(e2, { emit: t2, attrs: a2, slots: s2, expose: v2 }) {
+  if (!le() && f$2())
+    return () => h$1(fe, { ...e2, onBeforeEnter: () => t2("beforeEnter"), onAfterEnter: () => t2("afterEnter"), onBeforeLeave: () => t2("beforeLeave"), onAfterLeave: () => t2("afterLeave") }, s2);
   let r2 = ref(null), n2 = ref("visible"), l2 = computed(() => e2.unmount ? O$1.Unmount : O$1.Hidden);
   v2({ el: r2, $el: r2 });
   let { show: i2, appear: x2 } = ie(), { register: g$12, unregister: p2 } = se(), R2 = { value: true }, m2 = t$1(), S2 = { value: false }, N2 = K(() => {
@@ -16901,10 +16984,10 @@ let _ = R$1.RenderStrategy, oe = defineComponent({ props: { as: { type: [Object,
         n2.value = "visible";
         return;
       }
-      u$4(n2.value, { ["hidden"]: () => p2(m2), ["visible"]: () => g$12(m2) });
+      u$3(n2.value, { ["hidden"]: () => p2(m2), ["visible"]: () => g$12(m2) });
     }
   });
-  let k2 = d(e2.enter), $ = d(e2.enterFrom), q = d(e2.enterTo), O2 = d(e2.entered), z = d(e2.leave), G2 = d(e2.leaveFrom), J2 = d(e2.leaveTo);
+  let k2 = d(e2.enter), $2 = d(e2.enterFrom), q2 = d(e2.enterTo), O2 = d(e2.entered), z = d(e2.leave), G = d(e2.leaveFrom), J = d(e2.leaveTo);
   onMounted(() => {
     watchEffect(() => {
       if (n2.value === "visible") {
@@ -16914,24 +16997,24 @@ let _ = R$1.RenderStrategy, oe = defineComponent({ props: { as: { type: [Object,
       }
     });
   });
-  function Q(o2) {
+  function Q2(o2) {
     let c2 = R2.value && !x2.value, u2 = o$1(r2);
-    !u2 || !(u2 instanceof HTMLElement) || c2 || (S2.value = true, i2.value && t2("beforeEnter"), i2.value || t2("beforeLeave"), o2(i2.value ? L(u2, k2, $, q, O2, (C2) => {
-      S2.value = false, C2 === g.Finished && t2("afterEnter");
-    }) : L(u2, z, G2, J2, O2, (C2) => {
-      S2.value = false, C2 === g.Finished && (w(N2) || (n2.value = "hidden", p2(m2), t2("afterLeave")));
+    !u2 || !(u2 instanceof HTMLElement) || c2 || (S2.value = true, i2.value && t2("beforeEnter"), i2.value || t2("beforeLeave"), o2(i2.value ? L(u2, k2, $2, q2, O2, (C) => {
+      S2.value = false, C === g.Finished && t2("afterEnter");
+    }) : L(u2, z, G, J, O2, (C) => {
+      S2.value = false, C === g.Finished && (w(N2) || (n2.value = "hidden", p2(m2), t2("afterLeave")));
     })));
   }
   return onMounted(() => {
     watch([i2], (o2, c2, u2) => {
-      Q(u2), R2.value = false;
+      Q2(u2), R2.value = false;
     }, { immediate: true });
-  }), provide(F, N2), c$1(computed(() => u$4(n2.value, { ["visible"]: l$2.Open, ["hidden"]: l$2.Closed }))), () => {
-    let { appear: o2, show: c2, enter: u2, enterFrom: C2, enterTo: de2, entered: ve2, leave: pe, leaveFrom: me, leaveTo: Te, ...W } = e2;
-    return P$3({ theirProps: W, ourProps: { ref: r2 }, slot: {}, slots: s2, attrs: a2, features: _, visible: n2.value === "visible", name: "TransitionChild" });
+  }), provide(F, N2), c$1(computed(() => u$3(n2.value, { ["visible"]: l$2.Open, ["hidden"]: l$2.Closed }))), () => {
+    let { appear: o2, show: c2, enter: u2, enterFrom: C, enterTo: de2, entered: ve, leave: pe2, leaveFrom: me, leaveTo: Te, ...W2 } = e2;
+    return P$2({ theirProps: W2, ourProps: { ref: r2 }, slot: {}, slots: s2, attrs: a2, features: _, visible: n2.value === "visible", name: "TransitionChild" });
   };
 } }), ue = oe, fe = defineComponent({ inheritAttrs: false, props: { as: { type: [Object, String], default: "div" }, show: { type: [Boolean], default: null }, unmount: { type: [Boolean], default: true }, appear: { type: [Boolean], default: false }, enter: { type: [String], default: "" }, enterFrom: { type: [String], default: "" }, enterTo: { type: [String], default: "" }, entered: { type: [String], default: "" }, leave: { type: [String], default: "" }, leaveFrom: { type: [String], default: "" }, leaveTo: { type: [String], default: "" } }, emits: { beforeEnter: () => true, afterEnter: () => true, beforeLeave: () => true, afterLeave: () => true }, setup(e2, { emit: t2, attrs: a2, slots: s2 }) {
-  let v2 = p$1(), r2 = computed(() => e2.show === null && v2 !== null ? u$4(v2.value, { [l$2.Open]: true, [l$2.Closed]: false }) : e2.show);
+  let v2 = p$2(), r2 = computed(() => e2.show === null && v2 !== null ? u$3(v2.value, { [l$2.Open]: true, [l$2.Closed]: false }) : e2.show);
   watchEffect(() => {
     if (![true, false].includes(r2.value))
       throw new Error('A <Transition /> is used but it is missing a `:show="true | false"` prop.');
@@ -16944,8 +17027,8 @@ let _ = R$1.RenderStrategy, oe = defineComponent({ props: { as: { type: [Object,
       i2.value = false, r2.value ? n2.value = "visible" : w(l2) || (n2.value = "hidden");
     });
   }), provide(F, l2), provide(B, x2), () => {
-    let g2 = w$4(e2, ["show", "appear", "unmount", "onBeforeEnter", "onBeforeLeave", "onAfterEnter", "onAfterLeave"]), p2 = { unmount: e2.unmount };
-    return P$3({ ourProps: { ...p2, as: "template" }, theirProps: {}, slot: {}, slots: { ...s2, default: () => [h$2(ue, { onBeforeEnter: () => t2("beforeEnter"), onAfterEnter: () => t2("afterEnter"), onBeforeLeave: () => t2("beforeLeave"), onAfterLeave: () => t2("afterLeave"), ...a2, ...p2, ...g2 }, s2.default)] }, attrs: {}, features: _, visible: n2.value === "visible", name: "Transition" });
+    let g2 = w$3(e2, ["show", "appear", "unmount", "onBeforeEnter", "onBeforeLeave", "onAfterEnter", "onAfterLeave"]), p2 = { unmount: e2.unmount };
+    return P$2({ ourProps: { ...p2, as: "template" }, theirProps: {}, slot: {}, slots: { ...s2, default: () => [h$1(ue, { onBeforeEnter: () => t2("beforeEnter"), onAfterEnter: () => t2("afterEnter"), onBeforeLeave: () => t2("beforeLeave"), onAfterLeave: () => t2("afterLeave"), ...a2, ...p2, ...g2 }, s2.default)] }, attrs: {}, features: _, visible: n2.value === "visible", name: "Transition" });
   };
 } });
 const _export_sfc = (sfc, props) => {
@@ -17018,7 +17101,7 @@ function _sfc_render$4(_ctx, _cache, $props, $setup, $data, $options) {
 const ImageTag = /* @__PURE__ */ _export_sfc(_sfc_main$4, [["render", _sfc_render$4], ["__file", "/Users/kristenburgess/Desktop/Elementum/starter-theme/vue/components/ImageTag.vue"]]);
 const _sfc_main$3 = {
   name: "Mega Menu",
-  components: { PopoverGroup: He, Popover: ce$1, PopoverButton: ke, PopoverPanel: Le, TabGroup: oe$1, TabList: se$1, Tab: de, TabPanels: fe$1, TabPanel: ce, Disclosure: A, DisclosureButton: G, DisclosurePanel: J, ImageTag },
+  components: { PopoverGroup: Ke, Popover: Pe, PopoverButton: Be, PopoverPanel: He, TabGroup: de, TabList: fe$1, Tab: ce, TabPanels: be, TabPanel: pe, Disclosure: Q, DisclosureButton: V, DisclosurePanel: X, ImageTag },
   data() {
     return {
       screen: window.innerWidth
@@ -17823,7 +17906,7 @@ class MegaMenuApp {
     this._appInstance = createApp(
       {
         el: this._mountingNode,
-        render: () => h$2(MegaMenu, {
+        render: () => h$1(MegaMenu, {
           props: {
             ...this._appData
           }
@@ -18153,7 +18236,7 @@ function _sfc_render$2(_ctx, _cache, $props, $setup, $data, $options) {
 const Card = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["render", _sfc_render$2], ["__file", "/Users/kristenburgess/Desktop/Elementum/starter-theme/vue/components/Card.vue"]]);
 const _sfc_main$1 = {
   name: "SearchMenu",
-  components: { Popover: ce$1, PopoverButton: ke, PopoverPanel: Le, TabGroup: oe$1, TabList: se$1, Tab: de, TabPanels: fe$1, TabPanel: ce, ImageTag, Card },
+  components: { Popover: Pe, PopoverButton: Be, PopoverPanel: He, TabGroup: de, TabList: fe$1, Tab: ce, TabPanels: be, TabPanel: pe, ImageTag, Card },
   directives: { debounce },
   data() {
     return {
@@ -18601,7 +18684,7 @@ class SearchMenuApp {
     this._appInstance = createApp(
       {
         el: this._mountingNode,
-        render: () => h$2(SearchMenu, {
+        render: () => h$1(SearchMenu, {
           props: {
             ...this._appData
           }
@@ -18620,9 +18703,9 @@ const _sfc_main = {
   components: {
     TransitionRoot: fe,
     TransitionChild: oe,
-    Dialog: Ne,
-    DialogPanel: _e,
-    DialogTitle: Ue
+    Dialog: Ue,
+    DialogPanel: Ge,
+    DialogTitle: ze
   },
   data() {
     return {
@@ -18839,7 +18922,7 @@ class ModalApp {
     this._appInstance = createApp(
       {
         el: this._mountingNode,
-        render: () => h$2(Modal, {
+        render: () => h$1(Modal, {
           props: {
             ...this._appData
           }
