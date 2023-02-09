@@ -77,7 +77,9 @@
             {
               "content": "{{ block.settings.content }}",
               "content_title": "{{ block.settings.content_title }}",
+              "content_title_size": "{{ block.settings.content_title_size }}",
               "content_subtitle": "{{ block.settings.content_subtitle }}",
+              "content_subtitle_size": "{{ block.settings.content_subtitle_size }}",
               {%- if block.settings.image -%}
                 "image": {
                   "alt": "{{ block.settings.image.alt }}",
@@ -537,12 +539,52 @@
           "label": "Heading"
         },
         {
+          "type": "select",
+          "id": "content_title_size",
+          "options": [
+            {
+              "value": "h3",
+              "label": "Small"
+            },
+            {
+              "value": "h2",
+              "label": "Medium"
+            },
+            {
+              "value": "h1",
+              "label": "Large"
+            }
+          ],
+          "default": "h2",
+          "label": "Heading Size"
+        },
+        {
           "type": "text",
           "id": "content_subtitle",
           "label": "Subheading"
         },
         {
-          "type": "richtext",
+          "type": "select",
+          "id": "content_subtitle_size",
+          "options": [
+            {
+              "value": "h5",
+              "label": "Small"
+            },
+            {
+              "value": "h4",
+              "label": "Medium"
+            },
+            {
+              "value": "h3",
+              "label": "Large"
+            }
+          ],
+          "default": "h4",
+          "label": "Subheading Size"
+        },
+        {
+          "type": "text",
           "id": "content",
           "label": "Content"
         },

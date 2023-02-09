@@ -474,9 +474,12 @@
 
 .card .quick-add__submit, .article-card .quick-add__submit {
   max-width: 20rem;
-  padding-left: .5rem;
-  padding-right: .5rem;
   width: 100%;
+}
+
+.card .quick-add__submit > .btn__label, .article-card .quick-add__submit > .btn__label {
+  padding-left: .375rem;
+  padding-right: .375rem;
 }
 
 .card .loading-overlay__spinner, .article-card .loading-overlay__spinner {

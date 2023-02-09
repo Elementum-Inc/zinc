@@ -81,8 +81,22 @@
   &--foreground {
     @apply bg-scheme-fg;
 
-    & .card__inner + .card__content {
-      @apply bg-[transparent];
+    & .card.match {
+      border-radius: 0;
+
+      &.article-card {
+        & .card__inner {
+          @apply rounded-content;
+        }
+      }
+
+      & .card__inner {
+        @apply rounded-product;
+
+        & + .card__content {
+          @apply bg-[transparent];
+        }
+      }
     }
   }
 

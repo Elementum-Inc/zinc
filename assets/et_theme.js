@@ -15227,21 +15227,19 @@ const _hoisted_52$1 = {
 const _hoisted_53$1 = ["href"];
 const _hoisted_54 = ["href"];
 const _hoisted_55 = { class: "image_content__image-container" };
-const _hoisted_56 = { key: 0 };
-const _hoisted_57 = { key: 1 };
-const _hoisted_58 = ["html"];
+const _hoisted_56 = { key: 2 };
+const _hoisted_57 = ["href"];
+const _hoisted_58 = { class: "btn__label" };
 const _hoisted_59 = ["href"];
 const _hoisted_60 = { class: "btn__label" };
-const _hoisted_61 = ["href"];
-const _hoisted_62 = { class: "btn__label" };
-const _hoisted_63 = { class: "dropdown" };
-const _hoisted_64 = ["href"];
-const _hoisted_65 = { key: 1 };
-const _hoisted_66 = {
+const _hoisted_61 = { class: "dropdown" };
+const _hoisted_62 = ["href"];
+const _hoisted_63 = { key: 1 };
+const _hoisted_64 = {
   key: 2,
   class: "icon target expand"
 };
-const _hoisted_67 = /* @__PURE__ */ createBaseVNode("svg", {
+const _hoisted_65 = /* @__PURE__ */ createBaseVNode("svg", {
   "aria-hidden": "true",
   focusable: "false",
   role: "presentation",
@@ -15255,16 +15253,16 @@ const _hoisted_67 = /* @__PURE__ */ createBaseVNode("svg", {
     fill: "currentColor"
   })
 ], -1);
-const _hoisted_68 = [
-  _hoisted_67
+const _hoisted_66 = [
+  _hoisted_65
 ];
-const _hoisted_69 = ["href"];
-const _hoisted_70 = {
+const _hoisted_67 = ["href"];
+const _hoisted_68 = {
   key: 0,
   class: "dropdown__view-all"
 };
-const _hoisted_71 = ["href"];
-const _hoisted_72 = ["href"];
+const _hoisted_69 = ["href"];
+const _hoisted_70 = ["href"];
 function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
   const _component_PopoverButton = resolveComponent("PopoverButton");
   const _component_DisclosureButton = resolveComponent("DisclosureButton");
@@ -15699,12 +15697,15 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                         key: 0,
                                         class: normalizeClass(["image_content__content", [block.settings.image ? "float" : ""]])
                                       }, [
-                                        block.settings.content_title ? (openBlock(), createElementBlock("h1", _hoisted_56, toDisplayString(block.settings.content_title), 1)) : createCommentVNode("", true),
-                                        block.settings.content_subtitle ? (openBlock(), createElementBlock("h3", _hoisted_57, toDisplayString(block.settings.content_subtitle), 1)) : createCommentVNode("", true),
-                                        block.settings.content ? (openBlock(), createElementBlock("p", {
-                                          key: 2,
-                                          html: block.settings.content
-                                        }, null, 8, _hoisted_58)) : createCommentVNode("", true),
+                                        block.settings.content_title ? (openBlock(), createElementBlock("h2", {
+                                          key: 0,
+                                          class: normalizeClass(block.settings.content_title_size)
+                                        }, toDisplayString(block.settings.content_title), 3)) : createCommentVNode("", true),
+                                        block.settings.content_subtitle ? (openBlock(), createElementBlock("h4", {
+                                          key: 1,
+                                          class: normalizeClass(block.settings.content_subtitle_size)
+                                        }, toDisplayString(block.settings.content_subtitle), 3)) : createCommentVNode("", true),
+                                        block.settings.content ? (openBlock(), createElementBlock("div", _hoisted_56, toDisplayString(block.settings.content), 1)) : createCommentVNode("", true),
                                         createBaseVNode("div", {
                                           class: normalizeClass(["buttons", [`color-scheme--${$props.settings.mm_color_scheme}`]])
                                         }, [
@@ -15713,15 +15714,15 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                             href: block.settings.primary_button_url,
                                             class: normalizeClass(["btn primary", [`btn-${block.settings.button_style}`, block.settings.button_reverse ? "order-2" : ""]])
                                           }, [
-                                            createBaseVNode("span", _hoisted_60, toDisplayString(block.settings.primary_button_label), 1)
-                                          ], 10, _hoisted_59)) : createCommentVNode("", true),
+                                            createBaseVNode("span", _hoisted_58, toDisplayString(block.settings.primary_button_label), 1)
+                                          ], 10, _hoisted_57)) : createCommentVNode("", true),
                                           block.settings.secondary_button_label && block.settings.secondary_button_url ? (openBlock(), createElementBlock("a", {
                                             key: 1,
                                             href: block.settings.secondary_button_url,
                                             class: normalizeClass(["btn secondary", [`btn-${block.settings.button_style}`]])
                                           }, [
-                                            createBaseVNode("span", _hoisted_62, toDisplayString(block.settings.secondary_button_label), 1)
-                                          ], 10, _hoisted_61)) : createCommentVNode("", true)
+                                            createBaseVNode("span", _hoisted_60, toDisplayString(block.settings.secondary_button_label), 1)
+                                          ], 10, _hoisted_59)) : createCommentVNode("", true)
                                         ], 2)
                                       ], 2)) : createCommentVNode("", true)
                                     ], 2)) : createCommentVNode("", true)
@@ -15734,7 +15735,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                               class: normalizeClass(["header__menu-dropdown", [`color-scheme--${$props.settings.mm_color_scheme}`]])
                             }, {
                               default: withCtx(() => [
-                                createBaseVNode("ul", _hoisted_63, [
+                                createBaseVNode("ul", _hoisted_61, [
                                   (openBlock(true), createElementBlock(Fragment, null, renderList(link.links, (child2) => {
                                     return openBlock(), createBlock(_component_Disclosure, {
                                       as: "li",
@@ -15747,14 +15748,14 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                             $props.settings.mm_toplink_behavior == "parent_link" ? (openBlock(), createElementBlock("a", {
                                               key: 0,
                                               href: child2.url
-                                            }, toDisplayString(child2.title), 9, _hoisted_64)) : (openBlock(), createElementBlock("span", _hoisted_65, toDisplayString(child2.title), 1)),
-                                            child2.links.length ? (openBlock(), createElementBlock("span", _hoisted_66, _hoisted_68)) : createCommentVNode("", true)
+                                            }, toDisplayString(child2.title), 9, _hoisted_62)) : (openBlock(), createElementBlock("span", _hoisted_63, toDisplayString(child2.title), 1)),
+                                            child2.links.length ? (openBlock(), createElementBlock("span", _hoisted_64, _hoisted_66)) : createCommentVNode("", true)
                                           ]),
                                           _: 2
                                         }, 1024)) : (openBlock(), createElementBlock("a", {
                                           key: 1,
                                           href: child2.url
-                                        }, toDisplayString(child2.title), 9, _hoisted_69)),
+                                        }, toDisplayString(child2.title), 9, _hoisted_67)),
                                         child2.links.length ? (openBlock(), createBlock(Transition, {
                                           key: 2,
                                           name: "slideDown"
@@ -15762,10 +15763,10 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                           default: withCtx(() => [
                                             createVNode(_component_DisclosurePanel, { as: "ul" }, {
                                               default: withCtx(() => [
-                                                $props.settings.mm_toplink_behavior == "view_all_link" ? (openBlock(), createElementBlock("li", _hoisted_70, [
+                                                $props.settings.mm_toplink_behavior == "view_all_link" ? (openBlock(), createElementBlock("li", _hoisted_68, [
                                                   createBaseVNode("a", {
                                                     href: child2.url
-                                                  }, " All " + toDisplayString(child2.title), 9, _hoisted_71)
+                                                  }, " All " + toDisplayString(child2.title), 9, _hoisted_69)
                                                 ])) : createCommentVNode("", true),
                                                 (openBlock(true), createElementBlock(Fragment, null, renderList(child2.links, (grandchild) => {
                                                   return openBlock(), createElementBlock("li", {
@@ -15774,7 +15775,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                                                   }, [
                                                     createBaseVNode("a", {
                                                       href: grandchild.url
-                                                    }, toDisplayString(grandchild.title), 9, _hoisted_72)
+                                                    }, toDisplayString(grandchild.title), 9, _hoisted_70)
                                                   ]);
                                                 }), 128))
                                               ]),

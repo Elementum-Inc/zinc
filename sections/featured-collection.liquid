@@ -74,7 +74,7 @@
   document.addEventListener('shopify:section:load', () => { renderFeaturedCollections() });
 </script>
 
-<div class="section featured-collection color-scheme--{{ section.settings.color_scheme }} isolate">
+<div class="section featured-collection color-scheme--{{ section.settings.color_scheme }}{% if section.settings.use_foreground %} section--foreground{% endif %} isolate">
   <div class="collection section-{{ section.id }}{% if section.settings.full_width %} collection--full-width{% endif %}">
     {%- if section.settings.title != blank or section.settings.description != blank -%}
       <div class="collection__title title-wrapper title-wrapper--no-top-margin container{% if show_mobile_slider %} title-wrapper--self-padded-tablet-down{% endif %}{% if show_desktop_slider %} collection__title--desktop-slider{% endif %}">
@@ -93,7 +93,7 @@
     {% if section.blocks.size > 1 %}
       <div id="collection-tab-container" class="container">
         {% for block in section.blocks %}
-          <button id="collection-tab-{{ forloop.index }}" aria-controls="featured-collection-{{ forloop.index }}" class="collection-tab-btn btn">
+          <button id="collection-tab-{{ forloop.index }}" aria-controls="featured-collection-{{ forloop.index }}" class="collection-tab-btn btn {% if section.settings.use_foreground %}primary{% else %}btn--foreground{% endif %}">
             <span class="btn__label">
               {%- if block.settings.title != "" -%}
                 {{ block.settings.title }}
@@ -363,6 +363,13 @@
       "default": "background-1",
       "label": "t:sections.all.colors.label",
       "info": "t:sections.all.colors.has_cards_info"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_foreground",
+      "default": false,
+      "label": "Enable foreground color",
+      "info": "Use foreground color as background color to highlight section from rest of the page."
     },
     {
       "type": "header",

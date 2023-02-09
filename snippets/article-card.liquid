@@ -57,7 +57,7 @@
 
   <div class="card-wrapper underline-links-hover">
     {% comment %} <article aria-labelledby="Article-{{ article.id }}"> {% endcomment %}
-    <div class="card article-card color-scheme--{{ color_scheme }}{% if card_color_scheme == 'inverse' %} inverse{% endif %}
+    <div class="card article-card color-scheme--{{ color_scheme }}{% if card_color_scheme != 'default' %} {{ card_color_scheme }}{% endif %}
       {% if article.image and show_image %} card--media{% else %} card--text{% endif %}
       {% if settings.content_card_hover_animate %} {{ settings.content_card_hover_animation }}{% endif %}
       {% if settings.content_card_border %} border border-scheme-fg{% endif %}
