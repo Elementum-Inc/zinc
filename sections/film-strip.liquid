@@ -37,7 +37,7 @@
 
 <div class="film-strip color-scheme color-scheme--{{ section.settings.color_scheme }}{% unless section.settings.background_style == 'none' and settings.text_boxes_border_thickness > 0 or settings.text_boxes_shadow_opacity > 0 %} background-{{ section.settings.background_style }}{% endunless %}{% if section.settings.title == blank %} no-heading{% endif %}">
   <div class="section-{{ section.id }} isolate">
-    <div class="{% if show_mobile_slider or show_desktop_slider %}splide splide--no-padding{% else %}container{% endif %}"
+    <div class="{% if show_mobile_slider or show_desktop_slider %}splide splide--no-padding{% else %}splide--disabled{% endif %}"
       {% if show_mobile_slider or show_desktop_slider %}
         aria-label="Film strip slider"
         data-splide='

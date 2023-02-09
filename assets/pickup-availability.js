@@ -83,7 +83,7 @@ if (!customElements.get('pickup-availability-drawer')) {
 
     handleBodyClick(evt) {
       const target = evt.target;
-      if (target != this && !target.closest('pickup-availability-drawer') && target.id != 'ShowPickupAvailabilityDrawer') {
+      if (target.id != 'ShowPickupAvailabilityDrawer' && !target.closest('.drawer__inner')) {
         this.hide();
       }
     }

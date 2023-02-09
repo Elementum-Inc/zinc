@@ -169,16 +169,24 @@
       w-full;
   }
 
-  &:not(.splide__list) {
-    @media screen and (max-width: 767px) {
-      @apply
-        pl-6
-        pr-6;
+  .multicolumn .splide & {
+    &.splide__list {
+      @apply <md:flex-nowrap;
     }
   }
 
-  &.splide__list {
-    @apply <md:flex-nowrap;
+  .multicolumn .splide--disabled & {
+    &:not(.splide__list) {
+      @media screen and (max-width: 767px) {
+        @apply
+          pl-6
+          pr-6;
+      }
+    }
+
+    .splide__slide {
+      @apply <md:w-full;
+    }
   }
 
   &__item {
@@ -232,7 +240,6 @@
 .multicolumn-card {
   @apply
     flex
-    flex-wrap
     relative
     box-border;
 
@@ -264,12 +271,12 @@
 
     &--third-width {
       @apply
-        basis-1/3;
+        basis-1/3 w-1/3;
     }
 
     &--half-width {
       @apply
-        basis-1/2;
+        basis-1/2 w-1/2;
     }
 
     &--full-width {

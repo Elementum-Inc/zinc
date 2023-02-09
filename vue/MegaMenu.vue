@@ -88,7 +88,10 @@
       <PopoverPanel :static="!settings.collapse_menu_desktop">
         <PopoverGroup as="nav" class="header__menu-top" :class="[`color-scheme--${settings.mm_color_scheme}`, settings.collapse_menu_desktop ? 'collapsed' : '']">
           <Popover v-for="link in topMenu" :key="link.id" class="top-link">
-            <PopoverButton as="a" :href="link.url">
+            <a v-if="(!link.blocks || !link.blocks.length) && (!link.links || !link.links.length)" :href="link.url">
+              {{ link.title }}
+            </a>
+            <PopoverButton v-else as="a" :href="link.url">
               {{ link.title }}
             </PopoverButton>
             <transition name="slideDown">
@@ -195,9 +198,9 @@
                         (block.settings.primary_button_label && block.settings.primary_button_url) ||
                         (block.settings.secondary_button_label && block.settings.secondary_button_url)"
                     >
-                      <h1 v-if="block.settings.content_title">{{ block.settings.content_title }}</h1>
-                      <h3 v-if="block.settings.content_subtitle">{{ block.settings.content_subtitle }}</h3>
-                      <p v-if="block.settings.content" :html="block.settings.content"></p>
+                      <h2 v-if="block.settings.content_title" :class="block.settings.content_title_size">{{ block.settings.content_title }}</h2>
+                      <h4 v-if="block.settings.content_subtitle" :class="block.settings.content_subtitle_size">{{ block.settings.content_subtitle }}</h4>
+                      <div v-if="block.settings.content">{{ block.settings.content }}</div>
                       <div class="buttons" :class="[`color-scheme--${settings.mm_color_scheme}`]">
                         <a v-if="block.settings.primary_button_label && block.settings.primary_button_url" :href="block.settings.primary_button_url" class="btn primary" :class="[`btn-${block.settings.button_style}`, block.settings.button_reverse ? 'order-2' : '']">
                           <span class="btn__label">
