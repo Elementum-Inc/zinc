@@ -585,11 +585,9 @@
     -webkit-justify-content: space-between;
     justify-content: space-between;
   }
-
   .facets-vertical-form > .sorting {
-    padding-left: 0;
+    padding-left: 0px;
   }
-
   .facets-vertical .facets-wrapper {
     min-width: 50%;
     padding-right: 2rem;

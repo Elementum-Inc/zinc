@@ -25,7 +25,7 @@
 }
 .background-blocks .media {
   position: absolute;
-  bottom: 0;
+  bottom: 0px;
   left: 50%;
   --tw-translate-x: 0;
   --tw-translate-y: 0;
