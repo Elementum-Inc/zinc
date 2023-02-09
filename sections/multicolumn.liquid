@@ -36,7 +36,7 @@
         {%- endif -%}
       </div>
     {%- endunless -%}
-    <div class="{% if show_mobile_slider %}splide{% endif %}"
+    <div class="{% if show_mobile_slider %}splide{% else %}splide--disabled{% endif %}"
       data-splide='{ "perPage": {{ section.settings.columns_mobile }}, "mediaQuery": "min", "breakpoints": { "768": { "destroy": true } } }'>
       <div class="splide__track">
         <ul class="multicolumn-list contains-content-container shopify-grid grid--{{ section.settings.columns_desktop }}-col-desktop splide__list"
