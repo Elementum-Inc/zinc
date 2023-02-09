@@ -5,36 +5,27 @@
   }
 
   & .multicolumn-card__image-wrapper {
-    @apply m-0;
+    @apply relative;
+
+    &.center { @apply self-center; }
+    &.right { @apply self-end; }
   }
 
   & .media {
-    @apply
-      min-w-18;
-
-    &--circle {
-      @apply
-        max-w-25;
-    }
+    @apply w-full;
   }
 }
 
 .background-blocks {
   flex-direction: column-reverse;
 
-  & .testimonials-card__image-wrapper {
-    margin: auto;
-    height: 100px;
+  & .multicolumn-card__image-wrapper {
+    @apply mx-0;
+    margin-top: -4rem;
   }
 
   & .multicolumn-card-spacing {
     padding-top: 0;
-  }
-
-  & .media {
-    margin-top: -4rem;
-    margin-left: 40%;
-    justify-content: center;
   }
 
   & .multicolumn-card__info {
@@ -45,10 +36,5 @@
   & .multicolumn-card__image {
     height: 100px;
     width: 100px;
-  }
-
-  & .multicolumn-card__image-wrapper {
-    height: 3rem;
-    width: 100%;
   }
 }
