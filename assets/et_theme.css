@@ -57,7 +57,7 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
-button, select, input, textarea {
+button, input, textarea, select {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
