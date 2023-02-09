@@ -88,7 +88,10 @@
       <PopoverPanel :static="!settings.collapse_menu_desktop">
         <PopoverGroup as="nav" class="header__menu-top" :class="[`color-scheme--${settings.mm_color_scheme}`, settings.collapse_menu_desktop ? 'collapsed' : '']">
           <Popover v-for="link in topMenu" :key="link.id" class="top-link">
-            <PopoverButton as="a" :href="link.url">
+            <a v-if="(!link.blocks || !link.blocks.length) && (!link.links || !link.links.length)" :href="link.url">
+              {{ link.title }}
+            </a>
+            <PopoverButton v-else as="a" :href="link.url">
               {{ link.title }}
             </PopoverButton>
             <transition name="slideDown">
