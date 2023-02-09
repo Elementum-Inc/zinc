@@ -1,5 +1,6 @@
 .multicolumn-card__image-wrapper--half-width {
   flex-basis: 50%;
+  width: 50%;
 }
 
 @media screen and (min-width: 768px) {
@@ -193,9 +194,6 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-  -ms-flex-wrap: wrap;
-  -webkit-flex-wrap: wrap;
-  flex-wrap: wrap;
   position: relative;
 }
 
@@ -224,6 +222,7 @@
 
 .multicolumn-card__image-wrapper--third-width {
   flex-basis: 33.333333%;
+  width: 33.333333%;
 }
 
 .multicolumn-card__image-wrapper--full-width {

@@ -1258,9 +1258,13 @@ p.small, .text-body.small {
   margin-right: 0.5rem;
 }
 @media (max-width: 639.9px) {
-  .buttons > .btn:not(:last-child), .buttons > .btn:only-child {
+  .buttons > .btn:not(:last-child) {
     margin-right: 0.5rem;
   }
+}
+.buttons > .btn:only-child {
+  margin-left: 0px;
+  margin-right: 0px;
 }
 .right .buttons {
   -webkit-box-pack: end;

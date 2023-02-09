@@ -93,6 +93,14 @@
   }
 }
 
+pickup-availability-drawer[open].drawer {
+  visibility: visible;
+}
+
+pickup-availability-drawer[open].drawer .drawer__inner {
+  transform: none;
+}
+
 .cart-drawer .price {
   font-weight: 600;
   font-size: 1rem;
