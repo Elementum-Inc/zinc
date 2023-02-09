@@ -1,23 +1,19 @@
 .price {
   font-size: 1rem;
   line-height: 1.5;
-  letter-spacing: .015rem;
+  letter-spacing: 0.015rem;
 }
-
 .price .price-item {
-  margin-right: .5rem;
+  margin-right: 0.5rem;
   color: var(--color-scheme-text);
 }
-
 .price--on-sale .price-item--regular {
-  font-size: .75rem;
-  letter-spacing: .02rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.02rem;
 }
-
 .price--large {
   font-size: 1.125rem;
 }
-
 @media (min-width: 768px) {
   .price--large {
     font-size: 1.25rem;
@@ -26,14 +22,14 @@
 
 .price.caption-with-letter-spacing {
   font-size: 1rem;
-  letter-spacing: .13rem;
-  line-height: calc(1 + .2 / var(--font-body-scale));
+  letter-spacing: 0.13rem;
+  line-height: calc(1 + 0.2 / var(--font-body-scale));
   text-transform: uppercase;
 }
 
 .price.subtitle {
   font-size: 1.8rem;
-  line-height: calc(1 + .8 / var(--font-body-scale));
-  letter-spacing: .06rem;
-  color: rgb(var(--color-foreground) .7);
+  line-height: calc(1 + 0.8 / var(--font-body-scale));
+  letter-spacing: 0.06rem;
+  color: rgb(var(--color-foreground) 0.7);
 }

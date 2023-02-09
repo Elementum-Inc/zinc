@@ -1,10 +1,9 @@
 .accordion {
   margin-top: 2.5rem;
   margin-bottom: 0;
-  border-top: .1rem solid rgb(var(--color-scheme-fg) .08);
-  border-bottom: .1rem solid rgb(var(--color-scheme-fg) .08);
+  border-top: 0.1rem solid rgb(var(--color-scheme-fg) 0.08);
+  border-bottom: 0.1rem solid rgb(var(--color-scheme-fg) 0.08);
 }
-
 .accordion__title {
   max-width: calc(100% - 6rem);
   display: inline-block;
@@ -14,7 +13,6 @@
   margin-right: auto;
   overflow-wrap: break-word;
 }
-
 .accordion summary {
   border-color: var(--color-scheme-fg);
   border-top-width: 2px;
@@ -28,12 +26,17 @@
 }
 
 .accordion summary .icon-caret {
-  -webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, filter, backdrop-filter;
-  -o-transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
-  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, -webkit-box-shadow, transform, -webkit-transform, filter, backdrop-filter;
-  -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  -o-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
-  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  -webkit-transition-property: background-color, border-color, color, fill,
+    stroke, opacity, -webkit-box-shadow, -webkit-transform, filter,
+    backdrop-filter;
+  -o-transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke,
+    opacity, box-shadow, -webkit-box-shadow, transform, -webkit-transform,
+    filter, backdrop-filter;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   -webkit-transition-duration: 150ms;
   -o-transition-duration: 150ms;
   transition-duration: 150ms;
@@ -46,7 +49,6 @@
   height: var(--icon-size);
   width: var(--icon-size);
 }
-
 .accordion details[open] > summary .icon-caret {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -60,12 +62,26 @@
   --tw-scale-x: 1;
   --tw-scale-y: 1;
   --tw-scale-z: 1;
-  -webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
-  -ms-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
-  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
+  -webkit-transform: translateX(var(--tw-translate-x))
+    translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z))
+    rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x))
+    rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z))
+    skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+    scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
+  -ms-transform: translateX(var(--tw-translate-x))
+    translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z))
+    rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x))
+    rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z))
+    skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x))
+    scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
+  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y))
+    translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate))
+    rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y))
+    rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y))
+    scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y))
+    scaleZ(var(--tw-scale-z));
   --tw-rotate: 180deg;
 }
-
 .accordion .icon-accordion {
   align-self: center;
   fill: rgb(var(--color-scheme-accent));
@@ -78,11 +94,11 @@
   fill: var(--color-scheme-accent);
 }
 
-.accordion:not(.product__accordion) .icon-accordion, .accordion:not(.product__accordion) .icon-caret {
+.accordion:not(.product__accordion) .icon-accordion,
+.accordion:not(.product__accordion) .icon-caret {
   height: calc(var(--icon-size) * 1.5);
   width: calc(var(--icon-size) * 1.5);
 }
-
 .accordion .summary__title {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -97,7 +113,6 @@
   -webkit-flex: 1 1 0%;
   flex: 1 1 0%;
 }
-
 .accordion__content {
   margin-bottom: 1.5rem;
   overflow-x: auto;
@@ -107,12 +122,10 @@
   padding-right: 5rem;
   overflow-wrap: break-word;
 }
-
 .accordion__content img {
   max-width: 100%;
 }
-
 .accordion + .accordion {
-  border-top-width: 0;
-  margin-top: 0;
+  border-top-width: 0px;
+  margin-top: 0px;
 }

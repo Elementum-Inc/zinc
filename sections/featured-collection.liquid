@@ -237,6 +237,7 @@
     {
       "type": "text",
       "id": "description",
+      "default": "<p>Use this section to highlight up to three specialized collections related to promotions or and/or customer trends.</p>",
       "label": "t:sections.featured-collection.settings.description.label"
     },
     {
@@ -331,13 +332,13 @@
           "label": "t:sections.featured-collection.settings.view_all_style.options__3.label"
         }
       ],
-      "default": "solid"
+      "default": "link"
     },
     {
       "type": "checkbox",
       "id": "enable_desktop_slider",
       "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
-      "default": false
+      "default": true
     },
     {
       "type": "select",
@@ -429,13 +430,13 @@
     {
       "type": "checkbox",
       "id": "show_price",
-      "default": false,
+      "default": true,
       "label": "t:sections.featured-collection.settings.show_price.label"
     },
     {
       "type": "checkbox",
       "id": "show_vendor",
-      "default": false,
+      "default": true,
       "label": "t:sections.featured-collection.settings.show_vendor.label"
     },
     {
@@ -455,7 +456,7 @@
     {
       "type": "checkbox",
       "id": "enable_quick_add",
-      "default": false,
+      "default": true,
       "label": "t:sections.featured-collection.settings.enable_quick_buy.label"
     },
     {
@@ -531,7 +532,15 @@
   "max_blocks": 3,
   "presets": [
     {
-      "name": "t:sections.featured-collection.presets.name"
+      "name": "t:sections.featured-collection.presets.name",
+      "blocks": [
+        {
+          "type": "collection"
+        },
+        {
+          "type": "collection"
+        }
+      ]
     }
   ]
 }
