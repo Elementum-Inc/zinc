@@ -12,12 +12,16 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
 
   > .btn {
     @apply mx-2;
+
+    &:not(:last-child) {
+      @apply <sm:(mr-2);
+    }
+
+    &:only-child {
+      @apply mx-0;
+    }
   }
 
-  > .btn:not(:last-child),
-  > .btn:only-child {
-    @apply <sm:(mr-2);
-  }
 
   .right & {
     @apply justify-end;
