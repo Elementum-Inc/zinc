@@ -1,9 +1,10 @@
 .contact {
   padding-left: 3rem;
   padding-right: 3rem;
-  padding-top: 0px;
-  padding-bottom: 0px;
+  padding-top: 0;
+  padding-bottom: 0;
 }
+
 @media screen and (min-width: 768px) {
   .contact__fields {
     display: grid;
@@ -11,31 +12,38 @@
     grid-column-gap: 2rem;
   }
 }
+
 .contact .field {
   margin-bottom: 1.5rem;
 }
+
 @media screen and (min-width: 768px) {
   .contact .field {
     margin-bottom: 2rem;
   }
 }
+
 .contact .field__input {
-  border-radius: 0px;
+  border-radius: 0;
   border-width: 3px;
   height: 4rem;
 }
+
 .contact img {
   max-width: 100%;
 }
+
 .contact .form__message {
   -webkit-box-align: start;
   -ms-flex-align: start;
   -webkit-align-items: flex-start;
   align-items: flex-start;
 }
+
 .contact .icon-success {
-  margin-top: 0.25rem;
+  margin-top: .25rem;
 }
+
 .contact__button {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -43,25 +51,30 @@
   display: flex;
   margin-top: 3rem;
 }
+
 @media screen and (min-width: 768px) {
   .contact__button {
     margin-top: 4rem;
   }
 }
+
 .contact__button button {
   margin: auto;
 }
+
 .contact .h0 {
   display: none;
 }
+
 .helper-text {
   margin-top: 1.7rem;
   margin-bottom: 1.7rem;
-  margin-left: 0px;
-  margin-right: 0px;
+  margin-left: 0;
+  margin-right: 0;
   --tw-text-opacity: 1;
-  color: rgba(194, 194, 194, var(--tw-text-opacity));
+  color: rgb(194 194 194 / var(--tw-text-opacity));
 }
+
 .helper-text.small {
   font-weight: 500;
   font-size: 1rem;
