@@ -58,9 +58,9 @@
 
     & .icon-caret {
       position: absolute;
-      content: "";
-      height: 0.6rem;
-      top: calc(50% - 0.2rem);
+      content: '';
+      height: .6rem;
+      top: calc(50% - .2rem);
       left: 0;
     }
   }
