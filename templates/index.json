@@ -166,7 +166,10 @@
           }
         }
       },
-      "block_order": ["column2", "column1"],
+      "block_order": [
+        "column2",
+        "column1"
+      ],
       "settings": {
         "title": "Testtestets",
         "heading_size": "h1",
@@ -277,7 +280,10 @@
           }
         }
       },
-      "block_order": ["16620107657f4c8cb8-0", "16620107657f4c8cb8-1"],
+      "block_order": [
+        "16620107657f4c8cb8-0",
+        "16620107657f4c8cb8-1"
+      ],
       "settings": {
         "title": "",
         "heading_size": "h1",

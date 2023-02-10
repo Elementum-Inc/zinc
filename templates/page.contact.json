@@ -27,7 +27,7 @@
         "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/large-fall-leaf-in-hand.jpg",
+            "image": "shopify://shop_images/large-fall-leaf-in-hand.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -38,7 +38,7 @@
         "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/handful-of-acorns.jpg",
+            "image": "shopify://shop_images/handful-of-acorns.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -49,7 +49,7 @@
         "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-2": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
+            "image": "shopify://shop_images/fall-leaf-cookies-in-the-kitchen.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -60,7 +60,7 @@
         "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-3": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/rooibos-tea.jpg",
+            "image": "shopify://shop_images/rooibos-tea.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -71,7 +71,7 @@
         "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-4": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sliced-pumpkin-pie.jpg",
+            "image": "shopify://shop_images/sliced-pumpkin-pie.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -105,7 +105,7 @@
         "template--15348023492747__7a464e9c-0c9a-4b84-a141-23441d703459-1668058087a36d5b51-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hand-holding-a-pinecone-in-the-forest.jpg",
+            "image": "shopify://shop_images/hand-holding-a-pinecone-in-the-forest.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_background_color": "#ffffff",
@@ -132,7 +132,7 @@
             "column_font_color": "#000000",
             "column_orientation": "text-below",
             "title": "ELEMENTUM",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nam sodales varius suspendisse cursus egestas etiam. Vehicula laoreet dictum nisl nam id viverra turpis risus. <\/p>",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nam sodales varius suspendisse cursus egestas etiam. Vehicula laoreet dictum nisl nam id viverra turpis risus. </p>",
             "title-2": "E-mail",
             "text-2": "info@loremipsum.com",
             "title-3": "Phone",

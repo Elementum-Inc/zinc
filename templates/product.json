@@ -37,7 +37,7 @@
           }
         },
         "ef90e07b-23aa-4857-8a27-35bc11fae2b1": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/star_rating\/bae150af-8da8-48b2-9867-398188115e5f",
+          "type": "shopify://apps/product-reviews/blocks/star_rating/bae150af-8da8-48b2-9867-398188115e5f",
           "settings": {
             "stars_fill_color": "#000000",
             "star_size": 15,
@@ -167,12 +167,12 @@
         "column-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/handful-of-acorns.jpg",
+            "image": "shopify://shop_images/handful-of-acorns.jpg",
             "image_position": "left",
             "image-width": 300,
             "border-radius": 0,
             "title": "",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
             "link_label": "",
             "link": ""
           }
@@ -180,12 +180,12 @@
         "column-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hand-holding-a-pinecone-in-the-forest.jpg",
+            "image": "shopify://shop_images/hand-holding-a-pinecone-in-the-forest.jpg",
             "image_position": "above",
             "image-width": 300,
             "border-radius": 0,
             "title": "Hassle-Free Exchanges",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
+            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
             "link_label": "",
             "link": ""
           }
@@ -237,33 +237,33 @@
         "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/pet-and-owner-on-fall-walk.jpg",
+            "image": "shopify://shop_images/pet-and-owner-on-fall-walk.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_background_color": "#ffffff",
             "column_font_color": "#121212",
             "column_orientation": "text-below",
             "title": "Lorem",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
           }
         },
         "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/dog-fetching-disc.jpg",
+            "image": "shopify://shop_images/dog-fetching-disc.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_background_color": "#d69940",
             "column_font_color": "#000000",
             "column_orientation": "text-above",
             "title": "Ipsum",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
           }
         },
         "d0a11907-24e5-482c-895d-786c03c996b8": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/rooibos-tea.jpg",
+            "image": "shopify://shop_images/rooibos-tea.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_background_color": "#ffffff",
@@ -282,7 +282,7 @@
             "column_font_color": "#ffffff",
             "column_orientation": "text-below",
             "title": "Lorem Ipsum Forever",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
           }
         }
       },
@@ -319,8 +319,8 @@
         "second_button_label": "",
         "second_link": "",
         "second_button_style_secondary": false,
-        "cover_image": "shopify:\/\/shop_images\/test_bg.png",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "cover_image": "shopify://shop_images/test_bg.png",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
         "color_scheme": "background-1",
@@ -332,7 +332,7 @@
       "type": "apps",
       "blocks": {
         "604b4d95-ef3f-4db5-ad3f-a326cfcef2b9": {
-          "type": "shopify:\/\/apps\/product-reviews\/blocks\/reviews\/bae150af-8da8-48b2-9867-398188115e5f",
+          "type": "shopify://apps/product-reviews/blocks/reviews/bae150af-8da8-48b2-9867-398188115e5f",
           "settings": {
           }
         }
@@ -350,7 +350,7 @@
         "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/large-fall-leaf-in-hand.jpg",
+            "image": "shopify://shop_images/large-fall-leaf-in-hand.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -361,7 +361,7 @@
         "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/handful-of-acorns.jpg",
+            "image": "shopify://shop_images/handful-of-acorns.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -372,7 +372,7 @@
         "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-2": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
+            "image": "shopify://shop_images/fall-leaf-cookies-in-the-kitchen.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -383,7 +383,7 @@
         "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-3": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sliced-pumpkin-pie.jpg",
+            "image": "shopify://shop_images/sliced-pumpkin-pie.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
