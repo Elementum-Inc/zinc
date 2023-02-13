@@ -26,6 +26,10 @@
       <h3 class="helper-text {{ section.settings.text_size }}">{{ section.settings.text | escape }}</h3>
     {%- endif -%}
 
+    {%- if section.settings.subtext != blank -%}
+      <h3 class="helper-text {{ section.settings.subtext_size }}">{{ section.settings.subtext | escape }}</h3>
+    {%- endif -%}
+
     {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
       {%- if form.posted_successfully? -%}
         <h2 class="form-status form-status-list form__message" tabindex="-1" autofocus>{% render 'icon-success' %} {{ 'templates.contact.form.post_success' | t }}</h2>
@@ -156,6 +160,31 @@
       ],
       "default": "h3",
       "label": "Text Size"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Subtext"
+    },
+    {
+      "type": "select",
+      "id": "subtext_size",
+      "options": [
+        {
+          "value": "h6",
+          "label": "t:sections.all.heading_size.options__1.label"
+        },
+        {
+          "value": "h5",
+          "label": "t:sections.all.heading_size.options__2.label"
+        },
+        {
+          "value": "h4",
+          "label": "t:sections.all.heading_size.options__3.label"
+        }
+      ],
+      "default": "h5",
+      "label": "Subtext size"
     },
     {
       "type": "select",
