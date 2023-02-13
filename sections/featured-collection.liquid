@@ -162,7 +162,18 @@
               {%- else -%}
                 {%- for i in (1..section.settings.products_to_show) -%}
                   <li class="splide__slide grid__item">
-                    {% render 'card-product', show_vendor: section.settings.show_vendor %}
+                    {% render 'card-product',
+                      card_color_scheme: section.settings.card_color_scheme,
+                      section_color_scheme: section.settings.color_scheme,
+                      media_aspect_ratio: section.settings.image_ratio,
+                      show_secondary_image: section.settings.show_secondary_image,
+                      show_price: section.settings.show_price,
+                      show_vendor: section.settings.show_vendor,
+                      show_rating: section.settings.show_rating,
+                      show_quick_add: section.settings.enable_quick_add,
+                      hover_info: section.settings.card_hover_show_info,
+                      section_id: section.id
+                    %}
                   </li>
                 {%- endfor -%}
               {%- endfor -%}
@@ -538,7 +549,21 @@
   "max_blocks": 3,
   "presets": [
     {
-      "name": "t:sections.featured-collection.presets.name"
+      "name": "t:sections.featured-collection.presets.name",
+      "blocks": [
+        {
+          "type": "collection",
+          "settings": {
+            "title": "Featured Collection 1"
+          }
+        },
+        {
+          "type": "collection",
+          "settings": {
+            "title": "Featured Collection 2"
+          }
+        }
+      ]
     }
   ]
 }
