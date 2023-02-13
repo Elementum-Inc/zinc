@@ -141,16 +141,6 @@
     "settings": [
       {
         "type": "range",
-        "id": "page_width",
-        "min": 1000,
-        "max": 1600,
-        "step": 100,
-        "default": 1200,
-        "unit": "px",
-        "label": "t:settings_schema.layout.settings.page_width.label"
-      },
-      {
-        "type": "range",
         "id": "spacing_sections",
         "min": 0,
         "max": 100,
@@ -208,16 +198,6 @@
       },
       {
         "type": "range",
-        "id": "buttons_border_opacity",
-        "min": 0,
-        "max": 100,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.global.settings.opacity.label",
-        "default": 100
-      },
-      {
-        "type": "range",
         "id": "buttons_radius",
         "min": 0,
         "max": 40,
@@ -256,48 +236,47 @@
     "name": "t:settings_schema.variant_pills.name",
     "settings": [
       {
+        "type": "select",
+        "id": "variant_pills_label_size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "default",
+            "label": "Default"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "default",
+        "label": "Label text size"
+      },
+      {
         "type": "header",
-        "content": "t:settings_schema.global.settings.header__shadow.content",
-        "info": "See variant picker settings on Product page for more options."
+        "content": "t:settings_schema.global.settings.header__border.content"
       },
       {
         "type": "range",
-        "id": "variant_pills_shadow_opacity",
+        "id": "variant_pills_border_thickness",
         "min": 0,
-        "max": 100,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.global.settings.opacity.label",
-        "default": 0
+        "max": 16,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
       },
       {
         "type": "range",
-        "id": "variant_pills_shadow_horizontal_offset",
-        "min": -12,
-        "max": 12,
+        "id": "variant_pills_radius",
+        "min": 0,
+        "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "t:settings_schema.global.settings.horizontal_offset.label",
-        "default": 0
-      },
-      {
-        "type": "range",
-        "id": "variant_pills_shadow_vertical_offset",
-        "min": -12,
-        "max": 12,
-        "step": 2,
-        "unit": "px",
-        "label": "t:settings_schema.global.settings.vertical_offset.label",
-        "default": 0
-      },
-      {
-        "type": "range",
-        "id": "variant_pills_shadow_blur",
-        "min": 0,
-        "max": 20,
-        "step": 5,
-        "unit": "px",
-        "label": "t:settings_schema.global.settings.blur.label",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
         "default": 0
       }
     ]

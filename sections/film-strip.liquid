@@ -74,7 +74,7 @@
                   {% if section.settings.image_ratio == 'auto' or section.settings.image_ratio == 'circle' %}
                     {% assign spaced_image = true %}
                   {% endif %}
-                  <div class="film-strip-card__image-wrapper film-strip-card__image-wrapper--{{ section.settings.image_width }}-width{% if section.settings.image_width != 'full' or spaced_image %} film-strip-card-spacing{% endif %}" style="padding: {{ block.settings.image-padding }}px;">
+                  <div class="film-strip-card__image-wrapper{% if spaced_image %} film-strip-card-spacing{% endif %}" style="padding: {{ block.settings.image-padding }}px;">
                     <div class="media media--transparent media--{{ section.settings.image_ratio }}"
                       {% if section.settings.image_ratio == 'auto' %}
                         style="padding-bottom: {{ 1 | divided_by: highest_ratio | times: 100 }}%;"
