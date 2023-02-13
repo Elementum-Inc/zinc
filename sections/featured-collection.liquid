@@ -222,7 +222,7 @@
     {
       "type": "text",
       "id": "title",
-      "default": "Featured collection",
+      "default": "Featured Product Collections",
       "label": "t:sections.featured-collection.settings.title.label"
     },
     {
@@ -248,6 +248,7 @@
     {
       "type": "text",
       "id": "description",
+      "default": "<p>Use this section to highlight up to three specialized collections.</p>",
       "label": "t:sections.featured-collection.settings.description.label"
     },
     {
@@ -342,13 +343,13 @@
           "label": "t:sections.featured-collection.settings.view_all_style.options__3.label"
         }
       ],
-      "default": "solid"
+      "default": "link"
     },
     {
       "type": "checkbox",
       "id": "enable_desktop_slider",
       "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
-      "default": false
+      "default": true
     },
     {
       "type": "select",
@@ -447,13 +448,13 @@
     {
       "type": "checkbox",
       "id": "show_price",
-      "default": false,
+      "default": true,
       "label": "t:sections.featured-collection.settings.show_price.label"
     },
     {
       "type": "checkbox",
       "id": "show_vendor",
-      "default": false,
+      "default": true,
       "label": "t:sections.featured-collection.settings.show_vendor.label"
     },
     {
@@ -473,7 +474,7 @@
     {
       "type": "checkbox",
       "id": "enable_quick_add",
-      "default": false,
+      "default": true,
       "label": "t:sections.featured-collection.settings.enable_quick_buy.label"
     },
     {
@@ -536,7 +537,8 @@
           "type": "text",
           "id": "title",
           "label": "Button label",
-          "info": "Button label is defaulted to the collection title. Use this field for a unique title."
+          "default": "Featured Collection",
+          "info": "If button label field is empty, the collection name will be the default label. Use this field for a unique title."
         },
         {
           "type": "collection",

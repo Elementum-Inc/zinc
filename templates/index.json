@@ -6,10 +6,10 @@
         "16629989750553a9d2-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/fall-vegetable-box.jpg",
-            "heading": "Fall is Here",
+            "image": "shopify://shop_images/fall-vegetable-box.jpg",
+            "heading": "Slideshow w/ Video Capability",
             "heading_size": "h1",
-            "subheading": "It's actually almost over!",
+            "subheading": "Add optional subtext here.",
             "button_style": "flat",
             "button_reverse": false,
             "primary_button_label": "Primary button",
@@ -27,7 +27,7 @@
         "16629989750553a9d2-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify:\/\/shop_images\/woman-infront-of-tree-with-berries.jpeg",
+            "image": "shopify://shop_images/woman-infront-of-tree-with-berries.jpeg",
             "heading": "Are you ready for winter?",
             "heading_size": "h1",
             "subheading": "Better get some gorgeous new winter clothes!",
@@ -48,7 +48,7 @@
         "92a7dd88-44be-4caf-a9f7-1b2bff547122": {
           "type": "video",
           "settings": {
-            "video_src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/2c63748001054a23bc291ee82a7f23cb.mp4",
+            "video_src": "https://cdn.shopify.com/videos/c/o/v/2c63748001054a23bc291ee82a7f23cb.mp4",
             "heading": "This is the Video",
             "heading_size": "h1",
             "subheading": "Tell your brand's story through video",
@@ -148,15 +148,15 @@
             "image_position": "above",
             "border-radius": 0,
             "title": "FEATURED COLLECTION",
-            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
+            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli</p>",
             "button_label": "Button label",
-            "button_link": "shopify:\/\/collections"
+            "button_link": "shopify://collections"
           }
         },
         "column1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/sliced-pumpkin-pie.jpg",
+            "image": "shopify://shop_images/sliced-pumpkin-pie.jpg",
             "image_position": "above",
             "border-radius": 0,
             "title": "Testing",
@@ -259,7 +259,7 @@
         "16620107657f4c8cb8-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
+            "image": "shopify://shop_images/fall-leaf-cookies-in-the-kitchen.jpg",
             "image_position": "above",
             "border-radius": 0,
             "title": "",
@@ -274,7 +274,7 @@
             "image_position": "above",
             "border-radius": 0,
             "title": "THE BEST FALL FLAVORS",
-            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br\/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli<\/p>",
+            "text": "<p>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.<br/>Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Veli</p>",
             "button_label": "Button label",
             "button_link": ""
           }
@@ -307,7 +307,7 @@
         "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/handful-of-acorns.jpg",
+            "image": "shopify://shop_images/handful-of-acorns.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -318,7 +318,7 @@
         "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/rooibos-tea.jpg",
+            "image": "shopify://shop_images/rooibos-tea.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -329,7 +329,7 @@
         "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-2": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/hand-holding-a-pinecone-in-the-forest.jpg",
+            "image": "shopify://shop_images/hand-holding-a-pinecone-in-the-forest.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -396,41 +396,41 @@
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/stylish-man-in-bow-tie.jpg",
+            "image": "shopify://shop_images/stylish-man-in-bow-tie.jpg",
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
+            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!</p>"
           }
         },
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/model-with-leather-jacket-over-shoulders.jpg",
+            "image": "shopify://shop_images/model-with-leather-jacket-over-shoulders.jpg",
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
+            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!</p>"
           }
         },
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-2": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/fashion-model-in-fur.jpg",
+            "image": "shopify://shop_images/fashion-model-in-fur.jpg",
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
+            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!</p>"
           }
         },
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-3": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/black-and-white-portrait-mens-fashion.jpg",
+            "image": "shopify://shop_images/black-and-white-portrait-mens-fashion.jpg",
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
+            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!</p>"
           }
         }
       },
@@ -464,7 +464,7 @@
           "settings": {
             "heading": "What is it?",
             "icon": "question_mark",
-            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
             "page": ""
           }
         },
@@ -473,7 +473,7 @@
           "settings": {
             "heading": "How does it work?",
             "icon": "clipboard",
-            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
             "page": ""
           }
         },
@@ -482,7 +482,7 @@
           "settings": {
             "heading": "Where do you ship?",
             "icon": "truck",
-            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
             "page": ""
           }
         },
@@ -491,7 +491,7 @@
           "settings": {
             "heading": "Do you have stores?",
             "icon": "map_pin",
-            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
             "page": ""
           }
         }
@@ -540,7 +540,7 @@
             "email_form_input_placeholder": "email address",
             "email_form_button_text": "Sign Up",
             "email_form_success_title": "Thank you for signing up!",
-            "email_form_success_message": "<p>You've been subscribed to our newsletter and will receive updates from us shortly!<\/p>"
+            "email_form_success_message": "<p>You've been subscribed to our newsletter and will receive updates from us shortly!</p>"
           }
         }
       },
@@ -551,7 +551,7 @@
       ],
       "settings": {
         "color_scheme": "background-1",
-        "modal_background_image": "shopify:\/\/shop_images\/88772b321081154b9be75000fbc46933.png",
+        "modal_background_image": "shopify://shop_images/88772b321081154b9be75000fbc46933.png",
         "float_modal_content": true,
         "overlay": 0
       }

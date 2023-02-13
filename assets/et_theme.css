@@ -3413,9 +3413,6 @@ p.small, .text-body.small {
 .footer #FooterCountryLabel {
   margin-bottom: 0px;
 }
-.footer .basic #large-footer-logo {
-  display: none;
-}
 .footer #large-footer-logo {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -3460,4 +3457,7 @@ p.small, .text-body.small {
   font-weight: 600;
   line-height: 1;
   text-align: center;
+}
+.basic #large-footer-logo {
+  display: none !important;
 }

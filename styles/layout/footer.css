@@ -13,8 +13,7 @@
 
   .localization-form {
     &__select {
-      @apply
-        text-sm
+      @apply text-sm
         pl-2
         mb-2;
     }
@@ -22,8 +21,7 @@
 
   .localization-selector {
     & + .disclosure__list-wrapper {
-      @apply
-        ml-0;
+      @apply ml-0;
     }
   }
 
@@ -35,8 +33,7 @@
 
   &__newsletter {
     & .field__input {
-      @apply
-        bg-scheme-bg
+      @apply bg-scheme-bg
         border
         border-scheme-accent
         text-scheme-accent;
@@ -56,8 +53,7 @@
   }
 
   #FooterCountryForm {
-    @apply
-      w-full
+    @apply w-full
       my-4;
 
     & .icon-caret {
@@ -73,9 +69,9 @@
     @apply mb-0;
   }
 
-  .basic #large-footer-logo {
+  /* .basic #large-footer-logo {
     @apply hidden;
-  }
+  } */
 
   #large-footer-logo {
     @apply w-full h-auto flex justify-center mt-8;
@@ -114,8 +110,7 @@
   }
 
   #big-bold-logo {
-    @apply
-      font-8xl
+    @apply font-8xl
       lg:font-[10rem]
       xl:font-[14rem]
       font-semibold
@@ -123,4 +118,8 @@
       tracking-none
       text-center;
   }
+}
+
+.basic #large-footer-logo {
+  display: none !important;
 }
