@@ -94,12 +94,30 @@
 .product-form__input {
   & input[type='radio'] {
     & + label {
-      padding: 1rem .5rem 0;
-      width: auto;
-      min-width: 3rem;
-      height: 3rem;
-      font-size: 1rem;
-      text-align: center;
+      @apply rounded-pill
+        border-pill
+        border-button-fg;
+
+      > .btn__label {
+        @apply rounded-pill
+          px-1
+          py-2;
+        min-height: 2.75rem;
+        min-width: 2.75rem;
+        text-align: center;
+      }
+
+      &.btn--small > .btn__label {
+        @apply p-xs;
+        min-height: 2rem;
+        min-width: 2rem;
+      }
+
+      &.btn--large > .btn__label {
+        @apply p-2;
+        min-height: 3rem;
+        min-width: 3rem;
+      }
     }
 
     &:checked + label {
