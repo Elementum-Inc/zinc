@@ -75,6 +75,8 @@
   @apply bg-scheme-bg text-scheme-text;
 
   &--foreground {
+    position: relative;
+
     &::before {
       @apply absolute
         h-full

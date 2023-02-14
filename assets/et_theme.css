@@ -1199,6 +1199,9 @@ p.small, .text-body.small {
   background-color: var(--color-scheme-bg);
   color: var(--color-scheme-text);
 }
+.section--foreground, .color-scheme--foreground {
+  position: relative;
+}
 .section--foreground::before, .color-scheme--foreground::before {
   background-color: rgb(var(--color-scheme-accentRGB) / .2);
   height: 100%;
