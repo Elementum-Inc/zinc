@@ -84,7 +84,7 @@
               {%- endif -%}
               <div class="contact-content-card__info" style="padding: {{ block.settings.text-padding }}px;">
                 {%- if block.settings.title != blank -%}
-                  <h3>{{ block.settings.title | escape }}</h3>
+                  <h3 class="{{ block.settings.heading_text_style }}">{{ block.settings.title | escape }}</h3>
                 {%- endif -%}
                 {%- if block.settings.text != blank -%}
                   <div class="rte">{{ block.settings.text }}</div>
@@ -92,24 +92,24 @@
 
                 <div class="contact-info">
                   {%- if block.settings.title-2 != blank -%}
-                    <h3 class="subtitle">{{ block.settings.title-2 | escape }}</h3>
+                    <h3 class="{{ block.settings.heading_text_style }}">{{ block.settings.title-2 | escape }}</h3>
                   {%- endif -%}
                   {%- if block.settings.text-2 != blank -%}
-                    <div class="rte large-sub">{{ block.settings.text-2 }}</div>
+                    <div class="rte {{ block.settings.content_text_size }}">{{ block.settings.text-2 }}</div>
                   {%- endif -%}
 
                   {%- if block.settings.title-3 != blank -%}
-                    <h3 class="subtitle">{{ block.settings.title-3 | escape }}</h3>
+                    <h3 class="{{ block.settings.heading_text_style }}">{{ block.settings.title-3 | escape }}</h3>
                   {%- endif -%}
                   {%- if block.settings.text-3 != blank -%}
-                    <div class="rte large-sub">{{ block.settings.text-3 }}</div>
+                    <div class="rte {{ block.settings.content_text_size }}">{{ block.settings.text-3 }}</div>
                   {%- endif -%}
 
                   {%- if block.settings.title-4 != blank -%}
-                    <h3 class="subtitle">{{ block.settings.title-4 | escape }}</h3>
+                    <h3 class="{{ block.settings.heading_text_style }}"> {{ block.settings.title-4 | escape }}</h3>
                   {%- endif -%}
                   {%- if block.settings.text-4 != blank -%}
-                    <div class="rte large-sub">{{ block.settings.text-4 }}</div>
+                    <div class="rte {{ block.settings.content_text_size }}">{{ block.settings.text-4 }}</div>
                   {%- endif -%}
                 </div>
 
@@ -365,6 +365,42 @@
           ],
           "default": "text-below",
           "label": "Column content orientation"
+        },
+        {
+          "type": "select",
+          "id": "heading_text_style",
+          "options": [
+            {
+              "value": "subtitle",
+              "label": "Subtitle"
+            },
+            {
+              "value": "uppercase",
+              "label": "Uppercase"
+            }
+          ],
+          "default": "uppercase",
+          "label": "Heading text style" 
+        },
+        {
+          "type": "select",
+          "id": "content_text_size",
+          "options": [
+            {
+              "value": "h3",
+              "label": "Large"
+            },
+            {
+              "value": "h4",
+              "label": "Medium"
+            },
+            {
+              "value": "h5",
+              "label": "Small"
+            }
+          ],
+          "default": "h4",
+          "label": "Text content size"
         },
         {
           "type": "text",

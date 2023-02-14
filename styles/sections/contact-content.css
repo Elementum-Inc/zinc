@@ -28,10 +28,10 @@
       flex-col-reverse;
   }
 
-  & .large-sub {
+  /* & .large-sub {
     @apply text-4xl
       font-medium;
-  }
+  } */
 
   /* & .grid--2-col-tablet-down .grid__item {
     @apply !w-full;
@@ -45,7 +45,8 @@
 }
 
 .contact-info {
-  @apply mt-12;
+  @apply break-words 
+    mt-12;
 }
 
 .contact-content-btn {
