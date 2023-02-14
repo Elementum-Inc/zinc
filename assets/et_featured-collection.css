@@ -14,7 +14,7 @@
 }
 
 .featured-collection #collection-tab-container .collection-tab-btn {
-  background-color: var(--color-scheme-fg);
+  background-color: rgb(var(--color-scheme-accentRGB) / .2);
   margin-top: .25rem;
   margin-bottom: .25rem;
 }

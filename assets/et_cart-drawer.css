@@ -217,7 +217,7 @@ pickup-availability-drawer[open].drawer .drawer__inner {
 }
 
 .cart-drawer #CartDrawer-Note {
-  background-color: var(--color-scheme-fg);
+  background-color: rgb(var(--color-scheme-accentRGB) / .2);
   --tw-border-opacity: 1;
   border-color: rgb(194 194 194 / var(--tw-border-opacity));
   border-width: 1px;
