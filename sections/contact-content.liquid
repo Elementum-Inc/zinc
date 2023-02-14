@@ -29,12 +29,9 @@
         <h2 class="title {{ section.settings.heading_size }}">
           {{ section.settings.title | escape }}
         </h2>
-        {%- if section.settings.button_label != blank and show_mobile_slider -%}
-          <a href="{{ section.settings.button_link }}" class="link underlined-link large-up-hide">{{ section.settings.button_label | escape }}</a>
-        {%- endif -%}
       </div>
     {%- endunless -%}
-      <ul class="contact-content-list contains-content-container grid {% if show_mobile_slider %} slider slider--mobile grid--peek{% endif %}"
+      <ul class="contact-content-list contains-content-container grid"
         id="Slider-{{ section.id }}"
         role="list"
       >
@@ -121,25 +118,6 @@
           </li>
         {%- endfor -%}
       </ul>
-
-      {%- if show_mobile_slider -%}
-        <div class="slider-buttons no-js-hidden medium-hide">
-          <button type="button" class="slider-button slider-button--prev" name="previous" aria-label="{{ 'general.slider.previous_slide' | t }}">{% render 'icon-caret' %}</button>
-          <div class="slider-counter caption">
-            <span class="slider-counter--current">1</span>
-            <span aria-hidden="true"> / </span>
-            <span class="visually-hidden">{{ 'general.slider.of' | t }}</span>
-            <span class="slider-counter--total">{{ section.blocks.size }}</span>
-          </div>
-          <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
-        </div>
-      {%- endif -%}
-    <div class="center{% if show_mobile_slider %} small-hide medium-hide{% endif %}">
-      {%- if section.settings.button_label != blank -%}
-        <a class="button button--primary"{% if section.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.button_link }}"{% endif %}>
-          {{ section.settings.button_label | escape }}
-        </a>
-      {%- endif -%}
     </div>
   </div>
 </div>
@@ -369,7 +347,7 @@
         {
           "type": "select",
           "id": "heading_text_style",
-          "options": [
+          "options": [ 
             {
               "value": "subtitle",
               "label": "Subtitle"
