@@ -34,7 +34,6 @@
         {%- endif -%}
       </div>
     {%- endunless -%}
-    <slider-component class="slider-mobile-gutter">
       <ul class="contact-content-list contains-content-container grid {% if show_mobile_slider %} slider slider--mobile grid--peek{% endif %}"
         id="Slider-{{ section.id }}"
         role="list"
@@ -135,7 +134,6 @@
           <button type="button" class="slider-button slider-button--next" name="next" aria-label="{{ 'general.slider.next_slide' | t }}">{% render 'icon-caret' %}</button>
         </div>
       {%- endif -%}
-    </slider-component>
     <div class="center{% if show_mobile_slider %} small-hide medium-hide{% endif %}">
       {%- if section.settings.button_label != blank -%}
         <a class="button button--primary"{% if section.settings.button_link == blank %} role="link" aria-disabled="true"{% else %} href="{{ section.settings.button_link }}"{% endif %}>
@@ -155,7 +153,6 @@
     {
       "type": "text",
       "id": "title",
-      "default": "Contact Content",
       "label": "Contact Content"
     },
     {
@@ -310,6 +307,7 @@
       "default": 36
     }
   ],
+  "max_blocks": 2,
   "blocks": [
     {
       "type": "column",
@@ -371,7 +369,7 @@
         {
           "type": "text",
           "id": "title",
-          "default": "Column",
+          "default": "Contact Content",
           "label": "Heading 1"
         },
         {
@@ -433,6 +431,9 @@
     {
       "name": "Contact Content",
       "blocks": [
+        {
+          "type": "column"
+        },
         {
           "type": "column"
         }
