@@ -13,7 +13,6 @@
   &--primary,
   &--background-2.inverse,
   &--secondary.inverse {
-    --color-scheme-fg: theme('colors.fg');
     --color-scheme-bg: theme('colors.bg1');
     --color-scheme-bgRGB: theme('colors.bg1RGB');
     --color-scheme-text: theme('colors.text');
@@ -26,7 +25,6 @@
   &--secondary,
   &--background-1.inverse,
   &--primary.inverse {
-    --color-scheme-fg: theme('colors.gray.900');
     --color-scheme-bg: theme('colors.bg2');
     --color-scheme-bgRGB: theme('colors.bg2RGB');
     --color-scheme-text: theme('colors.bg1');
@@ -36,7 +34,6 @@
   }
 
   &--accent-1 {
-    --color-scheme-fg: theme('colors.gray.900');
     --color-scheme-bg: theme('colors.accent1');
     --color-scheme-bgRGB: theme('colors.accent1RGB');
     --color-scheme-text: theme('colors.bg1');
@@ -55,7 +52,6 @@
   }
 
   &--accent-2 {
-    --color-scheme-fg: theme('colors.fg');
     --color-scheme-bg: theme('colors.accent2');
     --color-scheme-bgRGB: theme('colors.accent2RGB');
     --color-scheme-text: theme('colors.bg2');
@@ -79,7 +75,14 @@
   @apply bg-scheme-bg text-scheme-text;
 
   &--foreground {
-    @apply bg-scheme-fg;
+    &::before {
+      @apply absolute
+        h-full
+        w-full
+        z-0
+        bg-scheme-fg;
+      content: '';
+    }
 
     & .card.match {
       border-radius: 0;
