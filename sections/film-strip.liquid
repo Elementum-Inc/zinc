@@ -12,8 +12,7 @@
 
   @media screen and (min-width: 768px) {
     .section-{{ section.id }} {
-      padding-top: {{ section.settings.padding_top }}px;
-      padding-bottom: {{ section.settings.padding_bottom }}px;
+      padding: {{ section.settings.padding_top }}px {{ section.settings.padding_left_right }}px {{ section.settings.padding_bottom }}px;
     }
 
     .section-{{ section.id }} .film-strip-list__item {
@@ -99,7 +98,7 @@
                   </div>
                 {%- endif -%}
                 {% if block.settings.title != blank or block.settings.text != blank %}
-                  <div class="film-strip-card__info">
+                  <div class="film-strip-card__info" style="padding: {{ block.settings.text-padding }}px;">
                     {%- if block.settings.title != blank -%}
                       <h3>{{ block.settings.title | escape }}</h3>
                     {%- endif -%}
