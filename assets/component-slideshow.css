@@ -68,6 +68,10 @@ slideshow-component .slideshow.banner {
     text-align: left;
   }
 
+  .slideshow__text.slideshow__text-mobile--center {
+    text-align: center;
+  }
+
   .slideshow__text.slideshow__text-mobile--right {
     text-align: right;
   }
