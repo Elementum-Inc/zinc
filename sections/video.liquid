@@ -7,6 +7,10 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
+  .video-section .title-wrapper {
+    text-align: {{ section.settings.text_alignment }}
+  }
+
   @media screen and (min-width: 768px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -153,6 +157,26 @@
       "id": "subheading",
       "default": "Tell your brand's story with a video",
       "label": "t:sections.slideshow.blocks.slide.settings.subheading.label"
+    },
+    {
+      "type": "select",
+      "id": "text_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left",
+      "label": "Text alignment"
     },
     {
       "type": "header",

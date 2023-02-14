@@ -15,22 +15,21 @@
 {%- style -%}
   .footer {
     margin-top: {{ section.settings.margin_top | times: 0.75 | round: 0 }}px;
-  }
-
-  .section-{{ section.id }}-padding {
     padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  #big-bold-logo {
+    font-size: {{ section.settings.large_logo_text_size }}px;
   }
 
   @media screen and (min-width: 768px) {
     .footer {
       margin-top: {{ section.settings.margin_top }}px;
-    }
-
-    .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
     }
+
   }
 {%- endstyle -%}
 
@@ -487,9 +486,24 @@
       "label": "Number of footer columns"
     },
     {
+      "type": "header",
+      "content": "Bold Logo/Text",
+      "info": "Use bold text size setting to adjust text logo when no logo image is selected."
+    },
+    {
+      "type": "range",
+      "id": "large_logo_text_size",
+      "min": 20,
+      "max": 200,
+      "step": 5,
+      "unit": "px",
+      "label": "Bold logo text size",
+      "default": 100
+    },
+    {
       "type": "image_picker",
       "id": "large_logo",
-      "label": "Large logo image for bold theme"
+      "label": "Bold logo image for bold theme"
     },
     {
       "type": "range",
@@ -498,7 +512,7 @@
       "max": 1800,
       "step": 25,
       "unit": "px",
-      "label": "Large logo width",
+      "label": "Bold logo width",
       "default": 500
     },
     {
