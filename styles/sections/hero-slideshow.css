@@ -20,6 +20,54 @@
     object-fit: cover;
   }
 
+  & .banner {
+    &__media {
+      &::after {
+        @apply bg-scheme-bg;
+      }
+    }
+  }
+
+  &__text-mobile {
+    &--center {
+      & .banner__buttons {
+        @apply <md:justify-center;
+      }
+    }
+
+    &--left {
+      & .banner__buttons {
+        @apply <md:justify-start;
+      }
+    }
+
+    &--right {
+      & .banner__buttons {
+        @apply <md:justify-end;
+      }
+    }
+  }
+
+  &__text {
+    &--center {
+      & .banner__buttons {
+        @apply md:justify-center;
+      }
+    }
+
+    &--left {
+      & .banner__buttons {
+        @apply md:justify-start;
+      }
+    }
+
+    &--right {
+      & .banner__buttons {
+        @apply md:justify-end;
+      }
+    }
+  }
+
   &__text.banner__box {
     display: flex;
     flex-direction: column;
@@ -28,14 +76,13 @@
     position: absolute;
   }
 
-  &.banner,
-  & .banner__media {
-    &::after {
-      @apply z-0;
+  &:not(.banner--mobile-bottom) {
+    & .slideshow__text-wrapper {
+      height: auto;
     }
   }
 
-  &.banner--small {
+  & .banner--small {
     min-height: 575px;
 
     &:not(.banner--adapt) {
@@ -43,12 +90,67 @@
     }
   }
 
-  & .banner__content {
-    @apply z-0;
-  }
+  &.splide {
+    padding: 0;
 
-  &__autoplay {
-    visibility: hidden;
+    & .splide__slide {
+      padding: 0;
+
+      &__container.banner--mobile-bottom {
+        @apply <md:(h-[100vh] flex-col);
+
+        & .banner__media {
+          @apply <md:(flex-shrink basis-1/3);
+        }
+
+        & .banner__text {
+          @apply <md:flex-grow;
+        }
+
+        & .banner__box {
+          @apply <md:p-8;
+        }
+      }
+    }
+
+    & .splide__pagination {
+      @apply bottom-8;
+    }
+
+    & .splide__pagination__page {
+      @apply p-2
+        mx-2
+        w-8;
+      background: none;
+      border-radius: 0;
+      height: unset;
+
+      &::after {
+        @apply block
+          h-1
+          w-full
+          bg-scheme-fg;
+        content: '';
+      }
+    }
+
+    & .splide__pagination__page.is_active {
+      &::after {
+        @apply bg-scheme-accent;
+      }
+    }
+
+    & .splide__arrows {
+      @apply <md:(absolute bottom-1/2 w-full);
+      z-index: 1;
+      height: 0;
+    }
+
+    &.mobile-text-below {
+      & .splide__arrows {
+        @apply <md:bottom-1/4;
+      }
+    }
   }
 }
 

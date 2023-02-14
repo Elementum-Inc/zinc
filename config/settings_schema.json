@@ -1082,7 +1082,7 @@
           }
         ],
         "default": "background-2",
-        "label": "t:settings_schema.badges.settings.sale_badge_color_scheme.label"
+        "label": "Content badges color scheme"
       }
     ]
   },
