@@ -278,7 +278,8 @@
     <div class="card
       card--text
       {% if extend_height %} card--extend-height{% endif %}
-      color-scheme--{{ settings.product_card_color_scheme }}"
+      color-scheme--{{ color_scheme }}
+      {% if card_color_scheme != 'default' %} {{ card_color_scheme }}{% endif %}"
     >
       <div class="card__inner ratio" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%">
         <div class="card__content">

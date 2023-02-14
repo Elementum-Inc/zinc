@@ -105,7 +105,7 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
     @apply text-sm;
 
     & .btn__label {
-      @apply py-xs px-4;
+      @apply text-sm py-xs px-4;
     }
   }
 
@@ -113,7 +113,7 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
     @apply text-xl;
 
     & .btn__label {
-      @apply py-4;
+      @apply text-xl py-4;
     }
   }
 
