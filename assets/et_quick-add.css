@@ -144,15 +144,10 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
-}
-
-@media (max-width: 767.9px) {
-  .quick-add-modal__content-info .product-form__quantity {
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-  }
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
 .quick-add-modal__content .shopify-payment-button {

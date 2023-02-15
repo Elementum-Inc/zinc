@@ -7,10 +7,6 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  .video-section .title-wrapper {
-    text-align: {{ section.settings.text_alignment }}
-  }
-
   @media screen and (min-width: 768px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
@@ -23,7 +19,7 @@
   <div class="video-section isolate{% unless section.settings.full_width %} container{% endunless %} section-{{ section.id }}-padding">
     <div{% if section.settings.full_width %} class="container"{% endif %}>
       {%- unless section.settings.heading == blank -%}
-        <div class="title-wrapper title-wrapper--no-top-margin">
+        <div class="title-wrapper title-wrapper--no-top-margin {{ section.settings.text_alignment }}">
           <h2 class="title {{ section.settings.heading_size }}">
             {{ section.settings.heading }}
           </h2>
