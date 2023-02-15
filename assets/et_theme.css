@@ -1221,6 +1221,7 @@ p.small, .text-body.small {
 }
 .section--foreground .card.match .card__inner + .card__content, .color-scheme--foreground .card.match .card__inner + .card__content {
   background-color: transparent;
+  border: 0;
 }
 .section svg.icon:not(.icon-social):not(.icon--full-color):not(.icon-accordion), .color-scheme svg.icon:not(.icon-social):not(.icon--full-color):not(.icon-accordion) {
   stroke: var(--color-scheme-accent);
