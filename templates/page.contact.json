@@ -7,110 +7,95 @@
         "padding_bottom": 36
       }
     },
+    "d1da7e08-b058-415f-a438-f2e50de66603": {
+      "type": "rich-text",
+      "blocks": {
+        "template--17992005910837__d1da7e08-b058-415f-a438-f2e50de66603-167632323938084b1e-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Reach out to us to say hello, inquire about custom orders or provide feedback!<\/p>"
+          }
+        },
+        "0bc6e1bb-85e6-4a0c-a483-8bf81dbef8cb": {
+          "type": "caption",
+          "settings": {
+            "caption": "If there are any issues with your order, please email us with the order number in the subject line.",
+            "text_style": "caption-spaced",
+            "text_size": "medium"
+          }
+        },
+        "50610411-9682-4ebe-80af-457be34146c8": {
+          "type": "caption",
+          "settings": {
+            "caption": "Please allow 48 hours for a response!",
+            "text_style": "caption-spaced",
+            "text_size": "medium"
+          }
+        }
+      },
+      "block_order": [
+        "template--17992005910837__d1da7e08-b058-415f-a438-f2e50de66603-167632323938084b1e-1",
+        "0bc6e1bb-85e6-4a0c-a483-8bf81dbef8cb",
+        "50610411-9682-4ebe-80af-457be34146c8"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "form": {
       "type": "contact-form",
       "settings": {
-        "heading": "We would love to hear from you!",
-        "heading_size": "h1",
-        "text": "Some additional instructions could go here!",
-        "text_size": "h3",
-        "subtext": "Call sales at +1 555 505 5050",
+        "heading": "",
+        "heading_size": "h3",
+        "text": "",
+        "text_size": "h4",
+        "subtext": "",
         "subtext_size": "h3",
         "color_scheme": "background-1",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "b555e912-9835-4024-84b8-4d8db0470794": {
-      "type": "film-strip",
-      "blocks": {
-        "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-0": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/large-fall-leaf-in-hand.jpg",
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_orientation": "text-below",
-            "title": "",
-            "text": ""
-          }
-        },
-        "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-1": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/handful-of-acorns.jpg",
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_orientation": "text-below",
-            "title": "",
-            "text": ""
-          }
-        },
-        "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-2": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/fall-leaf-cookies-in-the-kitchen.jpg",
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_orientation": "text-below",
-            "title": "",
-            "text": ""
-          }
-        },
-        "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-3": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/rooibos-tea.jpg",
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_orientation": "text-below",
-            "title": "",
-            "text": ""
-          }
-        },
-        "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-4": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/sliced-pumpkin-pie.jpg",
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_orientation": "text-below",
-            "title": "",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-0",
-        "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-1",
-        "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-2",
-        "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-3",
-        "template--15348023492747__b555e912-9835-4024-84b8-4d8db0470794-16680589538b59ca0a-4"
-      ],
-      "settings": {
-        "image_ratio": "square",
-        "columns_desktop": 5,
-        "column_alignment": "left",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_column": 3,
-        "padding_left_right": 0,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "7a464e9c-0c9a-4b84-a141-23441d703459": {
+    "6722e994-6ece-4768-bde4-7ca019fdafb7": {
       "type": "contact-content",
       "blocks": {
-        "template--15348023492747__7a464e9c-0c9a-4b84-a141-23441d703459-1668058087a36d5b51-0": {
+        "template--17922962424126__6722e994-6ece-4768-bde4-7ca019fdafb7-1676492796c19bd5d6-0": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/hand-holding-a-pinecone-in-the-forest.jpg",
             "image-padding": 0,
             "text-padding": 35,
-            "column_background_color": "#ffffff",
-            "column_font_color": "#000000",
+            "column_background_color": "{{ shop.brand.colors.primary[0].background }}",
+            "column_font_color": "{{ shop.brand.colors.primary[1].background }}",
             "column_orientation": "text-below",
+            "heading_text_style": "uppercase",
+            "content_text_size": "h4",
+            "title": "Contact Content",
+            "text": "<p>Provide useful content and information that can further assist customers in contacting you or learning more about your brand. <\/p>",
+            "title-2": "E-mail",
+            "text-2": "info@loremipsum.com",
+            "title-3": "Phone",
+            "text-3": "+1 555 505 5050",
+            "title-4": "Address",
+            "text-4": "725 55th Street, New York, NY, 55555",
+            "link_label": "",
+            "link": ""
+          }
+        },
+        "template--17922962424126__6722e994-6ece-4768-bde4-7ca019fdafb7-1676492796c19bd5d6-1": {
+          "type": "column",
+          "settings": {
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "{{ shop.brand.colors.primary[1].background }}",
+            "column_font_color": "{{ shop.brand.colors.primary[0].background }}",
+            "column_orientation": "text-below",
+            "heading_text_style": "uppercase",
+            "content_text_size": "h4",
             "title": "",
             "text": "",
             "title-2": "",
@@ -122,43 +107,20 @@
             "link_label": "",
             "link": ""
           }
-        },
-        "29a87650-b465-4dd1-9e3a-bab590a7067a": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#ffffff",
-            "column_font_color": "#000000",
-            "column_orientation": "text-below",
-            "title": "ELEMENTUM",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sodales nam sodales varius suspendisse cursus egestas etiam. Vehicula laoreet dictum nisl nam id viverra turpis risus. </p>",
-            "title-2": "E-mail",
-            "text-2": "info@loremipsum.com",
-            "title-3": "Phone",
-            "text-3": "+1 555 505 5050",
-            "title-4": "Address",
-            "text-4": "725 55th Street, New York, NY, 55555",
-            "link_label": "",
-            "link": ""
-          }
         }
       },
       "block_order": [
-        "template--15348023492747__7a464e9c-0c9a-4b84-a141-23441d703459-1668058087a36d5b51-0",
-        "29a87650-b465-4dd1-9e3a-bab590a7067a"
+        "template--17922962424126__6722e994-6ece-4768-bde4-7ca019fdafb7-1676492796c19bd5d6-0",
+        "template--17922962424126__6722e994-6ece-4768-bde4-7ca019fdafb7-1676492796c19bd5d6-1"
       ],
       "settings": {
         "title": "",
         "heading_size": "h1",
-        "image_ratio": "portrait",
-        "columns_desktop": 2,
+        "image_ratio": "auto",
         "column_alignment": "left",
-        "button_label": "",
+        "button_label": "Button label",
         "button_link": "",
         "color_scheme": "background-1",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
         "padding_column": 3,
         "padding_left_right": 3,
         "padding_top": 36,
@@ -168,8 +130,8 @@
   },
   "order": [
     "main",
+    "d1da7e08-b058-415f-a438-f2e50de66603",
     "form",
-    "b555e912-9835-4024-84b8-4d8db0470794",
-    "7a464e9c-0c9a-4b84-a141-23441d703459"
+    "6722e994-6ece-4768-bde4-7ca019fdafb7"
   ]
 }
