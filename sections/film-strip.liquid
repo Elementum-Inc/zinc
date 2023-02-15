@@ -97,7 +97,7 @@
                     </div>
                   </div>
                 {%- else -%}
-                  {% unless block.settings.title != blank or block.settings.text != blank%}
+                  {% unless block.settings.title != blank or block.settings.text != blank %}
                     {{ 'image' | placeholder_svg_tag }}
                   {% endunless %}
                 {%- endif -%}

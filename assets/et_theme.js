@@ -16990,8 +16990,9 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   if (document.querySelector(".product__media-gallery")) {
     var gallery = new Splide(document.querySelector("[id*=GalleryViewer]"));
-    var thumbnails = new Splide(document.querySelector("[id*=GalleryThumbnails]"));
-    if (thumbnails != null || void 0) {
+    var thumbnailsEl = document.querySelector("[id*=GalleryThumbnails]");
+    if (thumbnailsEl != null || void 0) {
+      var thumbnails = new Splide(thumbnailsEl);
       gallery.sync(thumbnails);
       gallery.mount();
       thumbnails.mount();

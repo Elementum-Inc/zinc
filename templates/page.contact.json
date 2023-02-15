@@ -13,7 +13,7 @@
         "template--17992005910837__d1da7e08-b058-415f-a438-f2e50de66603-167632323938084b1e-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Reach out to us to say hello, inquire about custom orders or provide feedback!<\/p>"
+            "text": "<p>Reach out to us to say hello, inquire about custom orders or provide feedback!</p>"
           }
         },
         "0bc6e1bb-85e6-4a0c-a483-8bf81dbef8cb": {
@@ -75,7 +75,7 @@
             "heading_text_style": "uppercase",
             "content_text_size": "h4",
             "title": "Contact Content",
-            "text": "<p>Provide useful content and information that can further assist customers in contacting you or learning more about your brand. <\/p>",
+            "text": "<p>Provide useful content and information that can further assist customers in contacting you or learning more about your brand. </p>",
             "title-2": "E-mail",
             "text-2": "info@loremipsum.com",
             "title-3": "Phone",

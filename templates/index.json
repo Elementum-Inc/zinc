@@ -6,7 +6,7 @@
         "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-0": {
           "type": "slide",
           "settings": {
-            "heading": "Slideshow w\/ Video Capability",
+            "heading": "Slideshow w/ Video Capability",
             "heading_size": "h1",
             "subheading": "Add optional subtext here to further highlight details about your brand or featured products.",
             "button_style": "outline",
@@ -26,7 +26,7 @@
         "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-1": {
           "type": "slide",
           "settings": {
-            "heading": "Slideshow w\/ Video Capability",
+            "heading": "Slideshow w/ Video Capability",
             "heading_size": "h1",
             "subheading": "Add optional subtext here to further highlight details about your brand or featured products.",
             "button_style": "outline",
@@ -138,7 +138,7 @@
             "image_position": "above",
             "border-radius": 0,
             "title": "Column",
-            "text": "<p> Optional descriptive text around your brand, collection or product. <\/p>",
+            "text": "<p> Optional descriptive text around your brand, collection or product. </p>",
             "button_label": "Button label",
             "button_link": ""
           }
@@ -148,9 +148,9 @@
           "settings": {
             "image_position": "above",
             "border-radius": 0,
-            "title": "Column",
-            "text": "<p> Optional descriptive text around your brand, collection or product. <\/p>",
-            "button_label": "Button label",
+            "title": "",
+            "text": "",
+            "button_label": "",
             "button_link": ""
           }
         }
@@ -185,7 +185,7 @@
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! <\/p>"
+            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
           }
         },
         "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-1": {
@@ -194,7 +194,7 @@
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! <\/p>"
+            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
           }
         },
         "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-2": {
@@ -203,7 +203,7 @@
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! <\/p>"
+            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
           }
         },
         "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-3": {
@@ -212,7 +212,7 @@
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! <\/p>"
+            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
           }
         },
         "17a49885-6c77-4c2d-94b4-f5714494fcb6": {
@@ -221,7 +221,7 @@
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! <\/p>"
+            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
           }
         },
         "02d65ebc-47d4-4456-a439-69f706522736": {
@@ -230,7 +230,7 @@
             "border-radius": 0,
             "title": "Author",
             "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! <\/p>"
+            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
           }
         }
       },
@@ -274,7 +274,7 @@
         "primary_button_url": "",
         "secondary_button_label": "Secondary button",
         "secondary_button_url": "",
-        "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
+        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
         "description": "",
         "full_width": false,
         "color_scheme": "background-1",
@@ -290,7 +290,7 @@
           "settings": {
             "heading": "Collapsible row",
             "icon": "question_mark",
-            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.<\/p>",
+            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.</p>",
             "page": ""
           }
         },
@@ -299,7 +299,7 @@
           "settings": {
             "heading": "Collapsible row",
             "icon": "question_mark",
-            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.<\/p>",
+            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.</p>",
             "page": ""
           }
         },
@@ -308,7 +308,7 @@
           "settings": {
             "heading": "Collapsible row",
             "icon": "question_mark",
-            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.<\/p>",
+            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.</p>",
             "page": ""
           }
         },
@@ -317,7 +317,7 @@
           "settings": {
             "heading": "Collapsible row",
             "icon": "question_mark",
-            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.<\/p>",
+            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.</p>",
             "page": ""
           }
         }

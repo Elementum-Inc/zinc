@@ -14,7 +14,7 @@
           "type": "description",
           "settings": {
             "show_collection_description": false,
-            "description": "<p>Enable the description or connect a useful metafield to inform customer's about your collections.<\/p>"
+            "description": "<p>Enable the description or connect a useful metafield to inform customer's about your collections.</p>"
           }
         }
       },
