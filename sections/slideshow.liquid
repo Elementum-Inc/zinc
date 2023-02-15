@@ -28,7 +28,7 @@
 {%- endif -%}
 
 <div class="slideshow splide splide--no-padding{% if section.settings.layout == 'grid' %} container{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}"
-  data-splide='{ "type": "loop", "perPage": 1, "interval": {{ section.settings.change_slides_speed | times: 1000 }}, "pagination": {% if section.settings.slider_visual == 'dots' %}true{% else %}false{% endif %}, "arrows": {% if section.settings.slider_visual == 'arrows' %}true{% else %}false{% endif %}{% if section.settings.auto_rotate %}, "autoplay": true{% endif %} }'
+  data-splide='{ "type": "loop", "perPage": 1, "interval": {{ section.settings.change_slides_speed }}, "pagination": {% if section.settings.slider_visual == 'dots' %}true{% else %}false{% endif %}, "arrows": {% if section.settings.slider_visual == 'arrows' %}true{% else %}false{% endif %}{% if section.settings.auto_rotate %}, "autoplay": true{% endif %} }'
   role="region"
   aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
   aria-label="{{ section.settings.accessibility_info | escape }}">
@@ -185,7 +185,7 @@
           "label": "t:sections.slideshow.settings.slide_height.options__4.label"
         }
       ],
-      "default": "adapt_image",
+      "default": "small",
       "label": "t:sections.slideshow.settings.slide_height.label"
     },
     {
@@ -217,12 +217,12 @@
     {
       "type": "range",
       "id": "change_slides_speed",
-      "min": 3,
-      "max": 9,
-      "step": 2,
-      "unit": "s",
+      "min": 2000,
+      "max": 9750,
+      "step": 250,
+      "unit": "ms",
       "label": "t:sections.slideshow.settings.change_slides_speed.label",
-      "default": 5
+      "default": 6250
     },
     {
       "type": "header",
