@@ -57,7 +57,7 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
-button, input, textarea, select {
+button, select, input, textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -1347,6 +1347,7 @@ p.small, .text-body.small {
   font-size: .875rem;
 }
 .btn--small .btn__label {
+  font-size: .875rem;
   padding-top: .375rem;
   padding-bottom: .375rem;
   padding-left: 1rem;
@@ -1356,6 +1357,7 @@ p.small, .text-body.small {
   font-size: 1.25rem;
 }
 .btn--large .btn__label {
+  font-size: 1.25rem;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }

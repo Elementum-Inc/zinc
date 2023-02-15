@@ -92,12 +92,32 @@
 }
 
 .product-form__input input[type='radio'] + label {
-  padding: 1rem .5rem 0;
-  width: auto;
-  min-width: 3rem;
-  height: 3rem;
-  font-size: 1rem;
+  border-color: var(--button-fg);
+  border-radius: var(--variant-pills-radius);
+  border-width: var(--variant-pills-border-width);
+}
+
+.product-form__input input[type='radio'] + label > .btn__label {
+  border-radius: var(--variant-pills-radius);
+  padding-left: .25rem;
+  padding-right: .25rem;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  min-height: 2.75rem;
+  min-width: 2.75rem;
   text-align: center;
+}
+
+.product-form__input input[type='radio'] + label.btn--small > .btn__label {
+  padding: .375rem;
+  min-height: 2rem;
+  min-width: 2rem;
+}
+
+.product-form__input input[type='radio'] + label.btn--large > .btn__label {
+  padding: .5rem;
+  min-height: 3rem;
+  min-width: 3rem;
 }
 
 .product-form__input input[type='radio']:checked + label {

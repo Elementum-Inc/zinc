@@ -6,7 +6,8 @@ export default {
   },
   theme: {
     borderWidth: {
-      button: "var(--buttons-border-width)"
+      button: "var(--buttons-border-width)",
+      pill: "var(--variant-pills-border-width)"
     },
     colors: {
       black: "#0a0a0a",
@@ -114,7 +115,8 @@ export default {
         product: "var(--product-card-corner-radius)",
         content: "var(--content-card-corner-radius)",
         input: "var(--inputs-radius)",
-        button: "var(--buttons-radius)"
+        button: "var(--buttons-radius)",
+        pill: "var(--variant-pills-radius)"
       },
       dropShadow: {
         drawer:

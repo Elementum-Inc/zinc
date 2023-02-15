@@ -245,6 +245,7 @@
 
   &__info {
     @apply
+      w-full
       max-w-full
       m-auto
       p-10;
