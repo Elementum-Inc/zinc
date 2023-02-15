@@ -36,14 +36,9 @@
             "price_text_style": "body"
           }
         },
-        "ef90e07b-23aa-4857-8a27-35bc11fae2b1": {
-          "type": "shopify://apps/product-reviews/blocks/star_rating/bae150af-8da8-48b2-9867-398188115e5f",
+        "description": {
+          "type": "description",
           "settings": {
-            "stars_fill_color": "#000000",
-            "star_size": 15,
-            "text_align": "flex-start",
-            "product": "{{product}}",
-            "stars_text_empty": "No reviews"
           }
         },
         "variant_picker": {
@@ -51,9 +46,6 @@
           "settings": {
             "picker_type": "button",
             "color_scheme": "accent-2",
-            "variant_pill_radius": 5,
-            "variant_pill_border_width": 1.5,
-            "variant_pills_border_opacity": 55,
             "show_variant_labels": true
           }
         },
@@ -62,15 +54,9 @@
           "settings": {
           }
         },
-        "description": {
-          "type": "description",
-          "settings": {
-          }
-        },
         "quantity_selector": {
           "type": "quantity_selector",
           "settings": {
-            "quantity_selector_type": "buttons"
           }
         },
         "buy_buttons": {
@@ -84,12 +70,6 @@
           "settings": {
             "text": "Sizing Guide",
             "page": "sizing-guide"
-          }
-        },
-        "share": {
-          "type": "share",
-          "settings": {
-            "share_label": "Share"
           }
         },
         "collapsible-row-0": {
@@ -135,14 +115,12 @@
         "48a8174b-2b0a-4e15-9027-ab3a60140afd",
         "caption",
         "price",
-        "ef90e07b-23aa-4857-8a27-35bc11fae2b1",
+        "description",
         "variant_picker",
         "d9ea8272-20ab-4fa1-8544-4718ea428de8",
-        "description",
         "quantity_selector",
         "buy_buttons",
         "76bc7bc3-d767-445e-853f-d787a0da797b",
-        "share",
         "collapsible-row-0",
         "collapsible-row-1",
         "collapsible-row-2",
@@ -155,193 +133,10 @@
         "gallery_layout": "vertical_thumbnail_left",
         "thumbnail_width": 50,
         "mobile_thumbnails": "show",
-        "hide_variants": true,
+        "hide_variants": false,
         "enable_video_looping": false,
         "padding_top": 36,
         "padding_bottom": 12
-      }
-    },
-    "multicolumn": {
-      "type": "multicolumn",
-      "blocks": {
-        "column-0": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/handful-of-acorns.jpg",
-            "image_position": "left",
-            "image-width": 300,
-            "border-radius": 0,
-            "title": "",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        },
-        "column-1": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/hand-holding-a-pinecone-in-the-forest.jpg",
-            "image_position": "above",
-            "image-width": 300,
-            "border-radius": 0,
-            "title": "Hassle-Free Exchanges",
-            "text": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.</p>",
-            "link_label": "",
-            "link": ""
-          }
-        }
-      },
-      "block_order": [
-        "column-0",
-        "column-1"
-      ],
-      "settings": {
-        "title": "Lorem Ipsum",
-        "heading_size": "h1",
-        "image_width": "full",
-        "image_ratio": "square",
-        "columns_desktop": 2,
-        "column_alignment": "right",
-        "button_label": "",
-        "button_link": "",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "product-recommendations": {
-      "type": "product-recommendations",
-      "settings": {
-        "heading": "You may also like",
-        "heading_size": "h0",
-        "display_style": "slider",
-        "products_to_show": 10,
-        "columns_desktop": 4,
-        "color_scheme": "accent-1",
-        "image_ratio": "sportrait",
-        "show_secondary_image": true,
-        "show_price": true,
-        "show_vendor": false,
-        "show_rating": true,
-        "card_hover_show_info": true,
-        "columns_mobile": "1",
-        "padding_top": 36,
-        "padding_bottom": 28
-      }
-    },
-    "bb18bed4-64dc-47ad-8d5d-2aacba7170f7": {
-      "type": "media-collage",
-      "blocks": {
-        "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-0": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/pet-and-owner-on-fall-walk.jpg",
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#ffffff",
-            "column_font_color": "#121212",
-            "column_orientation": "text-below",
-            "title": "Lorem",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
-          }
-        },
-        "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-1": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/dog-fetching-disc.jpg",
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#d69940",
-            "column_font_color": "#000000",
-            "column_orientation": "text-above",
-            "title": "Ipsum",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
-          }
-        },
-        "d0a11907-24e5-482c-895d-786c03c996b8": {
-          "type": "column",
-          "settings": {
-            "image": "shopify://shop_images/rooibos-tea.jpg",
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#ffffff",
-            "column_font_color": "#000000",
-            "column_orientation": "text-below",
-            "title": "",
-            "text": ""
-          }
-        },
-        "ce9b7823-cc64-463a-a2b6-1135e8580185": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#074169",
-            "column_font_color": "#ffffff",
-            "column_orientation": "text-below",
-            "title": "Lorem Ipsum Forever",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-0",
-        "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-1",
-        "d0a11907-24e5-482c-895d-786c03c996b8",
-        "ce9b7823-cc64-463a-a2b6-1135e8580185"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_ratio": "adapt",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_column": 3,
-        "padding_left_right": 3,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "f29cd85f-0459-48b5-a0b0-73e4bdd3a7e0": {
-      "type": "video",
-      "settings": {
-        "heading": "Buy our boots!",
-        "heading_size": "h1",
-        "subheading": "",
-        "button_label": "",
-        "link": "",
-        "button_style_secondary": false,
-        "second_button_label": "",
-        "second_link": "",
-        "second_button_style_secondary": false,
-        "cover_image": "shopify://shop_images/test_bg.png",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "1668099507ad2af8f1": {
-      "type": "apps",
-      "blocks": {
-        "604b4d95-ef3f-4db5-ad3f-a326cfcef2b9": {
-          "type": "shopify://apps/product-reviews/blocks/reviews/bae150af-8da8-48b2-9867-398188115e5f",
-          "settings": {
-          }
-        }
-      },
-      "block_order": [
-        "604b4d95-ef3f-4db5-ad3f-a326cfcef2b9"
-      ],
-      "settings": {
-        "include_margins": true
       }
     },
     "e621db47-5ffc-4ee3-9d26-4ebf07236654": {
@@ -350,9 +145,8 @@
         "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-0": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/large-fall-leaf-in-hand.jpg",
             "image-padding": 0,
-            "text-padding": 35,
+            "text-padding": 0,
             "column_orientation": "text-below",
             "title": "",
             "text": ""
@@ -361,9 +155,8 @@
         "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/handful-of-acorns.jpg",
             "image-padding": 0,
-            "text-padding": 35,
+            "text-padding": 0,
             "column_orientation": "text-below",
             "title": "",
             "text": ""
@@ -372,9 +165,8 @@
         "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/fall-leaf-cookies-in-the-kitchen.jpg",
             "image-padding": 0,
-            "text-padding": 35,
+            "text-padding": 0,
             "column_orientation": "text-below",
             "title": "",
             "text": ""
@@ -383,9 +175,8 @@
         "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/sliced-pumpkin-pie.jpg",
             "image-padding": 0,
-            "text-padding": 35,
+            "text-padding": 0,
             "column_orientation": "text-below",
             "title": "",
             "text": ""
@@ -399,10 +190,11 @@
         "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-3"
       ],
       "settings": {
-        "color_scheme": "background-1",
-        "image_ratio": "square",
+        "color_scheme": "accent-2",
+        "image_ratio": "widescreen",
         "columns_desktop": 4,
         "column_alignment": "left",
+        "enable_desktop_slider": false,
         "columns_mobile": "1",
         "swipe_on_mobile": false,
         "padding_column": 16,
@@ -410,15 +202,106 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "61a7f2ae-d6a7-46f0-bb72-c32556aff108": {
+      "type": "media-collage",
+      "blocks": {
+        "template--17922963571006__61a7f2ae-d6a7-46f0-bb72-c32556aff108-1676491341a0a480f3-0": {
+          "type": "column",
+          "settings": {
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "#FFFFFF",
+            "column_font_color": "#000000",
+            "column_orientation": "text-below",
+            "title": "Block",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "template--17922963571006__61a7f2ae-d6a7-46f0-bb72-c32556aff108-1676491341a0a480f3-1": {
+          "type": "column",
+          "settings": {
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "#FFFFFF",
+            "column_font_color": "#000000",
+            "column_orientation": "text-below",
+            "title": "Block",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "template--17922963571006__61a7f2ae-d6a7-46f0-bb72-c32556aff108-1676491341a0a480f3-2": {
+          "type": "column",
+          "settings": {
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "#FFFFFF",
+            "column_font_color": "#000000",
+            "column_orientation": "text-below",
+            "title": "Block",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "9f30d97e-0f8f-4608-a4ca-adf841c9992b": {
+          "type": "column",
+          "settings": {
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "#FFFFFF",
+            "column_font_color": "#000000",
+            "column_orientation": "text-below",
+            "title": "Block",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--17922963571006__61a7f2ae-d6a7-46f0-bb72-c32556aff108-1676491341a0a480f3-0",
+        "template--17922963571006__61a7f2ae-d6a7-46f0-bb72-c32556aff108-1676491341a0a480f3-1",
+        "template--17922963571006__61a7f2ae-d6a7-46f0-bb72-c32556aff108-1676491341a0a480f3-2",
+        "9f30d97e-0f8f-4608-a4ca-adf841c9992b"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h1",
+        "image_ratio": "auto",
+        "columns_desktop": 2,
+        "column_alignment": "left",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_column": 3,
+        "padding_left_right": 3,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "product-recommendations": {
+      "type": "product-recommendations",
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h0",
+        "display_style": "slider",
+        "products_to_show": 10,
+        "columns_desktop": 4,
+        "color_scheme": "accent-1",
+        "card_color_scheme": "default",
+        "image_ratio": "sportrait",
+        "show_secondary_image": true,
+        "show_price": true,
+        "show_vendor": false,
+        "show_rating": true,
+        "card_hover_show_info": true,
+        "columns_mobile": "1",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
     }
   },
   "order": [
     "main",
-    "multicolumn",
-    "product-recommendations",
-    "bb18bed4-64dc-47ad-8d5d-2aacba7170f7",
-    "f29cd85f-0459-48b5-a0b0-73e4bdd3a7e0",
-    "1668099507ad2af8f1",
-    "e621db47-5ffc-4ee3-9d26-4ebf07236654"
+    "e621db47-5ffc-4ee3-9d26-4ebf07236654",
+    "61a7f2ae-d6a7-46f0-bb72-c32556aff108",
+    "product-recommendations"
   ]
 }
