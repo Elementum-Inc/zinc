@@ -82,10 +82,6 @@
     margin-bottom: 3rem;
   }
 
-  .contact-content-card {
-    width: 100vw;
-  }
-
   .contact-content .page-width {
     padding-left: 0;
     padding-right: 0;
@@ -172,6 +168,11 @@
     -webkit-flex-direction: column;
     flex-direction: column;
     margin: 0;
+    width: 100%;
+  }
+
+  .contact-content-list__item {
+    max-width: unset;
     width: 100%;
   }
 }

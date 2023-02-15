@@ -70,9 +70,9 @@
     @apply mb-12;
   }
 
-  .contact-content-card {
+  /* .contact-content-card {
     width: 100vw;
-  }
+  } */
 
   .contact-content .page-width {
     @apply pl-0
@@ -158,6 +158,11 @@
     @apply flex-col
       m-0
       w-full;
+
+    &__item {
+      max-width: unset;
+      width: 100%;
+    }
   }
 }
 
