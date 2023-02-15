@@ -90,6 +90,10 @@
                     >
                   </div>
                 </div>
+              {%- else -%}
+                {% unless block.settings.title != blank or block.settings.text != blank or block.settings.link_label != blank %}
+                  {{ 'image' | placeholder_svg_tag }}
+                {% endunless%}
               {%- endif -%}
               <div class="media-collage-card__info" style="padding: {{ block.settings.text-padding }}px;">
                 {%- if block.settings.title != blank -%}

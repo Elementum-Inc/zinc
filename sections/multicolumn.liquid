@@ -86,6 +86,10 @@
                       >
                     </div>
                   </div>
+                {%- else -%}
+                  {% unless block.settings.title != blank or block.settings.title != blank or block.settings.button_label != blank %}  
+                    {{ 'image' | placeholder_svg_tag }}
+                  {% endunless %}
                 {%- endif -%}
                 {%- if block.settings.title != blank or block.settings.title != blank or block.settings.button_label != blank -%}
                   <div class="multicolumn-card__info">
