@@ -19,7 +19,7 @@
     left-0
     w-full
     h-full;
-  background: rgb(var(--color-background-2) / 0.75);
+  background: rgb(var(--color-background-2) / .75);
 
   &[open] {
     @apply opacity-100
@@ -118,7 +118,7 @@
     }
   }
 
-  & .product-form__input input[type="radio"] + label {
+  & .product-form__input input[type='radio'] + label {
     @apply border-scheme-accent
       rounded-[5%];
     margin: 0;
