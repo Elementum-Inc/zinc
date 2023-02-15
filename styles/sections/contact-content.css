@@ -28,6 +28,14 @@
       flex-col-reverse;
   }
 
+  & .contact-content-card__image-wrapper {
+    @apply h-full;
+
+    & .media {
+      @apply h-full;
+    }
+  }
+
   /* & .large-sub {
     @apply text-4xl
       font-medium;
