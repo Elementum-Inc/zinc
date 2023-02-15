@@ -103,38 +103,39 @@
         
                 {%- when 'video' -%}
                   {%- if block.settings.video_src != blank -%}
-                      <video autoplay muted loop playsinline class="slideshow-video">
-                        <source src="{{ block.settings.video_src }}" type="video/mp4">
-                      </video>
-                    </div>
-          
-                    <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} container{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
-                      <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-scheme color-scheme--{{ block.settings.color_scheme }} slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}{% unless block.settings.banner_text_background %} no-solid-background{% endunless %}">
-                        {%- if block.settings.heading != blank -%}
-                          <h2 class="banner__heading {{ block.settings.heading_size }}">{{ block.settings.heading | escape }}</h2>
-                        {%- endif -%}
-          
-                        {%- if block.settings.subheading != blank -%}
-                          <div class="banner__text" {{ block.shopify_attributes }}>
-                            <span>{{ block.settings.subheading | escape }}</span>
-                          </div>
-                        {%- endif -%}
-          
-                        {%- if block.settings.primary_button_label != blank or block.settings.secondary_button_label != blank -%}
-                          {% render 'buttons',
-                            container_class: 'banner__buttons',
-                            primary_button_label: block.settings.primary_button_label,
-                            primary_button_link: block.settings.primary_button_url,
-                            secondary_button_label: block.settings.secondary_button_label,
-                            secondary_button_link: block.settings.secondary_button_url,
-                            style: block.settings.button_style,
-                            reverse: block.settings.button_reverse
-                          %}
-                        {%- endif -%}
-                      </div>
-                    <div>
-          
+                    <video autoplay muted loop playsinline class="slideshow-video">
+                      <source src="{{ block.settings.video_src }}" type="video/mp4">
+                    </video>
+                  {%- else -%}
+                    {{ 'lifestyle-1' | placeholder_svg_tag }}
                   {%- endif -%}
+                  </div>
+        
+                  <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} container{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
+                    <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-scheme color-scheme--{{ block.settings.color_scheme }} slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}{% unless block.settings.banner_text_background %} no-solid-background{% endunless %}">
+                      {%- if block.settings.heading != blank -%}
+                        <h2 class="banner__heading {{ block.settings.heading_size }}">{{ block.settings.heading | escape }}</h2>
+                      {%- endif -%}
+        
+                      {%- if block.settings.subheading != blank -%}
+                        <div class="banner__text" {{ block.shopify_attributes }}>
+                          <span>{{ block.settings.subheading | escape }}</span>
+                        </div>
+                      {%- endif -%}
+        
+                      {%- if block.settings.primary_button_label != blank or block.settings.secondary_button_label != blank -%}
+                        {% render 'buttons',
+                          container_class: 'banner__buttons',
+                          primary_button_label: block.settings.primary_button_label,
+                          primary_button_link: block.settings.primary_button_url,
+                          secondary_button_label: block.settings.secondary_button_label,
+                          secondary_button_link: block.settings.secondary_button_url,
+                          style: block.settings.button_style,
+                          reverse: block.settings.button_reverse
+                        %}
+                      {%- endif -%}
+                    </div>
+                  <div>
               {%- endcase -%}
             </div>
           </div>
