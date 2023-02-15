@@ -99,8 +99,8 @@
 
 .product-form__input input[type='radio'] + label > .btn__label {
   border-radius: var(--variant-pills-radius);
-  padding-left: .25rem;
-  padding-right: .25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   padding-top: .5rem;
   padding-bottom: .5rem;
   min-height: 2.75rem;
@@ -374,6 +374,11 @@
 
 .product--vertical_thumbnail_left .thumbnail-slider, .product--vertical_thumbnail_right .thumbnail-slider {
   min-width: calc(var(--thumbnail-width) + 2rem);
+}
+
+.product--vertical_thumbnail_left .thumbnail-slider .splide__slide, .product--vertical_thumbnail_right .thumbnail-slider .splide__slide {
+  margin-left: 0;
+  margin-right: 0;
 }
 
 @media (min-width: 768px) {

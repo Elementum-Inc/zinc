@@ -17,7 +17,7 @@
     }
   }
 
-  .contact-content-list__item {
+  .section-{{ section.id }}-padding .contact-content-list__item {
     padding: {{ section.settings.padding_column }}px;
   }
 {%- endstyle -%}
@@ -78,6 +78,18 @@
                     >
                   </div>
                 </div>
+              {%- else -%}
+                {% unless block.settings.title != blank
+                  or block.settings.text != blank
+                  or block.settings.title-2 != blank
+                  or block.settings.text-2 != blank
+                  or block.settings.title-3 != blank
+                  or block.settings.text-3 != blank
+                  or block.settings.title-4 != blank
+                  or block.settings.text-4 != blank
+                %}
+                  {{ 'image' | placeholder_svg_tag }}
+                {% endunless %}
               {%- endif -%}
             <div class="contact-content-card__info {% if block.settings.title == blank or block.settings.text == blank %} hidden {% endif %}" style="padding: {{ block.settings.text-padding }}px;">
                 {%- if block.settings.title != blank -%}

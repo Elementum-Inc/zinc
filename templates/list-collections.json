@@ -4,12 +4,13 @@
       "type": "main-list-collections",
       "settings": {
         "title": "Collections",
+        "heading_size": "h1",
         "sort": "alphabetical",
         "image_ratio": "sportrait",
         "card_hover_show_info": false,
         "columns_desktop": 4,
         "columns_mobile": "2",
-        "padding_top": 0,
+        "padding_top": 8,
         "padding_bottom": 64
       }
     }

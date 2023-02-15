@@ -18,7 +18,9 @@
 {%- endstyle -%}
 
 <div class="container m-auto section-{{ section.id }}-padding">
-  <h1 class="title title--primary {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h1>
+  <div class="main-page-title page-title">
+    <h1 class="title {{ section.settings.heading_size }}">{{ section.settings.title | escape }}</h1>
+  </div>
   {%- liquid
     case section.settings.sort
       when 'products_high' or 'products_low'

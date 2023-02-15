@@ -96,6 +96,10 @@
     & .splide__slide {
       padding: 0;
 
+      &__container {
+        @apply h-full;
+      }
+
       &__container.banner--mobile-bottom {
         @apply <md:(h-[100vh] flex-col);
 

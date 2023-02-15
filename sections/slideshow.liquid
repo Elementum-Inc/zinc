@@ -28,7 +28,7 @@
 {%- endif -%}
 
 <div class="slideshow splide splide--no-padding{% if section.settings.layout == 'grid' %} container{% endif %}{% if section.settings.show_text_below %} mobile-text-below{% endif %}"
-  data-splide='{ "type": "loop", "perPage": 1, "interval": {{ section.settings.change_slides_speed | times: 1000 }}, "pagination": {% if section.settings.slider_visual == 'dots' %}true{% else %}false{% endif %}, "arrows": {% if section.settings.slider_visual == 'arrows' %}true{% else %}false{% endif %}{% if section.settings.auto_rotate %}, "autoplay": true{% endif %} }'
+  data-splide='{ "type": "loop", "perPage": 1, "interval": {{ section.settings.change_slides_speed }}, "pagination": {% if section.settings.slider_visual == 'dots' %}true{% else %}false{% endif %}, "arrows": {% if section.settings.slider_visual == 'arrows' %}true{% else %}false{% endif %}{% if section.settings.auto_rotate %}, "autoplay": true{% endif %} }'
   role="region"
   aria-roledescription="{{ 'sections.slideshow.carousel' | t }}"
   aria-label="{{ section.settings.accessibility_info | escape }}">
@@ -103,38 +103,39 @@
         
                 {%- when 'video' -%}
                   {%- if block.settings.video_src != blank -%}
-                      <video autoplay muted loop playsinline class="slideshow-video">
-                        <source src="{{ block.settings.video_src }}" type="video/mp4">
-                      </video>
-                    </div>
-          
-                    <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} container{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
-                      <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-scheme color-scheme--{{ block.settings.color_scheme }} slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}{% unless block.settings.banner_text_background %} no-solid-background{% endunless %}">
-                        {%- if block.settings.heading != blank -%}
-                          <h2 class="banner__heading {{ block.settings.heading_size }}">{{ block.settings.heading | escape }}</h2>
-                        {%- endif -%}
-          
-                        {%- if block.settings.subheading != blank -%}
-                          <div class="banner__text" {{ block.shopify_attributes }}>
-                            <span>{{ block.settings.subheading | escape }}</span>
-                          </div>
-                        {%- endif -%}
-          
-                        {%- if block.settings.primary_button_label != blank or block.settings.secondary_button_label != blank -%}
-                          {% render 'buttons',
-                            container_class: 'banner__buttons',
-                            primary_button_label: block.settings.primary_button_label,
-                            primary_button_link: block.settings.primary_button_url,
-                            secondary_button_label: block.settings.secondary_button_label,
-                            secondary_button_link: block.settings.secondary_button_url,
-                            style: block.settings.button_style,
-                            reverse: block.settings.button_reverse
-                          %}
-                        {%- endif -%}
-                      </div>
-                    <div>
-          
+                    <video autoplay muted loop playsinline class="slideshow-video">
+                      <source src="{{ block.settings.video_src }}" type="video/mp4">
+                    </video>
+                  {%- else -%}
+                    {{ 'lifestyle-1' | placeholder_svg_tag }}
                   {%- endif -%}
+                  </div>
+        
+                  <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} container{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
+                    <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-scheme color-scheme--{{ block.settings.color_scheme }} slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}{% unless block.settings.banner_text_background %} no-solid-background{% endunless %}">
+                      {%- if block.settings.heading != blank -%}
+                        <h2 class="banner__heading {{ block.settings.heading_size }}">{{ block.settings.heading | escape }}</h2>
+                      {%- endif -%}
+        
+                      {%- if block.settings.subheading != blank -%}
+                        <div class="banner__text" {{ block.shopify_attributes }}>
+                          <span>{{ block.settings.subheading | escape }}</span>
+                        </div>
+                      {%- endif -%}
+        
+                      {%- if block.settings.primary_button_label != blank or block.settings.secondary_button_label != blank -%}
+                        {% render 'buttons',
+                          container_class: 'banner__buttons',
+                          primary_button_label: block.settings.primary_button_label,
+                          primary_button_link: block.settings.primary_button_url,
+                          secondary_button_label: block.settings.secondary_button_label,
+                          secondary_button_link: block.settings.secondary_button_url,
+                          style: block.settings.button_style,
+                          reverse: block.settings.button_reverse
+                        %}
+                      {%- endif -%}
+                    </div>
+                  <div>
               {%- endcase -%}
             </div>
           </div>
@@ -185,7 +186,7 @@
           "label": "t:sections.slideshow.settings.slide_height.options__4.label"
         }
       ],
-      "default": "adapt_image",
+      "default": "small",
       "label": "t:sections.slideshow.settings.slide_height.label"
     },
     {
@@ -217,12 +218,12 @@
     {
       "type": "range",
       "id": "change_slides_speed",
-      "min": 3,
-      "max": 9,
-      "step": 2,
-      "unit": "s",
+      "min": 2000,
+      "max": 9750,
+      "step": 250,
+      "unit": "ms",
       "label": "t:sections.slideshow.settings.change_slides_speed.label",
-      "default": 5
+      "default": 6250
     },
     {
       "type": "header",

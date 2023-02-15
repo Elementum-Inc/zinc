@@ -30,12 +30,6 @@
       },
       {
         "type": "color",
-        "id": "colors_foreground",
-        "default": "#F3F3F3",
-        "label": "t:settings_schema.colors.settings.colors_foreground.label"
-      },
-      {
-        "type": "color",
         "id": "colors_accent_1",
         "default": "#074169",
         "label": "t:settings_schema.colors.settings.colors_accent_1.label"
