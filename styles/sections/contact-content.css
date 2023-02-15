@@ -3,59 +3,62 @@
     column-gap: 0;
     row-gap: 0;
 
-    @apply
-      flex;
+    @apply flex;
   }
 
   & .title {
-    @apply
-      m-0;
+    @apply m-0;
   }
 
   &.no-heading .title {
-    @apply
-      hidden;
+    @apply hidden;
   }
 
   & .title-wrapper-with-link {
-    @apply
-      mt-0;
+    @apply mt-0;
   }
 
   & .subtitle {
-    @apply
-      text-base
+    @apply text-base
       capitalize;
   }
 
   & .text-above {
-    @apply
-      flex
+    @apply flex
       flex-col-reverse;
   }
 
-  & .large-sub {
-    @apply
-      text-4xl
-      font-medium;
+  & .contact-content-card__image-wrapper {
+    @apply h-full;
+
+    & .media {
+      @apply h-full;
+    }
   }
+
+  /* & .large-sub {
+    @apply text-4xl
+      font-medium;
+  } */
+
+  /* & .grid--2-col-tablet-down .grid__item {
+    @apply !w-full;
+  } */
 }
 
 .contact-content-card {
-  @apply
-    flex
+  @apply flex
     flex-col
     justify-around;
 }
 
 .contact-info {
-  @apply
+  @apply break-words
     mt-12;
 }
 
 .contact-content-btn {
-  @apply
-    h-9
+  @apply h-9
     min-w-42
     text-center
     py-1
@@ -64,66 +67,60 @@
 
 @media screen and (max-width: 767px) {
   .contact-content .title-wrapper-with-link {
-    @apply
-      mb-12;
+    @apply mb-12;
   }
 
+  /* .contact-content-card {
+    width: 100vw;
+  } */
+
   .contact-content .page-width {
-    @apply
-      pl-0
+    @apply pl-0
       pr-0;
   }
 }
 
 .contact-content-card__image-wrapper--third-width {
-  @apply
-    w-1/3;
+  @apply w-1/3;
 }
 
 .contact-content-card__image-wrapper--half-width {
-  @apply
-    w-1/2;
+  @apply w-1/2;
 }
 
-.contact-content-list__item.center .contact-content-card__image-wrapper:not(.contact-content-card__image-wrapper--full-width),
+.contact-content-list__item.center .contact-content-card__image-wrapper:not(
+.contact-content-card__image-wrapper--full-width),
 .contact-content-list__item:only-child {
-  @apply
-    ml-auto
+  @apply ml-auto
     mr-auto;
 }
 
 .contact-content .button {
-  @apply
-    mt-6;
+  @apply mt-6;
 }
 
 @media screen and (min-width: 768px) {
   .contact-content .button {
-    @apply
-      mt-16;
+    @apply mt-16;
   }
 }
 
 .contact-content-list {
-  @apply
-    mt-0
+  @apply mt-0
     mb-0
     p-0;
 }
 
 .contact-content-list__item:only-child {
-  @apply
-    max-w-6xl;
+  @apply max-w-6xl;
 }
 
 .contact-content-list__item--empty {
-  @apply
-    hidden;
+  @apply hidden;
 }
 
 .contact-content:not(.background-none) .contact-content-card {
-  @apply
-    bg-bg1
+  @apply bg-bg1
     h-full;
 }
 
@@ -138,20 +135,17 @@
 
 .contact-content-list h3,
 .contact-content-list p {
-  @apply
-    my-2
+  @apply my-2
     mx-0;
 }
 
 .contact-content-card__info > :nth-child(2) {
-  @apply
-    mt-4;
+  @apply mt-4;
 }
 
 .contact-content-list__item.center .media--adapt,
 .contact-content-list__item .media--adapt .contact-content-card__image {
-  @apply
-    w-auto;
+  @apply w-auto;
 }
 
 .contact-content-list__item.center .media--adapt img {
@@ -161,90 +155,71 @@
 
 @media screen and (max-width: 767px) {
   .contact-content-list {
-    @apply
+    @apply flex-col
       m-0
       w-full;
-  }
 
-  .contact-content-list:not(.slider) {
-    @apply
-      pl-6
-      pr-6;
+    &__item {
+      max-width: unset;
+      width: 100%;
+    }
   }
 }
 
 @media screen and (min-width: 768px) {
-  .contact-content-list.slider,
-  .contact-content-list.grid--4-col-desktop {
-    @apply
-      p-0;
-  }
-
   .contact-content-list__item,
   .grid--4-col-desktop .contact-content-list__item {
-    @apply
-      pb-0;
+    @apply pb-0;
   }
 
   .background-none .grid--2-col-tablet .contact-content-list__item {
-    @apply
-      mt-16;
+    @apply mt-16;
   }
 }
 
 .background-none .contact-content-card-spacing {
-  @apply
-    p-0
+  @apply p-0
     m-0;
 }
 
 .contact-content-card__info {
-  @apply
-    p-10;
+  @apply p-10;
 }
 
 .background-none .contact-content-card__info {
-  @apply
-    pt-0
+  @apply pt-0
     pl-0
     pr-0;
 }
 
-.background-none .slider .contact-content-card__info {
-  @apply
-    pb-0;
+.background-none .contact-content-card__info {
+  @apply pb-0;
 }
 
 .background-none .contact-content-card__image-wrapper + .contact-content-card__info {
-  @apply
-    pt-10;
+  @apply pt-10;
 }
 
-.background-none .slider .contact-content-card__info {
-  @apply
-    pl-2;
+.background-none .contact-content-card__info {
+  @apply pl-2;
 }
 
-.background-none .slider .contact-content-card__image-wrapper + .contact-content-card__info {
-  @apply
-    pl-6;
+.background-none .contact-content-card__image-wrapper + .contact-content-card__info {
+  @apply pl-6;
 }
 
-.background-none .contact-content-list:not(.slider) .center .contact-content-card__info {
-  @apply
-    pl-10
+.background-none .contact-content-list .center .contact-content-card__info {
+  @apply pl-10
     pr-10;
 }
 
 @media screen and (max-width: 767px) {
-  .background-none .slider .contact-content-card__info {
-    @apply
-      pb-4;
+  .background-none .contact-content-card__info {
+    @apply pb-4;
   }
 
-  .contact-content.background-none .slider.slider--mobile {
-    @apply
-      mb-0;
+  .contact-content.background-none {
+    @apply mb-0;
   }
 }
 
@@ -255,45 +230,40 @@
   }
 
   .background-none .contact-content-list .contact-content-card__info,
-  .background-none .contact-content-list:not(.slider) .center .contact-content-card__info {
-    @apply
-      pl-6
+  .background-none .contact-content-list .center .contact-content-card__info {
+    @apply pl-6
       pr-6;
   }
 }
 
 .contact-content-card {
-  @apply
-    relative
+  @apply relative
     box-border;
 }
 
-.contact-content-card > .contact-content-card__image-wrapper--full-width:not(.contact-content-card-spacing) {
+.contact-content-card > .contact-content-card__image-wrapper--full-width:not(
+.contact-content-card-spacing) {
   border-top-left-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
   border-top-right-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
   overflow: hidden;
 }
 
 .contact-content.background-none .contact-content-card {
-  @apply
-    rounded-none;
+  @apply rounded-none;
 }
 
 .contact-content-card__info .link {
-  @apply
-    no-underline
+  @apply no-underline
     mt-6;
 }
 
 .contact-content-card__info .icon-wrap {
-  @apply
-    ml-3
+  @apply ml-3
     whitespace-nowrap;
 }
 
 @media screen and (min-width: 1024px) {
   .contact-content-list__item--empty {
-    @apply
-      list-item;
+    @apply list-item;
   }
 }
