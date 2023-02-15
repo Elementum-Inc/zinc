@@ -107,6 +107,10 @@
   padding: 0;
 }
 
+.slideshow.splide .splide__slide__container {
+  height: 100%;
+}
+
 @media (max-width: 767.9px) {
   .slideshow.splide .splide__slide__container.banner--mobile-bottom .banner__media {
     flex-basis: 33.333333%;
