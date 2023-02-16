@@ -443,6 +443,70 @@
         "padding_bottom": 36
       }
     },
+    "8f0b4c85-768e-4291-9ccf-1690939534b5": {
+      "type": "multicolumn",
+      "blocks": {
+        "template--18027708088629__8f0b4c85-768e-4291-9ccf-1690939534b5-1676568039a733f2c9-1": {
+          "type": "column",
+          "settings": {
+            "column_alignment": "center",
+            "image": "shopify:\/\/shop_images\/Untitled_design_10.png",
+            "image_position": "above",
+            "border-radius": 0,
+            "title": "",
+            "text": "<p><em>Low Waste<\/em><\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "template--18027708088629__8f0b4c85-768e-4291-9ccf-1690939534b5-1676568039a733f2c9-0": {
+          "type": "column",
+          "settings": {
+            "column_alignment": "center",
+            "image": "shopify:\/\/shop_images\/Untitled_design_8.png",
+            "image_position": "above",
+            "border-radius": 0,
+            "title": "",
+            "text": "<p><em>100% Vegan<\/em><\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "a00d832d-8c57-49b1-abfa-ab88deff41e4": {
+          "type": "column",
+          "settings": {
+            "column_alignment": "center",
+            "image": "shopify:\/\/shop_images\/Untitled_design_9_b059ae32-a177-4259-81cd-c64d6db7cfa6.png",
+            "image_position": "above",
+            "border-radius": 0,
+            "title": "",
+            "text": "<p><em>Domestically Sourced<\/em><\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18027708088629__8f0b4c85-768e-4291-9ccf-1690939534b5-1676568039a733f2c9-1",
+        "template--18027708088629__8f0b4c85-768e-4291-9ccf-1690939534b5-1676568039a733f2c9-0",
+        "a00d832d-8c57-49b1-abfa-ab88deff41e4"
+      ],
+      "settings": {
+        "title": "",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "image_width": "third",
+        "image_ratio": "circle",
+        "columns_desktop": 3,
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-2",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "640c42c5-d9ac-402e-a3f7-b51bbbb0e04f": {
       "type": "collapsible-content",
       "blocks": {
@@ -575,6 +639,7 @@
     },
     "d55fe8da-09b5-45ca-a9fe-2303335b265f": {
       "type": "modal",
+      "disabled": true,
       "blocks": {
         "be28b901-b448-4781-9090-96cd86c7c059": {
           "type": "modal_title",
@@ -654,6 +719,7 @@
     "c6035e9d-d4b9-4a25-b55b-ef7736719929",
     "41d505f7-1dbd-4c4c-8960-61f14f2c634c",
     "14536ca8-86c6-483a-8c00-794fe0e2d97f",
+    "8f0b4c85-768e-4291-9ccf-1690939534b5",
     "640c42c5-d9ac-402e-a3f7-b51bbbb0e04f",
     "0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1",
     "d55fe8da-09b5-45ca-a9fe-2303335b265f",

@@ -11,6 +11,7 @@
     "type_body_font": "avenir_next_n4",
     "body_size": 16,
     "icon_size": 24,
+    "icon_stroke_width": 1,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 20,
     "spacing_grid_vertical": 40,
