@@ -135,6 +135,7 @@
         "template--17922962358590__537bff51-0684-4d2d-8194-f7e353c3b516-16764818177b5db4f0-0": {
           "type": "column",
           "settings": {
+            "column_alignment": "left",
             "image_position": "above",
             "border-radius": 0,
             "title": "Column",
@@ -146,6 +147,7 @@
         "template--17922962358590__537bff51-0684-4d2d-8194-f7e353c3b516-16764818177b5db4f0-1": {
           "type": "column",
           "settings": {
+            "column_alignment": "left",
             "image_position": "above",
             "border-radius": 0,
             "title": "",
@@ -166,7 +168,6 @@
         "image_width": "full",
         "image_ratio": "auto",
         "columns_desktop": 2,
-        "column_alignment": "left",
         "button_label": "Optional Button",
         "button_link": "",
         "color_scheme": "background-1",
@@ -342,6 +343,40 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "824911b2-0706-4181-a7db-9f98218b30c8": {
+      "type": "newsletter",
+      "blocks": {
+        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "SUBSCRIBE",
+            "heading_size": "h1"
+          }
+        },
+        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
+          }
+        },
+        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-0",
+        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-1",
+        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
@@ -350,6 +385,7 @@
     "537bff51-0684-4d2d-8194-f7e353c3b516",
     "88801c64-2da2-42ca-bf3c-b48464f8ddd7",
     "e3bd2b9e-a41e-4f45-b029-6ff26f784368",
-    "c170f63e-0402-4722-a40e-15d3ec7a333b"
+    "c170f63e-0402-4722-a40e-15d3ec7a333b",
+    "824911b2-0706-4181-a7db-9f98218b30c8"
   ]
 }
