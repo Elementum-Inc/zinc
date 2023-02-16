@@ -69,6 +69,18 @@
     @apply mb-0;
   }
 
+  #FooterLanguageLabel {
+    @apply mt-3
+      mb-0;
+  }
+
+  #FooterLanguageButton {
+    border: 1px solid;
+
+    @apply text-scheme-accent
+      border-scheme-accent;
+  }
+
   /* .basic #large-footer-logo {
     @apply hidden;
   } */
@@ -91,6 +103,10 @@
 
   .list-payment {
     @apply ml-auto;
+  }
+
+  .lower-social {
+    @apply my-auto mx-0;
   }
 
   .lower-social .list-social__link {
@@ -117,6 +133,37 @@
       leading-none
       tracking-none
       text-center;
+  }
+
+  .footer__content-bottom-wrapper {
+    border-top: 1px solid;
+
+    @apply border-scheme-accent
+      flex
+      w-full
+      justify-around;
+
+    > *:only-child {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .footer__content-bottom {
+      flex-wrap: wrap;
+      row-gap: 1.5rem;
+    }
+
+    .footer__content-bottom-wrapper {
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+      row-gap: 1.5rem;
+      padding: 0 2rem;
+    }
+
+    .localization-form:only-child {
+      padding: 0;
+    }
   }
 }
 
