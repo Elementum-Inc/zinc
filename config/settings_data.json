@@ -24,7 +24,7 @@
     "product_card_text_alignment": "center",
     "product_card_vertical_alignment": "center",
     "product_card_color_scheme": "background-1",
-    "product_card_border": true,
+    "product_card_border": false,
     "product_card_corner_radius": 32,
     "product_card_hover_animation": "lift",
     "product_card_hover_show_info": true,
