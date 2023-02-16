@@ -1,15 +1,16 @@
 {
   "current": {
-    "colors_text": "#492d2c",
-    "colors_background_1": "#f8f5ed",
-    "colors_background_2": "#3f3d39",
-    "colors_accent_1": "#d3a769",
-    "colors_accent_2": "#492d2c",
-    "colors_error": "#492d2c",
-    "type_header_font": "proza_libre_n4",
-    "heading_size": 13,
+    "colors_text": "#121212",
+    "colors_background_1": "#d5cfe1",
+    "colors_background_2": "#291f1e",
+    "colors_foreground": "#f3f3f3",
+    "colors_accent_1": "#a3333d",
+    "colors_accent_2": "#6a66a3",
+    "colors_success": "#5aaa95",
+    "colors_warning": "#efcb68",
+    "colors_error": "#de6b48",
+    "type_header_font": "playfair_display_n4",
     "type_body_font": "avenir_next_n4",
-    "body_size": 14,
     "icon_size": 24,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 20,
@@ -18,13 +19,12 @@
     "buttons_radius": 40,
     "buttons_shadow_horizontal_offset": 6,
     "buttons_shadow_vertical_offset": 6,
-    "variant_pills_label_size": "default",
     "variant_pills_border_thickness": 1,
     "variant_pills_radius": 40,
     "inputs_radius": 0,
     "product_card_text_alignment": "left",
     "product_card_vertical_alignment": "center",
-    "product_card_color_scheme": "background-2",
+    "product_card_color_scheme": "accent-1",
     "product_card_border": false,
     "product_card_corner_radius": 16,
     "content_card_text_alignment": "left",
@@ -61,14 +61,14 @@
     "drawer_shadow_horizontal_offset": 16,
     "drawer_shadow_vertical_offset": 0,
     "drawer_shadow_blur": 25,
-    "badge_position": "top left",
-    "badge_corner_radius": 36,
+    "badge_position": "bottom right",
+    "badge_corner_radius": 0,
     "sale_badge_color_scheme": "accent-1",
     "sold_out_badge_color_scheme": "error",
-    "social_twitter_link": "https://twitter.com/shopify",
-    "social_facebook_link": "https://facebook.com/shopify",
-    "social_pinterest_link": "https://pinterest.com/shopify",
-    "social_instagram_link": "http://instagram.com/shopify",
+    "social_twitter_link": "https:\/\/twitter.com\/shopify",
+    "social_facebook_link": "https:\/\/facebook.com\/shopify",
+    "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
+    "social_instagram_link": "http:\/\/instagram.com\/shopify",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -86,7 +86,6 @@
     "currency_code_enabled": true,
     "cart_type": "drawer",
     "show_cart_note": true,
-    "colors_foreground": "#f3f3f3",
     "page_width": 1200,
     "buttons_border_opacity": 100,
     "variant_pills_shadow_opacity": 30,
@@ -125,19 +124,6 @@
     "sections": {
       "announcement-bar": {
         "type": "announcement-bar",
-        "blocks": {
-          "94b77c9b-7ce1-49f4-9f09-0c344030787c": {
-            "type": "announcement",
-            "settings": {
-              "text": "",
-              "color_scheme": "accent-1",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "94b77c9b-7ce1-49f4-9f09-0c344030787c"
-        ],
         "settings": {
         }
       },
@@ -149,7 +135,7 @@
             "settings": {
               "title": "shop",
               "submenu_title": "",
-              "submenu": "main-menu",
+              "submenu": "",
               "submenu_item_image": "none"
             }
           },
@@ -157,17 +143,17 @@
             "type": "image_content",
             "settings": {
               "title": "shop",
-              "content_title": "The Hue Collection",
+              "content_title": "Newest Arrivals",
               "content_title_size": "h2",
-              "content_subtitle": "",
+              "content_subtitle": "Check out our latest fall fashion.",
               "content_subtitle_size": "h5",
-              "content": "Shop and learn more about our newest collection of inspired scents.",
-              "button_style": "outline",
+              "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.",
+              "button_style": "flat",
               "button_reverse": false,
-              "primary_button_label": "Shop Hue",
-              "primary_button_url": "shopify://collections/hue-collection",
-              "secondary_button_label": "The Hue Story",
-              "secondary_button_url": "shopify://blogs/news"
+              "primary_button_label": "Primary button",
+              "primary_button_url": "shopify:\/\/collections",
+              "secondary_button_label": "Secondary button",
+              "secondary_button_url": "shopify:\/\/blogs\/news"
             }
           },
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
@@ -187,18 +173,18 @@
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc"
         ],
         "settings": {
-          "color_scheme": "accent-1",
-          "logo_width": 120,
-          "logo_position": "split-menu",
+          "color_scheme": "background-2",
+          "logo_width": 64,
+          "logo_position": "top-center",
           "menu": "main-menu",
           "collapse_menu_desktop": false,
           "enable_sticky_header": true,
-          "mm_color_scheme": "accent-1",
+          "mm_color_scheme": "background-1",
           "mm_type": "basic",
           "mm_toplink_behavior": "view_all_link",
           "mm_enable_caret": true,
-          "mm_mobile_links": "footer",
-          "user_menu_type": "minimal",
+          "mm_mobile_links": "",
+          "user_menu_type": "expanded",
           "menu_icon_position": "top",
           "padding_top": 20,
           "padding_bottom": 20
@@ -210,7 +196,7 @@
           "footer-0": {
             "type": "link_list",
             "settings": {
-              "heading": "Info",
+              "heading": "Quick links",
               "display_logo": false,
               "menu": "footer"
             }
@@ -218,16 +204,9 @@
           "footer-1": {
             "type": "link_list",
             "settings": {
-              "heading": "Support",
+              "heading": "Info",
               "display_logo": false,
-              "menu": ""
-            }
-          },
-          "footer-2": {
-            "type": "text",
-            "settings": {
-              "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+              "menu": "footer"
             }
           },
           "6d9561d4-d380-41ef-a4ad-695b92faa9a4": {
@@ -236,8 +215,16 @@
               "enable_country_selector": true
             }
           },
+          "footer-2": {
+            "type": "text",
+            "settings": {
+              "heading": "Our mission",
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+            }
+          },
           "48a3efe9-3104-403c-8eb5-a867ecb35aa9": {
             "type": "newsletter",
+            "disabled": true,
             "settings": {
             }
           }
@@ -245,16 +232,16 @@
         "block_order": [
           "footer-0",
           "footer-1",
-          "footer-2",
           "6d9561d4-d380-41ef-a4ad-695b92faa9a4",
+          "footer-2",
           "48a3efe9-3104-403c-8eb5-a867ecb35aa9"
         ],
         "settings": {
           "footer_type": "bold",
           "color_scheme": "background-2",
-          "column_count": "6",
+          "column_count": "4",
           "large_logo_text_size": 100,
-          "large_logo_width": 200,
+          "large_logo_width": 750,
           "newsletter_enable": true,
           "newsletter_heading": "Subscribe to our emails",
           "show_social": true,
@@ -262,10 +249,10 @@
           "show_social_text": false,
           "social_location": "above",
           "enable_language_selector": true,
-          "margin_top": 0,
-          "padding_top": 8,
-          "padding_bottom": 32,
-          "show_poweredbyshopify": false,
+          "margin_top": 24,
+          "padding_top": 36,
+          "padding_bottom": 36,
+          "show_poweredbyshopify": true,
           "payment_enable": true
         }
       },
@@ -295,35 +282,38 @@
       "colors_foreground": "#f3f3f3",
       "colors_accent_1": "#074169",
       "colors_accent_2": "#d69940",
-      "type_header_font": "playfair_display_n4",
-      "type_body_font": "avenir_next_n4",
-      "icon_size": 24,
+      "type_header_font": "assistant_n4",
+      "heading_scale": 100,
+      "type_body_font": "assistant_n4",
+      "body_scale": 100,
       "page_width": 1200,
       "spacing_sections": 0,
-      "spacing_grid_horizontal": 20,
-      "spacing_grid_vertical": 40,
+      "spacing_grid_horizontal": 8,
+      "spacing_grid_vertical": 8,
       "buttons_border_thickness": 1,
       "buttons_border_opacity": 100,
-      "buttons_radius": 40,
-      "buttons_shadow_horizontal_offset": 6,
-      "buttons_shadow_vertical_offset": 6,
-      "variant_pills_shadow_opacity": 30,
+      "buttons_radius": 0,
+      "buttons_shadow_opacity": 0,
+      "buttons_shadow_horizontal_offset": 0,
+      "buttons_shadow_vertical_offset": 4,
+      "buttons_shadow_blur": 5,
+      "variant_pills_border_thickness": 1,
+      "variant_pills_border_opacity": 55,
+      "variant_pills_radius": 40,
+      "variant_pills_shadow_opacity": 0,
       "variant_pills_shadow_horizontal_offset": 0,
       "variant_pills_shadow_vertical_offset": 4,
       "variant_pills_shadow_blur": 5,
+      "inputs_border_thickness": 1,
+      "inputs_border_opacity": 55,
       "inputs_radius": 0,
-      "product_card_text_alignment": "left",
-      "product_card_vertical_alignment": "center",
-      "product_card_color_scheme": "accent-1",
-      "product_card_border": false,
-      "product_card_corner_radius": 16,
-      "content_card_text_alignment": "left",
-      "content_card_vertical_alignment": "start",
-      "content_card_color_scheme": "background-1",
-      "content_card_border": false,
-      "content_card_corner_radius": 0,
-      "content_card_image_aspect": "widescreen",
-      "content_card_image_fit": "cover",
+      "inputs_shadow_opacity": 0,
+      "inputs_shadow_horizontal_offset": 0,
+      "inputs_shadow_vertical_offset": 4,
+      "inputs_shadow_blur": 5,
+      "card_text_alignment": "left",
+      "card_color_scheme": "background-2",
+      "card_corner_radius": 0,
       "text_boxes_border_thickness": 0,
       "text_boxes_border_opacity": 10,
       "text_boxes_radius": 0,
@@ -331,7 +321,7 @@
       "text_boxes_shadow_horizontal_offset": 0,
       "text_boxes_shadow_vertical_offset": 4,
       "text_boxes_shadow_blur": 5,
-      "media_border_thickness": 0,
+      "media_border_thickness": 1,
       "media_border_opacity": 5,
       "media_radius": 0,
       "media_shadow_opacity": 0,
@@ -347,74 +337,396 @@
       "popup_shadow_blur": 5,
       "drawer_border_thickness": 1,
       "drawer_border_opacity": 10,
-      "drawer_shadow_opacity": 55,
-      "drawer_shadow_horizontal_offset": 16,
-      "drawer_shadow_vertical_offset": 0,
-      "drawer_shadow_blur": 25,
-      "badge_position": "bottom right",
-      "badge_corner_radius": 0,
-      "sale_badge_color_scheme": "accent-1",
-      "sold_out_badge_color_scheme": "error",
-      "social_twitter_link": "https://twitter.com/shopify",
-      "social_facebook_link": "https://facebook.com/shopify",
-      "social_pinterest_link": "https://pinterest.com/shopify",
-      "social_instagram_link": "http://instagram.com/shopify",
+      "drawer_shadow_opacity": 0,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_vertical_offset": 4,
+      "drawer_shadow_blur": 5,
+      "badge_position": "bottom left",
+      "badge_corner_radius": 36,
+      "sale_badge_color_scheme": "accent-2",
+      "sold_out_badge_color_scheme": "inverse",
+      "accent_icons": "text",
+      "social_twitter_link": "",
+      "social_facebook_link": "",
+      "social_pinterest_link": "",
+      "social_instagram_link": "",
       "social_tiktok_link": "",
       "social_tumblr_link": "",
       "social_snapchat_link": "",
       "social_youtube_link": "",
       "social_vimeo_link": "",
-      "search_open_position": "over",
-      "search_trends": "trending-searches",
       "predictive_search_enabled": true,
-      "predictive_search_show_pages": true,
-      "predictive_card_image_ratio": "square",
-      "predictive_card_show_price": true,
-      "predictive_card_show_vendor": true,
-      "predictive_card_show_author": true,
-      "predictive_card_show_tags": true,
-      "currency_code_enabled": true,
-      "cart_type": "drawer",
-      "show_cart_note": true,
-      "buttons_shadow_opacity": 50,
-      "buttons_shadow_blur": 5,
-      "predictive_card_show_secondary_image": true,
-      "variant_pills_border_thickness": 1,
-      "variant_pills_border_opacity": 70,
-      "variant_pills_radius": 40,
-      "inputs_border_thickness": 5,
-      "inputs_border_opacity": 45,
-      "card_text_alignment": "left",
-      "card_color_scheme": "background-2",
-      "card_border": false,
-      "card_corner_radius": 0,
-      "card_image_aspect": "square",
-      "card_image_fit": "cover",
-      "card_hover_animation": "zoom",
-      "card_hover_show_info": false,
-      "inputs_shadow_opacity": 0,
-      "inputs_shadow_horizontal_offset": 0,
-      "inputs_shadow_vertical_offset": 4,
-      "inputs_shadow_blur": 5,
-      "accent_icons": "text",
       "predictive_search_show_vendor": false,
       "predictive_search_show_price": false,
-      "colors_solid_button_labels": "#ffffff",
-      "gradient_accent_1": "",
-      "gradient_accent_2": "",
-      "colors_outline_button_labels": "#121212",
-      "gradient_background_1": "",
-      "gradient_background_2": "",
-      "heading_scale": 100,
-      "body_scale": 100
+      "currency_code_enabled": true,
+      "cart_type": "notification",
+      "show_vendor": false,
+      "show_cart_note": false,
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "blocks": {
+            "announcement-bar-0": {
+              "type": "announcement",
+              "settings": {
+                "text": "Welcome to our store",
+                "color_scheme": "background-1",
+                "link": ""
+              }
+            }
+          },
+          "block_order": [
+            "announcement-bar-0"
+          ],
+          "settings": {
+          }
+        },
+        "header": {
+          "type": "header",
+          "settings": {
+            "color_scheme": "background-1",
+            "logo": "{{ shop.brand.logo }}",
+            "logo_width": 64,
+            "logo_position": "middle-left",
+            "menu": "main-menu",
+            "enable_sticky_header": true,
+            "padding_top": 20,
+            "padding_bottom": 20
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "link_list",
+              "settings": {
+                "heading": "Quick links",
+                "menu": "footer"
+              }
+            },
+            "footer-1": {
+              "type": "link_list",
+              "settings": {
+                "heading": "Info",
+                "menu": "footer"
+              }
+            },
+            "footer-2": {
+              "type": "text",
+              "settings": {
+                "heading": "Our mission",
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              }
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "footer-2"
+          ],
+          "settings": {
+            "color_scheme": "background-1",
+            "newsletter_enable": true,
+            "newsletter_heading": "Subscribe to our emails",
+            "show_social": true,
+            "enable_language_selector": false,
+            "margin_top": 48,
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "payment_enable": true
+          }
+        },
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {
+            "logo": "{{ shop.brand.logo }}",
+            "logo_max_width": 100,
+            "color_scheme": "background-1"
+          }
+        },
+        "main-password-footer": {
+          "type": "main-password-footer",
+          "settings": {
+            "color_scheme": "background-1"
+          }
+        }
+      }
     },
     "Vibrant": {
-      "colors_text": "#121212",
+      "colors_text": "#747474",
       "colors_background_1": "#ffffff",
-      "colors_background_2": "#e8e8e8",
-      "colors_foreground": "#f3f3f3",
-      "colors_accent_1": "#5799c7",
-      "colors_accent_2": "#d85127",
+      "colors_background_2": "#695958",
+      "colors_foreground": "#fcfcfc",
+      "colors_accent_1": "#c5891b",
+      "colors_accent_2": "#d0b8e0",
+      "colors_success": "#d0b8e0",
+      "colors_warning": "#FD6565",
+      "type_header_font": "righteous_n4",
+      "heading_size": 20,
+      "type_body_font": "sans-serif",
+      "body_size": 18,
+      "icon_size": 20,
+      "icon_stroke_width": 2,
+      "page_width": 1200,
+      "spacing_sections": 0,
+      "spacing_grid_horizontal": 20,
+      "spacing_grid_vertical": 40,
+      "buttons_border_thickness": 6,
+      "buttons_border_opacity": 100,
+      "buttons_radius": 0,
+      "buttons_shadow_opacity": 100,
+      "buttons_shadow_horizontal_offset": 0,
+      "buttons_shadow_vertical_offset": 4,
+      "buttons_shadow_blur": 5,
+      "variant_pills_shadow_opacity": 30,
+      "variant_pills_shadow_horizontal_offset": 0,
+      "variant_pills_shadow_vertical_offset": 4,
+      "variant_pills_shadow_blur": 5,
+      "inputs_radius": 0,
+      "product_card_text_alignment": "left",
+      "product_card_vertical_alignment": "center",
+      "product_card_color_scheme": "accent-1",
+      "product_card_border": true,
+      "product_card_corner_radius": 8,
+      "content_card_text_alignment": "left",
+      "content_card_vertical_alignment": "start",
+      "content_card_color_scheme": "background-2",
+      "content_card_border": false,
+      "content_card_corner_radius": 0,
+      "content_card_image_aspect": "widescreen",
+      "content_card_image_fit": "cover",
+      "text_boxes_border_thickness": 0,
+      "text_boxes_border_opacity": 10,
+      "text_boxes_radius": 0,
+      "text_boxes_shadow_opacity": 0,
+      "text_boxes_shadow_horizontal_offset": 0,
+      "text_boxes_shadow_vertical_offset": 4,
+      "text_boxes_shadow_blur": 5,
+      "media_border_thickness": 0,
+      "media_border_opacity": 5,
+      "media_radius": 0,
+      "media_shadow_opacity": 0,
+      "media_shadow_horizontal_offset": 0,
+      "media_shadow_vertical_offset": 4,
+      "media_shadow_blur": 5,
+      "popup_border_thickness": 1,
+      "popup_border_opacity": 10,
+      "popup_corner_radius": 0,
+      "popup_shadow_opacity": 0,
+      "popup_shadow_horizontal_offset": 0,
+      "popup_shadow_vertical_offset": 4,
+      "popup_shadow_blur": 5,
+      "drawer_border_thickness": 1,
+      "drawer_border_opacity": 10,
+      "drawer_shadow_opacity": 100,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_vertical_offset": 2,
+      "drawer_shadow_blur": 5,
+      "badge_position": "top left",
+      "badge_corner_radius": 0,
+      "sale_badge_color_scheme": "accent-1",
+      "sold_out_badge_color_scheme": "error",
+      "social_twitter_link": "https:\/\/twitter.com\/shopify",
+      "social_facebook_link": "https:\/\/facebook.com\/shopify",
+      "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
+      "social_instagram_link": "http:\/\/instagram.com\/shopify",
+      "social_tiktok_link": "",
+      "social_tumblr_link": "",
+      "social_snapchat_link": "",
+      "social_youtube_link": "",
+      "social_vimeo_link": "",
+      "search_open_position": "over",
+      "search_trends": "trending-searches",
+      "predictive_search_enabled": true,
+      "predictive_search_show_pages": true,
+      "predictive_card_image_ratio": "square",
+      "predictive_card_show_price": true,
+      "predictive_card_show_vendor": true,
+      "predictive_card_show_author": true,
+      "predictive_card_show_tags": true,
+      "currency_code_enabled": true,
+      "cart_type": "drawer",
+      "show_cart_note": true,
+      "predictive_card_show_secondary_image": true,
+      "variant_pills_border_thickness": 1,
+      "variant_pills_border_opacity": 70,
+      "variant_pills_radius": 40,
+      "inputs_border_thickness": 5,
+      "inputs_border_opacity": 45,
+      "card_text_alignment": "left",
+      "card_color_scheme": "background-2",
+      "card_border": false,
+      "card_corner_radius": 0,
+      "card_image_aspect": "square",
+      "card_image_fit": "cover",
+      "card_hover_animation": "zoom",
+      "card_hover_show_info": false,
+      "inputs_shadow_opacity": 0,
+      "inputs_shadow_horizontal_offset": 0,
+      "inputs_shadow_vertical_offset": 4,
+      "inputs_shadow_blur": 5,
+      "accent_icons": "text",
+      "predictive_search_show_vendor": false,
+      "predictive_search_show_price": false,
+      "colors_solid_button_labels": "#ffffff",
+      "gradient_accent_1": "",
+      "gradient_accent_2": "",
+      "colors_outline_button_labels": "#121212",
+      "gradient_background_1": "",
+      "gradient_background_2": "",
+      "heading_scale": 100,
+      "body_scale": 100,
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+          }
+        },
+        "header": {
+          "type": "header",
+          "blocks": {
+            "f8603bea-8bd3-4ec1-8e2a-1f58d60c8291": {
+              "type": "menu",
+              "settings": {
+                "title": "main-menu",
+                "submenu_title": "",
+                "submenu": "main-menu",
+                "submenu_item_image": "none"
+              }
+            },
+            "06f0cdba-8e0d-4722-84ee-b51b50fe3a4e": {
+              "type": "image_content",
+              "settings": {
+                "title": "shop",
+                "content_title": "Newest Arrivals",
+                "content_subtitle": "Check out our latest fall fashion.",
+                "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.<\/p>",
+                "primary_button_url": "shopify:\/\/collections",
+                "secondary_button_url": "shopify:\/\/blogs\/news"
+              }
+            },
+            "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
+              "type": "menu",
+              "disabled": true,
+              "settings": {
+                "title": "shop",
+                "submenu_title": "",
+                "submenu": "",
+                "submenu_item_image": "none"
+              }
+            }
+          },
+          "block_order": [
+            "f8603bea-8bd3-4ec1-8e2a-1f58d60c8291",
+            "06f0cdba-8e0d-4722-84ee-b51b50fe3a4e",
+            "5771ba81-313e-4f85-9ea9-d675f4eb17fc"
+          ],
+          "settings": {
+            "color_scheme": "accent-1",
+            "logo_width": 64,
+            "logo_position": "split-menu",
+            "menu": "main-menu",
+            "collapse_menu_desktop": false,
+            "enable_sticky_header": false,
+            "mm_color_scheme": "background-1",
+            "mm_type": "bold",
+            "mm_mobile_links": "",
+            "user_menu_type": "minimal",
+            "menu_icon_position": "right",
+            "padding_top": 12,
+            "padding_bottom": 12
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "link_list",
+              "settings": {
+                "heading": "Quick links",
+                "display_logo": false,
+                "menu": "footer"
+              }
+            },
+            "footer-1": {
+              "type": "link_list",
+              "settings": {
+                "heading": "Info",
+                "display_logo": false,
+                "menu": "footer"
+              }
+            },
+            "6d9561d4-d380-41ef-a4ad-695b92faa9a4": {
+              "type": "payments",
+              "settings": {
+                "enable_country_selector": true
+              }
+            },
+            "footer-2": {
+              "type": "text",
+              "settings": {
+                "heading": "Our mission",
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              }
+            },
+            "48a3efe9-3104-403c-8eb5-a867ecb35aa9": {
+              "type": "newsletter",
+              "disabled": true,
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "6d9561d4-d380-41ef-a4ad-695b92faa9a4",
+            "footer-2",
+            "48a3efe9-3104-403c-8eb5-a867ecb35aa9"
+          ],
+          "settings": {
+            "color_scheme": "bold-accent",
+            "column_count": "4",
+            "large_logo_width": 750,
+            "newsletter_enable": true,
+            "newsletter_heading": "Subscribe to our emails",
+            "show_social": true,
+            "show_social_icon": true,
+            "show_social_text": false,
+            "social_location": "above",
+            "enable_language_selector": false,
+            "margin_top": 24,
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "show_poweredbyshopify": true,
+            "payment_enable": true
+          }
+        },
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {
+            "logo_max_width": 100,
+            "color_scheme": "background-1"
+          }
+        },
+        "main-password-footer": {
+          "type": "main-password-footer",
+          "settings": {
+            "color_scheme": "background-1"
+          }
+        }
+      },
+      "content_for_index": [
+
+      ]
+    },
+    "Muted": {
+      "colors_text": "#393932",
+      "colors_background_1": "#f9f2e2",
+      "colors_background_2": "#393932",
+      "colors_accent_1": "#e3d8cd",
+      "colors_accent_2": "#e3e0bc",
+      "colors_success": "#e3e0bc",
+      "colors_warning": "#FD6565",
       "type_header_font": "playfair_display_n4",
       "type_body_font": "avenir_next_n4",
       "icon_size": 24,
@@ -424,9 +736,11 @@
       "spacing_grid_vertical": 40,
       "buttons_border_thickness": 1,
       "buttons_border_opacity": 100,
-      "buttons_radius": 40,
-      "buttons_shadow_horizontal_offset": 6,
-      "buttons_shadow_vertical_offset": 6,
+      "buttons_radius": 0,
+      "buttons_shadow_opacity": 0,
+      "buttons_shadow_horizontal_offset": 0,
+      "buttons_shadow_vertical_offset": 4,
+      "buttons_shadow_blur": 5,
       "variant_pills_shadow_opacity": 30,
       "variant_pills_shadow_horizontal_offset": 0,
       "variant_pills_shadow_vertical_offset": 4,
@@ -467,18 +781,18 @@
       "popup_shadow_blur": 5,
       "drawer_border_thickness": 1,
       "drawer_border_opacity": 10,
-      "drawer_shadow_opacity": 55,
-      "drawer_shadow_horizontal_offset": 16,
-      "drawer_shadow_vertical_offset": 0,
-      "drawer_shadow_blur": 25,
+      "drawer_shadow_opacity": 100,
+      "drawer_shadow_horizontal_offset": 0,
+      "drawer_shadow_vertical_offset": 2,
+      "drawer_shadow_blur": 5,
       "badge_position": "bottom right",
       "badge_corner_radius": 0,
       "sale_badge_color_scheme": "accent-1",
       "sold_out_badge_color_scheme": "error",
-      "social_twitter_link": "https://twitter.com/shopify",
-      "social_facebook_link": "https://facebook.com/shopify",
-      "social_pinterest_link": "https://pinterest.com/shopify",
-      "social_instagram_link": "http://instagram.com/shopify",
+      "social_twitter_link": "https:\/\/twitter.com\/shopify",
+      "social_facebook_link": "https:\/\/facebook.com\/shopify",
+      "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
+      "social_instagram_link": "http:\/\/instagram.com\/shopify",
       "social_tiktok_link": "",
       "social_tumblr_link": "",
       "social_snapchat_link": "",
@@ -496,8 +810,6 @@
       "currency_code_enabled": true,
       "cart_type": "drawer",
       "show_cart_note": true,
-      "buttons_shadow_opacity": 50,
-      "buttons_shadow_blur": 5,
       "predictive_card_show_secondary_image": true,
       "variant_pills_border_thickness": 1,
       "variant_pills_border_opacity": 70,
@@ -526,130 +838,149 @@
       "gradient_background_1": "",
       "gradient_background_2": "",
       "heading_scale": 100,
-      "body_scale": 100
-    },
-    "Muted": {
-      "colors_text": "#492d2c",
-      "colors_background_1": "#f8f5ed",
-      "colors_background_2": "#3f3d39",
-      "colors_foreground": "#f3f3f3",
-      "colors_accent_1": "#d3a769",
-      "colors_accent_2": "#492d2c",
-      "colors_error": "#492d2c",
-      "type_header_font": "proza_libre_n4",
-      "heading_size": 13,
-      "type_body_font": "avenir_next_n4",
-      "body_size": 14,
-      "icon_size": 24,
-      "page_width": 1200,
-      "spacing_sections": 0,
-      "spacing_grid_horizontal": 20,
-      "spacing_grid_vertical": 40,
-      "buttons_border_thickness": 1,
-      "buttons_border_opacity": 100,
-      "buttons_radius": 40,
-      "buttons_shadow_horizontal_offset": 6,
-      "buttons_shadow_vertical_offset": 6,
-      "variant_pills_shadow_opacity": 30,
-      "variant_pills_shadow_horizontal_offset": 0,
-      "variant_pills_shadow_vertical_offset": 4,
-      "variant_pills_shadow_blur": 5,
-      "inputs_radius": 0,
-      "product_card_text_alignment": "left",
-      "product_card_vertical_alignment": "center",
-      "product_card_color_scheme": "background-1",
-      "product_card_border": false,
-      "product_card_corner_radius": 16,
-      "content_card_text_alignment": "left",
-      "content_card_vertical_alignment": "start",
-      "content_card_color_scheme": "background-1",
-      "content_card_border": false,
-      "content_card_corner_radius": 0,
-      "content_card_image_aspect": "widescreen",
-      "content_card_image_fit": "cover",
-      "text_boxes_border_thickness": 0,
-      "text_boxes_border_opacity": 10,
-      "text_boxes_radius": 0,
-      "text_boxes_shadow_opacity": 0,
-      "text_boxes_shadow_horizontal_offset": 0,
-      "text_boxes_shadow_vertical_offset": 4,
-      "text_boxes_shadow_blur": 5,
-      "media_border_thickness": 0,
-      "media_border_opacity": 5,
-      "media_radius": 0,
-      "media_shadow_opacity": 0,
-      "media_shadow_horizontal_offset": 0,
-      "media_shadow_vertical_offset": 4,
-      "media_shadow_blur": 5,
-      "popup_border_thickness": 1,
-      "popup_border_opacity": 10,
-      "popup_corner_radius": 0,
-      "popup_shadow_opacity": 0,
-      "popup_shadow_horizontal_offset": 0,
-      "popup_shadow_vertical_offset": 4,
-      "popup_shadow_blur": 5,
-      "drawer_border_thickness": 1,
-      "drawer_border_opacity": 10,
-      "drawer_shadow_opacity": 55,
-      "drawer_shadow_horizontal_offset": 16,
-      "drawer_shadow_vertical_offset": 0,
-      "drawer_shadow_blur": 25,
-      "badge_position": "top left",
-      "badge_corner_radius": 36,
-      "sale_badge_color_scheme": "accent-1",
-      "sold_out_badge_color_scheme": "error",
-      "social_twitter_link": "https://twitter.com/shopify",
-      "social_facebook_link": "https://facebook.com/shopify",
-      "social_pinterest_link": "https://pinterest.com/shopify",
-      "social_instagram_link": "http://instagram.com/shopify",
-      "social_tiktok_link": "",
-      "social_tumblr_link": "",
-      "social_snapchat_link": "",
-      "social_youtube_link": "",
-      "social_vimeo_link": "",
-      "search_open_position": "over",
-      "search_trends": "trending-searches",
-      "predictive_search_enabled": true,
-      "predictive_search_show_pages": true,
-      "predictive_card_image_ratio": "square",
-      "predictive_card_show_price": true,
-      "predictive_card_show_vendor": true,
-      "predictive_card_show_author": true,
-      "predictive_card_show_tags": true,
-      "currency_code_enabled": true,
-      "cart_type": "drawer",
-      "show_cart_note": true,
-      "buttons_shadow_opacity": 50,
-      "buttons_shadow_blur": 5,
-      "predictive_card_show_secondary_image": true,
-      "variant_pills_border_thickness": 1,
-      "variant_pills_border_opacity": 70,
-      "variant_pills_radius": 40,
-      "inputs_border_thickness": 5,
-      "inputs_border_opacity": 45,
-      "card_text_alignment": "left",
-      "card_color_scheme": "background-2",
-      "card_border": false,
-      "card_corner_radius": 0,
-      "card_image_aspect": "square",
-      "card_image_fit": "cover",
-      "card_hover_animation": "zoom",
-      "card_hover_show_info": false,
-      "inputs_shadow_opacity": 0,
-      "inputs_shadow_horizontal_offset": 0,
-      "inputs_shadow_vertical_offset": 4,
-      "inputs_shadow_blur": 5,
-      "accent_icons": "text",
-      "predictive_search_show_vendor": false,
-      "predictive_search_show_price": false,
-      "colors_solid_button_labels": "#ffffff",
-      "gradient_accent_1": "",
-      "gradient_accent_2": "",
-      "colors_outline_button_labels": "#121212",
-      "gradient_background_1": "",
-      "gradient_background_2": "",
-      "heading_scale": 100,
-      "body_scale": 100
+      "body_scale": 100,
+      "sections": {
+        "announcement-bar": {
+          "type": "announcement-bar",
+          "settings": {
+          }
+        },
+        "header": {
+          "type": "header",
+          "blocks": {
+            "f8603bea-8bd3-4ec1-8e2a-1f58d60c8291": {
+              "type": "menu",
+              "settings": {
+                "title": "shop",
+                "submenu_title": "",
+                "submenu": "",
+                "submenu_item_image": "none"
+              }
+            },
+            "06f0cdba-8e0d-4722-84ee-b51b50fe3a4e": {
+              "type": "image_content",
+              "settings": {
+                "title": "shop",
+                "content_title": "Newest Arrivals",
+                "content_subtitle": "Check out our latest fall fashion.",
+                "content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer ut aliquet arcu, a euismod magna.<\/p>",
+                "primary_button_url": "shopify:\/\/collections",
+                "secondary_button_url": "shopify:\/\/blogs\/news"
+              }
+            },
+            "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
+              "type": "menu",
+              "disabled": true,
+              "settings": {
+                "title": "shop",
+                "submenu_title": "",
+                "submenu": "",
+                "submenu_item_image": "none"
+              }
+            }
+          },
+          "block_order": [
+            "f8603bea-8bd3-4ec1-8e2a-1f58d60c8291",
+            "06f0cdba-8e0d-4722-84ee-b51b50fe3a4e",
+            "5771ba81-313e-4f85-9ea9-d675f4eb17fc"
+          ],
+          "settings": {
+            "color_scheme": "background-1",
+            "logo_width": 64,
+            "logo_position": "left",
+            "menu": "main-menu",
+            "collapse_menu_desktop": false,
+            "enable_sticky_header": true,
+            "mm_color_scheme": "background-1",
+            "mm_type": "bold",
+            "mm_mobile_links": "",
+            "user_menu_type": "minimal",
+            "menu_icon_position": "top",
+            "padding_top": 12,
+            "padding_bottom": 12
+          }
+        },
+        "footer": {
+          "type": "footer",
+          "blocks": {
+            "footer-0": {
+              "type": "link_list",
+              "settings": {
+                "heading": "Quick links",
+                "display_logo": false,
+                "menu": "footer"
+              }
+            },
+            "footer-1": {
+              "type": "link_list",
+              "settings": {
+                "heading": "Info",
+                "display_logo": false,
+                "menu": "footer"
+              }
+            },
+            "6d9561d4-d380-41ef-a4ad-695b92faa9a4": {
+              "type": "payments",
+              "settings": {
+                "enable_country_selector": true
+              }
+            },
+            "footer-2": {
+              "type": "text",
+              "settings": {
+                "heading": "Our mission",
+                "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
+              }
+            },
+            "48a3efe9-3104-403c-8eb5-a867ecb35aa9": {
+              "type": "newsletter",
+              "disabled": true,
+              "settings": {
+              }
+            }
+          },
+          "block_order": [
+            "footer-0",
+            "footer-1",
+            "6d9561d4-d380-41ef-a4ad-695b92faa9a4",
+            "footer-2",
+            "48a3efe9-3104-403c-8eb5-a867ecb35aa9"
+          ],
+          "settings": {
+            "color_scheme": "bold-accent",
+            "column_count": "4",
+            "large_logo_width": 750,
+            "newsletter_enable": true,
+            "newsletter_heading": "Subscribe to our emails",
+            "show_social": true,
+            "show_social_icon": true,
+            "show_social_text": false,
+            "social_location": "above",
+            "enable_language_selector": false,
+            "margin_top": 24,
+            "padding_top": 36,
+            "padding_bottom": 36,
+            "show_poweredbyshopify": true,
+            "payment_enable": true
+          }
+        },
+        "main-password-header": {
+          "type": "main-password-header",
+          "settings": {
+            "logo_max_width": 100,
+            "color_scheme": "background-1"
+          }
+        },
+        "main-password-footer": {
+          "type": "main-password-footer",
+          "settings": {
+            "color_scheme": "background-1"
+          }
+        }
+      },
+      "content_for_index": [
+
+      ]
     }
   }
 }
