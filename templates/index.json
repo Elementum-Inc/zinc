@@ -335,7 +335,7 @@
         "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-0": {
           "type": "text",
           "settings": {
-            "text": "{{ section.settings.product.vendor }}",
+            "text": "BEST SELLER",
             "text_style": "uppercase"
           }
         },
@@ -492,8 +492,8 @@
         "a00d832d-8c57-49b1-abfa-ab88deff41e4"
       ],
       "settings": {
-        "title": "",
-        "heading_size": "h2",
+        "title": "Our Values",
+        "heading_size": "h3",
         "heading_alignment": "center",
         "image_width": "third",
         "image_ratio": "circle",
@@ -568,27 +568,76 @@
         "padding_bottom": 36
       }
     },
+    "caa7b390-2112-4e2c-85af-ea30208cd746": {
+      "type": "image-banner",
+      "blocks": {
+        "template--18027708088629__caa7b390-2112-4e2c-85af-ea30208cd746-16765896870d21e80b-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "Why Soy Wax?",
+            "heading_size": "h1"
+          }
+        },
+        "template--18027708088629__caa7b390-2112-4e2c-85af-ea30208cd746-16765896870d21e80b-1": {
+          "type": "text",
+          "settings": {
+            "text": "Safer for you and your home. Lonéz Scents uses locally sourced, non toxic and natural soy wax to give you a cleaner and longer lasting experience.",
+            "text_style": "body"
+          }
+        },
+        "template--18027708088629__caa7b390-2112-4e2c-85af-ea30208cd746-16765896870d21e80b-2": {
+          "type": "buttons",
+          "settings": {
+            "style": "outline",
+            "reverse": false,
+            "primary_button_label": "Follow Us On Instagram",
+            "primary_button_url": "",
+            "secondary_button_label": "",
+            "secondary_button_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18027708088629__caa7b390-2112-4e2c-85af-ea30208cd746-16765896870d21e80b-0",
+        "template--18027708088629__caa7b390-2112-4e2c-85af-ea30208cd746-16765896870d21e80b-1",
+        "template--18027708088629__caa7b390-2112-4e2c-85af-ea30208cd746-16765896870d21e80b-2"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/IMG_CB95FB83E3DF-1.jpg",
+        "image_2": "shopify:\/\/shop_images\/IMG_8101.jpg",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": true,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": true
+      }
+    },
     "0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1": {
       "type": "testimonials",
       "blocks": {
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-0": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
+            "image": "shopify:\/\/shop_images\/alex-starnes-WYE2UhXsU1Y-unsplash.jpg",
             "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
+            "title": "Alex Starnes",
+            "subtitle": "Unsplash",
+            "text": "<p>Lonéz Scents are exaclty what my coffee table has been missing!<\/p>"
           }
         },
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-1": {
           "type": "column",
           "settings": {
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
+            "image": "shopify:\/\/shop_images\/IMG_8102.jpg",
             "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
+            "title": "Victoria Wilson",
+            "subtitle": "",
+            "text": "<p>Love stocking up on the mandarin & sea salt during their pop-ups!<\/p>"
           }
         },
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-2": {
@@ -629,12 +678,12 @@
         "image_ratio": "circle",
         "image_width": 30,
         "image_alignment": "center",
-        "columns_desktop": 2,
+        "columns_desktop": 1,
         "column_alignment": "center",
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "padding_top": 64,
+        "padding_bottom": 64
       }
     },
     "d55fe8da-09b5-45ca-a9fe-2303335b265f": {
@@ -681,14 +730,14 @@
         "template--17992006074677__330de4cb-211a-4876-bdfd-4827b7041e48-1676347064c4a27249-0": {
           "type": "heading",
           "settings": {
-            "heading": "SUBSCRIBE",
+            "heading": "Join Our Community!",
             "heading_size": "h1"
           }
         },
         "template--17992006074677__330de4cb-211a-4876-bdfd-4827b7041e48-1676347064c4a27249-1": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+            "text": "<p>Be the first to know about new collections, exclusive offers and events.<\/p>"
           }
         },
         "template--17992006074677__330de4cb-211a-4876-bdfd-4827b7041e48-1676347064c4a27249-2": {
@@ -721,6 +770,7 @@
     "14536ca8-86c6-483a-8c00-794fe0e2d97f",
     "8f0b4c85-768e-4291-9ccf-1690939534b5",
     "640c42c5-d9ac-402e-a3f7-b51bbbb0e04f",
+    "caa7b390-2112-4e2c-85af-ea30208cd746",
     "0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1",
     "d55fe8da-09b5-45ca-a9fe-2303335b265f",
     "330de4cb-211a-4876-bdfd-4827b7041e48"
