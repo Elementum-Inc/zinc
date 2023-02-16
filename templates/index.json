@@ -1,151 +1,262 @@
 {
   "sections": {
-    "dc33413a-3778-467e-9690-093f904ce87d": {
+    "1662998975e02c9045": {
       "type": "slideshow",
       "blocks": {
-        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-2": {
+        "92a7dd88-44be-4caf-a9f7-1b2bff547122": {
           "type": "video",
           "settings": {
-            "video_src": "https://cdn.shopify.com/videos/c/o/v/55ed2f8b740c423090e658ec7b765024.mp4",
-            "heading": "Video Slide",
+            "video_src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c028b635a8c749bb96264a7835c738a9.mp4",
+            "heading": "Set The Mood",
             "heading_size": "h1",
-            "subheading": "Tell your brand's story through images and video",
+            "subheading": "",
             "button_style": "flat",
             "button_reverse": false,
-            "primary_button_label": "Primary button",
+            "primary_button_label": "Shop Scents",
             "primary_button_url": "",
-            "secondary_button_label": "Secondary button",
+            "secondary_button_label": "Shop Accessories",
             "secondary_button_url": "",
             "box_align": "middle-center",
             "text_alignment": "center",
-            "image_overlay_opacity": 30,
             "banner_text_background": false,
-            "color_scheme": "background-2",
-            "text_alignment_mobile": "center"
+            "color_scheme": "accent-1",
+            "padding_top": 36,
+            "padding_bottom": 36
           }
         },
-        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-0": {
+        "16629989750553a9d2-0": {
           "type": "slide",
+          "disabled": true,
           "settings": {
-            "heading": "Slideshow w/ Video Capability",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
+            "heading": "Our Candles Are About Connection",
             "heading_size": "h1",
-            "subheading": "Add optional subtext here to further highlight details about your brand or featured products.",
-            "button_style": "outline",
+            "subheading": "shop our latest collection",
+            "button_style": "flat",
             "button_reverse": false,
-            "primary_button_label": "Primary button",
+            "primary_button_label": "shop now",
             "primary_button_url": "",
-            "secondary_button_label": "Secondary button",
+            "secondary_button_label": "",
             "secondary_button_url": "",
-            "box_align": "middle-center",
+            "box_align": "top-center",
             "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "banner_text_background": true,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center"
-          }
-        },
-        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-1": {
-          "type": "slide",
-          "settings": {
-            "heading": "Slideshow w/ Video Capability",
-            "heading_size": "h1",
-            "subheading": "Add optional subtext here to further highlight details about your brand or featured products.",
-            "button_style": "outline",
-            "button_reverse": false,
-            "primary_button_label": "Primary button",
-            "primary_button_url": "",
-            "secondary_button_label": "Secondary button",
-            "secondary_button_url": "",
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "banner_text_background": true,
+            "image_overlay_opacity": 20,
+            "banner_text_background": false,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
-        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-2",
-        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-0",
-        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-1"
+        "92a7dd88-44be-4caf-a9f7-1b2bff547122",
+        "16629989750553a9d2-0"
       ],
       "settings": {
-        "slide_height": "small",
+        "slide_height": "medium",
         "slider_visual": "dots",
-        "auto_rotate": true,
-        "change_slides_speed": 6250,
+        "auto_rotate": false,
+        "change_slides_speed": 7000,
         "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
     },
-    "77895afa-84f3-4649-adde-e15f071ced0f": {
-      "type": "featured-collection",
+    "multicolumn": {
+      "type": "multicolumn",
       "blocks": {
-        "template--17922962358590__77895afa-84f3-4649-adde-e15f071ced0f-1676481801b080e709-0": {
-          "type": "collection",
+        "column1": {
+          "type": "column",
           "settings": {
-            "title": "Featured Collection 1",
-            "collection": ""
+            "image": "shopify:\/\/shop_images\/IMG_6951_1.webp",
+            "image_position": "above",
+            "border-radius": 50,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
           }
         },
-        "template--17922962358590__77895afa-84f3-4649-adde-e15f071ced0f-1676481801b080e709-1": {
-          "type": "collection",
+        "column2": {
+          "type": "column",
           "settings": {
-            "title": "Featured Collection 2",
-            "collection": ""
+            "image_position": "above",
+            "border-radius": 0,
+            "title": "It's all about connection.",
+            "text": "<p>Inspired by our great-grandmothers, Magnolia and Inez, Lonéz Scents candles are made with deep love and the intention of creating a meaningful and a tranquil space. <\/p>",
+            "button_label": "Our Story",
+            "button_link": "shopify:\/\/pages\/our-story"
           }
         }
       },
       "block_order": [
-        "template--17922962358590__77895afa-84f3-4649-adde-e15f071ced0f-1676481801b080e709-0",
-        "template--17922962358590__77895afa-84f3-4649-adde-e15f071ced0f-1676481801b080e709-1"
+        "column1",
+        "column2"
       ],
       "settings": {
-        "title": "Featured Product Collections",
+        "title": "",
         "heading_size": "h1",
-        "description": "Use this section to highlight up to three specialized collections.",
+        "heading_alignment": "center",
+        "image_width": "full",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "button_label": "",
+        "button_link": "",
+        "color_scheme": "background-1",
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 0
+      }
+    },
+    "c55cc47d-986c-4af3-889e-e9ebae0d046b": {
+      "type": "film-strip",
+      "blocks": {
+        "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-0": {
+          "type": "column",
+          "settings": {
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "As Seen In...",
+            "text": ""
+          }
+        },
+        "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/png-transparent-elle-magazine-logo-instyle-times-journal-elle-magazine-logo-instyle-thumbnail_-_Edited.png",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_6.png",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "bfd89ae2-8d61-4995-84c5-eebe036f0799": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_7.png",
+            "image-padding": 0,
+            "text-padding": 30,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-0",
+        "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-1",
+        "template--15348023656587__c55cc47d-986c-4af3-889e-e9ebae0d046b-1667883148f2c96f72-2",
+        "bfd89ae2-8d61-4995-84c5-eebe036f0799"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "image_ratio": "widescreen",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "enable_desktop_slider": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_column": 46,
+        "padding_left_right": 30,
+        "padding_top": 20,
+        "padding_bottom": 40
+      }
+    },
+    "featured_collection": {
+      "type": "featured-collection",
+      "blocks": {
+        "a3e8bd03-23c8-4f47-838e-da7119c64ff9": {
+          "type": "collection",
+          "settings": {
+            "title": "Best Sellers",
+            "collection": "hue-collection"
+          }
+        },
+        "da995554-d7d9-44fd-9daf-b0a159f5c06d": {
+          "type": "collection",
+          "settings": {
+            "title": "New Arrivals",
+            "collection": "top-picks"
+          }
+        }
+      },
+      "block_order": [
+        "a3e8bd03-23c8-4f47-838e-da7119c64ff9",
+        "da995554-d7d9-44fd-9daf-b0a159f5c06d"
+      ],
+      "settings": {
+        "title": "Community Picks",
+        "heading_size": "h3",
+        "description": "",
         "description_style": "body",
         "heading_alignment": "center",
         "products_to_show": 12,
         "columns_desktop": 4,
-        "full_width": false,
+        "full_width": true,
         "show_view_all": true,
         "view_all_style": "link",
         "enable_desktop_slider": true,
         "color_scheme": "background-1",
         "use_foreground": true,
-        "card_color_scheme": "match",
+        "card_color_scheme": "default",
         "image_ratio": "square",
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_price": true,
         "show_vendor": true,
-        "show_rating": false,
+        "show_rating": true,
         "card_hover_show_info": false,
         "enable_quick_add": true,
         "columns_mobile": "1",
         "swipe_on_mobile": true,
-        "padding_top": 36,
+        "padding_top": 28,
         "padding_bottom": 36
       }
     },
-    "537bff51-0684-4d2d-8194-f7e353c3b516": {
+    "1662010765d32d438b": {
       "type": "multicolumn",
+      "disabled": true,
       "blocks": {
-        "template--17922962358590__537bff51-0684-4d2d-8194-f7e353c3b516-16764818177b5db4f0-0": {
+        "16620107657f4c8cb8-0": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/png-transparent-elle-magazine-logo-instyle-times-journal-elle-magazine-logo-instyle-thumbnail_-_Edited.png",
             "image_position": "above",
             "border-radius": 0,
-            "title": "Column",
-            "text": "<p> Optional descriptive text around your brand, collection or product. </p>",
-            "button_label": "Button label",
+            "title": "",
+            "text": "",
+            "button_label": "",
             "button_link": ""
           }
         },
-        "template--17922962358590__537bff51-0684-4d2d-8194-f7e353c3b516-16764818177b5db4f0-1": {
+        "16620107657f4c8cb8-1": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_6.png",
+            "image_position": "above",
+            "border-radius": 0,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "ba61d938-0c0f-4e23-8b91-87299607e1da": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Untitled_design_7.png",
             "image_position": "above",
             "border-radius": 0,
             "title": "",
@@ -156,18 +267,19 @@
         }
       },
       "block_order": [
-        "template--17922962358590__537bff51-0684-4d2d-8194-f7e353c3b516-16764818177b5db4f0-0",
-        "template--17922962358590__537bff51-0684-4d2d-8194-f7e353c3b516-16764818177b5db4f0-1"
+        "16620107657f4c8cb8-0",
+        "16620107657f4c8cb8-1",
+        "ba61d938-0c0f-4e23-8b91-87299607e1da"
       ],
       "settings": {
-        "title": "Multicolumn Section",
+        "title": "As Seen In",
         "heading_size": "h2",
         "heading_alignment": "center",
         "image_width": "full",
-        "image_ratio": "auto",
-        "columns_desktop": 2,
+        "image_ratio": "square",
+        "columns_desktop": 3,
         "column_alignment": "left",
-        "button_label": "Optional Button",
+        "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
         "columns_mobile": "1",
@@ -176,180 +288,298 @@
         "padding_bottom": 36
       }
     },
-    "88801c64-2da2-42ca-bf3c-b48464f8ddd7": {
-      "type": "testimonials",
+    "c6035e9d-d4b9-4a25-b55b-ef7736719929": {
+      "type": "slideshow",
       "blocks": {
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-0": {
-          "type": "column",
+        "template--17992006074677__c6035e9d-d4b9-4a25-b55b-ef7736719929-1676497356e259c734-2": {
+          "type": "video",
           "settings": {
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
-          }
-        },
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-1": {
-          "type": "column",
-          "settings": {
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
-          }
-        },
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-2": {
-          "type": "column",
-          "settings": {
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
-          }
-        },
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-3": {
-          "type": "column",
-          "settings": {
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
-          }
-        },
-        "17a49885-6c77-4c2d-94b4-f5714494fcb6": {
-          "type": "column",
-          "settings": {
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
-          }
-        },
-        "02d65ebc-47d4-4456-a439-69f706522736": {
-          "type": "column",
-          "settings": {
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
+            "video_src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e2fe95c6ce9f4f7f8d3080b7c00433d5.mp4",
+            "heading": "",
+            "heading_size": "h1",
+            "subheading": "",
+            "button_style": "shadow",
+            "button_reverse": false,
+            "primary_button_label": "Explore private candle workshops",
+            "primary_button_url": "",
+            "secondary_button_label": "",
+            "secondary_button_url": "",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "banner_text_background": false,
+            "color_scheme": "accent-1",
+            "padding_top": 36,
+            "padding_bottom": 36
           }
         }
       },
       "block_order": [
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-0",
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-1",
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-2",
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-3",
-        "17a49885-6c77-4c2d-94b4-f5714494fcb6",
-        "02d65ebc-47d4-4456-a439-69f706522736"
+        "template--17992006074677__c6035e9d-d4b9-4a25-b55b-ef7736719929-1676497356e259c734-2"
       ],
       "settings": {
-        "title": "Testimonials",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "display-style": "basic",
-        "desktop_slider": true,
-        "color_scheme": "accent-1",
-        "use_foreground": false,
-        "image_ratio": "auto",
-        "image_width": 50,
-        "image_alignment": "center",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
+        "slide_height": "medium",
+        "slider_visual": "dots",
+        "auto_rotate": false,
+        "change_slides_speed": 5000,
+        "show_text_below": false,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
-    "e3bd2b9e-a41e-4f45-b029-6ff26f784368": {
-      "type": "video",
+    "14536ca8-86c6-483a-8c00-794fe0e2d97f": {
+      "type": "collage",
+      "blocks": {
+        "4c1d2bff-f10a-45d8-9b58-07995b6bb02a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_CB95FB83E3DF-1.jpg",
+            "image_padding": false
+          }
+        },
+        "13b2009e-159f-4e99-b0ad-3f40c97e440f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
+            "image_padding": false
+          }
+        },
+        "5960151e-d491-4e9f-89c1-73c4e0797d3d": {
+          "type": "image",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/IMG_8101.jpg",
+            "image_padding": false
+          }
+        }
+      },
+      "block_order": [
+        "4c1d2bff-f10a-45d8-9b58-07995b6bb02a",
+        "13b2009e-159f-4e99-b0ad-3f40c97e440f",
+        "5960151e-d491-4e9f-89c1-73c4e0797d3d"
+      ],
       "settings": {
-        "heading": "Video",
-        "heading_size": "h1",
-        "subheading": "Tell your brand's story with a video",
-        "text_alignment": "left",
-        "button_style": "flat",
-        "button_reverse": false,
-        "primary_button_label": "Primary button",
-        "primary_button_url": "",
-        "secondary_button_label": "Secondary button",
-        "secondary_button_url": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
+        "heading": "",
+        "heading_size": "h2",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
         "color_scheme": "background-1",
         "padding_top": 36,
         "padding_bottom": 36
       }
     },
-    "c170f63e-0402-4722-a40e-15d3ec7a333b": {
-      "type": "collapsible-content",
+    "0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1": {
+      "type": "testimonials",
       "blocks": {
-        "template--17922962358590__c170f63e-0402-4722-a40e-15d3ec7a333b-1676481835efc419c4-0": {
+        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
+            "border-radius": 0,
+            "title": "Author",
+            "subtitle": "Subtitle",
+            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
+          }
+        },
+        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
+            "border-radius": 0,
+            "title": "Author",
+            "subtitle": "Subtitle",
+            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
+          }
+        },
+        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
+            "border-radius": 0,
+            "title": "Author",
+            "subtitle": "Subtitle",
+            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
+          }
+        },
+        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
+            "border-radius": 0,
+            "title": "Author",
+            "subtitle": "Subtitle",
+            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-0",
+        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-1",
+        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-2",
+        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-3"
+      ],
+      "settings": {
+        "title": "What Our Community Is Saying",
+        "heading_size": "h2",
+        "heading_alignment": "center",
+        "display-style": "blocks",
+        "desktop_slider": true,
+        "color_scheme": "background-1",
+        "use_foreground": false,
+        "image_ratio": "circle",
+        "image_width": 30,
+        "image_alignment": "center",
+        "columns_desktop": 2,
+        "column_alignment": "center",
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "640c42c5-d9ac-402e-a3f7-b51bbbb0e04f": {
+      "type": "collapsible-content",
+      "disabled": true,
+      "blocks": {
+        "template--15348023656587__640c42c5-d9ac-402e-a3f7-b51bbbb0e04f-166810135047762c57-0": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
+            "heading": "What is it?",
             "icon": "question_mark",
-            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.</p>",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
             "page": ""
           }
         },
-        "template--17922962358590__c170f63e-0402-4722-a40e-15d3ec7a333b-1676481835efc419c4-1": {
+        "template--15348023656587__640c42c5-d9ac-402e-a3f7-b51bbbb0e04f-166810135047762c57-1": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "question_mark",
-            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.</p>",
+            "heading": "How does it work?",
+            "icon": "clipboard",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
             "page": ""
           }
         },
-        "template--17922962358590__c170f63e-0402-4722-a40e-15d3ec7a333b-1676481835efc419c4-2": {
+        "8e14892e-42f4-4fd0-9224-a4b7066db458": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "question_mark",
-            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.</p>",
+            "heading": "Where do you ship?",
+            "icon": "truck",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
             "page": ""
           }
         },
-        "template--17922962358590__c170f63e-0402-4722-a40e-15d3ec7a333b-1676481835efc419c4-3": {
+        "template--15348023656587__640c42c5-d9ac-402e-a3f7-b51bbbb0e04f-166810135047762c57-2": {
           "type": "collapsible_row",
           "settings": {
-            "heading": "Collapsible row",
-            "icon": "question_mark",
-            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.</p>",
+            "heading": "Do you have stores?",
+            "icon": "map_pin",
+            "row_content": "<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Elit sed in ornare id at vel. Lacus hendrerit ac sem tellus pellentesque.<\/p>",
             "page": ""
           }
         }
       },
       "block_order": [
-        "template--17922962358590__c170f63e-0402-4722-a40e-15d3ec7a333b-1676481835efc419c4-0",
-        "template--17922962358590__c170f63e-0402-4722-a40e-15d3ec7a333b-1676481835efc419c4-1",
-        "template--17922962358590__c170f63e-0402-4722-a40e-15d3ec7a333b-1676481835efc419c4-2",
-        "template--17922962358590__c170f63e-0402-4722-a40e-15d3ec7a333b-1676481835efc419c4-3"
+        "template--15348023656587__640c42c5-d9ac-402e-a3f7-b51bbbb0e04f-166810135047762c57-0",
+        "template--15348023656587__640c42c5-d9ac-402e-a3f7-b51bbbb0e04f-166810135047762c57-1",
+        "8e14892e-42f4-4fd0-9224-a4b7066db458",
+        "template--15348023656587__640c42c5-d9ac-402e-a3f7-b51bbbb0e04f-166810135047762c57-2"
       ],
       "settings": {
-        "heading": "Collapsible content",
+        "heading": "FAQS",
         "caption": "",
         "heading_size": "h1",
         "heading_alignment": "center",
         "layout": "row",
-        "color_scheme": "background-2",
-        "container_color_scheme": "background-1",
+        "color_scheme": "background-1",
+        "container_color_scheme": "background-2",
         "open_first_collapsible_row": false,
-        "image_ratio": "auto",
+        "image_ratio": "adapt",
         "desktop_layout": "image_second",
         "padding_top": 36,
         "padding_bottom": 36
       }
+    },
+    "d55fe8da-09b5-45ca-a9fe-2303335b265f": {
+      "type": "modal",
+      "disabled": true,
+      "blocks": {
+        "be28b901-b448-4781-9090-96cd86c7c059": {
+          "type": "modal_title",
+          "settings": {
+            "modal_content_title": "Join our mailing list"
+          }
+        },
+        "6d2da7b4-2909-4132-a461-ac743f56138c": {
+          "type": "modal_subtitle",
+          "settings": {
+            "modal_content_subtitle": "Sign up for updates"
+          }
+        },
+        "675f7ffc-ae2a-4969-8efb-229879679287": {
+          "type": "email_form",
+          "settings": {
+            "email_form_code": "",
+            "email_form_input_placeholder": "email address",
+            "email_form_button_text": "Sign Up",
+            "email_form_success_title": "Thank you for signing up!",
+            "email_form_success_message": "<p>You've been subscribed to our newsletter and will receive updates from us shortly!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "be28b901-b448-4781-9090-96cd86c7c059",
+        "6d2da7b4-2909-4132-a461-ac743f56138c",
+        "675f7ffc-ae2a-4969-8efb-229879679287"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "float_modal_content": true,
+        "overlay": 0
+      }
+    },
+    "330de4cb-211a-4876-bdfd-4827b7041e48": {
+      "type": "newsletter",
+      "blocks": {
+        "template--17992006074677__330de4cb-211a-4876-bdfd-4827b7041e48-1676347064c4a27249-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "SUBSCRIBE",
+            "heading_size": "h1"
+          }
+        },
+        "template--17992006074677__330de4cb-211a-4876-bdfd-4827b7041e48-1676347064c4a27249-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to know about new collections and exclusive offers.<\/p>"
+          }
+        },
+        "template--17992006074677__330de4cb-211a-4876-bdfd-4827b7041e48-1676347064c4a27249-2": {
+          "type": "email_form",
+          "settings": {
+          }
+        }
+      },
+      "block_order": [
+        "template--17992006074677__330de4cb-211a-4876-bdfd-4827b7041e48-1676347064c4a27249-0",
+        "template--17992006074677__330de4cb-211a-4876-bdfd-4827b7041e48-1676347064c4a27249-1",
+        "template--17992006074677__330de4cb-211a-4876-bdfd-4827b7041e48-1676347064c4a27249-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 52,
+        "padding_bottom": 52
+      }
     }
   },
   "order": [
-    "dc33413a-3778-467e-9690-093f904ce87d",
-    "77895afa-84f3-4649-adde-e15f071ced0f",
-    "537bff51-0684-4d2d-8194-f7e353c3b516",
-    "88801c64-2da2-42ca-bf3c-b48464f8ddd7",
-    "e3bd2b9e-a41e-4f45-b029-6ff26f784368",
-    "c170f63e-0402-4722-a40e-15d3ec7a333b"
+    "1662998975e02c9045",
+    "multicolumn",
+    "c55cc47d-986c-4af3-889e-e9ebae0d046b",
+    "featured_collection",
+    "1662010765d32d438b",
+    "c6035e9d-d4b9-4a25-b55b-ef7736719929",
+    "14536ca8-86c6-483a-8c00-794fe0e2d97f",
+    "0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1",
+    "640c42c5-d9ac-402e-a3f7-b51bbbb0e04f",
+    "d55fe8da-09b5-45ca-a9fe-2303335b265f",
+    "330de4cb-211a-4876-bdfd-4827b7041e48"
   ]
 }
