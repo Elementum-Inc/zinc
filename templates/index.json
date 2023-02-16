@@ -300,7 +300,7 @@
           "settings": {
             "video_src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e2fe95c6ce9f4f7f8d3080b7c00433d5.mp4",
             "heading": "PRIVATE CANDLE WORKSHOPS",
-            "heading_size": "h1",
+            "heading_size": "h0",
             "subheading": "",
             "button_style": "flat",
             "button_reverse": false,
