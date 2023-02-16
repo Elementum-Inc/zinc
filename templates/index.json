@@ -183,6 +183,7 @@
         "16620107657f4c8cb8-0": {
           "type": "column",
           "settings": {
+            "column_alignment": "left",
             "image_position": "above",
             "border-radius": 0,
             "title": "",
@@ -215,7 +216,7 @@
         "image_ratio": "square",
         "columns_desktop": 2,
         "column_alignment": "left",
-        "button_label": "",
+        "button_label": "Optional Button",
         "button_link": "",
         "color_scheme": "background-1",
         "columns_mobile": "1",
