@@ -178,6 +178,7 @@
     },
     "featured_collection": {
       "type": "featured-collection",
+      "disabled": true,
       "blocks": {
         "a3e8bd03-23c8-4f47-838e-da7119c64ff9": {
           "type": "collection",
@@ -298,20 +299,20 @@
           "type": "video",
           "settings": {
             "video_src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e2fe95c6ce9f4f7f8d3080b7c00433d5.mp4",
-            "heading": "",
-            "heading_size": "h1",
+            "heading": "PRIVATE CANDLE WORKSHOPS",
+            "heading_size": "h0",
             "subheading": "",
-            "button_style": "shadow",
+            "button_style": "flat",
             "button_reverse": false,
-            "primary_button_label": "Explore private candle workshops",
+            "primary_button_label": "DISCOVER",
             "primary_button_url": "",
             "secondary_button_label": "",
             "secondary_button_url": "",
-            "box_align": "middle-center",
-            "text_alignment": "center",
+            "box_align": "bottom-left",
+            "text_alignment": "left",
             "image_overlay_opacity": 30,
             "banner_text_background": false,
-            "color_scheme": "accent-1",
+            "color_scheme": "background-2",
             "text_alignment_mobile": "center"
           }
         }
@@ -328,8 +329,82 @@
         "accessibility_info": "Slideshow about our brand"
       }
     },
+    "41d505f7-1dbd-4c4c-8960-61f14f2c634c": {
+      "type": "featured-product",
+      "blocks": {
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-0": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.vendor }}",
+            "text_style": "uppercase"
+          }
+        },
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-1": {
+          "type": "title",
+          "settings": {
+            "heading_size": "h1"
+          }
+        },
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-2": {
+          "type": "text",
+          "settings": {
+            "text": "{{ section.settings.product.metafields.descriptors.subtitle.value }}",
+            "text_style": "subtitle"
+          }
+        },
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-3": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-4": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button"
+          }
+        },
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-5": {
+          "type": "quantity_selector",
+          "disabled": true,
+          "settings": {
+          }
+        },
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-6": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": true
+          }
+        },
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-7": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        }
+      },
+      "block_order": [
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-0",
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-1",
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-2",
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-3",
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-4",
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-5",
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-6",
+        "template--18027708088629__41d505f7-1dbd-4c4c-8960-61f14f2c634c-167656923368a3e128-7"
+      ],
+      "settings": {
+        "product": "incense-ylang-ylang",
+        "color_scheme": "background-1",
+        "secondary_background": true,
+        "hide_variants": false,
+        "enable_video_looping": false,
+        "padding_top": 68,
+        "padding_bottom": 12
+      }
+    },
     "14536ca8-86c6-483a-8c00-794fe0e2d97f": {
       "type": "collage",
+      "disabled": true,
       "blocks": {
         "4c1d2bff-f10a-45d8-9b58-07995b6bb02a": {
           "type": "image",
@@ -579,6 +654,7 @@
     "featured_collection",
     "1662010765d32d438b",
     "c6035e9d-d4b9-4a25-b55b-ef7736719929",
+    "41d505f7-1dbd-4c4c-8960-61f14f2c634c",
     "14536ca8-86c6-483a-8c00-794fe0e2d97f",
     "0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1",
     "640c42c5-d9ac-402e-a3f7-b51bbbb0e04f",
