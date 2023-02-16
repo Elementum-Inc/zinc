@@ -554,13 +554,13 @@
         "template--15348023656587__640c42c5-d9ac-402e-a3f7-b51bbbb0e04f-166810135047762c57-2"
       ],
       "settings": {
-        "heading": "FAQS",
-        "caption": "",
-        "heading_size": "h1",
+        "heading": "Commonly Asked Question",
+        "caption": "You Asked. We Answered.",
+        "heading_size": "h2",
         "heading_alignment": "center",
-        "layout": "row",
+        "layout": "section",
         "color_scheme": "background-1",
-        "container_color_scheme": "background-2",
+        "container_color_scheme": "background-1",
         "open_first_collapsible_row": false,
         "image_ratio": "adapt",
         "desktop_layout": "image_second",
