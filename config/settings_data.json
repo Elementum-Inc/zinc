@@ -234,12 +234,8 @@
           "6d9561d4-d380-41ef-a4ad-695b92faa9a4": {
             "type": "payments",
             "settings": {
-              "enable_country_selector": true
-            }
-          },
-          "48a3efe9-3104-403c-8eb5-a867ecb35aa9": {
-            "type": "newsletter",
-            "settings": {
+              "enable_country_selector": true,
+              "payment_enable": true
             }
           }
         },
@@ -247,8 +243,7 @@
           "footer-0",
           "footer-1",
           "footer-2",
-          "6d9561d4-d380-41ef-a4ad-695b92faa9a4",
-          "48a3efe9-3104-403c-8eb5-a867ecb35aa9"
+          "6d9561d4-d380-41ef-a4ad-695b92faa9a4"
         ],
         "settings": {
           "footer_type": "bold",
@@ -257,13 +252,12 @@
           "large_logo": "shopify:\/\/shop_images\/Untitled_design_4.png",
           "large_logo_width": 200,
           "newsletter_enable": true,
-          "newsletter_heading": "Subscribe to our emails",
           "show_social": true,
           "show_social_icon": true,
           "show_social_text": false,
           "social_location": "above",
           "enable_language_selector": true,
-          "margin_top": 32,
+          "margin_top": 0,
           "padding_top": 16,
           "padding_bottom": 36,
           "show_poweredbyshopify": false,
