@@ -104,6 +104,10 @@
     @apply ml-auto;
   }
 
+  .lower-social {
+    @apply my-auto mx-0;
+  }
+
   .lower-social .list-social__link {
     @apply p-2 font-base;
   }
@@ -128,6 +132,32 @@
       leading-none
       tracking-none
       text-center;
+  }
+
+  .footer__content-bottom-wrapper {
+    border-top: 1px solid;
+    @apply border-scheme-accent
+    flex
+    w-full
+    justify-around;
+  }
+
+  @media screen and (max-width: 767px) {
+    .footer__content-bottom {
+      flex-wrap: wrap;
+      row-gap: 1.5rem;
+    }
+
+    .footer__content-bottom-wrapper {
+      flex-wrap: wrap;
+      flex-direction: column-reverse;
+      row-gap: 1.5rem;
+      padding: 0 2rem;
+    }
+
+    .localization-form:only-child {
+      padding: 0;
+    }
   }
 }
 
