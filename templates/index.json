@@ -18,10 +18,10 @@
             "secondary_button_url": "",
             "box_align": "middle-center",
             "text_alignment": "center",
+            "image_overlay_opacity": 30,
             "banner_text_background": false,
             "color_scheme": "accent-1",
-            "padding_top": 36,
-            "padding_bottom": 36
+            "text_alignment_mobile": "center"
           }
         },
         "16629989750553a9d2-0": {
@@ -66,6 +66,7 @@
         "column1": {
           "type": "column",
           "settings": {
+            "column_alignment": "left",
             "image": "shopify:\/\/shop_images\/IMG_6951_1.webp",
             "image_position": "above",
             "border-radius": 50,
@@ -78,6 +79,7 @@
         "column2": {
           "type": "column",
           "settings": {
+            "column_alignment": "left",
             "image_position": "above",
             "border-radius": 0,
             "title": "It's all about connection.",
@@ -98,7 +100,6 @@
         "image_width": "full",
         "image_ratio": "square",
         "columns_desktop": 2,
-        "column_alignment": "center",
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
@@ -125,7 +126,7 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/png-transparent-elle-magazine-logo-instyle-times-journal-elle-magazine-logo-instyle-thumbnail_-_Edited.png",
-            "image-padding": 0,
+            "image-padding": 59,
             "text-padding": 35,
             "column_orientation": "text-below",
             "title": "",
@@ -147,7 +148,7 @@
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/Untitled_design_7.png",
-            "image-padding": 0,
+            "image-padding": 43,
             "text-padding": 30,
             "column_orientation": "text-below",
             "title": "",
@@ -232,6 +233,7 @@
         "16620107657f4c8cb8-0": {
           "type": "column",
           "settings": {
+            "column_alignment": "left",
             "image": "shopify:\/\/shop_images\/png-transparent-elle-magazine-logo-instyle-times-journal-elle-magazine-logo-instyle-thumbnail_-_Edited.png",
             "image_position": "above",
             "border-radius": 0,
@@ -244,6 +246,7 @@
         "16620107657f4c8cb8-1": {
           "type": "column",
           "settings": {
+            "column_alignment": "left",
             "image": "shopify:\/\/shop_images\/Untitled_design_6.png",
             "image_position": "above",
             "border-radius": 0,
@@ -256,6 +259,7 @@
         "ba61d938-0c0f-4e23-8b91-87299607e1da": {
           "type": "column",
           "settings": {
+            "column_alignment": "left",
             "image": "shopify:\/\/shop_images\/Untitled_design_7.png",
             "image_position": "above",
             "border-radius": 0,
@@ -278,7 +282,6 @@
         "image_width": "full",
         "image_ratio": "square",
         "columns_desktop": 3,
-        "column_alignment": "left",
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
@@ -306,10 +309,10 @@
             "secondary_button_url": "",
             "box_align": "middle-center",
             "text_alignment": "center",
+            "image_overlay_opacity": 30,
             "banner_text_background": false,
             "color_scheme": "accent-1",
-            "padding_top": 36,
-            "padding_bottom": 36
+            "text_alignment_mobile": "center"
           }
         }
       },
