@@ -3492,6 +3492,9 @@ p.small, .text-body.small {
   justify-content: space-around;
   width: 100%;
 }
+.footer .footer__content-bottom-wrapper > *:only-child {
+  width: 100%;
+}
 @media screen and (max-width: 767px) {
   .footer .footer__content-bottom {
     flex-wrap: wrap;
