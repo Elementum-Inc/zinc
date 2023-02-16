@@ -575,7 +575,6 @@
     },
     "d55fe8da-09b5-45ca-a9fe-2303335b265f": {
       "type": "modal",
-      "disabled": true,
       "blocks": {
         "be28b901-b448-4781-9090-96cd86c7c059": {
           "type": "modal_title",
@@ -639,7 +638,7 @@
         "template--17992006074677__330de4cb-211a-4876-bdfd-4827b7041e48-1676347064c4a27249-2"
       ],
       "settings": {
-        "color_scheme": "background-1",
+        "color_scheme": "accent-1",
         "full_width": true,
         "padding_top": 52,
         "padding_bottom": 52
