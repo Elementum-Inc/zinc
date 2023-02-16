@@ -87,7 +87,7 @@
                     </div>
                   </div>
                 {%- endif -%}
-                {%- if block.settings.title != blank or block.settings.title != blank or block.settings.button_label != blank -%}
+                {%- if block.settings.title != blank or block.settings.text != blank or block.settings.button_label != blank -%}
                   <div class="multicolumn-card__info">
                     {%- if block.settings.title != blank -%}
                       <h3>{{ block.settings.title | escape }}</h3>
