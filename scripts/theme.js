@@ -101,9 +101,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (document.querySelector('.product__media-gallery')) {
     var gallery = new Splide(document.querySelector('[id*=GalleryViewer]'));
-    var thumbnails = new Splide(document.querySelector('[id*=GalleryThumbnails]'));
+    var thumbnailsEl = document.querySelector('[id*=GalleryThumbnails]');
+    
+    if (thumbnailsEl != null || undefined) {
+      var thumbnails = new Splide(thumbnailsEl);
 
-    if (thumbnails != null || undefined) {
       gallery.sync(thumbnails);
       gallery.mount();
       thumbnails.mount();

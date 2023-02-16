@@ -4,7 +4,7 @@
 }
 
 .cart__footer {
-  border-color: var(--color-scheme-fg);
+  border-color: rgb(var(--color-scheme-accentRGB) / .2);
   border-top-width: 1px;
 }
 

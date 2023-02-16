@@ -367,7 +367,7 @@
 }
 
 .article-template__social-sharing {
-  background-color: rgb(var(--zinc-color-foreground));
+  background-color: rgb(var(--color-background-2) / .2);
   border-color: rgb(var(--color-background-2));
   border-width: 1px;
   display: -webkit-box;

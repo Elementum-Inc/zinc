@@ -1,7 +1,7 @@
 @media (min-width: 768px) {
   .cart-items thead {
     border-collapse: collapse;
-    border-color: var(--color-scheme-fg);
+    border-color: rgb(var(--color-scheme-accentRGB) / .2);
     border-bottom-width: 1px;
   }
 

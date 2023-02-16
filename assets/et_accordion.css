@@ -16,7 +16,7 @@
 }
 
 .accordion summary {
-  border-color: var(--color-scheme-fg);
+  border-color: rgb(var(--color-scheme-accentRGB) / .2);
   border-top-width: 2px;
   display: -webkit-box;
   display: -ms-flexbox;

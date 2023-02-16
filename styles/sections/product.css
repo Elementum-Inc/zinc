@@ -100,7 +100,7 @@
 
       > .btn__label {
         @apply rounded-pill
-          px-1
+          px-4
           py-2;
         min-height: 2.75rem;
         min-width: 2.75rem;
@@ -348,6 +348,10 @@
     & .thumbnail-slider {
       @apply md:p-0;
       min-width: calc(var(--thumbnail-width) + 2rem);
+
+      & .splide__slide {
+        @apply mx-0;
+      }
     }
 
     & .thumbnail-list {
