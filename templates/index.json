@@ -300,7 +300,7 @@
           "settings": {
             "video_src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e2fe95c6ce9f4f7f8d3080b7c00433d5.mp4",
             "heading": "PRIVATE CANDLE WORKSHOPS",
-            "heading_size": "h0",
+            "heading_size": "h1",
             "subheading": "",
             "button_style": "flat",
             "button_reverse": false,
@@ -325,7 +325,7 @@
         "slider_visual": "dots",
         "auto_rotate": false,
         "change_slides_speed": 5000,
-        "show_text_below": true,
+        "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
     },
