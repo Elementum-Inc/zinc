@@ -58,15 +58,26 @@
 
     & .icon-caret {
       position: absolute;
-      content: '';
-      height: .6rem;
-      top: calc(50% - .2rem);
+      content: "";
+      height: 0.6rem;
+      top: calc(50% - 0.2rem);
       left: 0;
     }
   }
 
   #FooterCountryLabel {
     @apply mb-0;
+  }
+
+  #FooterLanguageLabel {
+    @apply mt-3
+      mb-0;
+  }
+
+  #FooterLanguageButton {
+    border: 1px solid;
+    @apply text-scheme-accent
+      border-scheme-accent;
   }
 
   /* .basic #large-footer-logo {
