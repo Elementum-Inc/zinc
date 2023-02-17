@@ -598,35 +598,11 @@
             "subtitle": "",
             "text": "<p>Love stocking up on the mandarin & sea salt during their pop-ups!<\/p>"
           }
-        },
-        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-2": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
-          }
-        },
-        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-3": {
-          "type": "column",
-          "disabled": true,
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>This is the most amazing product ever! Everyone should buy it immediately!<\/p>"
-          }
         }
       },
       "block_order": [
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-0",
-        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-1",
-        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-2",
-        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-3"
+        "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-1"
       ],
       "settings": {
         "title": "What Our Community Is Saying",
@@ -645,44 +621,6 @@
         "swipe_on_mobile": true,
         "padding_top": 64,
         "padding_bottom": 64
-      }
-    },
-    "d55fe8da-09b5-45ca-a9fe-2303335b265f": {
-      "type": "modal",
-      "disabled": true,
-      "blocks": {
-        "be28b901-b448-4781-9090-96cd86c7c059": {
-          "type": "modal_title",
-          "settings": {
-            "modal_content_title": "Join our mailing list"
-          }
-        },
-        "6d2da7b4-2909-4132-a461-ac743f56138c": {
-          "type": "modal_subtitle",
-          "settings": {
-            "modal_content_subtitle": "Sign up for updates"
-          }
-        },
-        "675f7ffc-ae2a-4969-8efb-229879679287": {
-          "type": "email_form",
-          "settings": {
-            "email_form_code": "",
-            "email_form_input_placeholder": "email address",
-            "email_form_button_text": "Sign Up",
-            "email_form_success_title": "Thank you for signing up!",
-            "email_form_success_message": "<p>You've been subscribed to our newsletter and will receive updates from us shortly!<\/p>"
-          }
-        }
-      },
-      "block_order": [
-        "be28b901-b448-4781-9090-96cd86c7c059",
-        "6d2da7b4-2909-4132-a461-ac743f56138c",
-        "675f7ffc-ae2a-4969-8efb-229879679287"
-      ],
-      "settings": {
-        "color_scheme": "background-1",
-        "float_modal_content": true,
-        "overlay": 0
       }
     },
     "2189fd17-e1c7-4687-97eb-6a16dfdc24a1": {
@@ -833,6 +771,44 @@
         "padding_top": 52,
         "padding_bottom": 52
       }
+    },
+    "d55fe8da-09b5-45ca-a9fe-2303335b265f": {
+      "type": "modal",
+      "disabled": true,
+      "blocks": {
+        "be28b901-b448-4781-9090-96cd86c7c059": {
+          "type": "modal_title",
+          "settings": {
+            "modal_content_title": "Let's Keep In Touch!"
+          }
+        },
+        "6d2da7b4-2909-4132-a461-ac743f56138c": {
+          "type": "modal_subtitle",
+          "settings": {
+            "modal_content_subtitle": "Be the first to know about new collections, exclusive offers and events."
+          }
+        },
+        "675f7ffc-ae2a-4969-8efb-229879679287": {
+          "type": "email_form",
+          "settings": {
+            "email_form_code": "",
+            "email_form_input_placeholder": "email address",
+            "email_form_button_text": "Sign Up",
+            "email_form_success_title": "Thank you for signing up!",
+            "email_form_success_message": "<p>You've been subscribed to our newsletter and will receive updates from us shortly!<\/p>"
+          }
+        }
+      },
+      "block_order": [
+        "be28b901-b448-4781-9090-96cd86c7c059",
+        "6d2da7b4-2909-4132-a461-ac743f56138c",
+        "675f7ffc-ae2a-4969-8efb-229879679287"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "float_modal_content": true,
+        "overlay": 0
+      }
     }
   },
   "order": [
@@ -847,9 +823,9 @@
     "640c42c5-d9ac-402e-a3f7-b51bbbb0e04f",
     "caa7b390-2112-4e2c-85af-ea30208cd746",
     "0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1",
-    "d55fe8da-09b5-45ca-a9fe-2303335b265f",
     "2189fd17-e1c7-4687-97eb-6a16dfdc24a1",
     "2d5a16f4-5030-48ae-bdff-30f8c33c416e",
-    "330de4cb-211a-4876-bdfd-4827b7041e48"
+    "330de4cb-211a-4876-bdfd-4827b7041e48",
+    "d55fe8da-09b5-45ca-a9fe-2303335b265f"
   ]
 }
