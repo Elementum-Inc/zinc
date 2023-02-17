@@ -134,7 +134,7 @@
           h-1
           w-full
           bg-scheme-fg;
-        content: "";
+        content: '';
       }
     }
 
@@ -221,11 +221,11 @@
 .slider-counter {
   display: flex;
   justify-content: center;
-  min-width: 0.1rem;
+  min-width: .1rem;
 
   &--arrows {
     visibility: hidden;
-    min-width: 0.1rem;
+    min-width: .1rem;
   }
 }
 
@@ -233,6 +233,7 @@
   .mobile-text-large {
     font-size: 4rem !important;
   }
+
   .mobile-text-medium {
     font-size: 3rem !important;
   }

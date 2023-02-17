@@ -32,6 +32,14 @@
   }
 }
 
+.blog .card--text .card__inner {
+  display: none;
+}
+
+.blog .card--text .card__inner + .card__content .card__heading, .blog .card--text .card__inner + .card__content .article-card__heading {
+  display: block;
+}
+
 @media (max-width: 1023.9px) {
   .main-blog .title--primary {
     margin-bottom: 2rem;
