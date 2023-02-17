@@ -107,9 +107,9 @@
           @apply <md:(flex-shrink basis-1/3);
         }
 
-        & .banner__text {
+        /* & .banner__text {
           @apply <md:flex-grow;
-        }
+        } */
 
         & .banner__box {
           @apply <md:p-8;
