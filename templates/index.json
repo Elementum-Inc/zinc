@@ -7,7 +7,8 @@
           "type": "slide",
           "settings": {
             "heading": "Slideshow w\/ Video Capability",
-            "heading_size": "h1",
+            "desktop_heading_size": "h1",
+            "mobile_heading_size": "mobile-text-small",
             "subheading": "Add optional subtext here.",
             "button_style": "flat",
             "button_reverse": false,
@@ -27,7 +28,8 @@
           "type": "slide",
           "settings": {
             "heading": "Are you ready for winter?",
-            "heading_size": "h1",
+            "desktop_heading_size": "h1",
+            "mobile_heading_size": "mobile-text-medium",
             "subheading": "Better get some gorgeous new winter clothes!",
             "button_style": "flat",
             "button_reverse": false,
@@ -48,7 +50,8 @@
           "settings": {
             "video_src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/2c63748001054a23bc291ee82a7f23cb.mp4",
             "heading": "This is the Video",
-            "heading_size": "h1",
+            "desktop_heading_size": "h1",
+            "mobile_heading_size": "mobile-text-medium",
             "subheading": "Tell your brand's story through video",
             "button_style": "flat",
             "button_reverse": false,
@@ -135,6 +138,7 @@
         "column2": {
           "type": "column",
           "settings": {
+            "column_alignment": "left",
             "image_position": "above",
             "border-radius": 0,
             "title": "",
@@ -146,6 +150,7 @@
         "column1": {
           "type": "column",
           "settings": {
+            "column_alignment": "left",
             "image": "shopify:\/\/shop_images\/FullSizeRender_25c40b35-d0a4-40d8-9b5a-673d98d2fbe8.jpg",
             "image_position": "above",
             "border-radius": 0,
@@ -167,7 +172,6 @@
         "image_width": "full",
         "image_ratio": "square",
         "columns_desktop": 2,
-        "column_alignment": "left",
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
@@ -195,6 +199,7 @@
         "16620107657f4c8cb8-1": {
           "type": "column",
           "settings": {
+            "column_alignment": "left",
             "image_position": "above",
             "border-radius": 0,
             "title": "THE BEST FALL FLAVORS",
@@ -215,7 +220,6 @@
         "image_width": "full",
         "image_ratio": "square",
         "columns_desktop": 2,
-        "column_alignment": "left",
         "button_label": "Optional Button",
         "button_link": "",
         "color_scheme": "background-1",
