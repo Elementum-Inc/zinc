@@ -774,7 +774,6 @@
     },
     "d55fe8da-09b5-45ca-a9fe-2303335b265f": {
       "type": "modal",
-      "disabled": true,
       "blocks": {
         "be28b901-b448-4781-9090-96cd86c7c059": {
           "type": "modal_title",
@@ -793,7 +792,7 @@
           "settings": {
             "email_form_code": "",
             "email_form_input_placeholder": "email address",
-            "email_form_button_text": "Sign Up",
+            "email_form_button_text": "Sign Me Up",
             "email_form_success_title": "Thank you for signing up!",
             "email_form_success_message": "<p>You've been subscribed to our newsletter and will receive updates from us shortly!<\/p>"
           }
