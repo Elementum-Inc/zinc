@@ -5,10 +5,10 @@
       "settings": {
         "blog_description": "{{ blog.metafields.blog.description }}",
         "posts_per_page": 12,
-        "layout": "grid",
+        "layout": "list",
         "columns_desktop": "3-col",
         "desktop_image_side": "right",
-        "desktop_image_align": "top",
+        "desktop_image_align": "middle",
         "show_image": true,
         "show_date": true,
         "show_author": true,
