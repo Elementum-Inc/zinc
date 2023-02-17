@@ -72,7 +72,7 @@
             "text-padding": 35,
             "column_background_color": "#ffffff",
             "column_font_color": "#000000",
-            "column_orientation": "text-below",
+            "column_orientation": "text-above",
             "heading_text_style": "uppercase",
             "content_text_size": "h4",
             "title": "",
@@ -90,6 +90,7 @@
         "ef956ce4-482f-46e7-9d0b-b6193f1480dc": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
             "image-padding": 0,
             "text-padding": 35,
             "column_background_color": "#FFFFFF",
@@ -97,14 +98,14 @@
             "column_orientation": "text-below",
             "heading_text_style": "uppercase",
             "content_text_size": "h4",
-            "title": "",
-            "text": "",
-            "title-2": "E-mail",
-            "text-2": "info@loremipsum.com",
+            "title": "Where to find us",
+            "text": "<p>Need to reach us directicly?<\/p>",
+            "title-2": "email",
+            "text-2": "info@lonezscents.com",
             "title-3": "Phone",
             "text-3": "+1 555 505 5050",
             "title-4": "Address",
-            "text-4": "725 55th Street, New York, NY, 55555",
+            "text-4": "Houston, TX",
             "link_label": "",
             "link": ""
           }
