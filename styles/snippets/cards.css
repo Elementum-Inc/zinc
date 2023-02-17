@@ -57,12 +57,12 @@
 
       &::before {
         @apply block absolute top-0 left-0 z-0 h-full w-full bg-scheme-bg transform duration-375 opacity-0;
-        content: '';
+        content: "";
       }
 
       &::after {
         @apply block absolute top-0 bottom-0 left-0 right-0 h-full w-full z-1;
-        content: '';
+        content: "";
       }
     }
 
@@ -181,7 +181,7 @@
     a.card__heading {
       &::after {
         @apply block absolute top-0 bottom-0 left-0 right-0 h-full w-full z-1;
-        content: '';
+        content: "";
       }
     }
   }
@@ -327,7 +327,7 @@
 
     & > span:not(:last-child)::after {
       @apply inline-block mx-2 text-lg font-bold align-sub opacity-25;
-      content: '/';
+      content: "/";
     }
   }
 

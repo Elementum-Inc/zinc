@@ -55,11 +55,11 @@
   endif
 -%}
 <div class="blog section-{{ section.id }}{% if section.settings.use_foreground %} section--foreground{% endif %} color-scheme color-scheme--{{ section.settings.color_scheme }}">
-  <div class="container{% if section.settings.title == blank %} no-heading{% endif %}">
-    {%- unless section.settings.title == blank -%}
-      <div class="blog__title-wrapper">
-        <h2 id="SectionHeading-{{ section.id }}" class="blog__title h1">{{ section.settings.title | escape }}</h2>
-  
+  <div class="container">
+      <div class="blog__title-wrapper {{ section.settings.heading_alignment }}">
+        {%- if section.settings.title != blank -%}
+          <h2 id="SectionHeading-{{ section.id }}" class="blog__title h1">{{ section.settings.title | escape }}</h2>
+        {%- endif -%}
         {%- if featured_blog != blank and section.settings.show_view_all and section.settings.post_limit < featured_blog.articles_count -%}
           <a href="{{ featured_blog.url }}"
             class="link underlined-link large-up-hide"
@@ -76,7 +76,6 @@
           <hr class="border-0 border-t-2 border-solid border-scheme-accent" />
         {% endif %}
       </div>
-    {%- endunless -%}
     {% if section.settings.tag_links %}
       {% liquid
         assign blogTags = ''
@@ -203,6 +202,26 @@
       "id": "subheading",
       "default": "An optional subheading for describing the types of blog posts that are listed.",
       "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Text alignment"
     },
     {
       "type": "blog",
