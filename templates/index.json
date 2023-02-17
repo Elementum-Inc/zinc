@@ -402,47 +402,6 @@
         "padding_bottom": 12
       }
     },
-    "14536ca8-86c6-483a-8c00-794fe0e2d97f": {
-      "type": "collage",
-      "disabled": true,
-      "blocks": {
-        "4c1d2bff-f10a-45d8-9b58-07995b6bb02a": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_CB95FB83E3DF-1.jpg",
-            "image_padding": false
-          }
-        },
-        "13b2009e-159f-4e99-b0ad-3f40c97e440f": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
-            "image_padding": false
-          }
-        },
-        "5960151e-d491-4e9f-89c1-73c4e0797d3d": {
-          "type": "image",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/IMG_8101.jpg",
-            "image_padding": false
-          }
-        }
-      },
-      "block_order": [
-        "4c1d2bff-f10a-45d8-9b58-07995b6bb02a",
-        "13b2009e-159f-4e99-b0ad-3f40c97e440f",
-        "5960151e-d491-4e9f-89c1-73c4e0797d3d"
-      ],
-      "settings": {
-        "heading": "",
-        "heading_size": "h2",
-        "desktop_layout": "left",
-        "mobile_layout": "collage",
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "8f0b4c85-768e-4291-9ccf-1690939534b5": {
       "type": "multicolumn",
       "blocks": {
@@ -603,7 +562,7 @@
         "template--18027708088629__caa7b390-2112-4e2c-85af-ea30208cd746-16765896870d21e80b-2"
       ],
       "settings": {
-        "image": "shopify:\/\/shop_images\/IMG_CB95FB83E3DF-1.jpg",
+        "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-16_at_9.53.31_PM.png",
         "image_2": "shopify:\/\/shop_images\/IMG_8101.jpg",
         "image_overlay_opacity": 0,
         "image_height": "medium",
@@ -642,6 +601,7 @@
         },
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-2": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
             "border-radius": 0,
@@ -652,6 +612,7 @@
         },
         "template--15348023656587__0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1-1668099899e72c1643-3": {
           "type": "column",
+          "disabled": true,
           "settings": {
             "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
             "border-radius": 0,
@@ -724,6 +685,121 @@
         "overlay": 0
       }
     },
+    "2189fd17-e1c7-4687-97eb-6a16dfdc24a1": {
+      "type": "rich-text",
+      "blocks": {
+        "template--18027708088629__2189fd17-e1c7-4687-97eb-6a16dfdc24a1-1676602849c089b067-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Follow Us On Instagram<\/p><p>@lonezscents<\/p>"
+          }
+        },
+        "template--18027708088629__2189fd17-e1c7-4687-97eb-6a16dfdc24a1-1676602849c089b067-2": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "@lonezscents",
+            "button_link": "https:\/\/www.instagram.com\/lonezscents\/",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "template--18027708088629__2189fd17-e1c7-4687-97eb-6a16dfdc24a1-1676602849c089b067-1",
+        "template--18027708088629__2189fd17-e1c7-4687-97eb-6a16dfdc24a1-1676602849c089b067-2"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 0
+      }
+    },
+    "2d5a16f4-5030-48ae-bdff-30f8c33c416e": {
+      "type": "film-strip",
+      "blocks": {
+        "template--18027708088629__2d5a16f4-5030-48ae-bdff-30f8c33c416e-1676602707537d1643-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-16_at_9.53.49_PM.png",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--18027708088629__2d5a16f4-5030-48ae-bdff-30f8c33c416e-1676602707537d1643-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-16_at_9.50.19_PM.png",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--18027708088629__2d5a16f4-5030-48ae-bdff-30f8c33c416e-1676602707537d1643-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-16_at_9.54.42_PM.png",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--18027708088629__2d5a16f4-5030-48ae-bdff-30f8c33c416e-1676602707537d1643-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-16_at_9.53.06_PM.png",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--18027708088629__2d5a16f4-5030-48ae-bdff-30f8c33c416e-1676602707537d1643-4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-16_at_7.30.18_PM.png",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--18027708088629__2d5a16f4-5030-48ae-bdff-30f8c33c416e-1676602707537d1643-0",
+        "template--18027708088629__2d5a16f4-5030-48ae-bdff-30f8c33c416e-1676602707537d1643-1",
+        "template--18027708088629__2d5a16f4-5030-48ae-bdff-30f8c33c416e-1676602707537d1643-2",
+        "template--18027708088629__2d5a16f4-5030-48ae-bdff-30f8c33c416e-1676602707537d1643-3",
+        "template--18027708088629__2d5a16f4-5030-48ae-bdff-30f8c33c416e-1676602707537d1643-4"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "image_ratio": "landscape",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "enable_desktop_slider": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": true,
+        "padding_column": 3,
+        "padding_left_right": 0,
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
     "330de4cb-211a-4876-bdfd-4827b7041e48": {
       "type": "newsletter",
       "blocks": {
@@ -767,12 +843,13 @@
     "1662010765d32d438b",
     "c6035e9d-d4b9-4a25-b55b-ef7736719929",
     "41d505f7-1dbd-4c4c-8960-61f14f2c634c",
-    "14536ca8-86c6-483a-8c00-794fe0e2d97f",
     "8f0b4c85-768e-4291-9ccf-1690939534b5",
     "640c42c5-d9ac-402e-a3f7-b51bbbb0e04f",
     "caa7b390-2112-4e2c-85af-ea30208cd746",
     "0e9829aa-af3d-49e2-8b0b-19f4baa8e8f1",
     "d55fe8da-09b5-45ca-a9fe-2303335b265f",
+    "2189fd17-e1c7-4687-97eb-6a16dfdc24a1",
+    "2d5a16f4-5030-48ae-bdff-30f8c33c416e",
     "330de4cb-211a-4876-bdfd-4827b7041e48"
   ]
 }
