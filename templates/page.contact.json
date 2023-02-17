@@ -73,6 +73,8 @@
             "column_background_color": "#ffffff",
             "column_font_color": "#000000",
             "column_orientation": "text-below",
+            "heading_text_style": "uppercase",
+            "content_text_size": "h4",
             "title": "",
             "text": "",
             "title-2": "",
@@ -85,22 +87,24 @@
             "link": ""
           }
         },
-        "29a87650-b465-4dd1-9e3a-bab590a7067a": {
+        "ef956ce4-482f-46e7-9d0b-b6193f1480dc": {
           "type": "column",
           "settings": {
             "image-padding": 0,
             "text-padding": 35,
-            "column_background_color": "#ffffff",
+            "column_background_color": "#FFFFFF",
             "column_font_color": "#000000",
             "column_orientation": "text-below",
+            "heading_text_style": "uppercase",
+            "content_text_size": "h4",
             "title": "",
             "text": "",
             "title-2": "E-mail",
-            "text-2": "info@lonezscents.com ",
+            "text-2": "info@loremipsum.com",
             "title-3": "Phone",
-            "text-3": "(832) 554-6133",
-            "title-4": "",
-            "text-4": "",
+            "text-3": "+1 555 505 5050",
+            "title-4": "Address",
+            "text-4": "725 55th Street, New York, NY, 55555",
             "link_label": "",
             "link": ""
           }
@@ -108,19 +112,16 @@
       },
       "block_order": [
         "template--15348023492747__7a464e9c-0c9a-4b84-a141-23441d703459-1668058087a36d5b51-0",
-        "29a87650-b465-4dd1-9e3a-bab590a7067a"
+        "ef956ce4-482f-46e7-9d0b-b6193f1480dc"
       ],
       "settings": {
         "title": "",
         "heading_size": "h1",
         "image_ratio": "portrait",
-        "columns_desktop": 2,
         "column_alignment": "left",
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
-        "columns_mobile": "2",
-        "swipe_on_mobile": false,
         "padding_column": 3,
         "padding_left_right": 3,
         "padding_top": 36,
