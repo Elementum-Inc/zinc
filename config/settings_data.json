@@ -149,7 +149,7 @@
           "f8603bea-8bd3-4ec1-8e2a-1f58d60c8291": {
             "type": "menu",
             "settings": {
-              "title": "main-menu",
+              "title": "shop-menu",
               "submenu_title": "",
               "submenu": "shop-menu",
               "submenu_item_image": "none"
