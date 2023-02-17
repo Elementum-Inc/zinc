@@ -714,10 +714,10 @@
       "settings": {
         "desktop_content_position": "center",
         "content_alignment": "center",
-        "color_scheme": "background-1",
+        "color_scheme": "accent-1",
         "full_width": true,
         "padding_top": 40,
-        "padding_bottom": 0
+        "padding_bottom": 32
       }
     },
     "2d5a16f4-5030-48ae-bdff-30f8c33c416e": {
