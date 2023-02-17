@@ -56,7 +56,7 @@
 -%}
 <div class="blog section-{{ section.id }}{% if section.settings.use_foreground %} section--foreground{% endif %} color-scheme color-scheme--{{ section.settings.color_scheme }}">
   <div class="container">
-      <div class="blog__title-wrapper">
+      <div class="blog__title-wrapper {{ section.settings.heading_alignment }}">
         {%- if section.settings.title != blank -%}
           <h2 id="SectionHeading-{{ section.id }}" class="blog__title h1">{{ section.settings.title | escape }}</h2>
         {%- endif -%}
@@ -202,6 +202,26 @@
       "id": "subheading",
       "default": "An optional subheading for describing the types of blog posts that are listed.",
       "label": "Subheading"
+    },
+    {
+      "type": "select",
+      "id": "heading_alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Text alignment"
     },
     {
       "type": "blog",
