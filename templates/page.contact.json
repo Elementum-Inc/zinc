@@ -92,8 +92,8 @@
           "settings": {
             "image-padding": 0,
             "text-padding": 35,
-            "column_background_color": "#FFFFFF",
-            "column_font_color": "#000000",
+            "column_background_color": "#492d2c",
+            "column_font_color": "#f8f5ed",
             "column_orientation": "text-below",
             "heading_text_style": "uppercase",
             "content_text_size": "h4",
