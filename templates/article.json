@@ -97,7 +97,7 @@
       "type": "featured-blog",
       "settings": {
         "title": "",
-        "subheading": "ddlkdljlj",
+        "subheading": "",
         "blog": "",
         "sort_by": "new",
         "tag_links": false,
@@ -108,7 +108,7 @@
         "use_foreground": true,
         "card_color_scheme": "default",
         "show_image": true,
-        "image_ratio": "sportrait",
+        "image_ratio": "widescreen",
         "card_image_fit": "cover",
         "card_vertical_alignment": "start",
         "show_date": true,
@@ -118,7 +118,7 @@
         "card_hover_show_info": false,
         "show_view_all": false,
         "padding_top": 36,
-        "padding_bottom": 36
+        "padding_bottom": 40
       }
     }
   },

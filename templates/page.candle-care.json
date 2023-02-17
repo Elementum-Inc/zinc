@@ -7,6 +7,90 @@
         "padding_bottom": 28
       }
     },
+    "8b536605-0265-436a-8ab6-d2f2cdfbee70": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--17998166851893__8b536605-0265-436a-8ab6-d2f2cdfbee70-1676345070ecc900f9-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>1. Be sure that your first burn liquifies the entire top layer of wax. This prevents tunnelings and ensures even burns!<\/p><p>2. Our wicks are happiest when trimmed to a very short height - we recommend 1\/8 of an inch. After your first burn, use a pair of scissors to trim the wick to the right length, ensuring a steady, ash-free flame.<\/p><p>3. Never leave a burning candle unattended. Keep lit candles in sight at all times and out of the reach of children\/pets.<\/p>",
+            "text_style": "subtitle"
+          }
+        }
+      },
+      "block_order": [
+        "template--17998166851893__8b536605-0265-436a-8ab6-d2f2cdfbee70-1676345070ecc900f9-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/IMG_8101.jpg",
+        "height": "h-md",
+        "desktop_image_columns": 3,
+        "desktop_image_side": "right",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "break_container": false,
+        "mobile_content_alignment": "left",
+        "padding_top": 0,
+        "padding_bottom": 36
+      }
+    },
+    "1924792c-45d4-45e6-8ff3-a5efcabca7e4": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--17998166851893__1924792c-45d4-45e6-8ff3-a5efcabca7e4-1676345070ecc900f9-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>4. Never burn a candle on or near anything flammable, such as loose papers, fabric, books, drapes, etc. Play it safe and give your candle nice clear area to sit on.<\/p><p>5. Keep lit candles away from drafts--open windows, air conditioners, vents, fans, etc.<\/p><p>6. Extinguish the flame if it becomes too high or flickers repeatedly. Trim the wick and check for drafts before re-lighting.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--17998166851893__1924792c-45d4-45e6-8ff3-a5efcabca7e4-1676345070ecc900f9-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-16_at_9.53.31_PM.png",
+        "height": "h-md",
+        "desktop_image_columns": 3,
+        "desktop_image_side": "left",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "break_container": false,
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "359cd2a6-91ff-43ff-bbfa-f11129a6752b": {
+      "type": "image-with-text",
+      "blocks": {
+        "template--17998166851893__359cd2a6-91ff-43ff-bbfa-f11129a6752b-1676345070ecc900f9-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>7. If you’ve created a large wax pool during your burn, blow it out gently to avoid wax splattering.<\/p><p>8. We recommend burning for no more than four hours at a time. Swap your candle for a new one when ½ inch of wax remains.<\/p><p>9. Reuse the votives! We’ve used our empty ones to hold makeup brushes, pens and markers. You’ll want to remove the remaining wax by placing the candle in your freezer for a few hours.<\/p>",
+            "text_style": "body"
+          }
+        }
+      },
+      "block_order": [
+        "template--17998166851893__359cd2a6-91ff-43ff-bbfa-f11129a6752b-1676345070ecc900f9-1"
+      ],
+      "settings": {
+        "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
+        "height": "h-md",
+        "desktop_image_columns": 3,
+        "desktop_image_side": "right",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "color_scheme": "background-1",
+        "break_container": false,
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
     "6e744b86-a763-4b56-95fe-2c11da8838c5": {
       "type": "film-strip",
       "disabled": true,
@@ -87,97 +171,13 @@
         "padding_top": 36,
         "padding_bottom": 36
       }
-    },
-    "8b536605-0265-436a-8ab6-d2f2cdfbee70": {
-      "type": "image-with-text",
-      "blocks": {
-        "template--17998166851893__8b536605-0265-436a-8ab6-d2f2cdfbee70-1676345070ecc900f9-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>1. Be sure that your first burn liquifies the entire top layer of wax. This prevents tunnelings and ensures even burns!<\/p><p>2. Our wicks are happiest when trimmed to a very short height - we recommend 1\/8 of an inch. After your first burn, use a pair of scissors to trim the wick to the right length, ensuring a steady, ash-free flame.<\/p><p>3. Never leave a burning candle unattended. Keep lit candles in sight at all times and out of the reach of children\/pets.<\/p>",
-            "text_style": "subtitle"
-          }
-        }
-      },
-      "block_order": [
-        "template--17998166851893__8b536605-0265-436a-8ab6-d2f2cdfbee70-1676345070ecc900f9-1"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/IMG_8101.jpg",
-        "height": "h-md",
-        "desktop_image_columns": 3,
-        "desktop_image_side": "right",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "color_scheme": "background-1",
-        "break_container": false,
-        "mobile_content_alignment": "left",
-        "padding_top": 0,
-        "padding_bottom": 36
-      }
-    },
-    "1924792c-45d4-45e6-8ff3-a5efcabca7e4": {
-      "type": "image-with-text",
-      "blocks": {
-        "template--17998166851893__1924792c-45d4-45e6-8ff3-a5efcabca7e4-1676345070ecc900f9-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>4. Never burn a candle on or near anything flammable, such as loose papers, fabric, books, drapes, etc. Play it safe and give your candle nice clear area to sit on.<\/p><p>5. Keep lit candles away from drafts--open windows, air conditioners, vents, fans, etc.<\/p><p>6. Extinguish the flame if it becomes too high or flickers repeatedly. Trim the wick and check for drafts before re-lighting.<\/p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "template--17998166851893__1924792c-45d4-45e6-8ff3-a5efcabca7e4-1676345070ecc900f9-1"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/IMG_CB95FB83E3DF-1.jpg",
-        "height": "h-md",
-        "desktop_image_columns": 3,
-        "desktop_image_side": "left",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "color_scheme": "background-1",
-        "break_container": false,
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "359cd2a6-91ff-43ff-bbfa-f11129a6752b": {
-      "type": "image-with-text",
-      "blocks": {
-        "template--17998166851893__359cd2a6-91ff-43ff-bbfa-f11129a6752b-1676345070ecc900f9-1": {
-          "type": "text",
-          "settings": {
-            "text": "<p>7. If you’ve created a large wax pool during your burn, blow it out gently to avoid wax splattering.<\/p><p>8. We recommend burning for no more than four hours at a time. Swap your candle for a new one when ½ inch of wax remains.<\/p><p>9. Reuse the votives! We’ve used our empty ones to hold makeup brushes, pens and markers. You’ll want to remove the remaining wax by placing the candle in your freezer for a few hours.<\/p>",
-            "text_style": "body"
-          }
-        }
-      },
-      "block_order": [
-        "template--17998166851893__359cd2a6-91ff-43ff-bbfa-f11129a6752b-1676345070ecc900f9-1"
-      ],
-      "settings": {
-        "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
-        "height": "h-md",
-        "desktop_image_columns": 3,
-        "desktop_image_side": "right",
-        "desktop_content_position": "middle",
-        "desktop_content_alignment": "left",
-        "color_scheme": "background-1",
-        "break_container": false,
-        "mobile_content_alignment": "left",
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
     }
   },
   "order": [
     "main",
-    "6e744b86-a763-4b56-95fe-2c11da8838c5",
     "8b536605-0265-436a-8ab6-d2f2cdfbee70",
     "1924792c-45d4-45e6-8ff3-a5efcabca7e4",
-    "359cd2a6-91ff-43ff-bbfa-f11129a6752b"
+    "359cd2a6-91ff-43ff-bbfa-f11129a6752b",
+    "6e744b86-a763-4b56-95fe-2c11da8838c5"
   ]
 }

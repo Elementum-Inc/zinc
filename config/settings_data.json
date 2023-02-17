@@ -170,7 +170,7 @@
               "primary_button_label": "Shop Hue",
               "primary_button_url": "shopify:\/\/collections\/hue-collection",
               "secondary_button_label": "The Hue Story",
-              "secondary_button_url": "shopify:\/\/blogs\/news"
+              "secondary_button_url": "shopify:\/\/blogs\/news\/introducing-hue-our-newest-collection"
             }
           },
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
@@ -198,8 +198,8 @@
           "collapse_menu_desktop": false,
           "enable_sticky_header": false,
           "mm_color_scheme": "background-1",
-          "mm_type": "basic",
-          "mm_toplink_behavior": "view_all_link",
+          "mm_type": "bold",
+          "mm_toplink_behavior": "parent_link",
           "mm_enable_caret": true,
           "mm_mobile_links": "footer",
           "user_menu_type": "minimal",
