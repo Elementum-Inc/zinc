@@ -61,7 +61,7 @@
             {%- assign empty_column = ' media-collage-list__item--empty' -%} 
           {%- endif -%}
 
-          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="media-collage-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
+          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="media-collage-list__item grid__item {{ block.settings.column_alignment }}{% if section.settings.swipe_on_mobile %} slider__slide{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
             <div class="media-collage-card content-container {% if block.settings.column_orientation == 'text-above' %} text-above {% endif %}" style="background-color: {{ block.settings.column_background_color }}; color: {{ block.settings.column_font_color }};">
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'auto' or section.settings.image_ratio == 'circle' %}
@@ -215,22 +215,6 @@
     },
     {
       "type": "select",
-      "id": "column_alignment",
-      "options": [
-        {
-          "value": "left",
-          "label": "t:sections.multicolumn.settings.column_alignment.options__1.label"
-        },
-        {
-          "value": "center",
-          "label": "t:sections.multicolumn.settings.column_alignment.options__2.label"
-        }
-      ],
-      "default": "left",
-      "label": "t:sections.multicolumn.settings.column_alignment.label"
-    },
-    {
-      "type": "select",
       "id": "color_scheme",
       "options": [
         {
@@ -365,6 +349,26 @@
           "id": "column_font_color",
           "label": "Block font color",
           "default": "#000000"
+        },
+        {
+          "type": "select",
+          "id": "column_alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "t:sections.multicolumn.settings.column_alignment.options__1.label"
+            },
+            {
+              "value": "center",
+              "label": "t:sections.multicolumn.settings.column_alignment.options__2.label"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left",
+          "label": "t:sections.multicolumn.settings.column_alignment.label"
         },
         {
           "type": "select",
