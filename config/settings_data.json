@@ -151,7 +151,7 @@
             "settings": {
               "title": "shop-menu",
               "submenu_title": "",
-              "submenu": "shop-menu",
+              "submenu": "main-menu",
               "submenu_item_image": "none"
             }
           },
