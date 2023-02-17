@@ -81,7 +81,7 @@
                   <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} container{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
                     <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-scheme color-scheme--{{ block.settings.color_scheme }} slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }} {% if block.settings.banner_text_background == false %} no-solid-background {% endif %}" >
                       {%- if block.settings.heading != blank -%}
-                        <h2 class="banner__heading {{ block.settings.heading_size }}">{{ block.settings.heading | escape }}</h2>
+                        <h2 class="banner__heading {{ block.settings.desktop_heading_size }} {{ block.settings.mobile_heading_size }}">{{ block.settings.heading | escape }}</h2>
                       {%- endif -%}
                       {%- if block.settings.subheading != blank -%}
                         <div class="banner__text" {{ block.shopify_attributes }}>
@@ -114,7 +114,7 @@
                   <div class="slideshow__text-wrapper banner__content banner__content--{{ block.settings.box_align }} container{% if block.settings.show_text_box == false %} banner--desktop-transparent{% endif %}">
                     <div class="slideshow__text banner__box content-container content-container--full-width-mobile color-scheme color-scheme--{{ block.settings.color_scheme }} slideshow__text--{{ block.settings.text_alignment }} slideshow__text-mobile--{{ block.settings.text_alignment_mobile }}{% unless block.settings.banner_text_background %} no-solid-background{% endunless %}">
                       {%- if block.settings.heading != blank -%}
-                        <h2 class="banner__heading {{ block.settings.heading_size }}">{{ block.settings.heading | escape }}</h2>
+                        <h2 class="banner__heading {{ block.settings.desktop_heading_size }} {{ block.settings.mobile_heading_size }}">{{ block.settings.heading | escape }}</h2>
                       {%- endif -%}
         
                       {%- if block.settings.subheading != blank -%}
@@ -266,7 +266,7 @@
         },
         {
           "type": "select",
-          "id": "heading_size",
+          "id": "desktop_heading_size",
           "options": [
             {
               "value": "h2",
@@ -282,7 +282,27 @@
             }
           ],
           "default": "h1",
-          "label": "t:sections.all.heading_size.label"
+          "label": "Desktop heading size"
+        },
+        {
+          "type": "select",
+          "id": "mobile_heading_size",
+          "options": [
+            {
+              "value": "mobile-text-small",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "mobile-text-medium",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "mobile-text-large",
+              "label": "Large"
+            }
+          ],
+          "default": "mobile-text-medium",
+          "label": "Mobile heading size"
         },
         {
           "type": "text",
@@ -493,7 +513,7 @@
         },
         {
           "type": "select",
-          "id": "heading_size",
+          "id": "desktop_heading_size",
           "options": [
             {
               "value": "h2",
@@ -509,7 +529,27 @@
             }
           ],
           "default": "h1",
-          "label": "t:sections.all.heading_size.label"
+          "label": "Desktop heading size"
+        },
+        {
+          "type": "select",
+          "id": "mobile_heading_size",
+          "options": [
+            {
+              "value": "mobile-text-small",
+              "label": "t:sections.all.heading_size.options__1.label"
+            },
+            {
+              "value": "mobile-text-medium",
+              "label": "t:sections.all.heading_size.options__2.label"
+            },
+            {
+              "value": "mobile-text-large",
+              "label": "Large"
+            }
+          ],
+          "default": "mobile-text-medium",
+          "label": "Mobile heading size"
         },
         {
           "type": "text",
