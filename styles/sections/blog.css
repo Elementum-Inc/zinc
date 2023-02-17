@@ -127,7 +127,7 @@
     @apply <md:hidden pt-20 basis-1/4 lg:basis-1/5 self-start sticky top-0;
 
     .sticky-header-active & {
-      animation: stickySidebarEnter 0.5s linear;
+      animation: stickySidebarEnter .5s linear;
       animation-delay: 1.5s;
       animation-fill-mode: forwards;
     }
@@ -254,6 +254,7 @@
   from {
     top: 0;
   }
+
   to {
     top: 8rem;
   }
