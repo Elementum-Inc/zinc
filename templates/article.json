@@ -3,19 +3,6 @@
     "hero": {
       "type": "main-article-hero",
       "blocks": {
-        "a2d81ade-3da8-4343-b961-24997ca0629f": {
-          "type": "title",
-          "settings": {
-            "show_article_title": true,
-            "title": "This is a new title"
-          }
-        },
-        "9f515e1e-03aa-4fe9-b0b2-6eeef4487dcd": {
-          "type": "subtitle",
-          "settings": {
-            "title": "And here is a subtitle for your sweet sweet eyes"
-          }
-        },
         "b5248616-349b-43e9-bf63-df276eb96a14": {
           "type": "details",
           "settings": {
@@ -25,8 +12,6 @@
         }
       },
       "block_order": [
-        "a2d81ade-3da8-4343-b961-24997ca0629f",
-        "9f515e1e-03aa-4fe9-b0b2-6eeef4487dcd",
         "b5248616-349b-43e9-bf63-df276eb96a14"
       ],
       "settings": {
@@ -51,7 +36,6 @@
           "settings": {
             "blog_show_date": true,
             "blog_show_author": true,
-            "author_image": "shopify:\/\/shop_images\/test_bg.png",
             "author_image_radius": 50,
             "author_bio": "Include an optional short bio about your blog's author. Include an optional short bio about your blog's author. Include an optional short bio about your blog's author. Include an optional short bio about your blog's author. Include an optional short bio about your blog's author. Include an optional short bio about your blog's author."
           }
@@ -59,7 +43,6 @@
         "34c57ce1-84ef-4e4a-9171-1323ef5d26a1": {
           "type": "image",
           "settings": {
-            "image": "shopify:\/\/shop_images\/fall-leaf-cookies-in-the-kitchen.jpg",
             "show_featured_image": false,
             "image_ratio": "landscape",
             "image_caption": "Here is a caption."
