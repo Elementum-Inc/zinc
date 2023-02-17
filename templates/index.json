@@ -8,7 +8,8 @@
           "settings": {
             "video_src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c028b635a8c749bb96264a7835c738a9.mp4",
             "heading": "Set The Mood",
-            "heading_size": "h1",
+            "desktop_heading_size": "h1",
+            "mobile_heading_size": "mobile-text-medium",
             "subheading": "",
             "button_style": "flat",
             "button_reverse": false,
@@ -30,7 +31,8 @@
           "settings": {
             "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
             "heading": "Our Candles Are About Connection",
-            "heading_size": "h1",
+            "desktop_heading_size": "h1",
+            "mobile_heading_size": "mobile-text-medium",
             "subheading": "shop our latest collection",
             "button_style": "flat",
             "button_reverse": false,
@@ -300,7 +302,8 @@
           "settings": {
             "video_src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/e2fe95c6ce9f4f7f8d3080b7c00433d5.mp4",
             "heading": "PRIVATE CANDLE WORKSHOPS",
-            "heading_size": "h0",
+            "desktop_heading_size": "h1",
+            "mobile_heading_size": "mobile-text-medium",
             "subheading": "",
             "button_style": "flat",
             "button_reverse": false,
@@ -814,6 +817,7 @@
       "settings": {
         "title": "Blog posts",
         "subheading": "An optional subheading for describing the types of blog posts that are listed.",
+        "heading_alignment": "center",
         "blog": "news",
         "sort_by": "new",
         "tag_links": true,
