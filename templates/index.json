@@ -777,6 +777,7 @@
     },
     "d55fe8da-09b5-45ca-a9fe-2303335b265f": {
       "type": "modal",
+      "disabled": true,
       "blocks": {
         "be28b901-b448-4781-9090-96cd86c7c059": {
           "type": "modal_title",
