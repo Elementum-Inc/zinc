@@ -8,8 +8,8 @@
     "colors_success": "#225560",
     "colors_warning": "#efcb68",
     "colors_error": "#de6b48",
-    "type_header_font": "playfair_display_n4",
-    "type_body_font": "avenir_next_n4",
+    "type_header_font": "oswald_n4",
+    "type_body_font": "abel_n4",
     "icon_size": 24,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 20,
@@ -173,7 +173,7 @@
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc"
         ],
         "settings": {
-          "color_scheme": "background-2",
+          "color_scheme": "accent-2",
           "logo_width": 64,
           "logo_position": "top-center",
           "menu": "main-menu",
