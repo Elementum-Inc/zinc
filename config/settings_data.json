@@ -1,12 +1,11 @@
 {
   "current": {
     "colors_text": "#121212",
-    "colors_background_1": "#d5cfe1",
-    "colors_background_2": "#291f1e",
-    "colors_foreground": "#f3f3f3",
-    "colors_accent_1": "#a3333d",
-    "colors_accent_2": "#6a66a3",
-    "colors_success": "#5aaa95",
+    "colors_background_1": "#f1dabf",
+    "colors_background_2": "#171219",
+    "colors_accent_1": "#5a0002",
+    "colors_accent_2": "#5ab1bb",
+    "colors_success": "#225560",
     "colors_warning": "#efcb68",
     "colors_error": "#de6b48",
     "type_header_font": "playfair_display_n4",
@@ -86,6 +85,7 @@
     "currency_code_enabled": true,
     "cart_type": "drawer",
     "show_cart_note": true,
+    "colors_foreground": "#f3f3f3",
     "page_width": 1200,
     "buttons_border_opacity": 100,
     "variant_pills_shadow_opacity": 30,
@@ -212,7 +212,8 @@
           "6d9561d4-d380-41ef-a4ad-695b92faa9a4": {
             "type": "payments",
             "settings": {
-              "enable_country_selector": true
+              "enable_country_selector": true,
+              "payment_enable": true
             }
           },
           "footer-2": {
@@ -226,6 +227,7 @@
             "type": "newsletter",
             "disabled": true,
             "settings": {
+              "newsletter_heading": "SUBSCRIBE"
             }
           }
         },
@@ -248,11 +250,10 @@
           "show_social_text": false,
           "social_location": "above",
           "enable_language_selector": true,
+          "show_poweredbyshopify": true,
           "margin_top": 0,
           "padding_top": 36,
-          "padding_bottom": 36,
-          "show_poweredbyshopify": true,
-          "payment_enable": true
+          "padding_bottom": 36
         }
       },
       "main-password-header": {
@@ -426,13 +427,11 @@
           "settings": {
             "color_scheme": "background-1",
             "newsletter_enable": true,
-            "newsletter_heading": "Subscribe to our emails",
             "show_social": true,
             "enable_language_selector": false,
             "margin_top": 48,
             "padding_top": 36,
-            "padding_bottom": 36,
-            "payment_enable": true
+            "padding_bottom": 36
           }
         },
         "main-password-header": {
@@ -687,17 +686,15 @@
             "column_count": "4",
             "large_logo_width": 750,
             "newsletter_enable": true,
-            "newsletter_heading": "Subscribe to our emails",
             "show_social": true,
             "show_social_icon": true,
             "show_social_text": false,
             "social_location": "above",
             "enable_language_selector": false,
+            "show_poweredbyshopify": true,
             "margin_top": 24,
             "padding_top": 36,
-            "padding_bottom": 36,
-            "show_poweredbyshopify": true,
-            "payment_enable": true
+            "padding_bottom": 36
           }
         },
         "main-password-header": {
@@ -950,17 +947,15 @@
             "column_count": "4",
             "large_logo_width": 750,
             "newsletter_enable": true,
-            "newsletter_heading": "Subscribe to our emails",
             "show_social": true,
             "show_social_icon": true,
             "show_social_text": false,
             "social_location": "above",
             "enable_language_selector": false,
+            "show_poweredbyshopify": true,
             "margin_top": 24,
             "padding_top": 36,
-            "padding_bottom": 36,
-            "show_poweredbyshopify": true,
-            "payment_enable": true
+            "padding_bottom": 36
           }
         },
         "main-password-header": {
