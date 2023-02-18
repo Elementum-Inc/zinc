@@ -174,8 +174,9 @@
         ],
         "settings": {
           "color_scheme": "accent-2",
-          "logo_width": 64,
-          "logo_position": "top-center",
+          "logo": "shopify:\/\/shop_images\/ROOSTER.png",
+          "logo_width": 152,
+          "logo_position": "left",
           "menu": "main-menu",
           "collapse_menu_desktop": false,
           "enable_sticky_header": true,
@@ -184,8 +185,8 @@
           "mm_toplink_behavior": "view_all_link",
           "mm_enable_caret": true,
           "mm_mobile_links": "",
-          "user_menu_type": "expanded",
-          "menu_icon_position": "top",
+          "user_menu_type": "minimal",
+          "menu_icon_position": "left",
           "padding_top": 20,
           "padding_bottom": 20
         }
