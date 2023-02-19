@@ -88,6 +88,7 @@
     "currency_code_enabled": true,
     "cart_type": "drawer",
     "show_cart_note": true,
+    "cart_drawer_collection": "hue-collection",
     "colors_foreground": "#f3f3f3",
     "page_width": 1200,
     "buttons_border_opacity": 100,

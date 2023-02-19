@@ -816,12 +816,12 @@
     "d3a55de9-dabd-46c8-af88-20c5d89eb9a5": {
       "type": "featured-blog",
       "settings": {
-        "title": "Blog posts",
-        "subheading": "An optional subheading for describing the types of blog posts that are listed.",
+        "title": "",
+        "subheading": "BLOGS",
         "heading_alignment": "center",
         "blog": "news",
         "sort_by": "new",
-        "tag_links": true,
+        "tag_links": false,
         "post_limit": 3,
         "columns_desktop": 3,
         "desktop_slider": false,
