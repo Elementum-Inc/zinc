@@ -1,6 +1,6 @@
 .rating {
   display: inline-block;
-  margin: 0;
+  margin: 1rem 0;
 }
 
 .product .rating-star {
@@ -30,7 +30,7 @@
 }
 
 .rating-star::before {
-  content: '★★★★★';
+  content: "★★★★★";
   background: linear-gradient(
     90deg,
     var(--color-icon) var(--percent),
