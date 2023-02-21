@@ -5,10 +5,12 @@
       "blocks": {
         "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-2": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video_src": "https://cdn.shopify.com/videos/c/o/v/55ed2f8b740c423090e658ec7b765024.mp4",
             "heading": "Video Slide",
-            "heading_size": "h1",
+            "desktop_heading_size": "h1",
+            "mobile_heading_size": "mobile-text-medium",
             "subheading": "Tell your brand's story through images and video",
             "button_style": "flat",
             "button_reverse": false,
@@ -24,42 +26,46 @@
             "text_alignment_mobile": "center"
           }
         },
-        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-0": {
+        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-1": {
           "type": "slide",
           "settings": {
-            "heading": "Slideshow w/ Video Capability",
-            "heading_size": "h1",
-            "subheading": "Add optional subtext here to further highlight details about your brand or featured products.",
+            "image": "shopify://shop_images/Marble-Hero.png",
+            "heading": "SUNDRIES",
+            "desktop_heading_size": "h2",
+            "mobile_heading_size": "mobile-text-medium",
+            "subheading": "An Ever-Evolving Leather Goods & Lifestyle Brand.",
             "button_style": "outline",
             "button_reverse": false,
-            "primary_button_label": "Primary button",
-            "primary_button_url": "",
-            "secondary_button_label": "Secondary button",
-            "secondary_button_url": "",
-            "box_align": "middle-center",
-            "text_alignment": "center",
+            "primary_button_label": "SHOP NANO SHOPPERS",
+            "primary_button_url": "shopify://collections/nano-shoppers",
+            "secondary_button_label": "SHOP BUCKET BAGS",
+            "secondary_button_url": "shopify://collections/bucket-bag",
+            "box_align": "middle-left",
+            "text_alignment": "left",
             "image_overlay_opacity": 0,
-            "banner_text_background": true,
+            "banner_text_background": false,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center"
           }
         },
-        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-1": {
+        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-0": {
           "type": "slide",
           "settings": {
-            "heading": "Slideshow w/ Video Capability",
-            "heading_size": "h1",
-            "subheading": "Add optional subtext here to further highlight details about your brand or featured products.",
-            "button_style": "outline",
+            "image": "shopify://shop_images/Untitled_design_14.png",
+            "heading": "ELEPHANT",
+            "desktop_heading_size": "h2",
+            "mobile_heading_size": "mobile-text-medium",
+            "subheading": "NEW RELEASES",
+            "button_style": "flat",
             "button_reverse": false,
-            "primary_button_label": "Primary button",
+            "primary_button_label": "",
             "primary_button_url": "",
-            "secondary_button_label": "Secondary button",
+            "secondary_button_label": "SHOP",
             "secondary_button_url": "",
             "box_align": "middle-center",
             "text_alignment": "center",
             "image_overlay_opacity": 0,
-            "banner_text_background": true,
+            "banner_text_background": false,
             "color_scheme": "background-1",
             "text_alignment_mobile": "center"
           }
@@ -67,14 +73,14 @@
       },
       "block_order": [
         "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-2",
-        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-0",
-        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-1"
+        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-1",
+        "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-0"
       ],
       "settings": {
-        "slide_height": "small",
-        "slider_visual": "dots",
+        "slide_height": "medium",
+        "slider_visual": "arrows",
         "auto_rotate": true,
-        "change_slides_speed": 6250,
+        "change_slides_speed": 3250,
         "show_text_below": false,
         "accessibility_info": "Slideshow about our brand"
       }
@@ -85,41 +91,49 @@
         "template--17922962358590__77895afa-84f3-4649-adde-e15f071ced0f-1676481801b080e709-0": {
           "type": "collection",
           "settings": {
-            "title": "Featured Collection 1",
-            "collection": ""
+            "title": "NEW RELEASES",
+            "collection": "new-releases"
           }
         },
         "template--17922962358590__77895afa-84f3-4649-adde-e15f071ced0f-1676481801b080e709-1": {
           "type": "collection",
           "settings": {
-            "title": "Featured Collection 2",
-            "collection": ""
+            "title": "COLLECTION II",
+            "collection": "collection-i"
+          }
+        },
+        "a2e1c6ee-bfeb-40cf-b8c5-7a099f2645e5": {
+          "type": "collection",
+          "settings": {
+            "title": "COLLECTION III",
+            "collection": "collection-2"
           }
         }
       },
       "block_order": [
         "template--17922962358590__77895afa-84f3-4649-adde-e15f071ced0f-1676481801b080e709-0",
-        "template--17922962358590__77895afa-84f3-4649-adde-e15f071ced0f-1676481801b080e709-1"
+        "template--17922962358590__77895afa-84f3-4649-adde-e15f071ced0f-1676481801b080e709-1",
+        "a2e1c6ee-bfeb-40cf-b8c5-7a099f2645e5"
       ],
       "settings": {
-        "title": "Featured Product Collections",
-        "heading_size": "h1",
-        "description": "Use this section to highlight up to three specialized collections.",
+        "title": "SHOP COLLECTIONS",
+        "heading_size": "h3",
+        "description": "",
         "description_style": "body",
         "heading_alignment": "center",
-        "products_to_show": 12,
-        "columns_desktop": 4,
+        "products_to_show": 7,
+        "columns_desktop": 3,
         "full_width": false,
         "show_view_all": true,
         "view_all_style": "link",
         "enable_desktop_slider": true,
         "color_scheme": "background-1",
-        "use_foreground": true,
+        "use_foreground": false,
         "card_color_scheme": "match",
         "image_ratio": "square",
-        "show_secondary_image": false,
+        "show_secondary_image": true,
         "show_price": true,
-        "show_vendor": true,
+        "show_vendor": false,
         "show_rating": false,
         "card_hover_show_info": false,
         "enable_quick_add": true,
@@ -129,6 +143,129 @@
         "padding_bottom": 36
       }
     },
+    "60348a8c-408f-4e34-83c5-2b9a11c2958a": {
+      "type": "slideshow",
+      "blocks": {
+        "template--17922642542875__60348a8c-408f-4e34-83c5-2b9a11c2958a-1676782859e590eeb6-0": {
+          "type": "slide",
+          "settings": {
+            "image": "shopify://shop_images/Blue-Python-Hero.png",
+            "heading": "",
+            "desktop_heading_size": "h1",
+            "mobile_heading_size": "mobile-text-medium",
+            "subheading": "",
+            "button_style": "outline",
+            "button_reverse": false,
+            "primary_button_label": "",
+            "primary_button_url": "",
+            "secondary_button_label": "",
+            "secondary_button_url": "",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "banner_text_background": false,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
+          }
+        }
+      },
+      "block_order": [
+        "template--17922642542875__60348a8c-408f-4e34-83c5-2b9a11c2958a-1676782859e590eeb6-0"
+      ],
+      "settings": {
+        "slide_height": "small",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 6250,
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
+      }
+    },
+    "79d0d8ee-cc13-4862-b126-2b1f40285703": {
+      "type": "collection-list",
+      "blocks": {
+        "template--17922642542875__79d0d8ee-cc13-4862-b126-2b1f40285703-1676780487fb6741d9-0": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "camo"
+          }
+        },
+        "6bd46602-ac6d-462a-9ac8-63335ded343f": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "python"
+          }
+        },
+        "template--17922642542875__79d0d8ee-cc13-4862-b126-2b1f40285703-1676780487fb6741d9-2": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "marble"
+          }
+        },
+        "template--17922642542875__79d0d8ee-cc13-4862-b126-2b1f40285703-1676780487fb6741d9-1": {
+          "type": "featured_collection",
+          "settings": {
+            "collection": "elephant"
+          }
+        }
+      },
+      "block_order": [
+        "template--17922642542875__79d0d8ee-cc13-4862-b126-2b1f40285703-1676780487fb6741d9-0",
+        "6bd46602-ac6d-462a-9ac8-63335ded343f",
+        "template--17922642542875__79d0d8ee-cc13-4862-b126-2b1f40285703-1676780487fb6741d9-2",
+        "template--17922642542875__79d0d8ee-cc13-4862-b126-2b1f40285703-1676780487fb6741d9-1"
+      ],
+      "settings": {
+        "title": "SHOP BY PATTERN",
+        "heading_size": "h3",
+        "heading_alignment": "center",
+        "image_ratio": "square",
+        "columns_desktop": 2,
+        "enable_desktop_slider": false,
+        "color_scheme": "background-1",
+        "card_color_scheme": "default",
+        "card_hover_show_info": true,
+        "use_foreground": false,
+        "show_view_all": false,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_top": 36,
+        "padding_bottom": 12
+      }
+    },
+    "824911b2-0706-4181-a7db-9f98218b30c8": {
+      "type": "newsletter",
+      "blocks": {
+        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-0": {
+          "type": "heading",
+          "settings": {
+            "heading": "GET IN THE KNOW",
+            "heading_size": "h2"
+          }
+        },
+        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-1": {
+          "type": "paragraph",
+          "settings": {
+            "text": "<p>Be the first to find out about our latest drops. </p>"
+          }
+        },
+        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-2": {
+          "type": "email_form",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-0",
+        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-1",
+        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-2"
+      ],
+      "settings": {
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 0,
+        "padding_bottom": 52
+      }
+    },
     "537bff51-0684-4d2d-8194-f7e353c3b516": {
       "type": "multicolumn",
       "blocks": {
@@ -136,11 +273,12 @@
           "type": "column",
           "settings": {
             "column_alignment": "left",
+            "image": "shopify://shop_images/Screen_Shot_2023-02-19_at_12.48.38_AM.png",
             "image_position": "above",
             "border-radius": 0,
-            "title": "Column",
-            "text": "<p> Optional descriptive text around your brand, collection or product. </p>",
-            "button_label": "Button label",
+            "title": "",
+            "text": "",
+            "button_label": "",
             "button_link": ""
           }
         },
@@ -148,6 +286,33 @@
           "type": "column",
           "settings": {
             "column_alignment": "left",
+            "image": "shopify://shop_images/Screen_Shot_2023-02-18_at_2.18.42_PM.png",
+            "image_position": "above",
+            "border-radius": 0,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "d9e294fe-3cfe-4b7c-a277-bebe4a720e09": {
+          "type": "column",
+          "settings": {
+            "column_alignment": "left",
+            "image": "shopify://shop_images/Screen_Shot_2023-02-18_at_2.17.38_PM.png",
+            "image_position": "above",
+            "border-radius": 0,
+            "title": "",
+            "text": "",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
+        "606f0d42-6331-4ed5-a01f-ac87adfdd99a": {
+          "type": "column",
+          "settings": {
+            "column_alignment": "left",
+            "image": "shopify://shop_images/Screen_Shot_2023-02-18_at_11.00.25_PM.png",
             "image_position": "above",
             "border-radius": 0,
             "title": "",
@@ -159,132 +324,68 @@
       },
       "block_order": [
         "template--17922962358590__537bff51-0684-4d2d-8194-f7e353c3b516-16764818177b5db4f0-0",
-        "template--17922962358590__537bff51-0684-4d2d-8194-f7e353c3b516-16764818177b5db4f0-1"
+        "template--17922962358590__537bff51-0684-4d2d-8194-f7e353c3b516-16764818177b5db4f0-1",
+        "d9e294fe-3cfe-4b7c-a277-bebe4a720e09",
+        "606f0d42-6331-4ed5-a01f-ac87adfdd99a"
       ],
       "settings": {
-        "title": "Multicolumn Section",
+        "title": "",
         "heading_size": "h2",
         "heading_alignment": "center",
         "image_width": "full",
-        "image_ratio": "auto",
+        "image_ratio": "sportrait",
         "columns_desktop": 2,
-        "button_label": "Optional Button",
-        "button_link": "",
+        "button_label": "EXPLORE",
+        "button_link": "shopify://collections/all-products",
         "color_scheme": "background-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 36
       }
     },
-    "88801c64-2da2-42ca-bf3c-b48464f8ddd7": {
-      "type": "testimonials",
+    "a54fdec4-b72f-460e-93e8-a0baa5b723ee": {
+      "type": "slideshow",
+      "disabled": true,
       "blocks": {
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-0": {
-          "type": "column",
+        "template--17922642542875__a54fdec4-b72f-460e-93e8-a0baa5b723ee-1676782859e590eeb6-0": {
+          "type": "slide",
           "settings": {
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
-          }
-        },
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-1": {
-          "type": "column",
-          "settings": {
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
-          }
-        },
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-2": {
-          "type": "column",
-          "settings": {
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
-          }
-        },
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-3": {
-          "type": "column",
-          "settings": {
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
-          }
-        },
-        "17a49885-6c77-4c2d-94b4-f5714494fcb6": {
-          "type": "column",
-          "settings": {
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
-          }
-        },
-        "02d65ebc-47d4-4456-a439-69f706522736": {
-          "type": "column",
-          "settings": {
-            "border-radius": 0,
-            "title": "Author",
-            "subtitle": "Subtitle",
-            "text": "<p>Share positive feedback and reviews about your company and products for others to see. Images of people or products are a nice addition! </p>"
+            "image": "shopify://shop_images/Marble-Hero.png",
+            "heading": "",
+            "desktop_heading_size": "h1",
+            "mobile_heading_size": "mobile-text-medium",
+            "subheading": "",
+            "button_style": "outline",
+            "button_reverse": false,
+            "primary_button_label": "",
+            "primary_button_url": "",
+            "secondary_button_label": "",
+            "secondary_button_url": "",
+            "box_align": "middle-center",
+            "text_alignment": "center",
+            "image_overlay_opacity": 0,
+            "banner_text_background": false,
+            "color_scheme": "background-1",
+            "text_alignment_mobile": "center"
           }
         }
       },
       "block_order": [
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-0",
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-1",
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-2",
-        "template--17922962358590__88801c64-2da2-42ca-bf3c-b48464f8ddd7-167648182180c291d7-3",
-        "17a49885-6c77-4c2d-94b4-f5714494fcb6",
-        "02d65ebc-47d4-4456-a439-69f706522736"
+        "template--17922642542875__a54fdec4-b72f-460e-93e8-a0baa5b723ee-1676782859e590eeb6-0"
       ],
       "settings": {
-        "title": "Testimonials",
-        "heading_size": "h1",
-        "heading_alignment": "center",
-        "display-style": "basic",
-        "desktop_slider": true,
-        "color_scheme": "accent-1",
-        "use_foreground": false,
-        "image_ratio": "auto",
-        "image_width": 50,
-        "image_alignment": "center",
-        "columns_desktop": 3,
-        "column_alignment": "center",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "e3bd2b9e-a41e-4f45-b029-6ff26f784368": {
-      "type": "video",
-      "settings": {
-        "heading": "Video",
-        "heading_size": "h1",
-        "subheading": "Tell your brand's story with a video",
-        "text_alignment": "left",
-        "button_style": "flat",
-        "button_reverse": false,
-        "primary_button_label": "Primary button",
-        "primary_button_url": "",
-        "secondary_button_label": "Secondary button",
-        "secondary_button_url": "",
-        "video_url": "https://www.youtube.com/watch?v=_9VUPq3SxOc",
-        "description": "",
-        "full_width": false,
-        "color_scheme": "background-1",
-        "padding_top": 36,
-        "padding_bottom": 36
+        "slide_height": "adapt_image",
+        "slider_visual": "dots",
+        "auto_rotate": true,
+        "change_slides_speed": 6250,
+        "show_text_below": true,
+        "accessibility_info": "Slideshow about our brand"
       }
     },
     "c170f63e-0402-4722-a40e-15d3ec7a333b": {
       "type": "collapsible-content",
+      "disabled": true,
       "blocks": {
         "template--17922962358590__c170f63e-0402-4722-a40e-15d3ec7a333b-1676481835efc419c4-0": {
           "type": "collapsible_row",
@@ -332,11 +433,11 @@
       "settings": {
         "heading": "Collapsible content",
         "caption": "",
-        "heading_size": "h1",
+        "heading_size": "h2",
         "heading_alignment": "center",
         "layout": "row",
-        "color_scheme": "background-2",
-        "container_color_scheme": "background-1",
+        "color_scheme": "background-1",
+        "container_color_scheme": "accent-1",
         "open_first_collapsible_row": false,
         "image_ratio": "auto",
         "desktop_layout": "image_second",
@@ -344,48 +445,201 @@
         "padding_bottom": 36
       }
     },
-    "824911b2-0706-4181-a7db-9f98218b30c8": {
-      "type": "newsletter",
+    "f9826f59-7dab-4ada-a0c2-ef0d3893c3e3": {
+      "type": "collage",
       "blocks": {
-        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-0": {
-          "type": "heading",
+        "e05823f2-5853-44e5-8d4e-533cc4e75c49": {
+          "type": "product",
           "settings": {
-            "heading": "SUBSCRIBE",
-            "heading_size": "h1"
+            "product": "cement-wallet-on-chain",
+            "second_image": true
           }
         },
-        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-1": {
-          "type": "paragraph",
+        "f88c90c6-69e2-40e9-b94b-8c33e6138a6b": {
+          "type": "image",
           "settings": {
-            "text": "<p>Be the first to know about new collections and exclusive offers.</p>"
+            "image": "shopify://shop_images/Cement-Open-WOC.png",
+            "image_padding": false
           }
         },
-        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-2": {
-          "type": "email_form",
+        "87f4fc11-d1c2-4c48-9aaa-ee163302c961": {
+          "type": "image",
           "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2023-02-18_at_11.02.06_PM.png",
+            "image_padding": false
           }
         }
       },
       "block_order": [
-        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-0",
-        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-1",
-        "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-2"
+        "e05823f2-5853-44e5-8d4e-533cc4e75c49",
+        "f88c90c6-69e2-40e9-b94b-8c33e6138a6b",
+        "87f4fc11-d1c2-4c48-9aaa-ee163302c961"
+      ],
+      "settings": {
+        "heading": "",
+        "heading_size": "h2",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "3bdb8806-6c8d-4cb3-910f-450d2c259a17": {
+      "type": "collage",
+      "disabled": true,
+      "blocks": {
+        "9e93ca31-2c14-4bd3-89b8-7ec08929cd8a": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Screen_Shot_2023-02-18_at_11.02.06_PM.png",
+            "image_padding": false
+          }
+        },
+        "2c81d10e-9e59-4cd7-879a-d074e996ca39": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Cement-Open-WOC.png",
+            "image_padding": false
+          }
+        },
+        "71de83a6-cbb4-4da7-97f1-9a6223af6f4f": {
+          "type": "image",
+          "settings": {
+            "image_padding": false
+          }
+        }
+      },
+      "block_order": [
+        "9e93ca31-2c14-4bd3-89b8-7ec08929cd8a",
+        "2c81d10e-9e59-4cd7-879a-d074e996ca39",
+        "71de83a6-cbb4-4da7-97f1-9a6223af6f4f"
+      ],
+      "settings": {
+        "heading": "Multimedia collage",
+        "heading_size": "h2",
+        "desktop_layout": "left",
+        "mobile_layout": "collage",
+        "color_scheme": "background-1",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "2408b453-147f-4bdf-930c-a8551514f985": {
+      "type": "rich-text",
+      "blocks": {
+        "template--17922642542875__2408b453-147f-4bdf-930c-a8551514f985-1676786012b1e36fc4-1": {
+          "type": "text",
+          "settings": {
+            "text": "<p>FOLLOW US ON INSTAGRAM</p><p><strong>@SUNDRIES.US</strong></p>"
+          }
+        }
+      },
+      "block_order": [
+        "template--17922642542875__2408b453-147f-4bdf-930c-a8551514f985-1676786012b1e36fc4-1"
+      ],
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "background-1",
+        "full_width": true,
+        "padding_top": 100,
+        "padding_bottom": 0
+      }
+    },
+    "f77a9130-e190-454e-af79-79e742e874b0": {
+      "type": "film-strip",
+      "blocks": {
+        "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-0": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Chestnut_Marble.webp",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-3": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Cement-Front-WOC.png",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/python_nano_shopper.jpg",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-4": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/4369B8A8-824E-4521-8241-D5798233D5D9-1C29335B-98BB-4F57-B452-C046BB557EC9_d01a0394-1ac0-413d-9d4f-6e3abb1d10f6.jpg",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        },
+        "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-2": {
+          "type": "column",
+          "settings": {
+            "image": "shopify://shop_images/Cement-Bucket-Bag.webp",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_orientation": "text-below",
+            "title": "",
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-0",
+        "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-3",
+        "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-1",
+        "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-4",
+        "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-2"
       ],
       "settings": {
         "color_scheme": "background-1",
-        "full_width": true,
-        "padding_top": 40,
-        "padding_bottom": 52
+        "image_ratio": "sportrait",
+        "columns_desktop": 4,
+        "column_alignment": "left",
+        "enable_desktop_slider": true,
+        "columns_mobile": "1",
+        "swipe_on_mobile": false,
+        "padding_column": 0,
+        "padding_left_right": 0,
+        "padding_top": 0,
+        "padding_bottom": 36
       }
     }
   },
   "order": [
     "dc33413a-3778-467e-9690-093f904ce87d",
     "77895afa-84f3-4649-adde-e15f071ced0f",
+    "60348a8c-408f-4e34-83c5-2b9a11c2958a",
+    "79d0d8ee-cc13-4862-b126-2b1f40285703",
+    "824911b2-0706-4181-a7db-9f98218b30c8",
     "537bff51-0684-4d2d-8194-f7e353c3b516",
-    "88801c64-2da2-42ca-bf3c-b48464f8ddd7",
-    "e3bd2b9e-a41e-4f45-b029-6ff26f784368",
+    "a54fdec4-b72f-460e-93e8-a0baa5b723ee",
     "c170f63e-0402-4722-a40e-15d3ec7a333b",
-    "824911b2-0706-4181-a7db-9f98218b30c8"
+    "f9826f59-7dab-4ada-a0c2-ef0d3893c3e3",
+    "3bdb8806-6c8d-4cb3-910f-450d2c259a17",
+    "2408b453-147f-4bdf-930c-a8551514f985",
+    "f77a9130-e190-454e-af79-79e742e874b0"
   ]
 }
