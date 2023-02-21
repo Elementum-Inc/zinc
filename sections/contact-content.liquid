@@ -91,7 +91,7 @@
                   {{ 'image' | placeholder_svg_tag }}
                 {% endunless %}
               {%- endif -%}
-            <div class="contact-content-card__info {% if block.settings.title == blank or block.settings.text == blank %} hidden {% endif %}" style="padding: {{ block.settings.text-padding }}px;">
+            <div class="contact-content-card__info" style="padding: {{ block.settings.text-padding }}px;">
                 {%- if block.settings.title != blank -%}
                   <h3 class="{{ block.settings.heading_text_style }}"
                   >
