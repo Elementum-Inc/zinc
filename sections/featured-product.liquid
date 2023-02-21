@@ -1,5 +1,5 @@
 {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
-{{ 'section-featured-product.css' | asset_url | stylesheet_tag }}
+{{ 'et_featured-product.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-rte.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
@@ -197,7 +197,7 @@
                                   form="{{ product_form_id }}"
                                   {% if option.selected_value == value %}checked{% endif %}
                             >
-                            <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                            <label class="btn btn-accent-2" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
                               {{ value }}
                             </label>
                           {%- endfor -%}
