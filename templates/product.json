@@ -215,73 +215,74 @@
         "padding_bottom": 28
       }
     },
-    "bb18bed4-64dc-47ad-8d5d-2aacba7170f7": {
+    "412d001d-4aed-4eea-97c6-d8c534cfd0f3": {
       "type": "media-collage",
       "blocks": {
-        "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-0": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#ffffff",
-            "column_font_color": "#121212",
-            "column_alignment": "left",
-            "column_orientation": "text-below",
-            "title": "Lorem",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
-          }
-        },
-        "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-1": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#d69940",
-            "column_font_color": "#000000",
-            "column_alignment": "left",
-            "column_orientation": "text-above",
-            "title": "Ipsum",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
-          }
-        },
-        "d0a11907-24e5-482c-895d-786c03c996b8": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#ffffff",
-            "column_font_color": "#000000",
-            "column_alignment": "left",
-            "column_orientation": "text-below",
-            "title": "",
-            "text": ""
-          }
-        },
-        "ce9b7823-cc64-463a-a2b6-1135e8580185": {
+        "template--18027706908981__412d001d-4aed-4eea-97c6-d8c534cfd0f3-1677012856001d09e9-0": {
           "type": "column",
           "settings": {
             "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-16_at_9.53.06_PM.png",
             "image-padding": 0,
             "text-padding": 35,
-            "column_background_color": "#074169",
-            "column_font_color": "#ffffff",
+            "column_background_color": "#FFFFFF",
+            "column_font_color": "#000000",
             "column_alignment": "left",
             "column_orientation": "text-below",
-            "title": "Lorem Ipsum Forever",
+            "title": "Block",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "template--18027706908981__412d001d-4aed-4eea-97c6-d8c534cfd0f3-1677012856001d09e9-1": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-16_at_9.50.19_PM.png",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "#FFFFFF",
+            "column_font_color": "#000000",
+            "column_alignment": "left",
+            "column_orientation": "text-above",
+            "title": "Block",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "template--18027706908981__412d001d-4aed-4eea-97c6-d8c534cfd0f3-1677012856001d09e9-2": {
+          "type": "column",
+          "settings": {
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "#492d2c",
+            "column_font_color": "#f8f5ed",
+            "column_alignment": "left",
+            "column_orientation": "text-below",
+            "title": "Block",
+            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
+          }
+        },
+        "a4d97ea6-1dfd-4511-8d2c-fb815e4b07ea": {
+          "type": "column",
+          "settings": {
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "#FFFFFF",
+            "column_font_color": "#000000",
+            "column_alignment": "left",
+            "column_orientation": "text-below",
+            "title": "Block",
             "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.<\/p>"
           }
         }
       },
       "block_order": [
-        "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-0",
-        "template--15348023623819__bb18bed4-64dc-47ad-8d5d-2aacba7170f7-1667887500b43acf69-1",
-        "d0a11907-24e5-482c-895d-786c03c996b8",
-        "ce9b7823-cc64-463a-a2b6-1135e8580185"
+        "template--18027706908981__412d001d-4aed-4eea-97c6-d8c534cfd0f3-1677012856001d09e9-0",
+        "template--18027706908981__412d001d-4aed-4eea-97c6-d8c534cfd0f3-1677012856001d09e9-1",
+        "template--18027706908981__412d001d-4aed-4eea-97c6-d8c534cfd0f3-1677012856001d09e9-2",
+        "a4d97ea6-1dfd-4511-8d2c-fb815e4b07ea"
       ],
       "settings": {
-        "title": "",
+        "title": "Media Collage",
         "heading_size": "h1",
-        "image_ratio": "adapt",
+        "image_ratio": "auto",
         "columns_desktop": 2,
         "color_scheme": "background-1",
         "columns_mobile": "1",
@@ -388,7 +389,7 @@
     "main",
     "multicolumn",
     "product-recommendations",
-    "bb18bed4-64dc-47ad-8d5d-2aacba7170f7",
+    "412d001d-4aed-4eea-97c6-d8c534cfd0f3",
     "f29cd85f-0459-48b5-a0b0-73e4bdd3a7e0",
     "1668099507ad2af8f1",
     "e621db47-5ffc-4ee3-9d26-4ebf07236654"
