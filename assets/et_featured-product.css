@@ -4,7 +4,7 @@
   padding-bottom: 0;
 }
 
-.featured-product .global-media-settings:after {
+.featured-product .global-media-settings::after {
   z-index: 0;
 }
 
@@ -36,7 +36,7 @@
 }
 
 .share-button + .product__view-details::after {
-  content: "";
+  content: '';
   clear: both;
   display: table;
 }
@@ -52,9 +52,7 @@
 }
 
 @media screen and (min-width: 1024px) {
-  .background-secondary
-    .featured-product:not(.product--no-media)
-    > .product__info-wrapper {
+  .background-secondary .featured-product:not(.product--no-media) > .product__info-wrapper {
     padding: 0 0 0 5rem;
   }
 

@@ -1,8 +1,8 @@
 import "vite/modulepreload-polyfill";
 
 // Splide
-import Splide from '@splidejs/splide';
-import '@splidejs/splide/css';
+import Splide from "@splidejs/splide";
+import "@splidejs/splide/css";
 
 window.Splide = Splide;
 
@@ -20,7 +20,7 @@ import "../styles/base/animations.css";
 import "../styles/layout/header.css";
 import "../styles/layout/footer.css";
 
-// Pages 
+// Pages
 import("../styles/pages/account.css");
 
 // Sections
@@ -34,6 +34,7 @@ import("../styles/sections/collection-list.css");
 import("../styles/sections/contact-content.css");
 import("../styles/sections/contact-form.css");
 import("../styles/sections/featured-collection.css");
+import("../styles/sections/featured-product.css");
 import("../styles/sections/film-strip.css");
 import("../styles/sections/hero-slideshow.css");
 import("../styles/sections/media-collage.css");
@@ -90,19 +91,21 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  if (document.querySelectorAll('.splide').length) {
-    document.querySelectorAll('.splide').forEach(slider => {
-      if (!slider.parentElement.classList.contains('product__media-gallery') &&
-          !slider.classList.contains('product-recommendations')) {
+  if (document.querySelectorAll(".splide").length) {
+    document.querySelectorAll(".splide").forEach((slider) => {
+      if (
+        !slider.parentElement.classList.contains("product__media-gallery") &&
+        !slider.classList.contains("product-recommendations")
+      ) {
         new Splide(slider).mount();
       }
     });
   }
 
-  if (document.querySelector('.product__media-gallery')) {
-    var gallery = new Splide(document.querySelector('[id*=GalleryViewer]'));
-    var thumbnailsEl = document.querySelector('[id*=GalleryThumbnails]');
-    
+  if (document.querySelector(".product__media-gallery")) {
+    var gallery = new Splide(document.querySelector("[id*=GalleryViewer]"));
+    var thumbnailsEl = document.querySelector("[id*=GalleryThumbnails]");
+
     if (thumbnailsEl != null || undefined) {
       var thumbnails = new Splide(thumbnailsEl);
 
@@ -115,8 +118,8 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (Shopify.designMode) {
-    document.addEventListener("shopify:section:load", event => {
-      let slider = event.target.querySelector('.splide');
+    document.addEventListener("shopify:section:load", (event) => {
+      let slider = event.target.querySelector(".splide");
 
       if (slider) {
         new Splide(slider).mount();
