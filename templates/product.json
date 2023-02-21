@@ -139,149 +139,12 @@
         "padding_bottom": 12
       }
     },
-    "e621db47-5ffc-4ee3-9d26-4ebf07236654": {
-      "type": "film-strip",
-      "blocks": {
-        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-0": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 0,
-            "column_orientation": "text-below",
-            "title": "",
-            "text": ""
-          }
-        },
-        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-1": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 0,
-            "column_orientation": "text-below",
-            "title": "",
-            "text": ""
-          }
-        },
-        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-2": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 0,
-            "column_orientation": "text-below",
-            "title": "",
-            "text": ""
-          }
-        },
-        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-3": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 0,
-            "column_orientation": "text-below",
-            "title": "",
-            "text": ""
-          }
-        }
-      },
-      "block_order": [
-        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-0",
-        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-1",
-        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-2",
-        "template--15348023623819__e621db47-5ffc-4ee3-9d26-4ebf07236654-1668099671414e4162-3"
-      ],
-      "settings": {
-        "color_scheme": "accent-2",
-        "image_ratio": "widescreen",
-        "columns_desktop": 4,
-        "column_alignment": "left",
-        "enable_desktop_slider": false,
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_column": 16,
-        "padding_left_right": 11,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
-    "61a7f2ae-d6a7-46f0-bb72-c32556aff108": {
-      "type": "media-collage",
-      "blocks": {
-        "template--17922963571006__61a7f2ae-d6a7-46f0-bb72-c32556aff108-1676491341a0a480f3-0": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#FFFFFF",
-            "column_font_color": "#000000",
-            "column_orientation": "text-below",
-            "title": "Block",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
-          }
-        },
-        "template--17922963571006__61a7f2ae-d6a7-46f0-bb72-c32556aff108-1676491341a0a480f3-1": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#FFFFFF",
-            "column_font_color": "#000000",
-            "column_orientation": "text-below",
-            "title": "Block",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
-          }
-        },
-        "template--17922963571006__61a7f2ae-d6a7-46f0-bb72-c32556aff108-1676491341a0a480f3-2": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#FFFFFF",
-            "column_font_color": "#000000",
-            "column_orientation": "text-below",
-            "title": "Block",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
-          }
-        },
-        "9f30d97e-0f8f-4608-a4ca-adf841c9992b": {
-          "type": "column",
-          "settings": {
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#FFFFFF",
-            "column_font_color": "#000000",
-            "column_orientation": "text-below",
-            "title": "Block",
-            "text": "<p>Pair text with an image to focus on your chosen product, collection, or blog post. Add details on availability, style, or even provide a review.</p>"
-          }
-        }
-      },
-      "block_order": [
-        "template--17922963571006__61a7f2ae-d6a7-46f0-bb72-c32556aff108-1676491341a0a480f3-0",
-        "template--17922963571006__61a7f2ae-d6a7-46f0-bb72-c32556aff108-1676491341a0a480f3-1",
-        "template--17922963571006__61a7f2ae-d6a7-46f0-bb72-c32556aff108-1676491341a0a480f3-2",
-        "9f30d97e-0f8f-4608-a4ca-adf841c9992b"
-      ],
-      "settings": {
-        "title": "",
-        "heading_size": "h1",
-        "image_ratio": "auto",
-        "columns_desktop": 2,
-        "column_alignment": "left",
-        "color_scheme": "background-1",
-        "columns_mobile": "1",
-        "swipe_on_mobile": false,
-        "padding_column": 3,
-        "padding_left_right": 3,
-        "padding_top": 36,
-        "padding_bottom": 36
-      }
-    },
     "product-recommendations": {
       "type": "product-recommendations",
       "settings": {
-        "heading": "You may also like",
+        "heading": "",
         "heading_size": "h0",
-        "display_style": "slider",
+        "display_style": "grid",
         "products_to_show": 10,
         "columns_desktop": 4,
         "color_scheme": "accent-1",
@@ -300,8 +163,6 @@
   },
   "order": [
     "main",
-    "e621db47-5ffc-4ee3-9d26-4ebf07236654",
-    "61a7f2ae-d6a7-46f0-bb72-c32556aff108",
     "product-recommendations"
   ]
 }
