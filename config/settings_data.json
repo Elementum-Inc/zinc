@@ -1,32 +1,36 @@
 {
   "current": {
-    "colors_text": "#492d2c",
-    "colors_background_1": "#f8f5ed",
-    "colors_background_2": "#3f3d39",
-    "colors_accent_1": "#d3a769",
+    "colors_text": "#000000",
+    "colors_background_1": "#fdfdfd",
+    "colors_background_2": "#000000",
+    "colors_accent_1": "#d9cca4",
     "colors_accent_2": "#492d2c",
-    "colors_error": "#492d2c",
-    "type_header_font": "proza_libre_n4",
-    "heading_size": 13,
-    "type_body_font": "avenir_next_n4",
-    "body_size": 14,
+    "colors_success": "#0c54a5",
+    "colors_warning": "#783b43",
+    "colors_error": "#783b43",
+    "type_header_font": "futura_n4",
+    "heading_size": 15,
+    "type_body_font": "futura_n4",
+    "body_size": 12,
     "icon_size": 24,
     "spacing_sections": 0,
     "spacing_grid_horizontal": 20,
     "spacing_grid_vertical": 40,
     "buttons_border_thickness": 1,
-    "buttons_radius": 40,
-    "buttons_shadow_horizontal_offset": 6,
-    "buttons_shadow_vertical_offset": 6,
+    "buttons_radius": 0,
+    "buttons_shadow_horizontal_offset": 12,
+    "buttons_shadow_vertical_offset": 12,
     "variant_pills_label_size": "default",
     "variant_pills_border_thickness": 1,
-    "variant_pills_radius": 40,
+    "variant_pills_radius": 0,
     "inputs_radius": 0,
-    "product_card_text_alignment": "left",
+    "product_card_text_alignment": "center",
     "product_card_vertical_alignment": "center",
-    "product_card_color_scheme": "background-2",
+    "product_card_color_scheme": "background-1",
     "product_card_border": false,
-    "product_card_corner_radius": 16,
+    "product_card_corner_radius": 0,
+    "product_card_image_fit": "cover",
+    "product_card_hover_animation": "zoom",
     "content_card_text_alignment": "left",
     "content_card_vertical_alignment": "start",
     "content_card_color_scheme": "background-1",
@@ -62,9 +66,10 @@
     "drawer_shadow_vertical_offset": 0,
     "drawer_shadow_blur": 25,
     "badge_position": "top left",
-    "badge_corner_radius": 36,
-    "sale_badge_color_scheme": "accent-1",
+    "badge_corner_radius": 0,
+    "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "error",
+    "content_badge_color_scheme": "background-2",
     "social_twitter_link": "https://twitter.com/shopify",
     "social_facebook_link": "https://facebook.com/shopify",
     "social_pinterest_link": "https://pinterest.com/shopify",
@@ -74,7 +79,7 @@
     "social_snapchat_link": "",
     "social_youtube_link": "",
     "social_vimeo_link": "",
-    "search_open_position": "over",
+    "search_open_position": "below",
     "search_trends": "trending-searches",
     "predictive_search_enabled": true,
     "predictive_search_show_pages": true,
@@ -83,7 +88,7 @@
     "predictive_card_show_vendor": true,
     "predictive_card_show_author": true,
     "predictive_card_show_tags": true,
-    "currency_code_enabled": true,
+    "currency_code_enabled": false,
     "cart_type": "drawer",
     "show_cart_note": true,
     "colors_foreground": "#f3f3f3",
@@ -129,17 +134,14 @@
           "94b77c9b-7ce1-49f4-9f09-0c344030787c": {
             "type": "announcement",
             "settings": {
-              "text": "",
+              "text": "Shop New Releases",
               "color_scheme": "accent-1",
-              "link": ""
+              "link": "shopify://collections/new-releases"
             }
           }
         },
-        "block_order": [
-          "94b77c9b-7ce1-49f4-9f09-0c344030787c"
-        ],
-        "settings": {
-        }
+        "block_order": ["94b77c9b-7ce1-49f4-9f09-0c344030787c"],
+        "settings": {}
       },
       "header": {
         "type": "header",
@@ -157,6 +159,7 @@
             "type": "image_content",
             "settings": {
               "title": "shop",
+              "image": "shopify://shop_images/Black-Sundries-Logo.png",
               "content_title": "The Hue Collection",
               "content_title_size": "h2",
               "content_subtitle": "",
@@ -187,18 +190,19 @@
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc"
         ],
         "settings": {
-          "color_scheme": "accent-1",
+          "color_scheme": "background-1",
+          "logo": "shopify://shop_images/Black-Sundries-Logo.png",
           "logo_width": 120,
           "logo_position": "split-menu",
           "menu": "main-menu",
           "collapse_menu_desktop": false,
           "enable_sticky_header": true,
-          "mm_color_scheme": "accent-1",
-          "mm_type": "basic",
+          "mm_color_scheme": "background-2",
+          "mm_type": "bold",
           "mm_toplink_behavior": "view_all_link",
           "mm_enable_caret": true,
           "mm_mobile_links": "footer",
-          "user_menu_type": "minimal",
+          "user_menu_type": "compact",
           "menu_icon_position": "top",
           "padding_top": 20,
           "padding_bottom": 20
@@ -207,6 +211,13 @@
       "footer": {
         "type": "footer",
         "blocks": {
+          "e60aaf57-0fe3-44a0-9970-c8955fa37578": {
+            "type": "payments",
+            "settings": {
+              "enable_country_selector": true,
+              "payment_enable": false
+            }
+          },
           "footer-0": {
             "type": "link_list",
             "settings": {
@@ -215,50 +226,35 @@
               "menu": "footer"
             }
           },
-          "footer-1": {
-            "type": "link_list",
-            "settings": {
-              "heading": "Support",
-              "display_logo": false,
-              "menu": ""
-            }
-          },
           "footer-2": {
             "type": "text",
             "settings": {
               "heading": "Our mission",
               "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
             }
-          },
-          "6d9561d4-d380-41ef-a4ad-695b92faa9a4": {
-            "type": "payments",
-            "settings": {
-              "enable_country_selector": true,
-              "payment_enable": true
-            }
           }
         },
         "block_order": [
+          "e60aaf57-0fe3-44a0-9970-c8955fa37578",
           "footer-0",
-          "footer-1",
-          "footer-2",
-          "6d9561d4-d380-41ef-a4ad-695b92faa9a4"
+          "footer-2"
         ],
         "settings": {
           "footer_type": "bold",
-          "color_scheme": "background-2",
-          "column_count": "6",
-          "large_logo_text_size": 100,
-          "large_logo_width": 200,
+          "color_scheme": "background-1",
+          "column_count": "1",
+          "large_logo_text_size": 75,
+          "large_logo": "shopify://shop_images/Black-Sundries-Logo.png",
+          "large_logo_width": 425,
           "newsletter_enable": true,
           "show_social": true,
-          "show_social_icon": true,
-          "show_social_text": false,
-          "social_location": "above",
+          "show_social_icon": false,
+          "show_social_text": true,
+          "social_location": "below",
           "enable_language_selector": true,
           "show_poweredbyshopify": false,
           "margin_top": 0,
-          "padding_top": 8,
+          "padding_top": 72,
           "padding_bottom": 32
         }
       },
@@ -276,9 +272,7 @@
         }
       }
     },
-    "content_for_index": [
-
-    ]
+    "content_for_index": []
   },
   "presets": {
     "Classic": {
