@@ -1,9 +1,9 @@
 {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
-{{ 'et_featured-product.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-rte.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
 {{ 'et_product.css' | asset_url | stylesheet_tag }}
+{{ 'et_featured-product.css' | asset_url | stylesheet_tag }}
 {{ 'et_accordion.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
@@ -124,11 +124,11 @@
               {%- endif -%}
             {%- when 'quantity_selector' -%}
               <div class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
-                <label class="form__label" for="Quantity-{{ section.id }}">
+                <label class="form__label visually-hidden" for="Quantity-{{ section.id }}">
                   {{ 'products.product.quantity.label' | t }}
                 </label>
                 <quantity-input class="quantity">
-                  <button class="quantity__button no-js-hidden" name="minus" type="button">
+                  <button class="btn btn--qty secondary no-js-hidden" name="minus" type="button">
                     <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
                     {% render 'icon-minus' %}
                   </button>
@@ -140,7 +140,7 @@
                       value="1"
                       form="{{ product_form_id }}"
                     >
-                  <button class="quantity__button no-js-hidden" name="plus" type="button">
+                  <button class="btn btn--qty secondary no-js-hidden" name="plus" type="button">
                     <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
                     {% render 'icon-plus' %}
                   </button>
@@ -198,7 +198,7 @@
                                   {% if option.selected_value == value %}checked{% endif %}
                             >
                             <label class="btn btn-accent-2" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                              {{ value }}
+                              <span class="btn__label"> {{ value }} </span>
                             </label>
                           {%- endfor -%}
                         </fieldset>
