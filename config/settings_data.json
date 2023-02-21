@@ -70,10 +70,10 @@
     "sale_badge_color_scheme": "accent-2",
     "sold_out_badge_color_scheme": "error",
     "content_badge_color_scheme": "background-2",
-    "social_twitter_link": "https://twitter.com/shopify",
-    "social_facebook_link": "https://facebook.com/shopify",
-    "social_pinterest_link": "https://pinterest.com/shopify",
-    "social_instagram_link": "http://instagram.com/shopify",
+    "social_twitter_link": "https:\/\/twitter.com\/shopify",
+    "social_facebook_link": "https:\/\/facebook.com\/shopify",
+    "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
+    "social_instagram_link": "http:\/\/instagram.com\/shopify",
     "social_tiktok_link": "",
     "social_tumblr_link": "",
     "social_snapchat_link": "",
@@ -136,12 +136,15 @@
             "settings": {
               "text": "Shop New Releases",
               "color_scheme": "accent-1",
-              "link": "shopify://collections/new-releases"
+              "link": "shopify:\/\/collections\/new-releases"
             }
           }
         },
-        "block_order": ["94b77c9b-7ce1-49f4-9f09-0c344030787c"],
-        "settings": {}
+        "block_order": [
+          "94b77c9b-7ce1-49f4-9f09-0c344030787c"
+        ],
+        "settings": {
+        }
       },
       "header": {
         "type": "header",
@@ -159,7 +162,7 @@
             "type": "image_content",
             "settings": {
               "title": "shop",
-              "image": "shopify://shop_images/Black-Sundries-Logo.png",
+              "image": "shopify:\/\/shop_images\/Black-Sundries-Logo.png",
               "content_title": "The Hue Collection",
               "content_title_size": "h2",
               "content_subtitle": "",
@@ -168,9 +171,9 @@
               "button_style": "outline",
               "button_reverse": false,
               "primary_button_label": "Shop Hue",
-              "primary_button_url": "shopify://collections/hue-collection",
+              "primary_button_url": "shopify:\/\/collections\/hue-collection",
               "secondary_button_label": "The Hue Story",
-              "secondary_button_url": "shopify://blogs/news"
+              "secondary_button_url": "shopify:\/\/blogs\/news"
             }
           },
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
@@ -191,7 +194,7 @@
         ],
         "settings": {
           "color_scheme": "background-1",
-          "logo": "shopify://shop_images/Black-Sundries-Logo.png",
+          "logo": "shopify:\/\/shop_images\/Black-Sundries-Logo.png",
           "logo_width": 120,
           "logo_position": "split-menu",
           "menu": "main-menu",
@@ -230,7 +233,7 @@
             "type": "text",
             "settings": {
               "heading": "Our mission",
-              "subtext": "<p>Share contact information, store details, and brand content with your customers.</p>"
+              "subtext": "<p>Share contact information, store details, and brand content with your customers.<\/p>"
             }
           }
         },
@@ -244,7 +247,7 @@
           "color_scheme": "background-1",
           "column_count": "1",
           "large_logo_text_size": 75,
-          "large_logo": "shopify://shop_images/Black-Sundries-Logo.png",
+          "large_logo": "shopify:\/\/shop_images\/Black-Sundries-Logo.png",
           "large_logo_width": 425,
           "newsletter_enable": true,
           "show_social": true,
@@ -272,7 +275,9 @@
         }
       }
     },
-    "content_for_index": []
+    "content_for_index": [
+
+    ]
   },
   "presets": {
     "Classic": {
@@ -342,10 +347,10 @@
       "badge_corner_radius": 0,
       "sale_badge_color_scheme": "accent-1",
       "sold_out_badge_color_scheme": "error",
-      "social_twitter_link": "https://twitter.com/shopify",
-      "social_facebook_link": "https://facebook.com/shopify",
-      "social_pinterest_link": "https://pinterest.com/shopify",
-      "social_instagram_link": "http://instagram.com/shopify",
+      "social_twitter_link": "https:\/\/twitter.com\/shopify",
+      "social_facebook_link": "https:\/\/facebook.com\/shopify",
+      "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
+      "social_instagram_link": "http:\/\/instagram.com\/shopify",
       "social_tiktok_link": "",
       "social_tumblr_link": "",
       "social_snapchat_link": "",
@@ -462,10 +467,10 @@
       "badge_corner_radius": 0,
       "sale_badge_color_scheme": "accent-1",
       "sold_out_badge_color_scheme": "error",
-      "social_twitter_link": "https://twitter.com/shopify",
-      "social_facebook_link": "https://facebook.com/shopify",
-      "social_pinterest_link": "https://pinterest.com/shopify",
-      "social_instagram_link": "http://instagram.com/shopify",
+      "social_twitter_link": "https:\/\/twitter.com\/shopify",
+      "social_facebook_link": "https:\/\/facebook.com\/shopify",
+      "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
+      "social_instagram_link": "http:\/\/instagram.com\/shopify",
       "social_tiktok_link": "",
       "social_tumblr_link": "",
       "social_snapchat_link": "",
@@ -585,10 +590,10 @@
       "badge_corner_radius": 36,
       "sale_badge_color_scheme": "accent-1",
       "sold_out_badge_color_scheme": "error",
-      "social_twitter_link": "https://twitter.com/shopify",
-      "social_facebook_link": "https://facebook.com/shopify",
-      "social_pinterest_link": "https://pinterest.com/shopify",
-      "social_instagram_link": "http://instagram.com/shopify",
+      "social_twitter_link": "https:\/\/twitter.com\/shopify",
+      "social_facebook_link": "https:\/\/facebook.com\/shopify",
+      "social_pinterest_link": "https:\/\/pinterest.com\/shopify",
+      "social_instagram_link": "http:\/\/instagram.com\/shopify",
       "social_tiktok_link": "",
       "social_tumblr_link": "",
       "social_snapchat_link": "",

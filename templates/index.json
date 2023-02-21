@@ -7,7 +7,7 @@
           "type": "video",
           "disabled": true,
           "settings": {
-            "video_src": "https://cdn.shopify.com/videos/c/o/v/55ed2f8b740c423090e658ec7b765024.mp4",
+            "video_src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/55ed2f8b740c423090e658ec7b765024.mp4",
             "heading": "Video Slide",
             "desktop_heading_size": "h1",
             "mobile_heading_size": "mobile-text-medium",
@@ -29,7 +29,7 @@
         "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-1": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Marble-Hero.png",
+            "image": "shopify:\/\/shop_images\/Marble-Hero.png",
             "heading": "SUNDRIES",
             "desktop_heading_size": "h2",
             "mobile_heading_size": "mobile-text-medium",
@@ -37,9 +37,9 @@
             "button_style": "outline",
             "button_reverse": false,
             "primary_button_label": "SHOP NANO SHOPPERS",
-            "primary_button_url": "shopify://collections/nano-shoppers",
+            "primary_button_url": "shopify:\/\/collections\/nano-shoppers",
             "secondary_button_label": "SHOP BUCKET BAGS",
-            "secondary_button_url": "shopify://collections/bucket-bag",
+            "secondary_button_url": "shopify:\/\/collections\/bucket-bag",
             "box_align": "middle-left",
             "text_alignment": "left",
             "image_overlay_opacity": 0,
@@ -51,7 +51,7 @@
         "template--17922962358590__dc33413a-3778-467e-9690-093f904ce87d-16764817123b8a8ec3-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Untitled_design_14.png",
+            "image": "shopify:\/\/shop_images\/Untitled_design_14.png",
             "heading": "ELEPHANT",
             "desktop_heading_size": "h2",
             "mobile_heading_size": "mobile-text-medium",
@@ -149,7 +149,7 @@
         "template--17922642542875__60348a8c-408f-4e34-83c5-2b9a11c2958a-1676782859e590eeb6-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Blue-Python-Hero.png",
+            "image": "shopify:\/\/shop_images\/Blue-Python-Hero.png",
             "heading": "",
             "desktop_heading_size": "h1",
             "mobile_heading_size": "mobile-text-medium",
@@ -246,12 +246,13 @@
         "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-1": {
           "type": "paragraph",
           "settings": {
-            "text": "<p>Be the first to find out about our latest drops. </p>"
+            "text": "<p>Be the first to find out about our latest drops. <\/p>"
           }
         },
         "template--14967026548875__824911b2-0706-4181-a7db-9f98218b30c8-1676567631712bd1e5-2": {
           "type": "email_form",
-          "settings": {}
+          "settings": {
+          }
         }
       },
       "block_order": [
@@ -273,7 +274,7 @@
           "type": "column",
           "settings": {
             "column_alignment": "left",
-            "image": "shopify://shop_images/Screen_Shot_2023-02-19_at_12.48.38_AM.png",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-19_at_12.48.38_AM.png",
             "image_position": "above",
             "border-radius": 0,
             "title": "",
@@ -286,7 +287,7 @@
           "type": "column",
           "settings": {
             "column_alignment": "left",
-            "image": "shopify://shop_images/Screen_Shot_2023-02-18_at_2.18.42_PM.png",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-18_at_2.18.42_PM.png",
             "image_position": "above",
             "border-radius": 0,
             "title": "",
@@ -299,7 +300,7 @@
           "type": "column",
           "settings": {
             "column_alignment": "left",
-            "image": "shopify://shop_images/Screen_Shot_2023-02-18_at_2.17.38_PM.png",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-18_at_2.17.38_PM.png",
             "image_position": "above",
             "border-radius": 0,
             "title": "",
@@ -312,7 +313,7 @@
           "type": "column",
           "settings": {
             "column_alignment": "left",
-            "image": "shopify://shop_images/Screen_Shot_2023-02-18_at_11.00.25_PM.png",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-18_at_11.00.25_PM.png",
             "image_position": "above",
             "border-radius": 0,
             "title": "",
@@ -336,7 +337,7 @@
         "image_ratio": "sportrait",
         "columns_desktop": 2,
         "button_label": "EXPLORE",
-        "button_link": "shopify://collections/all-products",
+        "button_link": "shopify:\/\/collections\/all-products",
         "color_scheme": "background-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
@@ -351,7 +352,7 @@
         "template--17922642542875__a54fdec4-b72f-460e-93e8-a0baa5b723ee-1676782859e590eeb6-0": {
           "type": "slide",
           "settings": {
-            "image": "shopify://shop_images/Marble-Hero.png",
+            "image": "shopify:\/\/shop_images\/Marble-Hero.png",
             "heading": "",
             "desktop_heading_size": "h1",
             "mobile_heading_size": "mobile-text-medium",
@@ -392,7 +393,7 @@
           "settings": {
             "heading": "Collapsible row",
             "icon": "question_mark",
-            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.</p>",
+            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.<\/p>",
             "page": ""
           }
         },
@@ -401,7 +402,7 @@
           "settings": {
             "heading": "Collapsible row",
             "icon": "question_mark",
-            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.</p>",
+            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.<\/p>",
             "page": ""
           }
         },
@@ -410,7 +411,7 @@
           "settings": {
             "heading": "Collapsible row",
             "icon": "question_mark",
-            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.</p>",
+            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.<\/p>",
             "page": ""
           }
         },
@@ -419,7 +420,7 @@
           "settings": {
             "heading": "Collapsible row",
             "icon": "question_mark",
-            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.</p>",
+            "row_content": "<p>Use collapsible tabs for FAQs, additional product info, and more.<\/p>",
             "page": ""
           }
         }
@@ -458,14 +459,14 @@
         "f88c90c6-69e2-40e9-b94b-8c33e6138a6b": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Cement-Open-WOC.png",
+            "image": "shopify:\/\/shop_images\/Cement-Open-WOC.png",
             "image_padding": false
           }
         },
         "87f4fc11-d1c2-4c48-9aaa-ee163302c961": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2023-02-18_at_11.02.06_PM.png",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-18_at_11.02.06_PM.png",
             "image_padding": false
           }
         }
@@ -492,14 +493,14 @@
         "9e93ca31-2c14-4bd3-89b8-7ec08929cd8a": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Screen_Shot_2023-02-18_at_11.02.06_PM.png",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-18_at_11.02.06_PM.png",
             "image_padding": false
           }
         },
         "2c81d10e-9e59-4cd7-879a-d074e996ca39": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Cement-Open-WOC.png",
+            "image": "shopify:\/\/shop_images\/Cement-Open-WOC.png",
             "image_padding": false
           }
         },
@@ -531,7 +532,7 @@
         "template--17922642542875__2408b453-147f-4bdf-930c-a8551514f985-1676786012b1e36fc4-1": {
           "type": "text",
           "settings": {
-            "text": "<p>FOLLOW US ON INSTAGRAM</p><p><strong>@SUNDRIES.US</strong></p>"
+            "text": "<p>FOLLOW US ON INSTAGRAM<\/p><p><strong>@SUNDRIES.US<\/strong><\/p>"
           }
         }
       },
@@ -553,7 +554,7 @@
         "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-0": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Chestnut_Marble.webp",
+            "image": "shopify:\/\/shop_images\/Chestnut_Marble.webp",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -564,7 +565,7 @@
         "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-3": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Cement-Front-WOC.png",
+            "image": "shopify:\/\/shop_images\/Cement-Front-WOC.png",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -575,7 +576,7 @@
         "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-1": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/python_nano_shopper.jpg",
+            "image": "shopify:\/\/shop_images\/python_nano_shopper.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -586,7 +587,7 @@
         "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-4": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/4369B8A8-824E-4521-8241-D5798233D5D9-1C29335B-98BB-4F57-B452-C046BB557EC9_d01a0394-1ac0-413d-9d4f-6e3abb1d10f6.jpg",
+            "image": "shopify:\/\/shop_images\/4369B8A8-824E-4521-8241-D5798233D5D9-1C29335B-98BB-4F57-B452-C046BB557EC9_d01a0394-1ac0-413d-9d4f-6e3abb1d10f6.jpg",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",
@@ -597,7 +598,7 @@
         "template--17922642542875__f77a9130-e190-454e-af79-79e742e874b0-16767853003315c922-2": {
           "type": "column",
           "settings": {
-            "image": "shopify://shop_images/Cement-Bucket-Bag.webp",
+            "image": "shopify:\/\/shop_images\/Cement-Bucket-Bag.webp",
             "image-padding": 0,
             "text-padding": 35,
             "column_orientation": "text-below",

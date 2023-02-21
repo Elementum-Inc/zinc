@@ -13,7 +13,7 @@
         "template--17992005910837__d1da7e08-b058-415f-a438-f2e50de66603-167632323938084b1e-1": {
           "type": "text",
           "settings": {
-            "text": "<p>Reach out to us to say hello, inquire about custom orders or provide feedback!</p>"
+            "text": "<p>Reach out to us to say hello, inquire about custom orders or provide feedback!<\/p>"
           }
         },
         "0bc6e1bb-85e6-4a0c-a483-8bf81dbef8cb": {
@@ -74,8 +74,8 @@
             "column_orientation": "text-below",
             "heading_text_style": "uppercase",
             "content_text_size": "h4",
-            "title": "Contact Content",
-            "text": "<p>Provide useful content and information that can further assist customers in contacting you or learning more about your brand. </p>",
+            "title": "",
+            "text": "",
             "title-2": "E-mail",
             "text-2": "info@loremipsum.com",
             "title-3": "Phone",
@@ -89,6 +89,7 @@
         "template--17922962424126__6722e994-6ece-4768-bde4-7ca019fdafb7-1676492796c19bd5d6-1": {
           "type": "column",
           "settings": {
+            "image": "shopify:\/\/shop_images\/Marble-Hero.png",
             "image-padding": 0,
             "text-padding": 35,
             "column_background_color": "{{ shop.brand.colors.primary[1].background }}",
