@@ -64,29 +64,6 @@
     "7a464e9c-0c9a-4b84-a141-23441d703459": {
       "type": "contact-content",
       "blocks": {
-        "template--15348023492747__7a464e9c-0c9a-4b84-a141-23441d703459-1668058087a36d5b51-0": {
-          "type": "column",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-16_at_7.30.18_PM.png",
-            "image-padding": 0,
-            "text-padding": 35,
-            "column_background_color": "#ffffff",
-            "column_font_color": "#000000",
-            "column_orientation": "text-above",
-            "heading_text_style": "uppercase",
-            "content_text_size": "h4",
-            "title": "",
-            "text": "",
-            "title-2": "",
-            "text-2": "",
-            "title-3": "",
-            "text-3": "",
-            "title-4": "",
-            "text-4": "",
-            "link_label": "",
-            "link": ""
-          }
-        },
         "ef956ce4-482f-46e7-9d0b-b6193f1480dc": {
           "type": "column",
           "settings": {
@@ -108,11 +85,34 @@
             "link_label": "",
             "link": ""
           }
+        },
+        "db05c50d-831c-498c-9051-31a81d2cbc70": {
+          "type": "column",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-16_at_7.30.18_PM.png",
+            "image-padding": 0,
+            "text-padding": 35,
+            "column_background_color": "#FFFFFF",
+            "column_font_color": "#000000",
+            "column_orientation": "text-below",
+            "heading_text_style": "uppercase",
+            "content_text_size": "h4",
+            "title": "",
+            "text": "",
+            "title-2": "",
+            "text-2": "",
+            "title-3": "",
+            "text-3": "",
+            "title-4": "",
+            "text-4": "",
+            "link_label": "",
+            "link": ""
+          }
         }
       },
       "block_order": [
-        "template--15348023492747__7a464e9c-0c9a-4b84-a141-23441d703459-1668058087a36d5b51-0",
-        "ef956ce4-482f-46e7-9d0b-b6193f1480dc"
+        "ef956ce4-482f-46e7-9d0b-b6193f1480dc",
+        "db05c50d-831c-498c-9051-31a81d2cbc70"
       ],
       "settings": {
         "title": "",
