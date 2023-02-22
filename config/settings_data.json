@@ -173,13 +173,13 @@
               "content_title_size": "h2",
               "content_subtitle": "",
               "content_subtitle_size": "h5",
-              "content": "Shop and learn more about our newest collection of inspired scents.",
+              "content": "",
               "button_style": "outline",
               "button_reverse": false,
               "primary_button_label": "",
-              "primary_button_url": "shopify:\/\/collections\/hue-collection",
-              "secondary_button_label": "The Hue Story",
-              "secondary_button_url": "shopify:\/\/blogs\/news"
+              "primary_button_url": "",
+              "secondary_button_label": "",
+              "secondary_button_url": ""
             }
           },
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
@@ -207,7 +207,7 @@
           "collapse_menu_desktop": false,
           "enable_sticky_header": true,
           "mm_color_scheme": "background-2",
-          "mm_type": "basic",
+          "mm_type": "bold",
           "mm_toplink_behavior": "view_all_link",
           "mm_enable_caret": true,
           "mm_mobile_links": "footer",
