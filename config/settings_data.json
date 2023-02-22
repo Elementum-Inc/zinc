@@ -209,7 +209,7 @@
           "mm_color_scheme": "background-2",
           "mm_type": "bold",
           "mm_toplink_behavior": "view_all_link",
-          "mm_enable_caret": true,
+          "mm_enable_caret": false,
           "mm_mobile_links": "footer",
           "user_menu_type": "compact",
           "menu_icon_position": "top",
