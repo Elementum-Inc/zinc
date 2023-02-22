@@ -168,18 +168,18 @@
             "type": "image_content",
             "settings": {
               "title": "collections",
-              "image": "shopify:\/\/shop_images\/Chestnut_Marble.webp",
-              "content_title": "",
-              "content_title_size": "h2",
-              "content_subtitle": "",
+              "image": "shopify:\/\/shop_images\/Cement-Bucket-Bag.webp",
+              "content_title": "ELEPHANT",
+              "content_title_size": "h3",
+              "content_subtitle": "Shop our newest collection",
               "content_subtitle_size": "h5",
               "content": "",
               "button_style": "outline",
               "button_reverse": false,
-              "primary_button_label": "",
-              "primary_button_url": "",
-              "secondary_button_label": "",
-              "secondary_button_url": ""
+              "primary_button_label": "SHOP THIS BAG",
+              "primary_button_url": "shopify:\/\/products\/cement-bucket-bag",
+              "secondary_button_label": "SHOP THE COLLECTION",
+              "secondary_button_url": "shopify:\/\/collections\/new-releases"
             }
           },
           "5771ba81-313e-4f85-9ea9-d675f4eb17fc": {
@@ -209,7 +209,7 @@
           "mm_color_scheme": "background-2",
           "mm_type": "bold",
           "mm_toplink_behavior": "view_all_link",
-          "mm_enable_caret": false,
+          "mm_enable_caret": true,
           "mm_mobile_links": "footer",
           "user_menu_type": "compact",
           "menu_icon_position": "top",
