@@ -6,8 +6,7 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
 */
 
 .buttons {
-  @apply
-    flex
+  @apply flex
     my-4;
 
   > .btn {
@@ -21,7 +20,6 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
       @apply mx-0;
     }
   }
-
 
   .right & {
     @apply justify-end;
@@ -40,8 +38,7 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
     focus:ring-scheme-accent;
 
   &__label {
-    @apply
-      relative
+    @apply relative
       z-1
       block
       rounded-button
@@ -52,53 +49,53 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
   }
 
   &.primary {
-    --button-bg: theme('colors.scheme-bg');
-    --button-fg: theme('colors.scheme-accent');
+    --button-bg: theme("colors.scheme-bg");
+    --button-fg: theme("colors.scheme-accent");
   }
 
   &.secondary {
-    --button-bg: theme('colors.scheme-accent');
-    --button-fg: theme('colors.scheme-bg');
+    --button-bg: theme("colors.scheme-accent");
+    --button-fg: theme("colors.scheme-bg");
   }
 
   &-background-1 {
-    --button-bg: theme('colors.bg1');
-    --button-fg: theme('colors.text');
+    --button-bg: theme("colors.bg1");
+    --button-fg: theme("colors.text");
   }
 
   &-background-2 {
-    --button-bg: theme('colors.bg2');
-    --button-fg: theme('colors.bg1');
+    --button-bg: theme("colors.bg2");
+    --button-fg: theme("colors.bg1");
   }
 
   &-accent-1 {
-    --button-bg: theme('colors.accent1');
-    --button-fg: theme('colors.bg1');
+    --button-bg: theme("colors.accent1");
+    --button-fg: theme("colors.bg1");
   }
 
   &-accent-2 {
-    --button-bg: theme('colors.accent2');
-    --button-fg: theme('colors.bg1');
+    --button-bg: theme("colors.accent2");
+    --button-fg: theme("colors.bg1");
   }
 
   &-foreground {
-    --button-bg: theme('colors.scheme-fg');
-    --button-fg: theme('colors.scheme-bg');
+    --button-bg: theme("colors.scheme-fg");
+    --button-fg: theme("colors.scheme-bg");
   }
 
   &-success {
-    --button-bg: theme('colors.success');
-    --button-fg: theme('colors.bg1');
+    --button-bg: theme("colors.success");
+    --button-fg: theme("colors.bg1");
   }
 
   &-warning {
-    --button-bg: theme('colors.warning');
-    --button-fg: theme('colors.bg1');
+    --button-bg: theme("colors.warning");
+    --button-fg: theme("colors.bg1");
   }
 
   &-error {
-    --button-bg: theme('colors.error');
-    --button-fg: theme('colors.bg1');
+    --button-bg: theme("colors.error");
+    --button-fg: theme("colors.bg1");
   }
 
   &--small {
@@ -126,19 +123,17 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
   }
 
   &--qty {
-    @apply
-      bg-button-bg
+    @apply bg-button-bg
       text-button-fg
       self-center
       leading-0
-      p-1
+      p-3
       md:p-2
       relative
       z-1;
 
     > svg {
-      @apply
-        h-[.75rem]
+      @apply h-[.75rem]
         w-[.75rem]
         md:(h-4 w-4)
         relative
@@ -151,8 +146,8 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
       @apply rounded-badge;
 
       > svg {
-        height: calc(var(--icon-size) * .75);
-        width: calc(var(--icon-size) * .75);
+        height: calc(var(--icon-size) * 0.75);
+        width: calc(var(--icon-size) * 0.75);
         vertical-align: text-top;
       }
     }
@@ -164,8 +159,7 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
   padding: var(--buttons-border-width);
 
   &::after {
-    @apply
-      content-DEFAULT
+    @apply content-DEFAULT
       absolute
       top-1/2
       left-1/2
@@ -188,8 +182,7 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
   @apply relative;
 
   &::after {
-    @apply
-      content-DEFAULT
+    @apply content-DEFAULT
       block
       absolute
       z-0
