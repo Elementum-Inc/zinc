@@ -198,7 +198,7 @@
           "menu": "main-menu",
           "collapse_menu_desktop": false,
           "enable_sticky_header": false,
-          "mm_color_scheme": "background-1",
+          "mm_color_scheme": "accent-1",
           "mm_type": "bold",
           "mm_toplink_behavior": "parent_link",
           "mm_enable_caret": true,
