@@ -152,7 +152,7 @@
             "settings": {
               "title": "shop",
               "submenu_title": "",
-              "submenu": "main-menu",
+              "submenu": "shop-menu",
               "submenu_item_image": "none"
             }
           },
