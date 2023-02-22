@@ -158,7 +158,7 @@
           "f8603bea-8bd3-4ec1-8e2a-1f58d60c8291": {
             "type": "menu",
             "settings": {
-              "title": "collections",
+              "title": "shop",
               "submenu_title": "",
               "submenu": "main-menu",
               "submenu_item_image": "none"
@@ -167,7 +167,7 @@
           "06f0cdba-8e0d-4722-84ee-b51b50fe3a4e": {
             "type": "image_content",
             "settings": {
-              "title": "collections",
+              "title": "shop",
               "image": "shopify:\/\/shop_images\/Chestnut_Marble.webp",
               "content_title": "",
               "content_title_size": "h2",
