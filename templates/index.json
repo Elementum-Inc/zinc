@@ -65,6 +65,18 @@
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
+        "column2": {
+          "type": "column",
+          "settings": {
+            "column_alignment": "left",
+            "image_position": "above",
+            "border-radius": 0,
+            "title": "It's all about connection.",
+            "text": "<p>Inspired by our great-grandmothers, Magnolia and Inez, Lonéz Scents candles are made with deep love and the intention of creating a meaningful and a tranquil space. <\/p>",
+            "button_label": "Our Story",
+            "button_link": "shopify:\/\/pages\/our-story"
+          }
+        },
         "column1": {
           "type": "column",
           "settings": {
@@ -77,23 +89,11 @@
             "button_label": "",
             "button_link": ""
           }
-        },
-        "column2": {
-          "type": "column",
-          "settings": {
-            "column_alignment": "left",
-            "image_position": "above",
-            "border-radius": 0,
-            "title": "It's all about connection.",
-            "text": "<p>Inspired by our great-grandmothers, Magnolia and Inez, Lonéz Scents candles are made with deep love and the intention of creating a meaningful and a tranquil space. <\/p>",
-            "button_label": "Our Story",
-            "button_link": "shopify:\/\/pages\/our-story"
-          }
         }
       },
       "block_order": [
-        "column1",
-        "column2"
+        "column2",
+        "column1"
       ],
       "settings": {
         "title": "",
