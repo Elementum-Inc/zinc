@@ -5,6 +5,7 @@
       "blocks": {
         "92a7dd88-44be-4caf-a9f7-1b2bff547122": {
           "type": "video",
+          "disabled": true,
           "settings": {
             "video_src": "https:\/\/cdn.shopify.com\/videos\/c\/o\/v\/c028b635a8c749bb96264a7835c738a9.mp4",
             "heading": "Set The Mood",
@@ -15,7 +16,7 @@
             "button_reverse": false,
             "primary_button_label": "Shop Scents",
             "primary_button_url": "",
-            "secondary_button_label": "Shop Accessories",
+            "secondary_button_label": "",
             "secondary_button_url": "",
             "box_align": "middle-center",
             "text_alignment": "center",
@@ -27,9 +28,8 @@
         },
         "16629989750553a9d2-0": {
           "type": "slide",
-          "disabled": true,
           "settings": {
-            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-13_at_11.40.16_AM.png",
+            "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-23_at_12.50.25_PM.png",
             "heading": "Our Candles Are About Connection",
             "desktop_heading_size": "h1",
             "mobile_heading_size": "mobile-text-medium",
@@ -58,7 +58,7 @@
         "slider_visual": "dots",
         "auto_rotate": false,
         "change_slides_speed": 7000,
-        "show_text_below": false,
+        "show_text_below": true,
         "accessibility_info": "Slideshow about our brand"
       }
     },
@@ -107,7 +107,7 @@
         "color_scheme": "background-1",
         "columns_mobile": "1",
         "swipe_on_mobile": false,
-        "padding_top": 36,
+        "padding_top": 0,
         "padding_bottom": 0
       }
     },
