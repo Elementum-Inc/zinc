@@ -32,7 +32,7 @@
             "image": "shopify:\/\/shop_images\/Screen_Shot_2023-02-23_at_12.50.25_PM.png",
             "heading": "Our Candles Are About Connection",
             "desktop_heading_size": "h1",
-            "mobile_heading_size": "mobile-text-medium",
+            "mobile_heading_size": "mobile-text-small",
             "subheading": "shop our latest collection",
             "button_style": "flat",
             "button_reverse": false,
