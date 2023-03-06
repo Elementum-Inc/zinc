@@ -12,9 +12,8 @@
   --tw-drop-shadow: var(--tw-empty,/*!*/ /*!*/);
   -webkit-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
-  --tw-drop-shadow: drop-shadow(0 4px 3px rgb(0 0 0 / .07)) drop-shadow(0 2px 2px rgb(0 0 0 / .06));
+  --tw-drop-shadow: drop-shadow(0 4px 3px rgba(0, 0, 0, 0.07)) drop-shadow(0 2px 2px rgba(0, 0, 0, 0.06));
 }
-
 .predictive-search__heading {
   border-color: rgb(var(--color-background-2) / .2);
   border-top-width: 1px;
@@ -22,13 +21,11 @@
   padding-right: 2rem;
   width: 100%;
 }
-
 .predictive-search__heading span {
   border-color: rgb(var(--color-background-2));
   border-bottom-width: 1px;
   line-height: 1.625;
 }
-
 .predictive-search__results-list {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,44 +35,36 @@
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
 }
-
 .predictive-search__list-item {
   flex-basis: 50%;
 }
-
 @media (min-width: 1024px) {
   .predictive-search__list-item {
     flex-basis: 25%;
   }
 }
-
 .predictive-search__list-item.page {
   flex-basis: 100%;
   text-align: left;
 }
-
 .predictive-search__list-item.page .predictive-search__item {
   text-align: left;
 }
-
 .predictive-search__list-item[aria-selected='true'] {
   background-color: rgb(var(--color-background-2) / .2);
 }
-
 .predictive-search__item {
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
   -ms-flex-direction: column;
   -webkit-flex-direction: column;
   flex-direction: column;
-  padding-top: .5rem;
+  padding-top: 0.5rem;
   text-align: center;
 }
-
 .predictive-search__item-heading {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
 }
-
 .predictive-search__item--term {
   -webkit-box-orient: horizontal;
   -webkit-box-direction: normal;
@@ -84,7 +73,6 @@
   flex-direction: row;
   padding-top: 1rem;
 }
-
 .predictive-search__image {
   aspect-ratio: 1 / 1;
   -o-object-fit: cover;
@@ -92,7 +80,6 @@
   -o-object-position: center;
   object-position: center;
 }
-
 .predictive-search__term {
   background-color: rgb(var(--color-background-1));
   border-color: rgb(var(--color-background-2) / .2);
@@ -101,5 +88,5 @@
   margin-top: 1rem;
   position: -webkit-sticky;
   position: sticky;
-  bottom: 0;
+  bottom: 0px;
 }
