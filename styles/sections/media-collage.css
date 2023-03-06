@@ -180,13 +180,6 @@
     margin-right: 1.5rem;
   }
 
-  /* .background-none .media-collage-list .media-collage-card__info,
-  .background-none .media-collage-list:not(.slider) .center .media-collage-card__info {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-} */
-
   .media-collage-card {
     position: relative;
     box-sizing: border-box;
@@ -212,10 +205,10 @@
     margin-left: .8rem;
     white-space: nowrap;
   }
+}
 
-  @media screen and (min-width: 1024px) {
-    .media-collage-list__item--empty {
-      display: list-item;
-    }
+@media screen and (min-width: 1024px) {
+  .media-collage-list__item--empty {
+    display: list-item;
   }
 }
