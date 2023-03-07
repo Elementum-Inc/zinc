@@ -1369,7 +1369,7 @@ p.small, .text-body.small {
 .btn--full {
   width: 100%;
 }
-.btn--1/2 {
+.btn--1\/2 {
   width: 50%;
 }
 .btn--qty {
@@ -1405,8 +1405,8 @@ p.small, .text-body.small {
   border-radius: var(--badge-corner-radius);
 }
 .btn.badge .btn__label > svg {
-  height: calc(var(--icon-size) * 0.75);
-  width: calc(var(--icon-size) * 0.75);
+  height: calc(var(--icon-size) * .75);
+  width: calc(var(--icon-size) * .75);
   vertical-align: text-top;
 }
 .btn-outline {
