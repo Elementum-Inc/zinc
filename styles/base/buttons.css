@@ -154,7 +154,8 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
   }
 }
 
-.btn-outline {
+.btn-outline,
+.buttons > .primary {
   @apply relative;
   padding: var(--buttons-border-width);
 
