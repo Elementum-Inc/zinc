@@ -57,7 +57,7 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
-button, input, textarea, select {
+button, select, input, textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -1409,11 +1409,11 @@ p.small, .text-body.small {
   width: calc(var(--icon-size) * .75);
   vertical-align: text-top;
 }
-.btn-outline {
+.btn-outline, .buttons > .primary {
   position: relative;
   padding: var(--buttons-border-width);
 }
-.btn-outline::after {
+.btn-outline::after, .buttons > .primary::after {
   border-color: var(--button-fg);
   border-top-width: var(--buttons-border-width);
   border-left-width: var(--buttons-border-width);
