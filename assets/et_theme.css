@@ -57,7 +57,7 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
-button, input, textarea, select {
+button, select, input, textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -1107,6 +1107,27 @@ p.small, .text-body.small {
     line-height: 1.875rem;
   }
 }
+.rte a {
+  text-underline-offset: 4px;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -webkit-transition-duration: 250ms;
+  -o-transition-duration: 250ms;
+  transition-duration: 250ms;
+}
+.rte a:hover {
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
 .link {
   font-size: .875rem;
 }
@@ -1369,7 +1390,7 @@ p.small, .text-body.small {
 .btn--full {
   width: 100%;
 }
-.btn--1/2 {
+.btn--1\/2 {
   width: 50%;
 }
 .btn--qty {
@@ -1405,15 +1426,15 @@ p.small, .text-body.small {
   border-radius: var(--badge-corner-radius);
 }
 .btn.badge .btn__label > svg {
-  height: calc(var(--icon-size) * 0.75);
-  width: calc(var(--icon-size) * 0.75);
+  height: calc(var(--icon-size) * .75);
+  width: calc(var(--icon-size) * .75);
   vertical-align: text-top;
 }
-.btn-outline {
+.btn-outline, .buttons > .primary {
   position: relative;
   padding: var(--buttons-border-width);
 }
-.btn-outline::after {
+.btn-outline::after, .buttons > .primary::after {
   border-color: var(--button-fg);
   border-top-width: var(--buttons-border-width);
   border-left-width: var(--buttons-border-width);
@@ -2009,7 +2030,7 @@ p.small, .text-body.small {
   -o-transition-duration: 200ms;
   transition-duration: 200ms;
 }
-.header__menu-collapsed button[aria-expanded='true'] .icon.expand > svg {
+.header__menu-collapsed button[aria-expanded='false'] .icon.expand > svg {
   --tw-translate-x: 0;
   --tw-translate-y: 0;
   --tw-translate-z: 0;
