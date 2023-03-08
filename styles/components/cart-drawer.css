@@ -41,11 +41,21 @@
   &__heading {
     @apply
       m-auto
-      font-serif
+      font-heading
       font-bold;
 
     @media screen and (max-width: 767px) {
       @apply text-3xl;
+    }
+  }
+}
+
+pickup-availability-drawer[open] {
+  &.drawer {
+    @apply visible;
+
+    & .drawer__inner {
+      transform: none;
     }
   }
 }
@@ -168,7 +178,7 @@
 
   #CartDrawer-Note {
     @apply
-      bg-fg
+      bg-scheme-fg
       text-base
       border-1
       border-gray-500;

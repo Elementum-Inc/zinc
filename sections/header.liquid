@@ -4,7 +4,8 @@
 }
 .top-link > a,
 .header__menu-trigger,
-.header__icon-link {
+.header__icon-link,
+.header__logo {
   padding-bottom: {{ section.settings.padding_bottom }}px;
 }
 {% endstyle %}
@@ -76,7 +77,9 @@
             {
               "content": "{{ block.settings.content }}",
               "content_title": "{{ block.settings.content_title }}",
+              "content_title_size": "{{ block.settings.content_title_size }}",
               "content_subtitle": "{{ block.settings.content_subtitle }}",
+              "content_subtitle_size": "{{ block.settings.content_subtitle_size }}",
               {%- if block.settings.image -%}
                 "image": {
                   "alt": "{{ block.settings.image.alt }}",
@@ -87,9 +90,11 @@
                   "width": "{{ block.settings.image.width }}"
                 },
               {%- endif -%}
-              "primary_button_text": "{{ block.settings.primary_button_text }}",
+              "button_style": "{{ block.settings.button_style }}",
+              "button_reverse": {{ block.settings.button_reverse }},
+              "primary_button_label": "{{ block.settings.primary_button_label }}",
               "primary_button_url": "{{ block.settings.primary_button_url }}",
-              "secondary_button_text": "{{ block.settings.secondary_button_text }}",
+              "secondary_button_label": "{{ block.settings.secondary_button_label }}",
               "secondary_button_url": "{{ block.settings.secondary_button_url }}",
               "title": "{{ block.settings.title }}"
             }
@@ -224,12 +229,12 @@
       "id": "color_scheme",
       "options": [
         {
-          "value": "primary",
-          "label": "Primary"
+          "value": "background-1",
+          "label": "Background 1"
         },
         {
-          "value": "secondary",
-          "label": "Secondary"
+          "value": "background-2",
+          "label": "Background 2"
         },
         {
           "value": "accent-1",
@@ -240,7 +245,7 @@
           "label": "Accent 2"
         }
       ],
-      "default": "primary",
+      "default": "background-1",
       "label": "t:sections.all.colors.label"
     },
     {
@@ -292,7 +297,7 @@
           "label": "t:sections.header.settings.logo_position.options__6.label"
         }
       ],
-      "default": "left",
+      "default": "split-menu",
       "label": "t:sections.header.settings.logo_position.label",
       "info": "t:sections.header.settings.logo_position.info"
     },
@@ -329,12 +334,12 @@
       "id": "mm_color_scheme",
       "options": [
         {
-          "value": "primary",
-          "label": "Primary"
+          "value": "background-1",
+          "label": "Background 1"
         },
         {
-          "value": "secondary",
-          "label": "Secondary"
+          "value": "background-2",
+          "label": "Background 2"
         },
         {
           "value": "accent-1",
@@ -345,7 +350,7 @@
           "label": "Accent 2"
         }
       ],
-      "default": "primary",
+      "default": "background-1",
       "label": "t:sections.all.colors.label"
     },
     {
@@ -361,9 +366,31 @@
           "label": "Bold"
         }
       ],
-      "default": "basic",
+      "default": "bold",
       "label": "Menu Type",
       "info": "TODO: A note on the difference between basic and bold."
+    },
+    {
+      "type": "select",
+      "id": "mm_toplink_behavior",
+      "options": [
+        {
+          "value": "view_all_link",
+          "label": "Include \"View all\" link in submenu"
+        },
+        {
+          "value": "parent_link",
+          "label": "Link directly in topmenu"
+        }
+      ],
+      "default": "parent_link",
+      "label": "Toplink Behavior"
+    },
+    {
+      "type": "checkbox",
+      "id": "mm_enable_caret",
+      "default": false,
+      "label": "Enable caret"
     },
     {
       "type": "link_list",
@@ -509,41 +536,112 @@
         {
           "type": "text",
           "id": "content_title",
-          "label": "Heading"
+          "label": "Heading",
+          "default": "Product Highlight"
+        },
+        {
+          "type": "select",
+          "id": "content_title_size",
+          "options": [
+            {
+              "value": "h3",
+              "label": "Small"
+            },
+            {
+              "value": "h2",
+              "label": "Medium"
+            },
+            {
+              "value": "h1",
+              "label": "Large"
+            }
+          ],
+          "default": "h2",
+          "label": "Heading Size"
         },
         {
           "type": "text",
           "id": "content_subtitle",
-          "label": "Subheading"
+          "label": "Subheading",
+          "default": "Use text and image to highlight new product or news"
         },
         {
-          "type": "richtext",
+          "type": "select",
+          "id": "content_subtitle_size",
+          "options": [
+            {
+              "value": "h5",
+              "label": "Small"
+            },
+            {
+              "value": "h4",
+              "label": "Medium"
+            },
+            {
+              "value": "h3",
+              "label": "Large"
+            }
+          ],
+          "default": "h4",
+          "label": "Subheading Size"
+        },
+        {
+          "type": "text",
           "id": "content",
-          "label": "Content"
+          "label": "Content",
+          "default": "Optional descriptive text"
         },
         {
           "type": "header",
           "content": "Buttons"
         },
         {
+          "type": "select",
+          "id": "button_style",
+          "options": [
+            {
+              "value": "flat",
+              "label": "Flat"
+            },
+            {
+              "value": "outline",
+              "label": "Outline"
+            },
+            {
+              "value": "shadow",
+              "label": "Shadow"
+            }
+          ],
+          "label": "Style",
+          "default": "outline"
+        },
+        {
+          "type": "checkbox",
+          "id": "button_reverse",
+          "label": "Reverse button order",
+          "default": false
+        },
+        {
           "type": "text",
-          "id": "primary_button_text",
-          "label": "Primary Button text"
+          "id": "primary_button_label",
+          "label": "Primary button label",
+          "default": "Primary button"
         },
         {
           "type": "url",
           "id": "primary_button_url",
-          "label": "Primary Button link"
+          "label": "Primary button link"
         },
         {
           "type": "text",
-          "id": "secondary_button_text",
-          "label": "Secondary Button text"
+          "id": "secondary_button_label",
+          "label": "Secondary button label",
+          "default": "Secondary button"
         },
         {
           "type": "url",
           "id": "secondary_button_url",
-          "label": "Primary Button link"
+          "label": "Secondary button link"
         }
       ]
     }

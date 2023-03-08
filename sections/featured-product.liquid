@@ -1,9 +1,10 @@
 {{ 'section-main-product.css' | asset_url | stylesheet_tag }}
-{{ 'section-featured-product.css' | asset_url | stylesheet_tag }}
-{{ 'et_accordion.css' | asset_url | stylesheet_tag }}
 {{ 'component-price.css' | asset_url | stylesheet_tag }}
 {{ 'component-rte.css' | asset_url | stylesheet_tag }}
 {{ 'component-loading-overlay.css' | asset_url | stylesheet_tag }}
+{{ 'et_product.css' | asset_url | stylesheet_tag }}
+{{ 'et_featured-product.css' | asset_url | stylesheet_tag }}
+{{ 'et_accordion.css' | asset_url | stylesheet_tag }}
 
 {%- style -%}
   .section-{{ section.id }}-padding {
@@ -11,7 +12,7 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -30,13 +31,15 @@
   <link id="ModelViewerOverride" rel="stylesheet" href="{{ 'component-model-viewer-ui.css' | asset_url }}" media="print" onload="this.media='all'">
 {%- endif -%}
 
-<section class="color-{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% endif %}">
-  <div class="page-width section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}">
-    <div class="featured-product product shopify-grid grid--1-col gradient color-{{ section.settings.color_scheme }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
+<section class="color-scheme color-scheme--{{ section.settings.color_scheme }} {% if section.settings.secondary_background %}background-secondary{% endif %}">
+  <div class="container section-{{ section.id }}-padding{% if section.settings.secondary_background %} isolate{% endif %}">
+    <div class="featured-product product shopify-grid grid--1-col gradient color-scheme color-scheme--{{ section.settings.color_scheme }}{% if section.settings.secondary_background == false %} isolate{% endif %} {% if product.media.size > 0 %}grid--2-col-tablet{% else %}product--no-media{% endif %}">
       <div class="grid__item product__media-wrapper">
         <media-gallery id="MediaGallery-{{ section.id }}" role="region" aria-label="{{ 'products.product.media.gallery_viewer' | t }}" data-desktop-layout="stacked">
-          <a class="skip-to-content-link button visually-hidden" href="#ProductInfo-{{ section.id }}">
-            {{ "accessibility.skip_to_product_info" | t }}
+          <a class="skip-to-content-link btn visually-hidden" href="#ProductInfo-{{ section.id }}">
+            <span class="btn__label">
+              {{ "accessibility.skip_to_product_info" | t }}
+            </span>
           </a>
           <div id="GalleryViewer-{{ section.id }}" class="product__media-list">
             {%- if product.selected_or_first_available_variant.featured_media != null -%}
@@ -61,7 +64,7 @@
           </div>
           {%- if first_3d_model -%}
             <button
-              class="button button--full-width product__xr-button"
+              class="btn btn--full secondary product__xr-button"
               type="button"
               aria-label="{{ 'products.product.xr_button_label' | t }}"
               data-shopify-xr
@@ -69,8 +72,10 @@
               data-shopify-title="{{ product.title | escape }}"
               data-shopify-xr-hidden
             >
-              {% render 'icon-3d-model' %}
-              {{ 'products.product.xr_button' | t }}
+              <span class="btn__label">
+                {% render 'icon-3d-model' %}
+                {{ 'products.product.xr_button' | t }}
+              </span>
             </button>
           {%- endif -%}
         </media-gallery>
@@ -119,11 +124,11 @@
               {%- endif -%}
             {%- when 'quantity_selector' -%}
               <div class="product-form__input product-form__quantity{% if settings.inputs_shadow_vertical_offset != 0 and settings.inputs_shadow_vertical_offset < 0 %} product-form__quantity-top{% endif %}" {{ block.shopify_attributes }}>
-                <label class="form__label" for="Quantity-{{ section.id }}">
+                <label class="form__label visually-hidden" for="Quantity-{{ section.id }}">
                   {{ 'products.product.quantity.label' | t }}
                 </label>
                 <quantity-input class="quantity">
-                  <button class="quantity__button no-js-hidden" name="minus" type="button">
+                  <button class="btn btn--qty secondary no-js-hidden" name="minus" type="button">
                     <span class="visually-hidden">{{ 'products.product.quantity.decrease' | t: product: product.title | escape }}</span>
                     {% render 'icon-minus' %}
                   </button>
@@ -135,7 +140,7 @@
                       value="1"
                       form="{{ product_form_id }}"
                     >
-                  <button class="quantity__button no-js-hidden" name="plus" type="button">
+                  <button class="btn btn--qty secondary no-js-hidden" name="plus" type="button">
                     <span class="visually-hidden">{{ 'products.product.quantity.increase' | t: product: product.title | escape }}</span>
                     {% render 'icon-plus' %}
                   </button>
@@ -192,8 +197,8 @@
                                   form="{{ product_form_id }}"
                                   {% if option.selected_value == value %}checked{% endif %}
                             >
-                            <label for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
-                              {{ value }}
+                            <label class="btn btn-{{ block.settings.color_scheme }}" for="{{ section.id }}-{{ option.position }}-{{ forloop.index0 }}">
+                              <span class="btn__label"> {{ value }} </span>
                             </label>
                           {%- endfor -%}
                         </fieldset>
@@ -274,9 +279,10 @@
                         <button
                           type="submit"
                           name="add"
-                          class="product-form__submit button button--full-width {% if block.settings.show_dynamic_checkout and product.selling_plan_groups == empty %}button--secondary{% else %}button--primary{% endif %}"
+                          class="product-form__submit btn btn--large button--full-width secondary"
                           {% if product.selected_or_first_available_variant.available == false %}disabled{% endif %}
                         >
+                          <span class="btn__label">
                             <span>
                               {%- if product.selected_or_first_available_variant.available -%}
                                 {{ 'products.product.add_to_cart' | t }}
@@ -289,6 +295,7 @@
                                 <circle class="path" fill="none" stroke-width="6" cx="33" cy="33" r="30"></circle>
                               </svg>
                             </div>
+                          </span>
                         </button>
                         {%- if block.settings.show_dynamic_checkout -%}
                           {{ form | payment_button }}
@@ -302,10 +309,12 @@
                       <button
                         type="submit"
                         name="add"
-                        class="product-form__submit button button--full-width button--primary"
+                        class="product-form__submit btn btn--large button--full-width primary"
                         disabled
                       >
-                        {{ 'products.product.sold_out' | t }}
+                        <span class="btn__label">
+                          {{ 'products.product.sold_out' | t }}
+                        </span>
                       </button>
                     </div>
                   </div>
@@ -562,6 +571,30 @@
           ],
           "default": "button",
           "label": "t:sections.featured-product.blocks.variant_picker.settings.picker_type.label"
+        },
+        {
+          "type": "select",
+          "id": "color_scheme",
+          "options": [
+            {
+              "value": "background-1",
+              "label": "Background 1"
+            },
+            {
+              "value": "background-2",
+              "label": "Background 2"
+            },
+            {
+              "value": "accent-1",
+              "label": "Accent 1"
+            },
+            {
+              "value": "accent-2",
+              "label": "Accent 2"
+            }
+          ],
+          "default": "accent-2",
+          "label": "t:sections.all.colors.label"
         }
       ]
     },
@@ -634,14 +667,6 @@
       "id": "color_scheme",
       "options": [
         {
-          "value": "accent-1",
-          "label": "t:sections.all.colors.accent_1.label"
-        },
-        {
-          "value": "accent-2",
-          "label": "t:sections.all.colors.accent_2.label"
-        },
-        {
           "value": "background-1",
           "label": "t:sections.all.colors.background_1.label"
         },
@@ -650,8 +675,12 @@
           "label": "t:sections.all.colors.background_2.label"
         },
         {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
+          "value": "accent-1",
+          "label": "t:sections.all.colors.accent_1.label"
+        },
+        {
+          "value": "accent-2",
+          "label": "t:sections.all.colors.accent_2.label"
         }
       ],
       "default": "background-1",

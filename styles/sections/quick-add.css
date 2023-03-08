@@ -1,6 +1,5 @@
 .quick-add {
-  @apply
-    relative
+  @apply relative
     row-start-4
     mt-0
     mx-0
@@ -9,8 +8,7 @@
 }
 
 .quick-add-modal {
-  @apply
-    box-border
+  @apply box-border
     opacity-0
     fixed
     invisible
@@ -21,11 +19,10 @@
     left-0
     w-full
     h-full;
-  background: rgb(var(--color-scheme-fg) .2);
+  background: rgb(var(--color-background-2) / .75);
 
   &[open] {
-    @apply
-      opacity-100
+    @apply opacity-100
       visible
       z-101;
   }
@@ -35,8 +32,7 @@
   }
 
   &__content {
-    @apply
-      absolute
+    @apply absolute
       top-0
       left-1/2
       transform -translate-x-1/2
@@ -63,13 +59,11 @@
       }
 
       & .price__regular {
-        @apply
-          text-lg;
+        @apply text-lg;
       }
 
       & .product__view-details {
-        @apply
-          border-t-1
+        @apply border-t-1
           border-b-1
           text-center
           text-base
@@ -77,15 +71,13 @@
       }
 
       & .product__info-container .product__description {
-        @apply
-          m-0
+        @apply m-0
           mb-8
           text-xs;
       }
 
       & .form__label {
-        @apply
-          text-sm
+        @apply text-sm
           p-0
           mt-8
           mr-0
@@ -94,31 +86,12 @@
       }
 
       & .icon-caret {
-        @apply
-          h-.5rem;
+        @apply h-.5rem;
       }
 
       & .select__select {
-        @apply
-          text-base
+        @apply text-base
           h-12;
-      }
-
-      & .button {
-        @apply
-          text-sm
-          min-h-12;
-      }
-
-      & .shopify-payment-button {
-        @apply
-          h-12;
-      }
-
-      & .shopify-payment-button__button {
-        @apply
-          text-sm
-          min-h-10;
       }
 
       & .quantity__input {
@@ -126,15 +99,18 @@
       }
 
       & .quantity {
-        @apply
-          w-6.25rem
+        @apply w-6.25rem
           min-h-10;
+      }
+
+      & .product-form__quantity {
+        @apply flex
+          justify-center;
       }
     }
 
     & .shopify-payment-button {
-      @apply
-        h-12;
+      @apply h-12;
     }
 
     & .caption-spaced {
@@ -143,8 +119,7 @@
   }
 
   & .product-form__input input[type='radio'] + label {
-    @apply
-      border-scheme-accent
+    @apply border-scheme-accent
       rounded-[5%];
     margin: 0;
   }
@@ -154,7 +129,44 @@
   }
 
   & .form__label {
-    @apply
-      p-5;
+    @apply p-5;
+  }
+
+  & .shopify-payment-button__button,
+  & .product-form__submit {
+    @apply inline-block
+      min-h-[unset]
+      py-xs
+      px-8
+      bg-button-bg
+      text-button-fg
+      text-xl
+      focus:outline-none
+      focus:ring
+      focus:ring-scheme-accent;
+  }
+
+  .splide {
+    &.is-active {
+      @apply p-0;
+    }
+
+    &__slide {
+      @apply block;
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .quick-add-modal__content {
+    margin-top: 10rem;
+    width: 80%;
+    max-height: calc(100% - 6rem);
+    overflow-y: auto;
+  }
+
+  quick-add-modal .quick-add-modal__toggle {
+    top: 2rem;
+    right: 2rem;
   }
 }

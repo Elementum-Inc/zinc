@@ -8,15 +8,15 @@
 .accordion__title {
   max-width: calc(100% - 6rem);
   display: inline-block;
-  margin-top: .75rem;
+  margin-top: 0;
+  margin-bottom: 0;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 0;
   overflow-wrap: break-word;
 }
 
 .accordion summary {
-  border-color: var(--color-scheme-fg);
+  border-color: rgb(var(--color-scheme-accentRGB) / .2);
   border-top-width: 2px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -27,27 +27,24 @@
   position: relative;
 }
 
-.accordion svg {
-  height: 2rem;
-  position: absolute;
-  top: 50%;
-  width: 2rem;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-translate-z: 0;
-  --tw-rotate: 0;
-  --tw-rotate-x: 0;
-  --tw-rotate-y: 0;
-  --tw-rotate-z: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-scale-z: 1;
-  -webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
-  -ms-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
-  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
-  --tw-translate-y: -50%;
+.accordion summary .icon-caret {
+  -webkit-transition-property: background-color, border-color, color, fill, stroke, opacity, -webkit-box-shadow, -webkit-transform, filter, backdrop-filter;
+  -o-transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter;
+  transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, -webkit-box-shadow, transform, -webkit-transform, filter, backdrop-filter;
+  -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  -o-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -webkit-transition-duration: 300ms;
+  -o-transition-duration: 300ms;
+  transition-duration: 300ms;
+  position: relative;
+  right: 0;
+  top: 0;
+  height: var(--icon-size);
+  width: var(--icon-size);
 }
 
 .accordion details[open] > summary .icon-caret {
@@ -67,15 +64,23 @@
   -ms-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
   transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
   --tw-rotate: 180deg;
-  --tw-translate-y: -50%;
 }
 
 .accordion .icon-accordion {
   align-self: center;
   fill: rgb(var(--color-scheme-accent));
-  height: calc(var(--font-heading-scale) * 2rem);
-  margin-right: calc(var(--font-heading-scale) * 1rem);
-  width: calc(var(--font-heading-scale) * 2rem);
+  height: calc(var(--icon-size) * 1.25);
+  margin-right: var(--icon-size);
+  width: calc(var(--icon-size) * 1.25);
+}
+
+.accordion .icon-accordion > path {
+  fill: var(--color-scheme-accent);
+}
+
+.accordion:not(.product__accordion) .icon-accordion, .accordion:not(.product__accordion) .icon-caret {
+  height: calc(var(--icon-size) * 1.5);
+  width: calc(var(--icon-size) * 1.5);
 }
 
 .accordion .summary__title {
@@ -83,14 +88,14 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  align-items: center;
   -webkit-box-flex: 1;
   -ms-flex: 1 1 0%;
   -webkit-flex: 1 1 0%;
   flex: 1 1 0%;
-}
-
-.accordion .summary__title + .icon-caret {
-  height: calc(var(--font-heading-scale) * .6rem);
 }
 
 .accordion__content {

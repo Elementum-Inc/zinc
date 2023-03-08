@@ -6,7 +6,7 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -14,8 +14,8 @@
   }
 {%- endstyle -%}
 
-<div class="color-{{ section.settings.color_scheme }}">
-  <div class="contact page-width page-width--narrow section-{{ section.id }}-padding">
+<div class="color-scheme color-scheme--{{ section.settings.color_scheme }}">
+  <div class="contact container container--narrow section-{{ section.id }}-padding">
     {%- if section.settings.heading != blank -%}
       <h2 class="title title-wrapper--no-top-margin {{ section.settings.heading_size }}">{{ section.settings.heading | escape }}</h2>
     {%- else -%}
@@ -27,7 +27,7 @@
     {%- endif -%}
 
     {%- if section.settings.subtext != blank -%}
-      <h3 class="helper-text small {{ section.settings.subtext_size }}">{{ section.settings.subtext | escape }}</h3>
+      <h3 class="helper-text {{ section.settings.subtext_size }}">{{ section.settings.subtext | escape }}</h3>
     {%- endif -%}
 
     {%- form 'contact', id: 'ContactForm', class: 'isolate' -%}
@@ -92,9 +92,11 @@
         </textarea>
         <label class="form__label field__label" for="ContactForm-body">{{ 'templates.contact.form.comment' | t }}</label>
       </div>
-      <div class="contact__button btn">
-        <button type="submit" class="button">
-          {{ 'templates.contact.form.send' | t }}
+      <div class="contact__button">
+        <button type="submit" class="btn secondary btn--large">
+          <span class="btn__label">
+            {{ 'templates.contact.form.send' | t }}
+          </span>
         </button>
       </div>
     {%- endform -%}
@@ -136,7 +138,7 @@
     {
       "type": "text",
       "id": "text",
-      "default": "Some additional instructions could go here!",
+      "default": "Add text to help customers reach you",
       "label": "Text"
     },
     {
@@ -144,25 +146,24 @@
       "id": "text_size",
       "options": [
         {
-          "value": "h3",
+          "value": "h4",
           "label": "t:sections.all.heading_size.options__1.label"
         },
         {
-          "value": "h2",
+          "value": "h3",
           "label": "t:sections.all.heading_size.options__2.label"
         },
         {
-          "value": "h1",
+          "value": "h2",
           "label": "t:sections.all.heading_size.options__3.label"
         }
       ],
-      "default": "h1",
+      "default": "h3",
       "label": "Text Size"
     },
     {
       "type": "text",
       "id": "subtext",
-      "default": "Call sales at +1 555 505 5050",
       "label": "Subtext"
     },
     {
@@ -170,19 +171,19 @@
       "id": "subtext_size",
       "options": [
         {
-          "value": "h3",
+          "value": "h6",
           "label": "t:sections.all.heading_size.options__1.label"
         },
         {
-          "value": "h2",
+          "value": "h5",
           "label": "t:sections.all.heading_size.options__2.label"
         },
         {
-          "value": "h1",
+          "value": "h4",
           "label": "t:sections.all.heading_size.options__3.label"
         }
       ],
-      "default": "h1",
+      "default": "h5",
       "label": "Subtext size"
     },
     {
@@ -204,10 +205,6 @@
         {
           "value": "background-2",
           "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
         }
       ],
       "default": "background-1",

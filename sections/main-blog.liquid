@@ -10,7 +10,7 @@
     padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     .section-{{ section.id }}-padding {
       padding-top: {{ section.settings.padding_top }}px;
       padding-bottom: {{ section.settings.padding_bottom }}px;
@@ -27,7 +27,7 @@
 %}
 
 {%- paginate blog.articles by section.setting.posts_per_page -%}
-  <div class="main-blog page-width section-{{ section.id }}-padding">
+  <div class="main-blog container section-{{ section.id }}-padding">
     <h1 class="title--primary">{{ blog.title | escape }}</h1>
     {% if section.settings.blog_description != nil %}
       <h3 class="description">{{ section.settings.blog_description }}</h3>

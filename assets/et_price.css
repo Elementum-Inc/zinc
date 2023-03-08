@@ -6,6 +6,7 @@
 
 .price .price-item {
   margin-right: .5rem;
+  color: var(--color-scheme-text);
 }
 
 .price--on-sale .price-item--regular {
@@ -21,4 +22,18 @@
   .price--large {
     font-size: 1.25rem;
   }
+}
+
+.price.caption-with-letter-spacing {
+  font-size: 1rem;
+  letter-spacing: .13rem;
+  line-height: calc(1 + .2 / var(--font-body-scale));
+  text-transform: uppercase;
+}
+
+.price.subtitle {
+  font-size: 1.8rem;
+  line-height: calc(1 + .8 / var(--font-body-scale));
+  letter-spacing: .06rem;
+  color: rgb(var(--color-foreground) .7);
 }

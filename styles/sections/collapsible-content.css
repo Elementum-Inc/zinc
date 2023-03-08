@@ -15,7 +15,7 @@
     pt-20;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .collapsible-section-layout {
     @apply
       pb-28
@@ -33,7 +33,7 @@
     h-2x;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .collapsible-content__media--small {
     @apply
       h-lg;
@@ -45,7 +45,7 @@
   }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .collapsible-content__grid--reverse {
     @apply
       flex
@@ -62,17 +62,18 @@
 
 .collapsible-content__header {
   @apply
-    break-words;
+    break-words
+    mb-8;
 }
 
 .collapsible-content__heading {
   @apply
-    mb-8
+    mb-2
     mt-0;
 }
 
-@media screen and (min-width: 750px) {
-  .collapsible-content__heading {
+@media screen and (min-width: 768px) {
+  .caption-spaced {
     @apply
       mb-12;
   }
@@ -94,12 +95,13 @@
   }
 }
 
-.caption-spaced + h2 {
+.caption-spaced {
   @apply
-    m2;
+    normal-case
+    text-base;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .collapsible-content .accordion {
     @apply
       mt-0;
@@ -133,7 +135,7 @@
 /* check for flexbox gap in older Safari versions */
 
 @supports not (inset: 10px) {
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     .collapsible-content__grid:not(.collapsible-content__grid--reverse) .grid__item:last-child,
     .collapsible-content__grid--reverse .collapsible-content__grid-item {
       padding-left: 5rem;
@@ -141,7 +143,7 @@
     }
   }
 
-  @media screen and (min-width: 990px) {
+  @media screen and (min-width: 1024px) {
     .collapsible-content__grid:not(.collapsible-content__grid--reverse) .grid__item:last-child,
     .collapsible-content__grid--reverse .collapsible-content__grid-item {
       padding-left: 7rem;

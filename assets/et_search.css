@@ -16,7 +16,7 @@
 }
 
 .predictive-search__heading {
-  border-color: rgb(var(--theme-foreground));
+  border-color: rgb(var(--color-background-2) / .2);
   border-top-width: 1px;
   padding-left: 2rem;
   padding-right: 2rem;
@@ -59,7 +59,7 @@
 }
 
 .predictive-search__list-item[aria-selected='true'] {
-  background-color: rgb(var(--theme-foreground));
+  background-color: rgb(var(--color-background-2) / .2);
 }
 
 .predictive-search__item {
@@ -95,7 +95,7 @@
 
 .predictive-search__term {
   background-color: rgb(var(--color-background-1));
-  border-color: rgb(var(--theme-foreground));
+  border-color: rgb(var(--color-background-2) / .2);
   border-top-width: 1px;
   flex-basis: 100%;
   margin-top: 1rem;

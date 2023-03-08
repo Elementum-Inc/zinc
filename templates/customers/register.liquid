@@ -1,4 +1,5 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ 'et_account.css' | asset_url | stylesheet_tag }}
 
 <div class="customer register">
   <svg style="display: none">
@@ -113,8 +114,10 @@
         {{ form.errors.translated_fields['password'] | capitalize }} {{ form.errors.messages['password'] }}.
       </span>
     {%- endif -%}
-    <button>
-      {{ 'customer.register.submit' | t }}
+    <button class="btn secondary">
+      <span class="btn__label">
+        {{ 'customer.register.submit' | t }}
+      </span>
     </button>
   {%- endform -%}
 </div>

@@ -33,6 +33,7 @@
     "windicss": "^3.5.4"
   },
   "dependencies": {
-    "@headlessui/vue": "^1.7.0"
+    "@headlessui/vue": "1.7.4",
+    "@splidejs/splide": "^4.1.4"
   }
 }

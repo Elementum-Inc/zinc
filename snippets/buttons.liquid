@@ -1,0 +1,41 @@
+{% comment %}
+    Renders buttons for a particular section with global settings applied.
+
+    Accepts:
+    - type: {String} determines whether the button shows as a button or link
+    - reverse: {Boolean} reverses order of the buttons
+    - style: {String} determines which kind of button 
+    - primary_button_label: {String}
+    - primary_button_link: {Object}
+    - secondary_button_label: {String}
+    - secondary_button_link: {Object}
+    - container_class: {String}  
+
+    Usage:
+    {% render 'article-card' blog: blog, article: article, show_image: section.settings.show_image %}
+{% endcomment %}
+
+{% if primary_button_label != blank or secondary_button_label != blank %}
+  <div class="buttons{% if container_class %} {{ container_class }}{% endif %}">
+    {% if primary_button_label != blank %}
+      <a
+        class="{% if type == 'link' %}link{% else %}btn{% endif %} primary{% if style != 'flat' %} btn-{{ style }}{% endif %}{% if reverse %} order-2{% endif %}"
+        href="{{ primary_button_link }}"
+      >
+        <span class="btn__label">
+          {{ primary_button_label }}
+        </span>
+      </a>
+    {% endif %}
+    {% if secondary_button_label != blank %}
+      <a
+        class="{% if type == 'link' %}link{% else %}btn{% endif %} secondary{% if style != 'flat' %} btn-{{ style }}{% endif %}"
+        href="{{ secondary_button_link }}"
+      >
+        <span class="btn__label">
+          {{ secondary_button_label }}
+        </span>
+      </a>
+    {% endif %}
+  </div>
+{% endif %}

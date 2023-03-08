@@ -2,7 +2,7 @@
 
 {%- if section.settings.adapt_height_first_image and section.settings.image != blank -%}
   {%- style -%}
-  @media screen and (max-width: 749px) {
+  @media screen and (max-width: 767px) {
     #Banner-{{ section.id }}::before,
     #Banner-{{ section.id }} .banner__media::before,
     #Banner-{{ section.id }}:not(.banner--mobile-bottom) .banner__content::before {
@@ -12,7 +12,7 @@
     }
   }
 
-  @media screen and (min-width: 750px) {
+  @media screen and (min-width: 768px) {
     #Banner-{{ section.id }}::before,
     #Banner-{{ section.id }} .banner__media::before {
       padding-bottom: {{ 1 | divided_by: section.settings.image.aspect_ratio | times: 100 }}%;
@@ -38,7 +38,7 @@
           assign image_class = "banner__media-image-half"
         endif
         if section.settings.image_2 != blank and section.settings.stack_images_on_mobile
-          assign sizes = "(min-width: 750px) 50vw, 100vw"
+          assign sizes = "(min-width: 768px) 50vw, 100vw"
         elsif section.settings.image_2 != blank
           assign sizes = "50vw"
         else
@@ -68,7 +68,7 @@
           assign image_class_2 = "banner__media-image-half"
         endif
         if section.settings.image != blank and section.settings.stack_images_on_mobile
-          assign sizes = "(min-width: 750px) 50vw, 100vw"
+          assign sizes = "(min-width: 768px) 50vw, 100vw"
         elsif section.settings.image != blank
           assign sizes = "50vw"
         else
@@ -86,8 +86,8 @@
       }}
     </div>
   {%- endif -%}
-  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} page-width">
-    <div class="banner__box content-container content-container--full-width-mobile color-{{ section.settings.color_scheme }}">
+  <div class="banner__content banner__content--{{ section.settings.desktop_content_position }} container">
+    <div class="banner__box content-container content-container--full-width-mobile color-scheme color-scheme--{{ section.settings.color_scheme }}">
       {%- for block in section.blocks -%}
         {%- case block.type -%}
           {%- when 'heading' -%}
@@ -99,15 +99,15 @@
               <span>{{ block.settings.text | escape }}</span>
             </div>
           {%- when 'buttons' -%}
-            <div class="banner__buttons{% if block.settings.button_label_1 != blank and block.settings.button_label_2 != blank %} banner__buttons--multiple{% endif %}" {{ block.shopify_attributes }}>
-              {%- if block.settings.button_label_1 != blank -%}
-                <a{% if block.settings.button_link_1 == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link_1 }}"{% endif %} class="button{% if block.settings.button_style_secondary_1 %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label_1 | escape }}</a>
-              {%- endif -%}
-              {%- if block.settings.button_label_2 != blank -%}
-                <a{% if block.settings.button_link_2 == blank %} role="link" aria-disabled="true"{% else %} href="{{ block.settings.button_link_2 }}"{% endif %} class="button{% if block.settings.button_style_secondary_2 %} button--secondary{% else %} button--primary{% endif %}">{{ block.settings.button_label_2 | escape }}</a>
-              {%- endif -%}
-
-            </div>
+            {% render 'buttons',
+              container_class: 'banner__buttons',
+              primary_button_label: block.settings.primary_button_label,
+              primary_button_link: block.settings.primary_button_url,
+              secondary_button_label: block.settings.secondary_button_label,
+              secondary_button_link: block.settings.secondary_button_url,
+              style: block.settings.style,
+              reverse: block.settings.reverse
+            %}
         {%- endcase -%}
       {%- endfor -%}
     </div>
@@ -257,10 +257,6 @@
         {
           "value": "background-2",
           "label": "t:sections.all.colors.background_2.label"
-        },
-        {
-          "value": "inverse",
-          "label": "t:sections.all.colors.inverse.label"
         }
       ],
       "default": "background-1",
@@ -346,7 +342,7 @@
         {
           "type": "text",
           "id": "text",
-          "default": "Give customers details about the banner image(s) or content on the template.",
+          "default": "Give your customers additional information about the image or your company.",
           "label": "t:sections.image-banner.blocks.text.settings.text.label"
         },
         {
@@ -377,40 +373,50 @@
       "limit": 1,
       "settings": [
         {
-          "type": "text",
-          "id": "button_label_1",
-          "default": "Button label",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_label_1.label",
-          "info": "t:sections.image-banner.blocks.buttons.settings.button_label_1.info"
-        },
-        {
-          "type": "url",
-          "id": "button_link_1",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_link_1.label"
-        },
-        {
-          "type": "checkbox",
-          "id": "button_style_secondary_1",
-          "default": false,
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_1.label"
-        },
-        {
-          "type": "text",
-          "id": "button_label_2",
-          "default": "Button label",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_label_2.label",
-          "info": "t:sections.image-banner.blocks.buttons.settings.button_label_2.info"
-        },
-        {
-          "type": "url",
-          "id": "button_link_2",
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_link_2.label"
+          "type": "select",
+          "id": "style",
+          "options": [
+            {
+              "value": "flat",
+              "label": "Flat"
+            },
+            {
+              "value": "outline",
+              "label": "Outline"
+            },
+            {
+              "value": "shadow",
+              "label": "Shadow"
+            }
+          ],
+          "label": "Style",
+          "default": "flat"
         },
         {
           "type": "checkbox",
-          "id": "button_style_secondary_2",
-          "default": false,
-          "label": "t:sections.image-banner.blocks.buttons.settings.button_style_secondary_2.label"
+          "id": "reverse",
+          "label": "Reverse button order",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "primary_button_label",
+          "label": "Primary button label"
+        },
+        {
+          "type": "url",
+          "id": "primary_button_url",
+          "label": "Primary button link"
+        },
+        {
+          "type": "text",
+          "id": "secondary_button_label",
+          "label": "Secondary button label"
+        },
+        {
+          "type": "url",
+          "id": "secondary_button_url",
+          "label": "Secondary button link"
         }
       ]
     }

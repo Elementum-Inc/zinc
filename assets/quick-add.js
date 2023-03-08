@@ -35,6 +35,7 @@ if (!customElements.get('quick-add-modal')) {
           if (window.ProductModel) window.ProductModel.loadShopifyXR();
 
           this.removeGalleryListSemantic();
+          this.initializeSplide();
           this.preventVariantURLSwitching();
           super.show(opener);
         })
@@ -85,6 +86,19 @@ if (!customElements.get('quick-add-modal')) {
 
       galleryList.setAttribute('role', 'presentation');
       galleryList.querySelectorAll('[id^="Slide-"]').forEach(li => li.setAttribute('role', 'presentation'));
+    }
+
+    initializeSplide() {
+      var gallery = new Splide(this.modalContent.querySelector('[id*=GalleryViewer]'));
+      var thumbnails = new Splide(this.modalContent.querySelector('[id*=GalleryThumbnails]'));
+
+      if (thumbnails != null || undefined) {
+        gallery.sync(thumbnails);
+        gallery.mount();
+        thumbnails.mount();
+      } else {
+        gallery.mount();
+      }
     }
   });
 }

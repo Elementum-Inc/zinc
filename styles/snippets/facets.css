@@ -10,7 +10,7 @@
 
     & .facet-filters__label,
     & .product-count__text {
-      @apply font-serif;
+      @apply font-heading;
     }
 
     & .facets-pill {
@@ -30,7 +30,7 @@
     @apply flex items-center w-full py-2 pr-2 text-left;
 
     &-label {
-      @apply font-serif text-lg ml-2;
+      @apply font-heading text-lg ml-2;
     }
   }
 
@@ -43,7 +43,7 @@
   }
 
   &__heading {
-    @apply font-serif text-1.375rem md:text-3xl;
+    @apply font-heading text-1.375rem md:text-3xl;
   }
 
   &__count {
@@ -55,7 +55,7 @@
   }
 
   &__summary {
-    @apply font-serif text-lg py-4 px-8;
+    @apply font-heading text-lg py-4 px-8;
   }
 
   &__info {
@@ -63,7 +63,7 @@
   }
 
   &__close-button {
-    @apply flex items-center w-full font-serif text-lg mt-4 mb-2 py-2 px-8;
+    @apply flex items-center w-full font-heading text-lg mt-4 mb-2 py-2 px-8;
   }
 
   &__label {
@@ -102,7 +102,7 @@
     & .active-facets__button-wrapper *,
     & span.active-facets__button-inner,
     & .product-count__text {
-      @apply font-serif;
+      @apply font-heading;
     }
 
     & .facets__form {
@@ -126,7 +126,7 @@
     }
 
     & .facets__header {
-      @apply font-serif pb-2;
+      @apply font-heading pb-2;
 
       &-price {
         @apply justify-end;
@@ -157,7 +157,7 @@
       }
 
       & .select__select {
-        @apply border-0 font-serif text-lg pr-10;
+        @apply border-0 font-heading text-lg pr-10;
       }
     }
 
@@ -183,6 +183,14 @@
 
     &-sort {
       @apply container px-4 m-auto;
+    }
+
+    &-form {
+      @apply md:(flex justify-between);
+
+      > .sorting {
+        @apply md:pl-0;
+      }
     }
 
     & .facets-wrapper {

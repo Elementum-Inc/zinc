@@ -1,4 +1,5 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ 'et_account.css' | asset_url | stylesheet_tag }}
 
 <script src="{{ 'customer.js' | asset_url }}" defer></script>
 
@@ -14,16 +15,18 @@
       {{ 'customer.account.return' | t }}
     </a>
 
-    <div data-address>
+    <div data-address class="new-address-btn-container">
       <button
+        class="address-btn btn secondary add-address-btn"
         type="button"
         aria-expanded="false"
         aria-controls="AddAddress"
       >
-        {{ 'customer.addresses.add_new' | t }}
+        <span class="btn__label">
+          {{ 'customer.addresses.add_new' | t }}
+        </span>
       </button>
       <div id="AddAddress">
-        <h2 id="AddressNewHeading">{{ 'customer.addresses.add_new' | t }}</h2>
         {%- form 'customer_address', customer.new_address, aria-labelledBy: 'AddressNewHeading' -%}
           <div class="field">
             <input type="text" id="AddressFirstNameNew" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
@@ -93,8 +96,16 @@
             <label for="address_default_address_new">{{ 'customer.addresses.set_default' | t }}</label>
           </div>
           <div>
-            <button>{{ 'customer.addresses.add' | t }}</button>
-            <button type="reset">{{ 'customer.addresses.cancel' | t }}</button>
+            <button class="edit-btn btn primary">
+              <span class="btn__label">
+                {{ 'customer.addresses.add' | t }}
+              </span>
+            </button>
+            <button class="delete-btn btn secondary" type="reset">
+              <span class="btn__label">
+                {{ 'customer.addresses.cancel' | t }}
+              </span>
+            </button>
           </div>
         {%- endform -%}
       </div>
@@ -104,29 +115,34 @@
       {%- for address in customer.addresses -%}
         <li data-address>
           {%- if address == customer.default_address -%}
-            <h2>{{ 'customer.addresses.default' | t }}</h2>
+            <h2 class="default-address-label">{{ 'customer.addresses.default' | t }}</h2>
           {%- endif -%}
           {{ address | format_address }}
           <button
             type="button"
+            class="address-btn btn primary edit-btn"
             id="EditFormButton_{{ address.id }}"
             aria-label="{{ 'customer.addresses.edit_address' | t }} {{ forloop.index }}"
             aria-controls="EditAddress_{{ address.id }}"
             aria-expanded="false"
             data-address-id="{{ address.id }}"
           >
-            {{ 'customer.addresses.edit' | t }}
+            <span class="btn__label">
+              {{ 'customer.addresses.edit' | t }}
+            </span>
           </button>
           <button
             type="button"
+            class="address-btn btn secondary delete-btn"
             aria-label="{{ 'customer.addresses.delete' | t }} {{ forloop.index }}"
             data-target="{{ address.url }}"
             data-confirm-message="{{ 'customer.addresses.delete_confirm' | t }}"
           >
-            {{ 'customer.addresses.delete' | t }}
+            <span class="btn__label">
+              {{ 'customer.addresses.delete' | t }}
+            </span>
           </button>
           <div id="EditAddress_{{ address.id }}">
-            <h2>{{ 'customer.addresses.edit_address' | t }}</h2>
             {%- form 'customer_address', address -%}
               <div class="field">
                 <input type="text" id="AddressFirstName_{{ form.id }}" name="address[first_name]" value="{{ form.first_name }}" autocomplete="given-name" placeholder="{{ 'customer.addresses.first_name' | t }}">
@@ -204,8 +220,16 @@
                 </label>
               </div>
               <div>
-                <button>{{ 'customer.addresses.update' | t }}</button>
-                <button type="reset">{{ 'customer.addresses.cancel' | t }}</button>
+                <button class="address-btn btn primary btn-outline">
+                  <span class="btn__label">
+                    {{ 'customer.addresses.update' | t }}
+                  </span>
+                </button>
+                <button class="address-btn btn secondary" type="reset">
+                  <span class="btn__label">
+                    {{ 'customer.addresses.cancel' | t }}
+                  </span>
+                </button>
               </div>
             {%- endform -%}
           </div>

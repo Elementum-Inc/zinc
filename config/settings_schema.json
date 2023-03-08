@@ -1,11 +1,11 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Zinc",
+    "theme_name": "ZincV2",
     "theme_version": "1.0.0-alpha",
     "theme_author": "Elementum Tech",
-    "theme_documentation_url": "https:\/\/www.elementumtech.io\/",
-    "theme_support_url": "https:\/\/www.elementumtech.io\/"
+    "theme_documentation_url": "https://www.elementumtech.io/",
+    "theme_support_url": "https://www.elementumtech.io/"
   },
   {
     "name": "t:settings_schema.colors.name",
@@ -27,12 +27,6 @@
         "id": "colors_background_2",
         "default": "#121212",
         "label": "t:settings_schema.colors.settings.colors_background_2.label"
-      },
-      {
-        "type": "color",
-        "id": "colors_foreground",
-        "default": "#F3F3F3",
-        "label": "t:settings_schema.colors.settings.colors_foreground.label"
       },
       {
         "type": "color",
@@ -82,12 +76,13 @@
       {
         "type": "range",
         "id": "heading_size",
-        "min": 36,
-        "max": 72,
+        "min": 13,
+        "max": 24,
         "step": 1,
         "unit": "px",
         "label": "t:settings_schema.typography.settings.heading_size.label",
-        "default": 48
+        "info": "Scales up from lowest heading size.",
+        "default": 16
       },
       {
         "type": "header",
@@ -140,16 +135,6 @@
     "settings": [
       {
         "type": "range",
-        "id": "page_width",
-        "min": 1000,
-        "max": 1600,
-        "step": 100,
-        "default": 1200,
-        "unit": "px",
-        "label": "t:settings_schema.layout.settings.page_width.label"
-      },
-      {
-        "type": "range",
         "id": "spacing_sections",
         "min": 0,
         "max": 100,
@@ -199,21 +184,11 @@
         "type": "range",
         "id": "buttons_border_thickness",
         "min": 0,
-        "max": 12,
+        "max": 16,
         "step": 1,
         "unit": "px",
         "label": "t:settings_schema.global.settings.thickness.label",
         "default": 1
-      },
-      {
-        "type": "range",
-        "id": "buttons_border_opacity",
-        "min": 0,
-        "max": 100,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.global.settings.opacity.label",
-        "default": 100
       },
       {
         "type": "range",
@@ -228,16 +203,6 @@
       {
         "type": "header",
         "content": "t:settings_schema.global.settings.header__shadow.content"
-      },
-      {
-        "type": "range",
-        "id": "buttons_shadow_opacity",
-        "min": 0,
-        "max": 100,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.global.settings.opacity.label",
-        "default": 0
       },
       {
         "type": "range",
@@ -258,16 +223,6 @@
         "unit": "px",
         "label": "t:settings_schema.global.settings.vertical_offset.label",
         "default": 0
-      },
-      {
-        "type": "range",
-        "id": "buttons_shadow_blur",
-        "min": 0,
-        "max": 20,
-        "step": 5,
-        "unit": "px",
-        "label": "t:settings_schema.global.settings.blur.label",
-        "default": 0
       }
     ]
   },
@@ -275,48 +230,47 @@
     "name": "t:settings_schema.variant_pills.name",
     "settings": [
       {
+        "type": "select",
+        "id": "variant_pills_label_size",
+        "options": [
+          {
+            "value": "small",
+            "label": "Small"
+          },
+          {
+            "value": "default",
+            "label": "Default"
+          },
+          {
+            "value": "large",
+            "label": "Large"
+          }
+        ],
+        "default": "default",
+        "label": "Label text size"
+      },
+      {
         "type": "header",
-        "content": "t:settings_schema.global.settings.header__shadow.content",
-        "info": "See variant picker settings on Product page for more options."
+        "content": "t:settings_schema.global.settings.header__border.content"
       },
       {
         "type": "range",
-        "id": "variant_pills_shadow_opacity",
+        "id": "variant_pills_border_thickness",
         "min": 0,
-        "max": 100,
-        "step": 5,
-        "unit": "%",
-        "label": "t:settings_schema.global.settings.opacity.label",
-        "default": 0
+        "max": 16,
+        "step": 1,
+        "unit": "px",
+        "label": "t:settings_schema.global.settings.thickness.label",
+        "default": 1
       },
       {
         "type": "range",
-        "id": "variant_pills_shadow_horizontal_offset",
-        "min": -12,
-        "max": 12,
+        "id": "variant_pills_radius",
+        "min": 0,
+        "max": 40,
         "step": 2,
         "unit": "px",
-        "label": "t:settings_schema.global.settings.horizontal_offset.label",
-        "default": 0
-      },
-      {
-        "type": "range",
-        "id": "variant_pills_shadow_vertical_offset",
-        "min": -12,
-        "max": 12,
-        "step": 2,
-        "unit": "px",
-        "label": "t:settings_schema.global.settings.vertical_offset.label",
-        "default": 0
-      },
-      {
-        "type": "range",
-        "id": "variant_pills_shadow_blur",
-        "min": 0,
-        "max": 20,
-        "step": 5,
-        "unit": "px",
-        "label": "t:settings_schema.global.settings.blur.label",
+        "label": "t:settings_schema.global.settings.corner_radius.label",
         "default": 0
       }
     ]
@@ -682,7 +636,7 @@
         ],
         "default": "zoom",
         "label": "Animation style",
-        "info": "For more details on card animation styles, please refer to our [theme documentation](https:\/\/www.elementumtech.io)."
+        "info": "For more details on card animation styles, please refer to our [theme documentation](https://www.elementumtech.io)."
       },
       {
         "type": "checkbox",
@@ -1122,7 +1076,7 @@
           }
         ],
         "default": "background-2",
-        "label": "t:settings_schema.badges.settings.sale_badge_color_scheme.label"
+        "label": "Content badges color scheme"
       }
     ]
   },
@@ -1215,7 +1169,7 @@
       {
         "type": "link_list",
         "id": "search_trends",
-        "label": "Suggested\/Trending Searches",
+        "label": "Suggested/Trending Searches",
         "info": "Use this setting to attach a link list of common search terms to point consumers towards."
       },
       {

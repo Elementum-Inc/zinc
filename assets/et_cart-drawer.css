@@ -93,6 +93,14 @@
   }
 }
 
+pickup-availability-drawer[open].drawer {
+  visibility: visible;
+}
+
+pickup-availability-drawer[open].drawer .drawer__inner {
+  transform: none;
+}
+
 .cart-drawer .price {
   font-weight: 600;
   font-size: 1rem;
@@ -209,7 +217,7 @@
 }
 
 .cart-drawer #CartDrawer-Note {
-  background-color: rgb(var(--theme-foreground));
+  background-color: rgb(var(--color-scheme-accentRGB) / .2);
   --tw-border-opacity: 1;
   border-color: rgb(194 194 194 / var(--tw-border-opacity));
   border-width: 1px;

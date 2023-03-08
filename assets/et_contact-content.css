@@ -36,9 +36,12 @@
   flex-direction: column-reverse;
 }
 
-.contact-content .large-sub {
-  font-weight: 500;
-  font-size: 2.25rem;
+.contact-content .contact-content-card__image-wrapper {
+  height: 100%;
+}
+
+.contact-content .contact-content-card__image-wrapper .media {
+  height: 100%;
 }
 
 .contact-content-card {
@@ -61,6 +64,7 @@
 
 .contact-info {
   margin-top: 3rem;
+  overflow-wrap: break-word;
 }
 
 .contact-content-btn {
@@ -73,7 +77,7 @@
   text-align: center;
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 767px) {
   .contact-content .title-wrapper-with-link {
     margin-bottom: 3rem;
   }
@@ -92,7 +96,8 @@
   width: 50%;
 }
 
-.contact-content-list__item.center .contact-content-card__image-wrapper:not(.contact-content-card__image-wrapper--full-width), .contact-content-list__item:only-child {
+.contact-content-list__item.center .contact-content-card__image-wrapper:not(
+.contact-content-card__image-wrapper--full-width), .contact-content-list__item:only-child {
   margin-left: auto;
   margin-right: auto;
 }
@@ -101,7 +106,7 @@
   margin-top: 1.5rem;
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .contact-content .button {
     margin-top: 4rem;
   }
@@ -155,23 +160,24 @@
   transform: translateX(-50%);
 }
 
-@media screen and (max-width: 749px) {
+@media screen and (max-width: 767px) {
   .contact-content-list {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
     margin: 0;
     width: 100%;
   }
 
-  .contact-content-list:not(.slider) {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
+  .contact-content-list__item {
+    max-width: unset;
+    width: 100%;
   }
 }
 
-@media screen and (min-width: 750px) {
-  .contact-content-list.slider, .contact-content-list.grid--4-col-desktop {
-    padding: 0;
-  }
-
+@media screen and (min-width: 768px) {
   .contact-content-list__item, .grid--4-col-desktop .contact-content-list__item {
     padding-bottom: 0;
   }
@@ -194,49 +200,44 @@
   padding-top: 0;
   padding-left: 0;
   padding-right: 0;
-}
-
-.background-none .slider .contact-content-card__info {
   padding-bottom: 0;
   padding-left: .5rem;
 }
 
 .background-none .contact-content-card__image-wrapper + .contact-content-card__info {
   padding-top: 2.5rem;
-}
-
-.background-none .slider .contact-content-card__image-wrapper + .contact-content-card__info {
   padding-left: 1.5rem;
 }
 
-.background-none .contact-content-list:not(.slider) .center .contact-content-card__info {
+.background-none .contact-content-list .center .contact-content-card__info {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
 
-@media screen and (max-width: 749px) {
-  .background-none .slider .contact-content-card__info {
+@media screen and (max-width: 767px) {
+  .background-none .contact-content-card__info {
     padding-bottom: 1rem;
   }
 
-  .contact-content.background-none .slider.slider--mobile {
+  .contact-content.background-none {
     margin-bottom: 0;
   }
 }
 
-@media screen and (min-width: 750px) {
+@media screen and (min-width: 768px) {
   .background-none .contact-content-card__image-wrapper {
     margin-left: 1.5rem;
     margin-right: 1.5rem;
   }
 
-  .background-none .contact-content-list .contact-content-card__info, .background-none .contact-content-list:not(.slider) .center .contact-content-card__info {
+  .background-none .contact-content-list .contact-content-card__info, .background-none .contact-content-list .center .contact-content-card__info {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }
 }
 
-.contact-content-card > .contact-content-card__image-wrapper--full-width:not(.contact-content-card-spacing) {
+.contact-content-card > .contact-content-card__image-wrapper--full-width:not(
+.contact-content-card-spacing) {
   border-top-left-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
   border-top-right-radius: calc(var(--text-boxes-radius) - var(--text-boxes-border-width));
   overflow: hidden;
@@ -256,7 +257,7 @@
   white-space: nowrap;
 }
 
-@media screen and (min-width: 990px) {
+@media screen and (min-width: 1024px) {
   .contact-content-list__item--empty {
     display: list-item;
   }

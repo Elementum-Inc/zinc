@@ -1,0 +1,252 @@
+/* ACCOUNT PAGE STYLES  */
+
+.account h2 {
+  font-size: 2rem;
+  border-bottom: 1px solid var(--color-scheme-accent);
+}
+
+.details-history-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* ORDER HISTORY TABLE */
+
+@media screen and (min-width: 1024px) {
+  :is(.account, .order) > div:nth-of-type(2) {
+    /* display: flex; */
+    margin-top: 5rem;
+  }
+}
+
+.order-history-container {
+  margin-top: 3rem;
+}
+
+.order-history td {
+  font-size: 1.25rem;
+}
+
+#RowOrder {
+  text-decoration: underline;
+}
+
+.account table td:first-of-type a {
+  padding: 1.1rem 1.5rem;
+  box-shadow: 0 0 0 .1rem rgb(var(--color-link) .2);
+  border: .1rem solid transparent;
+  font-size: 1.2rem;
+}
+
+.account table td:first-of-type a:hover {
+  box-shadow: 0 0 0 .2rem rgb(var(--color-link) .2);
+}
+
+
+/* ADDRESSES PAGE STYLES  */
+
+.customer .field input {
+  font-size: 1.3rem;
+  border-bottom: 1px solid;
+  height: 4rem;
+}
+
+.customer .field label {
+  font-size: 1.2rem;
+}
+
+.customer button {
+  @apply
+    bg-button-bg
+    text-button-fg
+    border-button-fg;
+  font-size: 1rem;
+  min-height: 3rem;
+}
+
+.customer select {
+  font-size: 1.3rem;
+}
+
+.addresses li > button {
+  @apply
+    bg-button-bg
+    text-button-fg
+    border-button-fg;
+
+  &.edit-btn {
+    font-weight: 700;
+  }
+
+  /* &.delete-btn {
+    background: gray !important;
+    color: black !important;
+  } */
+}
+
+.customer li[data-address] {
+  border-bottom: 1px solid var(--color-scheme-accent);
+}
+
+.new-address-btn-container {
+  border-bottom: 1px solid var(--color-scheme-accent);
+}
+
+.default-address-label {
+  font-weight: 700;
+}
+
+.account-details-container p {
+  font-size: 1.25rem !important;
+}
+
+.account-details-container a {
+  font-size: 1.15rem;
+}
+
+label[for='AddressCountryNew'],
+label[for='AddressProvinceNew'] {
+  display: block;
+  font-size: 1.2rem;
+  margin-bottom: .6rem;
+}
+
+/* ORDER DETAILS STYLES  */
+
+.order h2 {
+  font-size: 1.85rem;
+}
+
+.order-title {
+  font-weight: 700;
+}
+
+.order > div:nth-of-type(2) > div:first-of-type h2 ~ p {
+  margin-bottom: 0;
+  font-size: 1.2rem;
+}
+
+.order-details-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-addresses-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding-top: 3rem;
+}
+
+.order-details {
+  border-top: 1px solid !important;
+  border-bottom: 1px solid !important;
+}
+
+.order-details td {
+  font-size: 1.25rem;
+}
+
+.order-details tfoot {
+  font-size: 1.25rem;
+}
+
+.order-details .totals-row td {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.order-product-title a {
+  font-size: 1.25rem;
+}
+
+.order-address-container p {
+  font-size: 1.25rem;
+}
+
+.order-address-container .status {
+  font-style: italic;
+}
+
+.order tfoot tr:last-of-type td,
+.order tfoot tr:last-of-type th {
+  font-size: 1.25rem;
+  padding-top: 1.5rem;
+  padding-bottom: 4rem;
+}
+
+.order tfoot tr:last-of-type td::before {
+  font-size: 1.25rem;
+}
+
+
+/* LOGIN */
+.login a {
+  display: block;
+  margin: 0 auto;
+  width: fit-content;
+}
+
+.login a[href='#recover'] {
+  margin-right: 0;
+  font-size: 1rem;
+}
+
+.login .field + a {
+  margin-top: 1rem;
+}
+
+.login p {
+  margin: 1.5rem 0;
+}
+
+.login h3 {
+  margin-top: 1.5rem;
+  text-align: left;
+  font-size: calc(var(--font-heading-scale) * 1.6rem);
+}
+
+#customer_login_guest button {
+  margin-top: 0;
+}
+
+#recover,
+#recover + div {
+  display: none;
+}
+
+#recover:target {
+  display: block;
+}
+
+#recover:target + div {
+  display: block;
+}
+
+#recover:target ~ #login,
+#recover:target ~ #login + div {
+  display: none;
+}
+
+#recover,
+#login {
+  scroll-margin-top: 20rem;
+}
+
+#recover {
+  margin-bottom: 0;
+}
+
+.activate button[name='decline'],
+.addresses li > button,
+.addresses form button[type] {
+  background-color: rgb(var(--color-background) var(--alpha-button-background));
+  color: rgb(var(--color-link));
+}
+
+@media only screen and (min-width: 768px) {
+  .activate button[name='decline'] {
+    margin-top: inherit;
+    margin-left: 1rem;
+  }
+}

@@ -6,9 +6,11 @@
 
   if section.settings.show_featured_image and article.image
     assign featuredImageAvailable = true
+    assign featuredImage = article.image
   else
     if section.settings.alternate_featured_image
       assign featuredImageAvailable = true
+      assign featuredImage = section.settings.alternate_featured_image
     endif
   endif
 
@@ -24,21 +26,21 @@
 {% endif %}
 
 <div class="hero hero--{{ section.id }}{% if featuredImageAvailable %} has-image{% endif %}{% if section.settings.overlay > 0 %} has-overlay{% endif %} {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }}">
-  <div class="hero__inner">
+  <div class="hero__inner {{ section.settings.height }}">
     {%- if featuredImageAvailable -%}
       <div class="hero__image-wrapper {{ section.settings.height }}">
         <img
-          srcset="{{ article.image | image_url: width: 480 }} 480w,
-          {{ article.image | image_url: width: 640 }} 640w,
-          {{ article.image | image_url: width: 768 }} 768w,
-          {{ article.image | image_url: width: 1024 }} 1024w,
-          {{ article.image | image_url: width: 1280 }} 1280w,
-          {{ article.image | image_url: width: 1536 }} 1536w,
-          {{ article.image | image_url }} {{ article.image.width }}w"
-          src="{{ article.image | image_url: width: 1024 }}"
-          alt="{{ article.image.alt }}"
-          width="{{ article.image.width }}"
-          height="{{ article.image.height }}"
+          srcset="{{ featuredImage | image_url: width: 480 }} 480w,
+          {{ featuredImage | image_url: width: 640 }} 640w,
+          {{ featuredImage | image_url: width: 768 }} 768w,
+          {{ featuredImage | image_url: width: 1024 }} 1024w,
+          {{ featuredImage | image_url: width: 1280 }} 1280w,
+          {{ featuredImage | image_url: width: 1536 }} 1536w,
+          {{ featuredImage | image_url }} {{ featuredImage.width }}w"
+          src="{{ featuredImage | image_url: width: 1024 }}"
+          alt="{{ featuredImage.alt }}"
+          width="{{ featuredImage.width }}"
+          height="{{ featuredImage.height }}"
           class="hero__image"
         >
         </div>
@@ -136,12 +138,12 @@
       "id": "color_scheme",
       "options": [
         {
-          "value": "primary",
-          "label": "Primary"
+          "value": "background-1",
+          "label": "Background 1"
         },
         {
-          "value": "secondary",
-          "label": "Secondary"
+          "value": "background-2",
+          "label": "Background 2"
         },
         {
           "value": "accent-1",
@@ -152,7 +154,7 @@
           "label": "Accent 2"
         }
       ],
-      "default": "primary",
+      "default": "background-1",
       "label": "t:sections.all.colors.label"
     },
     {

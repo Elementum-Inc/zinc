@@ -59,8 +59,10 @@
                 {%- render 'icon-arrow' -%}
               </button>
             </div>
-            <button type="submit" class="section-modal__submit btn secondary" name="commit" id="ModalSubscribeButton" aria-label="{{ block.settings.email_form_button_text }}">
-              {{ block.settings.email_form_button_text }}
+            <button type="submit" class="section-modal__submit btn secondary btn--large" name="commit" id="ModalSubscribeButton" aria-label="{{ block.settings.email_form_button_text }}">
+              <span class="btn__label">
+                {{ block.settings.email_form_button_text }}
+              </span>
             </button>
             {%- if form.errors -%}
               <small class="newsletter-form__message form__message" id="Newsletter-error--{{ section.id }}">{% render 'icon-error' %}{{ form.errors.translated_fields['email'] | capitalize }} {{ form.errors.messages['email'] }}</small>
@@ -92,10 +94,12 @@
             {%- when 'modal_body' -%}
               "modal_content_body": "{{ block.settings.modal_content_body }}"
             {%- when 'modal_buttons' -%}
-              "modal_content_primary_cta_text": "{{ block.settings.modal_content_primary_cta_text }}",
-              "modal_content_primary_cta_url": "{{ block.settings.modal_content_primary_cta_url }}",
-              "modal_content_secondary_cta_text": "{{ block.settings.modal_content_secondary_cta_text }}",
-              "modal_content_secondary_cta_url": "{{ block.settings.modal_content_secondary_cta_url }}"
+              "style": "{{ block.settings.style }}",
+              "reverse": {{ block.settings.reverse }},
+              "primary_button_label": "{{ block.settings.primary_button_label }}",
+              "primary_button_url": "{{ block.settings.primary_button_url }}",
+              "secondary_button_label": "{{ block.settings.secondary_button_label }}",
+              "secondary_button_url": "{{ block.settings.secondary_button_url }}"
             {%- when 'email_form' -%}
               "email_form_input_placeholder": "{{ block.settings.email_form_input_placeholder }}",
               "email_form_button_text": "{{ block.settings.email_form_button_text }}",
@@ -141,12 +145,12 @@
       "id": "color_scheme",
       "options": [
         {
-          "value": "primary",
-          "label": "Primary"
+          "value": "background-1",
+          "label": "Background 1"
         },
         {
-          "value": "secondary",
-          "label": "Secondary"
+          "value": "background-2",
+          "label": "Background 2"
         },
         {
           "value": "accent-1",
@@ -157,7 +161,7 @@
           "label": "Accent 2"
         }
       ],
-      "default": "primary",
+      "default": "background-1",
       "label": "t:sections.all.colors.label"
     },
     {
@@ -229,25 +233,51 @@
       "limit": 1,
       "settings": [
         {
+          "type": "select",
+          "id": "style",
+          "options": [
+            {
+              "value": "flat",
+              "label": "Flat"
+            },
+            {
+              "value": "outline",
+              "label": "Outline"
+            },
+            {
+              "value": "shadow",
+              "label": "Shadow"
+            }
+          ],
+          "label": "Style",
+          "default": "flat"
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse",
+          "label": "Reverse button order",
+          "default": false
+        },
+        {
           "type": "text",
-          "id": "modal_content_primary_cta_text",
+          "id": "primary_button_label",
           "label": "Primary button label",
-          "default": "Primary CTA"
+          "default": "Primary button"
         },
         {
           "type": "url",
-          "id": "modal_content_primary_cta_url",
+          "id": "primary_button_url",
           "label": "Primary button link"
         },
         {
           "type": "text",
-          "id": "modal_content_secondary_cta_text",
+          "id": "secondary_button_label",
           "label": "Secondary button label",
-          "default": "Secondary CTA"
+          "default": "Secondary button"
         },
         {
           "type": "url",
-          "id": "modal_content_secondary_cta_url",
+          "id": "secondary_button_url",
           "label": "Secondary button link"
         }
       ]

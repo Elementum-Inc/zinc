@@ -1,4 +1,5 @@
 {{ 'customer.css' | asset_url | stylesheet_tag }}
+{{ 'et_account.css' | asset_url | stylesheet_tag }}
 
 <div class="customer login">
   <h1 id="recover" tabindex="-1">
@@ -42,11 +43,13 @@
         </small>
       {%- endif -%}
 
-      <button>
-        {{ 'customer.login_page.submit' | t }}
+      <button class="btn secondary">
+        <span class="btn__label">
+          {{ 'customer.login_page.submit' | t }}
+        </span>
       </button>
 
-      <a href="#login">
+      <a href="#login" class="underlined-link">
         {{ 'customer.login_page.cancel' | t }}
       </a>
     {%- endform -%}
@@ -122,8 +125,10 @@
         </a>
       {%- endif -%}
 
-      <button>
-        {{ 'customer.login_page.sign_in' | t }}
+      <button class="btn secondary">
+        <span class="btn__label">
+          {{ 'customer.login_page.sign_in' | t }}
+        </span>
       </button>
 
       <a href="{{ routes.account_register_url }}">

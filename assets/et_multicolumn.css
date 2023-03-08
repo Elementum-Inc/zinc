@@ -1,4 +1,5 @@
 .multicolumn-card__image-wrapper--half-width {
+  flex-basis: 50%;
   width: 50%;
 }
 
@@ -89,6 +90,23 @@
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: column-reverse;
+  -webkit-flex-direction: column-reverse;
+  flex-direction: column-reverse;
+}
+
+.multicolumn .image-above {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  -webkit-flex-direction: column;
+  flex-direction: column;
 }
 
 .multicolumn-list {
@@ -106,10 +124,30 @@
     margin: 0;
     width: 100%;
   }
+}
 
-  .multicolumn-list:not(.slider) {
+@media (max-width: 767.9px) {
+  .multicolumn .splide .multicolumn-list.splide__list {
+    -ms-flex-wrap: nowrap;
+    -webkit-flex-wrap: nowrap;
+    flex-wrap: nowrap;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .multicolumn .splide--disabled .multicolumn-list:not(.splide__list) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .multicolumn .splide--disabled .multicolumn-list .splide__slide {
+    width: 100%;
+  }
+
+  .multicolumn-list__item {
+    max-width: unset;
   }
 }
 
@@ -152,12 +190,18 @@
 .multicolumn-card {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
   position: relative;
 }
 
 .multicolumn-card__info {
   margin: auto;
+  max-width: 100%;
   padding: 2.5rem;
+  width: 100%;
 }
 
 .multicolumn-card__info .link {
@@ -176,11 +220,19 @@
 
 .multicolumn-card__image-wrapper {
   margin: auto;
-  width: 100%;
 }
 
 .multicolumn-card__image-wrapper--third-width {
+  flex-basis: 33.333333%;
   width: 33.333333%;
+}
+
+.multicolumn-card__image-wrapper--full-width {
+  -webkit-box-flex: 1;
+  -ms-flex-positive: 1;
+  -webkit-flex-grow: 1;
+  flex-grow: 1;
+  width: 100%;
 }
 
 .multicolumn-card > .multicolumn-card__image-wrapper--full-width:not(.multicolumn-card-spacing) {

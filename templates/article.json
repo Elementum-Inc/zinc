@@ -111,7 +111,7 @@
         "post_limit": 3,
         "columns_desktop": 3,
         "desktop_slider": false,
-        "color_scheme": "primary",
+        "color_scheme": "background-1",
         "use_foreground": true,
         "card_color_scheme": "default",
         "show_image": true,

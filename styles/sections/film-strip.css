@@ -50,6 +50,28 @@
     display: flex;
     flex-direction: column-reverse;
   }
+
+  & .container:not(.splide) {
+    & .splide__list {
+      @apply flex-wrap;
+    }
+  }
+
+  & .splide.is-initialized {
+    @apply overflow-hidden;
+
+    &.splide--draggable {
+      @apply
+        py-8
+        md:pt-4;
+    }
+
+    & .splide__pagination {
+      @apply
+        bottom-0
+        md:-bottom-4;
+    }
+  }
 }
 
 .film-strip-card {

@@ -38,7 +38,7 @@
           {% if media.preview_image.width >= 1946 %}{{ media.preview_image | image_url: width: 1946 }} 1946w,{% endif %}
           {{ media.preview_image | image_url }} {{ media.preview_image.width }}w"
         src="{{ media | image_url: width: 1946 }}"
-        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | round }}px, (min-width: 990px) calc({{ media_width | times: 100 }}vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
+        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | round }}px, (min-width: 1024px) calc({{ media_width | times: 100 }}vw - 10rem), (min-width: 768px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
         {% unless lazy_load == false %}loading="lazy"{% endunless %}
         width="973"
         height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
@@ -64,7 +64,7 @@
           {% if media.preview_image.width >= 1946 %}{{ media.preview_image | image_url: width: 1946 }} 1946w,{% endif %}
           {{ media.preview_image | image_url }} {{ media.preview_image.width }}w"
         src="{{ media | image_url: width: 1946 }}"
-        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | round }}px, (min-width: 990px) calc({{ media_width | times: 100 }}vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
+        sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | round }}px, (min-width: 1024px) calc({{ media_width | times: 100 }}vw - 10rem), (min-width: 768px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
         {% unless lazy_load == false %}loading="lazy"{% endunless %}
         width="973"
         height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
@@ -103,7 +103,7 @@
         {% if media.preview_image.width >= 1946 %}{{ media.preview_image | image_url: width: 1946 }} 1946w,{% endif %}
         {{ media.preview_image | image_url }} {{ media.preview_image.width }}w"
       src="{{ media | image_url: width: 1946 }}"
-      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | round }}px, (min-width: 990px) calc({{ media_width | times: 100 }}vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
+      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | round }}px, (min-width: 1024px) calc({{ media_width | times: 100 }}vw - 10rem), (min-width: 768px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
       {% unless lazy_load == false %}loading="lazy"{% endunless %}
       width="973"
       height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
@@ -147,7 +147,7 @@
         {% if media.preview_image.width >= 1946 %}{{ media.preview_image | image_url: width: 1946 }} 1946w,{% endif %}
         {{ media.preview_image | image_url }} {{ media.preview_image.width }}w"
       src="{{ media | image_url: width: 1946 }}"
-      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | round }}px, (min-width: 990px) calc({{ media_width | times: 100 }}vw - 10rem), (min-width: 750px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
+      sizes="(min-width: {{ settings.page_width }}px) {{ settings.page_width | minus: 100 | times: media_width | round }}px, (min-width: 1024px) calc({{ media_width | times: 100 }}vw - 10rem), (min-width: 768px) calc((100vw - 11.5rem) / 2), calc(100vw - 4rem)"
       {% unless lazy_load == false %}loading="lazy"{% endunless %}
       width="973"
       height="{{ 973 | divided_by: media.preview_image.aspect_ratio | ceil }}"
@@ -176,7 +176,7 @@
     </product-model>
     {%- if xr_button -%}
       <button
-        class="button button--full-width product__xr-button"
+        class="btn secondary btn--full product__xr-button"
         type="button"
         aria-label="{{ 'products.product.xr_button_label' | t }}"
         data-shopify-xr
@@ -184,8 +184,10 @@
         data-shopify-title="title"
         data-shopify-xr-hidden
         >
-        {% render 'icon-3d-model' %}
-        {{ 'products.product.xr_button' | t }}
+        <span class="btn__label">
+          {% render 'icon-3d-model' %}
+          {{ 'products.product.xr_button' | t }}
+        </span>
       </button>
     {%- endif -%}
   {%- else -%}

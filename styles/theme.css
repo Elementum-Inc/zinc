@@ -5,6 +5,10 @@
   found in the assets folder.
 */
 
+body {
+  @apply font-body;
+}
+
 body.search--opened,
 body.menu--opened {
   @apply overflow-hidden;
@@ -41,7 +45,7 @@ body.menu--opened {
 
 /* Dangerous for a11y - Use with care */
 .focus-none {
-  @apply outline-none shadow-none;
+  @apply outline-none shadow-none ring-0;
 }
 
 .focus-offset:focus-visible {
@@ -112,7 +116,103 @@ body.menu--opened {
 .collection {
   &--empty {
     .title {
-      @apply font-serif;
+      @apply font-heading;
+    }
+  }
+}
+
+/* Splide */
+.splide {
+  &.is-active:not(.splide--no-padding) {
+    @apply md:(px-16) lg:(px-20);
+  }
+
+  &.is-initialized:not(.is-active),
+  &--disabled {
+    @apply p-[inherit];
+
+    :not(.container) > & {
+      @apply container;
+    }
+
+    & .splide__list {
+      @apply flex flex-wrap justify-center;
+    }
+
+    & .splide__arrows {
+      @apply hidden;
+    }
+  }
+
+  &--no-padding {
+    padding-bottom: 0;
+  }
+
+  &--desktop {
+    & .splide__track--container {
+      @apply md:px-16 lg:px-20;
+    }
+  }
+
+  &:not(.splide--desktop) {
+    & .splide__arrows {
+      .blog & {
+        @apply sm:hidden;
+      }
+    }
+  }
+
+  &--draggable:not(.splide--nav) {
+    @apply
+      pb-4
+      md:pb-[3rem];
+  }
+
+  &__track {
+    @apply z-1;
+    margin: 0 calc(var(--grid-mobile-horizontal-spacing) * -1);
+
+    @media screen and (min-width: 768px) {
+      margin: 0 calc(var(--grid-desktop-horizontal-spacing) * -1);
+    }
+  }
+
+  &__slide {
+    padding: var(--grid-mobile-vertical-spacing) var(--grid-mobile-horizontal-spacing);
+
+    @media screen and (min-width: 768px) {
+      padding: var(--grid-desktop-vertical-spacing) var(--grid-desktop-horizontal-spacing);
+    }
+  }
+
+  &__arrows {
+    @apply relative flex justify-between md:(top-1/2 h-12 absolute transform -translate-y-1/2 w-full left-0);
+  }
+
+  &__arrow {
+    @apply relative h-min w-[unset] rounded-none opacity-100;
+    background-color: transparent;
+
+    > svg {
+      @apply fill-none stroke-scheme-accent h-[unset] w-[unset] <md:(h-12);
+    }
+  }
+
+  &__pagination {
+    @apply m-2
+      bottom-[1.5rem]
+      md:(m-4 -bottom-2);
+  }
+
+  &__pagination__page {
+    @apply bg-scheme-fg opacity-100;
+
+    .section--foreground & {
+      @apply bg-scheme-bg;
+    }
+
+    &.is-active {
+      @apply bg-scheme-accent;
     }
   }
 }

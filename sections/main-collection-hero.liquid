@@ -6,9 +6,11 @@
 
   if section.settings.show_collection_image and collection.image
     assign collectionImageAvailable = true
+    assign collectionImage = collection.image
   else
     if section.settings.alternate_collection_image
       assign collectionImageAvailable = true
+      assign collectionImage = section.settings.alternate_collection_image
     endif
   endif
 
@@ -24,21 +26,21 @@
 {% endif %}
 
 <div class="hero hero--{{ section.id }}{% if collectionImageAvailable %} has-image{% endif %}{% if collectionImageAvailable and section.settings.overlay > 0 %} has-overlay{% endif %} {{ section.settings.color_scheme }} color-scheme--{{ section.settings.color_scheme }}">
-  <div class="hero__inner">
+  <div class="hero__inner {{ section.settings.height }}">
     {%- if collectionImageAvailable -%}
       <div class="hero__image-wrapper {{ section.settings.height }}">
         <img
-          srcset="{{ collection.image | image_url: width: 480 }} 480w,
-          {{ collection.image | image_url: width: 640 }} 640w,
-          {{ collection.image | image_url: width: 768 }} 768w,
-          {{ collection.image | image_url: width: 1024 }} 1024w,
-          {{ collection.image | image_url: width: 1280 }} 1280w,
-          {{ collection.image | image_url: width: 1536 }} 1536w,
-          {{ collection.image | image_url }} {{ collection.image.width }}w"
-          src="{{ collection.image | image_url: width: 1024 }}"
-          alt="{{ collection.image.alt }}"
-          width="{{ collection.image.width }}"
-          height="{{ collection.image.height }}"
+          srcset="{{ collectionImage | image_url: width: 480 }} 480w,
+          {{ collectionImage | image_url: width: 640 }} 640w,
+          {{ collectionImage | image_url: width: 768 }} 768w,
+          {{ collectionImage | image_url: width: 1024 }} 1024w,
+          {{ collectionImage | image_url: width: 1280 }} 1280w,
+          {{ collectionImage | image_url: width: 1536 }} 1536w,
+          {{ collectionImage | image_url }} {{ collectionImage.width }}w"
+          src="{{ collectionImage | image_url: width: 1024 }}"
+          alt="{{ collectionImage.alt }}"
+          width="{{ collectionImage.width }}"
+          height="{{ collectionImage.height }}"
           class="hero__image"
         >
         </div>
@@ -85,20 +87,14 @@
                     </div>
                   {% endif %}
                 {% when 'buttons' %}
-                  {% if block.settings.primary_button_url or block.settings.secondary_button_url %}
-                    <div class="buttons">
-                      {% if block.settings.primary_button_url and block.settings.primary_button_text %}
-                        <a class="btn btn-outline primary" href="{{ block.settings.primary_button_url }}">
-                          <span>{{ block.settings.primary_button_text }}</span>
-                        </a>
-                      {% endif %}
-                      {% if block.settings.secondary_button_url and block.settings.secondary_button_text %}
-                        <a class="btn btn-outline secondary" href="{{ block.settings.secondary_button_url }}">
-                          <span>{{ block.settings.secondary_button_text }}</span>
-                        </a>
-                      {% endif %}
-                    </div>
-                  {% endif %}
+                  {% render 'buttons',
+                    primary_button_label: block.settings.primary_button_label,
+                    primary_button_link: block.settings.primary_button_url,
+                    secondary_button_label: block.settings.secondary_button_label,
+                    secondary_button_link: block.settings.secondary_button_url,
+                    style: block.settings.style,
+                    reverse: block.settings.reverse
+                  %}
               {% endcase %}
             {% endfor %}
           </div>
@@ -150,12 +146,12 @@
       "id": "color_scheme",
       "options": [
         {
-          "value": "primary",
-          "label": "Primary"
+          "value": "background-1",
+          "label": "Background 1"
         },
         {
-          "value": "secondary",
-          "label": "Secondary"
+          "value": "background-2",
+          "label": "Background 2"
         },
         {
           "value": "accent-1",
@@ -166,7 +162,7 @@
           "label": "Accent 2"
         }
       ],
-      "default": "primary",
+      "default": "background-1",
       "label": "t:sections.all.colors.label"
     },
     {
@@ -229,7 +225,7 @@
         {
           "type": "checkbox",
           "id": "show_collection_title",
-          "default": true,
+          "default": false,
           "label": "t:sections.main-collection-hero.settings.show_collection_title.label"
         },
         {
@@ -261,7 +257,7 @@
         {
           "type": "checkbox",
           "id": "show_collection_description",
-          "default": true,
+          "default": false,
           "label": "t:sections.main-collection-hero.settings.show_collection_description.label"
         },
         {
@@ -278,24 +274,52 @@
       "type": "buttons",
       "settings": [
         {
+          "type": "select",
+          "id": "style",
+          "options": [
+            {
+              "value": "flat",
+              "label": "Flat"
+            },
+            {
+              "value": "outline",
+              "label": "Outline"
+            },
+            {
+              "value": "shadow",
+              "label": "Shadow"
+            }
+          ],
+          "label": "Style",
+          "default": "outline"
+        },
+        {
+          "type": "checkbox",
+          "id": "reverse",
+          "label": "Reverse button order",
+          "default": false
+        },
+        {
           "type": "text",
-          "id": "primary_button_text",
-          "label": "Primary Button text"
+          "id": "primary_button_label",
+          "label": "Primary button label",
+          "default": "Optional Button 1"
         },
         {
           "type": "url",
           "id": "primary_button_url",
-          "label": "Primary Button link"
+          "label": "Primary button link"
         },
         {
           "type": "text",
-          "id": "secondary_button_text",
-          "label": "Secondary Button text"
+          "id": "secondary_button_label",
+          "label": "Secondary button label",
+          "default": "Optional Button 2"
         },
         {
           "type": "url",
           "id": "secondary_button_url",
-          "label": "Primary Button link"
+          "label": "Secondary button link"
         }
       ],
       "limit": 1

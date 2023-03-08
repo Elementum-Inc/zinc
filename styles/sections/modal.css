@@ -111,7 +111,7 @@
   }
 
   &__heading {
-    @apply font-serif text-3xl;
+    @apply font-heading text-3xl;
   }
 
   &__buttons {

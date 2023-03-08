@@ -18,6 +18,56 @@
   object-fit: cover;
 }
 
+.slideshow .banner__media::after {
+  background-color: var(--color-scheme-bg);
+}
+
+@media (max-width: 767.9px) {
+  .slideshow__text-mobile--center .banner__buttons {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  .slideshow__text-mobile--left .banner__buttons {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+
+  .slideshow__text-mobile--right .banner__buttons {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+}
+
+@media (min-width: 768px) {
+  .slideshow__text--center .banner__buttons {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+
+  .slideshow__text--left .banner__buttons {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    -webkit-justify-content: flex-start;
+    justify-content: flex-start;
+  }
+
+  .slideshow__text--right .banner__buttons {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    -webkit-justify-content: flex-end;
+    justify-content: flex-end;
+  }
+}
+
 .slideshow__text.banner__box {
   display: flex;
   flex-direction: column;
@@ -26,16 +76,97 @@
   position: absolute;
 }
 
-.slideshow.banner--small {
+.slideshow:not(.banner--mobile-bottom) .slideshow__text-wrapper {
+  height: auto;
+}
+
+.slideshow .banner--small {
   min-height: 575px;
 }
 
-.slideshow.banner--small:not(.banner--adapt) {
+.slideshow .banner--small:not(.banner--adapt) {
   min-height: 575px;
 }
 
-.slideshow__autoplay {
-  visibility: hidden;
+@media (max-width: 767.9px) {
+  .slideshow.splide .splide__slide__container.banner--mobile-bottom {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    -webkit-flex-direction: column;
+    flex-direction: column;
+    height: 100vh;
+  }
+}
+
+.slideshow.splide {
+  padding: 0;
+}
+
+.slideshow.splide .splide__slide {
+  padding: 0;
+}
+
+.slideshow.splide .splide__slide__container {
+  height: 100%;
+}
+
+@media (max-width: 767.9px) {
+  .slideshow.splide .splide__slide__container.banner--mobile-bottom .banner__media {
+    flex-basis: 33.333333%;
+    -ms-flex-negative: 1;
+    -webkit-flex-shrink: 1;
+    flex-shrink: 1;
+  }
+
+  .slideshow.splide .splide__slide__container.banner--mobile-bottom .banner__box {
+    padding: 2rem;
+  }
+}
+
+.slideshow.splide .splide__pagination {
+  bottom: 2rem;
+}
+
+.slideshow.splide .splide__pagination__page {
+  margin-left: .5rem;
+  margin-right: .5rem;
+  padding: .5rem;
+  width: 2rem;
+  background: none;
+  border-radius: 0;
+  height: unset;
+}
+
+.slideshow.splide .splide__pagination__page::after {
+  background-color: rgb(var(--color-scheme-accentRGB) / .2);
+  display: block;
+  height: .25rem;
+  width: 100%;
+  content: '';
+}
+
+.slideshow.splide .splide__pagination__page.is_active::after {
+  background-color: var(--color-scheme-accent);
+}
+
+@media (max-width: 767.9px) {
+  .slideshow.splide .splide__arrows {
+    position: absolute;
+    bottom: 50%;
+    width: 100%;
+  }
+}
+
+.slideshow.splide .splide__arrows {
+  z-index: 1;
+  height: 0;
+}
+
+@media (max-width: 767.9px) {
+  .slideshow.splide.mobile-text-below .splide__arrows {
+    bottom: 25%;
+  }
 }
 
 .slideshow-video {
@@ -57,7 +188,7 @@
 .slideshow__controls {
   color: var(--color-scheme-text);
   position: absolute;
-  z-index: 3;
+  z-index: 1;
   bottom: 10%;
   margin-left: auto;
   margin-right: auto;
@@ -81,8 +212,22 @@
 }
 
 .slideshow__controls .slider-button {
-  background-color: var(--color-scheme-accent);
+  background-color: rgb(var(--color-background-2) / .2);
+  height: 3rem;
+  width: 3rem;
   border-radius: 50%;
+}
+
+.slideshow__controls .slider-button .icon {
+  height: 3rem;
+}
+
+.slideshow__controls .slider-counter__link--dots .dot {
+  background-color: rgb(var(--color-background-2) / .2);
+  display: block;
+  height: .25rem;
+  padding: 0;
+  width: 2rem;
 }
 
 .slider-counter {
@@ -94,4 +239,18 @@
 .slider-counter--arrows {
   visibility: hidden;
   min-width: .1rem;
+}
+
+@media screen and (max-width: 767px) {
+  .mobile-text-large {
+    font-size: 4rem !important;
+  }
+
+  .mobile-text-medium {
+    font-size: 3rem !important;
+  }
+
+  .mobile-text-small {
+    font-size: 2rem !important;
+  }
 }
