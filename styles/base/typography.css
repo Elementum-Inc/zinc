@@ -163,7 +163,24 @@ p,
   }
 
   p {
-    @apply my-2 text-lg leading-relaxed lg:(text-xl leading-[1.875rem]);
+    @apply my-2
+      text-lg
+      leading-relaxed
+      lg:(text-xl leading-[1.875rem]);
+  }
+
+  a {
+    @apply
+      transition-all
+      duration-250
+      underline
+      decoration-from-font
+      underline-offset-4;
+
+    &:hover {
+      @apply decoration-1
+        underline-offset-6;
+    }
   }
 }
 

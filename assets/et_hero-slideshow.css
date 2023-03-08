@@ -12,6 +12,20 @@
   letter-spacing: 0;
 }
 
+@media screen and (max-width: 767px) {
+  .slideshow .mobile-text-large {
+    font-size: 4rem;
+  }
+
+  .slideshow .mobile-text-medium {
+    font-size: 3rem;
+  }
+
+  .slideshow .mobile-text-small {
+    font-size: 2rem;
+  }
+}
+
 .slideshow img, .slideshow video {
   height: 100%;
   width: 100%;
@@ -111,21 +125,53 @@
   height: 100%;
 }
 
-@media (max-width: 767.9px) {
+@media screen and (max-width: 767px) {
   .slideshow.splide .splide__slide__container.banner--mobile-bottom .banner__media {
-    flex-basis: 33.333333%;
-    -ms-flex-negative: 1;
-    -webkit-flex-shrink: 1;
-    flex-shrink: 1;
+    flex: 0 0 auto;
   }
 
+  .slideshow.splide .splide__slide__container.banner--mobile-bottom .banner__content {
+    flex: 1 0 auto;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .slideshow.splide .splide__slide__container.banner--mobile-bottom .banner__content {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 639.9px) {
+  .slideshow.splide .splide__slide__container.banner--mobile-bottom .banner__content {
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 767.9px) {
   .slideshow.splide .splide__slide__container.banner--mobile-bottom .banner__box {
     padding: 2rem;
   }
 }
 
-.slideshow.splide .splide__pagination {
-  bottom: 2rem;
+@media (max-width: 639.9px) {
+  .slideshow.splide .splide__slide__container.banner--mobile-bottom .banner__box {
+    padding: 1rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .slideshow.splide .splide__pagination {
+    bottom: 2rem;
+  }
+}
+
+@media (max-width: 767.9px) {
+  .slideshow.splide .splide__pagination {
+    margin: 0;
+    padding: .5rem;
+    position: relative;
+    bottom: 0;
+  }
 }
 
 .slideshow.splide .splide__pagination__page {
@@ -239,18 +285,4 @@
 .slider-counter--arrows {
   visibility: hidden;
   min-width: .1rem;
-}
-
-@media screen and (max-width: 767px) {
-  .mobile-text-large {
-    font-size: 4rem !important;
-  }
-
-  .mobile-text-medium {
-    font-size: 3rem !important;
-  }
-
-  .mobile-text-small {
-    font-size: 2rem !important;
-  }
 }
