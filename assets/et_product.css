@@ -46,6 +46,11 @@
   word-break: break-word;
 }
 
+.product__tax {
+  margin-top: -.5rem;
+  margin-bottom: 1rem;
+}
+
 .product .thumbnail-list {
   display: flex;
 }
