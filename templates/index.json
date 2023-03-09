@@ -143,42 +143,20 @@
         "padding_bottom": 36
       }
     },
-    "60348a8c-408f-4e34-83c5-2b9a11c2958a": {
-      "type": "slideshow",
-      "blocks": {
-        "template--17922642542875__60348a8c-408f-4e34-83c5-2b9a11c2958a-1676782859e590eeb6-0": {
-          "type": "slide",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/Blue-Python-Hero.png",
-            "heading": "",
-            "desktop_heading_size": "h1",
-            "mobile_heading_size": "mobile-text-medium",
-            "subheading": "",
-            "button_style": "outline",
-            "button_reverse": false,
-            "primary_button_label": "",
-            "primary_button_url": "",
-            "secondary_button_label": "",
-            "secondary_button_url": "",
-            "box_align": "middle-center",
-            "text_alignment": "center",
-            "image_overlay_opacity": 0,
-            "banner_text_background": false,
-            "color_scheme": "background-1",
-            "text_alignment_mobile": "center"
-          }
-        }
-      },
-      "block_order": [
-        "template--17922642542875__60348a8c-408f-4e34-83c5-2b9a11c2958a-1676782859e590eeb6-0"
-      ],
+    "e978e1c1-db87-43f1-9a04-4d0f71fc0cda": {
+      "type": "image-banner",
       "settings": {
-        "slide_height": "small",
-        "slider_visual": "dots",
-        "auto_rotate": true,
-        "change_slides_speed": 6250,
-        "show_text_below": true,
-        "accessibility_info": "Slideshow about our brand"
+        "image": "shopify:\/\/shop_images\/Blue-Python-Hero.png",
+        "image_overlay_opacity": 0,
+        "image_height": "medium",
+        "adapt_height_first_image": false,
+        "desktop_content_position": "middle-center",
+        "show_text_box": false,
+        "desktop_content_alignment": "center",
+        "color_scheme": "background-1",
+        "mobile_content_alignment": "center",
+        "stack_images_on_mobile": true,
+        "show_text_below": false
       }
     },
     "79d0d8ee-cc13-4862-b126-2b1f40285703": {
@@ -632,7 +610,7 @@
   "order": [
     "dc33413a-3778-467e-9690-093f904ce87d",
     "77895afa-84f3-4649-adde-e15f071ced0f",
-    "60348a8c-408f-4e34-83c5-2b9a11c2958a",
+    "e978e1c1-db87-43f1-9a04-4d0f71fc0cda",
     "79d0d8ee-cc13-4862-b126-2b1f40285703",
     "824911b2-0706-4181-a7db-9f98218b30c8",
     "537bff51-0684-4d2d-8194-f7e353c3b516",
