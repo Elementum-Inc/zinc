@@ -45,6 +45,10 @@
     word-break: break-word;
   }
 
+  &__tax {
+    @apply -mt-2 mb-4;
+  }
+
   & .thumbnail-list {
     display: flex;
   }

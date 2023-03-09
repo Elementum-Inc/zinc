@@ -28,22 +28,31 @@
   }
 
   &__toggle {
-    @apply hidden;
+    @apply hidden
+      md:(top-8 right-8);
   }
 
   &__content {
     @apply absolute
-      top-0
+      top-1/2
       left-1/2
-      transform -translate-x-1/2
-      mt-13
+      transform
+      -translate-x-1/2
+      -translate-y-1/2
+      mt-0
       mx-auto
       mb-0
       bg-scheme-bg
       filter
       drop-shadow-md
       max-w-full
-      w-2/3;
+      w-3/4
+      md:(w-2/3 overflow-y-auto);
+    height: calc(100% - 4rem);
+
+    @media screen and (min-width: 768px) {
+      max-height: calc(100% - 8rem);
+    }
 
     &-info {
       & h2 {
@@ -119,9 +128,7 @@
   }
 
   & .product-form__input input[type='radio'] + label {
-    @apply border-scheme-accent
-      rounded-[5%];
-    margin: 0;
+    @apply border-scheme-accent;
   }
 
   & .full-unstyled-link {
@@ -154,19 +161,5 @@
     &__slide {
       @apply block;
     }
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .quick-add-modal__content {
-    margin-top: 10rem;
-    width: 80%;
-    max-height: calc(100% - 6rem);
-    overflow-y: auto;
-  }
-
-  quick-add-modal .quick-add-modal__toggle {
-    top: 2rem;
-    right: 2rem;
   }
 }

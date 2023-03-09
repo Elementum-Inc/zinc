@@ -197,3 +197,12 @@ _/_)_(_/__/__/__(_/_/ / (__/_)_
     top: var(--buttons-shadow-y-offset);
   }
 }
+
+.shopify-challenge__container .shopify-challenge__button {
+  @apply
+    payment-btn
+    btn-secondary
+    mt-4
+    mx-auto
+    block;
+}
