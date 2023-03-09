@@ -89,15 +89,19 @@ if (!customElements.get('quick-add-modal')) {
     }
 
     initializeSplide() {
-      var gallery = new Splide(this.modalContent.querySelector('[id*=GalleryViewer]'));
-      var thumbnails = new Splide(this.modalContent.querySelector('[id*=GalleryThumbnails]'));
+      var slideCount = this.modalContent.querySelector('[id*=GalleryViewer] .splide__slide').length;
 
-      if (thumbnails != null || undefined) {
-        gallery.sync(thumbnails);
-        gallery.mount();
-        thumbnails.mount();
-      } else {
-        gallery.mount();
+      if (slideCount < 1) {
+        var gallery = new Splide(this.modalContent.querySelector('[id*=GalleryViewer]'));
+        var thumbnails = new Splide(this.modalContent.querySelector('[id*=GalleryThumbnails]'));
+  
+        if (thumbnails != null || undefined) {
+          gallery.sync(thumbnails);
+          gallery.mount();
+          thumbnails.mount();
+        } else {
+          gallery.mount();
+        }
       }
     }
   });
