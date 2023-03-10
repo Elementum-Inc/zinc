@@ -183,10 +183,6 @@
           pr-6;
       }
     }
-
-    .splide__slide {
-      @apply <md:w-full;
-    }
   }
 
   &__item {

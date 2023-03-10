@@ -57,7 +57,7 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
-button, input, textarea, select {
+button, select, input, textarea {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -613,6 +613,11 @@ ul {
   }
   .sm\:translate-y-0 {
     --tw-translate-y: 0px;
+  }
+}
+@media (max-width: 767.9px) {
+  .\<md\:w-full {
+    width: 100%;
   }
 }@media (min-width: 640px) {
   .blog .splide:not(.splide--desktop) .splide__arrows {
