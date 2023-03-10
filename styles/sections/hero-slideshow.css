@@ -140,9 +140,6 @@
       &__container {
         @apply h-full;
       }
-
-      &__container.banner--mobile-bottom {
-      }
     }
 
     & .splide__pagination {
