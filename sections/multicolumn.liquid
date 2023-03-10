@@ -56,7 +56,7 @@
               {%- assign empty_column = ' multicolumn-list__item--empty' -%}
             {%- endif -%}
   
-            <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="splide__slide multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% endif %} {{ block.settings.column_alignment }} {{ empty_column }}" {{ block.shopify_attributes }}>            
+            <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="splide__slide multicolumn-list__item grid__item{% if section.settings.swipe_on_mobile %} slider__slide{% else %}{% unless columns_mobile_int == 2 %} <md:w-full{% endunless %}{% endif %} {{ block.settings.column_alignment }}" {{ block.shopify_attributes }}>            
               <div class="multicolumn-card content-container image-{{ block.settings.image_position }}">
                 {%- if block.settings.image != blank -%}
                   {% if section.settings.image_ratio == 'auto' or section.settings.image_ratio == 'circle' %}
