@@ -40,6 +40,39 @@
         @apply bg-scheme-bg;
       }
     }
+
+    &--mobile-bottom,
+    &--mobile-bottom:not(.banner--stacked) {
+      @apply <md:(h-[100vh] flex-col);
+
+      & .banner__media {
+        @media screen and (max-width: 767px) {
+          /* @apply max-h-1/2; */
+
+          @apply !h-auto;
+          flex: 1 0 auto;
+        }
+
+        @apply <md:!h-auto;
+      }
+
+      & .banner__content {
+        @media screen and (max-width: 767px) {
+          @apply p-8 !h-auto;
+          /* flex: 1 0 auto; */
+          flex: 1 0 auto;
+          /* display: block; */
+        }
+
+        /* @apply <md:!h-auto; */
+
+        @apply <sm:p-4;
+      }
+
+      & .banner__box {
+        @apply <sm:p-4 <md:p-8;
+      }
+    }
   }
 
   &__text-mobile {
@@ -90,12 +123,6 @@
     position: absolute;
   }
 
-  &:not(.banner--mobile-bottom) {
-    & .slideshow__text-wrapper {
-      height: auto;
-    }
-  }
-
   & .banner--small {
     min-height: 575px;
 
@@ -115,25 +142,6 @@
       }
 
       &__container.banner--mobile-bottom {
-        @apply <md:(h-[100vh] flex-col);
-
-        & .banner__media {
-          @media screen and (max-width: 767px) {
-            flex: 0 0 auto;
-          }
-        }
-
-        & .banner__content {
-          @media screen and (max-width: 767px) {
-            flex: 1 0 auto;
-          }
-
-          @apply <sm:p-4 <md:p-8;
-        }
-
-        & .banner__box {
-          @apply <sm:p-4 <md:p-8;
-        }
       }
     }
 
