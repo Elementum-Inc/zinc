@@ -11,7 +11,14 @@
 }
 
 .header {
-  @apply relative flex flex-wrap justify-between bg-scheme-bg text-scheme-text px-4 md:px-8;
+  @apply relative
+    flex
+    flex-wrap
+    justify-between
+    bg-scheme-bg
+    text-scheme-text
+    px-4
+    md:px-8;
 
   & .logo__fallback {
     @apply text-scheme-accent;
@@ -23,7 +30,11 @@
 
   /* LOGO */
   &__logo {
-    @apply basis-1/2 lg:basis-1/3 text-xl md:text-1.75 uppercase;
+    @apply basis-1/2
+      lg:basis-1/3
+      text-xl
+      md:text-1.75
+      uppercase;
   }
 
   & .logo__image {
@@ -519,7 +530,7 @@
       @apply bg-scheme-fg px-6 py-4 xl:(px-12 py-16);
 
       &__inner {
-        @apply min-w-full max-h-full overflow-auto;
+        @apply min-w-full max-h-full;
       }
 
       &.images-top {
@@ -568,10 +579,19 @@
     }
 
     & .menu__level1 {
-      @apply flex flex-wrap justify-evenly items-stretch;
+      @apply flex
+        flex-wrap
+        justify-evenly
+        items-stretch;
 
       & li {
-        @apply relative flex-1 mr-2 text-lg xl:text-xl 2xl:text-2xl;
+        @apply relative
+          flex-1
+          mr-2
+          text-lg
+          xl:text-xl
+          2xl:text-2xl
+          min-w-1/4;
       }
 
       & li > a {
