@@ -106,6 +106,51 @@
   "max_blocks": 15,
   "settings": [
     {
+      "type": "select",
+      "id": "color_scheme",
+      "options": [
+        {
+          "value": "background-1",
+          "label": "Background 1"
+        },
+        {
+          "value": "background-2",
+          "label": "Background 2"
+        },
+        {
+          "value": "accent-1",
+          "label": "Accent 1"
+        },
+        {
+          "value": "accent-2",
+          "label": "Accent 2"
+        }
+      ],
+      "default": "background-1",
+      "label": "t:sections.all.colors.label",
+      "info": "t:sections.all.colors.has_cards_info"
+    },
+    {
+      "type": "select",
+      "id": "card_color_scheme",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default (theme settings)"
+        },
+        {
+          "value": "match",
+          "label": "Match section"
+        },
+        {
+          "value": "inverse",
+          "label": "Inverse section"
+        }
+      ],
+      "default": "default",
+      "label": "Card color scheme"
+    },
+    {
       "type": "text",
       "id": "title",
       "default": "Collections",
@@ -197,51 +242,6 @@
       "id": "enable_desktop_slider",
       "label": "t:sections.featured-collection.settings.enable_desktop_slider.label",
       "default": false
-    },
-    {
-      "type": "select",
-      "id": "color_scheme",
-      "options": [
-        {
-          "value": "background-1",
-          "label": "Background 1"
-        },
-        {
-          "value": "background-2",
-          "label": "Background 2"
-        },
-        {
-          "value": "accent-1",
-          "label": "Accent 1"
-        },
-        {
-          "value": "accent-2",
-          "label": "Accent 2"
-        }
-      ],
-      "default": "background-1",
-      "label": "t:sections.all.colors.label",
-      "info": "t:sections.all.colors.has_cards_info"
-    },
-    {
-      "type": "select",
-      "id": "card_color_scheme",
-      "options": [
-        {
-          "value": "default",
-          "label": "Default (theme settings)"
-        },
-        {
-          "value": "match",
-          "label": "Match section"
-        },
-        {
-          "value": "inverse",
-          "label": "Inverse section"
-        }
-      ],
-      "default": "default",
-      "label": "Card color scheme"
     },
     {
       "type": "checkbox",
