@@ -470,6 +470,7 @@
 .card .quick-add, .article-card .quick-add {
   margin: 1rem;
   margin-top: 0;
+  text-align: center;
 }
 
 .card .quick-add__submit, .article-card .quick-add__submit {

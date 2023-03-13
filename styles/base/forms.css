@@ -80,17 +80,27 @@
   &__list-wrapper {
     @apply
       absolute
-      top-full
-      h-48
+      bottom-full
+      right-0
+      max-h-48
       w-64
       filter
       drop-shadow-md
       overflow-y-auto
-      bg-scheme-fg;
+      bg-scheme-bg
+      z-1;
+  }
+
+  & #FooterCountryButton {
+    & + .disclosure__list-wrapper {
+      @apply left-0
+        right-[unset];
+    }
   }
 
   &__list {
-    @apply mx-4;
+    @apply px-4
+      bg-scheme-fg;
   }
 
   &__item {

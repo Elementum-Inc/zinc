@@ -93,6 +93,14 @@
   & .divider {
     margin: 2rem 0;
   }
+
+  &__view-details {
+    @apply underline-link;
+
+    & .icon {
+      @apply ml-1;
+    }
+  }
 }
 
 .product-form__input {

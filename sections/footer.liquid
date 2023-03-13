@@ -182,7 +182,7 @@
                           <div class="no-js-hidden">
                             <h2 class="footer-block__heading text-body" id="FooterCountryLabel">{{ 'localization.country_label' | t }}</h2>
                             <div class="disclosure">
-                              <button type="button" class="disclosure__button localization-form__select localization-selector" aria-expanded="false" aria-controls="FooterCountryList" aria-describedby="FooterCountryLabel">
+                              <button id="FooterCountryButton" type="button" class="disclosure__button localization-form__select localization-selector" aria-expanded="false" aria-controls="FooterCountryList" aria-describedby="FooterCountryLabel">
                                 <span>{{ localization.country.name }} ({{ localization.country.currency.iso_code }} {{ localization.country.currency.symbol }})</span>
                                 {% render 'icon-caret' %}
                               </button>

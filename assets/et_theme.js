@@ -15160,7 +15160,7 @@ const _hoisted_28$2 = /* @__PURE__ */ createBaseVNode("circle", {
   cx: "12",
   cy: "6",
   r: "4",
-  fill: "#000",
+  fill: "currentColor",
   opacity: ".25",
   stroke: "none"
 }, null, -1);
@@ -15171,7 +15171,7 @@ const _hoisted_29$1 = /* @__PURE__ */ createBaseVNode("circle", {
 }, null, -1);
 const _hoisted_30$1 = /* @__PURE__ */ createBaseVNode("path", {
   d: "M17.67 22a2 2 0 0 0 1.92-2.56A7.8 7.8 0 0 0 12 14a7.8 7.8 0 0 0-7.59 5.44A2 2 0 0 0 6.34 22Z",
-  fill: "#000",
+  fill: "currentColor",
   opacity: ".25",
   stroke: "none"
 }, null, -1);
@@ -15288,7 +15288,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
               width: $props.iconSize,
               height: $props.iconSize,
               fill: "none",
-              stroke: "#000",
+              stroke: "currentColor",
               "stroke-linecap": "round",
               "stroke-linejoin": "round"
             }, _hoisted_4$3, 8, _hoisted_2$3))
@@ -15453,7 +15453,7 @@ function _sfc_render$3(_ctx, _cache, $props, $setup, $data, $options) {
                       width: $props.iconSize,
                       height: $props.iconSize,
                       fill: "none",
-                      stroke: "#000",
+                      stroke: "currentColor",
                       "stroke-width": $props.iconStrokeWidth,
                       "stroke-linecap": "round",
                       "stroke-linejoin": "round"
@@ -16289,7 +16289,7 @@ const _hoisted_3$1 = /* @__PURE__ */ createBaseVNode("circle", {
   cx: "11",
   cy: "11",
   r: "9",
-  fill: "#000",
+  fill: "currentColor",
   opacity: ".25",
   stroke: "none"
 }, null, -1);
@@ -16374,7 +16374,7 @@ function _sfc_render$1(_ctx, _cache, $props, $setup, $data, $options) {
               width: $props.iconSize,
               height: $props.iconSize,
               fill: "none",
-              stroke: "#000",
+              stroke: "currentColor",
               "stroke-width": $props.iconStrokeWidth,
               "stroke-linecap": "round",
               "stroke-linejoin": "round"
