@@ -55,14 +55,6 @@
   #FooterCountryForm {
     @apply w-full
       my-4;
-
-    & .icon-caret {
-      position: absolute;
-      content: '';
-      height: .6rem;
-      top: calc(50% - .2rem);
-      left: 0;
-    }
   }
 
   #FooterCountryLabel {

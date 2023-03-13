@@ -268,10 +268,8 @@ noscript .localization-form__select {
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  color: rgb(var(--color-foreground));
   width: 100%;
   padding-right: 4rem;
-  padding-bottom: 1.5rem;
 }
 
 noscript .localization-selector.link {
