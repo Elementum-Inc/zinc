@@ -167,6 +167,17 @@ export default {
     },
     'btn-secondary': {
       '@apply': 'bg-scheme-accent text-scheme-bg'
+    },
+    'underline-link': {
+      '@apply': `transition-all
+        duration-250
+        underline
+        decoration-from-font
+        underline-offset-4`,
+      '&:hover': {
+        '@apply': `decoration-1
+          underline-offset-6`
+      }
     }
   },
   plugins: [require("windicss/plugin/aspect-ratio")],
