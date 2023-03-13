@@ -80,7 +80,7 @@
         "column2": {
           "type": "column",
           "settings": {
-            "column_alignment": "left",
+            "column_alignment": "center",
             "image_position": "above",
             "border-radius": 0,
             "title": "It's all about connection.",
