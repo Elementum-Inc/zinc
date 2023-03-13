@@ -2,7 +2,7 @@
   <Popover>
     <PopoverButton class="header__menu-trigger" name="menu-open__trigger" aria-label="Open  Menu" :class="{ 'hide-desktop' : !settings.collapse_menu_desktop }">
       <span class="icon target">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize" fill="none" stroke="#000" stroke-linecap="round" stroke-linejoin="round">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
           <!--  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons -->
           <path d="M21 18H3M21 12H3M21 6H3"/>
         </svg>
@@ -71,11 +71,11 @@
           <a :href="accountRoute">
             Account
             <span class="icon target">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize" fill="none" stroke="#000" :stroke-width="iconStrokeWidth" stroke-linecap="round" stroke-linejoin="round">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" :width="iconSize" :height="iconSize" fill="none" stroke="currentColor" :stroke-width="iconStrokeWidth" stroke-linecap="round" stroke-linejoin="round">
                 <!--  Atomicons Free 1.00 by @atisalab License - https://atomicons.com/license/ (Icons: CC BY 4.0) Copyright 2021 Atomicons -->
-                <circle cx="12" cy="6" r="4" fill="#000" opacity=".25" stroke="none"/>
+                <circle cx="12" cy="6" r="4" fill="currentColor" opacity=".25" stroke="none"/>
                 <circle cx="12" cy="6" r="4"/>
-                <path d="M17.67 22a2 2 0 0 0 1.92-2.56A7.8 7.8 0 0 0 12 14a7.8 7.8 0 0 0-7.59 5.44A2 2 0 0 0 6.34 22Z" fill="#000" opacity=".25" stroke="none"/>
+                <path d="M17.67 22a2 2 0 0 0 1.92-2.56A7.8 7.8 0 0 0 12 14a7.8 7.8 0 0 0-7.59 5.44A2 2 0 0 0 6.34 22Z" fill="currentColor" opacity=".25" stroke="none"/>
                 <path d="M17.67 22a2 2 0 0 0 1.92-2.56A7.8 7.8 0 0 0 12 14a7.8 7.8 0 0 0-7.59 5.44A2 2 0 0 0 6.34 22Z"/>
               </svg>
             </span>

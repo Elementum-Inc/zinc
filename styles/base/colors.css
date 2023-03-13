@@ -105,12 +105,4 @@
       }
     }
   }
-
-  & svg.icon:not(.icon-social):not(.icon--full-color):not(.icon-accordion) {
-    @apply stroke-scheme-accent;
-  }
-
-  & svg.icon-social > path {
-    @apply fill-scheme-accent;
-  }
 }
