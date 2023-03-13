@@ -64,6 +64,19 @@
     "multicolumn": {
       "type": "multicolumn",
       "blocks": {
+        "column1": {
+          "type": "column",
+          "settings": {
+            "column_alignment": "center",
+            "image": "shopify:\/\/shop_images\/IMG_6951_1.webp",
+            "image_position": "above",
+            "border-radius": 50,
+            "title": "",
+            "text": "<p>Malik and Daneille<\/p><p>Lonéz Scents Creators<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
         "column2": {
           "type": "column",
           "settings": {
@@ -75,24 +88,11 @@
             "button_label": "Our Story",
             "button_link": "shopify:\/\/pages\/our-story"
           }
-        },
-        "column1": {
-          "type": "column",
-          "settings": {
-            "column_alignment": "left",
-            "image": "shopify:\/\/shop_images\/IMG_6951_1.webp",
-            "image_position": "above",
-            "border-radius": 50,
-            "title": "",
-            "text": "",
-            "button_label": "",
-            "button_link": ""
-          }
         }
       },
       "block_order": [
-        "column2",
-        "column1"
+        "column1",
+        "column2"
       ],
       "settings": {
         "title": "",
@@ -104,7 +104,7 @@
         "button_label": "",
         "button_link": "",
         "color_scheme": "background-1",
-        "columns_mobile": "2",
+        "columns_mobile": "1",
         "swipe_on_mobile": true,
         "padding_top": 0,
         "padding_bottom": 0
