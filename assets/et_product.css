@@ -96,6 +96,33 @@
   margin: 2rem 0;
 }
 
+.product__view-details {
+  text-underline-offset: 4px;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  -o-transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  transition-timing-function: cubic-bezier(.4, 0, .2, 1);
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -webkit-transition-duration: 250ms;
+  -o-transition-duration: 250ms;
+  transition-duration: 250ms;
+}
+
+.product__view-details:hover {
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
+
+.product__view-details .icon {
+  margin-left: .25rem;
+}
+
 .product-form__input input[type='radio'] + label {
   border-color: var(--button-fg);
   border-radius: var(--variant-pills-radius);
