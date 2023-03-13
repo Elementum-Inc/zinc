@@ -254,7 +254,7 @@
   }
 
   & .quick-add {
-    @apply m-4 mt-0;
+    @apply m-4 mt-0 text-center;
 
     &__submit {
       @apply w-full max-w-xs;
