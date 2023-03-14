@@ -197,7 +197,7 @@
       <div class="center collection__view-all {% if section.blocks[1].settings.collection.all_products_count > section.settings.products_to_show %}{% endif %}">
         <a href="{{ section.blocks[0].settings.collection.url }}"
           id="ViewAll_{{ section.id }}"
-          class="{% if section.blocks[0].settings.collection.all_products_count < section.settings.products_to_show %}hidden {% endif %}{% if section.settings.view_all_style == 'link' %}link underlined-link{% else %}btn{% if section.settings.view_all_style == 'outline' %} btn-outline primary{% else %} secondary{% endif %}{% endif %}"
+          class="{% if section.blocks[0].settings.collection.all_products_count < section.settings.products_to_show %}hidden {% endif %}{% if section.settings.view_all_style == 'link' %}link underline-link{% else %}btn{% if section.settings.view_all_style == 'outline' %} btn-outline primary{% else %} secondary{% endif %}{% endif %}"
           aria-label="{{ 'sections.featured_collection.view_all_label' | t: collection_name: section.settings.collection.title }}"
         >
           {%- if section.settings.view_all_style != 'link' -%}

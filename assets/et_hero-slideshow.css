@@ -152,6 +152,11 @@
   padding: 0;
 }
 
+.slideshow.splide .splide__track {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 .slideshow.splide .splide__slide {
   padding: 0;
 }

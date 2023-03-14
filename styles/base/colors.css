@@ -86,6 +86,11 @@
       content: '';
     }
 
+    & > * {
+      position: relative;
+      z-index: 1;
+    }
+
     & .card.match {
       border-radius: 0;
 
