@@ -462,7 +462,7 @@ function EventInterface(Splide2) {
       callback.apply(callback, isArray$1(e2.detail) ? e2.detail : []);
     });
   }
-  function emit(event2) {
+  function emit2(event2) {
     binder.dispatch(bus, event2, slice(arguments, 1));
   }
   if (Splide2) {
@@ -472,7 +472,7 @@ function EventInterface(Splide2) {
     bus,
     on,
     off: apply(binder.unbind, bus),
-    emit
+    emit: emit2
   });
 }
 function RequestInterval(interval, onInterval, onUpdate, limit) {
@@ -820,7 +820,7 @@ var LOOP = "loop";
 var FADE = "fade";
 function Slide$1(Splide2, index, slideIndex, slide) {
   var event2 = EventInterface(Splide2);
-  var on = event2.on, emit = event2.emit, bind = event2.bind;
+  var on = event2.on, emit2 = event2.emit, bind = event2.bind;
   var Components = Splide2.Components, root = Splide2.root, options = Splide2.options;
   var isNavigation = options.isNavigation, updateOnMove = options.updateOnMove, i18n = options.i18n, pagination = options.pagination, slideFocus = options.slideFocus;
   var resolve2 = Components.Direction.resolve;
@@ -839,8 +839,8 @@ function Slide$1(Splide2, index, slideIndex, slide) {
     listen();
   }
   function listen() {
-    bind(slide, "click", apply(emit, EVENT_CLICK, self2));
-    bind(slide, "keydown", apply(emit, EVENT_SLIDE_KEYDOWN, self2));
+    bind(slide, "click", apply(emit2, EVENT_CLICK, self2));
+    bind(slide, "keydown", apply(emit2, EVENT_SLIDE_KEYDOWN, self2));
     on([EVENT_MOVED, EVENT_SHIFTED, EVENT_SCROLLED], update);
     on(EVENT_NAVIGATION_MOUNTED, initNavigation);
     if (updateOnMove) {
@@ -884,7 +884,7 @@ function Slide$1(Splide2, index, slideIndex, slide) {
     if (active !== hasClass(slide, CLASS_ACTIVE)) {
       toggleClass(slide, CLASS_ACTIVE, active);
       setAttribute(slide, ARIA_CURRENT, isNavigation && active || "");
-      emit(active ? EVENT_ACTIVE : EVENT_INACTIVE, self2);
+      emit2(active ? EVENT_ACTIVE : EVENT_INACTIVE, self2);
     }
   }
   function updateVisibility() {
@@ -899,7 +899,7 @@ function Slide$1(Splide2, index, slideIndex, slide) {
     }
     if (visible !== hasClass(slide, CLASS_VISIBLE)) {
       toggleClass(slide, CLASS_VISIBLE, visible);
-      emit(visible ? EVENT_VISIBLE : EVENT_HIDDEN, self2);
+      emit2(visible ? EVENT_VISIBLE : EVENT_HIDDEN, self2);
     }
     if (!visible && document.activeElement === slide) {
       var Slide2 = Components.Slides.getAt(Splide2.index);
@@ -945,7 +945,7 @@ function Slide$1(Splide2, index, slideIndex, slide) {
   return self2;
 }
 function Slides(Splide2, Components2, options) {
-  var _EventInterface2 = EventInterface(Splide2), on = _EventInterface2.on, emit = _EventInterface2.emit, bind = _EventInterface2.bind;
+  var _EventInterface2 = EventInterface(Splide2), on = _EventInterface2.on, emit2 = _EventInterface2.emit, bind = _EventInterface2.bind;
   var _Components2$Elements = Components2.Elements, slides = _Components2$Elements.slides, list = _Components2$Elements.list;
   var Slides2 = [];
   function mount() {
@@ -1002,16 +1002,16 @@ function Slides(Splide2, Components2, options) {
         var ref2 = slides[index];
         ref2 ? before(slide, ref2) : append(list, slide);
         addClass(slide, options.classes.slide);
-        observeImages(slide, apply(emit, EVENT_RESIZE));
+        observeImages(slide, apply(emit2, EVENT_RESIZE));
       }
     });
-    emit(EVENT_REFRESH);
+    emit2(EVENT_REFRESH);
   }
   function remove$1$1(matcher) {
     remove$1(filter(matcher).map(function(Slide2) {
       return Slide2.slide;
     }));
-    emit(EVENT_REFRESH);
+    emit2(EVENT_REFRESH);
   }
   function forEach$1(iteratee, excludeClones) {
     get2(excludeClones).forEach(iteratee);
@@ -1065,7 +1065,7 @@ function Slides(Splide2, Components2, options) {
   };
 }
 function Layout(Splide2, Components2, options) {
-  var _EventInterface3 = EventInterface(Splide2), on = _EventInterface3.on, bind = _EventInterface3.bind, emit = _EventInterface3.emit;
+  var _EventInterface3 = EventInterface(Splide2), on = _EventInterface3.on, bind = _EventInterface3.bind, emit2 = _EventInterface3.emit;
   var Slides2 = Components2.Slides;
   var resolve2 = Components2.Direction.resolve;
   var _Components2$Elements2 = Components2.Elements, root = _Components2$Elements2.root, track2 = _Components2$Elements2.track, list = _Components2$Elements2.list;
@@ -1075,7 +1075,7 @@ function Layout(Splide2, Components2, options) {
   var overflow;
   function mount() {
     init();
-    bind(window, "resize load", Throttle(apply(emit, EVENT_RESIZE)));
+    bind(window, "resize load", Throttle(apply(emit2, EVENT_RESIZE)));
     on([EVENT_UPDATED, EVENT_REFRESH], init);
     on(EVENT_RESIZE, resize);
   }
@@ -1094,10 +1094,10 @@ function Layout(Splide2, Components2, options) {
       styleSlides("width", cssSlideWidth());
       styleSlides("height", cssSlideHeight(), true);
       rootRect = newRect;
-      emit(EVENT_RESIZED);
+      emit2(EVENT_RESIZED);
       if (overflow !== (overflow = isOverflow())) {
         toggleClass(root, CLASS_OVERFLOW, overflow);
-        emit(EVENT_OVERFLOW, overflow);
+        emit2(EVENT_OVERFLOW, overflow);
       }
     }
   }
@@ -1240,7 +1240,7 @@ function Clones(Splide2, Components2, options) {
   };
 }
 function Move(Splide2, Components2, options) {
-  var _EventInterface4 = EventInterface(Splide2), on = _EventInterface4.on, emit = _EventInterface4.emit;
+  var _EventInterface4 = EventInterface(Splide2), on = _EventInterface4.on, emit2 = _EventInterface4.emit;
   var set2 = Splide2.state.set;
   var _Components2$Layout = Components2.Layout, slideSize = _Components2$Layout.slideSize, getPadding = _Components2$Layout.getPadding, totalSize = _Components2$Layout.totalSize, listSize = _Components2$Layout.listSize, sliderSize = _Components2$Layout.sliderSize;
   var _Components2$Directio = Components2.Direction, resolve2 = _Components2$Directio.resolve, orient = _Components2$Directio.orient;
@@ -1263,10 +1263,10 @@ function Move(Splide2, Components2, options) {
       translate(shift(getPosition(), dest > prev), true);
     }
     set2(MOVING);
-    emit(EVENT_MOVE, index, prev, dest);
+    emit2(EVENT_MOVE, index, prev, dest);
     Transition2.start(index, function() {
       set2(IDLE);
-      emit(EVENT_MOVED, index, prev, dest);
+      emit2(EVENT_MOVED, index, prev, dest);
       callback && callback();
     });
   }
@@ -1277,7 +1277,7 @@ function Move(Splide2, Components2, options) {
     if (!Splide2.is(FADE)) {
       var destination = preventLoop ? position : loop(position);
       style(list, "transform", "translate" + resolve2("X") + "(" + destination + "px)");
-      position !== destination && emit(EVENT_SHIFTED);
+      position !== destination && emit2(EVENT_SHIFTED);
     }
   }
   function loop(position) {
@@ -1364,7 +1364,7 @@ function Move(Splide2, Components2, options) {
   };
 }
 function Controller(Splide2, Components2, options) {
-  var _EventInterface5 = EventInterface(Splide2), on = _EventInterface5.on, emit = _EventInterface5.emit;
+  var _EventInterface5 = EventInterface(Splide2), on = _EventInterface5.on, emit2 = _EventInterface5.emit;
   var Move2 = Components2.Move;
   var getPosition = Move2.getPosition, getLimit = Move2.getLimit, toPosition = Move2.toPosition;
   var _Components2$Slides = Components2.Slides, isEnough = _Components2$Slides.isEnough, getLength = _Components2$Slides.getLength;
@@ -1397,7 +1397,7 @@ function Controller(Splide2, Components2, options) {
   }
   function onResized() {
     if (endIndex !== getEnd()) {
-      emit(EVENT_END_INDEX_CHANGED);
+      emit2(EVENT_END_INDEX_CHANGED);
     }
   }
   function go(control, allowSameIndex, callback) {
@@ -1542,7 +1542,7 @@ var PATH = "m15.5 0.932-4.3 4.38 14.5 14.6-14.5 14.5 4.3 4.4 14.6-14.6 4.4-4.3-4
 var SIZE = 40;
 function Arrows(Splide2, Components2, options) {
   var event2 = EventInterface(Splide2);
-  var on = event2.on, bind = event2.bind, emit = event2.emit;
+  var on = event2.on, bind = event2.bind, emit2 = event2.emit;
   var classes = options.classes, i18n = options.i18n;
   var Elements2 = Components2.Elements, Controller2 = Components2.Controller;
   var placeholder = Elements2.arrows, track2 = Elements2.track;
@@ -1576,7 +1576,7 @@ function Arrows(Splide2, Components2, options) {
         listen();
         update();
         setAttribute([prev, next], ARIA_CONTROLS, track2.id);
-        emit(EVENT_ARROWS_MOUNTED, prev, next);
+        emit2(EVENT_ARROWS_MOUNTED, prev, next);
       }
     }
   }
@@ -1621,7 +1621,7 @@ function Arrows(Splide2, Components2, options) {
       next.disabled = nextIndex < 0;
       setAttribute(prev, ARIA_LABEL, prevLabel);
       setAttribute(next, ARIA_LABEL, nextLabel);
-      emit(EVENT_ARROWS_UPDATED, prev, next, prevIndex, nextIndex);
+      emit2(EVENT_ARROWS_UPDATED, prev, next, prevIndex, nextIndex);
     }
   }
   return {
@@ -1633,7 +1633,7 @@ function Arrows(Splide2, Components2, options) {
 }
 var INTERVAL_DATA_ATTRIBUTE = DATA_ATTRIBUTE + "-interval";
 function Autoplay(Splide2, Components2, options) {
-  var _EventInterface6 = EventInterface(Splide2), on = _EventInterface6.on, bind = _EventInterface6.bind, emit = _EventInterface6.emit;
+  var _EventInterface6 = EventInterface(Splide2), on = _EventInterface6.on, bind = _EventInterface6.bind, emit2 = _EventInterface6.emit;
   var interval = RequestInterval(options.interval, Splide2.go.bind(Splide2, ">"), onAnimationFrame);
   var isPaused = interval.isPaused;
   var Elements2 = Components2.Elements, _Components2$Elements4 = Components2.Elements, root = _Components2$Elements4.root, toggle = _Components2$Elements4.toggle;
@@ -1675,7 +1675,7 @@ function Autoplay(Splide2, Components2, options) {
       interval.start(!options.resetProgress);
       focused = hovered = stopped = false;
       update();
-      emit(EVENT_AUTOPLAY_PLAY);
+      emit2(EVENT_AUTOPLAY_PLAY);
     }
   }
   function pause(stop2) {
@@ -1686,7 +1686,7 @@ function Autoplay(Splide2, Components2, options) {
     update();
     if (!isPaused()) {
       interval.pause();
-      emit(EVENT_AUTOPLAY_PAUSE);
+      emit2(EVENT_AUTOPLAY_PAUSE);
     }
   }
   function autoToggle() {
@@ -1703,7 +1703,7 @@ function Autoplay(Splide2, Components2, options) {
   function onAnimationFrame(rate) {
     var bar = Elements2.bar;
     bar && style(bar, "width", rate * 100 + "%");
-    emit(EVENT_AUTOPLAY_PLAYING, rate);
+    emit2(EVENT_AUTOPLAY_PLAYING, rate);
   }
   function onMove(index) {
     var Slide2 = Components2.Slides.getAt(index);
@@ -1748,7 +1748,7 @@ var FRICTION_FACTOR = 0.6;
 var BASE_VELOCITY = 1.5;
 var MIN_DURATION = 800;
 function Scroll(Splide2, Components2, options) {
-  var _EventInterface8 = EventInterface(Splide2), on = _EventInterface8.on, emit = _EventInterface8.emit;
+  var _EventInterface8 = EventInterface(Splide2), on = _EventInterface8.on, emit2 = _EventInterface8.emit;
   var set2 = Splide2.state.set;
   var Move2 = Components2.Move;
   var getPosition = Move2.getPosition, getLimit = Move2.getLimit, exceededLimit = Move2.exceededLimit, translate = Move2.translate;
@@ -1774,13 +1774,13 @@ function Scroll(Splide2, Components2, options) {
     callback = onScrolled;
     interval = RequestInterval(duration, onEnd, apply(update, from, destination, noConstrain), 1);
     set2(SCROLLING);
-    emit(EVENT_SCROLL);
+    emit2(EVENT_SCROLL);
     interval.start();
   }
   function onEnd() {
     set2(IDLE);
     callback && callback();
-    emit(EVENT_SCROLLED);
+    emit2(EVENT_SCROLLED);
   }
   function update(from, to, noConstrain, rate) {
     var position = getPosition();
@@ -1821,7 +1821,7 @@ var SCROLL_LISTENER_OPTIONS = {
   capture: true
 };
 function Drag(Splide2, Components2, options) {
-  var _EventInterface9 = EventInterface(Splide2), on = _EventInterface9.on, emit = _EventInterface9.emit, bind = _EventInterface9.bind, unbind = _EventInterface9.unbind;
+  var _EventInterface9 = EventInterface(Splide2), on = _EventInterface9.on, emit2 = _EventInterface9.emit, bind = _EventInterface9.bind, unbind = _EventInterface9.unbind;
   var state = Splide2.state;
   var Move2 = Components2.Move, Scroll2 = Components2.Scroll, Controller2 = Components2.Controller, track2 = Components2.Elements.track, reduce = Components2.Media.reduce;
   var _Components2$Directio2 = Components2.Direction, resolve2 = _Components2$Directio2.resolve, orient = _Components2$Directio2.orient;
@@ -1873,7 +1873,7 @@ function Drag(Splide2, Components2, options) {
   function onPointerMove(e2) {
     if (!state.is(DRAGGING)) {
       state.set(DRAGGING);
-      emit(EVENT_DRAG);
+      emit2(EVENT_DRAG);
     }
     if (e2.cancelable) {
       if (dragging) {
@@ -1884,7 +1884,7 @@ function Drag(Splide2, Components2, options) {
           save(e2);
         }
         clickPrevented = true;
-        emit(EVENT_DRAGGING);
+        emit2(EVENT_DRAGGING);
         prevent(e2);
       } else if (isSliderDirection(e2)) {
         dragging = shouldStart(e2);
@@ -1895,7 +1895,7 @@ function Drag(Splide2, Components2, options) {
   function onPointerUp(e2) {
     if (state.is(DRAGGING)) {
       state.set(IDLE);
-      emit(EVENT_DRAGGED);
+      emit2(EVENT_DRAGGED);
     }
     if (dragging) {
       move(e2);
@@ -2051,7 +2051,7 @@ var SRC_DATA_ATTRIBUTE = DATA_ATTRIBUTE + "-lazy";
 var SRCSET_DATA_ATTRIBUTE = SRC_DATA_ATTRIBUTE + "-srcset";
 var IMAGE_SELECTOR = "[" + SRC_DATA_ATTRIBUTE + "], [" + SRCSET_DATA_ATTRIBUTE + "]";
 function LazyLoad(Splide2, Components2, options) {
-  var _EventInterface11 = EventInterface(Splide2), on = _EventInterface11.on, off = _EventInterface11.off, bind = _EventInterface11.bind, emit = _EventInterface11.emit;
+  var _EventInterface11 = EventInterface(Splide2), on = _EventInterface11.on, off = _EventInterface11.off, bind = _EventInterface11.bind, emit2 = _EventInterface11.emit;
   var isSequential = options.lazyLoad === "sequential";
   var events = [EVENT_MOVED, EVENT_SCROLLED];
   var entries = [];
@@ -2109,8 +2109,8 @@ function LazyLoad(Splide2, Components2, options) {
     if (e2.type !== "error") {
       remove$1(data[2]);
       display(img, "");
-      emit(EVENT_LAZYLOAD_LOADED, img, Slide2);
-      emit(EVENT_RESIZE);
+      emit2(EVENT_LAZYLOAD_LOADED, img, Slide2);
+      emit2(EVENT_RESIZE);
     }
     isSequential && loadNext();
   }
@@ -2125,7 +2125,7 @@ function LazyLoad(Splide2, Components2, options) {
 }
 function Pagination(Splide2, Components2, options) {
   var event2 = EventInterface(Splide2);
-  var on = event2.on, emit = event2.emit, bind = event2.bind;
+  var on = event2.on, emit2 = event2.emit, bind = event2.bind;
   var Slides2 = Components2.Slides, Elements2 = Components2.Elements, Controller2 = Components2.Controller;
   var hasFocus = Controller2.hasFocus, getIndex = Controller2.getIndex, go = Controller2.go;
   var resolve2 = Components2.Direction.resolve;
@@ -2142,7 +2142,7 @@ function Pagination(Splide2, Components2, options) {
       on([EVENT_MOVE, EVENT_SCROLL, EVENT_SCROLLED], update);
       createPagination();
       update();
-      emit(EVENT_PAGINATION_MOUNTED, {
+      emit2(EVENT_PAGINATION_MOUNTED, {
         list,
         items
       }, getAt(Splide2.index));
@@ -2237,7 +2237,7 @@ function Pagination(Splide2, Components2, options) {
       setAttribute(_button, ARIA_SELECTED, true);
       setAttribute(_button, TAB_INDEX, "");
     }
-    emit(EVENT_PAGINATION_UPDATED, {
+    emit2(EVENT_PAGINATION_UPDATED, {
       list,
       items
     }, prev, curr);
@@ -2591,7 +2591,7 @@ var _Splide = /* @__PURE__ */ function() {
     this.event.off(events);
     return this;
   };
-  _proto.emit = function emit(event2) {
+  _proto.emit = function emit2(event2) {
     var _this$event;
     (_this$event = this.event).emit.apply(_this$event, [event2].concat(slice(arguments, 1)));
     return this;
@@ -2738,8 +2738,8 @@ function normalizeProps(props) {
   }
   return props;
 }
-const HTML_TAGS = "html,body,base,head,link,meta,style,title,address,article,aside,footer,header,h1,h2,h3,h4,h5,h6,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,img,li,main,ol,p,pre,ul,a,b,abbr,bdi,bdo,br,cite,code,data,dfn,em,i,kbd,mark,q,rp,rt,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,area,audio,map,track,video,embed,object,param,source,canvas,script,noscript,del,ins,caption,col,colgroup,table,thead,tbody,td,th,tr,button,datalist,fieldset,form,input,label,legend,meter,optgroup,option,output,progress,select,textarea,details,dialog,menu,summary,template,blockquote,iframe,tfoot";
-const SVG_TAGS = "svg,animate,animateMotion,animateTransform,circle,clipPath,color-profile,defs,desc,discard,ellipse,feBlend,feColorMatrix,feComponentTransfer,feComposite,feConvolveMatrix,feDiffuseLighting,feDisplacementMap,feDistanceLight,feDropShadow,feFlood,feFuncA,feFuncB,feFuncG,feFuncR,feGaussianBlur,feImage,feMerge,feMergeNode,feMorphology,feOffset,fePointLight,feSpecularLighting,feSpotLight,feTile,feTurbulence,filter,foreignObject,g,hatch,hatchpath,image,line,linearGradient,marker,mask,mesh,meshgradient,meshpatch,meshrow,metadata,mpath,path,pattern,polygon,polyline,radialGradient,rect,set,solidcolor,stop,switch,symbol,text,textPath,title,tspan,unknown,use,view";
+const HTML_TAGS = "html,body,base,head,link,meta,style,title,address,article,aside,footer,header,hgroup,h1,h2,h3,h4,h5,h6,nav,section,div,dd,dl,dt,figcaption,figure,picture,hr,img,li,main,ol,p,pre,ul,a,b,abbr,bdi,bdo,br,cite,code,data,dfn,em,i,kbd,mark,q,rp,rt,ruby,s,samp,small,span,strong,sub,sup,time,u,var,wbr,area,audio,map,track,video,embed,object,param,source,canvas,script,noscript,del,ins,caption,col,colgroup,table,thead,tbody,td,th,tr,button,datalist,fieldset,form,input,label,legend,meter,optgroup,option,output,progress,select,textarea,details,dialog,menu,summary,template,blockquote,iframe,tfoot";
+const SVG_TAGS = "svg,animate,animateMotion,animateTransform,circle,clipPath,color-profile,defs,desc,discard,ellipse,feBlend,feColorMatrix,feComponentTransfer,feComposite,feConvolveMatrix,feDiffuseLighting,feDisplacementMap,feDistantLight,feDropShadow,feFlood,feFuncA,feFuncB,feFuncG,feFuncR,feGaussianBlur,feImage,feMerge,feMergeNode,feMorphology,feOffset,fePointLight,feSpecularLighting,feSpotLight,feTile,feTurbulence,filter,foreignObject,g,hatch,hatchpath,image,line,linearGradient,marker,mask,mesh,meshgradient,meshpatch,meshrow,metadata,mpath,path,pattern,polygon,polyline,radialGradient,rect,set,solidcolor,stop,switch,symbol,text,textPath,title,tspan,unknown,use,view";
 const VOID_TAGS = "area,base,br,col,embed,hr,img,input,link,meta,param,source,track,wbr";
 const isHTMLTag = /* @__PURE__ */ makeMap(HTML_TAGS);
 const isSVGTag = /* @__PURE__ */ makeMap(SVG_TAGS);
@@ -2837,12 +2837,13 @@ const remove = (arr, el) => {
     arr.splice(i2, 1);
   }
 };
-const hasOwnProperty = Object.prototype.hasOwnProperty;
-const hasOwn = (val, key) => hasOwnProperty.call(val, key);
+const hasOwnProperty$1 = Object.prototype.hasOwnProperty;
+const hasOwn = (val, key) => hasOwnProperty$1.call(val, key);
 const isArray = Array.isArray;
 const isMap = (val) => toTypeString(val) === "[object Map]";
 const isSet = (val) => toTypeString(val) === "[object Set]";
 const isDate = (val) => toTypeString(val) === "[object Date]";
+const isRegExp = (val) => toTypeString(val) === "[object RegExp]";
 const isFunction = (val) => typeof val === "function";
 const isString = (val) => typeof val === "string";
 const isSymbol = (val) => typeof val === "symbol";
@@ -2889,8 +2890,12 @@ const def = (obj, key, value) => {
     value
   });
 };
-const toNumber = (val) => {
+const looseToNumber = (val) => {
   const n2 = parseFloat(val);
+  return isNaN(n2) ? val : n2;
+};
+const toNumber = (val) => {
+  const n2 = isString(val) ? Number(val) : NaN;
   return isNaN(n2) ? val : n2;
 };
 let _globalThis;
@@ -2901,7 +2906,7 @@ let activeEffectScope;
 class EffectScope {
   constructor(detached = false) {
     this.detached = detached;
-    this.active = true;
+    this._active = true;
     this.effects = [];
     this.cleanups = [];
     this.parent = activeEffectScope;
@@ -2909,8 +2914,11 @@ class EffectScope {
       this.index = (activeEffectScope.scopes || (activeEffectScope.scopes = [])).push(this) - 1;
     }
   }
+  get active() {
+    return this._active;
+  }
   run(fn) {
-    if (this.active) {
+    if (this._active) {
       const currentEffectScope = activeEffectScope;
       try {
         activeEffectScope = this;
@@ -2927,7 +2935,7 @@ class EffectScope {
     activeEffectScope = this.parent;
   }
   stop(fromParent) {
-    if (this.active) {
+    if (this._active) {
       let i2, l2;
       for (i2 = 0, l2 = this.effects.length; i2 < l2; i2++) {
         this.effects[i2].stop();
@@ -2948,7 +2956,7 @@ class EffectScope {
         }
       }
       this.parent = void 0;
-      this.active = false;
+      this._active = false;
     }
   }
 }
@@ -3140,7 +3148,7 @@ function trigger(target, type, key, newValue, oldValue, oldTarget) {
   if (type === "clear") {
     deps = [...depsMap.values()];
   } else if (key === "length" && isArray(target)) {
-    const newLength = toNumber(newValue);
+    const newLength = Number(newValue);
     depsMap.forEach((dep, key2) => {
       if (key2 === "length" || key2 >= newLength) {
         deps.push(dep);
@@ -3216,11 +3224,15 @@ function triggerEffect(effect2, debuggerEventExtraInfo) {
     }
   }
 }
+function getDepFromReactive(object, key) {
+  var _a;
+  return (_a = targetMap.get(object)) === null || _a === void 0 ? void 0 : _a.get(key);
+}
 const isNonTrackableKeys = /* @__PURE__ */ makeMap(`__proto__,__v_isRef,__isVue`);
 const builtInSymbols = new Set(
   /* @__PURE__ */ Object.getOwnPropertyNames(Symbol).filter((key) => key !== "arguments" && key !== "caller").map((key) => Symbol[key]).filter(isSymbol)
 );
-const get = /* @__PURE__ */ createGetter();
+const get$1 = /* @__PURE__ */ createGetter();
 const shallowGet = /* @__PURE__ */ createGetter(false, true);
 const readonlyGet = /* @__PURE__ */ createGetter(true);
 const shallowReadonlyGet = /* @__PURE__ */ createGetter(true, true);
@@ -3251,6 +3263,11 @@ function createArrayInstrumentations() {
   });
   return instrumentations;
 }
+function hasOwnProperty(key) {
+  const obj = toRaw(this);
+  track(obj, "has", key);
+  return obj.hasOwnProperty(key);
+}
 function createGetter(isReadonly2 = false, shallow = false) {
   return function get2(target, key, receiver) {
     if (key === "__v_isReactive") {
@@ -3263,8 +3280,13 @@ function createGetter(isReadonly2 = false, shallow = false) {
       return target;
     }
     const targetIsArray = isArray(target);
-    if (!isReadonly2 && targetIsArray && hasOwn(arrayInstrumentations, key)) {
-      return Reflect.get(arrayInstrumentations, key, receiver);
+    if (!isReadonly2) {
+      if (targetIsArray && hasOwn(arrayInstrumentations, key)) {
+        return Reflect.get(arrayInstrumentations, key, receiver);
+      }
+      if (key === "hasOwnProperty") {
+        return hasOwnProperty;
+      }
     }
     const res = Reflect.get(target, key, receiver);
     if (isSymbol(key) ? builtInSymbols.has(key) : isNonTrackableKeys(key)) {
@@ -3285,7 +3307,7 @@ function createGetter(isReadonly2 = false, shallow = false) {
     return res;
   };
 }
-const set = /* @__PURE__ */ createSetter();
+const set$1 = /* @__PURE__ */ createSetter();
 const shallowSet = /* @__PURE__ */ createSetter(true);
 function createSetter(shallow = false) {
   return function set2(target, key, value, receiver) {
@@ -3324,7 +3346,7 @@ function deleteProperty(target, key) {
   }
   return result;
 }
-function has(target, key) {
+function has$1(target, key) {
   const result = Reflect.has(target, key);
   if (!isSymbol(key) || !builtInSymbols.has(key)) {
     track(target, "has", key);
@@ -3336,10 +3358,10 @@ function ownKeys(target) {
   return Reflect.ownKeys(target);
 }
 const mutableHandlers = {
-  get,
-  set,
+  get: get$1,
+  set: set$1,
   deleteProperty,
-  has,
+  has: has$1,
   ownKeys
 };
 const readonlyHandlers = {
@@ -3360,7 +3382,7 @@ const shallowReadonlyHandlers = /* @__PURE__ */ extend({}, readonlyHandlers, {
 });
 const toShallow = (value) => value;
 const getProto = (v2) => Reflect.getPrototypeOf(v2);
-function get$1(target, key, isReadonly2 = false, isShallow2 = false) {
+function get(target, key, isReadonly2 = false, isShallow2 = false) {
   target = target["__v_raw"];
   const rawTarget = toRaw(target);
   const rawKey = toRaw(key);
@@ -3380,7 +3402,7 @@ function get$1(target, key, isReadonly2 = false, isShallow2 = false) {
     target.get(key);
   }
 }
-function has$1(key, isReadonly2 = false) {
+function has(key, isReadonly2 = false) {
   const target = this["__v_raw"];
   const rawTarget = toRaw(target);
   const rawKey = toRaw(key);
@@ -3408,7 +3430,7 @@ function add(value) {
   }
   return this;
 }
-function set$1(key, value) {
+function set(key, value) {
   value = toRaw(value);
   const target = toRaw(this);
   const { has: has2, get: get2 } = getProto(target);
@@ -3494,41 +3516,41 @@ function createReadonlyMethod(type) {
 function createInstrumentations() {
   const mutableInstrumentations2 = {
     get(key) {
-      return get$1(this, key);
+      return get(this, key);
     },
     get size() {
       return size(this);
     },
-    has: has$1,
+    has,
     add,
-    set: set$1,
+    set,
     delete: deleteEntry,
     clear,
     forEach: createForEach(false, false)
   };
   const shallowInstrumentations2 = {
     get(key) {
-      return get$1(this, key, false, true);
+      return get(this, key, false, true);
     },
     get size() {
       return size(this);
     },
-    has: has$1,
+    has,
     add,
-    set: set$1,
+    set,
     delete: deleteEntry,
     clear,
     forEach: createForEach(false, true)
   };
   const readonlyInstrumentations2 = {
     get(key) {
-      return get$1(this, key, true);
+      return get(this, key, true);
     },
     get size() {
       return size(this, true);
     },
     has(key) {
-      return has$1.call(this, key, true);
+      return has.call(this, key, true);
     },
     add: createReadonlyMethod("add"),
     set: createReadonlyMethod("set"),
@@ -3538,13 +3560,13 @@ function createInstrumentations() {
   };
   const shallowReadonlyInstrumentations2 = {
     get(key) {
-      return get$1(this, key, true, true);
+      return get(this, key, true, true);
     },
     get size() {
       return size(this, true);
     },
     has(key) {
-      return has$1.call(this, key, true);
+      return has.call(this, key, true);
     },
     add: createReadonlyMethod("add"),
     set: createReadonlyMethod("set"),
@@ -3682,9 +3704,10 @@ function trackRefValue(ref2) {
 }
 function triggerRefValue(ref2, newVal) {
   ref2 = toRaw(ref2);
-  if (ref2.dep) {
+  const dep = ref2.dep;
+  if (dep) {
     {
-      triggerEffects(ref2.dep);
+      triggerEffects(dep);
     }
   }
 }
@@ -3785,18 +3808,21 @@ class ObjectRefImpl {
   set value(newVal) {
     this._object[this._key] = newVal;
   }
+  get dep() {
+    return getDepFromReactive(toRaw(this._object), this._key);
+  }
 }
 function toRef(object, key, defaultValue) {
   const val = object[key];
   return isRef(val) ? val : new ObjectRefImpl(object, key, defaultValue);
 }
-var _a;
+var _a$1;
 class ComputedRefImpl {
   constructor(getter, _setter, isReadonly2, isSSR) {
     this._setter = _setter;
     this.dep = void 0;
     this.__v_isRef = true;
-    this[_a] = false;
+    this[_a$1] = false;
     this._dirty = true;
     this.effect = new ReactiveEffect(getter, () => {
       if (!this._dirty) {
@@ -3821,7 +3847,7 @@ class ComputedRefImpl {
     this._setter(newValue);
   }
 }
-_a = "__v_isReadonly";
+_a$1 = "__v_isReadonly";
 function computed$1(getterOrOptions, debugOptions, isSSR = false) {
   let getter;
   let setter;
@@ -3837,6 +3863,9 @@ function computed$1(getterOrOptions, debugOptions, isSSR = false) {
   return cRef;
 }
 function warn(msg, ...args) {
+  return;
+}
+function assertNumber(val, type) {
   return;
 }
 function callWithErrorHandling(fn, instance, type, args) {
@@ -4015,13 +4044,13 @@ function flushJobs(seen2) {
 let devtools;
 let buffer = [];
 function setDevtoolsHook(hook, target) {
-  var _a2, _b;
+  var _a, _b;
   devtools = hook;
   if (devtools) {
     devtools.enabled = true;
     buffer.forEach(({ event: event2, args }) => devtools.emit(event2, ...args));
     buffer = [];
-  } else if (typeof window !== "undefined" && window.HTMLElement && !((_b = (_a2 = window.navigator) === null || _a2 === void 0 ? void 0 : _a2.userAgent) === null || _b === void 0 ? void 0 : _b.includes("jsdom"))) {
+  } else if (typeof window !== "undefined" && window.HTMLElement && !((_b = (_a = window.navigator) === null || _a === void 0 ? void 0 : _a.userAgent) === null || _b === void 0 ? void 0 : _b.includes("jsdom"))) {
     const replay = target.__VUE_DEVTOOLS_HOOK_REPLAY__ = target.__VUE_DEVTOOLS_HOOK_REPLAY__ || [];
     replay.push((newHook) => {
       setDevtoolsHook(newHook, target);
@@ -4036,7 +4065,7 @@ function setDevtoolsHook(hook, target) {
     buffer = [];
   }
 }
-function emit$1(instance, event2, ...rawArgs) {
+function emit(instance, event2, ...rawArgs) {
   if (instance.isUnmounted)
     return;
   const props = instance.vnode.props || EMPTY_OBJ;
@@ -4050,7 +4079,7 @@ function emit$1(instance, event2, ...rawArgs) {
       args = rawArgs.map((a2) => isString(a2) ? a2.trim() : a2);
     }
     if (number) {
-      args = rawArgs.map(toNumber);
+      args = rawArgs.map(looseToNumber);
     }
   }
   let handlerName;
@@ -4167,7 +4196,7 @@ function withCtx(fn, ctx = currentRenderingInstance, isNonScopedSlot) {
 function markAttrsAccessed() {
 }
 function renderComponentRoot(instance) {
-  const { type: Component, vnode, proxy, withProxy, props, propsOptions: [propsOptions], slots, attrs, emit, render: render2, renderCache, data, setupState, ctx, inheritAttrs } = instance;
+  const { type: Component, vnode, proxy, withProxy, props, propsOptions: [propsOptions], slots, attrs, emit: emit2, render: render2, renderCache, data, setupState, ctx, inheritAttrs } = instance;
   let result;
   let fallthroughAttrs;
   const prev = setCurrentRenderingInstance(instance);
@@ -4186,8 +4215,8 @@ function renderComponentRoot(instance) {
           return attrs;
         },
         slots,
-        emit
-      } : { attrs, slots, emit }) : render3(props, null));
+        emit: emit2
+      } : { attrs, slots, emit: emit2 }) : render3(props, null));
       fallthroughAttrs = Component.props ? attrs : getFunctionalFallthrough(attrs);
     }
   } catch (err) {
@@ -4459,7 +4488,7 @@ function patchSuspense(n1, n2, container, anchor, parentComponent, isSVG, slotSc
 }
 function createSuspenseBoundary(vnode, parent, parentComponent, container, hiddenContainer, anchor, isSVG, slotScopeIds, optimized, rendererInternals, isHydrating = false) {
   const { p: patch, m: move, um: unmount, n: next, o: { parentNode, remove: remove2 } } = rendererInternals;
-  const timeout = toNumber(vnode.props && vnode.props.timeout);
+  const timeout = vnode.props ? toNumber(vnode.props.timeout) : void 0;
   const suspense = {
     vnode,
     parent,
@@ -4710,7 +4739,7 @@ function watch(source, cb, options) {
   return doWatch(source, cb, options);
 }
 function doWatch(source, cb, { immediate, deep, flush, onTrack, onTrigger } = EMPTY_OBJ) {
-  const instance = currentInstance;
+  const instance = getCurrentScope() === (currentInstance === null || currentInstance === void 0 ? void 0 : currentInstance.scope) ? currentInstance : null;
   let getter;
   let forceTrigger = false;
   let isMultiSource = false;
@@ -5347,7 +5376,7 @@ const KeepAliveImpl = {
     }
     function pruneCacheEntry(key) {
       const cached = cache.get(key);
-      if (!current || cached.type !== current.type) {
+      if (!current || !isSameVNodeType(cached, current)) {
         unmount(cached);
       } else if (current) {
         resetShapeFlag(current);
@@ -5375,7 +5404,7 @@ const KeepAliveImpl = {
       cache.forEach((cached) => {
         const { subTree, suspense } = instance;
         const vnode = getInnerChild(subTree);
-        if (cached.type === vnode.type) {
+        if (cached.type === vnode.type && cached.key === vnode.key) {
           resetShapeFlag(vnode);
           const da = vnode.component.da;
           da && queuePostRenderEffect(da, suspense);
@@ -5442,7 +5471,7 @@ function matches(pattern, name) {
     return pattern.some((p2) => matches(p2, name));
   } else if (isString(pattern)) {
     return pattern.split(",").includes(name);
-  } else if (pattern.test) {
+  } else if (isRegExp(pattern)) {
     return pattern.test(name);
   }
   return false;
@@ -6342,8 +6371,8 @@ function validatePropName(key) {
   return false;
 }
 function getType(ctor) {
-  const match = ctor && ctor.toString().match(/^\s*function (\w+)/);
-  return match ? match[1] : ctor === null ? "null" : "";
+  const match = ctor && ctor.toString().match(/^\s*(function|class) (\w+)/);
+  return match ? match[2] : ctor === null ? "null" : "";
 }
 function isSameType(a2, b2) {
   return getType(a2) === getType(b2);
@@ -6458,7 +6487,7 @@ function createAppContext() {
     emitsCache: /* @__PURE__ */ new WeakMap()
   };
 }
-let uid = 0;
+let uid$1 = 0;
 function createAppAPI(render2, hydrate2) {
   return function createApp2(rootComponent, rootProps = null) {
     if (!isFunction(rootComponent)) {
@@ -6471,7 +6500,7 @@ function createAppAPI(render2, hydrate2) {
     const installedPlugins = /* @__PURE__ */ new Set();
     let isMounted = false;
     const app = context.app = {
-      _uid: uid++,
+      _uid: uid$1++,
       _component: rootComponent,
       _props: rootProps,
       _container: null,
@@ -6980,6 +7009,7 @@ function baseCreateRenderer(options, createHydrationFns) {
     if (dirs) {
       invokeDirectiveHook(vnode, null, parentComponent, "created");
     }
+    setScopeId(el, vnode, vnode.scopeId, slotScopeIds, parentComponent);
     if (props) {
       for (const key in props) {
         if (key !== "value" && !isReservedProp(key)) {
@@ -6993,7 +7023,6 @@ function baseCreateRenderer(options, createHydrationFns) {
         invokeVNodeHook(vnodeHook, parentComponent, vnode);
       }
     }
-    setScopeId(el, vnode, vnode.scopeId, slotScopeIds, parentComponent);
     if (dirs) {
       invokeDirectiveHook(vnode, null, parentComponent, "beforeMount");
     }
@@ -8040,7 +8069,8 @@ function cloneVNode(vnode, extraProps, mergeRef = false) {
     ssFallback: vnode.ssFallback && cloneVNode(vnode.ssFallback),
     el: vnode.el,
     anchor: vnode.anchor,
-    ctx: vnode.ctx
+    ctx: vnode.ctx,
+    ce: vnode.ce
   };
   return cloned;
 }
@@ -8149,12 +8179,12 @@ function invokeVNodeHook(hook, instance, vnode, prevVNode = null) {
   ]);
 }
 const emptyAppContext = createAppContext();
-let uid$1 = 0;
+let uid = 0;
 function createComponentInstance(vnode, parent, suspense) {
   const type = vnode.type;
   const appContext = (parent ? parent.appContext : vnode.appContext) || emptyAppContext;
   const instance = {
-    uid: uid$1++,
+    uid: uid++,
     vnode,
     type,
     parent,
@@ -8215,7 +8245,7 @@ function createComponentInstance(vnode, parent, suspense) {
     instance.ctx = { _: instance };
   }
   instance.root = parent ? parent.root : instance;
-  instance.emit = emit$1.bind(null, instance);
+  instance.emit = emit.bind(null, instance);
   if (vnode.ce) {
     vnode.ce(instance);
   }
@@ -8494,7 +8524,7 @@ function isMemoSame(cached, memo) {
   }
   return true;
 }
-const version = "3.2.45";
+const version = "3.2.47";
 const _ssrUtils = {
   createComponentInstance,
   setupComponent,
@@ -8583,15 +8613,15 @@ function patchStyle(el, prev, next) {
   const style2 = el.style;
   const isCssString = isString(next);
   if (next && !isCssString) {
-    for (const key in next) {
-      setStyle(style2, key, next[key]);
-    }
     if (prev && !isString(prev)) {
       for (const key in prev) {
         if (next[key] == null) {
           setStyle(style2, key, "");
         }
       }
+    }
+    for (const key in next) {
+      setStyle(style2, key, next[key]);
     }
   } else {
     const currentDisplay = style2.display;
@@ -9364,6 +9394,8 @@ const TransitionGroupImpl = {
     };
   }
 };
+const removeMode = (props) => delete props.mode;
+/* @__PURE__ */ removeMode(TransitionGroupImpl.props);
 const TransitionGroup = TransitionGroupImpl;
 function callPendingCbs(c2) {
   const el = c2.el;
@@ -9430,7 +9462,7 @@ const vModelText = {
         domValue = domValue.trim();
       }
       if (castToNumber) {
-        domValue = toNumber(domValue);
+        domValue = looseToNumber(domValue);
       }
       el._assign(domValue);
     });
@@ -9459,7 +9491,7 @@ const vModelText = {
       if (trim && el.value.trim() === value) {
         return;
       }
-      if ((number || el.type === "number") && toNumber(el.value) === value) {
+      if ((number || el.type === "number") && looseToNumber(el.value) === value) {
         return;
       }
     }
@@ -9537,7 +9569,7 @@ const vModelSelect = {
   created(el, { value, modifiers: { number } }, vnode) {
     const isSetModel = isSet(value);
     addEventListener(el, "change", () => {
-      const selectedVal = Array.prototype.filter.call(el.options, (o2) => o2.selected).map((o2) => number ? toNumber(getValue(o2)) : getValue(o2));
+      const selectedVal = Array.prototype.filter.call(el.options, (o2) => o2.selected).map((o2) => number ? looseToNumber(getValue(o2)) : getValue(o2));
       el._assign(el.multiple ? isSetModel ? new Set(selectedVal) : selectedVal : selectedVal[0]);
     });
     el._assign = getModelAssigner(vnode);
@@ -9870,6 +9902,7 @@ const runtimeDom = /* @__PURE__ */ Object.freeze(/* @__PURE__ */ Object.definePr
   Suspense,
   Teleport,
   Text,
+  assertNumber,
   callWithAsyncErrorHandling,
   callWithErrorHandling,
   cloneVNode,
@@ -10062,7 +10095,7 @@ function createRoot(children2, loc = locStub) {
   return {
     type: 0,
     children: children2,
-    helpers: [],
+    helpers: /* @__PURE__ */ new Set(),
     components: [],
     directives: [],
     hoists: [],
@@ -10321,7 +10354,7 @@ function hasDynamicKeyVBind(node) {
     (p2) => p2.type === 7 && p2.name === "bind" && (!p2.arg || p2.arg.type !== 4 || !p2.arg.isStatic)
   );
 }
-function isText(node) {
+function isText$1(node) {
   return node.type === 5 || node.type === 2;
 }
 function isVSlot(p2) {
@@ -11444,7 +11477,7 @@ function transform(root, options) {
   if (!options.ssr) {
     createRootCodegen(root, context);
   }
-  root.helpers = [...context.helpers.keys()];
+  root.helpers = /* @__PURE__ */ new Set([...context.helpers.keys()]);
   root.components = [...context.components];
   root.directives = [...context.directives];
   root.imports = context.imports;
@@ -11615,9 +11648,11 @@ function generate(ast, options = {}) {
   if (options.onContextCreated)
     options.onContextCreated(context);
   const { mode, push: push2, prefixIdentifiers, indent, deindent, newline, scopeId, ssr } = context;
-  const hasHelpers = ast.helpers.length > 0;
+  const helpers = Array.from(ast.helpers);
+  const hasHelpers = helpers.length > 0;
   const useWithBlock = !prefixIdentifiers && mode !== "module";
-  const preambleContext = context;
+  const isSetupInlined = false;
+  const preambleContext = isSetupInlined ? createCodegenContext(ast, options) : context;
   {
     genFunctionPreamble(ast, preambleContext);
   }
@@ -11632,7 +11667,7 @@ function generate(ast, options = {}) {
     push2(`with (_ctx) {`);
     indent();
     if (hasHelpers) {
-      push2(`const { ${ast.helpers.map(aliasHelper).join(", ")} } = _Vue`);
+      push2(`const { ${helpers.map(aliasHelper).join(", ")} } = _Vue`);
       push2(`
 `);
       newline();
@@ -11683,14 +11718,15 @@ function generate(ast, options = {}) {
   return {
     ast,
     code: context.code,
-    preamble: ``,
+    preamble: isSetupInlined ? preambleContext.code : ``,
     map: context.map ? context.map.toJSON() : void 0
   };
 }
 function genFunctionPreamble(ast, context) {
   const { ssr, prefixIdentifiers, push: push2, newline, runtimeModuleName, runtimeGlobalName, ssrRuntimeModuleName } = context;
   const VueBinding = runtimeGlobalName;
-  if (ast.helpers.length > 0) {
+  const helpers = Array.from(ast.helpers);
+  if (helpers.length > 0) {
     {
       push2(`const _Vue = ${VueBinding}
 `);
@@ -11701,7 +11737,7 @@ function genFunctionPreamble(ast, context) {
           CREATE_COMMENT,
           CREATE_TEXT,
           CREATE_STATIC
-        ].filter((helper) => ast.helpers.includes(helper)).map(aliasHelper).join(", ");
+        ].filter((helper) => helpers.includes(helper)).map(aliasHelper).join(", ");
         push2(`const { ${staticHelpers} } = _Vue
 `);
       }
@@ -12036,7 +12072,7 @@ function genCacheExpression(node, context) {
   }
   push2(`)`);
 }
-new RegExp("\\b" + "do,if,for,let,new,try,var,case,else,with,await,break,catch,class,const,super,throw,while,yield,delete,export,import,return,switch,default,extends,finally,continue,debugger,function,arguments,typeof,void".split(",").join("\\b|\\b") + "\\b");
+new RegExp("\\b" + "arguments,await,break,case,catch,class,const,continue,debugger,default,delete,do,else,export,extends,finally,for,function,if,import,let,new,return,super,switch,throw,try,var,void,while,with,yield".split(",").join("\\b|\\b") + "\\b");
 const transformIf = createStructuralDirectiveTransform(/^(if|else|else-if)$/, (node, dir, context) => {
   return processIf(node, dir, context, (ifNode, branch, isRoot) => {
     const siblings = context.parent.children;
@@ -13092,11 +13128,11 @@ const transformText = (node, context) => {
       let hasText = false;
       for (let i2 = 0; i2 < children2.length; i2++) {
         const child2 = children2[i2];
-        if (isText(child2)) {
+        if (isText$1(child2)) {
           hasText = true;
           for (let j2 = i2 + 1; j2 < children2.length; j2++) {
             const next = children2[j2];
-            if (isText(next)) {
+            if (isText$1(next)) {
               if (!currentContainer) {
                 currentContainer = children2[i2] = createCompoundExpression([child2], child2.loc);
               }
@@ -13115,7 +13151,7 @@ const transformText = (node, context) => {
       }
       for (let i2 = 0; i2 < children2.length; i2++) {
         const child2 = children2[i2];
-        if (isText(child2) || child2.type === 8) {
+        if (isText$1(child2) || child2.type === 8) {
           const callArgs = [];
           if (child2.type !== 2 || child2.content !== " ") {
             callArgs.push(child2);
@@ -13134,13 +13170,13 @@ const transformText = (node, context) => {
     };
   }
 };
-const seen = /* @__PURE__ */ new WeakSet();
+const seen$1 = /* @__PURE__ */ new WeakSet();
 const transformOnce = (node, context) => {
   if (node.type === 1 && findDir(node, "once", true)) {
-    if (seen.has(node) || context.inVOnce) {
+    if (seen$1.has(node) || context.inVOnce) {
       return;
     }
-    seen.add(node);
+    seen$1.add(node);
     context.inVOnce = true;
     context.helper(SET_BLOCK_TRACKING);
     return () => {
@@ -13171,7 +13207,7 @@ const transformModel$1 = (dir, node, context) => {
     return createTransformProps();
   }
   const propName = arg ? arg : createSimpleExpression("modelValue", true);
-  const eventName = arg ? isStaticExp(arg) ? `onUpdate:${arg.content}` : createCompoundExpression(['"onUpdate:" + ', arg]) : `onUpdate:modelValue`;
+  const eventName = arg ? isStaticExp(arg) ? `onUpdate:${camelize$1(arg.content)}` : createCompoundExpression(['"onUpdate:" + ', arg]) : `onUpdate:modelValue`;
   let assignmentExp;
   const eventArg = context.isTS ? `($event: any)` : `$event`;
   {
@@ -13335,14 +13371,14 @@ function wrapFilter(exp, filter, context) {
     return `${toValidAssetId(name, "filter")}(${exp}${args !== ")" ? "," + args : args}`;
   }
 }
-const seen$1 = /* @__PURE__ */ new WeakSet();
+const seen = /* @__PURE__ */ new WeakSet();
 const transformMemo = (node, context) => {
   if (node.type === 1) {
     const dir = findDir(node, "memo");
-    if (!dir || seen$1.has(node)) {
+    if (!dir || seen.has(node)) {
       return;
     }
-    seen$1.add(node);
+    seen.add(node);
     return () => {
       const codegenNode = node.codegenNode || context.currentNode.codegenNode;
       if (codegenNode && codegenNode.type === 13) {
