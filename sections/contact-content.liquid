@@ -49,7 +49,7 @@
             {%- assign empty_column = ' contact-content-list__item--empty' -%} 
           {%- endif -%}
 
-          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="contact-content-list__item grid__item{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
+          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="contact-content-list__item grid__item {{ section.settings.column_alignment }} {{ empty_column }}" {{ block.shopify_attributes }}>            
             <div class="contact-content-card content-container {{ block.settings.column_orientation }}" style="background-color: {{ block.settings.column_background_color }}; color: {{ block.settings.column_font_color }};">
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'auto' or section.settings.image_ratio == 'circle' %}
@@ -204,6 +204,10 @@
         {
           "value": "center",
           "label": "t:sections.multicolumn.settings.column_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "Right"
         }
       ],
       "default": "left",
