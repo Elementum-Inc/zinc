@@ -57,7 +57,7 @@ body {
   font-family: inherit;
   line-height: inherit;
 }
-button, select, input, textarea {
+button, input, textarea, select {
   font-family: inherit;
   font-size: 100%;
   line-height: 1.15;
@@ -174,7 +174,27 @@ ul {
   padding: 0;
 }
 /* windicss layer components */
-
+.underline-link {
+  text-underline-offset: 4px;
+  -webkit-text-decoration-line: underline;
+  text-decoration-line: underline;
+  -webkit-transition-property: all;
+  -o-transition-property: all;
+  transition-property: all;
+  -webkit-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -o-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition-duration: 150ms;
+  -o-transition-duration: 150ms;
+  transition-duration: 150ms;
+  -webkit-transition-duration: 250ms;
+  -o-transition-duration: 250ms;
+  transition-duration: 250ms;
+}
+.underline-link:hover {
+  text-underline-offset: 6px;
+  text-decoration-thickness: 1px;
+}
 /* windicss layer utilities */
 .container {
   width: 100%;
@@ -626,9 +646,6 @@ ul {
 }
 body {
   font-family: var(--font-body-family);
-}
-body.search--opened, body.menu--opened {
-  overflow: hidden;
 }
 *:focus {
   --tw-ring-offset-shadow: var(--tw-ring-inset) 0 0 0 var(--tw-ring-offset-width) var(--tw-ring-offset-color);
@@ -1236,6 +1253,10 @@ p.small, .text-body.small {
   z-index: 0;
   content: '';
 }
+.section--foreground > *, .color-scheme--foreground > * {
+  position: relative;
+  z-index: 1;
+}
 .section--foreground .card.match, .color-scheme--foreground .card.match {
   border-radius: 0;
 }
@@ -1478,27 +1499,10 @@ p.small, .text-body.small {
   display: block;
   height: 100%;
   position: absolute;
-  top: 50%;
-  left: 50%;
+  top: 0px;
+  left: 0px;
   content: "";
   width: 100%;
-  --tw-translate-x: 0;
-  --tw-translate-y: 0;
-  --tw-translate-z: 0;
-  --tw-rotate: 0;
-  --tw-rotate-x: 0;
-  --tw-rotate-y: 0;
-  --tw-rotate-z: 0;
-  --tw-skew-x: 0;
-  --tw-skew-y: 0;
-  --tw-scale-x: 1;
-  --tw-scale-y: 1;
-  --tw-scale-z: 1;
-  -webkit-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
-  -ms-transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
-  transform: translateX(var(--tw-translate-x)) translateY(var(--tw-translate-y)) translateZ(var(--tw-translate-z)) rotate(var(--tw-rotate)) rotateX(var(--tw-rotate-x)) rotateY(var(--tw-rotate-y)) rotateZ(var(--tw-rotate-z)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y)) scaleZ(var(--tw-scale-z));
-  --tw-translate-y: -50%;
-  --tw-translate-x: -50%;
   border-radius: calc(var(--buttons-radius) + var(--buttons-border-width));
 }
 .btn-shadow {
