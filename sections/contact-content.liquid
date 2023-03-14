@@ -79,17 +79,7 @@
                   </div>
                 </div>
               {%- else -%}
-                {% unless block.settings.title != blank
-                  or block.settings.text != blank
-                  or block.settings.title-2 != blank
-                  or block.settings.text-2 != blank
-                  or block.settings.title-3 != blank
-                  or block.settings.text-3 != blank
-                  or block.settings.title-4 != blank
-                  or block.settings.text-4 != blank
-                %}
-                  {{ 'image' | placeholder_svg_tag }}
-                {% endunless %}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
               {%- endif -%}
             <div class="contact-content-card__info" style="padding: {{ block.settings.text-padding }}px;">
                 {%- if block.settings.title != blank -%}
@@ -355,7 +345,7 @@
               "label": "Image below text"
             }
           ],
-          "default": "text-below",
+          "default": "text-above",
           "label": "Column content orientation"
         },
         {
@@ -459,9 +449,6 @@
     {
       "name": "Contact Content",
       "blocks": [
-        {
-          "type": "column"
-        },
         {
           "type": "column"
         }
