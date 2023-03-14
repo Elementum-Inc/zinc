@@ -493,6 +493,10 @@
   stroke: var(--color-scheme-accent);
 }
 
+.collage__item .card:not(.ratio), .collage__item .article-card:not(.ratio) {
+  height: auto;
+}
+
 .article-card, .page-card {
   border-radius: var(--content-card-corner-radius);
   text-align: var(--content-card-text-alignment);
