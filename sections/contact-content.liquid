@@ -49,7 +49,7 @@
             {%- assign empty_column = ' contact-content-list__item--empty' -%} 
           {%- endif -%}
 
-          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="contact-content-list__item grid__item{% if section.settings.column_alignment == 'center' %} center{% endif %}{{ empty_column }}" {{ block.shopify_attributes }}>            
+          <li id="Slide-{{ section.id }}-{{ forloop.index }}" class="contact-content-list__item grid__item {{ section.settings.column_alignment }} {{ empty_column }}" {{ block.shopify_attributes }}>            
             <div class="contact-content-card content-container {{ block.settings.column_orientation }}" style="background-color: {{ block.settings.column_background_color }}; color: {{ block.settings.column_font_color }};">
               {%- if block.settings.image != blank -%}
                 {% if section.settings.image_ratio == 'auto' or section.settings.image_ratio == 'circle' %}
@@ -79,17 +79,7 @@
                   </div>
                 </div>
               {%- else -%}
-                {% unless block.settings.title != blank
-                  or block.settings.text != blank
-                  or block.settings.title-2 != blank
-                  or block.settings.text-2 != blank
-                  or block.settings.title-3 != blank
-                  or block.settings.text-3 != blank
-                  or block.settings.title-4 != blank
-                  or block.settings.text-4 != blank
-                %}
-                  {{ 'image' | placeholder_svg_tag }}
-                {% endunless %}
+                {{ 'image' | placeholder_svg_tag: 'placeholder-svg' }}
               {%- endif -%}
             <div class="contact-content-card__info" style="padding: {{ block.settings.text-padding }}px;">
                 {%- if block.settings.title != blank -%}
@@ -214,6 +204,10 @@
         {
           "value": "center",
           "label": "t:sections.multicolumn.settings.column_alignment.options__2.label"
+        },
+        {
+          "value": "right",
+          "label": "Right"
         }
       ],
       "default": "left",
@@ -355,7 +349,7 @@
               "label": "Image below text"
             }
           ],
-          "default": "text-below",
+          "default": "text-above",
           "label": "Column content orientation"
         },
         {
@@ -459,9 +453,6 @@
     {
       "name": "Contact Content",
       "blocks": [
-        {
-          "type": "column"
-        },
         {
           "type": "column"
         }
