@@ -9,10 +9,11 @@ body {
   @apply font-body;
 }
 
-body.search--opened,
+/* Removed to fix an overflow problem on slideshow, wasn't really needed anyway */
+/* body.search--opened,
 body.menu--opened {
-  @apply overflow-hidden;
-}
+  @apply fixed overflow-y-auto;
+} */
 
 * {
   @apply focus:(ring-1 ring-scheme-accent)

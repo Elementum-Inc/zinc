@@ -134,6 +134,10 @@
   &.splide {
     padding: 0;
 
+    & .splide__track {
+      @apply mx-0;
+    }
+
     & .splide__slide {
       padding: 0;
 
