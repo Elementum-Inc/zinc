@@ -24,6 +24,27 @@
   if hover_info or settings.product_card_hover_show_info
     assign card_hover_info = true
   endif
+
+  case media_aspect_ratio
+    when 'lportrait'
+      assign ratio = 0.5625
+    when 'sportrait'
+      assign ratio = 0.67
+    when 'widescreen'
+      assign ratio = 1.77
+    when 'landscape'
+      assign ratio = 1.5
+    when 'square'
+      assign ratio = 1
+    when 'auto'
+      assign ratio = card_product.featured_media.aspect_ratio
+    else
+      assign ratio = 1
+  endcase
+
+  if media_fit == nil
+    assign media_fit = settings.product_card_image_fit
+  endif
 %}
 
 <div class="card-wrapper animate-arrow">
@@ -34,10 +55,10 @@
     {% if settings.product_card_border %} border border-scheme-fg{% endif %}
     {% if card_hover_info %} card--info-hover{% endif %}"
   >
-    <div class="card__inner {{ media_aspect_ratio }}">
+    <div class="card__inner {{ media_aspect_ratio }} ratio" style="--ratio-percent: {{ 1 | divided_by: ratio | times: 100 }}%">
       {%- if card_collection.featured_image -%}
         <div class="card__media">
-          <div class="media media--transparent media--hover-effect">
+          <div class="media media--transparent">
             <img
               srcset="{%- if card_collection.featured_image.width >= 165 -%}{{ card_collection.featured_image | image_url: width: 165 }} 165w,{%- endif -%}
                 {%- if card_collection.featured_image.width >= 330 -%}{{ card_collection.featured_image | image_url: width: 330 }} 330w,{%- endif -%}
@@ -53,7 +74,7 @@
               height="{{ card_collection.featured_image.height }}"
               width="{{ card_collection.featured_image.width }}"
               loading="lazy"
-              class="card__image motion-reduce {{ media_aspect_ratio }} {{ settings.product_card_image_fit }}"
+              class="card__image motion-reduce {{ media_aspect_ratio }} {{ media_fit }}"
             >
           </div>
         </div>
